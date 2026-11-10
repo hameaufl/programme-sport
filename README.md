@@ -8,6 +8,7 @@ Site **statique**, responsive, publié sur **GitHub Pages**. Son programme est i
 - Cinq semaines de programme, organisées du **mercredi au mardi** (dernière semaine jusqu'au mardi 15 décembre).
 - **3 sorties avec course par semaine**, donc **15 sorties** au total.
 - **Aucune sortie constituée uniquement de marche**. Les autres jours sont sans séance programmée, pour récupérer.
+- **Kinésithérapie — renforcement des genoux** : mercredi **4 novembre**, lundi **9 novembre** et mercredi **18 novembre 2026**. Les séances de kiné sont indépendantes du programme de course et ne sont pas comptées parmi les 15 sorties. Le 18 novembre comporte à la fois une séance de course et une séance de kiné ; aucun horaire n’est spécifié.
 - Les modes préprogrammés du bracelet déterminent les séances, sans ajuster leur minutage interne.
 
 | Mode bracelet | Séquence exacte | Durée totale | Course totale |
@@ -33,7 +34,7 @@ Courir lentement, à une allure où parler reste possible. Répéter le mode A o
 ## Architecture
 
 - `index.html` : interface responsive, navigation par semaine du cycle (du mercredi au mardi), jours et détails des séances.
-- `programme.js` : **source unique du programme**, éditable via GitHub ; `window.MON_RYTHME_DEBUT_CYCLE` définit le premier mercredi, `window.MON_RYTHME_PROGRAMMES` contient les cinq semaines indexées par leur premier jour.
+- `programme.js` : **source unique du programme**, éditable via GitHub ; `window.MON_RYTHME_DEBUT_CYCLE` définit le début du cycle de course, `window.MON_RYTHME_PROGRAMMES` contient les cinq semaines de course **et** une semaine antérieure pour les séances de kiné du 4 et du 9 novembre. La navigation permet de consulter cette semaine en cliquant sur la flèche précédente.
 - `favicon.svg`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png` : éléments de présentation.
 - `.nojekyll` : pour la publication GitHub Pages.
 
@@ -51,3 +52,5 @@ L'actualisation de `programme.js` et `index.html` sur `main` entraîne une nouve
 ## Confidentialité
 
 GitHub Pages est un hébergement public : ne pas inclure d'informations confidentielles ou personnelles dans le dépôt.
+
+**Attention :** les dates et le libellé des séances de kiné intégrées ici sont désormais consultables publiquement.
