@@ -5,7 +5,7 @@
  * affichées comme rendez-vous distincts des sorties de course.
  * L'interface regroupe les séances par SEMAINES CIVILES (lundi-dimanche),
  * sans déplacer les dates de course ou de kiné. Le cycle de course reste
- * du 11 novembre au 14 décembre. Aucun suivi ni donnée personnelle enregistrés.
+ * du 11 novembre au 14 décembre. Les coches de suivi restent exclusivement en local dans le navigateur.
  *
  * Modes EXACTS disponibles sur le bracelet :
  *  A : 3 × (2 min M + 3 min C) + 2 min M = 17 min, 9 min de course.
@@ -19,53 +19,21 @@
  * entre les séances. Ne pas forcer si une douleur ou une gêne survient.
  */
 window.MON_RYTHME_DEBUT_CYCLE = "2026-11-11";
-window.MON_RYTHME_OBJECTIF_GENERAL = "Reprendre le sport après une longue pause, retrouver de bonnes sensations et progresser sans courir malgré la douleur.";
-window.MON_RYTHME_ETAPES = [
-  {
-    "debut": "2026-11-11",
-    "fin": "2026-11-17",
-    "titre": "Retrouver l'envie de bouger",
-    "description": "Reprendre doucement, retrouver des sensations agréables et apprendre à courir lentement sans chercher la vitesse."
-  },
-  {
-    "debut": "2026-11-18",
-    "fin": "2026-11-24",
-    "titre": "Installer la régularité",
-    "description": "Créer un rythme soutenable, respecter les jours de repos et rester attentif au confort des genoux."
-  },
-  {
-    "debut": "2026-11-25",
-    "fin": "2026-12-01",
-    "titre": "Allonger avec confiance",
-    "description": "Découvrir les blocs de 5 minutes de course si les séances précédentes sont confortables, sans forcer la progression."
-  },
-  {
-    "debut": "2026-12-02",
-    "fin": "2026-12-08",
-    "titre": "Gagner en aisance",
-    "description": "Rendre les blocs de course plus naturels et réguliers, avec une respiration et une foulée confortables."
-  },
-  {
-    "debut": "2026-12-09",
-    "fin": "2026-12-15",
-    "titre": "Consolider sans douleur",
-    "description": "Finir les séances en confiance. Les 21 minutes de course continue restent facultatives : privilégier les bonnes sensations."
-  }
-];
-
 window.MON_RYTHME_PROGRAMMES = {
   "2026-11-02": [
     {
       "date": "2026-11-04",
-      "titre": "Kiné · renforcement des genoux",
-      "type": "kine"
+      "titre": "Kiné · Genoux",
+      "type": "kine",
+      "id": "kine-2026-11-04"
     }
   ],
   "2026-11-09": [
     {
       "date": "2026-11-09",
-      "titre": "Kiné · renforcement des genoux",
-      "type": "kine"
+      "titre": "Kiné · Genoux",
+      "type": "kine",
+      "id": "kine-2026-11-09"
     },
     {
       "date": "2026-11-11",
@@ -76,7 +44,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-11"
     },
     {
       "date": "2026-11-13",
@@ -87,7 +56,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-13"
     }
   ],
   "2026-11-16": [
@@ -100,7 +70,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-16"
     },
     {
       "date": "2026-11-18",
@@ -111,12 +82,14 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-18"
     },
     {
       "date": "2026-11-18",
-      "titre": "Kiné · renforcement des genoux",
-      "type": "kine"
+      "titre": "Kiné · Genoux",
+      "type": "kine",
+      "id": "kine-2026-11-18"
     },
     {
       "date": "2026-11-20",
@@ -127,7 +100,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-20"
     }
   ],
   "2026-11-23": [
@@ -140,7 +114,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-23"
     },
     {
       "date": "2026-11-25",
@@ -151,7 +126,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-25"
     },
     {
       "date": "2026-11-27",
@@ -162,7 +138,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-27"
     }
   ],
   "2026-11-30": [
@@ -175,7 +152,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-11-30"
     },
     {
       "date": "2026-12-02",
@@ -186,7 +164,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-12-02"
     },
     {
       "date": "2026-12-04",
@@ -197,7 +176,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-12-04"
     }
   ],
   "2026-12-07": [
@@ -210,7 +190,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-12-07"
     },
     {
       "date": "2026-12-09",
@@ -221,7 +202,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-12-09"
     },
     {
       "date": "2026-12-11",
@@ -232,7 +214,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "etapes": [
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
-      ]
+      ],
+      "id": "course-2026-12-11"
     }
   ],
   "2026-12-14": [
@@ -246,7 +229,8 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche.",
         "Option facultative si prêt : 3 min marche + 21 min course continue + 3 min marche (mode C, 27 min)."
-      ]
+      ],
+      "id": "course-2026-12-14"
     }
   ]
 };
