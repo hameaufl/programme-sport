@@ -1,41 +1,53 @@
 # Programme Sport — Mon Rythme
 
-Site **statique**, responsive, publié avec **GitHub Pages**, pour consulter les séances à la fois sur ordinateur et sur téléphone.
+Site **statique**, responsive, publié sur **GitHub Pages**. Son programme est identique sur ordinateur et téléphone après mise à jour de la page.
 
-## Programme publié
+## Cycle actuel : 5 semaines dès le 12 novembre 2026
 
-**Du mardi 10 novembre au dimanche 13 décembre 2026**, cinq semaines et **25 sorties** :
-- trois séances de course/marche à allure facile par semaine ;
-- deux séances de marche de récupération par semaine ;
-- deux journées sans sortie par semaine.
+- Début **jeudi 12 novembre 2026**, dernière séance **mardi 15 décembre 2026**.
+- Cinq semaines de programme, organisées du **jeudi au mercredi** (dernière semaine jusqu'au mercredi 16 décembre).
+- **3 sorties avec course par semaine**, donc **15 sorties** au total.
+- **Aucune sortie constituée uniquement de marche**. Les autres jours sont sans séance programmée, pour récupérer.
+- Les modes préprogrammés du bracelet déterminent les séances, sans ajuster leur minutage interne.
 
-Le calendrier est réparti par **semaines civiles, du lundi au dimanche**. La première commence le 9 novembre, mais la première séance est le **mardi 10 novembre**.
+| Mode bracelet | Séquence exacte | Durée totale | Course totale |
+| --- | --- | --- | --- |
+| A | 3 × (2 min marche + 3 min course) + 2 min marche | 17 min | 9 min |
+| B | 3 × (2 min marche + 5 min course) + 2 min marche | 23 min | 15 min |
+| C (facultatif) | 3 min marche + 21 min course + 3 min marche | 27 min | 21 min continues |
 
-Ce programme est une **adaptation originale, condensée**, du document *Programme fractionné — I* (La Clinique du Coureur) fourni par l'utilisateur. Le document original comporte huit semaines, cinq séances de course/marche par semaine, et termine par 30 minutes de course continue. Le plan affiché ici ne reproduit pas le PDF : il privilégie trois entraînements course/marche et deux marches sans course afin de préserver de la récupération. Objectif final indicatif : **20 minutes de course continue** ; extension à 25 minutes seulement si les étapes précédentes sont confortables, sans douleur.
+### Enchaînement des séances
 
-Toutes les séances de course incluent 5 minutes de marche avant et 5 minutes après, comptées dans la durée totale affichée. Les courses se font à **allure conversationnelle**, sans objectif de vitesse. Il est pertinent de répéter une séance, de prolonger une phase ou de revenir à la marche si nécessaire. En cas de douleur persistante ou inhabituelle, interrompre la séance et demander un avis professionnel.
+| Semaine | Dates | Séance 1 | Séance 2 | Séance 3 |
+| --- | --- | --- | --- | --- |
+| 1 | 12, 14, 17 novembre | A | A | A |
+| 2 | 19, 21, 24 novembre | A | A | B |
+| 3 | 26, 28 novembre et 1er décembre | A | B | B |
+| 4 | 3, 5, 8 décembre | B | B | B |
+| 5 | 10, 12, 15 décembre | B | B | B (C facultatif à la dernière séance) |
+
+**Important** : ce programme est une adaptation réduite du *Programme fractionné I* (La Clinique du Coureur), fourni par l'utilisateur. Il n'en constitue pas une transcription exacte. Passer d'une séance B à 21 minutes continues est une progression importante : **ne pas forcer** le mode C si le B reste difficile. Les modes 30 min et 40 min en continu ne sont pas inclus dans les 5 semaines.
+
+Courir lentement, à une allure où parler reste possible. Répéter le mode A ou B au besoin, ou marcher pendant une portion de course. Conserver au moins un jour sans course entre les séances. En cas de douleur inhabituelle ou persistante, interrompre la séance ; en cas de doute, demander un avis de santé. Le programme de course à pied débutant [NHS Couch to 5K](https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/couch-to-5k-running-plan/) repose également sur trois séances hebdomadaires avec repos entre deux sorties.
 
 ## Architecture
 
-- `index.html` : interface responsive, semaines, jours et détail des séances ;
-- `programme.js` : **source de vérité unique** du programme daté, avec description et étapes de chaque séance ;
-- `favicon.svg`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png` : icônes du site ;
-- `.nojekyll` : publication directe GitHub Pages.
+- `index.html` : interface responsive, navigation par semaine du cycle (du jeudi au mercredi), jours et détails des séances.
+- `programme.js` : **source unique du programme**, éditable via GitHub ; `window.MON_RYTHME_DEBUT_CYCLE` définit le premier jeudi, `window.MON_RYTHME_PROGRAMMES` contient les cinq semaines indexées par leur premier jour.
+- `favicon.svg`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png` : éléments de présentation.
+- `.nojekyll` : pour la publication GitHub Pages.
 
-Ni base de données, ni authentification, ni formulaire, ni cases de suivi, ni `localStorage`. Les dates et séances sont intégrées **statiquement dans `programme.js`**. Modifier ce fichier dans la branche `main` met à jour les programmes après le déploiement, sur tous les appareils utilisant la même URL.
+Aucun serveur applicatif, compte utilisateur, formulaire, suivi, stockage local ou base de données. La publication est **publique**.
 
-## Publication
+## Mettre en ligne
 
-Dans [Settings → Pages](https://github.com/hameaufl/programme-sport/settings/pages), choisir **Deploy from a branch**, `main`, dossier `/(root)`, puis **Save**.
+1. Ouvrir [Settings → Pages](https://github.com/hameaufl/programme-sport/settings/pages).
+2. Sous **Build and deployment**, choisir **Deploy from a branch**.
+3. Choisir `main` et `/(root)`, puis **Save**.
+4. Site : https://hameaufl.github.io/programme-sport/
 
-Site attendu : https://hameaufl.github.io/programme-sport/
+L'actualisation de `programme.js` et `index.html` sur `main` entraîne une nouvelle publication sur GitHub Pages. Le navigateur peut temporairement afficher une version en cache.
 
-Après une publication, un navigateur peut conserver brièvement une ancienne version en cache. Recharger la page si nécessaire.
+## Confidentialité
 
-## Format des séances
-
-`window.MON_RYTHME_PROGRAMMES` est un objet indexé par la date du **lundi** de chaque semaine (`AAAA-MM-JJ`). Chaque entrée possède la date réelle de sortie et des champs d'affichage tels que `titre`, `duree`, `objectif`, `details`, `etapes`. Ce fichier peut évoluer pour de futurs plans : il n'y a aucune contrainte technique de cinq sorties par semaine.
-
-## Visibilité
-
-Le dépôt et le site GitHub Pages sont **publics**. Ne publier aucune donnée personnelle ou confidentielle.
+GitHub Pages est un hébergement public : ne pas inclure d'informations confidentielles ou personnelles dans le dépôt.
