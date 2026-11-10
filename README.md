@@ -44,3 +44,10 @@ window.MON_RYTHME_PROGRAMMES = {
 ## Visibilité
 
 Le dépôt GitHub et le site GitHub Pages sont **publics**. Ne pas y commiter de données confidentielles.
+
+## Vérification après activation
+
+- Attendre la fin du premier déploiement GitHub Pages dans l'onglet **Actions**.
+- Ouvrir https://hameaufl.github.io/programme-sport/ sur ordinateur et téléphone.
+- Si une page 404 s'affiche, vérifier **Settings → Pages → Deploy from a branch → main → /(root)**.
+- Les sorties affichées proviennent uniquement de `programme.js`. Il n'y a aucun suivi à cocher ni donnée sauvegardée dans le navigateur.
