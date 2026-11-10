@@ -1,6 +1,8 @@
 /* Programme Sport — cycle de 5 semaines, démarrage MERCREDI 11 novembre 2026.
  *
  * 3 séances de course par semaine, sans sortie de marche seule.
+ * Kinésithérapie : 4, 9 et 18 novembre 2026. Les séances de kiné sont
+ * affichées comme rendez-vous distincts des sorties de course.
  * Les semaines du cycle vont du mercredi au mardi ; navigation correspondante
  * dans index.html. Aucun suivi enregistré, aucune donnée personnelle.
  *
@@ -17,6 +19,18 @@
  */
 window.MON_RYTHME_DEBUT_CYCLE = "2026-11-11";
 window.MON_RYTHME_PROGRAMMES = {
+  "2026-11-04": [
+    {
+      "date": "2026-11-04",
+      "titre": "Kiné · renforcement des genoux",
+      "type": "kine"
+    },
+    {
+      "date": "2026-11-09",
+      "titre": "Kiné · renforcement des genoux",
+      "type": "kine"
+    }
+  ],
   "2026-11-11": [
     {
       "date": "2026-11-11",
@@ -85,6 +99,11 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
+    },
+    {
+      "date": "2026-11-18",
+      "titre": "Kiné · renforcement des genoux",
+      "type": "kine"
     }
   ],
   "2026-11-25": [
