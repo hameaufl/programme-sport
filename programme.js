@@ -3,8 +3,9 @@
  * 3 séances de course par semaine, sans sortie de marche seule.
  * Kinésithérapie : 4, 9 et 18 novembre 2026. Les séances de kiné sont
  * affichées comme rendez-vous distincts des sorties de course.
- * Les semaines du cycle vont du mercredi au mardi ; navigation correspondante
- * dans index.html. Aucun suivi enregistré, aucune donnée personnelle.
+ * L'interface regroupe les séances par SEMAINES CIVILES (lundi-dimanche),
+ * sans déplacer les dates de course ou de kiné. Le cycle de course reste
+ * du 11 novembre au 14 décembre. Aucun suivi ni donnée personnelle enregistrés.
  *
  * Modes EXACTS disponibles sur le bracelet :
  *  A : 3 × (2 min M + 3 min C) + 2 min M = 17 min, 9 min de course.
@@ -19,19 +20,19 @@
  */
 window.MON_RYTHME_DEBUT_CYCLE = "2026-11-11";
 window.MON_RYTHME_PROGRAMMES = {
-  "2026-11-04": [
+  "2026-11-02": [
     {
       "date": "2026-11-04",
       "titre": "Kiné · renforcement des genoux",
       "type": "kine"
-    },
+    }
+  ],
+  "2026-11-09": [
     {
       "date": "2026-11-09",
       "titre": "Kiné · renforcement des genoux",
       "type": "kine"
-    }
-  ],
-  "2026-11-11": [
+    },
     {
       "date": "2026-11-11",
       "titre": "Séance 1 · mode A",
@@ -53,7 +54,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    },
+    }
+  ],
+  "2026-11-16": [
     {
       "date": "2026-11-16",
       "titre": "Séance 3 · mode A",
@@ -64,9 +67,7 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    }
-  ],
-  "2026-11-18": [
+    },
     {
       "date": "2026-11-18",
       "titre": "Séance 1 · mode A",
@@ -79,6 +80,11 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
+      "date": "2026-11-18",
+      "titre": "Kiné · renforcement des genoux",
+      "type": "kine"
+    },
+    {
       "date": "2026-11-20",
       "titre": "Séance 2 · mode A",
       "duree": "17 min",
@@ -88,7 +94,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 3 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    },
+    }
+  ],
+  "2026-11-23": [
     {
       "date": "2026-11-23",
       "titre": "Séance 3 · mode B",
@@ -100,13 +108,6 @@ window.MON_RYTHME_PROGRAMMES = {
         "Terminer par 2 min de marche."
       ]
     },
-    {
-      "date": "2026-11-18",
-      "titre": "Kiné · renforcement des genoux",
-      "type": "kine"
-    }
-  ],
-  "2026-11-25": [
     {
       "date": "2026-11-25",
       "titre": "Séance 1 · mode A",
@@ -128,7 +129,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    },
+    }
+  ],
+  "2026-11-30": [
     {
       "date": "2026-11-30",
       "titre": "Séance 3 · mode B",
@@ -139,9 +142,7 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    }
-  ],
-  "2026-12-02": [
+    },
     {
       "date": "2026-12-02",
       "titre": "Séance 1 · mode B",
@@ -163,7 +164,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    },
+    }
+  ],
+  "2026-12-07": [
     {
       "date": "2026-12-07",
       "titre": "Séance 3 · mode B",
@@ -174,9 +177,7 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    }
-  ],
-  "2026-12-09": [
+    },
     {
       "date": "2026-12-09",
       "titre": "Séance 1 · mode B",
@@ -198,7 +199,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche, puis 5 min de course : répéter 3 fois.",
         "Terminer par 2 min de marche."
       ]
-    },
+    }
+  ],
+  "2026-12-14": [
     {
       "date": "2026-12-14",
       "titre": "Séance 3 · mode B",
