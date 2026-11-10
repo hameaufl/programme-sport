@@ -64,7 +64,7 @@
 <div class="shell">
   <header><div class="brand"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></div><time id="todayLabel"></time></header>
   <main>
-    <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme, simplement.</h1><p class="intro">Départ mercredi 11 novembre. Trois séances avec course par semaine, sans sortie de marche seule.</p></div>
+    <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme.</h1><p class="intro">Départ mercredi 11 novembre. Trois séances avec course par semaine.</p></div>
     <section aria-labelledby="headingWeek">
       <div class="section-top">
         <div><h2 id="headingWeek">Mes 5 semaines de course</h2><p class="help">Cycle du 11 novembre au 15 décembre · 3 courses par semaine · bracelet A / B.</p></div>
@@ -169,13 +169,23 @@
       all.appendChild(list);
     }
   }
+  function refreshToday() {
+    var newToday=new Date();
+    if (key(newToday)===key(today))return;
+    today=newToday;
+    document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+    render();
+  }
   document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   document.getElementById("previous").addEventListener("click",function(){weekStart=plus(weekStart,-7);dayIndex=0;render();});
   document.getElementById("following").addEventListener("click",function(){weekStart=plus(weekStart,7);dayIndex=0;render();});
   document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=cycleWeek(now);dayIndex=cycleDay(now,weekStart);render();});
   document.getElementById("days").addEventListener("click",function(event){var button=event.target.closest("button[data-day]");if(button){dayIndex=Number(button.dataset.day);render();}});
   render();
+  // Une page laissée ouverte pendant la nuit affiche la nouvelle date sans rechargement.
+  setInterval(refreshToday,60000);
   document.addEventListener("visibilitychange",function(){if(document.visibilityState!=="visible")return;
+    refreshToday();
     var script=document.createElement("script");script.src="./programme.js?maj="+Date.now();
     script.onload=function(){script.remove();render();};script.onerror=function(){script.remove();};
     document.head.appendChild(script);
