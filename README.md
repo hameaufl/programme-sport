@@ -30,17 +30,17 @@ Modes disponibles sur le bracelet :
 
 | Mode | Séquence | Durée totale | Temps couru |
 | --- | --- | --- | --- |
-| A | 3 × (2 min marche + 3 min course) + 2 min marche | 17 min | 9 min |
-| B | 3 × (2 min marche + 5 min course) + 2 min marche | 23 min | 15 min |
+| 2M+3C | 3 × (2 min marche + 3 min course) + 2 min marche | 17 min | 9 min |
+| 2M+5C | 3 × (2 min marche + 5 min course) + 2 min marche | 23 min | 15 min |
 | C (facultatif) | 3 min marche + 21 min course + 3 min marche | 27 min | 21 min continues |
 
 | Étape | Sorties avec course | Bracelet |
 | --- | --- | --- |
-| 1 | 11, 13, 16 novembre | A, A, A |
-| 2 | 18, 20, 23 novembre | A, A, B |
-| 3 | 25, 27, 30 novembre | A, B, B |
-| 4 | 2, 4, 7 décembre | B, B, B |
-| 5 | 9, 11, 14 décembre | B, B, B (mode C facultatif le 14) |
+| 1 | 11, 13, 16 novembre | 2M+3C, 2M+3C, 2M+3C |
+| 2 | 18, 20, 23 novembre | 2M+3C, 2M+3C, 2M+5C |
+| 3 | 25, 27, 30 novembre | 2M+3C, 2M+5C, 2M+5C |
+| 4 | 2, 4, 7 décembre | 2M+5C, 2M+5C, 2M+5C |
+| 5 | 9, 11, 14 décembre | 2M+5C, 2M+5C, 2M+5C (mode C facultatif le 14) |
 
 Séances de **Kiné · Genoux** : 4, 9 et 18 novembre 2026, sans horaires spécifiés. Le 18 novembre comporte à la fois une séance de course et une séance de kiné : chacune possède sa propre case de suivi.
 
