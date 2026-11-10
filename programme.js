@@ -1,7 +1,7 @@
-/* Programme Sport — cycle de 5 semaines, démarrage JEUDI 12 novembre 2026.
+/* Programme Sport — cycle de 5 semaines, démarrage MERCREDI 11 novembre 2026.
  *
  * 3 séances de course par semaine, sans sortie de marche seule.
- * Les semaines du cycle vont du jeudi au mercredi ; navigation correspondante
+ * Les semaines du cycle vont du mercredi au mardi ; navigation correspondante
  * dans index.html. Aucun suivi enregistré, aucune donnée personnelle.
  *
  * Modes EXACTS disponibles sur le bracelet :
@@ -15,11 +15,11 @@
  * répéter le mode A / B si besoin et garder au moins 1 jour sans course
  * entre les séances. Ne pas forcer si une douleur ou une gêne survient.
  */
-window.MON_RYTHME_DEBUT_CYCLE = "2026-11-12";
+window.MON_RYTHME_DEBUT_CYCLE = "2026-11-11";
 window.MON_RYTHME_PROGRAMMES = {
-  "2026-11-12": [
+  "2026-11-11": [
     {
-      "date": "2026-11-12",
+      "date": "2026-11-11",
       "titre": "Séance 1 · mode A",
       "duree": "17 min",
       "objectif": "9 min de course au total, à allure facile.",
@@ -30,7 +30,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-11-14",
+      "date": "2026-11-13",
       "titre": "Séance 2 · mode A",
       "duree": "17 min",
       "objectif": "9 min de course au total, à allure facile.",
@@ -41,7 +41,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-11-17",
+      "date": "2026-11-16",
       "titre": "Séance 3 · mode A",
       "duree": "17 min",
       "objectif": "9 min de course au total, à allure facile.",
@@ -52,9 +52,9 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     }
   ],
-  "2026-11-19": [
+  "2026-11-18": [
     {
-      "date": "2026-11-19",
+      "date": "2026-11-18",
       "titre": "Séance 1 · mode A",
       "duree": "17 min",
       "objectif": "9 min de course au total, à allure facile.",
@@ -65,7 +65,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-11-21",
+      "date": "2026-11-20",
       "titre": "Séance 2 · mode A",
       "duree": "17 min",
       "objectif": "9 min de course au total, à allure facile.",
@@ -76,7 +76,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-11-24",
+      "date": "2026-11-23",
       "titre": "Séance 3 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -87,9 +87,9 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     }
   ],
-  "2026-11-26": [
+  "2026-11-25": [
     {
-      "date": "2026-11-26",
+      "date": "2026-11-25",
       "titre": "Séance 1 · mode A",
       "duree": "17 min",
       "objectif": "9 min de course au total, à allure facile.",
@@ -100,7 +100,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-11-28",
+      "date": "2026-11-27",
       "titre": "Séance 2 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -111,7 +111,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-12-01",
+      "date": "2026-11-30",
       "titre": "Séance 3 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -122,9 +122,9 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     }
   ],
-  "2026-12-03": [
+  "2026-12-02": [
     {
-      "date": "2026-12-03",
+      "date": "2026-12-02",
       "titre": "Séance 1 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -135,7 +135,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-12-05",
+      "date": "2026-12-04",
       "titre": "Séance 2 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -146,7 +146,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-12-08",
+      "date": "2026-12-07",
       "titre": "Séance 3 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -157,9 +157,9 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     }
   ],
-  "2026-12-10": [
+  "2026-12-09": [
     {
-      "date": "2026-12-10",
+      "date": "2026-12-09",
       "titre": "Séance 1 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -170,7 +170,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-12-12",
+      "date": "2026-12-11",
       "titre": "Séance 2 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
@@ -181,7 +181,7 @@ window.MON_RYTHME_PROGRAMMES = {
       ]
     },
     {
-      "date": "2026-12-15",
+      "date": "2026-12-14",
       "titre": "Séance 3 · mode B",
       "duree": "23 min",
       "objectif": "15 min de course au total, à allure facile.",
