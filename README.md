@@ -2,10 +2,10 @@
 
 Site **statique**, responsive, publié sur **GitHub Pages**. Son programme est identique sur ordinateur et téléphone après mise à jour de la page.
 
-## Cycle actuel : 5 semaines dès le 12 novembre 2026
+## Cycle actuel : 5 semaines dès le 11 novembre 2026
 
-- Début **jeudi 12 novembre 2026**, dernière séance **mardi 15 décembre 2026**.
-- Cinq semaines de programme, organisées du **jeudi au mercredi** (dernière semaine jusqu'au mercredi 16 décembre).
+- Début **mercredi 11 novembre 2026**, dernière séance **lundi 14 décembre 2026**.
+- Cinq semaines de programme, organisées du **mercredi au mardi** (dernière semaine jusqu'au mardi 15 décembre).
 - **3 sorties avec course par semaine**, donc **15 sorties** au total.
 - **Aucune sortie constituée uniquement de marche**. Les autres jours sont sans séance programmée, pour récupérer.
 - Les modes préprogrammés du bracelet déterminent les séances, sans ajuster leur minutage interne.
@@ -20,11 +20,11 @@ Site **statique**, responsive, publié sur **GitHub Pages**. Son programme est i
 
 | Semaine | Dates | Séance 1 | Séance 2 | Séance 3 |
 | --- | --- | --- | --- | --- |
-| 1 | 12, 14, 17 novembre | A | A | A |
-| 2 | 19, 21, 24 novembre | A | A | B |
-| 3 | 26, 28 novembre et 1er décembre | A | B | B |
-| 4 | 3, 5, 8 décembre | B | B | B |
-| 5 | 10, 12, 15 décembre | B | B | B (C facultatif à la dernière séance) |
+| 1 | 11, 13, 16 novembre | A | A | A |
+| 2 | 18, 20, 23 novembre | A | A | B |
+| 3 | 25, 27, 30 novembre | A | B | B |
+| 4 | 2, 4, 7 décembre | B | B | B |
+| 5 | 9, 11, 14 décembre | B | B | B (C facultatif à la dernière séance) |
 
 **Important** : ce programme est une adaptation réduite du *Programme fractionné I* (La Clinique du Coureur), fourni par l'utilisateur. Il n'en constitue pas une transcription exacte. Passer d'une séance B à 21 minutes continues est une progression importante : **ne pas forcer** le mode C si le B reste difficile. Les modes 30 min et 40 min en continu ne sont pas inclus dans les 5 semaines.
 
@@ -32,8 +32,8 @@ Courir lentement, à une allure où parler reste possible. Répéter le mode A o
 
 ## Architecture
 
-- `index.html` : interface responsive, navigation par semaine du cycle (du jeudi au mercredi), jours et détails des séances.
-- `programme.js` : **source unique du programme**, éditable via GitHub ; `window.MON_RYTHME_DEBUT_CYCLE` définit le premier jeudi, `window.MON_RYTHME_PROGRAMMES` contient les cinq semaines indexées par leur premier jour.
+- `index.html` : interface responsive, navigation par semaine du cycle (du mercredi au mardi), jours et détails des séances.
+- `programme.js` : **source unique du programme**, éditable via GitHub ; `window.MON_RYTHME_DEBUT_CYCLE` définit le premier mercredi, `window.MON_RYTHME_PROGRAMMES` contient les cinq semaines indexées par leur premier jour.
 - `favicon.svg`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png` : éléments de présentation.
 - `.nojekyll` : pour la publication GitHub Pages.
 
