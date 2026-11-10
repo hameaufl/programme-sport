@@ -19,6 +19,40 @@
  * entre les séances. Ne pas forcer si une douleur ou une gêne survient.
  */
 window.MON_RYTHME_DEBUT_CYCLE = "2026-11-11";
+window.MON_RYTHME_OBJECTIF_GENERAL = "Reprendre le sport après une longue pause, retrouver de bonnes sensations et progresser sans courir malgré la douleur.";
+window.MON_RYTHME_ETAPES = [
+  {
+    "debut": "2026-11-11",
+    "fin": "2026-11-17",
+    "titre": "Retrouver l'envie de bouger",
+    "description": "Reprendre doucement, retrouver des sensations agréables et apprendre à courir lentement sans chercher la vitesse."
+  },
+  {
+    "debut": "2026-11-18",
+    "fin": "2026-11-24",
+    "titre": "Installer la régularité",
+    "description": "Créer un rythme soutenable, respecter les jours de repos et rester attentif au confort des genoux."
+  },
+  {
+    "debut": "2026-11-25",
+    "fin": "2026-12-01",
+    "titre": "Allonger avec confiance",
+    "description": "Découvrir les blocs de 5 minutes de course si les séances précédentes sont confortables, sans forcer la progression."
+  },
+  {
+    "debut": "2026-12-02",
+    "fin": "2026-12-08",
+    "titre": "Gagner en aisance",
+    "description": "Rendre les blocs de course plus naturels et réguliers, avec une respiration et une foulée confortables."
+  },
+  {
+    "debut": "2026-12-09",
+    "fin": "2026-12-15",
+    "titre": "Consolider sans douleur",
+    "description": "Finir les séances en confiance. Les 21 minutes de course continue restent facultatives : privilégier les bonnes sensations."
+  }
+];
+
 window.MON_RYTHME_PROGRAMMES = {
   "2026-11-02": [
     {
