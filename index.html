@@ -64,7 +64,7 @@
 <div class="shell">
   <header><div class="brand"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></div><time id="todayLabel"></time></header>
   <main>
-    <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme, simplement.</h1><p class="intro">Retrouve tes sorties et consulte ton planning, semaine après semaine.</p></div>
+    <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme, simplement.</h1><p class="intro">Un cycle de 5 semaines : du 10 novembre au 13 décembre 2026. Trois séances course/marche et deux marches de récupération par semaine.</p></div>
     <section aria-labelledby="headingWeek">
       <div class="section-top">
         <div><h2 id="headingWeek">Ma semaine</h2><p class="help">Sélectionne un jour pour consulter les sorties prévues.</p></div>
@@ -84,7 +84,7 @@
       </div>
     </section>
     <section aria-labelledby="headingAll">
-      <div class="section-top"><div><h2 id="headingAll">Sorties de la semaine</h2><p class="help">Les sorties affichées dépendent du programme publié.</p></div></div>
+      <div class="section-top"><div><h2 id="headingAll">Sorties de la semaine</h2><p class="help">Programme adapté du fractionné I, avec jours de marche et de repos.</p></div></div>
       <div id="allContent" aria-live="polite"></div>
     </section>
   </main>
@@ -124,14 +124,15 @@
       btn.appendChild(elem("span","short",weekdays[i]+(key(d)===key(today)?" · auj.":"")));
       btn.appendChild(elem("span","num",String(d.getDate())));
       btn.appendChild(elem("span","month",format(d,{month:"long"})));
-      btn.appendChild(elem("span","status"+(count?" planned":""),count?"Sortie"+(count>1?"s":""):"—"));
+      var sessions=getDay(i);var label=count>1?"Sorties":count?(String(sessions[0].titre||"").startsWith("Marche")?"Marche":"Course"):"—";
+      btn.appendChild(elem("span","status"+(count?" planned":""),label));
       days.appendChild(btn);
     }
     var selected=plus(weekStart,dayIndex);
     document.getElementById("selectedDate").textContent=format(selected,{weekday:"long",day:"numeric",month:"long"});
     var dayContent=document.getElementById("dayContent");dayContent.replaceChildren();
     var sessions=getDay(dayIndex);
-    if (!sessions.length) dayContent.appendChild(empty("Aucune sortie renseignée pour ce jour","Le programme apparaîtra lorsqu'il aura été publié."));
+    if (!sessions.length) dayContent.appendChild(empty("Journée sans sortie programmée","Repos : aucune séance prévue aujourd'hui."));
     else {
       var cards=elem("div","sessions");
       sessions.forEach(function(s) {
@@ -147,7 +148,7 @@
     }
     var all=document.getElementById("allContent");all.replaceChildren();
     var items=getWeek();
-    if (!items.length)all.appendChild(empty("Programme en attente","Les tableaux des séances seront intégrés ici, sans nombre de sorties imposé."));
+    if (!items.length)all.appendChild(empty("Aucune sortie cette semaine","Aucune séance n'est programmée pour cette période."));
     else {
       var list=elem("div","week-list");
       items.forEach(function(s){
