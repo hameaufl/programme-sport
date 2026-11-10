@@ -64,15 +64,15 @@
 <div class="shell">
   <header><div class="brand"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></div><time id="todayLabel"></time></header>
   <main>
-    <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme, simplement.</h1><p class="intro">Un cycle de 5 semaines : du 10 novembre au 13 décembre 2026. Trois séances course/marche et deux marches de récupération par semaine.</p></div>
+    <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme, simplement.</h1><p class="intro">Départ jeudi 12 novembre. Trois séances avec course par semaine, sans sortie de marche seule.</p></div>
     <section aria-labelledby="headingWeek">
       <div class="section-top">
-        <div><h2 id="headingWeek">Ma semaine</h2><p class="help">Sélectionne un jour pour consulter les sorties prévues.</p></div>
+        <div><h2 id="headingWeek">Mes 5 semaines de course</h2><p class="help">Cycle du 12 novembre au 16 décembre · 3 courses par semaine · bracelet A / B.</p></div>
         <nav class="week-nav" aria-label="Navigation entre les semaines">
           <button type="button" id="previous" aria-label="Semaine précédente">‹</button>
           <span id="rangeLabel" aria-live="polite"></span>
           <button type="button" id="following" aria-label="Semaine suivante">›</button>
-          <button type="button" id="reset" class="today">Cette semaine</button>
+          <button type="button" id="reset" class="today">Semaine en cours</button>
         </nav>
       </div>
       <div id="days" class="days" aria-label="Les sept jours"></div>
@@ -84,7 +84,7 @@
       </div>
     </section>
     <section aria-labelledby="headingAll">
-      <div class="section-top"><div><h2 id="headingAll">Sorties de la semaine</h2><p class="help">Programme adapté du fractionné I, avec jours de marche et de repos.</p></div></div>
+      <div class="section-top"><div><h2 id="headingAll">Sorties de la semaine</h2><p class="help">Séances programmées pour la semaine sélectionnée. Les jours sans course sont des jours de récupération.</p></div></div>
       <div id="allContent" aria-live="polite"></div>
     </section>
   </main>
@@ -94,11 +94,13 @@
 <script>
 (function () {
   "use strict";
-  var weekdays=["lun.","mar.","mer.","jeu.","ven.","sam.","dim."];
+  var cycleStart=new Date((window.MON_RYTHME_DEBUT_CYCLE||"2026-11-12")+"T12:00:00");
+  var cycleCount=Object.keys(window.MON_RYTHME_PROGRAMMES||{}).length||5;
   var today=new Date();
-  var weekStart=monday(today);
-  var dayIndex=(today.getDay()+6)%7;
-  function monday(date) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);d.setDate(d.getDate()-(d.getDay()+6)%7);return d;}
+  var weekStart=cycleWeek(today);
+  var dayIndex=cycleDay(today,weekStart);
+  function cycleWeek(date) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);var n=Math.floor((d-cycleStart)/(7*86400000));n=Math.max(0,Math.min(cycleCount-1,n));return plus(cycleStart,7*n);}
+  function cycleDay(date,start) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);return Math.max(0,Math.min(6,Math.round((d-start)/86400000)));}
   function plus(date,n) {var d=new Date(date);d.setDate(d.getDate()+n);return d;}
   function key(date) {return date.getFullYear()+"-"+String(date.getMonth()+1).padStart(2,"0")+"-"+String(date.getDate()).padStart(2,"0");}
   function format(date,parts) {return new Intl.DateTimeFormat("fr-FR",parts).format(date);}
@@ -113,7 +115,9 @@
   function empty(title,note) {var box=elem("div","empty");box.appendChild(elem("strong","",title));box.appendChild(elem("p","",note));return box;}
   function render() {
     var end=plus(weekStart,6);
-    document.getElementById("rangeLabel").textContent=format(weekStart,{day:"numeric",month:"short"})+" – "+format(end,{day:"numeric",month:"short",year:"numeric"});
+    var cyclePosition=Math.round((weekStart-cycleStart)/(7*86400000));
+    var name=cyclePosition>=0&&cyclePosition<cycleCount?"Semaine "+(cyclePosition+1)+"/"+cycleCount+" · ":"";
+    document.getElementById("rangeLabel").textContent=name+format(weekStart,{day:"numeric",month:"short"})+" – "+format(end,{day:"numeric",month:"short",year:"numeric"});
     var days=document.getElementById("days");days.replaceChildren();
     for (var i=0;i<7;i++) {
       var d=plus(weekStart,i), count=getDay(i).length;
@@ -121,7 +125,7 @@
       btn.type="button";btn.dataset.day=String(i);
       btn.setAttribute("aria-pressed",String(i===dayIndex));
       btn.setAttribute("aria-label",format(d,{weekday:"long",day:"numeric",month:"long"})+", "+count+" sortie(s)");
-      btn.appendChild(elem("span","short",weekdays[i]+(key(d)===key(today)?" · auj.":"")));
+      btn.appendChild(elem("span","short",format(d,{weekday:"short"})+(key(d)===key(today)?" · auj.":"")));
       btn.appendChild(elem("span","num",String(d.getDate())));
       btn.appendChild(elem("span","month",format(d,{month:"long"})));
       var sessions=getDay(i);var label=count>1?"Sorties":count?(String(sessions[0].titre||"").startsWith("Marche")?"Marche":"Course"):"—";
@@ -168,7 +172,7 @@
   document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   document.getElementById("previous").addEventListener("click",function(){weekStart=plus(weekStart,-7);dayIndex=0;render();});
   document.getElementById("following").addEventListener("click",function(){weekStart=plus(weekStart,7);dayIndex=0;render();});
-  document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=monday(now);dayIndex=(now.getDay()+6)%7;render();});
+  document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=cycleWeek(now);dayIndex=cycleDay(now,weekStart);render();});
   document.getElementById("days").addEventListener("click",function(event){var button=event.target.closest("button[data-day]");if(button){dayIndex=Number(button.dataset.day);render();}});
   render();
   document.addEventListener("visibilitychange",function(){if(document.visibilityState!=="visible")return;
