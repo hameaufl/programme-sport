@@ -84,7 +84,7 @@
       </div>
     </section>
     <section aria-labelledby="headingAll">
-      <div class="section-top"><div><h2 id="headingAll">Sorties de la semaine</h2><p class="help">Séances programmées pour la semaine sélectionnée. Les jours sans course sont des jours de récupération.</p></div></div>
+      <div class="section-top"><div><h2 id="headingAll">Séances de la semaine</h2><p class="help">Course et kiné programmées pour la semaine sélectionnée.</p></div></div>
       <div id="allContent" aria-live="polite"></div>
     </section>
   </main>
@@ -95,7 +95,7 @@
 (function () {
   "use strict";
   var cycleStart=new Date((window.MON_RYTHME_DEBUT_CYCLE||"2026-11-11")+"T12:00:00");
-  var cycleCount=Object.keys(window.MON_RYTHME_PROGRAMMES||{}).length||5;
+  var cycleCount=Object.keys(window.MON_RYTHME_PROGRAMMES||{}).filter(function(date){return date>=(window.MON_RYTHME_DEBUT_CYCLE||"2026-11-11");}).length||5;
   var today=new Date();
   var weekStart=cycleWeek(today);
   var dayIndex=cycleDay(today,weekStart);
@@ -124,11 +124,12 @@
       var btn=elem("button","day");
       btn.type="button";btn.dataset.day=String(i);
       btn.setAttribute("aria-pressed",String(i===dayIndex));
-      btn.setAttribute("aria-label",format(d,{weekday:"long",day:"numeric",month:"long"})+", "+count+" sortie(s)");
+      btn.setAttribute("aria-label",format(d,{weekday:"long",day:"numeric",month:"long"})+", "+count+" séance(s)");
       btn.appendChild(elem("span","short",format(d,{weekday:"short"})+(key(d)===key(today)?" · auj.":"")));
       btn.appendChild(elem("span","num",String(d.getDate())));
       btn.appendChild(elem("span","month",format(d,{month:"long"})));
-      var sessions=getDay(i);var label=count>1?"Sorties":count?(String(sessions[0].titre||"").startsWith("Marche")?"Marche":"Course"):"—";
+      var sessions=getDay(i);var hasKine=sessions.some(function(s){return s.type==="kine";});var hasCourse=sessions.some(function(s){return s.type!=="kine";});
+      var label=hasKine&&hasCourse?"Course + kiné":hasKine?"Kiné":hasCourse?"Course":"—";
       btn.appendChild(elem("span","status"+(count?" planned":""),label));
       days.appendChild(btn);
     }
@@ -136,7 +137,7 @@
     document.getElementById("selectedDate").textContent=format(selected,{weekday:"long",day:"numeric",month:"long"});
     var dayContent=document.getElementById("dayContent");dayContent.replaceChildren();
     var sessions=getDay(dayIndex);
-    if (!sessions.length) dayContent.appendChild(empty("Journée sans sortie programmée","Repos : aucune séance prévue aujourd'hui."));
+    if (!sessions.length) dayContent.appendChild(empty("Aucune séance programmée","Aucune séance prévue ce jour."));
     else {
       var cards=elem("div","sessions");
       sessions.forEach(function(s) {
@@ -152,7 +153,7 @@
     }
     var all=document.getElementById("allContent");all.replaceChildren();
     var items=getWeek();
-    if (!items.length)all.appendChild(empty("Aucune sortie cette semaine","Aucune séance n'est programmée pour cette période."));
+    if (!items.length)all.appendChild(empty("Aucune séance cette semaine","Aucune séance n'est programmée pour cette période."));
     else {
       var list=elem("div","week-list");
       items.forEach(function(s){
