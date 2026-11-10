@@ -1,306 +1,195 @@
-/* Programme de marche / course – du 10 novembre au 13 décembre 2026.
- * Adaptation sur cinq semaines du programme fractionné I de La Clinique du Coureur.
- * C = course à allure conversationnelle, M = marche.
- * Cinq sorties par semaine : trois séances course/marche et deux marches faciles.
- * Aucun champ à remplir : toutes les informations sont publiées statiquement.
- * Chaque entrée est regroupée sous le lundi de sa semaine civile.
- * Les 5 min de marche avant et après chaque séance de course sont incluses
- * dans la durée totale affichée.
+/* Programme Sport — cycle de 5 semaines, démarrage JEUDI 12 novembre 2026.
  *
- * Ce cycle est accéléré par rapport à l'original (8 semaines / 40 séances).
- * Refaire une séance ou ralentir si gêne ou fatigue ; cesser si douleur persistante.
- * Pas d'objectif chronométrique ni de vitesse.
+ * 3 séances de course par semaine, sans sortie de marche seule.
+ * Les semaines du cycle vont du jeudi au mercredi ; navigation correspondante
+ * dans index.html. Aucun suivi enregistré, aucune donnée personnelle.
+ *
+ * Modes EXACTS disponibles sur le bracelet :
+ *  A : 3 × (2 min M + 3 min C) + 2 min M = 17 min, 9 min de course.
+ *  B : 3 × (2 min M + 5 min C) + 2 min M = 23 min, 15 min de course.
+ *  C : 3 min M + 21 min C + 3 min M = 27 min, 21 min de course.
+ *
+ * Le mode C n'est pas obligatoire et n'est mentionné que comme OPTION
+ * à la toute dernière séance ; les programmes 30 et 40 min sont exclus
+ * de ce cycle. Ce programme accéléré n'est pas une prescription médicale :
+ * répéter le mode A / B si besoin et garder au moins 1 jour sans course
+ * entre les séances. Ne pas forcer si une douleur ou une gêne survient.
  */
+window.MON_RYTHME_DEBUT_CYCLE = "2026-11-12";
 window.MON_RYTHME_PROGRAMMES = {
-  "2026-11-09": [
-    {
-      "date": "2026-11-10",
-      "titre": "Course / marche · 7 × (1 min course / 1 min marche)",
-      "duree": "24 min",
-      "objectif": "7 min de course au total, en douceur.",
-      "details": "Répéter 7 fois : 1 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "7 × (1 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-11-11",
-      "titre": "Marche de récupération",
-      "duree": "30 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "30 min de marche souple ou légèrement active. Conserver une allure confortable.",
-      "etapes": [
-        "30 min de marche confortable."
-      ]
-    },
+  "2026-11-12": [
     {
       "date": "2026-11-12",
-      "titre": "Course / marche · 9 × (1 min course / 1 min marche)",
-      "duree": "28 min",
-      "objectif": "9 min de course au total, en douceur.",
-      "details": "Répéter 9 fois : 1 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
+      "titre": "Séance 1 · mode A",
+      "duree": "17 min",
+      "objectif": "9 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "5 min de marche d'échauffement.",
-        "9 × (1 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
+        "2 min de marche, puis 3 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     },
     {
-      "date": "2026-11-13",
-      "titre": "Marche de récupération",
-      "duree": "30 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "30 min de marche souple ou légèrement active. Conserver une allure confortable.",
+      "date": "2026-11-14",
+      "titre": "Séance 2 · mode A",
+      "duree": "17 min",
+      "objectif": "9 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "30 min de marche confortable."
-      ]
-    },
-    {
-      "date": "2026-11-15",
-      "titre": "Course / marche · 8 × (1 min 30 s course / 1 min marche)",
-      "duree": "30 min",
-      "objectif": "12 min de course au total, en douceur.",
-      "details": "Répéter 8 fois : 1 min 30 s de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "8 × (1 min 30 s de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    }
-  ],
-  "2026-11-16": [
-    {
-      "date": "2026-11-16",
-      "titre": "Marche de récupération",
-      "duree": "30 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "30 min de marche souple ou légèrement active. Conserver une allure confortable.",
-      "etapes": [
-        "30 min de marche confortable."
+        "2 min de marche, puis 3 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     },
     {
       "date": "2026-11-17",
-      "titre": "Course / marche · 5 × (2 min course / 1 min marche)",
-      "duree": "25 min",
-      "objectif": "10 min de course au total, en douceur.",
-      "details": "Répéter 5 fois : 2 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
+      "titre": "Séance 3 · mode A",
+      "duree": "17 min",
+      "objectif": "9 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "5 min de marche d'échauffement.",
-        "5 × (2 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-11-18",
-      "titre": "Marche de récupération",
-      "duree": "35 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "35 min de marche souple ou légèrement active. Conserver une allure confortable.",
-      "etapes": [
-        "35 min de marche confortable."
-      ]
-    },
-    {
-      "date": "2026-11-20",
-      "titre": "Course / marche · 5 × (2 min 30 s course / 1 min marche)",
-      "duree": "27 min 30 s",
-      "objectif": "12 min 30 s de course au total, en douceur.",
-      "details": "Répéter 5 fois : 2 min 30 s de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "5 × (2 min 30 s de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-11-22",
-      "titre": "Course / marche · 4 × (3 min course / 1 min marche)",
-      "duree": "26 min",
-      "objectif": "12 min de course au total, en douceur.",
-      "details": "Répéter 4 fois : 3 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "4 × (3 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
+        "2 min de marche, puis 3 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     }
   ],
-  "2026-11-23": [
+  "2026-11-19": [
     {
-      "date": "2026-11-23",
-      "titre": "Marche de récupération",
-      "duree": "35 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "35 min de marche souple ou légèrement active. Conserver une allure confortable.",
+      "date": "2026-11-19",
+      "titre": "Séance 1 · mode A",
+      "duree": "17 min",
+      "objectif": "9 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "35 min de marche confortable."
+        "2 min de marche, puis 3 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "titre": "Séance 2 · mode A",
+      "duree": "17 min",
+      "objectif": "9 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
+      "etapes": [
+        "2 min de marche, puis 3 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     },
     {
       "date": "2026-11-24",
-      "titre": "Course / marche · 3 × (4 min course / 1 min marche)",
-      "duree": "25 min",
-      "objectif": "12 min de course au total, en douceur.",
-      "details": "Répéter 3 fois : 4 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
+      "titre": "Séance 3 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
       "etapes": [
-        "5 min de marche d'échauffement.",
-        "3 × (4 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-11-25",
-      "titre": "Marche de récupération",
-      "duree": "35 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "35 min de marche souple ou légèrement active. Conserver une allure confortable.",
-      "etapes": [
-        "35 min de marche confortable."
-      ]
-    },
-    {
-      "date": "2026-11-27",
-      "titre": "Course / marche · 3 × (5 min course / 1 min marche)",
-      "duree": "28 min",
-      "objectif": "15 min de course au total, en douceur.",
-      "details": "Répéter 3 fois : 5 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "3 × (5 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-11-29",
-      "titre": "Course / marche · 3 × (5 min course / 1 min marche)",
-      "duree": "28 min",
-      "objectif": "15 min de course au total, en douceur.",
-      "details": "Répéter 3 fois : 5 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "3 × (5 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     }
   ],
-  "2026-11-30": [
+  "2026-11-26": [
     {
-      "date": "2026-11-30",
-      "titre": "Marche de récupération",
-      "duree": "40 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "40 min de marche souple ou légèrement active. Conserver une allure confortable.",
+      "date": "2026-11-26",
+      "titre": "Séance 1 · mode A",
+      "duree": "17 min",
+      "objectif": "9 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "40 min de marche confortable."
+        "2 min de marche, puis 3 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
+      ]
+    },
+    {
+      "date": "2026-11-28",
+      "titre": "Séance 2 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
+      "etapes": [
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     },
     {
       "date": "2026-12-01",
-      "titre": "Course / marche · 3 × (6 min course / 1 min marche)",
-      "duree": "31 min",
-      "objectif": "18 min de course au total, en douceur.",
-      "details": "Répéter 3 fois : 6 min de course très facile, puis 1 min de marche. Rester à une allure permettant de parler.",
+      "titre": "Séance 3 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
       "etapes": [
-        "5 min de marche d'échauffement.",
-        "3 × (6 min de course / 1 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-12-02",
-      "titre": "Marche de récupération",
-      "duree": "40 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "40 min de marche souple ou légèrement active. Conserver une allure confortable.",
-      "etapes": [
-        "40 min de marche confortable."
-      ]
-    },
-    {
-      "date": "2026-12-04",
-      "titre": "Course / marche · 2 × (8 min course / 2 min marche)",
-      "duree": "30 min",
-      "objectif": "16 min de course au total, en douceur.",
-      "details": "Répéter 2 fois : 8 min de course très facile, puis 2 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "2 × (8 min de course / 2 min de marche).",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-12-06",
-      "titre": "Course / marche · 2 × (9 min course / 2 min marche)",
-      "duree": "32 min",
-      "objectif": "18 min de course au total, en douceur.",
-      "details": "Répéter 2 fois : 9 min de course très facile, puis 2 min de marche. Rester à une allure permettant de parler.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "2 × (9 min de course / 2 min de marche).",
-        "5 min de marche de retour au calme."
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     }
   ],
-  "2026-12-07": [
+  "2026-12-03": [
     {
-      "date": "2026-12-07",
-      "titre": "Marche de récupération",
-      "duree": "40 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "40 min de marche souple ou légèrement active. Conserver une allure confortable.",
+      "date": "2026-12-03",
+      "titre": "Séance 1 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
       "etapes": [
-        "40 min de marche confortable."
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
+      ]
+    },
+    {
+      "date": "2026-12-05",
+      "titre": "Séance 2 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
+      "etapes": [
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     },
     {
       "date": "2026-12-08",
-      "titre": "Course / marche · 12 min + 10 min",
-      "duree": "34 min",
-      "objectif": "Deux blocs plus longs, à allure facile.",
-      "details": "12 min de course douce, 2 min de marche, puis 10 min de course douce.",
+      "titre": "Séance 3 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
       "etapes": [
-        "5 min de marche d'échauffement.",
-        "12 min de course douce.",
-        "2 min de marche.",
-        "10 min de course douce.",
-        "5 min de marche de retour au calme."
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
+      ]
+    }
+  ],
+  "2026-12-10": [
+    {
+      "date": "2026-12-10",
+      "titre": "Séance 1 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
+      "etapes": [
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     },
     {
-      "date": "2026-12-09",
-      "titre": "Marche de récupération",
-      "duree": "40 min",
-      "objectif": "Bouger sans rechercher la performance.",
-      "details": "40 min de marche souple ou légèrement active. Conserver une allure confortable.",
+      "date": "2026-12-12",
+      "titre": "Séance 2 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A.",
       "etapes": [
-        "40 min de marche confortable."
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche."
       ]
     },
     {
-      "date": "2026-12-11",
-      "titre": "Course continue · 16 min",
-      "duree": "26 min",
-      "objectif": "Tenir 16 min de course à allure tranquille.",
-      "details": "Courir lentement, sans rechercher la vitesse ; ajouter une pause de marche si nécessaire.",
+      "date": "2026-12-15",
+      "titre": "Séance 3 · mode B",
+      "duree": "23 min",
+      "objectif": "15 min de course au total, à allure facile.",
+      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le mode A est devenu confortable, sinon répéter le mode A. Option facultative en fin de cycle : mode C (3 min M + 21 min C + 3 min M) uniquement si les séances B sont très confortables, sans douleur ni fatigue inhabituelle. Sinon conserver B et repousser l'objectif de course continue.",
       "etapes": [
-        "5 min de marche d'échauffement.",
-        "16 min de course très facile, sans pause imposée.",
-        "5 min de marche de retour au calme."
-      ]
-    },
-    {
-      "date": "2026-12-13",
-      "titre": "Course continue · 20 min",
-      "duree": "30 min",
-      "objectif": "Tenir 20 min de course à allure tranquille.",
-      "details": "Objectif de fin de cycle : 20 min de course sans interruption. Ne prolonger jusqu'à 25 min que si toutes les étapes précédentes sont devenues confortables et sans douleur.",
-      "etapes": [
-        "5 min de marche d'échauffement.",
-        "20 min de course très facile, sans pause imposée.",
-        "5 min de marche de retour au calme."
+        "2 min de marche, puis 5 min de course : répéter 3 fois.",
+        "Terminer par 2 min de marche.",
+        "Option facultative si prêt : 3 min marche + 21 min course continue + 3 min marche (mode C, 27 min)."
       ]
     }
   ]
