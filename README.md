@@ -5,7 +5,7 @@ Site **statique**, responsive, publié sur **GitHub Pages**. Son programme est i
 ## Cycle actuel : 5 semaines dès le 11 novembre 2026
 
 - Début **mercredi 11 novembre 2026**, dernière séance **lundi 14 décembre 2026**.
-- Cinq semaines de programme, organisées du **mercredi au mardi** (dernière semaine jusqu'au mardi 15 décembre).
+- Le cycle sportif comporte **cinq étapes de 7 jours**, du mercredi au mardi ; l'interface du calendrier affiche les **semaines civiles du lundi au dimanche** et ne déplace aucune séance.
 - **3 sorties avec course par semaine**, donc **15 sorties** au total.
 - **Aucune sortie constituée uniquement de marche**. Les autres jours sont sans séance programmée, pour récupérer.
 - **Kinésithérapie — renforcement des genoux** : mercredi **4 novembre**, lundi **9 novembre** et mercredi **18 novembre 2026**. Les séances de kiné sont indépendantes du programme de course et ne sont pas comptées parmi les 15 sorties. Le 18 novembre comporte à la fois une séance de course et une séance de kiné ; aucun horaire n’est spécifié.
@@ -31,10 +31,24 @@ Site **statique**, responsive, publié sur **GitHub Pages**. Son programme est i
 
 Courir lentement, à une allure où parler reste possible. Répéter le mode A ou B au besoin, ou marcher pendant une portion de course. Conserver au moins un jour sans course entre les séances. En cas de douleur inhabituelle ou persistante, interrompre la séance ; en cas de doute, demander un avis de santé. Le programme de course à pied débutant [NHS Couch to 5K](https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/couch-to-5k-running-plan/) repose également sur trois séances hebdomadaires avec repos entre deux sorties.
 
+## Objectif général et étapes
+
+**Objectif :** reprendre le sport après une longue pause, retrouver de bonnes sensations et progresser sans courir malgré la douleur. Pas de chrono à atteindre ; la régularité et le confort priment.
+
+| Étape | Dates | Grand objectif |
+| --- | --- | --- |
+| 1 | 11–17 novembre | Retrouver l'envie de bouger, avec une reprise douce. |
+| 2 | 18–24 novembre | Installer la régularité tout en respectant la récupération. |
+| 3 | 25 novembre–1er décembre | Allonger avec confiance si les séances sont confortables. |
+| 4 | 2–8 décembre | Gagner en aisance dans les blocs de course de 5 minutes. |
+| 5 | 9–15 décembre | Consolider sans douleur, sans obligation de tenter 21 minutes en continu. |
+
+Ces objectifs correspondent à des **jalons indicatifs**, pas à un suivi de performance ni à des étapes validées automatiquement. Le site met en évidence la période en cours en fonction de la date de l'appareil, sans collecter de données.
+
 ## Architecture
 
-- `index.html` : interface responsive, navigation par semaine du cycle (du mercredi au mardi), jours et détails des séances.
-- `programme.js` : **source unique du programme**, éditable via GitHub ; `window.MON_RYTHME_DEBUT_CYCLE` définit le début du cycle de course, `window.MON_RYTHME_PROGRAMMES` contient les cinq semaines de course **et** une semaine antérieure pour les séances de kiné du 4 et du 9 novembre. La navigation permet de consulter cette semaine en cliquant sur la flèche précédente.
+- `index.html` : interface responsive, calendrier en semaines civiles **du lundi au dimanche**, détail des séances et présentation des objectifs.
+- `programme.js` : **source unique du programme**, éditable via GitHub ; `window.MON_RYTHME_DEBUT_CYCLE` indique le début de la course, `window.MON_RYTHME_PROGRAMMES` regroupe toutes les séances sous la date du **lundi** correspondant, `window.MON_RYTHME_OBJECTIF_GENERAL` et `window.MON_RYTHME_ETAPES` définissent les objectifs statiques.
 - `favicon.svg`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png` : éléments de présentation.
 - `.nojekyll` : pour la publication GitHub Pages.
 
