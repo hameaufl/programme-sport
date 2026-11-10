@@ -54,9 +54,17 @@
     .week-list{display:grid;gap:9px}.week-item{display:flex;gap:13px;align-items:baseline;background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
     .week-item .date{width:106px;flex:none;font-size:12px;font-weight:800;color:#406b4d}
     .week-item .body{font-size:14px}.week-item .body small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+    .goals-summary{border-left:4px solid #8cb995;background:#edf5eb;padding:16px 19px;border-radius:0 13px 13px 0;color:#234735;font-size:15px;font-weight:700;margin-bottom:13px}
+    .goal-stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+    .goal-stage{min-width:0;border-radius:14px;background:white;border:1px solid var(--line);padding:15px 13px}
+    .goal-stage.current{background:#f0f7ef;border-color:#70a17d}
+    .goal-stage .step-number{font-size:11px;color:#50815b;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+    .goal-stage h3{margin:7px 0 7px;font-size:15px;line-height:1.3}
+    .goal-stage p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}
+    .goal-stage .current-note{font-size:11px;color:#2c7745;font-weight:800;margin-top:9px;display:block}
     footer{margin-top:35px;color:#829387;font-size:12px}
-    @media(max-width:930px){.days{grid-template-columns:repeat(4,minmax(0,1fr))}}
-    @media(max-width:650px){.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
+    @media(max-width:930px){.days{grid-template-columns:repeat(4,minmax(0,1fr))}.goal-stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:650px){.goal-stages{grid-template-columns:1fr}.goal-stage{padding:14px 15px}.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
     @media print{body{background:white}.shell{width:100%;padding:0 14px}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow,.intro{color:var(--ink)}.week-nav{display:none}.days{grid-template-columns:repeat(7,minmax(0,1fr))}.day{min-height:100px;padding:8px!important}.day[aria-pressed="true"]{border-width:1px}}
   </style>
 </head>
@@ -65,9 +73,14 @@
   <header><div class="brand"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></div><time id="todayLabel"></time></header>
   <main>
     <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme.</h1><p class="intro">Départ mercredi 11 novembre. Trois séances avec course par semaine.</p></div>
+    <section aria-labelledby="goalsHeading" class="goals">
+      <div class="section-top"><div><h2 id="goalsHeading">Mes objectifs</h2><p class="help">La priorité est de retrouver des sensations agréables, sans recherche de performance.</p></div></div>
+      <div class="goals-summary" id="goalOverview"></div>
+      <div class="goal-stages" id="goalStages"></div>
+    </section>
     <section aria-labelledby="headingWeek">
       <div class="section-top">
-        <div><h2 id="headingWeek">Mes 5 semaines de course</h2><p class="help">Cycle du 11 novembre au 15 décembre · 3 courses par semaine · bracelet A / B.</p></div>
+        <div><h2 id="headingWeek">Mon calendrier</h2><p class="help">Semaines du lundi au dimanche · séances de course et de kiné.</p></div>
         <nav class="week-nav" aria-label="Navigation entre les semaines">
           <button type="button" id="previous" aria-label="Semaine précédente">‹</button>
           <span id="rangeLabel" aria-live="polite"></span>
@@ -94,13 +107,11 @@
 <script>
 (function () {
   "use strict";
-  var cycleStart=new Date((window.MON_RYTHME_DEBUT_CYCLE||"2026-11-11")+"T12:00:00");
-  var cycleCount=Object.keys(window.MON_RYTHME_PROGRAMMES||{}).filter(function(date){return date>=(window.MON_RYTHME_DEBUT_CYCLE||"2026-11-11");}).length||5;
   var today=new Date();
-  var weekStart=cycleWeek(today);
-  var dayIndex=cycleDay(today,weekStart);
-  function cycleWeek(date) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);var n=Math.floor((d-cycleStart)/(7*86400000));n=Math.max(0,Math.min(cycleCount-1,n));return plus(cycleStart,7*n);}
-  function cycleDay(date,start) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);return Math.max(0,Math.min(6,Math.round((d-start)/86400000)));}
+  var weekStart=monday(today);
+  var dayIndex=(today.getDay()+6)%7;
+  // Semaines civiles du lundi au dimanche, indépendantes des dates de début du cycle.
+  function monday(date) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);d.setDate(d.getDate()-(d.getDay()+6)%7);return d;}
   function plus(date,n) {var d=new Date(date);d.setDate(d.getDate()+n);return d;}
   function key(date) {return date.getFullYear()+"-"+String(date.getMonth()+1).padStart(2,"0")+"-"+String(date.getDate()).padStart(2,"0");}
   function format(date,parts) {return new Intl.DateTimeFormat("fr-FR",parts).format(date);}
@@ -115,9 +126,7 @@
   function empty(title,note) {var box=elem("div","empty");box.appendChild(elem("strong","",title));box.appendChild(elem("p","",note));return box;}
   function render() {
     var end=plus(weekStart,6);
-    var cyclePosition=Math.round((weekStart-cycleStart)/(7*86400000));
-    var name=cyclePosition>=0&&cyclePosition<cycleCount?"Semaine "+(cyclePosition+1)+"/"+cycleCount+" · ":"";
-    document.getElementById("rangeLabel").textContent=name+format(weekStart,{day:"numeric",month:"short"})+" – "+format(end,{day:"numeric",month:"short",year:"numeric"});
+    document.getElementById("rangeLabel").textContent=format(weekStart,{day:"numeric",month:"short"})+" – "+format(end,{day:"numeric",month:"short",year:"numeric"});
     var days=document.getElementById("days");days.replaceChildren();
     for (var i=0;i<7;i++) {
       var d=plus(weekStart,i), count=getDay(i).length;
@@ -170,25 +179,43 @@
       all.appendChild(list);
     }
   }
+  function renderGoals() {
+    var summary=document.getElementById("goalOverview");
+    summary.textContent=window.MON_RYTHME_OBJECTIF_GENERAL||"Reprendre le sport progressivement et retrouver de bonnes sensations.";
+    var target=document.getElementById("goalStages");
+    target.replaceChildren();
+    var stages=window.MON_RYTHME_ETAPES||[];
+    stages.forEach(function(stage,index){
+      var current=key(today)>=stage.debut&&key(today)<=stage.fin;
+      var card=elem("article","goal-stage"+(current?" current":""));
+      card.appendChild(elem("span","step-number","Étape "+(index+1)+" · "+format(new Date(stage.debut+"T12:00:00"),{day:"numeric",month:"short"})+" – "+format(new Date(stage.fin+"T12:00:00"),{day:"numeric",month:"short"})));
+      card.appendChild(elem("h3","",stage.titre));
+      card.appendChild(elem("p","",stage.description));
+      if(current)card.appendChild(elem("span","current-note","Période actuelle"));
+      target.appendChild(card);
+    });
+  }
   function refreshToday() {
     var newToday=new Date();
     if (key(newToday)===key(today))return;
     today=newToday;
     document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+    renderGoals();
     render();
   }
   document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   document.getElementById("previous").addEventListener("click",function(){weekStart=plus(weekStart,-7);dayIndex=0;render();});
   document.getElementById("following").addEventListener("click",function(){weekStart=plus(weekStart,7);dayIndex=0;render();});
-  document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=cycleWeek(now);dayIndex=cycleDay(now,weekStart);render();});
+  document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=monday(now);dayIndex=(now.getDay()+6)%7;render();});
   document.getElementById("days").addEventListener("click",function(event){var button=event.target.closest("button[data-day]");if(button){dayIndex=Number(button.dataset.day);render();}});
+  renderGoals();
   render();
   // Une page laissée ouverte pendant la nuit affiche la nouvelle date sans rechargement.
   setInterval(refreshToday,60000);
   document.addEventListener("visibilitychange",function(){if(document.visibilityState!=="visible")return;
     refreshToday();
     var script=document.createElement("script");script.src="./programme.js?maj="+Date.now();
-    script.onload=function(){script.remove();render();};script.onerror=function(){script.remove();};
+    script.onload=function(){script.remove();renderGoals();render();};script.onerror=function(){script.remove();};
     document.head.appendChild(script);
   });
 }());
