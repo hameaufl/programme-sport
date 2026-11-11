@@ -13,6 +13,14 @@ Ce document est un guide de prise en main **sans historique de discussion**. Le 
 7. [README.md](../README.md) — documentation générale.
 8. [index.html](../index.html), [programme.js](../programme.js) — réalité du code.
 
+## Attribution de rôle au moment de cette passation
+
+Le propriétaire a désigné **l'agent en charge des développements de ce chantier comme Maturation uniquement**, pas Coach. Un futur agent doit vérifier quel rôle lui est attribué, et ne pas s'approprier le coaching par défaut.
+
+Le journal des sensations de chaque séance est **local au navigateur** : `localStorage["mon-rythme-sensations-v1"]`, **non accessible via GitHub**. Les coches « Fait » sont enregistrées séparément sous `mon-rythme-suivi-v1`. Les deux vues doivent permettre de retrouver la même note de séance.
+
+**Pièce attendue :** bilan du podologue (posture et appuis des pieds), non fourni à ce stade. À réception, ne pas inférer de données cliniques ; valider la destination et la visibilité du stockage avant tout ajout au dépôt public.
+
 ## Première intervention de l'agent
 
 - Reformuler uniquement la demande en cours, sans lancer une refonte non demandée.
