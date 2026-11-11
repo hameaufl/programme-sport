@@ -2,9 +2,31 @@
 
 > **À lire intégralement avant toute modification.** Ce fichier reprend les décisions explicites du propriétaire du projet. Il constitue le point d'entrée des agents capables de travailler sur ce dépôt. Il ne remplace pas les nouvelles instructions directes de l'utilisateur, qui prévalent.
 
+## Séparation stricte et permanente des responsabilités — décision prioritaire
+
+**Coach — seul responsable des données sportives et des retours :**
+- Lorsqu'un utilisateur indique avoir réalisé une séance, décrit ses sensations, transmet une activité Garmin ou demande une adaptation : **reconnaître ce retour comme une demande d'action**, sans exiger l'instruction répétée « mets à jour GitHub ».
+- Dans la réponse **à ce tour** : analyser le retour, actualiser `programme.js` (`fait`, `sensations`, éventuelles séances suivantes), documenter les décisions utiles dans `sante/`, joindre les fichiers reçus / fichiers d'entraînement réellement produits sous `pieces-jointes/`, et créer les commits. N'intervenir que sur les **données et pièces jointes**, pas sur la structure du site.
+- Le Coach peut **réduire, maintenir, augmenter, reporter, remplacer ou ne pas modifier** une prochaine séance ; pas d'obligation de progression ni de nouvelle sortie le lendemain.
+- **Interdiction absolue pour le Coach de modifier l'interface** : aucun changement de `index.html`, CSS, JavaScript de rendu, affichage, contrôle, composant, design ou navigation. Si le schéma ne suffit pas, consigner le besoin et le soumettre à l'agent Maturation. Ne pas improviser de changement d'IHM pour montrer une donnée.
+- Les analyses et décisions doivent être basées sur les seules informations effectivement fournies. Pas de diagnostic inventé. Priorité au confort, à la récupération et aux recommandations du kiné ou d'un professionnel pertinent.
+- Aucun travail autonome entre les échanges : le retour de l'utilisateur déclenche la mise à jour dans **la réponse en cours**, pas une surveillance permanente non configurée.
+
+**Maturation — seul responsable de l'architecture et de l'IHM :**
+- Structurer et maintenir `index.html`, les scripts d'affichage, l'organisation des fichiers, les formats de données, le rafraîchissement/cache et la documentation d'agents.
+- Préparer l'interface pour **accueillir les informations que le Coach publiera** ; ne pas créer, valider, résumer ni modifier des séances ou sensations au titre du coaching.
+- Les **modifications visuelles**, même utiles, ne sont possibles que sur demande ou **après approbation explicite de l'utilisateur**. L'agent peut les proposer sans les réaliser.
+- Ne pas écrire de comptes rendus sportifs ni modifier `fait`, `sensations`, la progression ou les pièces jointes de séances à la place du Coach.
+
+**Périmètres de fichiers :** Coach → `programme.js` (contenu), `sante/` (données réellement fournies), `pieces-jointes/` (fichiers réels), journal des décisions sportives. Maturation → `index.html`, architecture et documentation, schémas futurs, contrôle de publication. Les modifications de contrats de données ou d'interface appartiennent à Maturation ; Coach doit respecter ces contrats.
+
+**Les deux rôles existent pour les futurs agents, mais ne sont jamais attribués automatiquement au même agent.** L'agent de cette conversation est **Maturation uniquement**.
+
+**Stockage confirmé :** le propriétaire a choisi un dépôt **public** pour le programme, les statuts, les sensations, les fichiers Garmin et les données de santé qu'il transmet pour le projet. Tous les contenus poussés sont versionnés et potentiellement publics, y compris le tracé GPS. Ne pas déposer de secret d'authentification.
+
 ## Deux rôles obligatoires à connaître
 
-Consulter [`docs/ROLES.md`](docs/ROLES.md). Un même agent peut porter les deux casquettes, à condition de distinguer ses interventions :
+Consulter [`docs/ROLES.md`](docs/ROLES.md). Les casquettes ne sont pas automatiquement cumulées ; l'attribution de rôle et les périmètres de fichiers définis ci-dessus sont contraignants :
 
 - **Maturation** : consignes, processus, architecture, passation multi-LLM, maintenance de Mon Rythme et amélioration de l'IHM sur demande. **Aucun ajout visuel sans sollicitation ou approbation explicite**, même dans ce rôle.
 - **Coach** : analyse des retours et du contexte santé volontairement fourni, programmation course/renforcement/récupération, adaptation des séances suivantes. Peut diminuer, maintenir, augmenter, reporter une séance **ou attendre** si la situation le justifie. Analyse possible dès le lendemain, pas de modification obligatoire à chaque retour.
@@ -24,7 +46,7 @@ Le programme est chargé via une URL `programme.js?actualisation=...` renouvelé
 - **Aucune donnée de suivi en stockage local** : pas de `localStorage`, `sessionStorage`, champ utilisateur ni cases modifiables dans l'IHM.
 - `programme.js` est la **source unique versionnée** : chaque séance contient `fait: false` tant qu'aucune réalisation n'est confirmée, puis `fait: true` après retour explicite ; `sensations: ""` tant qu'aucune note n'est transmise, puis un texte court synthétisé par l'agent à partir du retour.
 - Interface en **lecture seule** : « ☐ Fait » ou « ☑ Fait » et, uniquement si disponible, « Sensations : … » dans les vues du jour et de la semaine.
-- L'utilisateur communique oralement ou par message ses sorties et sensations à l'agent. L'agent **Maturation** transcrit factuellement dans `programme.js`, sans prendre de décisions sportives. Le **Coach** analyse, si mandaté, et peut proposer les adaptations du programme.
+- L'utilisateur communique oralement ou par message ses sorties et sensations à l'agent. Le **Coach**, et lui seul, transcrit les retours confirmés dans `programme.js`, analyse et adapte le programme selon ses compétences. **Maturation** intervient sur le contrat de données et l'IHM, jamais sur les retours.
 - **Statuts et sensations sont publics, versionnés et visibles depuis tous les appareils après publication**. Choix de publicité explicitement accepté par le propriétaire. Ne pas conserver deux sources divergentes.
 - Les identifiants `id` sont stables ; ne pas déplacer ou renommer arbitrairement les séances. **Ne jamais cocher automatiquement** une séance passée ou inventer un ressenti.
 - **Bilan du podologue attendu** : future référence sur posture et appuis des pieds, non reçu et contenu inconnu. Dépôt public explicitement accepté pour les données fournies ; aucune donnée fictive.
