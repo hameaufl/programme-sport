@@ -1,6 +1,6 @@
 # Reprendre le projet avec un nouvel agent
 
-Ce document est un guide de prise en main **sans historique de discussion**. Le dépôt est public : il ne doit contenir aucun secret.
+Ce document est un guide de reprise **sans historique de discussion**. Le dépôt est public, et le propriétaire a expressément consenti au versionnement public des statuts et informations de santé qu'il transmet. Aucune donnée inventée ni aucun secret d'authentification.
 
 ## Chemin de lecture obligatoire
 
@@ -17,16 +17,16 @@ Ce document est un guide de prise en main **sans historique de discussion**. Le 
 
 Le propriétaire a désigné **l'agent en charge des développements de ce chantier comme Maturation uniquement**, pas Coach. Un futur agent doit vérifier quel rôle lui est attribué, et ne pas s'approprier le coaching par défaut.
 
-Le journal des sensations de chaque séance est **local au navigateur** : `localStorage["mon-rythme-sensations-v1"]`, **non accessible via GitHub**. Les coches « Fait » sont enregistrées séparément sous `mon-rythme-suivi-v1`. Les deux vues doivent permettre de retrouver la même note de séance.
+Le suivi est **100 % statique dans `programme.js`** : `fait: false/true` et `sensations: "..."`. Les deux vues présentent ces données en lecture seule. **Aucune saisie, case interactive ou donnée sauvegardée sur l'appareil**.
 
-**Pièce attendue :** bilan du podologue (posture et appuis des pieds), non fourni à ce stade. À réception, ne pas inférer de données cliniques ; valider la destination et la visibilité du stockage avant tout ajout au dépôt public.
+**Pièce attendue :** bilan du podologue (posture et appuis des pieds), non fourni à ce stade. Le propriétaire a validé le stockage public versionné ; à réception, reprendre uniquement les données réellement communiquées.
 
 ## Première intervention de l'agent
 
 - Reformuler uniquement la demande en cours, sans lancer une refonte non demandée.
 - Vérifier les fichiers actuels sur la branche `main` et leur contenu avant d'écrire.
 - Respecter exactement les intitulés et dates de séances existants, sauf instruction contraire.
-- Vérifier les identifiants de séances `id` : les coches locales dépendent de leur stabilité. **Ne pas régénérer les identifiants** en renommant les séances.
+- Vérifier les identifiants `id` stables : ils relient les séances à leurs comptes rendus versionnés. **Ne pas régénérer les identifiants** en renommant les séances.
 - Vérifier la semaine civile du lundi au dimanche et l'ouverture sur la semaine courante.
 - Ne pas ajouter de nouvelle zone, illustration, texte décoratif, bouton, graphique ou pied de page de sa propre initiative.
 - Si une amélioration visuelle semble utile, la suggérer sans l'implémenter, jusqu'à approbation.
@@ -37,26 +37,26 @@ Le journal des sensations de chaque séance est **local au navigateur** : `local
 
 - **Maturation** : continuité du projet, architecture, cache, documentation, interface uniquement à la demande. Aucun ajout graphique sans approbation.
 - **Coach** : décisions de séances basées sur les retours et l'historique disponible ; possible maintien, baisse, hausse, repos, report ou attente. Réexamen dès le lendemain si utile, sans obligation d'intervenir automatiquement.
-- **Santé versionnée** : l'utilisateur veut conserver un contexte historique dans Git, mais le dépôt actuel est public. Aucun antécédent réel n'est encore renseigné. Avant d'y intégrer des informations médicales, confirmer le choix de visibilité ou l'existence d'un dépôt privé. Ne jamais fabriquer les données.
+- **Santé versionnée** : le propriétaire a **explicitement accepté la visibilité publique** du dépôt. Les modèles sont encore vides. Ajouter uniquement ses bilans et retours réellement fournis, sans diagnostics inventés.
 - **Cache Android** : `programme.js` doit être relu à l'ouverture avec une URL renouvelée et au retour au premier plan ; distinguer cela de la mise en cache de `index.html` ou d'un déploiement non achevé.
 
 ## Ajouter ou modifier une séance
 
-Les données sont dans `programme.js`, variable `window.MON_RYTHME_PROGRAMMES`, avec une clé par **lundi** au format AAAA-MM-JJ et un tableau de séances sous chaque clé. Chaque séance a `date`, `titre`, `id` et éventuellement `type`, `duree`, `details`, `objectif`, `etapes`.
+Les données sont dans `programme.js`, variable `window.MON_RYTHME_PROGRAMMES`, avec une clé par **lundi** au format AAAA-MM-JJ et un tableau de séances sous chaque clé. Chaque séance a `date`, `titre`, `id`, `fait` (booléen, `false` jusqu'au retour confirmant la réalisation), `sensations` (texte court, `""` si aucun retour), et éventuellement `type`, `duree`, `etapes`.
 
 - Les séances avec course utilisent `id: "course-AAAA-MM-JJ"`.
 - Les séances de kiné utilisent `id: "kine-AAAA-MM-JJ"` et `type:"kine"`.
-- Le suivi est enregistré dans `localStorage["mon-rythme-suivi-v1"]`, sur chaque appareil. Un nouveau `id` ferait perdre l'association avec l'ancienne coche.
+- Les statuts et notes sont **versionnés dans Git**, sous `fait` et `sensations`. `index.html` se contente de les afficher ; il n'y a plus de `localStorage`.
 - Si plusieurs séances de même type sont programmées le même jour, leurs identifiants devront être rendus uniques sans modifier ceux des séances déjà publiées.
 - **N'ajouter aucune heure fictive** ; les rendez-vous existants n'ont pas d'heures renseignées.
-- Ne jamais stocker les cases réalisées dans GitHub.
+- Après retour confirmé par le propriétaire, renseigner `fait: true` et résumer ses sensations dans `programme.js`, puis créer un commit. Sans retour : laisser `fait: false` et `sensations: ""`.
 
 ## Vérifications après modification
 
 1. `programme.js` reste du JavaScript valide ; les semaines et dates correspondent.
 2. `index.html` s'ouvre sans erreur JavaScript et reste utilisable sur petit écran.
-3. Les cases « Fait » peuvent être cochées/décochées dans le détail du jour et la liste de la semaine ; les deux présentations reflètent la même donnée.
-4. Après rechargement, le suivi local est conservé ; pas de synchronisation interappareil.
+3. Les indicateurs « ☐ Fait » / « ☑ Fait » et les sensations sont **en lecture seule** et identiques dans le détail du jour et la liste de la semaine.
+4. Les statuts et notes proviennent de `programme.js`, actualisé avec paramètre anti-cache ; **aucun stockage local de suivi**. Vérifier l'affichage identique sur les appareils après publication.
 5. La date et le bouton « Semaine en cours » restent dynamiques ; le chargement initial de `programme.js` ajoute un paramètre anti-cache.
 6. Le site n'a reçu **aucun ajout visuel non approuvé**.
 7. Pour la mise en ligne, distinguer **commit sur main**, **déploiement Pages** et **vérification réelle de l'URL**.
