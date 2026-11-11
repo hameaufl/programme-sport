@@ -5,7 +5,7 @@
  * affichées comme rendez-vous distincts des sorties de course.
  * L'interface regroupe les séances par SEMAINES CIVILES (lundi-dimanche),
  * sans déplacer les dates de course ou de kiné. Le cycle de course reste
- * du 11 novembre au 14 décembre. Les coches de suivi restent exclusivement en local dans le navigateur.
+ * du 11 novembre au 14 décembre. Les statuts fait et les sensations sont publics et versionnés dans ce fichier, sans stockage local.
  *
  * Modes EXACTS disponibles sur le bracelet :
  *  2M+3C : 3 × (2 min M + 3 min C) + 2 min M = 17 min, 9 min de course.
@@ -25,7 +25,9 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-04",
       "titre": "Kiné · Genoux",
       "type": "kine",
-      "id": "kine-2026-11-04"
+      "id": "kine-2026-11-04",
+      "fait": false,
+      "sensations": ""
     }
   ],
   "2026-11-09": [
@@ -33,7 +35,9 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-09",
       "titre": "Kiné · Genoux",
       "type": "kine",
-      "id": "kine-2026-11-09"
+      "id": "kine-2026-11-09",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-11-11",
@@ -44,7 +48,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-11"
+      "id": "course-2026-11-11",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-11-13",
@@ -55,7 +61,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-13"
+      "id": "course-2026-11-13",
+      "fait": false,
+      "sensations": ""
     }
   ],
   "2026-11-16": [
@@ -68,7 +76,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-16"
+      "id": "course-2026-11-16",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-11-18",
@@ -79,13 +89,17 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-18"
+      "id": "course-2026-11-18",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-11-18",
       "titre": "Kiné · Genoux",
       "type": "kine",
-      "id": "kine-2026-11-18"
+      "id": "kine-2026-11-18",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-11-20",
@@ -96,7 +110,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-20"
+      "id": "course-2026-11-20",
+      "fait": false,
+      "sensations": ""
     }
   ],
   "2026-11-23": [
@@ -109,7 +125,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-23"
+      "id": "course-2026-11-23",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-11-25",
@@ -120,7 +138,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-25"
+      "id": "course-2026-11-25",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-11-27",
@@ -131,7 +151,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-27"
+      "id": "course-2026-11-27",
+      "fait": false,
+      "sensations": ""
     }
   ],
   "2026-11-30": [
@@ -144,7 +166,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-11-30"
+      "id": "course-2026-11-30",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-12-02",
@@ -155,7 +179,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-12-02"
+      "id": "course-2026-12-02",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-12-04",
@@ -166,7 +192,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-12-04"
+      "id": "course-2026-12-04",
+      "fait": false,
+      "sensations": ""
     }
   ],
   "2026-12-07": [
@@ -179,7 +207,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-12-07"
+      "id": "course-2026-12-07",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-12-09",
@@ -190,7 +220,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-12-09"
+      "id": "course-2026-12-09",
+      "fait": false,
+      "sensations": ""
     },
     {
       "date": "2026-12-11",
@@ -201,7 +233,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "2 min de marche finale",
         "Allure facile"
       ],
-      "id": "course-2026-12-11"
+      "id": "course-2026-12-11",
+      "fait": false,
+      "sensations": ""
     }
   ],
   "2026-12-14": [
@@ -215,7 +249,9 @@ window.MON_RYTHME_PROGRAMMES = {
         "Allure facile",
         "Option si très à l'aise : 3 min marche + 21 min course continue + 3 min marche"
       ],
-      "id": "course-2026-12-14"
+      "id": "course-2026-12-14",
+      "fait": false,
+      "sensations": ""
     }
   ]
 };
