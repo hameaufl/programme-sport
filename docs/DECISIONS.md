@@ -147,3 +147,13 @@
 - Ajout d'un méta-identifiant HTML invisible `mon-rythme-version` et d'un fichier de diagnostic **`publication.txt`** (version `2026-11-11-statique-fait-sensations-v1`). Aucun nouvel élément visuel.
 - Si les deux fichiers du dépôt sont à jour mais que le site reste ancien : vérifier dans **Settings → Pages** la source de publication (`main`, `/(root)` si publication depuis une branche) et dans **Actions** les exécutions `pages build and deployment`. Une URL HTML avec paramètre unique peut exclure un cache navigateur simple, mais ne remplace pas la vérification du déploiement.
 - **Aucune modification des données sportives**, des dates, du suivi `fait` ou `sensations` lors de cette vérification.
+
+## 17. Correction de la publication Pages — diagnostic du 11 novembre 2026
+
+- **Preuve utilisateur** : `publication.txt` renvoie un **404 sur GitHub Pages** et l'ancienne IHM avec cases interactives reste affichée après effacement du cache.
+- **Constat API GitHub** : `main` inclut bien le HTML de lecture seule et le témoin, mais le workflow classique **`pages build and deployment`** a généré **de nombreux `startup_failure` avec zéro job**, et plusieurs exécutions `queued`. Le plus récent succès identifié pour ce workflow était le run n°45 (11 novembre vers 00:32 UTC), avant les nombreuses modifications du soir.
+- GitHub documente une limite souple de **10 builds Pages par heure** lorsqu'on publie depuis une branche. **Hypothèse contributive**, pas diagnostic entièrement établi : le premier échec de la série survient après une longue période sans build, sans logs d'exécution exploitables.
+- **Correctif technique Maturation** : création de `.github/workflows/publier-pages.yml` pour publication **personnalisée via GitHub Actions**, indépendamment de cette limite spécifique, avec filtres de chemins et `concurrency.cancel-in-progress: true`. Seuls les fichiers utiles au site sont publiés.
+- **Action du propriétaire nécessaire** : `Settings → Pages → Build and deployment → Source : GitHub Actions`. L'outil GitHub disponible ne permet pas de modifier ce réglage. Si nécessaire, `Actions → Publier Mon Rythme → Run workflow` sur `main`.
+- **Non confirmé à ce stade** : déploiement du site via le nouveau workflow, vérification externe du témoin et rafraîchissement effectif Android. Ne pas prétendre que la seule présence du YAML a résolu le problème.
+- **Aucun changement** du programme sportif, des 18 statuts ou de leurs sensations, ni de la présentation visuelle.

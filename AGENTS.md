@@ -16,6 +16,13 @@
 
 ## Contrôle des versions publiées
 
+- **Workflow personnalisé mis en place :** `.github/workflows/publier-pages.yml`, avec `actions/configure-pages`, `actions/upload-pages-artifact`, `actions/deploy-pages`. **Il ne devient la voie effective de publication qu'après choix « Settings → Pages → Source : GitHub Actions »** par le propriétaire ; l'agent connecté ne dispose pas de la commande d'administration correspondante.
+- Le workflow ne se déclenche automatiquement que si les **fichiers du site** (ou le workflow) changent sur `main` ; un commit de documentation seule n'entraîne pas de redéploiement personnalisé. Les publications concurrentes du même workflow sont annulées pour privilégier la dernière.
+- **Dépassement de quota possible mais non prouvé** : GitHub Pages classique a une limite souple de 10 builds/heure. Les runs `pages build and deployment` du 11/11/2026 ont affiché `startup_failure` sans job ; le premier échec est survenu après une longue pause, donc ne pas attribuer catégoriquement tous les échecs au quota. La nouvelle voie personnalisée contourne la limite spécifique des builds classiques, sous réserve que GitHub Actions soit opérationnel.
+- Le workflow publie **seulement** `index.html`, `programme.js`, le manifeste, les icônes, le favicon et `publication.txt`. `docs/` et `sante/` restent publics **sur GitHub** mais ne sont pas copiés dans les fichiers du site Pages.
+- Après le changement de source, vérifier le workflow [Publier Mon Rythme](https://github.com/hameaufl/programme-sport/actions/workflows/publier-pages.yml), lancer `Run workflow` si besoin, puis contrôler `publication.txt` et la disparition des cases interactives. Ne pas annoncer la publication sans `success` et vérification de la page.
+
+
 - Un site Android peut conserver une ancienne version de `index.html` même si `programme.js` est demandé avec un paramètre anti-cache. La présence d'anciennes cases interactives indique que **le HTML servi est ancien** (le `index.html` de `main` présente les statuts en lecture seule).
 - Un fichier technique `publication.txt` à la racine indique une **version cible de publication** ; contrôler son apparition à l'URL Pages correspondante. Il ne prouve pas à lui seul que le HTML et tous les fichiers sont alignés.
 - Vérifier `Settings → Pages` (source de publication, branche `main`, dossier `/(root)` si publication depuis une branche) et `Actions → pages build and deployment` si une version reste ancienne ; ne pas changer ces paramètres sans justification.

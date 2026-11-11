@@ -48,6 +48,13 @@ Dans `programme.js`, `window.MON_RYTHME_PROGRAMMES` est indexé par le **lundi d
 
 ## Publication systématique et diagnostic Pages
 
+**Publication moderne installée :** `.github/workflows/publier-pages.yml`, déploiement de fichiers statiques via `actions/upload-pages-artifact@v4` et `actions/deploy-pages@v4`. Le propriétaire doit régler **Settings → Pages → Build and deployment → Source : GitHub Actions**, car les outils du connecteur GitHub ne permettent pas l'administration Pages. En cas de changement de source après la création du workflow : lancer **Actions → Publier Mon Rythme → Run workflow** sur `main` si aucun déploiement récent n'a réussi.
+
+**Point important au diagnostic :** il y a eu de nombreuses exécutions de la voie classique avec `startup_failure` et zéro job. La limite classique de 10 builds/heure est une **hypothèse de contribution**, pas une cause démontrée pour chaque échec (le premier était précédé de plusieurs heures sans builds). Vérifier le nouveau workflow et l'état GitHub Actions avant toute conclusion.
+
+**Déclenchement ciblé :** le workflow personnalisé se lance pour les changements `index.html`, `programme.js`, manifeste, icônes, favicon, témoin et YAML ; pas pour une mise à jour documentaire seule. Cela préserve l'obligation de **committer toutes les décisions** sans créer un build à chaque retouche de texte. Les fichiers du dossier santé restent dans GitHub public mais ne sont pas copiés dans le site publié par ce workflow.
+
+
 **Après toute demande de changement ou toute décision pertinente au projet :**
 - Exécuter et committer les changements autorisés dans le **même échange** : `main` est la source de vérité du dépôt.
 - Documenter systématiquement la décision et l'action dans `docs/DECISIONS.md` et `docs/JOURNAL.md` ; si une décision ne mène à aucun changement de code, consigner le résultat / blocage.

@@ -4,6 +4,21 @@ Site statique en français, adapté à l'ordinateur et au raccourci Android stan
 
 ## Publication et diagnostic Android
 
+### Correctif au blocage des déploiements Pages
+
+GitHub Actions a signalé de nombreux `startup_failure` pour le workflow **« pages build and deployment »** de la publication classique. Leur cause exacte n'est pas attestée par des logs (aucune tâche n'a démarré) ; la limite souple GitHub Pages de **10 builds/heure** peut contribuer, mais ne suffit pas à expliquer tous les cas.
+
+**Un workflow personnalisé est désormais dans [`.github/workflows/publier-pages.yml`](.github/workflows/publier-pages.yml)** : publication des seules ressources du site, annulation des publications concurrentes et aucun déclenchement sur modification exclusive des documents. Cette voie n'est pas soumise à la limite spécifique des builds Pages classiques.
+
+**Action manuelle requise une seule fois (si Source n'est pas déjà « GitHub Actions ») :**
+1. Ouvrir [Settings → Pages](https://github.com/hameaufl/programme-sport/settings/pages).
+2. Dans **Build and deployment → Source**, choisir **GitHub Actions** au lieu de **Deploy from a branch**, puis enregistrer.
+3. Ouvrir [Actions → Publier Mon Rythme](https://github.com/hameaufl/programme-sport/actions/workflows/publier-pages.yml). Si aucun déploiement réussi de la dernière version : **Run workflow**, branche `main`.
+4. Contrôler que le workflow aboutit à **success**, puis le [témoin de publication](https://hameaufl.github.io/programme-sport/publication.txt) et la [page](https://hameaufl.github.io/programme-sport/).
+
+Les permissions du connecteur GitHub utilisé dans ce projet **ne permettent pas de changer directement la source Pages**. Le simple ajout du YAML ne garantit pas un déploiement. Aucun changement visuel ni aucune modification des séances.
+
+
 - **Règle permanente :** chaque décision ou modification du projet est appliquée et **poussée sur `main` pendant l'échange**, puis consignée dans `docs/DECISIONS.md` et `docs/JOURNAL.md`. Les comptes rendus de sport relèvent du Coach ; architecture / IHM / règles relèvent de Maturation.
 - La version cible du site est **`2026-11-11-statique-fait-sensations-v1`**, inscrite dans la métadonnée invisible `mon-rythme-version` de `index.html`.
 - [Témoin de publication Pages](https://hameaufl.github.io/programme-sport/publication.txt?v=20261111) : doit indiquer cette version si le déploiement correspondant est disponible.

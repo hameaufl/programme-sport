@@ -158,6 +158,15 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Commits partiels vérifiés** : `b15c375` (consignes), `02f39af` (meta HTML), `264a6fb` (témoin), `bf37df5` (décision), `bcebf98` (reprise).
 - **Limites** : pas de preuve de la version actuellement servie par Pages, ni de test physique Android. Le témoin `publication.txt` ne garantit pas qu'un `index.html` plus récent a été publié ; un cache HTML ou un déploiement ancien demeurent possibles.
 
+### 11 novembre 2026 — Dépannage de la chaîne GitHub Pages
+
+- **Capture et problème** : `publication.txt` renvoie 404 et le site affiche encore l'ancienne interface interactive.
+- **Diagnostic GitHub Actions** : processus classique `pages build and deployment`, environ 92 exécutions, nombreuses `startup_failure` avec **0 job** et plusieurs en attente. Dernier succès relevé : n°45 vers 00:32 UTC ; la première erreur de la série intervient après une longue pause. La limitation Pages de 10 builds/heure pourrait contribuer mais **n'explique pas nécessairement toutes les erreurs** ; cause exacte non accessible dans les logs.
+- **Action réalisée** : création du workflow personnalisé `.github/workflows/publier-pages.yml`, commit `89977383bab00a0c6bbff9c712129cbebfb348b8`, pour publier uniquement les fichiers du site sur push des ressources et ignorer les commits documentaires.
+- **Étape manuelle indispensable** : GitHub `Settings → Pages → Source : GitHub Actions` (si ancien réglage `Deploy from a branch`), puis vérifier ou lancer le workflow via `Actions → Publier Mon Rythme → Run workflow`. Le connecteur GitHub n'a pas la permission d'administrer cette option.
+- **Contrôle restant** : attendre un **success** réel du workflow personnalisé, vérifier `publication.txt`, puis vérifier que `index.html` n'affiche aucune case interactive. Pas de test physique de l'Android.
+- **Périmètre respecté** : intervention Maturation seulement ; aucun changement de séance, de sensations ou d'éléments visuels.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
