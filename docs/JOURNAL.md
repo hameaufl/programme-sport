@@ -82,7 +82,8 @@
 - **Aucune donnée de santé inventée ou modifiée** : les modèles restent non renseignés ; rendu en lecture seule et sans copie pérenne du programme.
 - **Workflow** : publication des deux pages et des fichiers Markdown sous leur chemin original ; tests prépublication de navigation, de syntaxe, de fichiers présents, et `noindex` des deux pages.
 - **Version HTML** : `2026-11-11-suivi-sante-v6`.
-- **À confirmer** : réussite de GitHub Actions et apparence réelle sur Android ; attendre les retours du propriétaire pour itérer.
+- **Vérification GitHub Actions :** [run 43113273035](https://github.com/hameaufl/programme-sport/actions/runs/43113273035), `completed / success`. Contrôles prépublication, artefact et déploiement des deux pages réussis.
+- **Commit de création** : `60cf51dfbef414529dd468d967d879c3963921d4`. Affichage sur Android et chargement effectif depuis le téléphone non vérifiés.
 
 ## Journal futur
 
