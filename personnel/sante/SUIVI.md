@@ -1,8 +1,19 @@
 # Suivi santé chronologique — modèle public et versionné
 
-**Aucun compte rendu réel saisi à ce jour.** Le propriétaire accepte la publication publique des informations de santé qu'il transmet au projet.
+**Premier compte rendu réel consigné : séance de kiné du 4 novembre 2026 (retour reçu le 11 novembre).** Le propriétaire accepte la publication publique des informations de santé qu'il transmet au projet.
 
 **Seul le Coach** renseigne les retours et la suite sportive ; **Maturation ne rédige jamais les comptes rendus** ni les programmes.
+
+## 4 novembre 2026 — Première séance de kiné · Genoux
+
+- **Identifiant :** `kine-2026-11-04`
+- **Prévu :** première séance de kinésithérapie des genoux.
+- **Réalisé :** étirements du genou réalisés par le kinésithérapeute ; échange avec celui-ci sur les ressentis du patient (détails non transmis) ; exercices de renforcement, dont presse à 40 et 50 kg et déplacement latéral « en crabe » avec un gros élastique autour des cuisses ; étirements.
+- **Durée :** non précisée.
+- **Sensations / limite rapportée :** douleurs lors de la presse avec des charges supérieures à 50 kg ; aucun autre ressenti détaillé communiqué. Ne pas interpréter ces valeurs comme un diagnostic ou comme une charge maximale validée.
+- **Après la séance / récupération :** non renseignées.
+- **Décision Coach au 11 novembre :** marquer la séance comme réalisée ; maintenir provisoirement le programme de course, sans augmentation sur ce seul compte rendu ancien, dans l'attente des sensations actuelles et des retours des autres séances. Ne pas forcer en présence de douleur ; discuter des charges douloureuses avec le kinésithérapeute.
+- **Source :** compte rendu oral de l'utilisateur transmis le 11 novembre 2026 sur la séance du 4 novembre.
 
 ## Modèle d'entrée (à compléter pour un retour effectivement reçu)
 

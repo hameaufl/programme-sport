@@ -48,3 +48,8 @@
 - Les documents techniques dans `docs/` n'ont pas vocation à reproduire les données sportives.
 - Le Coach modifie les données personnelles et commit ; GitHub Actions publie automatiquement sur push vers `main`.
 - Les données restent publiques par décision explicite du propriétaire ; aucun bilan ni compte rendu réel n'a encore été transmis.
+
+## 11 novembre 2026 — Traitement du compte rendu de la première séance de kiné
+
+- Retour reçu pour la séance du **4 novembre** : statut réalisé dans `personnel/programme.js` et faits consignés dans `personnel/sante/SUIVI.md`.
+- Décision Coach : **maintenir provisoirement** le programme de course sans augmentation sur la base de ce seul retour rétrospectif. Réévaluer selon les sensations actuelles et les prochains comptes rendus, tout particulièrement la présence éventuelle de douleurs. Aucune autre séance considérée réalisée sans retour explicite.

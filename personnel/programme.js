@@ -27,8 +27,8 @@ window.MON_RYTHME_PROGRAMMES = {
       "titre": "Kiné · Genoux",
       "type": "kine",
       "id": "kine-2026-11-04",
-      "fait": false,
-      "sensations": ""
+      "fait": true,
+      "sensations": "Première séance : étirements du genou, échanges sur les ressentis et renforcement. Presse à 40 et 50 kg, douleurs aux charges supérieures ; marche en crabe avec gros élastique autour des cuisses."
     }
   ],
   "2026-11-09": [

@@ -71,3 +71,10 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 
 - Déplacement vers `personnel/` de la source du programme, du dossier santé et de l'espace Garmin ; aucune donnée de séance modifiée.
 - Les rapports ultérieurs et décisions de coaching seront consignés ici.
+
+## 11 novembre 2026 — Premier compte rendu réel reçu (kiné du 4 novembre)
+
+- L'utilisateur confirme la réalisation de sa première séance « Kiné · Genoux » du 4 novembre (`kine-2026-11-04`).
+- Compte rendu détaillé factuel consigné dans `personnel/sante/SUIVI.md` ; résumé et statut « Fait » mis à jour dans `personnel/programme.js`.
+- **Décision Coach :** aucun changement automatique de dates ou de séances de course. Attendre des informations sur l'état actuel des genoux et les autres activités avant toute progression ; ne pas forcer à une charge qui provoque la douleur.
+- Aucun autre rendez-vous ni sortie noté réalisé faute de confirmation.
