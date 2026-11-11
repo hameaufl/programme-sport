@@ -34,3 +34,12 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - La brièveté est une préférence par défaut : **le Coach peut fournir le détail d'une séance** à la demande ou lorsque celui-ci est utile (étapes, durée, progression et récupération pertinentes). Ne pas supprimer ces précisions au seul motif d'être très concis.
 - Le Coach ne commente toujours pas les interventions de Maturation étrangères à son métier.
 - Cette règle porte uniquement sur le **contenu des réponses du Coach** ; aucun nouvel élément graphique dans le site, aucune modification sportive.
+
+## 11 novembre 2026 — Style de lancement du site depuis les réponses Coach
+
+- **Option 2 définitivement choisie** parmi les trois boutons proposés : bouton principal bien visible et lisible.
+- **Icône 5 « Parcours »**, correspondant à l'icône Lucide `route`, sélectionnée parmi quinze options ; elle évoque le chemin suivi à son rythme.
+- Format : **[icône Parcours] Ouvrir Mon Rythme [flèche de sortie]**, URL `https://hameaufl.github.io/programme-sport/`.
+- Afficher un **vrai bouton cliquable si l'interface de conversation le permet**, sinon un lien Markdown nommé ; ne pas faire croire qu'un simple texte crée un bouton.
+- La décision concerne **la réponse du Coach uniquement**, pas l'interface de Mon Rythme. Le Coach reste concis, centré sur le coaching et peut détailler une séance si nécessaire.
+- Aucun ajout de bouton dans le code HTML du site et aucune modification du programme personnel.

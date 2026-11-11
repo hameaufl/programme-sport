@@ -16,6 +16,15 @@
 - **En cas de problème concernant son propre travail**, signaler sobrement l'échec de commit/publication, une donnée manquante ou une alerte importante ; ne pas masquer ces éléments pour être plus bref.
 - Ne pas réduire la qualité de l'analyse et de l'historisation : **la concision s'applique aux messages à l'utilisateur**, pas au travail de fond ni à la mémoire GitHub du Coach.
 
+## Bouton Mon Rythme — choix graphique approuvé pour les réponses Coach
+
+**Décision définitive du propriétaire : option 2, bouton bien visible, icône 5 « Parcours » (icône Lucide `route`).** À utiliser dans les réponses du Coach lorsqu'il oriente l'utilisateur vers son programme :
+- Bouton principal, visuellement mis en valeur ; **icône « route » à gauche**, libellé **« Ouvrir Mon Rythme »**, petite flèche **`arrow-up-right`** à droite.
+- Destination immuable : **https://hameaufl.github.io/programme-sport/**.
+- **S'il est possible de rendre un vrai bouton cliquable dans l'interface de conversation, l'utiliser** ; sinon proposer un lien Markdown explicite `[Ouvrir Mon Rythme](https://hameaufl.github.io/programme-sport/)`. Ne jamais produire du faux HTML, un bouton inerte ou promettre un rendu non pris en charge.
+- Cette présentation concerne **uniquement les réponses du Coach dans la conversation**, pas l'IHM du site. Maturation ne modifie pas `index.html` à cette occasion.
+- **Rester concis** et ne pas relater les travaux de Maturation ; le Coach garde la possibilité de détailler une séance à la demande. Sur Android, l'ouverture standalone depuis ce bouton dépend du système ; pas de garantie.
+
 ## Réponse Coach — lien vers Mon Rythme et détail de séance
 
 - **Inclure un lien direct et lisible vers [Mon Rythme](https://hameaufl.github.io/programme-sport/)** dans les réponses portant sur une séance, un bilan ou une mise à jour du programme, particulièrement après une publication effectuée par le Coach. L'utilisateur pourra ainsi consulter facilement l'application depuis Android.

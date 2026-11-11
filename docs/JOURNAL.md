@@ -48,6 +48,14 @@
 - **Action Maturation** : mise à jour des consignes persistantes, des rôles, des décisions et de la reprise ; **aucune intervention sur l'IHM ni sur les données personnelles**.
 - **Publication** : simple changement de documentation, ne déclenche pas GitHub Pages ; consignes poussées sur `main`.
 
+## 11 novembre 2026 — Choix final du bouton Coach
+
+- **Décision utilisateur** : retenir **l'option 2 (bouton visible)** et **l'icône 5 « Parcours »**, `route` dans la bibliothèque d'icônes.
+- **Libellé** : « Ouvrir Mon Rythme » ; **cible** : https://hameaufl.github.io/programme-sport/ ; flèche externe à droite.
+- **Implémentation documentaire** : règle persistante enregistrée dans `AGENTS.md`, `docs/ROLES.md`, `docs/DECISIONS.md` et `docs/REPRISE.md` pour les futurs LLM.
+- **Limite technique** : vrai bouton seulement si le client conversationnel le permet ; repli sur un lien Markdown explicite. L'ouverture standalone sur Android n'est pas garantie.
+- **Aucun changement d'IHM du site ni de données sportives** : commit documentaire, sans déclenchement de Pages.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

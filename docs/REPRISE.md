@@ -17,6 +17,10 @@ Maturation maintient exclusivement structure/interface/tests et ne touche pas au
 
 Le site demeure **public** et le dépôt GitHub est consultable. Le `noindex` n'empêche pas l'accès direct ni la découverte des fichiers hors des moteurs qui respectent la règle.
 
+## Bouton approuvé pour les réponses du Coach
+
+Le propriétaire a **validé l'option 2** : bouton principal visible avec **icône « Parcours » (`route`)** à gauche, libellé **« Ouvrir Mon Rythme »**, petite flèche `arrow-up-right` à droite ; adresse : **https://hameaufl.github.io/programme-sport/**. Utiliser un vrai bouton cliquable si le client conversationnel le permet ; sinon lien Markdown du même nom. Ce choix ne justifie **aucun changement d'interface du site**.
+
 ## Lien à remettre à l'utilisateur
 
 Après un compte rendu ou une mise à jour sportive, le Coach fournit le lien [Mon Rythme](https://hameaufl.github.io/programme-sport/). Il peut expliquer **en détail une séance précise** si demandé ou pertinent, sans devenir verbeux pour autant. L'ouverture de l'application Android standalone depuis un lien reste dépendante du système et n'est pas garantie. Ne jamais ajouter de composant IHM à cette fin.

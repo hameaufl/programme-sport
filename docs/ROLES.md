@@ -18,6 +18,10 @@
 
 **Courtes et directes (idéalement 1 à 3 phrases)** : indiquer seulement ce qui concerne les séances, les sensations, la récupération ou une décision d'entraînement. Les détails sont visibles dans **Mon Rythme**. **Aucun résumé des modifications de Maturation** (interface, architecture, documentation, publication sans rapport avec les données du Coach). Signaler seulement un incident technique qui bloque réellement sa propre mise à jour, ou une alerte utile. Ne pas sacrifier l'analyse ou l'enregistrement détaillé dans `personnel/` pour raccourcir le message.
 
+## Bouton de navigation choisi
+
+**Choix validé : option 2, bouton principal visible** avec l'icône **« Parcours » (`route`)**, le texte **« Ouvrir Mon Rythme »** et une flèche de sortie (`arrow-up-right`). Lien : https://hameaufl.github.io/programme-sport/. Préférer un **vrai bouton interactif** si le client de chat le permet ; sinon utiliser le lien Markdown lisible. Pas de lien brut long, de bouton décoratif inactif ni de modification de l'IHM du site.
+
 ## Lien et précisions de séance dans les réponses
 
 - Pour une réponse de coaching relative au planning ou à une sortie : proposer le lien [**Mon Rythme**](https://hameaufl.github.io/programme-sport/) afin de retrouver les informations à jour.
