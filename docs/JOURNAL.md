@@ -40,6 +40,14 @@
 - **Action Maturation** : consigne ajoutée dans `AGENTS.md`, `docs/ROLES.md`, `docs/DECISIONS.md` et `docs/REPRISE.md`.
 - **Portée** : aucun changement de programme personnel, d'IHM ni du workflow GitHub Pages ; publication du site non déclenchée par ces seules modifications documentaires.
 
+## 11 novembre 2026 — Lien vers l'application dans les réponses Coach
+
+- **Demande** : le Coach peut joindre le lien direct du site dans ses réponses, afin que l'utilisateur l'ouvre depuis Android.
+- **Précision** : malgré sa concision, le Coach peut fournir les détails d'une séance quand c'est demandé ou pertinent.
+- **Limite** : ouverture standalone non garantie ; dépend du navigateur et d'Android.
+- **Action Maturation** : mise à jour des consignes persistantes, des rôles, des décisions et de la reprise ; **aucune intervention sur l'IHM ni sur les données personnelles**.
+- **Publication** : simple changement de documentation, ne déclenche pas GitHub Pages ; consignes poussées sur `main`.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

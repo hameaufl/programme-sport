@@ -26,3 +26,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Les détails complets sont poussés dans `personnel/` et consultables sur Mon Rythme ; **ne pas les répéter** dans le chat.
 - En cas de blocage effectif d'un commit ou d'une publication du Coach, ou d'une alerte importante, le signaler clairement et brièvement.
 - Cette décision concerne le **style de réponse du Coach**, non les décisions sportives et non l'obligation de versionner son travail.
+
+## 11 novembre 2026 — Lien vers Mon Rythme et détail de séance par le Coach
+
+- Le Coach **ajoute un lien** vers [Mon Rythme](https://hameaufl.github.io/programme-sport/) lorsqu'il répond à un retour de séance ou une modification du programme.
+- Ce lien peut ouvrir une application standalone installée sur Android ou le navigateur : **aucune promesse d'ouverture dans le lanceur**.
+- La brièveté est une préférence par défaut : **le Coach peut fournir le détail d'une séance** à la demande ou lorsque celui-ci est utile (étapes, durée, progression et récupération pertinentes). Ne pas supprimer ces précisions au seul motif d'être très concis.
+- Le Coach ne commente toujours pas les interventions de Maturation étrangères à son métier.
+- Cette règle porte uniquement sur le **contenu des réponses du Coach** ; aucun nouvel élément graphique dans le site, aucune modification sportive.

@@ -16,6 +16,14 @@
 - **En cas de problème concernant son propre travail**, signaler sobrement l'échec de commit/publication, une donnée manquante ou une alerte importante ; ne pas masquer ces éléments pour être plus bref.
 - Ne pas réduire la qualité de l'analyse et de l'historisation : **la concision s'applique aux messages à l'utilisateur**, pas au travail de fond ni à la mémoire GitHub du Coach.
 
+## Réponse Coach — lien vers Mon Rythme et détail de séance
+
+- **Inclure un lien direct et lisible vers [Mon Rythme](https://hameaufl.github.io/programme-sport/)** dans les réponses portant sur une séance, un bilan ou une mise à jour du programme, particulièrement après une publication effectuée par le Coach. L'utilisateur pourra ainsi consulter facilement l'application depuis Android.
+- Un clic sur ce lien **peut** ouvrir l'application installée en mode standalone ou un navigateur selon la configuration Android ; **ne jamais garantir** l'ouverture dans le raccourci du lanceur.
+- La concision reste la règle générale, **mais le Coach peut détailler une séance** lorsque l'utilisateur le demande ou que le déroulé, les durées, les étapes ou une précaution utile méritent d'être explicités. Éviter de forcer un format en 1–3 phrases pour un détail de séance demandé.
+- Se limiter strictement au métier du **Coach** : ne pas récapituler les modifications Maturation étrangères au coaching. En cas d'échec de sa propre publication, le signaler sans affirmer que le site est à jour.
+- Le lien est un élément de **réponse conversationnelle**, **pas une modification de l'IHM**. Ne pas créer de bouton ou composant dans `index.html` pour satisfaire cette règle.
+
 ## Deux casquettes exclusives
 
 **Maturation** : architecture, `index.html`, CSS, JS de rendu, `docs/`, `AGENTS.md`, `README.md`, validation et déploiement. **Jamais les données sportives réelles, sensations, statuts ou décisions de progression.**

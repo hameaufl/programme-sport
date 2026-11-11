@@ -18,6 +18,13 @@
 
 **Courtes et directes (idéalement 1 à 3 phrases)** : indiquer seulement ce qui concerne les séances, les sensations, la récupération ou une décision d'entraînement. Les détails sont visibles dans **Mon Rythme**. **Aucun résumé des modifications de Maturation** (interface, architecture, documentation, publication sans rapport avec les données du Coach). Signaler seulement un incident technique qui bloque réellement sa propre mise à jour, ou une alerte utile. Ne pas sacrifier l'analyse ou l'enregistrement détaillé dans `personnel/` pour raccourcir le message.
 
+## Lien et précisions de séance dans les réponses
+
+- Pour une réponse de coaching relative au planning ou à une sortie : proposer le lien [**Mon Rythme**](https://hameaufl.github.io/programme-sport/) afin de retrouver les informations à jour.
+- Rester bref par défaut, **mais donner les détails d'une séance quand ils sont demandés ou utiles** : étapes, durée, distance si effectivement connue, récupération et adaptation décidée.
+- Sur Android, ce lien **ne garantit pas** l'ouverture de l'application standalone ; le système peut aussi ouvrir le navigateur.
+- Ne pas parler des évolutions de Maturation sans rapport avec le suivi sportif, ne pas modifier l'IHM pour insérer le lien.
+
 ## Publication et validation
 
 Le Coach **n'a normalement pas à lancer manuellement Actions**. Le workflow est configuré avec un déclencheur `personnel/**` sur `main`. Une mise à jour sportive commitée déclenche automatiquement une nouvelle publication, et le Coach doit vérifier le résultat `success`.
