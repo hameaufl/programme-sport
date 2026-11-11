@@ -10,6 +10,13 @@ Un `robots.txt` dans ce sous-dossier GitHub Pages ne remplace pas les directives
 
 **Limites :** les directives sont respectées par les moteurs compatibles, mais n'offrent pas d'authentification ; les données de `personnel/`, les fichiers éventuels et le dépôt GitHub public peuvent être découverts ou partagés autrement. Une page déjà indexée pourra nécessiter une nouvelle exploration pour disparaître.
 
+## Deux vues de Mon Rythme
+
+- [Mon programme](https://hameaufl.github.io/programme-sport/) : calendrier et séances.
+- [Mon suivi santé](https://hameaufl.github.io/programme-sport/sante.html) : première interface de bilan de la reprise sportive, profil, journal et réalisations confirmées.
+
+La seconde page est **alimentée directement** par `personnel/programme.js` et les deux fichiers `personnel/sante/PROFIL.md` et `personnel/sante/SUIVI.md`, sans copier le contenu individuel dans le HTML. Les deux pages sont marquées `noindex`; les fichiers servis par Pages restent publics.
+
 ## Architecture sans doublon de données
 
 - **Construction :** `index.html`, [docs/](docs/REPRISE.md), [AGENTS.md](AGENTS.md), `scripts/`, `.github/`.

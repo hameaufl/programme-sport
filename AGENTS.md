@@ -1,5 +1,14 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Nouvelle page de suivi santé — structure et responsabilités
+
+- **Interface Maturation** : `index.html` propose un accès en bas de page vers `sante.html`, accessible aussi directement depuis `https://hameaufl.github.io/programme-sport/sante.html`. La page possède une navigation de retour.
+- `sante.html` présente un **aperçu de reprise** (séances programmées, réalisations confirmées, notes), les rubriques de profil santé et les comptes rendus datés. **Lecture seule**, sans invention de bilan ni de statut.
+- **Sources personnelles uniques du Coach** : `personnel/programme.js`, `personnel/sante/PROFIL.md`, `personnel/sante/SUIVI.md`. Le rendu lit ces fichiers directement ; **pas de jeu de données personnel dupliqué** dans le code.
+- Pour afficher un nouveau compte rendu du journal santé, le Coach ajoute une entrée réelle dans `personnel/sante/SUIVI.md` dont le titre commence par `### AAAA-MM-JJ`; conserver le contenu et l'historique dans `personnel/`. Les rubriques du profil sont les sections `##` de `PROFIL.md`.
+- Le Coach **ne modifie jamais le code** de la page ni le workflow ; Maturation ne renseigne jamais les contenus médicaux ou les séances. Si un nouveau type de donnée ou de présentation est nécessaire, passer par Maturation.
+- Le workflow publie `sante.html` et les deux sources Markdown avec la même arborescence ; contrôler leur présence et leur `noindex` avant publication. **Les données restent publiques**, `noindex` ne protège pas l'accès direct.
+
 ## « Se mettre à jour » — lecture seule du dépôt (règle prioritaire)
 
 Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation) de « se mettre à jour », « actualiser ses connaissances » ou de « prendre connaissance des dernières modifications » :

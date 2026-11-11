@@ -22,6 +22,14 @@
 - `sante/` peut conserver l'historique détaillé, sans créer de contradiction avec les résumés de `personnel/programme.js`.
 - Les pièces Garmin réelles sont conservées dans `personnel/pieces-jointes/` ; procédures dans [docs/GARMIN.md](../GARMIN.md).
 
+## Affichage sur la page Mon suivi santé
+
+- La page `sante.html` lit ce répertoire **en lecture seule** lors du chargement ; la source unique reste dans GitHub, sans copie de contenu.
+- Les rubriques `##` de `PROFIL.md` alimentent les cartes « Mes repères de santé ». Les rubriques non renseignées restent vides sur la page.
+- Les comptes rendus effectifs dans `SUIVI.md` peuvent être datés par un titre `### AAAA-MM-JJ — titre` ; la page ignore le modèle `### AAAA-MM-JJ` sans vraie date et affiche uniquement les entrées réelles.
+- Le Coach renseigne **seulement** les informations transmises ; Maturation ne modifie pas les observations du profil ni le journal.
+- `personnel/programme.js` reste la référence pour `fait`, `sensations` et les compteurs de séances affichés.
+
 ## Règles de saisie (Coach)
 
 - Inscrire seulement ce que l'utilisateur a fourni. Distinguer ressenti, diagnostic confirmé, hypothèse, et recommandation professionnelle.

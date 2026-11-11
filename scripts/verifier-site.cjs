@@ -4,11 +4,24 @@ const fs = require("node:fs");
 const vm = require("node:vm");
 const assert = require("node:assert/strict");
 const read = path => fs.readFileSync(path, "utf8");
-const required = ["index.html", "personnel/programme.js", "favicon.svg", "icon-192.png", "icon-512.png", "manifest.webmanifest", "publication.txt"];
+const required = ["sante.html", "personnel/sante/PROFIL.md", "personnel/sante/SUIVI.md", "index.html", "personnel/programme.js", "favicon.svg", "icon-192.png", "icon-512.png", "manifest.webmanifest", "publication.txt"];
 for (const file of required) assert.ok(fs.existsSync(file), "Fichier manquant : " + file);
 const html = read("index.html");
 assert.ok(html.includes('<meta name="robots" content="noindex, nofollow">'), "La page doit interdire son indexation");
 assert.ok(html.includes('<meta name="googlebot" content="noindex, nofollow">'), "Le refus explicite de Googlebot est requis");
+const healthHtml = read("sante.html");
+assert.ok(html.includes('href="./sante.html"'), "Le lien vers la page santé manque");
+assert.ok(healthHtml.includes('href="./"'), "Lien de retour du suivi santé manquant");
+assert.ok(healthHtml.includes('<meta name="robots" content="noindex, nofollow">'), "La page santé doit interdire son indexation");
+assert.ok(healthHtml.includes('<meta name="googlebot" content="noindex, nofollow">'), "La page santé doit refuser son indexation par Googlebot");
+assert.ok(healthHtml.includes('src="./personnel/programme.js?actualisation="'), "La page santé doit lire la source unique");
+assert.ok(healthHtml.includes('./personnel/sante/PROFIL.md') && healthHtml.includes('./personnel/sante/SUIVI.md'), "Sources santé manquantes");
+assert.ok(!healthHtml.includes("localStorage"), "Aucune donnée personnelle en stockage navigateur");
+const healthScripts = [...healthHtml.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
+assert.ok(healthScripts.length, "Script de la page santé manquant");
+for (const [i, m] of healthScripts.entries()) {
+  if (m[1].trim()) new vm.Script(m[1], {filename:"sante.html : script "+(i+1)});
+}
 const programme = read("personnel/programme.js");
 assert.ok(!fs.existsSync("programme.js"), "Duplication interdite : programme.js à la racine");
 assert.ok(html.includes('source.src="./personnel/programme.js"'), "La page doit charger la source personnelle");
@@ -16,6 +29,7 @@ assert.ok(html.includes('id="goalsList"'), "Emplacement des objectifs absent");
 const version = html.match(/<meta name="mon-rythme-version" content="([^"]+)"/);
 assert.ok(version, "Identifiant de version HTML absent");
 assert.ok(read("publication.txt").includes(version[1]), "Témoin de publication désynchronisé");
+assert.ok(healthHtml.includes('name="mon-rythme-version" content="'+version[1]+'"'), "Versions des deux pages non synchronisées");
 const scripts = [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)];
 assert.ok(scripts.length, "Script de la page absent");
 for (const [i, m] of scripts.entries()) {

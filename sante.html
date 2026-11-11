@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#234735">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="mon-rythme-version" content="2026-11-11-suivi-sante-v6">
+  <meta name="description" content="Suivi personnel de la reprise d'activité sportive.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <title>Mon suivi santé · Mon Rythme</title>
+  <style>
+    :root{color-scheme:light;--ink:#22392b;--green:#234735;--muted:#6b7f70;--line:#dfe8dd;--soft:#edf5eb;--bg:#f6f8f4}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a:focus-visible{outline:3px solid #83b48e;outline-offset:3px}
+    .shell{width:min(1090px,calc(100% - 36px));margin:auto;padding-bottom:65px}
+    header{min-height:87px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-size:20px;font-weight:800;letter-spacing:-.5px}
+    .brand-icon{width:41px;height:41px;background:var(--green);color:white;border-radius:13px;display:grid;place-items:center;font-size:22px}
+    .back{border:1px solid #c6d8c9;background:white;text-decoration:none;color:var(--green);padding:10px 14px;border-radius:11px;font-size:13px;font-weight:750}
+    .back:hover{background:var(--soft)}
+    .hero{background:var(--green);border-radius:23px;padding:36px 40px;color:#fff}
+    .eyebrow{text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:1.5px;color:#cce2d0;margin:0 0 9px}
+    h1{font-size:clamp(29px,4.6vw,44px);letter-spacing:-1.35px;line-height:1.13;margin:0}
+    .intro{max-width:700px;margin:13px 0 0;color:#e1eee2;font-size:15px}
+    section{margin-top:30px}
+    h2{font-size:23px;letter-spacing:-.6px;margin:0 0 5px}
+    .section-hint{color:var(--muted);font-size:14px;margin:0 0 17px}
+    .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .metric{background:white;border:1px solid var(--line);border-radius:17px;padding:22px}
+    .metric-value{font-size:clamp(27px,4vw,36px);line-height:1.1;font-weight:800;letter-spacing:-1px;display:block;color:var(--green)}
+    .metric-label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
+    .topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .topic,.entry{background:white;border:1px solid var(--line);border-radius:17px;padding:23px;min-width:0}
+    .topic h3,.entry h3{font-size:17px;margin:0 0 12px;letter-spacing:-.3px}
+    .topic p,.entry p{font-size:14px;overflow-wrap:anywhere;margin:0 0 8px;color:#4a6452}
+    .topic ul,.entry ul{font-size:14px;color:#4a6452;margin:0;padding-left:20px}
+    .topic li+li,.entry li+li{margin-top:5px}
+    .topic .placeholder{color:#8a9a8c;font-size:13px;font-style:italic}
+    .entries{display:grid;gap:12px}
+    .empty{border:1px dashed #bfd4c3;background:#f2f8f1;color:#607762;padding:22px;border-radius:16px;font-size:14px}
+    .timeline{display:grid;gap:11px}
+    .event{display:flex;gap:16px;align-items:start;border-radius:14px;background:white;border:1px solid var(--line);padding:17px 20px}
+    .event-date{min-width:100px;font-size:12px;font-weight:800;color:#487051}
+    .event-info{flex:1;min-width:0}
+    .event-info strong{font-size:14px;display:block}
+    .event-info p{font-size:13px;color:var(--muted);margin:5px 0 0;overflow-wrap:anywhere}
+    .chip{display:inline-block;margin-top:8px;font-size:11px;font-weight:750;padding:3px 9px;border-radius:99px;background:#e0f2e1;color:#2c6c3b}
+    .small-print{font-size:13px;color:var(--muted);margin:20px 0 0}
+    @media(max-width:650px){.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px}.hero{border-radius:19px;padding:28px 23px}.metrics{gap:8px}.metric{padding:16px 12px}.metric-label{font-size:12px}.topics{grid-template-columns:1fr}.topic,.entry{padding:19px}.event{flex-wrap:wrap;gap:5px}.event-date{width:100%;min-width:0}.small-print{margin-top:16px}}
+    @media print{body{background:white}.shell{width:100%}.hero{background:#fff;color:var(--ink);border:1px solid var(--line)}.eyebrow,.intro{color:var(--ink)}.back{display:none}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="./" aria-label="Retour à Mon Rythme"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></a>
+      <a class="back" href="./">← Mon programme</a>
+    </header>
+    <main>
+      <div class="hero">
+        <p class="eyebrow">Mon Rythme · Reprise sportive</p>
+        <h1>Mon suivi santé.</h1>
+        <p class="intro">Mes repères, mes bilans et les retours de mes séances, au même endroit.</p>
+      </div>
+      <section aria-labelledby="overviewTitle">
+        <h2 id="overviewTitle">Ma reprise en un coup d'œil</h2>
+        <p class="section-hint">D'après les informations réellement enregistrées dans mon programme.</p>
+        <div class="metrics">
+          <div class="metric"><output class="metric-value" id="countPlanned">—</output><span class="metric-label">Séances programmées</span></div>
+          <div class="metric"><output class="metric-value" id="countDone">—</output><span class="metric-label">Réalisations confirmées</span></div>
+          <div class="metric"><output class="metric-value" id="countNotes">—</output><span class="metric-label">Retours de sensations</span></div>
+        </div>
+      </section>
+      <section aria-labelledby="profileTitle">
+        <h2 id="profileTitle">Mes repères de santé</h2>
+        <p class="section-hint">Antécédents, appuis, suivi professionnel, mécanique et récupération : uniquement les éléments renseignés.</p>
+        <div id="healthProfile" class="topics" aria-live="polite"><div class="empty">Chargement du profil…</div></div>
+      </section>
+      <section aria-labelledby="activityTitle">
+        <h2 id="activityTitle">Mes séances suivies</h2>
+        <p class="section-hint">Les activités confirmées ou accompagnées de sensations.</p>
+        <div id="activityEntries" class="timeline" aria-live="polite"><div class="empty">Chargement des séances…</div></div>
+      </section>
+      <section aria-labelledby="followTitle">
+        <h2 id="followTitle">Mon journal de suivi</h2>
+        <p class="section-hint">Comptes rendus et points de santé datés, ajoutés à mesure de leur réception.</p>
+        <div id="healthFollow" class="entries" aria-live="polite"><div class="empty">Chargement du journal…</div></div>
+      </section>
+      <p class="small-print">Les rubriques non renseignées restent en attente. Cette page reprend les informations enregistrées sans établir de diagnostic médical.</p>
+    </main>
+  </div>
+  <script>
+  (function () {
+    "use strict";
+    function node(tag,cls,value){
+      var el=document.createElement(tag);
+      if(cls)el.className=cls;
+      if(value!==undefined)el.textContent=value;
+      return el;
+    }
+    function replaceWithEmpty(id,text){
+      var root=document.getElementById(id);
+      root.replaceChildren(node("div","empty",text));
+    }
+    function clean(text){
+      return text.replace(/\*\*/g,"").replace(/[`_]/g,"").trim();
+    }
+    function fillParagraphs(parent,lines){
+      var list=null;
+      lines.forEach(function(raw){
+        var line=raw.trim();
+        if(!line){list=null;return;}
+        if(/^[-*] /.test(line)){
+          if(!list){list=node("ul");parent.appendChild(list);}
+          list.appendChild(node("li","",clean(line.slice(2))));
+        }else{
+          list=null;
+          if(!/^#{1,6} /.test(line))parent.appendChild(node("p","",clean(line)));
+        }
+      });
+    }
+    function profileSections(text){
+      var entries=[],current=null;
+      text.split(/\r?\n/).forEach(function(line){
+        var match=line.match(/^## (.+)$/);
+        if(match){current={title:match[1],lines:[]};entries.push(current);}
+        else if(current)current.lines.push(line);
+      });
+      return entries;
+    }
+    function loadProfile(text){
+      var root=document.getElementById("healthProfile");
+      root.replaceChildren();
+      var sections=profileSections(text);
+      if(!sections.length){replaceWithEmpty("healthProfile","Aucune rubrique de santé disponible.");return;}
+      sections.forEach(function(section){
+        var card=node("article","topic");
+        card.appendChild(node("h3","",section.title));
+        var substantive=section.lines.filter(function(v){return v.trim();});
+        if(!substantive.length || (substantive.length===1 && /^_?Aucun renseignement fourni\._?$/.test(substantive[0].trim()))){
+          card.appendChild(node("p","placeholder","Aucune information renseignée pour le moment."));
+        }else fillParagraphs(card,section.lines);
+        root.appendChild(card);
+      });
+    }
+    function journalEntries(text){
+      var results=[],entry=null;
+      text.split(/\r?\n/).forEach(function(line){
+        var heading=line.match(/^### (\d{4}-\d{2}-\d{2})(.*)$/);
+        if(heading){
+          entry={date:heading[1],title:clean(heading[2].replace(/^\s*—\s*/,"").trim()),lines:[]};
+          results.push(entry);
+        }else if(/^##?\s/.test(line) || /^###\s/.test(line)){entry=null;}
+        else if(entry)entry.lines.push(line);
+      });
+      return results;
+    }
+    function loadJournal(text){
+      var root=document.getElementById("healthFollow");
+      root.replaceChildren();
+      var entries=journalEntries(text).sort(function(a,b){return b.date.localeCompare(a.date);});
+      if(!entries.length){replaceWithEmpty("healthFollow","Aucun compte rendu de santé daté n'est encore renseigné.");return;}
+      entries.forEach(function(e){
+        var card=node("article","entry");
+        var date=formatDate(e.date);
+        card.appendChild(node("h3","",date+(e.title?" · "+e.title:"")));
+        fillParagraphs(card,e.lines);
+        root.appendChild(card);
+      });
+    }
+    function formatDate(iso){
+      var date=new Date(iso+"T12:00:00");
+      return isNaN(date.getTime())?iso:date.toLocaleDateString("fr-FR",{day:"numeric",month:"short",year:"numeric"});
+    }
+    function drawProgramme(){
+      var programme=window.MON_RYTHME_PROGRAMMES;
+      if(!programme || typeof programme!=="object"){
+        replaceWithEmpty("activityEntries","Le programme n'a pas pu être chargé.");
+        return;
+      }
+      var sessions=Object.keys(programme).reduce(function(out,week){
+        if(Array.isArray(programme[week]))out.push.apply(out,programme[week]);
+        return out;
+      },[]).filter(function(s){return s&&typeof s.date==="string";});
+      var done=sessions.filter(function(s){return s.fait===true;});
+      var notes=sessions.filter(function(s){return typeof s.sensations==="string"&&s.sensations.trim();});
+      document.getElementById("countPlanned").textContent=String(sessions.length);
+      document.getElementById("countDone").textContent=String(done.length);
+      document.getElementById("countNotes").textContent=String(notes.length);
+      var listed=sessions.filter(function(s){return s.fait===true||(typeof s.sensations==="string"&&s.sensations.trim());});
+      listed.sort(function(a,b){return b.date.localeCompare(a.date);});
+      var root=document.getElementById("activityEntries");
+      root.replaceChildren();
+      if(!listed.length){replaceWithEmpty("activityEntries","Aucune séance confirmée ni retour de sensations enregistré pour le moment.");return;}
+      listed.slice(0,8).forEach(function(s){
+        var item=node("article","event");
+        item.appendChild(node("span","event-date",formatDate(s.date)));
+        var body=node("div","event-info");
+        body.appendChild(node("strong","",s.titre||"Séance"));
+        if(typeof s.sensations==="string"&&s.sensations.trim())body.appendChild(node("p","",s.sensations.trim()));
+        if(s.fait===true)body.appendChild(node("span","chip","✓ Fait"));
+        item.appendChild(body);
+        root.appendChild(item);
+      });
+    }
+    function loadProgramme(){
+      var script=document.createElement("script");
+      script.src="./personnel/programme.js?actualisation="+Date.now();
+      script.onload=function(){script.remove();drawProgramme();};
+      script.onerror=function(){script.remove();drawProgramme();};
+      document.head.appendChild(script);
+    }
+    function loadMarkdown(path,id,callback){
+      fetch(path+"?actualisation="+Date.now(),{cache:"no-store"})
+        .then(function(response){if(!response.ok)throw Error(String(response.status));return response.text();})
+        .then(callback)
+        .catch(function(){replaceWithEmpty(id,"Ces informations ne sont pas disponibles actuellement.");});
+    }
+    function refresh(){
+      loadProgramme();
+      loadMarkdown("./personnel/sante/PROFIL.md","healthProfile",loadProfile);
+      loadMarkdown("./personnel/sante/SUIVI.md","healthFollow",loadJournal);
+    }
+    refresh();
+    document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")refresh();});
+    window.addEventListener("pageshow",function(event){if(event.persisted)refresh();});
+  }());
+  </script>
+</body>
+</html>

@@ -67,3 +67,12 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - S'applique aux **deux casquettes** : Coach consulte son domaine `personnel/` et les règles ; Maturation consulte les règles, code et documents techniques. La réponse se limite à une confirmation ou aux changements pertinents au rôle.
 - Si une modification est demandée en plus, elle est une **instruction distincte**, exécutée dans le périmètre habituel.
 - La présente inscription de cette règle est l'exception initiale autorisée pour assurer le transfert de consigne aux futurs LLM.
+
+## 11 novembre 2026 — Première page dédiée au suivi santé
+
+- **Demande explicite** : modifier l'IHM pour ajouter une redirection depuis le programme vers une seconde page de bilan de la reprise sportive.
+- **Maturation** crée `sante.html` et un accès en bas de `index.html`, avec retour vers le calendrier. Une proposition fonctionnelle est publiée pour recueillir les retours d'ergonomie.
+- La page agrège **uniquement les données réellement enregistrées** : `personnel/programme.js` pour les compteurs et séances suivies, `personnel/sante/PROFIL.md` pour les rubriques de bilan, `personnel/sante/SUIVI.md` pour les comptes rendus datés.
+- **Aucune duplication** des informations personnelles dans une seconde source et **aucun bilan médical créé par Maturation**. Les données absentes restent explicitement non renseignées.
+- Le rendu Markdown utilise seulement du texte sûr et des listes, jamais d'HTML provenant des documents. Affichage des entrées datées avec un titre `### AAAA-MM-JJ` ; les modèles de journal ne sont pas affichés comme des comptes rendus.
+- Déploiement `sante.html` + sources Markdown par GitHub Actions, balises `noindex` sur les deux pages, et contrôles avant publication.

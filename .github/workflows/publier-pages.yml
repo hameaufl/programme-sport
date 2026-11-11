@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - index.html
+      - sante.html
       - "personnel/**"
       - favicon.svg
       - icon-192.png
@@ -40,9 +41,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp index.html favicon.svg icon-192.png icon-512.png manifest.webmanifest publication.txt _site/
+          cp index.html sante.html favicon.svg icon-192.png icon-512.png manifest.webmanifest publication.txt _site/
           mkdir -p _site/personnel
           cp personnel/programme.js _site/personnel/programme.js
+          mkdir -p _site/personnel/sante
+          cp personnel/sante/PROFIL.md personnel/sante/SUIVI.md _site/personnel/sante/
           if [ -d personnel/pieces-jointes/seances ]; then
             mkdir -p _site/personnel/pieces-jointes
             cp -R personnel/pieces-jointes/seances _site/personnel/pieces-jointes/

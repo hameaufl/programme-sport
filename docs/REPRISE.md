@@ -11,6 +11,10 @@ Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse su
 
 Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
+## Deuxième page : suivi santé
+
+L'interface comprend `sante.html`, accessible depuis une carte de redirection en bas de `index.html`. Elle présente les statistiques dérivées de `personnel/programme.js`, les sections du profil `personnel/sante/PROFIL.md` et les comptes rendus datés (`### AAAA-MM-JJ`) de `personnel/sante/SUIVI.md`, sans données personnelles dupliquées. Le Coach se contente de mettre à jour `personnel/`; Maturation seule intervient sur l'affichage. Le workflow publie l'HTML et les sources nécessaires, sans supprimer les balises `noindex`.
+
 ## Consigne « Mets-toi à jour »
 
 **Lecture seule.** Consulter le GitHub `main`, identifier les nouveaux commits par rapport au dernier état connu, relire les règles et les fichiers de son rôle, puis actualiser **ses connaissances conversationnelles**, pas le dépôt. **Aucun push, commit, journal, changement de programme ou d'interface, ni publication** sur cette seule demande. Ne pas inventer de changements si aucun commit n'est identifiable ; indiquer le manque d'accès GitHub s'il survient. Toute modification doit être demandée séparément.

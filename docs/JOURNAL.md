@@ -75,6 +75,15 @@
 - **Portée** : Coach et Maturation ; les informations consultées et le résumé restent pertinents au rôle attribué.
 - **Action Maturation** : une seule mise à jour documentaire pour ancrer cette règle dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, le registre des décisions et ce journal. Aucune modification du site.
 
+## 11 novembre 2026 — Proposition initiale « Mon suivi santé »
+
+- **Intervention Maturation** : création de `sante.html`, lien d'accès au bas de `index.html` et navigation retour.
+- **Contenu affiché** : synthèse automatique des séances programmées, confirmées et notes ; profil santé par rubriques `##` de `PROFIL.md` ; journal par entrées datées `### AAAA-MM-JJ` de `SUIVI.md` ; derniers retours de séances.
+- **Aucune donnée de santé inventée ou modifiée** : les modèles restent non renseignés ; rendu en lecture seule et sans copie pérenne du programme.
+- **Workflow** : publication des deux pages et des fichiers Markdown sous leur chemin original ; tests prépublication de navigation, de syntaxe, de fichiers présents, et `noindex` des deux pages.
+- **Version HTML** : `2026-11-11-suivi-sante-v6`.
+- **À confirmer** : réussite de GitHub Actions et apparence réelle sur Android ; attendre les retours du propriétaire pour itérer.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.
