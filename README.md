@@ -2,6 +2,15 @@
 
 Site statique en français, adapté à l'ordinateur et au raccourci Android standalone. Dépôt **public** : [hameaufl/programme-sport](https://github.com/hameaufl/programme-sport). Site GitHub Pages attendu : https://hameaufl.github.io/programme-sport/.
 
+## Publication et diagnostic Android
+
+- **Règle permanente :** chaque décision ou modification du projet est appliquée et **poussée sur `main` pendant l'échange**, puis consignée dans `docs/DECISIONS.md` et `docs/JOURNAL.md`. Les comptes rendus de sport relèvent du Coach ; architecture / IHM / règles relèvent de Maturation.
+- La version cible du site est **`2026-11-11-statique-fait-sensations-v1`**, inscrite dans la métadonnée invisible `mon-rythme-version` de `index.html`.
+- [Témoin de publication Pages](https://hameaufl.github.io/programme-sport/publication.txt?v=20261111) : doit indiquer cette version si le déploiement correspondant est disponible.
+- [Version HTML sans réutilisation d'une URL déjà mise en cache](https://hameaufl.github.io/programme-sport/?v=20261111-statique-fait-sensations-v1) : doit présenter **des indicateurs « Fait » non modifiables** et les sensations seulement lorsqu'elles ont été renseignées dans `programme.js`.
+- Si le témoin est absent ou si des cases interactives subsistent, contrôler [Settings → Pages](https://github.com/hameaufl/programme-sport/settings/pages) et [Actions](https://github.com/hameaufl/programme-sport/actions) (**pages build and deployment**). Le dépôt poussé **n'est pas une preuve** du site publié.
+- Aucun élément visuel de diagnostic n'a été ajouté à Mon Rythme. Le cache de `index.html` et les délais de GitHub Pages restent des limites distinctes de l'anti-cache de `programme.js`.
+
 ## Reprise par un agent LLM
 
 **Lire d'abord [AGENTS.md](AGENTS.md), puis [docs/ROLES.md](docs/ROLES.md).** La répartition des responsabilités est **stricte** :
