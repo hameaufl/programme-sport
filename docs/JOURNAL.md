@@ -145,6 +145,19 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - La compatibilité réelle d'un entraînement Garmin généré nécessite une validation. **Pas de travail en arrière-plan non configuré**.
 - Dépôt GitHub public : d'éventuels trajets GPS peuvent révéler des lieux personnels ; les contenus restent versionnés dans Git.
 
+### 11 novembre 2026 — Diagnostic « site Android encore ancien » et publication systématique
+
+- **Signalement utilisateur** : après nettoyage du cache, l'application sur Android présente encore des **coches manuelles** et aucune sensation affichée. Demande de vérification GitHub / Pages et de **publication systématique de chaque décision/code par Maturation**.
+- **Constat sur le dépôt `main`** : `index.html` en lecture seule (pas de checkbox, pas de `localStorage`, affichage « Fait » / « Sensations » si donnée), `programme.js` contient **18 séances**, toutes `fait:false` et `sensations:""` en l'absence de comptes rendus confirmés.
+- **Écart observé** : l'utilisateur voit une version **plus ancienne de l'HTML** ; l'absence de notes de sensations est attendue tant qu'aucun compte rendu n'est intégré.
+- **Vérification du site en ligne** : tentative d'accès au site GitHub Pages et à ses fichiers depuis les outils disponibles, **non concluante** ; ne pas annoncer un déploiement confirmé ni attribuer sans preuve la cause au cache ou à GitHub Pages.
+- **Action technique Maturation** : ajouter un méta-identifiant HTML invisible `2026-11-11-statique-fait-sensations-v1`, puis un témoin de publication racine `publication.txt`, sans modifier l'affichage, les séances ou le suivi.
+- **Procédure de vérification utilisateur** : charger `https://hameaufl.github.io/programme-sport/publication.txt?v=20261111` puis `https://hameaufl.github.io/programme-sport/?v=20261111-statique-fait-sensations-v1`. Si la version du témoin est absente / les cases restent interactives, consulter `Settings → Pages` et `Actions → pages build and deployment`.
+- **Consigne permanente** : toute décision et intervention de Maturation doit être **committée et documentée sur GitHub dans l'échange courant**, suivie d'une relecture des fichiers et, si possible, d'un contrôle du déploiement public. Le Coach respecte la même discipline pour ses données sportives dans son rôle.
+- **Fichiers modifiés / créés** : `AGENTS.md`, `index.html` (métadonnée invisible), `publication.txt`, `docs/DECISIONS.md`, `docs/REPRISE.md`, `docs/JOURNAL.md`, `README.md` (si modification).
+- **Commits partiels vérifiés** : `b15c375` (consignes), `02f39af` (meta HTML), `264a6fb` (témoin), `bf37df5` (décision), `bcebf98` (reprise).
+- **Limites** : pas de preuve de la version actuellement servie par Pages, ni de test physique Android. Le témoin `publication.txt` ne garantit pas qu'un `index.html` plus récent a été publié ; un cache HTML ou un déploiement ancien demeurent possibles.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
