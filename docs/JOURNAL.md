@@ -120,7 +120,8 @@
 - **Demande** : utiliser des puces nominales très courtes, sans verbes ni longues explications, avec une terminologie sportive adaptée et uniquement les précisions réellement reçues.
 - **Décision pérenne** : consigne de concision adressée au Coach dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et `docs/DECISIONS.md` ; déroulé bref, sensations et précautions conservées séparément.
 - **Présentation du 4 novembre** : la rubrique « Réalisé » du journal santé fournit quatre libellés compacts au rendu existant, sans changer la note de sensations, le statut « Fait » ni les autres données.
-- **Technique** : aucune retouche HTML/CSS/JavaScript ; les fichiers `personnel/**` déclenchent automatiquement la publication Pages. Suivi de déploiement à vérifier.
+- **Technique** : aucune retouche HTML/CSS/JavaScript ; les fichiers `personnel/**` déclenchent automatiquement la publication Pages.
+- **Contrôle** : [run 43116704510](https://github.com/hameaufl/programme-sport/actions/runs/43116704510), `completed / success` ; site publié après validation et déploiement.
 
 ## Journal futur
 
