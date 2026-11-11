@@ -2,6 +2,19 @@
 
 > **À lire intégralement avant toute modification.** Ce fichier reprend les décisions explicites du propriétaire du projet. Il constitue le point d'entrée des agents capables de travailler sur ce dépôt. Il ne remplace pas les nouvelles instructions directes de l'utilisateur, qui prévalent.
 
+## Deux rôles obligatoires à connaître
+
+Consulter [`docs/ROLES.md`](docs/ROLES.md). Un même agent peut porter les deux casquettes, à condition de distinguer ses interventions :
+
+- **Maturation** : consignes, processus, architecture, passation multi-LLM, maintenance de Mon Rythme et amélioration de l'IHM sur demande. **Aucun ajout visuel sans sollicitation ou approbation explicite**, même dans ce rôle.
+- **Coach** : analyse des retours et du contexte santé volontairement fourni, programmation course/renforcement/récupération, adaptation des séances suivantes. Peut diminuer, maintenir, augmenter, reporter une séance **ou attendre** si la situation le justifie. Analyse possible dès le lendemain, pas de modification obligatoire à chaque retour.
+
+Dossier dédié au suivi versionné : [`sante/`](sante/README.md). Les documents sont actuellement **des modèles vides**, pas des antécédents attestés. **Le dépôt actuel est public** et GitHub Pages publie depuis sa racine : avant toute écriture de données médicales personnelles, vérifier que l'utilisateur accepte explicitement **le dépôt cible et sa visibilité publique**, ou utiliser un dépôt de santé privé autorisé. Ne jamais inférer un diagnostic.
+
+## Mise à jour des séances sur Android
+
+Le programme est chargé via une URL `programme.js?actualisation=...` renouvelée à chaque ouverture et au retour au premier plan. Conserver cette stratégie de **rafraîchissement sans cache de programme.js** lors des futures modifications. Une balise DOM `data-id` ne suffit pas à invalider le cache HTTP ; les identifiants stables des séances servent d'abord aux cases « Fait ». La mise en cache éventuelle de `index.html`, le délai de déploiement GitHub Pages et les pertes de connexion restent des limites distinctes.
+
 ## Règle prioritaire : aucun ajout visuel non sollicité
 
 **NE JAMAIS ajouter spontanément d'élément graphique, décoratif ou d'interface sans demande ou approbation explicite de l'utilisateur.**
@@ -66,8 +79,10 @@ Lire dans cet ordre :
 2. `docs/REPRISE.md` — protocole de reprise et points à vérifier.
 3. `docs/CONTEXTE.md` — état exact, fonctionnalités et architecture.
 4. `docs/DECISIONS.md` — historique des décisions et des choix remplacés.
-5. `docs/JOURNAL.md` — modifications et transferts récents.
-6. `README.md` puis les fichiers `index.html` et `programme.js` pour la réalité du code.
+5. `docs/ROLES.md` — séparation Maturation / Coach.
+6. `sante/README.md` et ses modèles — contexte santé versionné si renseigné, respectant la visibilité du dépôt.
+7. `docs/JOURNAL.md` — modifications et transferts récents.
+8. `README.md` puis les fichiers `index.html` et `programme.js` pour la réalité du code.
 
 À la fin de **chaque intervention**, ajouter au journal : date de l'intervention, demande exacte ou résumé fidèle, fichiers modifiés, décisions prises, tests effectués, commit et limites éventuelles.
 
