@@ -1,32 +1,31 @@
-# Suivi santé — espace versionné
+# Suivi santé — public et versionné
 
-**Statut : structure créée, aucun dossier médical personnel renseigné.**
+**Le propriétaire a explicitement choisi la publication publique et le versionnement GitHub de ses informations de santé fournies dans le cadre de Mon Rythme.**
 
-Ce répertoire est destiné au contexte de santé utile à l'accompagnement sportif : antécédents, aspects mécaniques et fonctionnels, rééducation, éventuelles contraintes, retours d'entraînement.
+- Dépôt : `hameaufl/programme-sport`, **public**.
+- **Rôle Coach exclusivement** pour intégrer des comptes rendus, bilans et données réelles.
+- **Rôle Maturation exclusivement** pour créer/maintenir la structure, les modèles et l'interface éventuelle (avec approbation visuelle), **jamais pour rédiger les données sportives**.
+- Fichiers versionnés et anciens commits potentiellement accessibles publiquement ; les traces GPS peuvent révéler des lieux personnels. Ne jamais publier de mots de passe ni jetons Garmin.
 
 ## Fichiers
 
-- [`PROFIL.md`](PROFIL.md) : synthèse **à renseigner** des antécédents et contraintes utiles.
-- [`SUIVI.md`](SUIVI.md) : modèle de journal chronologique des sensations, séances et ajustements ; **aucun compte rendu saisi pour l'instant**.
-- Les nouvelles entrées peuvent aussi être créées sous `sante/journal/AAAA-MM-JJ.md` si la granularité quotidienne devient utile.
+- [PROFIL.md](PROFIL.md) : antécédents, aspects mécaniques et fonctionnels, bilans reçus, contraintes utiles. **Aucune donnée clinique renseignée**.
+- [SUIVI.md](SUIVI.md) : historique des comptes rendus et décisions du Coach, après réception des retours. **Aucun retour réel consigné**.
+- `journal/AAAA-MM-JJ.md` : format futur facultatif par compte rendu (créer uniquement pour des données réelles).
 
-## Visibilité et versionnement — essentiel
+**Bilan podologue attendu** : future référence initiale sur posture et appuis des pieds. Document **non reçu** ; aucune mesure ou conclusion à déduire.
 
-Le dépôt GitHub `hameaufl/programme-sport` est **public** et sert à **GitHub Pages**. Un futur contenu médical ajouté à ce dossier pourrait être **public sur GitHub et accessible directement depuis le site**, même sans lien visible dans l'IHM. Sa suppression d'une version ultérieure ne garantit pas la disparition de l'historique Git, des copies ou des forks.
+## Source de vérité des séances
 
-Le propriétaire souhaite un **suivi de santé versionné** ; sa volonté de versionner des données ne doit pas être interprétée automatiquement comme un accord pour les rendre publiques. **Ne pas déposer de données médicales réelles ici avant confirmation explicite de la visibilité du dépôt choisi.** Une alternative adaptée est un **dépôt privé séparé** contenant le dossier santé. Les agents autorisés pourront le consulter, sous réserve d'avoir accès à ce dépôt.
+- `programme.js` porte `fait` et `sensations` **statiquement** pour chaque séance, rédigés et mis à jour par le **Coach**.
+- **Pas de `localStorage`**, pas de saisie ou export depuis l'IHM. Les statuts/sensations apparaissent en lecture seule sur Mon Rythme.
+- `sante/` peut conserver l'historique détaillé, sans créer de contradiction avec les résumés de `programme.js`.
+- Les pièces Garmin réelles sont conservées dans `pieces-jointes/` ; procédures dans [docs/GARMIN.md](../docs/GARMIN.md).
 
-## Document de référence attendu
+## Règles de saisie (Coach)
 
-**Bilan du podologue : à recevoir ultérieurement.** Objet annoncé : état initial des paramètres physiques relatifs à la posture et aux appuis des pieds. **Document absent**, aucune mesure, conclusion ou recommandation disponible. Il pourra servir au Coach une fois transmis et analysé, après choix explicite d'un emplacement de versionnement adapté à sa confidentialité.
-
-**Journal « Sensations » de Mon Rythme** : les notes éventuellement saisies dans la page résident uniquement dans le stockage du navigateur (`mon-rythme-sensations-v1`). Elles ne sont pas synchronisées avec le dossier `sante/` ni avec GitHub.
-
-## Règles de saisie
-
-- Respecter les mots utilisés par le propriétaire, distinguer **ressenti**, **diagnostic confirmé**, **hypothèse** et **recommandation professionnelle**.
-- Dater et sourcer les informations ; ne jamais inventer un symptôme, un antécédent, une prescription ou une mesure.
-- Mettre à jour l'historique sans masquer les évolutions. Git conserve déjà la chronologie des modifications.
-- Ne pas déduire une douleur des seules séances « Kiné · Genoux ».
-- Les coches « Fait » de l'application restent dans le navigateur ; elles ne sont pas importées automatiquement dans ce dossier.
-- Une sortie sportive peut mener à une adaptation du programme sans qu'une donnée clinique soit nécessairement publiée dans GitHub.
+- Inscrire seulement ce que l'utilisateur a fourni. Distinguer ressenti, diagnostic confirmé, hypothèse, et recommandation professionnelle.
+- Dater les informations et conserver l'historique Git sans faire passer des hypothèses pour des faits.
+- Retour de séance → mise à jour du programme et du journal **dans l'échange courant**, si l'agent dispose des outils GitHub. Ne pas attendre une demande répétée de publication.
+- Ne pas déduire une blessure des seules séances de kiné.
+- Toute modification de l'IHM, du schéma des pièces jointes ou des contrôles visuels est **interdite au Coach** : intervention Maturation seulement.
