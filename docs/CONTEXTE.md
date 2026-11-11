@@ -66,3 +66,14 @@ Le contexte utilisateur exprime un souhait de **reprise progressive après une l
 ## Hors périmètre sans demande explicite
 
 Stockage sur serveur, synchronisation entre appareils, nouvelles pages, formulaires de saisie, compte utilisateur, analytique, nouveaux blocs graphiques, scores de progression, ajout de sorties de marche, changement de design, génération de données d'entraînement ou ajout d'objectifs hebdomadaires.
+
+## Mode d'accompagnement adopté à compter du 11 novembre 2026
+
+- **Compte rendu de l'utilisateur après chaque sortie** : sensations, confort, éventuelles gênes, durées ou distances réalisées, à sa discrétion.
+- **Adaptation au fil de l'eau, dès le lendemain** ; pas de bilan obligatoire en fin de semaine avant d'ajuster.
+- Trois issues possibles : **réduire**, **maintenir** ou **augmenter modérément** la séance suivante selon les retours ; aucune augmentation automatique.
+- Si le lendemain est un **jour sans course**, préserver ce repos et préparer **la prochaine séance programmée**.
+- Ne pas créer de nouvelles courses ni déplacer les dates sans nécessité ou demande ; respecter les modes réels du bracelet.
+- **Éviter la douleur** et tenir compte des séances de kiné ; ne pas interpréter une coche « Fait » comme la preuve d'une séance confortable.
+- Les comptes rendus subjectifs et symptômes éventuels relèvent de la conversation privée, **pas du dépôt public**, sauf instruction explicite autorisant leur publication. Les décisions de programmation peuvent être répercutées dans `programme.js` et consignées sans données sensibles.
+
