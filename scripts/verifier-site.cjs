@@ -22,7 +22,7 @@ assert.ok(healthScripts.length, "Script de la page santé manquant");
 for (const [i, m] of healthScripts.entries()) {
   if (m[1].trim()) new vm.Script(m[1], {filename:"sante.html : script "+(i+1)});
 }
-assert.ok(/class="health-preview"[\\s\\S]*?<h2 id="headingHealth">Mon suivi santé<\\/h2>[\\s\\S]*?<a class="health-cta" href="\\.\\/sante\\.html"/.test(html), "Accès compact et direct à la page santé absent");
+assert.ok(html.includes('class="health-preview"') && html.includes('<h2 id="headingHealth">Mon suivi santé</h2>') && html.includes('class="health-cta" href="./sante.html"'), "Accès compact et direct à la page santé absent");
 assert.ok(!html.includes("Un espace pour retrouver les bilans et les repères de ma reprise sportive."), "Sous-titre superflu du lien santé");
 assert.ok(healthHtml.includes('<h1>Mon suivi santé.</h1>') && !healthHtml.includes("Mes repères, mes bilans et les retours de mes séances"), "Le titre santé ne doit pas avoir de sous-texte");
 assert.ok(!healthHtml.includes("Mes séances suivies") && !healthHtml.includes("activityEntries") && !healthHtml.includes("activityTitle"), "La section des séances suivies doit être complètement supprimée");

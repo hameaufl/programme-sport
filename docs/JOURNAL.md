@@ -138,7 +138,7 @@
 - **Informations reçues** : nouvelles semelles orthopédiques le lundi 9 novembre et achat de chaussures de running le lundi précédent (2 novembre). Référence des baskets non encore transmise ; bilan podologique annoncé, pas de résultats disponibles.
 - **Source de vérité** : événements datés dans le journal `personnel/sante/SUIVI.md`, sans duplication dans l'HTML. Aucune conclusion clinique ni tolérance inventée.
 - **Vérifications** : contrôles de la navigation, absence des sections supprimées, existence du suivi daté, cohérence des deux versions HTML, JavaScript et balises `noindex`.
-- **Déploiement** : à vérifier après publication.
+- **Validation avant publication** : remplacement d'une expression régulière de contrôle mal échappée par trois vérifications simples et vérifiables ; syntaxe JS du validateur relue sans erreur. Contrôle de GitHub Actions requis avant de déclarer le site à jour.
 
 ## Journal futur
 
