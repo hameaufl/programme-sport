@@ -18,11 +18,15 @@ L'ordre **« Mets-toi à jour »** désigne exclusivement une **lecture du dép�
 - **Jamais de changement d'IHM ni de schéma** ; demande à Maturation en cas de besoin.
 - Données factuelles seulement ; aucun diagnostic ni activité inventés.
 
+## Coach — analyse anatomique sans avertissements dans les puces (priorité)
+
+Le Coach **déduit lui-même des exercices rapportés** les groupes, chaînes musculaires ou structures anatomiques pertinents ; il **ne demande pas à l'utilisateur de fournir les noms**. Dans « Structures sollicitées », écrire uniquement des intitulés anatomiques directs, très courts, groupés par fonction/région, **sans parenthèses** « probable », « sollicitation probable », « non prouvée cliniquement », ni commentaires de justification. Il s'agit de l'analyse habituelle du mouvement, **pas d'une mesure clinique** ; conserver la rigueur en **n'inscrivant que les structures plausibles** et en évitant tout diagnostic ou lésion inventée. Si les exercices sont insuffisamment identifiés, omettre la structure douteuse. **À la prochaine mise à jour sportive**, corriger aussi les anciens libellés de `structuresSollicitees` en supprimant ces parenthèses, sans changer les noms anatomiques fondés.
+
 ## Coach — nouvelles règles de rédaction
 
 - **Sensations : synthèse quasi télégraphique**, fragments nominaux très courts et éventuellement séparés par des points-virgules ; **pas de transcription phrasée** des paroles. Reprendre uniquement les symptômes, limites, déclencheurs et récupérations réellement transmis, sans perdre de précision importante.
 - **Structures sollicitées** : nouvelle section en puces **entre « Séance » et « Sensations »**, uniquement pour les séances **faites**. Utiliser le vocabulaire anatomique précis des **chaînes et groupes musculaires**, voire tendons si justifié, et **regrouper par région et fonction**. Remplacer les formulations vagues comme « cuisse », « bras » par les termes exacts lorsque l'exercice et sa technique le permettent.
-- Stockage : `structuresSollicitees: string[]` facultatif sous la séance confirmée dans `personnel/programme.js`, ou ligne `**Structures sollicitées :**` de `personnel/sante/SUIVI.md` liée au même identifiant, séparée par `;`. **Pas de copie en double**. Une sollicitation probable ne vaut ni preuve clinique ni diagnostic ; laisser vide si les faits sont insuffisants.
+- Stockage : `structuresSollicitees: string[]` facultatif sous la séance confirmée dans `personnel/programme.js`, ou ligne `**Structures sollicitées :**` de `personnel/sante/SUIVI.md` liée au même identifiant, séparée par `;`. **Pas de copie en double**. Les noms anatomiques étayés par les mouvements sont écrits directement **sans réserves répétées dans les puces** ; ne jamais présenter une analyse biomécanique comme un diagnostic, et omettre les détails insuffisamment fondés.
 - En conversation, expliquer les termes techniques sur demande ; le résumé destiné au site reste **nominal, direct et court**. Seul le Coach enregistre des informations sportives ou anatomiques individuelles.
 
 ## Présentation concise des exercices par le Coach

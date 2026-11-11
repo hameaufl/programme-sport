@@ -59,6 +59,18 @@ assert.ok(dailyRender.includes("box.appendChild(derouleDisplay(s));"), "Déroul�
 assert.ok(dailyRender.indexOf("derouleDisplay(s)") < dailyRender.indexOf("sensationsDisplay(s)"), "Le déroulé doit précéder les sensations");
 assert.ok(dailyRender.includes("var structures=structuresDisplay(s);"), "Bloc Structures sollicitées manquant du détail");
 assert.ok(dailyRender.indexOf("derouleDisplay(s)") < dailyRender.indexOf("structuresDisplay(s)") && dailyRender.indexOf("structuresDisplay(s)") < dailyRender.indexOf("sensationsDisplay(s)"), "Les sections doivent suivre l'ordre Séance, Structures, Sensations");
+const presentation = html.match(/function libelleAnatomique\(text\)\s*\{([\s\S]*?)\n  \}/);
+assert.ok(presentation, "Nettoyage des mentions méthodologiques absent");
+const libelleAnatomique = new Function("text", presentation[1]);
+assert.equal(libelleAnatomique("Genou / extension — quadriceps fémoral (sollicitation probable à la presse à cuisses)"),
+  "Genou / extension — quadriceps fémoral", "Le groupe anatomique doit être affiché sans parenthèse méthodologique");
+assert.equal(libelleAnatomique("Hanche — moyen fessier (non prouvée cliniquement)"),
+  "Hanche — moyen fessier", "Les disclaimers cliniques ne doivent pas parasiter le libellé");
+assert.equal(libelleAnatomique("Hanche — moyen fessier (sollicitation probable avec la marche latérale élastique)"),
+  "Hanche — moyen fessier", "Le second libellé du dernier Coach doit aussi être concis");
+assert.equal(libelleAnatomique("Pied — fascia plantaire (portion médiale)"),
+  "Pied — fascia plantaire (portion médiale)", "Les précisions anatomiques utiles ne doivent pas être retirées");
+assert.ok(html.includes('elem("li","",libelleAnatomique(item))'), "Le libellé filtré doit alimenter les puces de l'IHM");
 assert.ok(html.includes('box.appendChild(elem("h4","","Structures sollicitées"));'), "Titre de la rubrique anatomique absent");
 assert.ok(html.includes("structuresJournal[s.id]") && html.includes("s.structuresSollicitees"), "Sources Coach des structures non lues");
 assert.ok(html.includes("var structures=raw.match(") && html.includes("if(structures)entry.structures=structures[1];") && html.includes("À préciser par le Coach."), "Journal des structures ou état vide non pris en charge");

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-structures-sollicitees-v11">
+  <meta name="mon-rythme-version" content="2026-11-12-structures-sans-reserves-v12">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -208,6 +208,11 @@
     return box;
   }
   // Ne pas déduire de muscles ou tendons depuis les exercices : seul le Coach documente ces structures.
+  // Présentation brève : les précautions générales sur une analyse biomécanique
+  // ne font pas partie des noms anatomiques affichés dans cette liste.
+  function libelleAnatomique(text) {
+    return text.replace(/\s*\((?:(?:sollicitation|activation)\s+probable|probable(?:ment)?|non\s+(?:prouvée|démontrée|confirmée|attestée)\s+cliniquement|hypothèse)[^()]*\)/gi,"").trim();
+  }
   function structuresDisplay(s) {
     if(!isCompleted(s))return null;
     var box=elem("section","session-structures");
@@ -215,10 +220,10 @@
     var items=Array.isArray(s.structuresSollicitees)&&s.structuresSollicitees.length
       ? s.structuresSollicitees
       : (structuresJournal[s.id]||[]);
-    items=items.filter(function(item){return typeof item==="string"&&item.trim();});
+    items=items.filter(function(item){return typeof item==="string"&&libelleAnatomique(item);});
     if(items.length) {
       var list=elem("ul");
-      items.forEach(function(item){list.appendChild(elem("li","",item.trim()));});
+      items.forEach(function(item){list.appendChild(elem("li","",libelleAnatomique(item)));});
       box.appendChild(list);
     } else {
       box.appendChild(elem("p","structures-empty","À préciser par le Coach."));

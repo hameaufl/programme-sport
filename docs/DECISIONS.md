@@ -123,3 +123,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Source réservée au Coach : `structuresSollicitees: string[]` facultatif de `personnel/programme.js`, ou ligne `**Structures sollicitées :**` du journal `personnel/sante/SUIVI.md` identifié par la séance ; **pas de doublon** et programme prioritaire.
 - Privilégier la terminologie exacte (*quadriceps fémoral*, *ischio-jambiers*, *moyen fessier*, *chaînes postérieures*, etc.) sur les noms corporels vagues, sans inférer un tendon blessé ni affirmer une activation clinique. Qualifier la sollicitation probable et **n'afficher aucune liste inventée**.
 - S'il n'existe pas de donnée anatomique, afficher « À préciser par le Coach ». Les informations sportives déjà versionnées restent inchangées ; test prépublication étendu à ce nouveau schéma.
+
+## 12 novembre 2026 — Structures sollicitées : supprimer les réserves systématiques
+
+- **Correction demandée après le dernier commit Coach `3fd064e`** : les deux libellés de `structuresSollicitees` affichaient « sollicitation probable... » entre parenthèses. **Ce type de réserve est indésirable dans la liste**.
+- Le **Coach doit analyser lui-même** les mouvements et en tirer les structures anatomiques pertinentes, **sans demander à l'utilisateur leurs noms**. Les puces ne contiennent que les résultats : p. ex. « Genou / extension — quadriceps fémoral » et « Hanche / abduction et stabilisation — moyen fessier, abducteurs coxo-fémoraux ».
+- **Aucune parenthèse de justification** (« probable », « non prouvée cliniquement », « hypothèse », etc.). Cette simplification stylistique ne transforme pas une déduction biomécanique en diagnostic médical : conserver l'exactitude et omettre toute structure insuffisamment étayée.
+- Correction de présentation dans `index.html` : supprimer uniquement les parenthèses de précaution méthodologique connues à l'affichage, **sans altérer les données du Coach**. Ajouter des tests prépublication garantissant la conservation des véritables précisions anatomiques entre parenthèses.
+- Prochaine action du Coach sur le programme : **raccourcir les deux anciennes valeurs à la source** dans `personnel/programme.js`, sans modifier les termes anatomiques fondés. Les règles de séparation des rôles restent applicables.

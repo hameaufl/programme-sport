@@ -11,12 +11,16 @@ Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse su
 
 Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
+## Dernière correction Coach — intitulés anatomiques sans précaution entre parenthèses
+
+**Demande explicite** : le Coach **analyse lui-même** les groupes et chaînes musculaires travaillés à partir des exercices racontés ; **l'utilisateur n'a pas à lui fournir le vocabulaire**. Dans les puces **« Structures sollicitées »**, afficher seulement **« Région / fonction — muscles, chaînes ou structures »**, **sans** `(sollicitation probable…)`, `(non prouvé cliniquement)`, `(hypothèse)` ou autre justification répétée. Conserver la rigueur de sélection et ne pas poser de diagnostic. L'IHM masque les anciennes parenthèses méthodologiques ; **lors de la prochaine mise à jour par le Coach**, nettoyer à la source les deux libellés de `personnel/programme.js` pour la kiné du 4 novembre, sans toucher aux éléments anatomiques pertinents. **Maturation ne modifie pas `personnel/`**.
+
 ## Nouvelle priorité : sensations très courtes et muscles/chaînes sollicités
 
 - **`sensations`** : quelques **segments nominaux**, presque sans verbes, sans récit ni répétition des exercices ; « ; » autorisé entre ressentis. Conserver les douleurs, circonstances et limites effectivement transmises. Pas de diagnostic.
 - Le détail d'une séance **faite** comporte **« Séance » → « Structures sollicitées » → « Sensations »**. La section centrale affiche des **puces par région / fonction**, avec des noms de muscles, chaînes musculaires ou tendons précis et plausibles, sans prétendre à une certitude médicale.
 - La section « Structures sollicitées » lit `structuresSollicitees: string[]` de la séance `fait:true` dans `personnel/programme.js`, ou **« Structures sollicitées : »** dans le compte rendu du même ID de `personnel/sante/SUIVI.md` (séparer les puces par `;`). Programme prioritaire, journal de repli ; **pas de duplication**. Si rien n'est renseigné, **« À préciser par le Coach »** ; pas d'anatomie inventée par l'interface.
-- **Seul le Coach** renseigne les données, depuis des faits rapportés et en différenciant muscles sollicités probablement, constats professionnels et impressions subjectives. Maturation modifie l'affichage et les tests, pas `personnel/`.
+- **Seul le Coach** renseigne les données et analyse les structures anatomiques usuelles à partir des mouvements rapportés, sans attendre la terminologie de l'utilisateur ; les libellés sont directs, sans « probable » répété. Les diagnostics cliniques restent distincts. Maturation modifie l'affichage et les tests, pas `personnel/`.
 
 ## Règle Coach sur la longueur du déroulé
 

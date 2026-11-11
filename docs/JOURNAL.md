@@ -148,6 +148,15 @@
 - **Consignes et tests** : `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/DECISIONS.md` et `scripts/verifier-site.cjs`. Aucun changement des fichiers `personnel/`.
 - **Version des deux pages et témoin** : `2026-11-12-structures-sollicitees-v11`. [Run 43120640790](https://github.com/hameaufl/programme-sport/actions/runs/43120640790) **`completed / success`** : validation, artefact et publication GitHub Pages réussis. Commit de fonctionnalité `43cfd0e397cfda5922c0b614efcc1a15d5435285`, correctif du test `e29dbd9941572e93a6ae43b5895eff406a012aa9`.
 
+## 12 novembre 2026 — Rectifier les réserves inutiles des structures sollicitées
+
+- **Constat** : commit Coach `3fd064e3f5f777aa2f87533f99bdad02f1c86b76` ; les deux puces de la séance de kinésithérapie du 4 novembre comprenaient des parenthèses « sollicitation probable... ».
+- **Demande** : le Coach fournit **son analyse anatomique directement**, sous forme de puces nettes, sans répétition d'avertissements de non-validation clinique ; l'utilisateur n'a pas à transmettre les termes musculaires.
+- **Correction Maturation** : règle prioritaire dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et décisions ; l'interface filtre **uniquement les réserves méthodologiques parenthétiques** connues, sans masquer les précisions anatomiques utiles.
+- **Maintien des périmètres** : aucune modification de `personnel/`. La correction durable à la source appartient au Coach lors de sa prochaine intervention sur le programme.
+- **Qualité** : tests sur les deux puces concernées et sur une parenthèse anatomique utile ; versions des deux pages HTML et du témoin synchronisées (`2026-11-12-structures-sans-reserves-v12`).
+- **Publication** : à vérifier avec GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.
