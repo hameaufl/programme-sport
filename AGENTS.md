@@ -20,6 +20,12 @@ Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation
 
 **Cette règle de lecture seule prime sur l'obligation générale de committer les décisions** quand le message utilisateur est *uniquement* une demande de « mise à jour » de l'agent. La présente adoption de la règle est elle-même une décision de Maturation, à documenter une seule fois.
 
+## Contrôle préalable obligatoire de la version des deux pages
+
+- Toute modification visuelle, structurelle ou de contenu de `index.html` **ou** `sante.html` qui change le témoin de version exige une mise à jour **simultanée** des métadonnées `mon-rythme-version` dans **les deux pages** et de `publication.txt`.
+- **Avant de committer**, comparer les trois versions avec une vérification exacte (ou exécuter localement `node scripts/verifier-site.cjs`) ; ne pas attendre l'échec du workflow pour découvrir un décalage. Le workflow contrôle déjà cette cohérence.
+- Ce contrôle fait partie de la revue de Maturation avant **chaque** publication et évite les commits correctifs répétitifs pour une simple version incohérente.
+
 ## Indexation volontairement désactivée — règle permanente
 
 - La page publique **ne doit pas être indexée** par les moteurs de recherche respectant `noindex`. Maintenir dans `index.html` les balises `<meta name="robots" content="noindex, nofollow">` et `<meta name="googlebot" content="noindex, nofollow">`.

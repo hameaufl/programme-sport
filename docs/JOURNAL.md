@@ -95,6 +95,14 @@
 - **Prévention** : tests statiques supplémentaires dans `scripts/verifier-site.cjs` sur la séparation des vues et la présentation des sensations ; conservation de la version HTML synchronisée avec `publication.txt`.
 - **État de déploiement** : à contrôler sur le workflow GitHub Actions après commit.
 
+## 11 novembre 2026 — Correction du contrôle prépublication (versions HTML)
+
+- **Échec initial** : [run 43114293542](https://github.com/hameaufl/programme-sport/actions/runs/43114293542), étape `Contrôler le site et les données`, message `Versions des deux pages non synchronisées` ; aucun fichier publié pendant cet échec.
+- **Cause précise** : `index.html` avait le nouveau témoin `2026-11-11-seances-sensations-v7`, tandis que `sante.html` conservait `2026-11-11-suivi-sante-v6`.
+- **Correction Maturation** : synchroniser `sante.html` sur `2026-11-11-seances-sensations-v7` et ajouter une consigne de vérification des **trois versions** (`index.html`, `sante.html`, `publication.txt`) **avant** le commit, et non uniquement dans le pipeline.
+- **Aucun changement des séances ni du contenu médical** ; le script de contrôle reste strict.
+- **Nouveau déploiement** : vérifier que le run suivant devient `success`, puis consigner le résultat.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.
