@@ -1,94 +1,77 @@
-# Programme Sport — Mon Rythme
+# Mon Rythme — Programme Sport
 
-## Reprise par un nouvel agent LLM
+Site statique en français, adapté à l'ordinateur et au raccourci Android standalone. Dépôt **public** : [hameaufl/programme-sport](https://github.com/hameaufl/programme-sport). Site GitHub Pages attendu : https://hameaufl.github.io/programme-sport/.
 
-**Commencer par [AGENTS.md](AGENTS.md)** : règles impératives, notamment **aucun ajout graphique ou visuel sans la demande ou l'approbation explicite de l'utilisateur**. Proposer une amélioration est permis ; la réaliser sans accord ne l'est pas.
+## Reprise par un agent LLM
 
-Pour reprendre ce projet sans l'historique de conversation, lire ensuite :
+**Lire d'abord [AGENTS.md](AGENTS.md), puis [docs/ROLES.md](docs/ROLES.md).** La répartition des responsabilités est **stricte** :
 
-- [Guide de reprise](docs/REPRISE.md)
-- [Rôles Maturation et Coach](docs/ROLES.md)
-- [Contexte et architecture](docs/CONTEXTE.md)
-- [Espace de suivi santé](sante/README.md)
-- [Registre des décisions](docs/DECISIONS.md)
-- [Journal chronologique](docs/JOURNAL.md)
+- **Coach** : reconnaît les comptes rendus comme demandes de mise à jour, traite les sensations et fichiers Garmin, actualise **les données sportives** de `programme.js`, `sante/` et `pieces-jointes/`, adapte ou maintient les séances. **Jamais de modification de l'interface.**
+- **Maturation** : structure du site, architecture, documentation, robustesse, cache et IHM prête pour les contenus. **Jamais de coaching ni de modification des retours réels.** Tout changement visuel nécessite une demande ou une approbation explicite.
 
-Ces documents restituent les **décisions pertinentes et le contexte fonctionnel**, non une transcription littérale du chat. Les choix les plus récents priment sur les anciennes pistes abandonnées ; maintenir ces documents à jour lors de chaque intervention.
+Documents à lire ensuite : [reprise](docs/REPRISE.md), [contexte](docs/CONTEXTE.md), [décisions](docs/DECISIONS.md), [journal](docs/JOURNAL.md), [Garmin](docs/GARMIN.md), [santé](sante/README.md), [pièces jointes](pieces-jointes/README.md).
 
+## Interface actuelle
 
-Site **statique**, adapté au téléphone (y compris raccourci installé sur Android) et à l'ordinateur, publié sur **GitHub Pages**.
+- Bandeau **« Mon programme. »**, sans sous-titre.
+- **« Mes objectifs »** : une seule puce sur le plaisir des sensations et l'absence de recherche de performance. Les objectifs à venir sont de nature trimestrielle ou à plus long terme.
+- **« Mon calendrier »** : semaines du lundi au dimanche, sans description sous le titre ; navigation et retour dynamique à la semaine actuelle.
+- **« Programme du jour » / « Séances de la semaine »** : détail concis en puces, statuts **« ☐ Fait » / « ☑ Fait »** et **« Sensations : … »** lorsqu'un retour existe.
+- Aucun bouton de saisie, aucune case interactive, aucun pied de page. Aucun autre élément graphique sans accord du propriétaire.
 
-## Accompagnement et santé versionnée
+## Données sportives publiques et versionnées
 
-**Maturation** : architecture, documentation, méthode de travail, maintenance de Mon Rythme, évolutions d'interface explicitement demandées ou approuvées. **Coach** : planification et adaptation course/renforcement/récupération sur la base des comptes rendus et du contexte fourni, avec possibilité de réduire, maintenir, augmenter, reporter ou attendre.
+**La seule source des contenus et du suivi est `programme.js` :**
+- `fait: false` = absence de confirmation enregistrée ; `fait: true` = réalisation rapportée.
+- `sensations: ""` = pas de retour ; sinon résumé factuel court fourni par l'utilisateur.
+- `id` unique et stable par séance ; indexation du planning par le lundi de la semaine.
+- `pieces_jointes` : champ futur facultatif pour fichiers réellement disponibles ; contrat dans [docs/GARMIN.md](docs/GARMIN.md).
 
-Un espace `sante/` comporte des **modèles encore vides** pour antécédents, aspects mécaniques et journal des sensations. Le dépôt de ce site est **public** ; un dossier santé au même endroit n'est pas privé, même s'il n'est pas lié depuis l'application. Les données personnelles devront être volontairement orientées vers un dépôt dont la visibilité a été explicitement confirmée ; un second dépôt **privé** est recommandé pour une véritable confidentialité, tout en conservant l'historique Git.
+**Aucune donnée de suivi enregistrée en local** (`localStorage` supprimé de l'application). Après un retour de sortie, **l'agent Coach** doit écrire la mise à jour dans GitHub pendant l'échange et créer le commit, sans attendre une consigne « publie aussi ». Les données apparaissent sur les appareils après déploiement.
 
-## Fraîcheur du programme sur Android
+Le propriétaire a **expressément accepté** le caractère public/versionné des données de santé qu'il transmet. Les fichiers et traces GPS rendus publics peuvent rester accessibles dans l'historique Git. Aucun secret Garmin/API dans le dépôt.
 
-À l'ouverture de la page, `programme.js` est demandé avec une URL renouvelée : `programme.js?actualisation=<horodatage>`. Le calendrier est initialisé après ce chargement. Au retour dans l'application, un nouveau téléchargement du programme est tenté, puis l'affichage est recalculé. En cas d'échec initial de la requête anti-cache, repli vers `programme.js` sans paramètre.
+## Programme de course initial — 2026
 
-Pas de modification visuelle. Les coches « Fait » et leur clé `localStorage` restent inchangées. Cette technique vise le cache du **programme** : elle ne neutralise ni le cache du fichier HTML `index.html`, ni les délais de déploiement de GitHub Pages. Elle ne garantit pas non plus l'accès hors ligne.
+Cycle de course : **11 novembre – 14 décembre 2026**, 15 séances. Source adaptée : *Programme fractionné I* de La Clinique du Coureur, anciennement 8 semaines. Pas de marche seule ; récupérer entre les courses.
 
-## Interface
-
-- **Mon programme.** : titre sans sous-titre de départ.
-- **Mes objectifs** : une priorité de reprise agréable, sans recherche de performance. Cette rubrique est destinée à des objectifs **trimestriels ou plus longs** à préciser ultérieurement ; les cinq jalons hebdomadaires ont été retirés.
-- **Mon calendrier** : titre sans texte descriptif sous celui-ci ; semaines civiles **du lundi au dimanche**. La semaine en cours est affichée automatiquement à chaque chargement, avec le jour actuel sélectionné. Le bouton « Semaine en cours » recalcule la date lorsqu'on clique dessus. En gardant la page ouverte sur le jour actuel, le passage de minuit peut également actualiser le jour affiché.
-- **Programme du jour** et **Séances de la semaine** : chaque séance peut être cochée comme **Fait**. Une coche s'affiche également sur les jours dont toutes les séances sont terminées.
-- Aucun pied de page.
-
-## Sauvegarde du suivi
-
-Les coches sont mémorisées dans le **localStorage** du navigateur, sous la clé `mon-rythme-suivi-v1`, avec un identifiant stable pour chaque séance (`course-AAAA-MM-JJ` ou `kine-AAAA-MM-JJ`). Une case décochée est retirée du suivi.
-
-- Les coches sont conservées après rafraîchissement ou fermeture de la page **tant que le stockage du navigateur/site est conservé**.
-- Sur Android, le raccourci standalone peut utiliser le même stockage du site selon le navigateur utilisé ; il faut tester la persistance dans cet environnement précis.
-- **Aucune synchronisation automatique** entre téléphone et ordinateur. Cocher sur un appareil ne coche pas l'autre.
-- Le suivi n'est **pas publié dans GitHub** et n'est **pas envoyé à un serveur**.
-- Effacer les données du site, réinitialiser le navigateur ou changer de contexte de stockage peut effacer les coches. Aucune sauvegarde à distance n'est disponible.
-
-## Programme sportif actuel
-
-Cycle de course du **mercredi 11 novembre au lundi 14 décembre 2026** : **15 séances avec course**, réparties sur cinq cycles de sept jours, avec du repos entre les sorties.
-
-Le calendrier civil est volontairement **indépendant** de ces cycles de sept jours : il affiche les rendez-vous aux bonnes dates sans les déplacer.
-
-Modes disponibles sur le bracelet :
-
-| Mode | Séquence | Durée totale | Temps couru |
+| Mode bracelet | Déroulé | Total | Course |
 | --- | --- | --- | --- |
 | 2M+3C | 3 × (2 min marche + 3 min course) + 2 min marche | 17 min | 9 min |
 | 2M+5C | 3 × (2 min marche + 5 min course) + 2 min marche | 23 min | 15 min |
-| C (facultatif) | 3 min marche + 21 min course + 3 min marche | 27 min | 21 min continues |
+| Option continue (seulement si aisance le 14 décembre) | 3 min marche + 21 min course + 3 min marche | 27 min | 21 min |
 
-| Étape | Sorties avec course | Bracelet |
+| Cycle initial | Dates | Modes |
 | --- | --- | --- |
 | 1 | 11, 13, 16 novembre | 2M+3C, 2M+3C, 2M+3C |
 | 2 | 18, 20, 23 novembre | 2M+3C, 2M+3C, 2M+5C |
 | 3 | 25, 27, 30 novembre | 2M+3C, 2M+5C, 2M+5C |
 | 4 | 2, 4, 7 décembre | 2M+5C, 2M+5C, 2M+5C |
-| 5 | 9, 11, 14 décembre | 2M+5C, 2M+5C, 2M+5C (mode C facultatif le 14) |
+| 5 | 9, 11, 14 décembre | 2M+5C, 2M+5C, 2M+5C |
 
-Séances de **Kiné · Genoux** : 4, 9 et 18 novembre 2026, sans horaires spécifiés. Le 18 novembre comporte à la fois une séance de course et une séance de kiné : chacune possède sa propre case de suivi.
+**Kiné · Genoux** : 4, 9 et 18 novembre 2026, horaires non communiqués. Course et kiné coexistent le 18 novembre.
 
-La progression en course est adaptée du *Programme fractionné I* (La Clinique du Coureur), mais ne le reproduit pas exactement. Courir à allure facile, ralentir ou répéter une séance au besoin, et ne pas forcer en présence de douleurs. Le passage au mode C n'est pas obligatoire.
+Ces dates et durées sont **un programme de départ modifiable par le Coach** à partir des comptes rendus ; ne pas présumer qu'une séance a été effectuée sans retour. Priorité : sensations agréables, pas de douleur. Bilan de podologie (appuis, posture des pieds) annoncé, **pas encore reçu**.
+
+## Garmin Venu 4 — fichiers futurs
+
+- **Prévu** : entraînement structuré défini par le Coach et compatible Garmin Venu 4 **après vérification**.
+- **Réalisé** : activité enregistrée Garmin (export original souvent `.fit`, éventuellement `.gpx`, `.tcx`, `.csv`).
+- Les fichiers réellement disponibles seront versionnés par le **Coach** dans `pieces-jointes/` et reliés aux séances sans modifier l'IHM.
+- **Maturation** pourra ultérieurement ajouter les liens dans l'interface **uniquement sur demande ou approbation explicite**.
+- Import via fichier recommandé au départ. Intégration API/MCP Garmin éventuelle, aucune connexion garantie aujourd'hui. [Voir la documentation Garmin](docs/GARMIN.md).
 
 ## Architecture
 
-- `index.html` : interface responsive, navigation hebdomadaire et cases sauvegardées en local ;
-- `programme.js` : contenu **statique** des séances et identifiants stables ;
-- `sante/` : modèles de suivi santé **sans données personnelles enregistrées à ce stade**, espace de versionnement potentiel ;
-- `docs/ROLES.md` et `AGENTS.md` : responsabilités Coach/Maturation et consignes persistantes ;
-- `favicon.svg`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png` : présentation et installation mobile ;
-- `.nojekyll` : publication directe via GitHub Pages.
+- `index.html` : présentation **en lecture seule** ; aucune saisie de statut ou sensation.
+- `programme.js` : programme, réalisation, sensations et éventuelles références de fichiers.
+- `sante/` : profils, comptes rendus et bilans sportifs versionnés.
+- `pieces-jointes/` : fichiers réels d'entraînement et d'activité, lorsqu'ils seront disponibles.
+- `docs/` : modes de travail, suivi du projet et contrat Garmin.
+- `manifest.webmanifest`, icônes, `.nojekyll` : publication et intégration mobile.
 
-Les séances futures pourront être modifiées dans `programme.js` sans supprimer les cases déjà enregistrées pour les séances ayant conservé le même identifiant.
+À chaque ouverture ou retour au premier plan, l'application tente de charger `programme.js` avec une URL renouvelée (`?actualisation=...`). Cela limite le risque d'ancien programme sur Android, sans supprimer les délais GitHub Pages ou le cache éventuel de `index.html`.
 
 ## Publication
 
-[Paramètres GitHub Pages du dépôt](https://github.com/hameaufl/programme-sport/settings/pages) → **Deploy from a branch**, `main`, dossier `/(root)`.
-
-Site : https://hameaufl.github.io/programme-sport/
-
-Le dépôt et le programme statique sont **publics**. Les données de suivi sont distinctes et restent **locales à chaque navigateur/appareil**.
+GitHub Pages : [paramètres du dépôt](https://github.com/hameaufl/programme-sport/settings/pages) → `Deploy from a branch`, `main`, `/(root)`. **Commit sur main ≠ confirmation du déploiement**. Aucun travail en arrière-plan implicite : le Coach modifie le dépôt lorsqu'il reçoit un retour dans la conversation et a accès à GitHub.
