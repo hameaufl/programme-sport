@@ -112,7 +112,8 @@
 - **Cas existant** : séance de kiné du 4 novembre, déjà décrite dans `personnel/sante/SUIVI.md` ; **aucun texte sportif nouveau ni modification de `personnel/`**.
 - **IHM** : mise à jour de `index.html` uniquement pour le rendu, conservation de la synthèse hebdomadaire, du statut à côté du titre et de l'affichage mobile.
 - **Qualité** : nouveaux contrôles de séparation du prévu/réalisé, de la source santé et du type des `exercicesRealises` facultatifs. Publication des deux pages avec version commune `2026-11-11-deroule-seance-v8`.
-- **Résultat du déploiement** : à inscrire après contrôle GitHub Actions.
+- **Résultat du déploiement** : [run 43115608340](https://github.com/hameaufl/programme-sport/actions/runs/43115608340) terminé en `success` : validation, assemblage et publication GitHub Pages réussis. Commit IHM : `41ece7d09e0eba7c71440b4ca2cbf4752fc8179d`.
+- **Vérification fonctionnelle du contenu** : le lecteur du journal extrait 4 éléments déjà rapportés pour `kine-2026-11-04`, sans écrire dans `personnel/`. Le rendu Android réel n'a pas été testé.
 
 ## Journal futur
 
