@@ -56,14 +56,18 @@
     .goal-list{margin:10px 0 0;padding-left:23px;color:var(--muted);font-size:14px}
     .goal-list li{padding-left:4px}
     .session-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+    .session-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
+    .sensations-entry{display:inline-flex;align-items:center;gap:7px;min-width:0;color:#395b42;font-size:13px}
+    .sensations-entry input{width:220px;max-width:100%;min-width:130px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink);font:inherit}
+    .sensations-entry input:focus-visible{outline:2px solid #8bba97;outline-offset:2px}
     .done-control{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:#395b42;font-size:13px;font-weight:650;cursor:pointer}
     .done-control input{width:18px;height:18px;margin:0;accent-color:#306f42;cursor:pointer}
     .session.completed,.week-item.completed{background:#f0f7ef}
-    .week-item .done-control{margin-left:auto;align-self:center}
+    .week-item .session-actions{margin-left:auto;align-self:center}
     .day .status.complete{color:#2a7042}
     .day .status.complete:before{background:#2a7042}
     @media(max-width:930px){.days{grid-template-columns:repeat(4,minmax(0,1fr))}}
-    @media(max-width:650px){.week-item{flex-wrap:wrap}.week-item .done-control{margin-left:0}.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
+    @media(max-width:650px){.week-item{flex-wrap:wrap}.week-item .session-actions{margin-left:0}.sensations-entry input{width:165px}.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
     @media print{body{background:white}.shell{width:100%;padding:0 14px}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.week-nav{display:none}.days{grid-template-columns:repeat(7,minmax(0,1fr))}.day{min-height:100px;padding:8px!important}.day[aria-pressed="true"]{border-width:1px}}
   </style>
 </head>
@@ -138,6 +142,13 @@
     var stored=JSON.parse(localStorage.getItem(savedKey)||"{}");
     if(stored && typeof stored==="object" && !Array.isArray(stored))completed=stored;
   } catch(e) {}
+  // Les sensations, comme les coches, restent enregistrées sur cet appareil.
+  var sensationsKey="mon-rythme-sensations-v1";
+  var sensations={};
+  try {
+    var savedSensations=JSON.parse(localStorage.getItem(sensationsKey)||"{}");
+    if(savedSensations && typeof savedSensations==="object" && !Array.isArray(savedSensations))sensations=savedSensations;
+  } catch(e) {}
   function sessionId(s) {return s.id||((s.type==="kine"?"kine":"course")+"-"+s.date);}
   function isCompleted(s) {return completed[sessionId(s)]===true;}
   function markCompleted(id,checked) {
@@ -155,6 +166,35 @@
     label.appendChild(input);
     label.appendChild(elem("span","","Fait"));
     return label;
+  }
+  function sensationsControl(s) {
+    var label=elem("label","sensations-entry");
+    label.appendChild(elem("span","","Sensations"));
+    var input=elem("input");
+    input.type="text";
+    input.maxLength=160;
+    input.autocomplete="off";
+    input.placeholder="Ex. aucune douleur, facile";
+    input.dataset.sensationId=sessionId(s);
+    input.value=typeof sensations[sessionId(s)]==="string"?sensations[sessionId(s)]:"";
+    input.setAttribute("aria-label","Sensations : "+(s.titre||"Séance")+" du "+s.date);
+    label.appendChild(input);
+    return label;
+  }
+  function actions(s) {
+    var controls=elem("div","session-actions");
+    controls.appendChild(completionControl(s));
+    controls.appendChild(sensationsControl(s));
+    return controls;
+  }
+  function enregistrerSensations(id,value,source) {
+    if(value.trim())sensations[id]=value;
+    else delete sensations[id];
+    try {localStorage.setItem(sensationsKey,JSON.stringify(sensations));}catch(e) {}
+    // Mettre à jour les deux vues sans recréer le champ actif et perdre le curseur.
+    document.querySelectorAll("input[data-sensation-id]").forEach(function(input){
+      if(input!==source && input.dataset.sensationId===id)input.value=value;
+    });
   }
   function render() {
     var end=plus(weekStart,6);
@@ -187,7 +227,7 @@
         var box=elem("article","session"+(isCompleted(s)?" completed":""));
         var head=elem("div","session-head");
         head.appendChild(elem("h3","",s.titre||"Sortie"));
-        head.appendChild(completionControl(s));
+        head.appendChild(actions(s));
         box.appendChild(head);
         if (metadata(s))box.appendChild(elem("p","meta",metadata(s)));
         if (s.objectif)box.appendChild(elem("p","detail","Objectif : "+s.objectif));
@@ -211,7 +251,7 @@
         body.appendChild(elem("strong","",s.titre||"Sortie"));
         if (metadata(s))body.appendChild(elem("small","",metadata(s)));
         item.appendChild(body);
-        item.appendChild(completionControl(s));
+        item.appendChild(actions(s));
         list.appendChild(item);
       });
       all.appendChild(list);
@@ -236,9 +276,14 @@
   document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=monday(now);dayIndex=(now.getDay()+6)%7;render();});
   document.getElementById("days").addEventListener("click",function(event){var button=event.target.closest("button[data-day]");if(button){dayIndex=Number(button.dataset.day);render();}});
   ["dayContent","allContent"].forEach(function(containerId){
-    document.getElementById(containerId).addEventListener("change",function(event){
+    var container=document.getElementById(containerId);
+    container.addEventListener("change",function(event){
       var control=event.target.closest("input[data-session-id]");
       if(control)markCompleted(control.dataset.sessionId,control.checked);
+    });
+    container.addEventListener("input",function(event){
+      var field=event.target.closest("input[data-sensation-id]");
+      if(field)enregistrerSensations(field.dataset.sensationId,field.value,field);
     });
   });
   render();
