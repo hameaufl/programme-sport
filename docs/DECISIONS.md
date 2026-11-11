@@ -105,3 +105,35 @@
 - Implémentation : chargement initial de `programme.js` par script dynamique vers `./programme.js?actualisation=<horodatage>`, puis actualisation à chaque retour au premier plan et à la restauration depuis l'historique navigateur. Repli sur la ressource standard si la requête fraîche échoue.
 - Le `localStorage` et les identifiants de séances restent inchangés.
 - Limites : une ancienne version de `index.html` peut rester en cache ; GitHub Pages peut nécessiter un délai de publication. Pas de garantie instantanée sur les réseaux et caches intermédiaires, ni de prise en charge hors ligne garantie.
+
+## 13. Révolution du suivi : 100 % statique, aucun stockage local — 11 novembre 2026
+
+- La demande initiale de coches et notes `localStorage` (sections historiques 5 à 9) est **ANNULÉE**.
+- **Source de vérité unique : `programme.js`**, avec `fait:false/true` et `sensations:""` ou un court compte rendu reçu. Pas de saisie dans le site ; les indicateurs sont en lecture seule.
+- Le statut `fait:false` veut dire « **pas de confirmation intégrée** », et non une séance manquée. Aucune réalisation ni sensation ne doit être inventée.
+- Le propriétaire a **confirmé explicitement** que ses données de santé et retours sportifs seront **publics et versionnés** sur ce dépôt. Ils peuvent rester dans l'historique Git ; les fichiers Garmin GPS peuvent révéler des lieux personnels. Pas de jetons ni secrets dans Git.
+- Maturation structure l'affichage ; les contenus réels relèvent du Coach, jamais de l'utilisateur via un formulaire web.
+
+## 14. Pièces jointes Garmin Venu 4 — possibilité future
+
+- Montre utilisée : **Garmin Venu 4**.
+- Pièces jointes possibles par séance : **entraînement prévu** compatible Garmin (après validation technique), **activité réellement enregistrée** (export FIT, GPX, TCX, CSV selon disponibilité).
+- Les rapports peuvent inclure GPS, distances, vitesses/allures, fréquence cardiaque, intervalles et toute mesure **effectivement présente** ; ne pas en inventer.
+- Source possible initiale : **export d'activité Garmin Connect fourni par le propriétaire**. Un import **MCP/API** est envisagé mais non confirmé ni relié aujourd'hui.
+- Structure et conventions documentées dans `docs/GARMIN.md` et `pieces-jointes/README.md`. **Aucune pièce jointe Garmin réelle déposée à cette date**. Aucun lien ou panneau de pièce jointe ajouté à l'IHM sans demande/approbation.
+- GitHub doit être la **mémoire persistante** des fichiers et décisions ; ne pas dépendre de la mémoire d'une conversation ou d'un agent.
+
+## 15. Séparation définitive des casquettes — décision la plus récente
+
+- **Coach exclusivement** : reconnaît le retour utilisateur (« j'ai fait ma sortie », sensations, fichier Garmin) comme **déclencheur suffisant pour traiter et mettre à jour immédiatement dans GitHub** (`fait`, `sensations`, données et pièces jointes, adaptation éventuelle du planning), sans redemander une instruction de publication distincte.
+- **Le Coach n'a JAMAIS le droit de changer l'IHM**, l'HTML, le CSS, le JavaScript de présentation, les menus ou les composants. Ni de créer des éléments graphiques. Si l'interface ou le schéma ne suffit pas : transférer la demande à Maturation.
+- **Maturation exclusivement** : architecture, documentation, infrastructure, contrat des données et **toutes les modifications d'interface**. Nouveaux éléments visuels uniquement avec la **demande/approbation explicite** du propriétaire. **Maturation ne transcrit plus les retours réels, ne coche plus les sorties et n'adapte plus les séances.**
+- Les casquettes **ne sont pas automatiquement cumulées**. L'agent de cette conversation est **Maturation seulement** ; l'agent Coach sera distinct.
+- Un retour peut conduire à **maintenir, réduire, augmenter, reporter, remplacer ou attendre**. Adapter dès le lendemain si pertinent, pas d'obligation de modification systématique.
+- Pas de travail en arrière-plan supposé : le traitement s'effectue lors de l'échange où l'utilisateur transmet son retour, avec les outils disponibles et les permissions nécessaires.
+
+### Conséquences sur le dépôt
+
+- Coach : `programme.js` **contenu**, `sante/` **données factuelles**, `pieces-jointes/` **fichiers réels**, documentation des choix sportifs.
+- Maturation : `index.html`, architecture, documentation des agents et schémas, rendu des références de pièces jointes (si demandé), gestion du cache.
+- Historique des décisions : **conserver** les anciennes règles datées pour comprendre les choix abandonnés, mais ne jamais les réappliquer.
