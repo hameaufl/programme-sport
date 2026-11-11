@@ -79,6 +79,15 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Vérification** : 15 courses et 3 séances « Kiné · Genoux » conservées dans `programme.js`, 18 identifiants `id` distincts. Absence de l'ancienne phrase sous « Mon calendrier ». Présence de `AGENTS.md` et des quatre documents de passation.
 - **Limites** : vérifications par lecture du code et des fichiers GitHub ; pas de test de rendu réel sur le raccourci Android ni de confirmation du déploiement GitHub Pages.
 
+
+### 11 novembre 2026 — Libellé de suivi « Fait »
+
+- **Demande :** remplacer « Réalisé » par **« Fait »**, sans autre modification de l'interface.
+- **Fichiers :** `index.html`, `README.md`, `docs/CONTEXTE.md`, `docs/REPRISE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`.
+- **Décision :** « Fait » devient l'unique libellé actif des cases de suivi, y compris dans leurs intitulés d'accessibilité ; « Réalisé » reste documenté uniquement comme ancien choix historique.
+- **Compatibilité :** ni les identifiants de séance ni la clé de `localStorage` ne sont modifiés. Les coches préexistantes sont conservées par le code.
+- **Vérification :** à effectuer à la relecture des fichiers GitHub ; pas de test physique du raccourci Android.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
