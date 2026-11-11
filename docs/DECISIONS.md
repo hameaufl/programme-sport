@@ -72,3 +72,13 @@
 - **Pas de doublons** entre l'objectif, le détail et les étapes ; supprimer les paragraphes redondants. Les 15 courses actuelles se présentent avec durée, liste brève du déroulé et éventuelle option de fin de cycle.
 - Préserver le programme réel, ses dates et ses identifiants, les trois kinés et les coches locales.
 - Interdiction inchangée : aucun élément graphique supplémentaire sans accord du propriétaire.
+
+## 9. Accompagnement après chaque séance — 11 novembre 2026
+
+- L'utilisateur transmettra des **comptes rendus après ses sorties** afin d'ajuster le programme au fur et à mesure.
+- Demande initiale : adapter les sorties de la semaine suivante. **Correction immédiate et prioritaire** : **adapter dès le lendemain / dès le jour d'après**, sans attendre la semaine suivante.
+- Cela signifie : revoir la planification dès le retour, ajuster la sortie du lendemain **si elle existe** ; sinon ajuster la **prochaine séance prévue** en préservant les jours de récupération.
+- Selon les sensations : réduire, stabiliser ou augmenter prudemment durée et distance ; la reprise agréable et l'absence de douleur restent prioritaires.
+- Le bracelet ayant des programmes prédéfinis, ne pas inventer des séances incompatibles avec ses modes sans en discuter.
+- **Confidentialité du dépôt public** : consigner ici la méthode et les choix fonctionnels, **pas les comptes rendus privés ou informations de santé personnelles** sans demande explicite.
+
