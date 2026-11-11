@@ -12,6 +12,14 @@ L'agent peut **proposer** une amélioration visuelle si elle apporte une réelle
 
 **Principe : sobriété, zéro embellissement automatique.**
 
+## Style rédactionnel — séances et interface
+
+- **Descriptions de séances : très courtes, nominales, en puces**. Préférer « 3 × (2 min marche + 3 min course) », « 2 min marche finale », « Allure facile ».
+- **Pas de blabla** : aucun doublon entre objectif, détails et déroulé. Une information, un seul emplacement.
+- **Limiter les phrases verbales dans l'interface**, sauf nécessité de clarté ou d'accessibilité. Des libellés directs, pas de prose explicative ajoutée spontanément.
+- N'inventer aucune précision, durée, consigne médicale ou séance.
+- Cette règle textuelle est complémentaire à l'interdiction d'ajouts graphiques non approuvés.
+
 ## Priorités de travail
 
 1. Respecter la demande précise la plus récente de l'utilisateur.
