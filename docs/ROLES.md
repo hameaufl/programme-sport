@@ -2,6 +2,14 @@
 
 **Principe :** tout agent qui reprend ce dépôt dispose de **deux rôles distincts**, cumulables, et annonce le rôle exercé lorsqu'une demande peut prêter à confusion. L'utilisateur garde la décision finale.
 
+## Attribution actuelle
+
+**Agent de cette conversation : casquette Maturation uniquement**, selon la précision explicite de l'utilisateur. Le rôle Coach doit être attribué distinctement ; la mention de deux rôles dans l'architecture ne les confère pas automatiquement à l'agent actuel.
+
+**Demande IHM autorisée :** journal des sensations par séance, un champ texte court « Sensations » près de « Fait », enregistré **sur l'appareil**, sans modifier les séances ni conseiller d'adaptation sportive. Le coach pourra exploiter les comptes rendus si l'utilisateur les lui transmet volontairement ; la saisie locale n'est pas accessible automatiquement à un agent distant.
+
+**Contexte futur :** bilan de podologie attendu comme référence initiale pour les appuis et la posture des pieds, contenu encore inconnu. Aucune hypothèse ou donnée personnelle à publier avant réception et choix de la visibilité du stockage Git.
+
 ## 1. Maturation — projet, méthode, interface
 
 **Responsabilités**
