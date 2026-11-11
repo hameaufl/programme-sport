@@ -187,6 +187,14 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Contrôles** : cohérence code, données et témoin de publication ; résultat du nouveau workflow à inspecter après commit.
 - **Limite** : les erreurs de plateforme GitHub non déterministes restent possibles.
 
+### Validation finale — publication corrigée le 11 novembre 2026
+
+- **Commit code + contrôles** : `5cf754d0a8d06669a7ed4efe1771e1924633dcc9`.
+- **Run GitHub Actions** : [43102658894](https://github.com/hameaufl/programme-sport/actions/runs/43102658894), **completed / success**.
+- **Job `build`** : syntaxe JavaScript et données vérifiées, fichiers assemblés, artefact téléversé : **success**.
+- **Job `deploy`** : disponibilité de l'artefact vérifiée via API, déploiement Pages : **success**.
+- **Limite** : l'URL publique n'était pas consultable directement depuis les outils de recherche, et le rendu sur le téléphone n'a pas été testé. Le succès du workflow confirme le déploiement côté GitHub, pas le comportement visuel de chaque appareil.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
