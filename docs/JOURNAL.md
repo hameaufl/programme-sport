@@ -138,7 +138,7 @@
 - **Informations reçues** : nouvelles semelles orthopédiques le lundi 9 novembre et achat de chaussures de running le lundi précédent (2 novembre). Référence des baskets non encore transmise ; bilan podologique annoncé, pas de résultats disponibles.
 - **Source de vérité** : événements datés dans le journal `personnel/sante/SUIVI.md`, sans duplication dans l'HTML. Aucune conclusion clinique ni tolérance inventée.
 - **Vérifications** : contrôles de la navigation, absence des sections supprimées, existence du suivi daté, cohérence des deux versions HTML, JavaScript et balises `noindex`.
-- **Validation avant publication** : remplacement d'une expression régulière de contrôle mal échappée par trois vérifications simples et vérifiables ; syntaxe JS du validateur relue sans erreur. Contrôle de GitHub Actions requis avant de déclarer le site à jour.
+- **Validation et publication réussies** : [run 43118346281](https://github.com/hameaufl/programme-sport/actions/runs/43118346281), `completed / success` ; contrôles, préparation et déploiement GitHub Pages validés. Correction de syntaxe du validateur intégrée dans `cb2a58165767ad820f28975f01b8563920ddba27` ; changement principal dans `662e8381aa82e890d9fd96f5b5893693160b6d70`.
 
 ## Journal futur
 
