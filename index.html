@@ -49,7 +49,7 @@
     .session{border:1px solid #dfe9dc;background:#fafcf9;border-radius:14px;padding:18px 20px}
     .session h3{font-size:17px;margin:0}.session .meta{color:#63816b;font-size:12px;margin:7px 0 0}
     .session .detail{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;margin:10px 0 0}
-    .session ol{font-size:14px;padding-left:21px;margin:10px 0 0}.session li+li{margin-top:6px}
+    .session ul{font-size:14px;padding-left:21px;margin:10px 0 0}.session li+li{margin-top:6px}
     .week-list{display:grid;gap:9px}.week-item{display:flex;gap:13px;align-items:baseline;background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
     .week-item .date{width:106px;flex:none;font-size:12px;font-weight:800;color:#406b4d}
     .week-item .body{font-size:14px}.week-item .body small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
@@ -184,7 +184,7 @@
         if (metadata(s))box.appendChild(elem("p","meta",metadata(s)));
         if (s.objectif)box.appendChild(elem("p","detail","Objectif : "+s.objectif));
         if (s.details)box.appendChild(elem("p","detail",s.details));
-        if (Array.isArray(s.etapes)&&s.etapes.length){var list=elem("ol");s.etapes.forEach(function(step){list.appendChild(elem("li","",step));});box.appendChild(list);}
+        if (Array.isArray(s.etapes)&&s.etapes.length){var list=elem("ul");s.etapes.forEach(function(step){list.appendChild(elem("li","",step));});box.appendChild(list);}
         cards.appendChild(box);
       });
       dayContent.appendChild(cards);
