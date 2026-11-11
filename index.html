@@ -143,7 +143,7 @@
     var input=elem("input");
     input.type="checkbox";input.dataset.sessionId=sessionId(s);
     input.checked=isCompleted(s);
-    input.setAttribute("aria-label",(s.titre||"Séance")+" du "+s.date+" réalisée");
+    input.setAttribute("aria-label","Réalisé : "+(s.titre||"Séance")+" du "+s.date);
     label.appendChild(input);
     label.appendChild(elem("span","","Réalisé"));
     return label;
@@ -158,7 +158,7 @@
       btn.type="button";btn.dataset.day=String(i);
       btn.setAttribute("aria-pressed",String(i===dayIndex));
       var dailySessions=getDay(i),done=dailySessions.filter(isCompleted).length;
-      btn.setAttribute("aria-label",format(d,{weekday:"long",day:"numeric",month:"long"})+", "+count+" séance(s), "+done+" réalisée(s)");
+      btn.setAttribute("aria-label",format(d,{weekday:"long",day:"numeric",month:"long"})+", "+count+" séance(s), "+done+" terminée(s)");
       btn.appendChild(elem("span","short",format(d,{weekday:"short"})+(key(d)===key(today)?" · auj.":"")));
       btn.appendChild(elem("span","num",String(d.getDate())));
       btn.appendChild(elem("span","month",format(d,{month:"long"})));
