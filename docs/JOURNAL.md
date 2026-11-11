@@ -97,6 +97,17 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Vérifications prévues** : 15 courses, 3 kinés, 18 identifiants inchangés, cases « Fait » et sauvegarde locale inchangées.
 - **Limite** : aucune vérification physique du raccourci Android ; déploiement GitHub Pages à contrôler indépendamment.
 
+
+### 11 novembre 2026 — Méthode d'ajustement au lendemain
+
+- **Demande** : comptes rendus de chaque sortie pour ajuster les séances selon les sensations.
+- **Correction explicite** : ne **pas** attendre la semaine suivante ; réviser la planification **dès le lendemain**.
+- **Règle** : adapter la séance du lendemain si elle est prévue ; sinon la prochaine séance programmée. Maintenir les jours sans course et la récupération.
+- **Options** : diminuer, maintenir ou augmenter prudemment durées et distances. Aucune augmentation automatique.
+- **Confidentialité** : ne pas enregistrer de compte rendu médical ou de symptômes dans le dépôt public.
+- **Fichiers de documentation** : `AGENTS.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`. Programme de course et interface inchangés.
+
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
