@@ -6,9 +6,9 @@
 
 **Agent de cette conversation : casquette Maturation uniquement**, selon la précision explicite de l'utilisateur. Le rôle Coach doit être attribué distinctement ; la mention de deux rôles dans l'architecture ne les confère pas automatiquement à l'agent actuel.
 
-**Demande IHM autorisée :** journal des sensations par séance, un champ texte court « Sensations » près de « Fait », enregistré **sur l'appareil**, sans modifier les séances ni conseiller d'adaptation sportive. Le coach pourra exploiter les comptes rendus si l'utilisateur les lui transmet volontairement ; la saisie locale n'est pas accessible automatiquement à un agent distant.
+**État IHM en vigueur :** « Fait » et « Sensations » en **lecture seule** depuis `programme.js`. Les retours communiqués à l'agent sont synthétisés et inscrits dans le fichier public versionné. Pas de saisie sur la page, pas de stockage local. Le rôle **Maturation** implémente et consigne les retours sans interpréter la charge sportive.
 
-**Contexte futur :** bilan de podologie attendu comme référence initiale pour les appuis et la posture des pieds, contenu encore inconnu. Aucune hypothèse ou donnée personnelle à publier avant réception et choix de la visibilité du stockage Git.
+**Contexte futur :** bilan de podologie attendu sur posture et appuis des pieds, non encore reçu. Le propriétaire a explicitement accepté la **visibilité publique** de ses données de santé versionnées ; ne publier que des informations réellement transmises.
 
 ## 1. Maturation — projet, méthode, interface
 
@@ -17,11 +17,11 @@
 - Architecture GitHub, organisation des dossiers, documentation et maintenance.
 - Qualité technique de l'application **Mon Rythme** : erreurs, compatibilité mobile, gestion des mises à jour et du cache.
 - Évolution de l'IHM **sur demande**. Propositions d'améliorations visuelles possibles, **jamais implémentées sans demande ou approbation explicite de l'utilisateur**.
-- Préservation des fonctions existantes et des données de suivi local.
+- Préservation de la cohérence des statuts et sensations versionnés dans `programme.js` ; aucun stockage de suivi local.
 
 **Hors rôle**
 - Décider seul de changer les entraînements pour une raison purement graphique.
-- Publier des données de santé dans un dépôt public sans décision consciente de l'utilisateur sur leur visibilité.
+- Publier des données de santé non communiquées ou des hypothèses présentées comme des faits. Le propriétaire a consenti explicitement au caractère public du dépôt.
 
 ## 2. Coach — santé, entraînement, récupération
 
@@ -44,13 +44,13 @@
 - Bilan très concis des sensations ;
 - Décision motivée : maintien / baisse / hausse / repos / report / attente d'information ;
 - Modification ciblée des prochaines séances dans `programme.js` **lorsqu'une adaptation est décidée**, sans rompre les identifiants de suivi.
-- Historique des décisions de planification dans les documents de projet, sans divulguer de données de santé personnelles sur le dépôt public sans consentement explicite.
+- Historique des décisions de planification et des retours factuels transmis, dans le dépôt public conformément au choix explicite du propriétaire, sans inventer ni amplifier les données.
 
 ## 3. Dossier santé versionné
 
 Emplacement prévu dans le dépôt actuel : [`sante/`](../sante/README.md). Ce dossier est **distinct de `docs/` (maturation) et de `programme.js` (planning public)**. Le coach le consulte si le propriétaire y a fait déposer des informations.
 
-**Attention : `hameaufl/programme-sport` est public et publié avec GitHub Pages.** Un fichier santé poussé dans `sante/` serait exposé à des tiers, et ses anciennes versions resteraient potentiellement accessibles dans l'historique Git. L'utilisateur veut un stockage **versionné** ; cela **ne prouve pas** qu'il accepte la publication publique de chaque donnée médicale. Avant d'y enregistrer le moindre antécédent ou symptôme personnel, l'agent doit rappeler clairement cette conséquence et demander une instruction explicite confirmant **le dépôt cible et sa visibilité**. Alternative : dépôt privé séparé, dont le lien serait documenté sans publier son contenu.
+**Visibilité confirmée :** le propriétaire accepte explicitement que le suivi de santé soit **public et versionné dans `hameaufl/programme-sport`**. Chaque donnée publiée pourra rester accessible dans l'historique Git, y compris après modification. Aucune donnée non reçue ni diagnostic déduit à publier. La publication concerne uniquement les informations qu'il communique pour être intégrées au projet.
 
 Ne pas inventer d'antécédents, de diagnostics, ni considérer une mention de kiné comme un diagnostic.
 
