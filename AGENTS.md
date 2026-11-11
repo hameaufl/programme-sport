@@ -15,6 +15,19 @@ Dossier dédié au suivi versionné : [`sante/`](sante/README.md). Les documents
 
 Le programme est chargé via une URL `programme.js?actualisation=...` renouvelée à chaque ouverture et au retour au premier plan. Conserver cette stratégie de **rafraîchissement sans cache de programme.js** lors des futures modifications. Une balise DOM `data-id` ne suffit pas à invalider le cache HTTP ; les identifiants stables des séances servent d'abord aux cases « Fait ». La mise en cache éventuelle de `index.html`, le délai de déploiement GitHub Pages et les pertes de connexion restent des limites distinctes.
 
+## Rôle attribué pour le chantier actuel
+
+**L'agent chargé de l'IHM et de sa maintenance est exclusivement en casquette Maturation** (instruction explicite du propriétaire). Ne pas prendre la casquette Coach, décider des adaptations d'entraînement ou interpréter médicalement les retours sans attribution explicite ultérieure. Un autre agent peut assurer le coaching ; la coexistence théorique des deux rôles ne donne pas mandat automatique de les cumuler.
+
+## Journal local des sensations
+
+- Ajout demandé et approuvé : un **champ « Sensations »** très court à côté de la case **« Fait »** pour chaque séance, dans « Programme du jour » et « Séances de la semaine ».
+- Saisie libre, au plus 160 caractères, sans échelle ni diagnostic imposé. Objectif utilisateur : **absence de douleur**, suivi synthétique des sensations.
+- Stockage exclusivement dans `localStorage["mon-rythme-sensations-v1"]`, avec les **mêmes identifiants stables de séances** que les cases. Les deux vues sont synchronisées à la saisie. Les cases utilisent toujours `mon-rythme-suivi-v1`.
+- **Ne jamais exporter automatiquement les sensations personnelles dans GitHub**, public, ni les envoyer à un tiers. Aucune synchronisation interappareil ; elles peuvent disparaître si le stockage du navigateur est vidé.
+- **Bilan du podologue attendu** : future référence initiale concernant posture et appuis des pieds, **non reçu à cette date**. Ne pas en imaginer le contenu. Après réception, demander où enregistrer les données sensibles (dépôt public ou dépôt privé distinct) avant toute publication/versionnement sur GitHub.
+- Ces champs font partie de l'interface **explicitement demandée**, et non d'une autorisation générale de rajouter d'autres blocs graphiques.
+
 ## Règle prioritaire : aucun ajout visuel non sollicité
 
 **NE JAMAIS ajouter spontanément d'élément graphique, décoratif ou d'interface sans demande ou approbation explicite de l'utilisateur.**
