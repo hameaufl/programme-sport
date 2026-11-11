@@ -10,3 +10,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Automatisation** : tout commit Coach sur `personnel/**` déclenche Pages, sans lancement manuel ; vérifier l'état `success` après publication.
 - **Ségrégation récente** : déplacement du programme, du suivi santé et du futur espace Garmin sous `personnel/`, **sans second exemplaire versionné**. Les fichiers construction ne reprennent pas le programme individuel.
 - **Historique** : les anciennes règles de suivi local, et la publication Pages classique depuis la branche, ont été abandonnées. Les décisions plus anciennes restent accessibles dans les commits Git.
+
+## 11 novembre 2026 — Absence d'indexation souhaitée
+
+- Le site GitHub Pages **reste public par choix explicite**, mais le propriétaire **ne veut pas qu'il apparaisse dans les résultats des moteurs de recherche**.
+- **Choix technique** : ajout de `<meta name="robots" content="noindex, nofollow">` et `<meta name="googlebot" content="noindex, nofollow">` dans `index.html`, **sans changement visuel**.
+- **Pas de `robots.txt` projet trompeur** : sur `hameaufl.github.io/programme-sport/`, seul le fichier à la racine de l'hôte est applicable. Une interdiction de crawl empêcherait potentiellement Google de lire `noindex`.
+- **Prévention** : test intégré à `scripts/verifier-site.cjs`, échec de publication si `noindex` manque ; procédure inscrite dans `AGENTS.md`.
+- **Limitations** : les moteurs peuvent différer dans leur respect de `noindex` ; le dépôt public et les données JavaScript/Garmin ne deviennent pas privés ni systématiquement désindexés ; l'URL peut toujours être partagée.

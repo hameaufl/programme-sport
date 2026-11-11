@@ -7,6 +7,8 @@ const read = path => fs.readFileSync(path, "utf8");
 const required = ["index.html", "personnel/programme.js", "favicon.svg", "icon-192.png", "icon-512.png", "manifest.webmanifest", "publication.txt"];
 for (const file of required) assert.ok(fs.existsSync(file), "Fichier manquant : " + file);
 const html = read("index.html");
+assert.ok(html.includes('<meta name="robots" content="noindex, nofollow">'), "La page doit interdire son indexation");
+assert.ok(html.includes('<meta name="googlebot" content="noindex, nofollow">'), "Le refus explicite de Googlebot est requis");
 const programme = read("personnel/programme.js");
 assert.ok(!fs.existsSync("programme.js"), "Duplication interdite : programme.js à la racine");
 assert.ok(html.includes('source.src="./personnel/programme.js"'), "La page doit charger la source personnelle");

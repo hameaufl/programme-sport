@@ -2,6 +2,14 @@
 
 Site : https://hameaufl.github.io/programme-sport/ — dépôt GitHub public, branche `main`.
 
+## Indexation par les moteurs de recherche
+
+**Décision du propriétaire : site public, mais non indexé.** L'HTML contient `robots: noindex, nofollow` et `googlebot: noindex, nofollow`. Le contrôle automatique bloque les publications si ces métadonnées sont absentes.
+
+Un `robots.txt` dans ce sous-dossier GitHub Pages ne remplace pas les directives de page : le fichier `robots.txt` effectif doit résider à la racine de l'hôte. Ne pas bloquer le robot avec un `robots.txt` si l'on attend qu'il découvre `noindex`.
+
+**Limites :** les directives sont respectées par les moteurs compatibles, mais n'offrent pas d'authentification ; les données de `personnel/`, les fichiers éventuels et le dépôt GitHub public peuvent être découverts ou partagés autrement. Une page déjà indexée pourra nécessiter une nouvelle exploration pour disparaître.
+
 ## Architecture sans doublon de données
 
 - **Construction :** `index.html`, [docs/](docs/REPRISE.md), [AGENTS.md](AGENTS.md), `scripts/`, `.github/`.

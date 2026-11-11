@@ -1,5 +1,13 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Indexation volontairement désactivée — règle permanente
+
+- La page publique **ne doit pas être indexée** par les moteurs de recherche respectant `noindex`. Maintenir dans `index.html` les balises `<meta name="robots" content="noindex, nofollow">` et `<meta name="googlebot" content="noindex, nofollow">`.
+- `scripts/verifier-site.cjs` doit **échouer avant publication** si ces métadonnées disparaissent. Ne jamais les supprimer sans demande explicite du propriétaire.
+- **Ne pas ajouter de `robots.txt` bloquant l'exploration** sur cette page : Google doit pouvoir la consulter pour lire `noindex`. Un `robots.txt` déposé dans le sous-répertoire du projet `/programme-sport/` n'est pas reconnu comme fichier `robots.txt` de l'hôte.
+- **Limite assumée :** `noindex` n'est ni un mot de passe ni une garantie contre tous les moteurs/robots ; le dépôt GitHub et les ressources non-HTML restent publics et potentiellement découvrables. Ne jamais présenter le site comme confidentiel ou inaccessible sans l'URL.
+- À chaque modification future de l'HTML, garder la directive et vérifier sa publication. Aucune modification visuelle n'est nécessaire.
+
 ## Deux casquettes exclusives
 
 **Maturation** : architecture, `index.html`, CSS, JS de rendu, `docs/`, `AGENTS.md`, `README.md`, validation et déploiement. **Jamais les données sportives réelles, sensations, statuts ou décisions de progression.**
