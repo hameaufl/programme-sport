@@ -1,34 +1,35 @@
 # Profil santé et mécanique — à renseigner
 
-> **Aucune donnée personnelle renseignée.** Ne remplir qu'après une décision explicite concernant la visibilité et le dépôt de stockage.
+**Statut : aucun bilan ni antécédent personnel reçu.** Le propriétaire a accepté la visibilité **publique** et le versionnement GitHub des données de santé qu'il transmet pour ce projet. Ne pas inventer des informations.
+
+**Rôle : Coach** pour renseigner les observations et bilans transmis. **Maturation** gère seulement la structure du dossier, pas son contenu clinique.
 
 ## Antécédents utiles à la pratique sportive
 
-À renseigner selon les informations fournies par le propriétaire, sans supposition.
+_Aucun renseignement fourni._
 
-## Bilan de podologie — pièce attendue
+## Bilan de podologie — attendu
 
-- **Statut :** bilan annoncé, non reçu.
-- **Périmètre prévu :** posture et appuis des pieds.
-- **Constats / mesures / recommandations :** aucune donnée renseignée.
-- **Stockage du document et de ses informations :** à confirmer selon la visibilité choisie pour les données de santé versionnées.
+- **Statut :** annoncé, non reçu.
+- **Périmètre annoncé :** posture et appuis des pieds.
+- **Constats, mesures, recommandations :** aucun renseignement fourni.
 
 ## Aspects mécaniques / articulaires / musculaires
 
-À renseigner : articulations ou régions concernées, contraintes connues, éventuelles évaluations faites par un professionnel.
+_Aucun renseignement fourni._
 
 ## Rééducation et suivi professionnel
 
-À renseigner : éléments explicitement communiqués, dates et recommandations ; pas de diagnostic inféré.
+_Aucun renseignement fourni._
 
 ## Tolérance à l'effort et récupération
 
-À renseigner : limitations rapportées, signaux d'alerte, facteurs de récupération pertinents.
+_Aucun renseignement fourni._
 
 ## Autres informations utiles
 
-À renseigner selon les besoins et avec accord explicite.
+_Aucun renseignement fourni._
 
 ## Sources et dates de mise à jour
 
-À compléter lors du premier renseignement.
+_À compléter par le Coach à réception des documents._
