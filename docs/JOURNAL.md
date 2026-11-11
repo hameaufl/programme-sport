@@ -155,7 +155,7 @@
 - **Correction Maturation** : règle prioritaire dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et décisions ; l'interface filtre **uniquement les réserves méthodologiques parenthétiques** connues, sans masquer les précisions anatomiques utiles.
 - **Maintien des périmètres** : aucune modification de `personnel/`. La correction durable à la source appartient au Coach lors de sa prochaine intervention sur le programme.
 - **Qualité** : tests sur les deux puces concernées et sur une parenthèse anatomique utile ; versions des deux pages HTML et du témoin synchronisées (`2026-11-12-structures-sans-reserves-v12`).
-- **Publication** : à vérifier avec GitHub Actions.
+- **Publication validée** : [run 43121853734](https://github.com/hameaufl/programme-sport/actions/runs/43121853734), `completed / success` ; tests, artefact et déploiement GitHub Pages réussis. Commit IHM et consignes : `36c78d4a8cac277521dd6b22493cef75086c6c6e`.
 
 ## Journal futur
 
