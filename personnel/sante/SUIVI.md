@@ -8,7 +8,7 @@
 
 - **Identifiant :** `kine-2026-11-04`
 - **Prévu :** première séance de kinésithérapie des genoux.
-- **Réalisé :** étirements du genou réalisés par le kinésithérapeute ; échange avec celui-ci sur les ressentis du patient (détails non transmis) ; exercices de renforcement, dont presse à 40 et 50 kg et déplacement latéral « en crabe » avec un gros élastique autour des cuisses ; étirements.
+- **Réalisé :** Bilan initial ; Étirements ; Presse à cuisses · 40 et 50 kg ; Marche latérale avec bande élastique (cuisses).
 - **Durée :** non précisée.
 - **Sensations / limite rapportée :** douleurs lors de la presse avec des charges supérieures à 50 kg ; aucun autre ressenti détaillé communiqué. Ne pas interpréter ces valeurs comme un diagnostic ou comme une charge maximale validée.
 - **Après la séance / récupération :** non renseignées.

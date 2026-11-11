@@ -34,6 +34,15 @@ Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation
 - **Limite assumée :** `noindex` n'est ni un mot de passe ni une garantie contre tous les moteurs/robots ; le dépôt GitHub et les ressources non-HTML restent publics et potentiellement découvrables. Ne jamais présenter le site comme confidentiel ou inaccessible sans l'URL.
 - À chaque modification future de l'HTML, garder la directive et vérifier sa publication. Aucune modification visuelle n'est nécessaire.
 
+## Déroulé de la séance — intitulés ultra-concis (Coach)
+
+- Dans le **« Déroulé de la séance »**, écrire une **liste à puces d'intitulés très courts**, idéalement **2 à 8 mots par puce** : noms d'exercices, mouvements ou étapes, **sans phrase verbale**, sans sujet, sans récit et sans mention inutile du patient ou du praticien.
+- Exemple de style attendu : **« Bilan initial »**, **« Étirements »**, **« Presse à cuisses · 40 et 50 kg »**, **« Marche latérale avec bande élastique »**. Ce sont des **exemples de formulation**, pas une prescription à recopier pour chaque séance.
+- Employer le **terme sportif ou biomécanique établi** qui correspond réellement au mouvement décrit en langage courant ; **ne pas surinterpréter** le geste. Conserver uniquement les charges, répétitions ou accessoires **transmis**, et ne pas inventer de muscle sollicité, d'exercice ou d'intensité.
+- Pour alimenter le rendu, maintenir des intitulés aussi brefs dans `exercicesRealises` ou la rubrique **« Réalisé »** de `personnel/sante/SUIVI.md` (éléments séparés par **point-virgule**), selon la source existante. **Éviter les doublons** entre ces sources ; utiliser la source déjà documentée en priorité.
+- Les **ressentis, douleurs, tolérance, contexte professionnel et nuances** appartiennent au bloc **« Sensations »** ou au journal santé détaillé, **pas aux puces**. Le Coach peut expliquer le vocabulaire en dehors des intitulés si utile.
+- Cette règle renforce la séparation **déroulé factuel minimal / sensations formulées clairement** ; le Coach reste seul responsable du suivi, et les données personnelles sont consignées seulement d'après les informations reçues.
+
 ## Déroulé de séance — présentation et source réelle
 
 - **Demande utilisateur** : en vue « Programme du jour », séparer **« Déroulé de la séance »** (liste à puces des exercices effectivement réalisés) et **« Sensations »** (paragraphe de ressenti et limites). La partie « Déroulé » apparaît **avant** « Sensations ».

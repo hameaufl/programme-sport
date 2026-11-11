@@ -115,6 +115,13 @@
 - **Résultat du déploiement** : [run 43115608340](https://github.com/hameaufl/programme-sport/actions/runs/43115608340) terminé en `success` : validation, assemblage et publication GitHub Pages réussis. Commit IHM : `41ece7d09e0eba7c71440b4ca2cbf4752fc8179d`.
 - **Vérification fonctionnelle du contenu** : le lecteur du journal extrait 4 éléments déjà rapportés pour `kine-2026-11-04`, sans écrire dans `personnel/`. Le rendu Android réel n'a pas été testé.
 
+## 11 novembre 2026 — Libellés minimalistes dans le déroulé
+
+- **Demande** : utiliser des puces nominales très courtes, sans verbes ni longues explications, avec une terminologie sportive adaptée et uniquement les précisions réellement reçues.
+- **Décision pérenne** : consigne de concision adressée au Coach dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et `docs/DECISIONS.md` ; déroulé bref, sensations et précautions conservées séparément.
+- **Présentation du 4 novembre** : la rubrique « Réalisé » du journal santé fournit quatre libellés compacts au rendu existant, sans changer la note de sensations, le statut « Fait » ni les autres données.
+- **Technique** : aucune retouche HTML/CSS/JavaScript ; les fichiers `personnel/**` déclenchent automatiquement la publication Pages. Suivi de déploiement à vérifier.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

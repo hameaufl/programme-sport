@@ -11,6 +11,10 @@ Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse su
 
 Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
+## Règle Coach sur la longueur du déroulé
+
+**Les puces « Déroulé de la séance » doivent être nominales, très courtes (environ 2 à 8 mots), sans phrases narratives.** Exemples : « Bilan initial » ; « Étirements » ; « Presse à cuisses · 40 et 50 kg » ; « Marche latérale avec bande élastique ». Le Coach transcrit le vocabulaire courant en termes sportifs **sans invention**. Écrire ces libellés concis dans `exercicesRealises` ou dans `personnel/sante/SUIVI.md` après **« Réalisé : »** séparés par des points-virgules. **Sensations** conserve la description des douleurs/ressentis distincte du déroulé.
+
 ## Déroulé et sensations — dernière décision
 
 - Dans la vue détaillée, afficher **« Déroulé de la séance »** sous le titre si la séance est confirmée : liste des exercices réellement rapportés, provenant de `s.exercicesRealises` (liste de chaînes facultative, rédigée par le Coach) ou de **« Réalisé »** dans `personnel/sante/SUIVI.md` pour le même identifiant. Jamais déduire de faits depuis un programme prévu ni des sensations. Si rien n'est documenté, afficher une mention d'absence.

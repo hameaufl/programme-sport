@@ -93,3 +93,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - La première séance de kiné a un compte rendu véritable dans le journal : les exercices déjà rapportés apparaissent sans exiger que Maturation réécrive le programme.
 - **Responsabilité du Coach** : distinguer faits (exercices), sensations (ressenti), hypothèses (chaînes musculaires sollicitées), et reformuler avec une terminologie compréhensible ; ne pas inférer de diagnostic. Aucun changement du contenu sportif par Maturation.
 - Conserver le résumé hebdomadaire épuré et l'absence de cases cliquables. Ajouter validation structurelle prépublication, garder les deux pages et `publication.txt` sur la même version.
+
+## 11 novembre 2026 — Concision impérative du déroulé des séances
+
+- Les éléments sous **« Déroulé de la séance »** sont des **intitulés en puces très courts**, de préférence **2 à 8 mots**, sans phrase narrative, sujet-verbe-complément ni détails de contexte.
+- Retenir des désignations précises : **« Bilan initial »**, **« Étirements »**, **« Presse à cuisses · 40 et 50 kg »**, **« Marche latérale avec bande élastique »** ; les charges et équipements ne figurent que s'ils ont réellement été rapportés.
+- Le Coach **traduit le vocabulaire de l'utilisateur en termes techniques pertinents** sans inventer des groupes musculaires ou conclure sur une technique non confirmée.
+- La partie **« Sensations »** et le suivi santé détaillé demeurent les emplacements pour la narration, les douleurs et les nuances ; la liste ne doit pas les reprendre.
+- Les intitulés affichés proviennent de `personnel/programme.js` (`exercicesRealises`, le cas échéant) ou de **« Réalisé »** dans `personnel/sante/SUIVI.md`, séparé par points-virgules ; **ne pas créer de doublon** lorsque l'une des sources contient déjà les faits.
