@@ -61,7 +61,7 @@ assert.ok(dailyRender.includes("var structures=structuresDisplay(s);"), "Bloc St
 assert.ok(dailyRender.indexOf("derouleDisplay(s)") < dailyRender.indexOf("structuresDisplay(s)") && dailyRender.indexOf("structuresDisplay(s)") < dailyRender.indexOf("sensationsDisplay(s)"), "Les sections doivent suivre l'ordre Séance, Structures, Sensations");
 assert.ok(html.includes('box.appendChild(elem("h4","","Structures sollicitées"));'), "Titre de la rubrique anatomique absent");
 assert.ok(html.includes("structuresJournal[s.id]") && html.includes("s.structuresSollicitees"), "Sources Coach des structures non lues");
-assert.ok(html.includes("**Structures sollicitées") && html.includes("À préciser par le Coach."), "Journal des structures ou état vide non pris en charge");
+assert.ok(html.includes("var structures=raw.match(") && html.includes("if(structures)entry.structures=structures[1];") && html.includes("À préciser par le Coach."), "Journal des structures ou état vide non pris en charge");
 assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"'), "Pour une séance réalisée, le titre doit être Séance ; conserver Programme prévu sinon");
 assert.ok(html.includes("s.exercicesRealises") && html.includes("realisesJournal[s.id]"), "Lecture des exercices réalisés absente");
 assert.ok(html.includes("analyserJournalRealise(markdown)") && html.includes('./personnel/sante/SUIVI.md?actualisation='), "Source réelle du journal santé non lue");
