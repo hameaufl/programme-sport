@@ -28,7 +28,7 @@ window.MON_RYTHME_PROGRAMMES = {
       "type": "kine",
       "id": "kine-2026-11-04",
       "fait": true,
-      "sensations": "Première séance : étirements du genou, échanges sur les ressentis et renforcement. Presse à 40 et 50 kg, douleurs aux charges supérieures ; marche en crabe avec gros élastique autour des cuisses."
+      "sensations": "À la presse, j'ai eu des douleurs à partir de 60-70 kilos, donc je suis resté sur 50 kilos."
     }
   ],
   "2026-11-09": [

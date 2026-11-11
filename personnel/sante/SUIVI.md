@@ -8,9 +8,9 @@
 
 - **Identifiant :** `kine-2026-11-04`
 - **Prévu :** première séance de kinésithérapie des genoux.
-- **Réalisé :** Bilan initial ; Étirements ; Presse à cuisses · 40 et 50 kg ; Marche latérale avec bande élastique (cuisses).
+- **Réalisé :** Bilan initial ; Étirements ; Presse à cuisses · 40 et 50 kg ; Marche latérale avec bande élastique (cuisses) ; Étirements.
 - **Durée :** non précisée.
-- **Sensations / limite rapportée :** douleurs lors de la presse avec des charges supérieures à 50 kg ; aucun autre ressenti détaillé communiqué. Ne pas interpréter ces valeurs comme un diagnostic ou comme une charge maximale validée.
+- **Sensations :** À la presse, j'ai eu des douleurs à partir de 60-70 kilos, donc je suis resté sur 50 kilos.
 - **Après la séance / récupération :** non renseignées.
 - **Décision Coach au 11 novembre :** marquer la séance comme réalisée ; maintenir provisoirement le programme de course, sans augmentation sur ce seul compte rendu ancien, dans l'attente des sensations actuelles et des retours des autres séances. Ne pas forcer en présence de douleur ; discuter des charges douloureuses avec le kinésithérapeute.
 - **Source :** compte rendu oral de l'utilisateur transmis le 11 novembre 2026 sur la séance du 4 novembre.

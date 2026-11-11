@@ -78,3 +78,9 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - Compte rendu détaillé factuel consigné dans `personnel/sante/SUIVI.md` ; résumé et statut « Fait » mis à jour dans `personnel/programme.js`.
 - **Décision Coach :** aucun changement automatique de dates ou de séances de course. Attendre des informations sur l'état actuel des genoux et les autres activités avant toute progression ; ne pas forcer à une charge qui provoque la douleur.
 - Aucun autre rendez-vous ni sortie noté réalisé faute de confirmation.
+
+## 12 novembre 2026 — Précision du compte rendu de kiné du 4 novembre
+
+- **Correction utilisateur :** remplacer le texte des sensations de `kine-2026-11-04` par le ressenti exact de douleur à la presse à partir de 60–70 kg, avec maintien de la charge à 50 kg.
+- **Déroulé corrigé :** ajouter une seconde étape « Étirements » pour clôturer la séance après la marche latérale avec bande élastique.
+- **Réalisations :** mettre à jour le champ `sensations` dans `personnel/programme.js` et l'entrée « Réalisé » / « Sensations » de `personnel/sante/SUIVI.md` ; dates, autres séances et plan de course inchangés.
