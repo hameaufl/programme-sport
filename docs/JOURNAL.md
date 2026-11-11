@@ -146,7 +146,7 @@
 - **Demande Coach** : résumer les ressentis en segments nominaux très brefs, presque sans verbes, sans paraphrase narrative. Distinguer effort rapporté, sollicitation probable et diagnostic.
 - **Implémentation Maturation** : section dédiée seulement sur les séances réalisées. Sources facultatives `structuresSollicitees` de `personnel/programme.js` ou `**Structures sollicitées :**` dans le journal de même ID ; aucune dérivation anatomique automatique, état « À préciser par le Coach » si absent.
 - **Consignes et tests** : `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/DECISIONS.md` et `scripts/verifier-site.cjs`. Aucun changement des fichiers `personnel/`.
-- **Version des deux pages et témoin** : `2026-11-12-structures-sollicitees-v11`. Publication à vérifier sur GitHub Actions.
+- **Version des deux pages et témoin** : `2026-11-12-structures-sollicitees-v11`. [Run 43120640790](https://github.com/hameaufl/programme-sport/actions/runs/43120640790) **`completed / success`** : validation, artefact et publication GitHub Pages réussis. Commit de fonctionnalité `43cfd0e397cfda5922c0b614efcc1a15d5435285`, correctif du test `e29dbd9941572e93a6ae43b5895eff406a012aa9`.
 
 ## Journal futur
 
