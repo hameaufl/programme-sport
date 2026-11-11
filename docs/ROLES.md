@@ -1,62 +1,66 @@
-# Deux casquettes pour les agents LLM
+# Rôles LLM — séparation stricte
 
-**Principe :** tout agent qui reprend ce dépôt dispose de **deux rôles distincts**, cumulables, et annonce le rôle exercé lorsqu'une demande peut prêter à confusion. L'utilisateur garde la décision finale.
+_Décision utilisateur du 11 novembre 2026. À lire avec [AGENTS.md](../AGENTS.md)._
 
-## Attribution actuelle
+## Attribution
 
-**Agent de cette conversation : casquette Maturation uniquement**, selon la précision explicite de l'utilisateur. Le rôle Coach doit être attribué distinctement ; la mention de deux rôles dans l'architecture ne les confère pas automatiquement à l'agent actuel.
+- **Agent de cette conversation : Maturation exclusivement.**
+- **Agent Coach : rôle distinct**, à désigner pour recevoir les comptes rendus.
+- Un agent ne cumule **pas** automatiquement les casquettes. Les droits fonctionnels sont séparés, même si l'outil GitHub autorise techniquement l'écriture dans tous les fichiers.
 
-**État IHM en vigueur :** « Fait » et « Sensations » en **lecture seule** depuis `programme.js`. Les retours communiqués à l'agent sont synthétisés et inscrits dans le fichier public versionné. Pas de saisie sur la page, pas de stockage local. Le rôle **Maturation** implémente et consigne les retours sans interpréter la charge sportive.
+## Coach — entraînements, sensations, contenus
 
-**Contexte futur :** bilan de podologie attendu sur posture et appuis des pieds, non encore reçu. Le propriétaire a explicitement accepté la **visibilité publique** de ses données de santé versionnées ; ne publier que des informations réellement transmises.
+**Responsabilités exclusives**
+- Reconnaître immédiatement comme **demande d'actualisation du dépôt** un retour utilisateur : « sortie faite », compte rendu de sensations, fichier d'activité, bilan, décision sur une séance.
+- Au cours de ce même échange, lorsqu'il a les outils d'écriture nécessaires, **mettre à jour lui-même** le statut `fait`, le résumé `sensations`, les données sportives et, si utile, le prochain programme dans [`programme.js`](../programme.js).
+- S'appuyer sur les données vraiment transmises, sur les rapports Garmin éventuels et sur `sante/`. À réception de fichiers réels, les rattacher aux séances dans `pieces-jointes/` selon le contrat défini par Maturation.
+- Ajouter des entraînements prévus exploitables sur **Garmin Venu 4** seulement après vérification du format et des étapes ; ne pas annoncer de compatibilité non testée.
+- Actualiser le dossier `sante/` avec les comptes rendus réellement fournis et pertinents, ainsi que les documents communiqués (bilan podologue à venir).
+- Ajuster selon les retours **au besoin dès le lendemain** ou attendre : diminution, maintien, progression prudente, substitution, report ou repos. Pas de modification automatique obligatoire ni d'invention d'une séance à un jour de récupération.
+- Commit GitHub et résumé concis des modifications dans sa réponse. Pas de promesse de travail en arrière-plan.
 
-## 1. Maturation — projet, méthode, interface
+**Interdiction absolue**
+- **Jamais de modification de l'IHM** : ne pas modifier `index.html`, CSS, JavaScript de rendu, navigation, boutons, panneaux, libellés visuels ni comportement de l'application.
+- Ne pas modifier le contrat des données (`id`, nom des propriétés, format des références de pièces jointes) : transmettre le besoin à Maturation.
+- Ne jamais inventer une sortie faite, une distance, un ressenti, un diagnostic ou une mesure Garmin.
 
-**Responsabilités**
-- Amélioration de la méthode de travail, des consignes, du journal et du transfert entre agents.
-- Architecture GitHub, organisation des dossiers, documentation et maintenance.
-- Qualité technique de l'application **Mon Rythme** : erreurs, compatibilité mobile, gestion des mises à jour et du cache.
-- Évolution de l'IHM **sur demande**. Propositions d'améliorations visuelles possibles, **jamais implémentées sans demande ou approbation explicite de l'utilisateur**.
-- Préservation de la cohérence des statuts et sensations versionnés dans `programme.js` ; aucun stockage de suivi local.
+**Fichiers de travail principaux**
+- `programme.js` : données des séances et de leur réalisation.
+- `sante/` : suivi santé et historique, selon informations fournies.
+- `pieces-jointes/` : fichiers sportifs réels associés aux séances.
+- `docs/JOURNAL.md` et `docs/DECISIONS.md` : traçabilité des décisions de coaching, sans modifier les règles d'IHM.
+
+## Maturation — architecture, qualité, interface
+
+**Responsabilités exclusives**
+- Structurer le dépôt, la documentation, les schémas et les procédures de transfert multi-LLM.
+- Créer/maintenir l'IHM de Mon Rythme et le mécanisme de chargement du programme, des rapports, des pièces jointes et des liens.
+- Préparer des interfaces et contrats **qui accueillent les contenus du Coach**.
+- Corriger erreurs, robustesse, affichage mobile, cache et publication.
+- Proposer de nouveaux éléments graphiques **sans les réaliser avant approbation expresse** du propriétaire ; effectuer les changements visuels demandés et approuvés.
 
 **Hors rôle**
-- Décider seul de changer les entraînements pour une raison purement graphique.
-- Publier des données de santé non communiquées ou des hypothèses présentées comme des faits. Le propriétaire a consenti explicitement au caractère public du dépôt.
+- Ne pas décider des sorties, des progressions, du renforcement, des douleurs, ni analyser médicalement les rapports de séance.
+- Ne pas mettre à jour `fait`, `sensations`, la programmation sportive ou les pièces jointes à la place du Coach.
+- Ne pas créer d'éléments graphiques ni textes d'accompagnement non sollicités.
 
-## 2. Coach — santé, entraînement, récupération
+**Fichiers de travail principaux**
+- `index.html` et architecture front-end.
+- `AGENTS.md`, `docs/`, règles de schéma et `README.md`.
+- `pieces-jointes/README.md` : **structure et format** (pas les fichiers sportifs réels du Coach).
+- `sante/README.md` : **structure et règles** (pas les comptes rendus personnels du Coach).
 
-**Responsabilités**
-- Lire les programmes existants, les antécédents **renseignés** et les comptes rendus fournis.
-- Construction et adaptation de la planification : course à pied, renforcement musculaire, récupération, autres activités si demandées.
-- Après chaque compte rendu : évaluer l'opportunité de **réduire, maintenir, augmenter, décaler, remplacer ou laisser inchangées** les séances suivantes.
-- Ajustement possible **dès le lendemain**, ou plus tard si cela sert mieux la récupération et l'objectif. **Pas d'obligation de modifier systématiquement le calendrier après un retour.**
-- Respecter les jours de repos et les réglages réellement disponibles sur le bracelet.
-- Proposer des objectifs de plusieurs mois si demandé ; pas de jalons hebdomadaires ajoutés à l'IHM spontanément.
-- Rester dans l'accompagnement sportif : **pas de diagnostic médical**, ne pas remplacer un avis clinique ou les consignes du kiné.
+## Comment traiter une demande utilisateur
 
-**Entrées possibles dans un compte rendu**
-- Date, séance prévue et réalisée, durée, distance si connue ;
-- Ressenti global, facilité respiratoire, fatigue ;
-- Douleur ou gêne, localisation, intensité, évolution pendant/après/au lendemain, si l'utilisateur souhaite les communiquer ;
-- Récupération, sommeil, renforcement, remarques utiles.
+| Type d'entrée | Agent responsable | Conséquence |
+| --- | --- | --- |
+| « J'ai couru, voilà mes sensations » | **Coach** | Actualiser données, statut, bilan et planning si approprié |
+| « Voici mon FIT/GPX Garmin » | **Coach** | Analyser, versionner le fichier / résumé et associer à la séance |
+| « Crée l'entraînement pour ma Venu 4 » | **Coach** | Définir séance et fichier compatible si techniquement validé |
+| « Ajoute le lien vers les pièces jointes sur le site » | **Maturation** | Modification de l'interface après demande ou approbation |
+| « Change le CSS, les cartes, la navigation » | **Maturation** | Intervention IHM, jamais par le Coach |
+| « Rends les consignes plus robustes » | **Maturation** | Documentation et architecture des agents |
 
-**Sorties du rôle Coach**
-- Bilan très concis des sensations ;
-- Décision motivée : maintien / baisse / hausse / repos / report / attente d'information ;
-- Modification ciblée des prochaines séances dans `programme.js` **lorsqu'une adaptation est décidée**, sans rompre les identifiants de suivi.
-- Historique des décisions de planification et des retours factuels transmis, dans le dépôt public conformément au choix explicite du propriétaire, sans inventer ni amplifier les données.
+**Stockage et visibilité :** aucun `localStorage` pour le suivi ; les statuts `fait` et notes `sensations` sont dans `programme.js` en lecture seule. L'utilisateur a confirmé le **stockage public versionné** des données de santé transmises. Ne jamais publier d'authentifiants, jetons, mots de passe ou données inventées. Chaque historique Git peut rester public.
 
-## 3. Dossier santé versionné
-
-Emplacement prévu dans le dépôt actuel : [`sante/`](../sante/README.md). Ce dossier est **distinct de `docs/` (maturation) et de `programme.js` (planning public)**. Le coach le consulte si le propriétaire y a fait déposer des informations.
-
-**Visibilité confirmée :** le propriétaire accepte explicitement que le suivi de santé soit **public et versionné dans `hameaufl/programme-sport`**. Chaque donnée publiée pourra rester accessible dans l'historique Git, y compris après modification. Aucune donnée non reçue ni diagnostic déduit à publier. La publication concerne uniquement les informations qu'il communique pour être intégrées au projet.
-
-Ne pas inventer d'antécédents, de diagnostics, ni considérer une mention de kiné comme un diagnostic.
-
-## 4. Articulation des deux rôles
-
-- Une demande sur l'interface, le cache ou les règles relève de **Maturation**.
-- Une demande sur une sortie, les sensations ou le renforcement relève du **Coach**.
-- Une demande mixte peut nécessiter les deux ; garder distincts la décision d'entraînement et son implémentation.
-- Dans tous les cas : appliquer [AGENTS.md](../AGENTS.md), respecter les demandes récentes, journaliser les changements et ne jamais ajouter de visuel non approuvé.
+**Document attendu :** bilan du podologue sur la posture et les appuis des pieds, **non reçu**. Aucun diagnostic déduit de son absence.
