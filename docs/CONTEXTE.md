@@ -4,7 +4,7 @@ _Mise à jour de ce dossier : 11 novembre 2026, d'après les demandes et le code
 
 ## Mission
 
-**Mon Rythme / Programme Sport** est un site volontairement sobre de consultation d'un planning de sorties sportives et rendez-vous de kiné. L'utilisateur fournit des programmes, l'agent les intègre **statiquement** dans le dépôt, puis GitHub Pages expose la version publiée. L'interface est en français, responsive sur ordinateur et sur Android via un raccourci installé en mode standalone.
+**Mon Rythme / Programme Sport** est un site volontairement sobre de consultation d'un planning de sorties sportives et rendez-vous de kiné. Le coach établit des programmes avec l'utilisateur, et l'agent les intègre **statiquement** dans le dépôt, puis GitHub Pages expose la version publiée. L'interface est en français, responsive sur ordinateur et sur Android via un raccourci installé en mode standalone.
 
 Dépôt : https://github.com/hameaufl/programme-sport — branche `main`, dépôt **public**. URL GitHub Pages attendue : https://hameaufl.github.io/programme-sport/ . Le fait que des commits soient présents ne prouve pas à lui seul que l'URL publique a été déployée correctement ; vérifier avant d'affirmer.
 
@@ -15,6 +15,31 @@ Dépôt : https://github.com/hameaufl/programme-sport — branche `main`, dépô
 - `manifest.webmanifest`, icônes, `.nojekyll` : intégration et publication sur GitHub Pages.
 - Aucune base de données, aucun backend applicatif, aucun compte à saisir sur le site, aucun champ quotidien, ni formulaire de programme.
 - Les noms de fichier et de clés de sauvegarde déjà publiés sont des contrats de compatibilité : les modifier exige une migration ou une approbation.
+
+
+## Organisation des rôles
+
+Voir [`ROLES.md`](ROLES.md) et [`AGENTS.md`](../AGENTS.md).
+
+- **Maturation** : structure du dépôt, consignes, qualité technique, fonctionnement de Mon Rythme et évolution de l'IHM demandée ou expressément approuvée. Aucun embellissement visuel autonome.
+- **Coach** : prise en compte des comptes rendus et du contexte de santé renseigné, programme de course, renforcement et récupération. Décisions possibles : diminuer, maintenir, augmenter, reporter, suspendre ou attendre pour mieux évaluer. **Ajustement possible dès le lendemain**, sans obligation de modifier systématiquement après chaque séance.
+- Les deux rôles sont distincts même lorsqu'ils sont assurés par le même LLM.
+
+## Espace de données santé versionnées
+
+- `sante/README.md` : périmètre et avertissement de visibilité.
+- `sante/PROFIL.md` : modèle de profil mécanique, antécédents et contraintes utiles.
+- `sante/SUIVI.md` : modèle de comptes rendus et décisions d'entraînement.
+- Aucun antécédent ni bilan clinique personnel **effectif** n'est actuellement renseigné.
+- Le dépôt `hameaufl/programme-sport` est **public**. Un dossier Git n'est pas une frontière de confidentialité ; les fichiers, ainsi que leurs historiques, peuvent être exposés, y compris via GitHub Pages. L'utilisateur veut du **versionnement**, mais le dépôt cible et la visibilité de ses futures données personnelles doivent être clarifiés et explicitement validés avant leur publication. Dépôt privé séparé possible.
+
+## Actualisation et cache du programme
+
+- Au chargement, `index.html` crée dynamiquement une balise `script` vers `./programme.js?actualisation=<horodatage>` avant d'initialiser le calendrier.
+- Le programme se recharge également au retour au premier plan (`visibilitychange`) et lors d'un retour d'historique navigateur (`pageshow` persistant).
+- Une requête versionnée contourne la réutilisation ordinaire du cache HTTP de `programme.js`. Les mêmes identifiants de séances `id` préservent les coches en `localStorage`.
+- Les balises HTML des séances ne constituent pas un mécanisme de validation du cache : c'est la ressource `programme.js` qui doit être actualisée.
+- La version de `index.html` peut être conservée temporairement dans le cache du navigateur, et un déploiement GitHub Pages peut prendre du temps. Il n'existe pas de garantie de fraîcheur instantanée ni de fonctionnement hors ligne dans cette architecture.
 
 ## État de l'interface validé par l'utilisateur
 
