@@ -60,6 +60,15 @@ Voir [`ROLES.md`](ROLES.md) et [`AGENTS.md`](../AGENTS.md).
 - Les champs redondants `objectif` et `details` ont été retirés du programme en vigueur.
 - Pas de bloc ou texte d'accompagnement supplémentaire sans demande.
 
+## Journal de sensations (IHM)
+
+- Chaque séance affiche **« Fait »** et, à côté, un champ **« Sensations »** (saisie libre courte, maximum 160 caractères), dans le détail du jour **et** la liste de la semaine.
+- Notes enregistrées immédiatement sous `localStorage["mon-rythme-sensations-v1"]`, indexées par le même `id` de séance. Modification dans une vue reflétée dans l'autre **sans interrompre la frappe**.
+- Aucun envoi vers GitHub ou serveur, aucune synchronisation entre appareils, aucune exportation automatique vers `sante/`. Nettoyer les données du site peut supprimer les notes.
+- Exemple de ressenti court, non prérempli : « Aucune douleur, facile ». **Aucun symptôme réel communiqué** à ce stade.
+- Le chantier actuel est en **casquette Maturation seulement**. Ne pas déduire des notes ou de la coche des décisions de programme sans attribution du rôle Coach.
+- **Bilan du podologue à venir**, état initial attendu sur posture / appuis des pieds ; document non encore reçu. N'enregistrer aucune mesure ou diagnostic supposé.
+
 ## Sauvegarde du suivi
 
 Le statut des coches est sauvegardé dans `localStorage` sous la clé `mon-rythme-suivi-v1` ; l'identifiant de séance `id` est la clé logique. Les cases ne sont **ni synchronisées** entre appareils, **ni poussées dans GitHub**. Le raccourci Android est installé par l'utilisateur ; selon son navigateur et l'environnement standalone, le stockage peut être partagé avec le site standard ou séparé. Il faut tester son environnement et ne pas promettre une synchronisation.
