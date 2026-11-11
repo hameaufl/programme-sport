@@ -2,6 +2,25 @@
 
 > **À lire intégralement avant toute modification.** Ce fichier reprend les décisions explicites du propriétaire du projet. Il constitue le point d'entrée des agents capables de travailler sur ce dépôt. Il ne remplace pas les nouvelles instructions directes de l'utilisateur, qui prévalent.
 
+## Publication systématique — obligation prioritaire
+
+**À chaque retour utilisateur concernant le projet, à chaque décision adoptée et à chaque modification du code ou du contenu :**
+1. Traiter la demande **dans le tour en cours**, avec les outils GitHub disponibles, sans attendre une instruction supplémentaire « pousse sur GitHub ».
+2. Appliquer le changement dans les **fichiers de la branche `main`** correspondant au rôle : Maturation → architecture/consignes/IHM ; Coach → séances/statuts/sensations/fichiers Garmin réels.
+3. Consigner la décision nouvelle ou modifiée dans `docs/DECISIONS.md` et l'intervention dans `docs/JOURNAL.md`. Les simples constats sans décision nouvelle peuvent être journalisés sans modifier le registre.
+4. **Créer effectivement les commits**, puis relire les fichiers sur GitHub pour confirmer les modifications ; indiquer les SHA ou liens de commits et les éventuels échecs. **Ne jamais présenter une simple proposition non poussée comme une mise à jour effective.**
+5. Pour tout changement censé affecter le site, **vérifier l'état du déploiement GitHub Pages** lorsque les outils le permettent. Si le site public est inaccessible à l'agent ou la publication impossible à vérifier, **l'indiquer explicitement** et fournir un test concret à effectuer. Un push sur `main` **ne prouve pas** que le site actuellement servi a été redéployé.
+6. Ne jamais supposer qu'un autre agent se souviendra de la conversation : écrire les décisions dans les fichiers du dépôt, sans information inventée.
+
+**La casquette Maturation est responsable de cette discipline de versionnement pour ses propres interventions.** La casquette Coach versionne ses comptes rendus et adaptations sportives selon ses propres responsabilités, **sans toucher à l'IHM**. Aucune intervention future asynchrone implicite.
+
+## Contrôle des versions publiées
+
+- Un site Android peut conserver une ancienne version de `index.html` même si `programme.js` est demandé avec un paramètre anti-cache. La présence d'anciennes cases interactives indique que **le HTML servi est ancien** (le `index.html` de `main` présente les statuts en lecture seule).
+- Un fichier technique `publication.txt` à la racine indique une **version cible de publication** ; contrôler son apparition à l'URL Pages correspondante. Il ne prouve pas à lui seul que le HTML et tous les fichiers sont alignés.
+- Vérifier `Settings → Pages` (source de publication, branche `main`, dossier `/(root)` si publication depuis une branche) et `Actions → pages build and deployment` si une version reste ancienne ; ne pas changer ces paramètres sans justification.
+- Fournir au besoin une URL avec paramètre de version pour le HTML, **sans ajouter d'élément d'interface**. Garder le suivi 100 % statique et sans stockage local.
+
 ## Séparation stricte et permanente des responsabilités — décision prioritaire
 
 **Coach — seul responsable des données sportives et des retours :**
