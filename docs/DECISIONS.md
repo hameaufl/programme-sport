@@ -43,3 +43,12 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Afficher un **vrai bouton cliquable si l'interface de conversation le permet**, sinon un lien Markdown nommé ; ne pas faire croire qu'un simple texte crée un bouton.
 - La décision concerne **la réponse du Coach uniquement**, pas l'interface de Mon Rythme. Le Coach reste concis, centré sur le coaching et peut détailler une séance si nécessaire.
 - Aucun ajout de bouton dans le code HTML du site et aucune modification du programme personnel.
+
+## 11 novembre 2026 — Carte Coach variante 2 simplifiée, choix remplaçant
+
+- Le propriétaire choisit **la carte de la variante 2**, basée sur l'aperçu précédent, **mais simplifiée**.
+- En-tête : remplacer l'icône « Parcours » (`route`) par **`arrow-up-right`** juste à gauche du titre **« Mon Rythme »**.
+- **Supprimer entièrement le sous-paragraphe** sous le titre (« Retrouver mes séances et mon suivi »).
+- Bouton principal pleine largeur : **« Accéder à mes séances »**, **sans icône**. L'ancien « Ouvrir mon programme » et sa flèche sont retirés.
+- URL inchangée : `https://hameaufl.github.io/programme-sport/`.
+- **Cette décision remplace le choix du bouton seul avec l'icône route** et tous anciens textes de bouton contradictoires. Exclusivement pour les réponses du Coach dans le chat ; aucune nouvelle carte sur le site GitHub Pages.

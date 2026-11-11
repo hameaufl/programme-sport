@@ -56,6 +56,12 @@
 - **Limite technique** : vrai bouton seulement si le client conversationnel le permet ; repli sur un lien Markdown explicite. L'ouverture standalone sur Android n'est pas garantie.
 - **Aucun changement d'IHM du site ni de données sportives** : commit documentaire, sans déclenchement de Pages.
 
+## 11 novembre 2026 — Carte Coach simplifiée, nouvelle sélection
+
+- **Demande utilisateur** : partir de la carte variante 2, remplacer l'icône Parcours de l'en-tête par la flèche `arrow-up-right`, supprimer le sous-titre et écrire **« Accéder à mes séances »** sur le bouton principal **sans icône**.
+- **Action Maturation** : remplacer les consignes d'affichage des réponses dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, et consigner le nouveau choix dans les décisions.
+- **Aucun changement de l'application GitHub Pages** ni du programme personnel. Documentation uniquement : pas de déploiement Pages attendu.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

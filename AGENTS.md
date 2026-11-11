@@ -16,14 +16,16 @@
 - **En cas de problème concernant son propre travail**, signaler sobrement l'échec de commit/publication, une donnée manquante ou une alerte importante ; ne pas masquer ces éléments pour être plus bref.
 - Ne pas réduire la qualité de l'analyse et de l'historisation : **la concision s'applique aux messages à l'utilisateur**, pas au travail de fond ni à la mémoire GitHub du Coach.
 
-## Bouton Mon Rythme — choix graphique approuvé pour les réponses Coach
+## Carte de navigation Mon Rythme — rendu approuvé pour le Coach
 
-**Décision définitive du propriétaire : option 2, bouton bien visible, icône 5 « Parcours » (icône Lucide `route`).** À utiliser dans les réponses du Coach lorsqu'il oriente l'utilisateur vers son programme :
-- Bouton principal, visuellement mis en valeur ; **icône « route » à gauche**, libellé **« Ouvrir Mon Rythme »**, petite flèche **`arrow-up-right`** à droite.
-- Destination immuable : **https://hameaufl.github.io/programme-sport/**.
-- **S'il est possible de rendre un vrai bouton cliquable dans l'interface de conversation, l'utiliser** ; sinon proposer un lien Markdown explicite `[Ouvrir Mon Rythme](https://hameaufl.github.io/programme-sport/)`. Ne jamais produire du faux HTML, un bouton inerte ou promettre un rendu non pris en charge.
-- Cette présentation concerne **uniquement les réponses du Coach dans la conversation**, pas l'IHM du site. Maturation ne modifie pas `index.html` à cette occasion.
-- **Rester concis** et ne pas relater les travaux de Maturation ; le Coach garde la possibilité de détailler une séance à la demande. Sur Android, l'ouverture standalone depuis ce bouton dépend du système ; pas de garantie.
+**Choix actuel du propriétaire : variante 2 en carte, modifiée.** À utiliser dans les réponses du Coach relatives aux séances, quand le client de conversation prend en charge ce rendu :
+
+- **Carte bordée aux coins arrondis**, format compact.
+- **En-tête sur une seule ligne** : icône `arrow-up-right` (flèche vers le haut à droite, icône de Mon Rythme) **à gauche de « Mon Rythme »**. **Pas d'icône `route`**.
+- **Aucun sous-texte** : ne pas écrire « Retrouver mes séances et mon suivi », ni description équivalente.
+- **Bouton principal pleine largeur**, intitulé **« Accéder à mes séances »**, **sans aucune icône**, ni à gauche ni à droite. Bouton réellement cliquable vers `https://hameaufl.github.io/programme-sport/`.
+- Si le rendu interactif/carte est indisponible : lien Markdown nommé **[Accéder à mes séances](https://hameaufl.github.io/programme-sport/)**. Ne pas promettre d'ouverture en standalone Android ; ne pas fabriquer de bouton inactif.
+- Il s'agit **uniquement de la réponse du Coach dans ChatGPT**, pas d'une modification du site lui-même. Toujours privilégier les réponses concises, exclusivement sportives ; pouvoir détailler la séance quand demandé ou utile.
 
 ## Réponse Coach — lien vers Mon Rythme et détail de séance
 
