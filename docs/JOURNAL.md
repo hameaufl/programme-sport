@@ -19,7 +19,8 @@
 - Extraction du contenu personnel écrit en dur dans la page vers le fichier personnel.
 - Workflow déclenché par `personnel/**`, chemin déployé conservé ; tests anti-doublons et validité JS mis à jour.
 - Conservation à l'identique des 18 séances, identifiants et statuts ; aucune décision sportive.
-- À vérifier après commit : validation du pipeline et disponibilité de l'application mise à jour.
+- **Contrôle GitHub Actions confirmé :** [run 43105814078](https://github.com/hameaufl/programme-sport/actions/runs/43105814078), `completed / success`. Validation du code/données, artefact et déploiement Pages réussis.
+- **Commit de séparation :** `2b2e5ba56820e1b40c74df41a853679c351ccfab`. Aucune vérification physique du rendu sur Android.
 
 ## Journal futur
 
