@@ -140,6 +140,14 @@
 - **Vérifications** : contrôles de la navigation, absence des sections supprimées, existence du suivi daté, cohérence des deux versions HTML, JavaScript et balises `noindex`.
 - **Validation et publication réussies** : [run 43118346281](https://github.com/hameaufl/programme-sport/actions/runs/43118346281), `completed / success` ; contrôles, préparation et déploiement GitHub Pages validés. Correction de syntaxe du validateur intégrée dans `cb2a58165767ad820f28975f01b8563920ddba27` ; changement principal dans `662e8381aa82e890d9fd96f5b5893693160b6d70`.
 
+## 12 novembre 2026 — Structures anatomiques et sensations télégraphiques
+
+- **Demande IHM** : ajouter « Structures sollicitées » entre « Séance » et « Sensations », en liste par région ou chaîne musculaire, avec vocabulaire technique précis et lisible ; ne pas mêler l'anatomie aux exercices.
+- **Demande Coach** : résumer les ressentis en segments nominaux très brefs, presque sans verbes, sans paraphrase narrative. Distinguer effort rapporté, sollicitation probable et diagnostic.
+- **Implémentation Maturation** : section dédiée seulement sur les séances réalisées. Sources facultatives `structuresSollicitees` de `personnel/programme.js` ou `**Structures sollicitées :**` dans le journal de même ID ; aucune dérivation anatomique automatique, état « À préciser par le Coach » si absent.
+- **Consignes et tests** : `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/DECISIONS.md` et `scripts/verifier-site.cjs`. Aucun changement des fichiers `personnel/`.
+- **Version des deux pages et témoin** : `2026-11-12-structures-sollicitees-v11`. Publication à vérifier sur GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-suivi-sante-compact-v10">
+  <meta name="mon-rythme-version" content="2026-11-12-structures-sollicitees-v11">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -59,6 +59,10 @@
     .session-programme h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
     .session-programme .program-notes{font-size:14px;color:#607a66;margin:6px 0 9px;white-space:pre-wrap;overflow-wrap:anywhere}
     .session-programme .program-empty{font-size:13px;color:#7a8d7c;margin:5px 0 0;font-style:italic}
+    .session-structures{margin-top:18px;padding-top:15px;border-top:1px solid #dce8df;min-width:0}
+    .session-structures h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
+    .session-structures ul{color:#4e6955;overflow-wrap:anywhere}
+    .session-structures .structures-empty{color:#7a8d7c;font-size:13px;font-style:italic;margin:6px 0 0}
     .week-list{display:grid;gap:9px}
     .week-item{display:flex;gap:13px;align-items:center;background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
     .week-item .date{width:106px;flex:none;font-size:12px;font-weight:800;color:#406b4d}
@@ -143,6 +147,7 @@
   var weekStart=monday(today);
   var dayIndex=(today.getDay()+6)%7;
   var realisesJournal=Object.create(null);
+  var structuresJournal=Object.create(null);
   // Semaines civiles du lundi au dimanche, indépendantes des dates de début du cycle.
   function monday(date) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);d.setDate(d.getDate()-(d.getDay()+6)%7);return d;}
   function plus(date,n) {var d=new Date(date);d.setDate(d.getDate()+n);return d;}
@@ -202,32 +207,58 @@
     }
     return box;
   }
+  // Ne pas déduire de muscles ou tendons depuis les exercices : seul le Coach documente ces structures.
+  function structuresDisplay(s) {
+    if(!isCompleted(s))return null;
+    var box=elem("section","session-structures");
+    box.appendChild(elem("h4","","Structures sollicitées"));
+    var items=Array.isArray(s.structuresSollicitees)&&s.structuresSollicitees.length
+      ? s.structuresSollicitees
+      : (structuresJournal[s.id]||[]);
+    items=items.filter(function(item){return typeof item==="string"&&item.trim();});
+    if(items.length) {
+      var list=elem("ul");
+      items.forEach(function(item){list.appendChild(elem("li","",item.trim()));});
+      box.appendChild(list);
+    } else {
+      box.appendChild(elem("p","structures-empty","À préciser par le Coach."));
+    }
+    return box;
+  }
   // Le journal sous personnel/ est la source des réalisations déjà consignées.
   // Lire uniquement les rubriques explicites « Identifiant » et « Réalisé »,
   // sans interprétation ni reproduction permanente dans le code de l'IHM.
   function analyserJournalRealise(markdown) {
-    var byId=Object.create(null),entry=null;
+    var byId=Object.create(null),structuresById=Object.create(null),entry=null;
+    function items(text){return text.split(/\s*;\s*/).map(function(v){return v.trim();}).filter(Boolean);}
     function save(){
-      if(!entry||!entry.id||!entry.realise)return;
-      var lines=entry.realise.split(/\s*;\s*/).map(function(v){return v.trim();}).filter(Boolean);
-      if(lines.length)byId[entry.id]=lines;
+      if(!entry||!entry.id)return;
+      if(entry.realise){var exercises=items(entry.realise);if(exercises.length)byId[entry.id]=exercises;}
+      if(entry.structures){var structures=items(entry.structures);if(structures.length)structuresById[entry.id]=structures;}
     }
     markdown.split(/\r?\n/).forEach(function(raw){
-      if(/^##\s/.test(raw)){save();entry={id:"",realise:""};return;}
+      if(/^##\s/.test(raw)){save();entry={id:"",realise:"",structures:""};return;}
       if(!entry)return;
       var id=raw.match(/^-\s+\*\*Identifiant\s*:\*\*\s*`([^`]+)`/i);
       if(id){entry.id=id[1];return;}
       var realise=raw.match(/^-\s+\*\*Réalisé\s*:\*\*\s*(.+)$/i);
-      if(realise)entry.realise=realise[1];
+      if(realise){entry.realise=realise[1];return;}
+      var structures=raw.match(/^-\s+\*\*Structures sollicitées\s*:\*\*\s*(.+)$/i);
+      if(structures)entry.structures=structures[1];
     });
     save();
-    return byId;
+    return {exercices:byId,structures:structuresById};
   }
   function actualiserJournal(){
     if(typeof fetch!=="function")return;
     fetch("./personnel/sante/SUIVI.md?actualisation="+Date.now(),{cache:"no-store"})
       .then(function(response){if(!response.ok)throw Error("Journal indisponible");return response.text();})
-      .then(function(markdown){realisesJournal=analyserJournalRealise(markdown);render();})
+      .then(function(markdown){
+        var entries=analyserJournalRealise(markdown);
+        realisesJournal=entries.exercices;
+        structuresJournal=entries.structures;
+        render();
+      })
       .catch(function(){/* Programme toujours consultable ; ne jamais simuler des exercices. */});
   }
   function render() {
@@ -268,6 +299,8 @@
         box.appendChild(head);
         if (metadata(s))box.appendChild(elem("p","meta",metadata(s)));
         box.appendChild(derouleDisplay(s));
+        var structures=structuresDisplay(s);
+        if(structures)box.appendChild(structures);
         var note=sensationsDisplay(s);
         if(note)box.appendChild(note);
         cards.appendChild(box);

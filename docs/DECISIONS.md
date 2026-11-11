@@ -115,3 +115,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Le journal santé affiche les faits réels sous forme d'entrées datées (`### AAAA-MM-JJ`), en les lisant depuis `personnel/sante/SUIVI.md`, sans copie dans l'HTML.
 - Nouveaux repères à renseigner progressivement : obtention de semelles orthopédiques le lundi **9 novembre 2026**, achat de chaussures de running le **2 novembre 2026** ; marque et modèle non transmis. Bilan podologique annoncé, aucun document encore disponible dans l'échange.
 - Préserver la séparation des vues, les deux pages `noindex` et le versionnement des sources uniques. Tester avant le déploiement.
+
+## 12 novembre 2026 — Sensations nominales et structures sollicitées
+
+- Demande : **résumer les sensations de manière très concise**, en fragments nominaux quasi non verbaux, sans retranscription phrasée de l'échange et sans répéter les exercices. Rester fidèle aux douleurs, déclencheurs, limites et aux informations réellement fournies.
+- Entre **« Séance »** et **« Sensations »**, ajouter **« Structures sollicitées »** : liste anatomique précise **groupée par région/fonction**, fondée sur les mouvements réellement décrits ; ne pas placer la terminologie musculaire dans les puces d'exercices. Uniquement lorsque la séance est confirmée.
+- Source réservée au Coach : `structuresSollicitees: string[]` facultatif de `personnel/programme.js`, ou ligne `**Structures sollicitées :**` du journal `personnel/sante/SUIVI.md` identifié par la séance ; **pas de doublon** et programme prioritaire.
+- Privilégier la terminologie exacte (*quadriceps fémoral*, *ischio-jambiers*, *moyen fessier*, *chaînes postérieures*, etc.) sur les noms corporels vagues, sans inférer un tendon blessé ni affirmer une activation clinique. Qualifier la sollicitation probable et **n'afficher aucune liste inventée**.
+- S'il n'existe pas de donnée anatomique, afficher « À préciser par le Coach ». Les informations sportives déjà versionnées restent inchangées ; test prépublication étendu à ce nouveau schéma.

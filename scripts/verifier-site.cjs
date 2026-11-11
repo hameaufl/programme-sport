@@ -57,6 +57,11 @@ const weeklyStart = html.indexOf('var all=document.getElementById("allContent")'
 const dailyRender = html.slice(dayStart,weeklyStart);
 assert.ok(dailyRender.includes("box.appendChild(derouleDisplay(s));"), "Déroulé de la séance absent du détail quotidien");
 assert.ok(dailyRender.indexOf("derouleDisplay(s)") < dailyRender.indexOf("sensationsDisplay(s)"), "Le déroulé doit précéder les sensations");
+assert.ok(dailyRender.includes("var structures=structuresDisplay(s);"), "Bloc Structures sollicitées manquant du détail");
+assert.ok(dailyRender.indexOf("derouleDisplay(s)") < dailyRender.indexOf("structuresDisplay(s)") && dailyRender.indexOf("structuresDisplay(s)") < dailyRender.indexOf("sensationsDisplay(s)"), "Les sections doivent suivre l'ordre Séance, Structures, Sensations");
+assert.ok(html.includes('box.appendChild(elem("h4","","Structures sollicitées"));'), "Titre de la rubrique anatomique absent");
+assert.ok(html.includes("structuresJournal[s.id]") && html.includes("s.structuresSollicitees"), "Sources Coach des structures non lues");
+assert.ok(html.includes("**Structures sollicitées") && html.includes("À préciser par le Coach."), "Journal des structures ou état vide non pris en charge");
 assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"'), "Pour une séance réalisée, le titre doit être Séance ; conserver Programme prévu sinon");
 assert.ok(html.includes("s.exercicesRealises") && html.includes("realisesJournal[s.id]"), "Lecture des exercices réalisés absente");
 assert.ok(html.includes("analyserJournalRealise(markdown)") && html.includes('./personnel/sante/SUIVI.md?actualisation='), "Source réelle du journal santé non lue");
@@ -84,6 +89,10 @@ for (const [monday, sessions] of Object.entries(weeks)) {
     assert.ok(typeof s.titre === "string" && s.titre.trim(), "Titre absent");
     assert.equal(typeof s.fait, "boolean", "Statut invalide");
     assert.equal(typeof s.sensations, "string", "Sensations invalides");
+    if (Object.hasOwn(s, "structuresSollicitees")) {
+      assert.ok(Array.isArray(s.structuresSollicitees) && s.structuresSollicitees.every(x => typeof x === "string" && x.trim()), "Liste anatomique invalide");
+      assert.equal(s.fait, true, "Des structures réalisées exigent une séance confirmée");
+    }
     if (Object.hasOwn(s, "exercicesRealises")) {
       assert.ok(Array.isArray(s.exercicesRealises) && s.exercicesRealises.every(x => typeof x === "string" && x.trim()), "Liste des exercices réalisés invalide");
       assert.equal(s.fait, true, "Des exercices réalisés exigent une séance confirmée");

@@ -18,6 +18,13 @@ L'ordre **« Mets-toi à jour »** désigne exclusivement une **lecture du dép�
 - **Jamais de changement d'IHM ni de schéma** ; demande à Maturation en cas de besoin.
 - Données factuelles seulement ; aucun diagnostic ni activité inventés.
 
+## Coach — nouvelles règles de rédaction
+
+- **Sensations : synthèse quasi télégraphique**, fragments nominaux très courts et éventuellement séparés par des points-virgules ; **pas de transcription phrasée** des paroles. Reprendre uniquement les symptômes, limites, déclencheurs et récupérations réellement transmis, sans perdre de précision importante.
+- **Structures sollicitées** : nouvelle section en puces **entre « Séance » et « Sensations »**, uniquement pour les séances **faites**. Utiliser le vocabulaire anatomique précis des **chaînes et groupes musculaires**, voire tendons si justifié, et **regrouper par région et fonction**. Remplacer les formulations vagues comme « cuisse », « bras » par les termes exacts lorsque l'exercice et sa technique le permettent.
+- Stockage : `structuresSollicitees: string[]` facultatif sous la séance confirmée dans `personnel/programme.js`, ou ligne `**Structures sollicitées :**` de `personnel/sante/SUIVI.md` liée au même identifiant, séparée par `;`. **Pas de copie en double**. Une sollicitation probable ne vaut ni preuve clinique ni diagnostic ; laisser vide si les faits sont insuffisants.
+- En conversation, expliquer les termes techniques sur demande ; le résumé destiné au site reste **nominal, direct et court**. Seul le Coach enregistre des informations sportives ou anatomiques individuelles.
+
 ## Présentation concise des exercices par le Coach
 
 Le bloc **« Séance »** doit être **très succinct** : puces de **2 à 8 mots environ**, style nominal, pas de phrases verbales ni de descriptions à rallonge. **« Étirements »** plutôt que « étirements du genou réalisés par le kinésithérapeute » ; **« Bilan initial »** plutôt qu'une phrase sur les échanges ; charges et accessoires réellement rapportés en format court ; **« Marche latérale avec bande élastique »** pour un mouvement décrit comme « marche en crabe », si cela correspond au geste. Écrire ces intitulés compacts dans `exercicesRealises` ou dans la ligne **« Réalisé »** du journal santé (éléments séparés par `;`). Les détails ressentis et précautions appartiennent à **« Sensations »** et au journal, pas à la liste. Ne jamais inventer de faits.

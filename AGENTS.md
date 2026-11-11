@@ -41,6 +41,21 @@ Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation
 - **Limite assumée :** `noindex` n'est ni un mot de passe ni une garantie contre tous les moteurs/robots ; le dépôt GitHub et les ressources non-HTML restent publics et potentiellement découvrables. Ne jamais présenter le site comme confidentiel ou inaccessible sans l'URL.
 - À chaque modification future de l'HTML, garder la directive et vérifier sa publication. Aucune modification visuelle n'est nécessaire.
 
+## Sensations nominales et structures sollicitées — priorité pour le Coach
+
+**Sensations (texte affiché sur le site)**
+- **Extrême concision** : préférence pour des **fragments nominaux**, quasi sans verbe, éventuellement séparés par **« ; »**. Éviter le récit de la conversation, les phrases explicatives et les longs détours. Conserver cependant chaque ressenti important, sa localisation, ses circonstances, le seuil douloureux ou la récupération **seulement s'ils ont été rapportés**.
+- Ne pas répéter les gestes sous « Sensations » : exercices dans « Séance », anatomie dans « Structures sollicitées », perceptions subjectives dans « Sensations ». Conserver la parole exacte de l'utilisateur dans l'historique détaillé si nécessaire, mais **formuler le résumé `sensations` en quelques segments nominaux**. Exemple de **style seulement** : « Douleur antérieure du genou sous charge ; récupération non précisée. » Ne jamais inventer un symptôme ou un seuil.
+- Les explications pédagogiques peuvent être plus développées **dans la conversation à la demande**, pas dans le résumé affiché.
+
+**Nouvelle section « Structures sollicitées »**
+- **Ordre du détail d'une séance confirmée** : **Séance** (exercices en libellés brefs) → **Structures sollicitées** (puces de chaînes et groupes anatomiques) → **Sensations** (court texte nominal). **Ne pas injecter les muscles dans les puces de la séance.** Ne rien afficher de « structures travaillées » pour les séances non confirmées.
+- Pour chaque exercice réellement rapporté, identifier **si possible** les groupes musculaires, chaînes fonctionnelles ou tendons anatomiquement plausibles. **Préférer des termes précis** : *quadriceps fémoral*, *ischio-jambiers*, *moyen fessier*, *abducteurs coxo-fémoraux*, *triceps sural*, *stabilisateurs scapulaires*, *chaîne postérieure*, etc. Ne pas se contenter de « cuisse », « bras », « sous-bras ». **Ne pas multiplier les termes** sans raison.
+- **Regrouper les puces par région et fonction**, sous la forme **« Région / fonction — chaînes, groupes ou structures »** ; par exemple, comme **modèles de style non liés à un entraînement réel**, « Hanche / stabilisation — moyen fessier, abducteurs coxo-fémoraux » ou « Genou / extension — quadriceps fémoral ». Choisir uniquement les structures en rapport démontrable avec les mouvements décrits.
+- **Soutenir la distinction entre sollicitation probable et constat attesté**, qualifier l'incertitude ; ne pas poser de diagnostic, prétendre confirmer un tendon sollicité ou une lésion à partir d'un récit sommaire, ni inventer de groupes musculaires. Si l'exercice ou la technique manque de précision, **ne pas remplir les structures au hasard** : le site affichera « À préciser par le Coach ».
+- **Source de données réservée au Coach** : ajout facultatif de `structuresSollicitees: string[]` dans une séance **`fait:true`** de `personnel/programme.js`, ou ligne **« Structures sollicitées : »** dans l'entrée identifiée `personnel/sante/SUIVI.md` : `- **Structures sollicitées :** Zone / fonction — ... ; Zone — ...`. **Choisir une seule source** sans doublon : le programme est prioritaire, le journal fait office de repli. Respecter les faits et dater la source.
+- Maturation crée le rendu et les tests **sans modifier le contenu personnel**. Cette règle s'applique aux futurs comptes rendus du Coach.
+
 ## Séance — intitulés ultra-concis (Coach)
 
 - Dans le **« Séance »**, écrire une **liste à puces d'intitulés très courts**, idéalement **2 à 8 mots par puce** : noms d'exercices, mouvements ou étapes, **sans phrase verbale**, sans sujet, sans récit et sans mention inutile du patient ou du praticien.

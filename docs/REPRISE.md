@@ -11,6 +11,13 @@ Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse su
 
 Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
+## Nouvelle priorité : sensations très courtes et muscles/chaînes sollicités
+
+- **`sensations`** : quelques **segments nominaux**, presque sans verbes, sans récit ni répétition des exercices ; « ; » autorisé entre ressentis. Conserver les douleurs, circonstances et limites effectivement transmises. Pas de diagnostic.
+- Le détail d'une séance **faite** comporte **« Séance » → « Structures sollicitées » → « Sensations »**. La section centrale affiche des **puces par région / fonction**, avec des noms de muscles, chaînes musculaires ou tendons précis et plausibles, sans prétendre à une certitude médicale.
+- La section « Structures sollicitées » lit `structuresSollicitees: string[]` de la séance `fait:true` dans `personnel/programme.js`, ou **« Structures sollicitées : »** dans le compte rendu du même ID de `personnel/sante/SUIVI.md` (séparer les puces par `;`). Programme prioritaire, journal de repli ; **pas de duplication**. Si rien n'est renseigné, **« À préciser par le Coach »** ; pas d'anatomie inventée par l'interface.
+- **Seul le Coach** renseigne les données, depuis des faits rapportés et en différenciant muscles sollicités probablement, constats professionnels et impressions subjectives. Maturation modifie l'affichage et les tests, pas `personnel/`.
+
 ## Règle Coach sur la longueur du déroulé
 
 **Les puces « Séance » doivent être nominales, très courtes (environ 2 à 8 mots), sans phrases narratives.** Exemples : « Bilan initial » ; « Étirements » ; « Presse à cuisses · 40 et 50 kg » ; « Marche latérale avec bande élastique ». Le Coach transcrit le vocabulaire courant en termes sportifs **sans invention**. Écrire ces libellés concis dans `exercicesRealises` ou dans `personnel/sante/SUIVI.md` après **« Réalisé : »** séparés par des points-virgules. **Sensations** conserve la description des douleurs/ressentis distincte du déroulé.
