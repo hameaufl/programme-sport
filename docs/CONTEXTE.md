@@ -28,6 +28,13 @@ Dépôt : https://github.com/hameaufl/programme-sport — branche `main`, dépô
 - **Aucun pied de page**.
 - Aucune icône supplémentaire, bannière, texte explicatif, tableau de bord ou indicateur ajouté de la propre initiative d'un agent.
 
+## Style éditorial actuel
+
+- Description des séances : **puces courtes**, style nominal, sans phrase superflue.
+- Affichage des courses : titre, durée, 3 puces « 3 × (2 min marche + 3/5 min course) », « 2 min de marche finale », « Allure facile » ; éventuelle option de course continue uniquement lors de la dernière séance.
+- Les champs redondants `objectif` et `details` ont été retirés du programme en vigueur.
+- Pas de bloc ou texte d'accompagnement supplémentaire sans demande.
+
 ## Sauvegarde du suivi
 
 Le statut des coches est sauvegardé dans `localStorage` sous la clé `mon-rythme-suivi-v1` ; l'identifiant de séance `id` est la clé logique. Les cases ne sont **ni synchronisées** entre appareils, **ni poussées dans GitHub**. Le raccourci Android est installé par l'utilisateur ; selon son navigateur et l'environnement standalone, le stockage peut être partagé avec le site standard ou séparé. Il faut tester son environnement et ne pas promettre une synchronisation.
