@@ -29,7 +29,8 @@
 - **Implémentation** : balises `robots` et `googlebot` avec `noindex, nofollow` dans le `head` de `index.html`. Pas de `robots.txt` inefficace dans le sous-chemin du projet.
 - **Prévention** : contrôle obligatoire du `noindex` par `scripts/verifier-site.cjs`, règle permanente dans `AGENTS.md`, documentation de transfert actualisée.
 - **Versions** : méta-identifiant HTML et `publication.txt` harmonisés sur `2026-11-11-noindex-v5` ; aucun changement des données `personnel/`, du calendrier ni du design.
-- **Contrôle** : validation par le workflow GitHub Actions après commit ; déploiement distinct de la présence du code sur `main`.
+- **Contrôle GitHub Actions confirmé** : [run 43107294048](https://github.com/hameaufl/programme-sport/actions/runs/43107294048), **completed / success** — contrôle prépublication, artefact et déploiement Pages réussis.
+- **Commit de mise en œuvre** : `c88b07cf660bcea3eb7a7be32f3b949651261126`. Contrôle direct de l'indexation Google non effectué (dépend d'une prochaine exploration).
 - **Limite** : données et dépôt toujours publics ; `noindex` n'est pas un contrôle d'accès et ne s'applique pas directement à toutes les ressources non-HTML.
 
 ## Journal futur
