@@ -101,7 +101,9 @@
 - **Cause précise** : `index.html` avait le nouveau témoin `2026-11-11-seances-sensations-v7`, tandis que `sante.html` conservait `2026-11-11-suivi-sante-v6`.
 - **Correction Maturation** : synchroniser `sante.html` sur `2026-11-11-seances-sensations-v7` et ajouter une consigne de vérification des **trois versions** (`index.html`, `sante.html`, `publication.txt`) **avant** le commit, et non uniquement dans le pipeline.
 - **Aucun changement des séances ni du contenu médical** ; le script de contrôle reste strict.
-- **Nouveau déploiement** : vérifier que le run suivant devient `success`, puis consigner le résultat.
+- **Validation finale** : [run 43114517500](https://github.com/hameaufl/programme-sport/actions/runs/43114517500), `completed / success`. Vérification du site, assemblage, envoi de l'artefact et publication GitHub Pages réussis.
+- **Correctif** : commit `bc3b4619d0e000c1bd22d5e39210a870d0609873` (versions HTML alignées). Commit IHM initial `04fd78e49c1c5ae9ea529ee0bf214cdd8429a9c9`.
+- **Limite restante** : rendu réel sur téléphone Android non testé par l'agent.
 
 ## Journal futur
 
