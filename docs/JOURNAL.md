@@ -33,6 +33,13 @@
 - **Commit de mise en œuvre** : `c88b07cf660bcea3eb7a7be32f3b949651261126`. Contrôle direct de l'indexation Google non effectué (dépend d'une prochaine exploration).
 - **Limite** : données et dépôt toujours publics ; `noindex` n'est pas un contrôle d'accès et ne s'applique pas directement à toutes les ressources non-HTML.
 
+## 11 novembre 2026 — Style et périmètre de réponse du Coach
+
+- **Demande** : réponses très concises, allant droit au but, sans longs paragraphes ; l'essentiel du détail est sur Mon Rythme.
+- **Précision** : ne pas évoquer les modifications de la casquette Maturation lorsqu'elles sont étrangères au coaching.
+- **Action Maturation** : consigne ajoutée dans `AGENTS.md`, `docs/ROLES.md`, `docs/DECISIONS.md` et `docs/REPRISE.md`.
+- **Portée** : aucun changement de programme personnel, d'IHM ni du workflow GitHub Pages ; publication du site non déclenchée par ces seules modifications documentaires.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

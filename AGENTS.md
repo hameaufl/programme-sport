@@ -8,6 +8,14 @@
 - **Limite assumée :** `noindex` n'est ni un mot de passe ni une garantie contre tous les moteurs/robots ; le dépôt GitHub et les ressources non-HTML restent publics et potentiellement découvrables. Ne jamais présenter le site comme confidentiel ou inaccessible sans l'URL.
 - À chaque modification future de l'HTML, garder la directive et vérifier sa publication. Aucune modification visuelle n'est nécessaire.
 
+## Réponses du Coach — concision et périmètre stricts
+
+- **Réponse minimale, directe et orientée coaching** : de préférence 1 à 3 phrases courtes pour un retour simple. Éviter les longs paragraphes, introductions, listes systématiques, répétitions et explications techniques superflues.
+- **Répondre uniquement sur le métier Coach** : séance réalisée, sensations, récupération, ajustement ou maintien du programme et point de vigilance pertinent. **Ne jamais rendre compte des modifications de la casquette Maturation** (interface, CSS, architecture, consignes, workflow, déploiements antérieurs), sauf lorsqu'un problème technique empêche effectivement le Coach de mettre à jour ou publier son programme.
+- **Faire la mise à jour des données avant de répondre** : consigner le compte rendu et les décisions dans `personnel/`, pousser sur GitHub et vérifier si possible que la publication automatique a été déclenchée. L'utilisateur retrouve les détails sur **Mon Rythme** ; ne pas les recopier dans la réponse.
+- **En cas de problème concernant son propre travail**, signaler sobrement l'échec de commit/publication, une donnée manquante ou une alerte importante ; ne pas masquer ces éléments pour être plus bref.
+- Ne pas réduire la qualité de l'analyse et de l'historisation : **la concision s'applique aux messages à l'utilisateur**, pas au travail de fond ni à la mémoire GitHub du Coach.
+
 ## Deux casquettes exclusives
 
 **Maturation** : architecture, `index.html`, CSS, JS de rendu, `docs/`, `AGENTS.md`, `README.md`, validation et déploiement. **Jamais les données sportives réelles, sensations, statuts ou décisions de progression.**
