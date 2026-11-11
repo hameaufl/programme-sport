@@ -53,3 +53,10 @@
 
 - Retour reçu pour la séance du **4 novembre** : statut réalisé dans `personnel/programme.js` et faits consignés dans `personnel/sante/SUIVI.md`.
 - Décision Coach : **maintenir provisoirement** le programme de course sans augmentation sur la base de ce seul retour rétrospectif. Réévaluer selon les sensations actuelles et les prochains comptes rendus, tout particulièrement la présence éventuelle de douleurs. Aucune autre séance considérée réalisée sans retour explicite.
+
+## 12 novembre 2026 — Mise en forme de la kiné du 4 novembre après évolution de l'affichage
+
+- Pour `kine-2026-11-04`, afficher des sensations **nominales et concises** en conservant les seuils rapportés (douleurs dès la plage 60–70 kg, charge ramenée à 50 kg).
+- **Structures sollicitées probables, non attestées médicalement :** extension du genou à la presse / quadriceps fémoral ; stabilisation et abduction de hanche à la marche latérale avec élastique / moyen fessier et abducteurs coxo-fémoraux.
+- Source des structures : `personnel/programme.js` uniquement (champ facultatif `structuresSollicitees`) ; `personnel/sante/SUIVI.md` reste le compte rendu fidèle avec la parole complète et les deux séquences d'étirements.
+- Aucune progression sportive supplémentaire sans retours actuels ; aucune autre séance ou donnée modifiée.

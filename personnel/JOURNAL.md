@@ -84,3 +84,11 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - **Correction utilisateur :** remplacer le texte des sensations de `kine-2026-11-04` par le ressenti exact de douleur à la presse à partir de 60–70 kg, avec maintien de la charge à 50 kg.
 - **Déroulé corrigé :** ajouter une seconde étape « Étirements » pour clôturer la séance après la marche latérale avec bande élastique.
 - **Réalisations :** mettre à jour le champ `sensations` dans `personnel/programme.js` et l'entrée « Réalisé » / « Sensations » de `personnel/sante/SUIVI.md` ; dates, autres séances et plan de course inchangés.
+
+## 12 novembre 2026 — Application des nouvelles règles à la kiné du 4 novembre
+
+- **Demande utilisateur :** reprendre la dernière publication de la séance `kine-2026-11-04` selon les consignes les plus récentes de sensations nominales et de « Structures sollicitées ».
+- **Sensations :** résumé affiché raccourci en fragments nominaux, en conservant le seuil douloureux rapporté (à partir de 60–70 kg) et la limitation volontaire à 50 kg. Le libellé original plus narratif reste dans `personnel/sante/SUIVI.md` comme compte rendu historique.
+- **Structures sollicitées :** deux indications de **sollicitation anatomiquement probable**, non de constat clinique : quadriceps fémoral pour l'extension du genou à la presse ; moyen fessier et abducteurs coxo-fémoraux pour la stabilisation / abduction de hanche lors de la marche latérale avec élastique. L'utilisateur n'a pas fourni d'analyse musculaire du kinésithérapeute ni les muscles visés par les étirements ; ne rien ajouter à ce sujet.
+- **Source unique :** `structuresSollicitees` dans `personnel/programme.js` ; pas de doublon de la liste dans le journal santé. Le déroulé réel de `personnel/sante/SUIVI.md` conserve **les deux étapes « Étirements »**, dont la dernière clôture la séance.
+- **Décision :** maintenir les autres séances et le programme de course sans modification ; demander des sensations actuelles avant toute progression.

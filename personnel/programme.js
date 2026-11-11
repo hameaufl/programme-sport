@@ -28,7 +28,11 @@ window.MON_RYTHME_PROGRAMMES = {
       "type": "kine",
       "id": "kine-2026-11-04",
       "fait": true,
-      "sensations": "À la presse, j'ai eu des douleurs à partir de 60-70 kilos, donc je suis resté sur 50 kilos."
+      "structuresSollicitees": [
+        "Genou / extension — quadriceps fémoral (sollicitation probable à la presse à cuisses)",
+        "Hanche / abduction et stabilisation — moyen fessier, abducteurs coxo-fémoraux (sollicitation probable avec la marche latérale élastique)"
+      ],
+      "sensations": "Douleurs à la presse à partir de 60–70 kg ; charge maintenue à 50 kg."
     }
   ],
   "2026-11-09": [
