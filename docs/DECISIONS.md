@@ -64,3 +64,11 @@
 - **Nouvelle demande explicite :** remplacer « Réalisé » par **« Fait »** dans les deux vues et les libellés d'accessibilité.
 - Ce choix **remplace** la décision précédente demandant le masculin « Réalisé ». Conserver l'historique ci-dessus pour la traçabilité, mais appliquer **« Fait »** comme libellé actif.
 - Aucune modification des identifiants de séance, des dates, ni du stockage local `mon-rythme-suivi-v1` ; les coches déjà enregistrées restent associées aux mêmes séances.
+
+## 8. Descriptions des séances — décision du 11 novembre 2026
+
+- **Descriptions très concises** : libellés directs, majoritairement sans verbe conjugué.
+- **Étapes présentées en puces**, pas en liste numérotée.
+- **Pas de doublons** entre l'objectif, le détail et les étapes ; supprimer les paragraphes redondants. Les 15 courses actuelles se présentent avec durée, liste brève du déroulé et éventuelle option de fin de cycle.
+- Préserver le programme réel, ses dates et ses identifiants, les trois kinés et les coches locales.
+- Interdiction inchangée : aucun élément graphique supplémentaire sans accord du propriétaire.
