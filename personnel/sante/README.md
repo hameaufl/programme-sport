@@ -17,10 +17,10 @@
 
 ## Source de vérité des séances
 
-- `programme.js` porte `fait` et `sensations` **statiquement** pour chaque séance, rédigés et mis à jour par le **Coach**.
+- `personnel/programme.js` porte `fait` et `sensations` **statiquement** pour chaque séance, rédigés et mis à jour par le **Coach**.
 - **Pas de `localStorage`**, pas de saisie ou export depuis l'IHM. Les statuts/sensations apparaissent en lecture seule sur Mon Rythme.
-- `sante/` peut conserver l'historique détaillé, sans créer de contradiction avec les résumés de `programme.js`.
-- Les pièces Garmin réelles sont conservées dans `pieces-jointes/` ; procédures dans [docs/GARMIN.md](../docs/GARMIN.md).
+- `sante/` peut conserver l'historique détaillé, sans créer de contradiction avec les résumés de `personnel/programme.js`.
+- Les pièces Garmin réelles sont conservées dans `personnel/pieces-jointes/` ; procédures dans [docs/GARMIN.md](../GARMIN.md).
 
 ## Règles de saisie (Coach)
 

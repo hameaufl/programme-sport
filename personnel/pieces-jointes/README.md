@@ -11,8 +11,8 @@
 ## Organisation future
 
 ```
-pieces-jointes/seances/<id-stable-de-seance>/prevu/<fichier>
-pieces-jointes/seances/<id-stable-de-seance>/realise/<fichier>
+personnel/pieces-jointes/seances/<id-stable-de-seance>/prevu/<fichier>
+personnel/pieces-jointes/seances/<id-stable-de-seance>/realise/<fichier>
 ```
 
 - `prevu/` : entraînement programmé pour la **Garmin Venu 4**, après vérification réelle de compatibilité.
@@ -21,7 +21,7 @@ pieces-jointes/seances/<id-stable-de-seance>/realise/<fichier>
 
 ## Références
 
-Voir [docs/GARMIN.md](../docs/GARMIN.md) pour les formats, le contrat facultatif `pieces_jointes` et les procédures Garmin.
+Voir [docs/GARMIN.md](../GARMIN.md) pour les formats, le contrat facultatif `pieces_jointes` et les procédures Garmin.
 
 Le propriétaire a validé un **dépôt public** pour les données versionnées. Les fichiers GPS peuvent dévoiler des trajets et des lieux personnels ; une fois poussés, ils peuvent rester accessibles dans l'historique Git. Ne jamais mettre de mot de passe ou token Garmin dans ce dépôt.
 

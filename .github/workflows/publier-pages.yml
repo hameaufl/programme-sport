@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - index.html
-      - programme.js
+      - "personnel/**"
       - favicon.svg
       - icon-192.png
       - icon-512.png
@@ -40,7 +40,13 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          cp index.html programme.js favicon.svg icon-192.png icon-512.png manifest.webmanifest publication.txt _site/
+          cp index.html favicon.svg icon-192.png icon-512.png manifest.webmanifest publication.txt _site/
+          mkdir -p _site/personnel
+          cp personnel/programme.js _site/personnel/programme.js
+          if [ -d personnel/pieces-jointes/seances ]; then
+            mkdir -p _site/personnel/pieces-jointes
+            cp -R personnel/pieces-jointes/seances _site/personnel/pieces-jointes/
+          fi
           touch _site/.nojekyll
 
       - name: Envoyer l'artefact Pages

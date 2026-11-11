@@ -17,13 +17,13 @@
 - **Récupération :** …
 - **Décision Coach :** maintien / réduction / augmentation / report / repos / attente
 - **Séances concernées :** …
-- **Pièce jointe Garmin si reçue :** `pieces-jointes/seances/<id>/realise/<fichier>`
+- **Pièce jointe Garmin si reçue :** `personnel/pieces-jointes/seances/<id>/realise/<fichier>`
 - **Source :** retour daté de l'utilisateur / document fourni.
 
 ## Règles
 
 - Distinguer faits transmis, décisions d'entraînement et hypothèses.
-- Mettre à jour les champs `fait` et `sensations` **dans `programme.js`**, source de l'affichage du site.
+- Mettre à jour les champs `fait` et `sensations` **dans `personnel/programme.js`**, source de l'affichage du site.
 - Fichiers réels Garmin dans `pieces-jointes/`, jamais de lien fictif.
 - Aucun stockage local sur la page Mon Rythme, aucun champ à remplir.
 - Compte rendu utilisateur = demande d'action pour le Coach **dans l'échange**, sans requête supplémentaire « publie sur GitHub ».

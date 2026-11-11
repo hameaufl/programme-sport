@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#234735">
-  <meta name="mon-rythme-version" content="2026-11-11-bouton-ci-v3">
+  <meta name="mon-rythme-version" content="2026-11-11-donnees-separees-v4">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -81,7 +81,7 @@
     <section aria-labelledby="goalsHeading" class="goals">
       <div class="section-top"><div>
         <h2 id="goalsHeading">Mes objectifs</h2>
-        <ul class="goal-list"><li>La priorité est de retrouver des sensations agréables, sans recherche de performance.</li></ul>
+        <ul class="goal-list" id="goalsList"></ul>
       </div></div>
     </section>
     <section aria-labelledby="headingWeek">
@@ -114,7 +114,7 @@
   // Renouvellement de l'URL à chaque ouverture : données du programme hors cache.
   function chargerProgramme(actualiser, callback) {
     var source=document.createElement("script");
-    source.src="./programme.js"+(actualiser?"?actualisation="+Date.now():"");
+    source.src="./personnel/programme.js"+(actualiser?"?actualisation="+Date.now():"");
     source.onload=function(){source.remove();callback(true);};
     source.onerror=function(){source.remove();callback(false);};
     document.head.appendChild(source);
@@ -166,6 +166,8 @@
     return controls;
   }
   function render() {
+    var goals=document.getElementById("goalsList");goals.replaceChildren();
+    (window.MON_RYTHME_OBJECTIFS||[]).forEach(function(g){if(typeof g==="string"&&g.trim())goals.appendChild(elem("li","",g));});
     var end=plus(weekStart,6);
     document.getElementById("rangeLabel").textContent=format(weekStart,{day:"numeric",month:"short"})+" – "+format(end,{day:"numeric",month:"short",year:"numeric"});
     var days=document.getElementById("days");days.replaceChildren();

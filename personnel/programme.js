@@ -18,6 +18,7 @@
  * répéter le 2M+3C / 2M+5C si besoin et garder au moins 1 jour sans course
  * entre les séances. Ne pas forcer si une douleur ou une gêne survient.
  */
+window.MON_RYTHME_OBJECTIFS = ["La priorité est de retrouver des sensations agréables, sans recherche de performance."];
 window.MON_RYTHME_DEBUT_CYCLE = "2026-11-11";
 window.MON_RYTHME_PROGRAMMES = {
   "2026-11-02": [

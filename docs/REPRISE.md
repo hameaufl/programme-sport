@@ -1,86 +1,22 @@
-# Reprise par un nouvel agent LLM
+# Reprise entre LLM — Mon Rythme
 
-## Lecture prioritaire
+Lire d'abord [AGENTS.md](../AGENTS.md), puis [ROLES.md](ROLES.md).
 
-1. [AGENTS.md](../AGENTS.md) — règles **impératives**, rôles et interdiction d'ajouts visuels non sollicités.
-2. [ROLES.md](ROLES.md) — périmètres **strictement séparés** Coach / Maturation.
-3. [CONTEXTE.md](CONTEXTE.md) — fonctionnement, plan et contexte.
-4. [DECISIONS.md](DECISIONS.md) — décisions chronologiques, y compris anciennes **abandonnées**.
-5. [JOURNAL.md](JOURNAL.md) — changements et limites.
-6. [GARMIN.md](GARMIN.md), [sante/README.md](../sante/README.md), [pieces-jointes/README.md](../pieces-jointes/README.md).
-7. [README.md](../README.md), [programme.js](../programme.js), [index.html](../index.html).
+- **Maturation :** [CONTEXTE.md](CONTEXTE.md), [DECISIONS.md](DECISIONS.md), [JOURNAL.md](JOURNAL.md), `index.html`, `scripts/`, workflow.
+- **Coach :** [personnel/README.md](../personnel/README.md), [personnel/DECISIONS.md](../personnel/DECISIONS.md), [personnel/JOURNAL.md](../personnel/JOURNAL.md), [personnel/programme.js](../personnel/programme.js), [personnel/sante/](../personnel/sante/README.md), [personnel/GARMIN.md](../personnel/GARMIN.md).
 
-**La dernière décision explicite de l'utilisateur prévaut sur les anciennes mentions historiques.** Un nouvel agent ne doit pas chercher à reconstituer l'état actuel exclusivement à partir d'un vieux paragraphe de journal.
+**Source personnelle unique** : `personnel/programme.js`, pas de `programme.js` à la racine. L'HTML charge cette ressource directement. Aucune copie permanente dans le dépôt.
 
-## Attribution et périmètres
+Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse sur `main`. **GitHub Actions se déclenche automatiquement** pour `personnel/**`, sans demande « Run workflow ». Contrôler `success` et ne pas annoncer un déploiement pendant `queued` / `failure`. Il ne change jamais l'IHM.
 
-**Coach**
-- Mandaté pour les séances, les sensations, les entraînements Garmin et leur évolution.
-- Chaque **retour de séance** de l'utilisateur est déjà une **demande de traitement**. Dans le tour courant, **sans demander à nouveau « dois-je mettre à jour GitHub ? »**, actualiser `programme.js` (`fait`, `sensations`, éventuel programme à venir), l'historique `sante/` et les fichiers réels sous `pieces-jointes/` selon leur pertinence et les outils disponibles.
-- Peut maintenir, diminuer, augmenter, remplacer, reporter, conseiller du repos ou attendre. Pas de progression automatique ni d'entraînement inventé.
-- **Interdiction absolue : modifier `index.html`, CSS, JS de présentation, navigation, style, composants, éléments visuels.** Si les formats ne suffisent pas, transmettre la demande à Maturation. Les schémas sont préétablis par Maturation.
-- Ne pas promettre d'import Garmin ou de travail en arrière-plan si ces outils ne sont pas présents. Journaliser et committer le travail réellement réalisé dans le tour.
+Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
-**Maturation**
-- **Casquette du présent agent** : uniquement architecture, documentation de la méthode, robustesse, interface et gestion du cache.
-- **Aucune modification des données sportives, sensations, statuts `fait` ou fichiers Garmin réels** à la place du Coach.
-- **Aucun changement graphique/visuel sans demande ou approbation explicite.** Peut proposer, puis attendre l'accord.
-- Prépare l'IHM à afficher les données que le Coach publiera ; seul ce rôle touche au HTML/CSS/JS.
+## Vérifications prépublication
 
-## Source de vérité — aucun stockage local
+`node scripts/verifier-site.cjs` : syntaxe JS, objectifs, séances/semaines/ID, chemin d'accès unique, absence de doublon, témoins. Workflow : jobs `build` et `deploy` distincts, attente API artefact, puis contrôle du statut.
 
-Dans `programme.js`, `window.MON_RYTHME_PROGRAMMES` est indexé par le **lundi de semaine civile** :
+## Instruction de transfert
 
-- `id` unique et **stable** (souvent `course-AAAA-MM-JJ` / `kine-AAAA-MM-JJ`).
-- `date` de la séance ; `titre`, `type`, `duree`, `etapes` selon besoin.
-- `fait: true` **uniquement après confirmation explicite du retour** ; sinon `false` signifie « non confirmé », pas « séance non réalisée ».
-- `sensations: "..."` : notes synthétisées **seulement à partir du retour fourni**. Chaîne vide avant premier retour.
-- `pieces_jointes` : champ facultatif **réservé** pour les fichiers réels une fois disponibles. Schéma dans [GARMIN.md](GARMIN.md). Pas de référence fictive.
-- `index.html` montre ces informations **en lecture seule** ; ni champ de saisie ni case à cocher interactive.
-- Aucune donnée de suivi dans `localStorage` ou autre stockage navigateur. Un retour mis à jour apparaît sur les appareils après déploiement Pages et recharge du programme.
+> Reprends le dépôt `hameaufl/programme-sport`. Lis `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et les fichiers de ta casquette **[Coach / Maturation]**. Conserve la séparation physique sans duplication. Après tout changement, pousse et journalise, puis contrôle GitHub Actions.
 
-## Santé et Garmin
-
-- Dépôt `hameaufl/programme-sport` **public**, et publicité des données de santé **explicitement acceptée**. Les anciens fichiers restent potentiellement dans l'historique. Les données GPS peuvent dévoiler des lieux fréquentés.
-- Aucun bilan réel n'a été déposé à ce stade. Le **bilan du podologue** sur posture et appuis des pieds est **attendu**, contenu inconnu.
-- Garmin **Venu 4** : futur support des séances prévues et exports d'activités FIT/TCX/GPX/CSV ; aucun fichier présent. Import via Garmin Connect fichier d'abord ; potentiel MCP/API à valider ; **jamais de secret/token dans le dépôt**.
-- Le Coach peut déposer/analyser fichiers et actualiser données, **jamais coder l'affichage** ; Maturation peut préparer l'interface avec approbation.
-
-## Publication systématique et diagnostic Pages
-
-**Publication moderne installée :** `.github/workflows/publier-pages.yml`, déploiement de fichiers statiques via `actions/upload-pages-artifact@v4` et `actions/deploy-pages@v4`. Le propriétaire doit régler **Settings → Pages → Build and deployment → Source : GitHub Actions**, car les outils du connecteur GitHub ne permettent pas l'administration Pages. En cas de changement de source après la création du workflow : lancer **Actions → Publier Mon Rythme → Run workflow** sur `main` si aucun déploiement récent n'a réussi.
-
-**Point important au diagnostic :** il y a eu de nombreuses exécutions de la voie classique avec `startup_failure` et zéro job. La limite classique de 10 builds/heure est une **hypothèse de contribution**, pas une cause démontrée pour chaque échec (le premier était précédé de plusieurs heures sans builds). Vérifier le nouveau workflow et l'état GitHub Actions avant toute conclusion.
-
-**Déclenchement ciblé :** le workflow personnalisé se lance pour les changements `index.html`, `programme.js`, manifeste, icônes, favicon, témoin et YAML ; pas pour une mise à jour documentaire seule. Cela préserve l'obligation de **committer toutes les décisions** sans créer un build à chaque retouche de texte. Les fichiers du dossier santé restent dans GitHub public mais ne sont pas copiés dans le site publié par ce workflow.
-
-
-**Après toute demande de changement ou toute décision pertinente au projet :**
-- Exécuter et committer les changements autorisés dans le **même échange** : `main` est la source de vérité du dépôt.
-- Documenter systématiquement la décision et l'action dans `docs/DECISIONS.md` et `docs/JOURNAL.md` ; si une décision ne mène à aucun changement de code, consigner le résultat / blocage.
-- Relire les fichiers sur GitHub et mentionner les SHA réellement créés. Ne jamais présenter une modification non poussée comme effectuée.
-- Vérifier la **publication Pages** si possible, et préciser explicitement lorsqu'elle n'est pas vérifiable.
-
-**Distinguer dépôt et site :**
-- `index.html` actuel : **lecture seule**, indicateurs « Fait » et « Sensations », aucune case à cocher, aucun `localStorage`.
-- `publication.txt` à la racine est un témoin de version cible. Vérification depuis le navigateur : `https://hameaufl.github.io/programme-sport/publication.txt?v=20261111`.
-- `index.html` comprend un méta-identifiant invisible `mon-rythme-version=2026-11-11-statique-fait-sensations-v1`.
-- Si le témoin ne se charge pas ou si l'ancien HTML reste visible avec une URL `?v=...`, examiner **Settings → Pages** (source `main` / `/(root)` si publication depuis la branche) et **Actions → pages build and deployment**.
-- Le nom du témoin est technique, sans affichage supplémentaire dans l'application. Après de futurs changements de l'IHM, **mettre à jour sa version** et le document `publication.txt` pour diagnostiquer d'éventuelles publications obsolètes.
-- Les sensations ne s'affichent **que si `sensations` n'est pas vide**. L'absence de note ne prouve pas une panne d'affichage.
-
-## Vérifications avant chaque commit
-
-- Les 18 séances initiales (15 courses, 3 kinés), dates et `id` restent intacts sauf décision expresse de coaching.
-- Les retours portent sur la bonne séance et sur **des faits transmis**, pas sur des suppositions.
-- Le Coach ne touche pas aux fichiers de présentation ; Maturation ne touche pas aux sensations réelles.
-- Aucun visuel supplémentaire non demandé ; aucune dépendance à `localStorage`.
-- Code JavaScript syntaxiquement valide ; comportement après rechargement ; version anti-cache `programme.js?actualisation=...` intacte.
-- Ne pas confondre commit `main`, publication GitHub Pages et test physique Android.
-- Ajouter une entrée à `docs/JOURNAL.md`, mettre à jour `docs/DECISIONS.md` si une nouvelle règle remplace la précédente.
-
-## Instruction courte pour une nouvelle conversation
-
-> Reprends `hameaufl/programme-sport`. Lis `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`, `docs/GARMIN.md`, `sante/` et `pieces-jointes/`. **Rôle attribué pour cette conversation : [Coach ou Maturation]**. Reste strictement dans ce rôle. Pour Coach, mes retours de séance déclenchent la mise à jour effective du contenu sur GitHub, jamais du HTML/CSS/JS. Pour Maturation, structure et IHM seulement, aucun changement visuel sans mon accord. Journalise chaque intervention.
-
-**Limite :** ce dépôt contient une mémoire structurée et versionnée, pas le texte intégral de toutes les conversations.
+Les anciennes variantes et le détail du contexte restent disponibles dans les registres propres à chaque rôle et dans l'historique Git.
