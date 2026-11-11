@@ -19,7 +19,7 @@ Le site demeure **public** et le dépôt GitHub est consultable. Le `noindex` n'
 
 ## Carte approuvée pour les réponses du Coach
 
-**Dernière règle** : carte arrondie variante 2, **en-tête avec icône `arrow-up-right` puis « Mon Rythme »**, **sans sous-titre**. **Bouton principal pleine largeur « Accéder à mes séances » et sans aucune icône**, ouvrant `https://hameaufl.github.io/programme-sport/`. Ce choix **remplace** le bouton précédent avec l'icône `route` et le libellé « Ouvrir Mon Rythme ». Si une carte/bouton interactif n'est pas possible, afficher simplement le lien Markdown nommé **Accéder à mes séances**. Rendu dans le chat uniquement, jamais dans le site lui-même.
+**Dernière règle** : carte arrondie variante 2, **en-tête centré horizontalement, icône `arrow-up-right` immédiatement à gauche de « Mon Rythme » (groupe centré ensemble)**, **sans sous-titre**. **Bouton principal pleine largeur « Accéder à mes séances » et sans aucune icône**, ouvrant `https://hameaufl.github.io/programme-sport/`. Ce choix **remplace** le bouton précédent avec l'icône `route` et le libellé « Ouvrir Mon Rythme ». Si une carte/bouton interactif n'est pas possible, afficher simplement le lien Markdown nommé **Accéder à mes séances**. Rendu dans le chat uniquement, jamais dans le site lui-même.
 
 ## Lien à remettre à l'utilisateur
 

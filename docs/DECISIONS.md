@@ -52,3 +52,10 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Bouton principal pleine largeur : **« Accéder à mes séances »**, **sans icône**. L'ancien « Ouvrir mon programme » et sa flèche sont retirés.
 - URL inchangée : `https://hameaufl.github.io/programme-sport/`.
 - **Cette décision remplace le choix du bouton seul avec l'icône route** et tous anciens textes de bouton contradictoires. Exclusivement pour les réponses du Coach dans le chat ; aucune nouvelle carte sur le site GitHub Pages.
+
+## 11 novembre 2026 — Centrage du titre dans la carte du Coach
+
+- Nouvelle précision demandée : **centrer horizontalement ensemble** la flèche `arrow-up-right` et le texte **« Mon Rythme »** au-dessus du bouton.
+- Garder l'icône et le titre sur **une seule ligne**, la flèche à gauche, avec un petit espacement ; ne pas les centrer séparément.
+- Conserver exactement le bouton principal **« Accéder à mes séances »** pleine largeur **sans icône**, sans sous-texte et avec la même destination.
+- Cette consigne concerne **la carte affichée dans la réponse ChatGPT du Coach**, pas l'interface du site GitHub Pages.

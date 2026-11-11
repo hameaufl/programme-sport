@@ -21,7 +21,7 @@
 **Choix actuel du propriétaire : variante 2 en carte, modifiée.** À utiliser dans les réponses du Coach relatives aux séances, quand le client de conversation prend en charge ce rendu :
 
 - **Carte bordée aux coins arrondis**, format compact.
-- **En-tête sur une seule ligne** : icône `arrow-up-right` (flèche vers le haut à droite, icône de Mon Rythme) **à gauche de « Mon Rythme »**. **Pas d'icône `route`**.
+- **En-tête centré horizontalement au-dessus du bouton** : l'icône `arrow-up-right` et le titre **« Mon Rythme » sont regroupés sur une seule ligne et centrés ensemble** dans la carte. La flèche reste immédiatement à gauche du titre, avec un petit espacement. **Pas d'icône `route`**.
 - **Aucun sous-texte** : ne pas écrire « Retrouver mes séances et mon suivi », ni description équivalente.
 - **Bouton principal pleine largeur**, intitulé **« Accéder à mes séances »**, **sans aucune icône**, ni à gauche ni à droite. Bouton réellement cliquable vers `https://hameaufl.github.io/programme-sport/`.
 - Si le rendu interactif/carte est indisponible : lien Markdown nommé **[Accéder à mes séances](https://hameaufl.github.io/programme-sport/)**. Ne pas promettre d'ouverture en standalone Android ; ne pas fabriquer de bouton inactif.

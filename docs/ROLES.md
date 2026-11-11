@@ -20,7 +20,7 @@
 
 ## Carte de navigation dans les réponses Coach — dernier choix
 
-- **Carte variante 2** : contour et arrondis, en-tête **`arrow-up-right` + « Mon Rythme »**, **aucun sous-titre**.
+- **Carte variante 2** : contour et arrondis ; en-tête **entièrement centré horizontalement**, avec le groupe **`arrow-up-right` + « Mon Rythme »** sur une seule ligne juste au-dessus du bouton, **aucun sous-titre**.
 - **Bouton principal pleine largeur** : **« Accéder à mes séances »**, **aucune icône dans le bouton**.
 - Le précédent pictogramme **`route`** et l'ancien libellé « Ouvrir Mon Rythme » sont **remplacés** par ce choix plus récent.
 - Destination : `https://hameaufl.github.io/programme-sport/`.

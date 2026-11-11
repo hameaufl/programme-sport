@@ -62,6 +62,12 @@
 - **Action Maturation** : remplacer les consignes d'affichage des réponses dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, et consigner le nouveau choix dans les décisions.
 - **Aucun changement de l'application GitHub Pages** ni du programme personnel. Documentation uniquement : pas de déploiement Pages attendu.
 
+## 11 novembre 2026 — Centrage du titre de la carte Coach
+
+- **Demande utilisateur** : centrer la flèche `arrow-up-right` et « Mon Rythme » **comme un groupe unique**, au-dessus du bouton « Accéder à mes séances ».
+- **Action Maturation** : adaptation des consignes de la carte dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et ajout de la décision dans `docs/DECISIONS.md`.
+- Aucun changement du code de l'application, des données sportives ou du workflow Pages ; commit documentaire uniquement.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.
