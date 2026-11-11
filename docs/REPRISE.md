@@ -29,6 +29,12 @@ Maturation maintient exclusivement structure/interface/tests et ne touche pas au
 - **Coach** : traduire les descriptions courantes de l'utilisateur en vocabulaire technique pertinent, brièvement expliqué, sans inventer un diagnostic, une chaîne musculaire certaine ou une mesure. Cette règle relève du contenu Coach ; Maturation n'écrit pas les ressentis.
 - Les validations de `scripts/verifier-site.cjs` doivent préserver ces distinctions à chaque publication.
 
+## Affichage compact du suivi santé
+
+- **Page principale** : renvoi vers `sante.html` dans une carte à deux colonnes, **titre « Mon suivi santé » et bouton seulement**, sans phrase descriptive.
+- **Page santé** : aucun sous-texte après « Mon suivi santé. » ; section « Mes séances suivies » supprimée entièrement, données de programme utilisées uniquement pour les compteurs ; profil et journal de suivi conservés.
+- **Journal santé** : les entrées `### AAAA-MM-JJ — titre` dans `personnel/sante/SUIVI.md` alimentent le suivi des événements datés. Les chaussures de running peuvent être précisées après réception du modèle. Les conclusions du bilan podologique ne sont pas connues tant que le document n'est pas transmis.
+
 ## Deuxième page : suivi santé
 
 L'interface comprend `sante.html`, accessible depuis une carte de redirection en bas de `index.html`. Elle présente les statistiques dérivées de `personnel/programme.js`, les sections du profil `personnel/sante/PROFIL.md` et les comptes rendus datés (`### AAAA-MM-JJ`) de `personnel/sante/SUIVI.md`, sans données personnelles dupliquées. Le Coach se contente de mettre à jour `personnel/`; Maturation seule intervient sur l'affichage. Le workflow publie l'HTML et les sources nécessaires, sans supprimer les balises `noindex`.

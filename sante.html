@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-seance-titre-v9">
+  <meta name="mon-rythme-version" content="2026-11-12-suivi-sante-compact-v10">
   <meta name="description" content="Suivi personnel de la reprise d'activité sportive.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -26,7 +26,6 @@
     .hero{background:var(--green);border-radius:23px;padding:36px 40px;color:#fff}
     .eyebrow{text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:1.5px;color:#cce2d0;margin:0 0 9px}
     h1{font-size:clamp(29px,4.6vw,44px);letter-spacing:-1.35px;line-height:1.13;margin:0}
-    .intro{max-width:700px;margin:13px 0 0;color:#e1eee2;font-size:15px}
     section{margin-top:30px}
     h2{font-size:23px;letter-spacing:-.6px;margin:0 0 5px}
     .section-hint{color:var(--muted);font-size:14px;margin:0 0 17px}
@@ -43,16 +42,9 @@
     .topic .placeholder{color:#8a9a8c;font-size:13px;font-style:italic}
     .entries{display:grid;gap:12px}
     .empty{border:1px dashed #bfd4c3;background:#f2f8f1;color:#607762;padding:22px;border-radius:16px;font-size:14px}
-    .timeline{display:grid;gap:11px}
-    .event{display:flex;gap:16px;align-items:start;border-radius:14px;background:white;border:1px solid var(--line);padding:17px 20px}
-    .event-date{min-width:100px;font-size:12px;font-weight:800;color:#487051}
-    .event-info{flex:1;min-width:0}
-    .event-info strong{font-size:14px;display:block}
-    .event-info p{font-size:13px;color:var(--muted);margin:5px 0 0;overflow-wrap:anywhere}
-    .chip{display:inline-block;margin-top:8px;font-size:11px;font-weight:750;padding:3px 9px;border-radius:99px;background:#e0f2e1;color:#2c6c3b}
     .small-print{font-size:13px;color:var(--muted);margin:20px 0 0}
-    @media(max-width:650px){.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px}.hero{border-radius:19px;padding:28px 23px}.metrics{gap:8px}.metric{padding:16px 12px}.metric-label{font-size:12px}.topics{grid-template-columns:1fr}.topic,.entry{padding:19px}.event{flex-wrap:wrap;gap:5px}.event-date{width:100%;min-width:0}.small-print{margin-top:16px}}
-    @media print{body{background:white}.shell{width:100%}.hero{background:#fff;color:var(--ink);border:1px solid var(--line)}.eyebrow,.intro{color:var(--ink)}.back{display:none}}
+    @media(max-width:650px){.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px}.hero{border-radius:19px;padding:28px 23px}.metrics{gap:8px}.metric{padding:16px 12px}.metric-label{font-size:12px}.topics{grid-template-columns:1fr}.topic,.entry{padding:19px}.small-print{margin-top:16px}}
+    @media print{body{background:white}.shell{width:100%}.hero{background:#fff;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.back{display:none}}
   </style>
 </head>
 <body>
@@ -65,7 +57,6 @@
       <div class="hero">
         <p class="eyebrow">Mon Rythme · Reprise sportive</p>
         <h1>Mon suivi santé.</h1>
-        <p class="intro">Mes repères, mes bilans et les retours de mes séances, au même endroit.</p>
       </div>
       <section aria-labelledby="overviewTitle">
         <h2 id="overviewTitle">Ma reprise en un coup d'œil</h2>
@@ -80,11 +71,6 @@
         <h2 id="profileTitle">Mes repères de santé</h2>
         <p class="section-hint">Antécédents, appuis, suivi professionnel, mécanique et récupération : uniquement les éléments renseignés.</p>
         <div id="healthProfile" class="topics" aria-live="polite"><div class="empty">Chargement du profil…</div></div>
-      </section>
-      <section aria-labelledby="activityTitle">
-        <h2 id="activityTitle">Mes séances suivies</h2>
-        <p class="section-hint">Les activités confirmées ou accompagnées de sensations.</p>
-        <div id="activityEntries" class="timeline" aria-live="polite"><div class="empty">Chargement des séances…</div></div>
       </section>
       <section aria-labelledby="followTitle">
         <h2 id="followTitle">Mon journal de suivi</h2>
@@ -179,10 +165,7 @@
     }
     function drawProgramme(){
       var programme=window.MON_RYTHME_PROGRAMMES;
-      if(!programme || typeof programme!=="object"){
-        replaceWithEmpty("activityEntries","Le programme n'a pas pu être chargé.");
-        return;
-      }
+      if(!programme || typeof programme!=="object")return;
       var sessions=Object.keys(programme).reduce(function(out,week){
         if(Array.isArray(programme[week]))out.push.apply(out,programme[week]);
         return out;
@@ -192,21 +175,6 @@
       document.getElementById("countPlanned").textContent=String(sessions.length);
       document.getElementById("countDone").textContent=String(done.length);
       document.getElementById("countNotes").textContent=String(notes.length);
-      var listed=sessions.filter(function(s){return s.fait===true||(typeof s.sensations==="string"&&s.sensations.trim());});
-      listed.sort(function(a,b){return b.date.localeCompare(a.date);});
-      var root=document.getElementById("activityEntries");
-      root.replaceChildren();
-      if(!listed.length){replaceWithEmpty("activityEntries","Aucune séance confirmée ni retour de sensations enregistré pour le moment.");return;}
-      listed.slice(0,8).forEach(function(s){
-        var item=node("article","event");
-        item.appendChild(node("span","event-date",formatDate(s.date)));
-        var body=node("div","event-info");
-        body.appendChild(node("strong","",s.titre||"Séance"));
-        if(typeof s.sensations==="string"&&s.sensations.trim())body.appendChild(node("p","",s.sensations.trim()));
-        if(s.fait===true)body.appendChild(node("span","chip","✓ Fait"));
-        item.appendChild(body);
-        root.appendChild(item);
-      });
     }
     function loadProgramme(){
       var script=document.createElement("script");

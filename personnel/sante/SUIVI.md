@@ -15,6 +15,20 @@
 - **Décision Coach au 11 novembre :** marquer la séance comme réalisée ; maintenir provisoirement le programme de course, sans augmentation sur ce seul compte rendu ancien, dans l'attente des sensations actuelles et des retours des autres séances. Ne pas forcer en présence de douleur ; discuter des charges douloureuses avec le kinésithérapeute.
 - **Source :** compte rendu oral de l'utilisateur transmis le 11 novembre 2026 sur la séance du 4 novembre.
 
+## Équipement de reprise — événements datés
+
+### 2026-11-09 — Nouvelles semelles orthopédiques
+
+- **Fait rapporté :** nouvelles semelles orthopédiques obtenues le lundi 9 novembre 2026.
+- **Tolérance / effets :** non renseignés.
+- **Source :** information transmise par l'utilisateur le 12 novembre 2026.
+
+### 2026-11-02 — Chaussures de running
+
+- **Fait rapporté :** achat de chaussures de course le lundi précédent, soit le 2 novembre 2026.
+- **Marque et modèle :** référence à communiquer.
+- **Source :** information transmise par l'utilisateur le 12 novembre 2026.
+
 ## Modèle d'entrée (à compléter pour un retour effectivement reçu)
 
 ### AAAA-MM-JJ — activité / séance identifiée par `id`

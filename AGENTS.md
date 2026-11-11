@@ -1,5 +1,12 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Suivi santé — interface compacte et événements datés
+
+- Sur `index.html`, la carte de fin de page **« Mon suivi santé »** est limitée à **deux colonnes** : le titre seul et un bouton direct, sans sous-paragraphe. Sur les écrans extrêmement étroits, le bouton peut passer dessous.
+- Sur `sante.html`, le héros ne contient **aucun sous-titre**. La section **« Mes séances suivies » est supprimée** (ne pas la réintroduire) ; les indicateurs de synthèse, le profil et le journal santé demeurent.
+- Les **événements de santé réellement datés**, par exemple l'équipement de reprise, figurent dans `personnel/sante/SUIVI.md` via des entrées `### AAAA-MM-JJ — Événement` consommées par la page santé. **Ne pas recopier ces données factuelles dans le HTML**.
+- Une référence ou un bilan annoncé mais non fourni reste **à compléter** ; ne pas inventer la marque des chaussures, une analyse podologique ni des effets ressentis.
+
 ## Nouvelle page de suivi santé — structure et responsabilités
 
 - **Interface Maturation** : `index.html` propose un accès en bas de page vers `sante.html`, accessible aussi directement depuis `https://hameaufl.github.io/programme-sport/sante.html`. La page possède une navigation de retour.

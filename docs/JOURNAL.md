@@ -131,6 +131,15 @@
 - Version commune des deux pages HTML et du témoin : `2026-11-12-seance-titre-v9`.
 - Publication : [run 43117155992](https://github.com/hameaufl/programme-sport/actions/runs/43117155992), `completed / success`. Validation, artefact et déploiement Pages réussis ; commit IHM `c3c02f5f746c46634136411c2486a67259d13768`.
 
+## 12 novembre 2026 — Simplification et première chronologie d'équipement du suivi santé
+
+- **Demande UI** : réduire le bandeau « Mon suivi santé » de la page programme à un titre et un bouton en deux colonnes ; enlever le texte de la bannière santé ; supprimer intégralement « Mes séances suivies ».
+- **Rendu** : conservation des compteurs dérivés du programme, des rubriques du profil et du journal daté. Suppression du code JS et du CSS inutilisés pour la liste d'activités.
+- **Informations reçues** : nouvelles semelles orthopédiques le lundi 9 novembre et achat de chaussures de running le lundi précédent (2 novembre). Référence des baskets non encore transmise ; bilan podologique annoncé, pas de résultats disponibles.
+- **Source de vérité** : événements datés dans le journal `personnel/sante/SUIVI.md`, sans duplication dans l'HTML. Aucune conclusion clinique ni tolérance inventée.
+- **Vérifications** : contrôles de la navigation, absence des sections supprimées, existence du suivi daté, cohérence des deux versions HTML, JavaScript et balises `noindex`.
+- **Déploiement** : à vérifier après publication.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

@@ -107,3 +107,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Dernière décision prioritaire** : dans la vue « Programme du jour », le titre de la liste des exercices d'une séance confirmée est désormais **« Séance »**, et non « Déroulé de la séance ».
 - **« Programme prévu »** reste le titre pour les séances non confirmées, afin de distinguer les exercices planifiés des exercices réalisés.
 - Le format en puces courtes, les sensations distinctes, les données du Coach et le résumé hebdomadaire restent inchangés. Les intitulés anciens dans cet historique décrivent les versions précédentes, pas la règle actuelle.
+
+## 12 novembre 2026 — Simplification des accès et de la page santé
+
+- Sur la page **Mon programme**, la carte de navigation vers « Mon suivi santé » ne comporte plus de texte secondaire ; **titre et bouton côte à côte**, avec repli adapté aux très petites largeurs.
+- Sur **Mon suivi santé**, supprimer le sous-titre du héros et **supprimer entièrement « Mes séances suivies »**, y compris la liste des séances et le code de rendu associé. Conserver les indicateurs généraux, le profil et le journal santé.
+- Le journal santé affiche les faits réels sous forme d'entrées datées (`### AAAA-MM-JJ`), en les lisant depuis `personnel/sante/SUIVI.md`, sans copie dans l'HTML.
+- Nouveaux repères à renseigner progressivement : obtention de semelles orthopédiques le lundi **9 novembre 2026**, achat de chaussures de running le **2 novembre 2026** ; marque et modèle non transmis. Bilan podologique annoncé, aucun document encore disponible dans l'échange.
+- Préserver la séparation des vues, les deux pages `noindex` et le versionnement des sources uniques. Tester avant le déploiement.
