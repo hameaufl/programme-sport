@@ -137,3 +137,13 @@
 - Coach : `programme.js` **contenu**, `sante/` **données factuelles**, `pieces-jointes/` **fichiers réels**, documentation des choix sportifs.
 - Maturation : `index.html`, architecture, documentation des agents et schémas, rendu des références de pièces jointes (si demandé), gestion du cache.
 - Historique des décisions : **conserver** les anciennes règles datées pour comprendre les choix abandonnés, mais ne jamais les réappliquer.
+
+## 16. Publication systématique et contrôle du site public — 11 novembre 2026
+
+- **Nouvelle instruction explicite** : l'agent Maturation doit **systématiquement enregistrer et pousser sur GitHub toutes les décisions prises et toutes les modifications de code**, sans attendre une seconde demande. Les agents Coach conservent la même obligation pour les comptes rendus, séances et données sportives qui relèvent de leur périmètre.
+- Tout retour du propriétaire concernant le projet doit donner lieu **dans le tour en cours**, avec l'accès GitHub disponible, soit à une mise à jour de code/contenu et de documentation, soit à une trace documentaire de la décision/observation. Les décisions non implémentées doivent être identifiées comme telles.
+- **Vérification obligatoire après push** : relire les fichiers modifiés et noter le commit. **Contrôler aussi le déploiement GitHub Pages** lorsque les outils le permettent ; ne pas confondre fichiers de `main` et version publique accessible sur téléphone.
+- **Symptôme du 11 novembre** : sur Android, l'utilisateur observe toujours des **coches interactives**, même après nettoyage du cache, et ne voit pas l'affichage statique des sensations. Or `index.html` sur `main` n'a plus aucune interaction de suivi ni `localStorage` et affiche des sensations **seulement si une note existe**. Le symptôme suggère donc une **ancienne version du HTML servie** ; le résultat exact du déploiement n'a pas pu être contrôlé via les outils de consultation disponibles.
+- Ajout d'un méta-identifiant HTML invisible `mon-rythme-version` et d'un fichier de diagnostic **`publication.txt`** (version `2026-11-11-statique-fait-sensations-v1`). Aucun nouvel élément visuel.
+- Si les deux fichiers du dépôt sont à jour mais que le site reste ancien : vérifier dans **Settings → Pages** la source de publication (`main`, `/(root)` si publication depuis une branche) et dans **Actions** les exécutions `pages build and deployment`. Une URL HTML avec paramètre unique peut exclure un cache navigateur simple, mais ne remplace pas la vérification du déploiement.
+- **Aucune modification des données sportives**, des dates, du suivi `fait` ou `sensations` lors de cette vérification.
