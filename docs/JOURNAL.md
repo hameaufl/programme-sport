@@ -71,6 +71,14 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - Le suivi reste local : pas de synchronisation ni de sauvegarde distante.
 - L'absence d'ajouts graphiques non approuvés est une consigne **contraignante**, non une simple préférence esthétique.
 
+### Vérification complémentaire — 11 novembre 2026
+
+- **Demande** : remplacer « Réalisée » par **« Réalisé »** sur les coches.
+- **Fichiers** : `index.html` (libellé visible et accessibilité), `README.md` (libellé et accès à la documentation de reprise).
+- **Commits** : `665d7d3`, `4232ced`, `89d61ec`.
+- **Vérification** : 15 courses et 3 séances « Kiné · Genoux » conservées dans `programme.js`, 18 identifiants `id` distincts. Absence de l'ancienne phrase sous « Mon calendrier ». Présence de `AGENTS.md` et des quatre documents de passation.
+- **Limites** : vérifications par lecture du code et des fichiers GitHub ; pas de test de rendu réel sur le raccourci Android ni de confirmation du déploiement GitHub Pages.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
