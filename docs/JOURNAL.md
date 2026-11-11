@@ -167,6 +167,16 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Contrôle restant** : attendre un **success** réel du workflow personnalisé, vérifier `publication.txt`, puis vérifier que `index.html` n'affiche aucune case interactive. Pas de test physique de l'Android.
 - **Périmètre respecté** : intervention Maturation seulement ; aucun changement de séance, de sensations ou d'éléments visuels.
 
+
+### 11 novembre 2026 — Statut « Fait » seulement pour les séances terminées
+
+- **Demande** : disparition du carré vide et du mot « Fait » pour une séance non confirmée ; pour les sorties réalisées, coche verte soignée avec « Fait ».
+- **Modifications Maturation** : `index.html` (statut absent si `fait:false` ; ✓ dans un cercle vert + « Fait » si `fait:true` ; aucun espace de statut inutile), `publication.txt` et les consignes / décisions / contexte.
+- **Déploiement** : l'utilisateur confirme la publication automatique par GitHub Actions ; aucun lancement manuel requis pour le dernier déploiement.
+- **Contenu sportif** : aucun changement des dates, séances, identifiants, statuts ou notes. Les sensations restent conditionnelles.
+- **Version témoin** : `2026-11-11-fait-uniquement-v2`. Vérifier le nouveau workflow et le fichier témoin Pages après publication.
+- **Tests** : syntaxe JavaScript, absence de suivi local, cohérence des deux vues, vérification de l'état GitHub et du déploiement. Aucun test physique du téléphone.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre

@@ -28,6 +28,14 @@
 - Vérifier `Settings → Pages` (source de publication, branche `main`, dossier `/(root)` si publication depuis une branche) et `Actions → pages build and deployment` si une version reste ancienne ; ne pas changer ces paramètres sans justification.
 - Fournir au besoin une URL avec paramètre de version pour le HTML, **sans ajouter d'élément d'interface**. Garder le suivi 100 % statique et sans stockage local.
 
+## Affichage « Fait » — décision prioritaire du 11 novembre 2026
+
+- **`fait:false` : aucun statut affiché**, ni carré vide, ni « Fait ».
+- **`fait:true` : coche blanche dans un petit cercle vert + « Fait »**, uniquement en lecture seule.
+- Sensations : visibles uniquement si texte fourni ; pas de libellé « Sensations » vide.
+- Même résultat dans le détail du jour et la liste de la semaine. Maturation modifie l'affichage, **jamais les données de réalisation ou les sensations** ; celles-ci sont réservées au Coach.
+- Changement visuel explicitement demandé, sans autorisation d'ajouter d'autres éléments.
+
 ## Séparation stricte et permanente des responsabilités — décision prioritaire
 
 **Coach — seul responsable des données sportives et des retours :**

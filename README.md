@@ -20,7 +20,7 @@ Les permissions du connecteur GitHub utilisé dans ce projet **ne permettent pas
 
 
 - **Règle permanente :** chaque décision ou modification du projet est appliquée et **poussée sur `main` pendant l'échange**, puis consignée dans `docs/DECISIONS.md` et `docs/JOURNAL.md`. Les comptes rendus de sport relèvent du Coach ; architecture / IHM / règles relèvent de Maturation.
-- La version cible du site est **`2026-11-11-statique-fait-sensations-v1`**, inscrite dans la métadonnée invisible `mon-rythme-version` de `index.html`.
+- La version cible du site est **`2026-11-11-fait-uniquement-v2`**, inscrite dans la métadonnée invisible `mon-rythme-version` de `index.html`.
 - [Témoin de publication Pages](https://hameaufl.github.io/programme-sport/publication.txt?v=20261111) : doit indiquer cette version si le déploiement correspondant est disponible.
 - [Version HTML sans réutilisation d'une URL déjà mise en cache](https://hameaufl.github.io/programme-sport/?v=20261111-statique-fait-sensations-v1) : doit présenter **des indicateurs « Fait » non modifiables** et les sensations seulement lorsqu'elles ont été renseignées dans `programme.js`.
 - Si le témoin est absent ou si des cases interactives subsistent, contrôler [Settings → Pages](https://github.com/hameaufl/programme-sport/settings/pages) et [Actions](https://github.com/hameaufl/programme-sport/actions) (**pages build and deployment**). Le dépôt poussé **n'est pas une preuve** du site publié.
@@ -35,12 +35,19 @@ Les permissions du connecteur GitHub utilisé dans ce projet **ne permettent pas
 
 Documents à lire ensuite : [reprise](docs/REPRISE.md), [contexte](docs/CONTEXTE.md), [décisions](docs/DECISIONS.md), [journal](docs/JOURNAL.md), [Garmin](docs/GARMIN.md), [santé](sante/README.md), [pièces jointes](pieces-jointes/README.md).
 
+## Statut de réalisation visible
+
+- **Séance sans réalisation confirmée** : aucune mention, ni carré vide.
+- **Séance confirmée** : coche verte avec le texte **« Fait »**.
+- Notes « Sensations » : visibles uniquement si elles ont été renseignées par le Coach.
+- Statut et sensations **statiques dans `programme.js`** ; aucune saisie sur le site.
+
 ## Interface actuelle
 
 - Bandeau **« Mon programme. »**, sans sous-titre.
 - **« Mes objectifs »** : une seule puce sur le plaisir des sensations et l'absence de recherche de performance. Les objectifs à venir sont de nature trimestrielle ou à plus long terme.
 - **« Mon calendrier »** : semaines du lundi au dimanche, sans description sous le titre ; navigation et retour dynamique à la semaine actuelle.
-- **« Programme du jour » / « Séances de la semaine »** : détail concis en puces, statuts **« ☐ Fait » / « ☑ Fait »** et **« Sensations : … »** lorsqu'un retour existe.
+- **« Programme du jour » / « Séances de la semaine »** : détail concis en puces, statuts **« ✓ Fait » (uniquement après confirmation)** et **« Sensations : … »** lorsqu'un retour existe.
 - Aucun bouton de saisie, aucune case interactive, aucun pied de page. Aucun autre élément graphique sans accord du propriétaire.
 
 ## Données sportives publiques et versionnées

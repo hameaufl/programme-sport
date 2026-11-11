@@ -157,3 +157,11 @@
 - **Action du propriétaire nécessaire** : `Settings → Pages → Build and deployment → Source : GitHub Actions`. L'outil GitHub disponible ne permet pas de modifier ce réglage. Si nécessaire, `Actions → Publier Mon Rythme → Run workflow` sur `main`.
 - **Non confirmé à ce stade** : déploiement du site via le nouveau workflow, vérification externe du témoin et rafraîchissement effectif Android. Ne pas prétendre que la seule présence du YAML a résolu le problème.
 - **Aucun changement** du programme sportif, des 18 statuts ou de leurs sensations, ni de la présentation visuelle.
+
+## 18. « Fait » visible uniquement après confirmation — 11 novembre 2026
+
+- **Demande explicite :** pour toute séance non encore confirmée, retirer **le carré vide et le mot « Fait »** ; aucun statut affiché.
+- Si la séance est réalisée (`fait:true`) : afficher **une coche claire et agréable (✓ blanc sur cercle vert) + « Fait »**.
+- Même rendu dans le détail quotidien et la liste hebdomadaire ; sensations seulement si elles sont renseignées.
+- **Pas de modification du programme sportif** ni des valeurs `fait` / `sensations` ; rôle Maturation uniquement.
+- L'utilisateur confirme que la publication **GitHub Actions s'est déclenchée et achevée automatiquement**, sans `Run workflow` manuel. Le déclenchement sur push des fichiers du site reste en place.

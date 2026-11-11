@@ -22,13 +22,20 @@ Voir [ROLES.md](ROLES.md).
 - **Maturation**, exclusivement : architecture, consignes, qualité technique, cache et IHM prête à accueillir les données du Coach. Modification visuelle uniquement sur demande ou approbation expresse du propriétaire. **Aucune modification du programme sportif, des statuts, des sensations ni des rapports réels à la place du Coach.**
 - L'agent affecté **dans cette conversation est Maturation uniquement**. Des agents futurs doivent vérifier le rôle qui leur est attribué.
 
+## Affichage des réalisations — décision actuelle
+
+- `fait:false` : **aucun libellé ni symbole de statut**.
+- `fait:true` : **coche blanche cerclée de vert et « Fait »**, sans interaction.
+- Les sensations n'apparaissent qu'après un compte rendu réellement reçu ; les deux vues se comportent de la même manière.
+- Cette règle de présentation relève uniquement de la casquette **Maturation**, et ne modifie aucun contenu de séance.
+
 ## Fonctionnement en lecture seule
 
 - En-tête « mon rythme. » et date du jour dynamique.
 - Bandeau existant « Programme Sport » et titre « Mon programme. », **sans sous-titre**.
 - « Mes objectifs » : une seule puce « La priorité est de retrouver des sensations agréables, sans recherche de performance. » ; objectifs futurs à horizon trimestriel ou plus, **pas** de cinq cartes hebdomadaires.
 - « Mon calendrier » : **sans description sous le titre**, semaines civiles **lundi-dimanche**, ouverture sur semaine et jour actuels, bouton « Semaine en cours » dynamique.
-- « Programme du jour » et « Séances de la semaine » : durée, déroulé en puces concises, indicateur statique **« ☐ Fait » ou « ☑ Fait »** et, lorsqu'elle existe, note **« Sensations : … »**.
+- « Programme du jour » et « Séances de la semaine » : durée, déroulé en puces concises, indicateur statique **« ✓ Fait » seulement si séance confirmée** et, lorsqu'elle existe, note **« Sensations : … »**.
 - **Aucune saisie**, aucune case cliquable, aucun champ libre ; la réalisation et les sensations sont modifiées uniquement dans les fichiers GitHub, par le Coach.
 - Pas de pied de page ni de nouvel élément graphique sans accord.
 - `programme.js` contient des semaines indexées par le lundi `AAAA-MM-JJ`. Chaque séance possède un `id` stable, `date`, `titre`, `fait` (booléen), `sensations` (texte court, vide si aucun retour), et éventuellement `type`, `duree`, `etapes`.

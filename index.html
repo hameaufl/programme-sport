@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#234735">
-  <meta name="mon-rythme-version" content="2026-11-11-statique-fait-sensations-v1">
+  <meta name="mon-rythme-version" content="2026-11-11-fait-uniquement-v2">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -60,7 +60,8 @@
     .session-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
     .sensations-entry{display:inline-flex;align-items:baseline;gap:7px;min-width:0;max-width:100%;color:#395b42;font-size:13px}
     .sensations-entry .note{overflow-wrap:anywhere;color:var(--muted)}
-    .done-control{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:#395b42;font-size:13px;font-weight:650}
+    .done-control{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:#286b3b;font-size:13px;font-weight:700}
+    .done-mark{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#2d7b46;color:white;font-size:13px;line-height:1;font-weight:850}
     .session.completed,.week-item.completed{background:#f0f7ef}
     .week-item .session-actions{margin-left:auto;align-self:center}
     .day .status.complete{color:#2a7042}
@@ -137,8 +138,13 @@
   // Statut et sensations : donnés statiques de programme.js, sans stockage navigateur.
   function isCompleted(s) {return s.fait===true;}
   function completionDisplay(s) {
-    var label=elem("span","done-control",isCompleted(s)?"☑ Fait":"☐ Fait");
-    label.setAttribute("aria-label",(s.titre||"Séance")+" : "+(isCompleted(s)?"fait":"non marqué comme fait"));
+    if(!isCompleted(s))return null;
+    var label=elem("span","done-control");
+    label.setAttribute("aria-label",(s.titre||"Séance")+" : fait");
+    var check=elem("span","done-mark","✓");
+    check.setAttribute("aria-hidden","true");
+    label.appendChild(check);
+    label.appendChild(elem("span","","Fait"));
     return label;
   }
   function sensationsDisplay(s) {
@@ -149,9 +155,11 @@
     return box;
   }
   function actions(s) {
-    var controls=elem("div","session-actions");
-    controls.appendChild(completionDisplay(s));
+    var done=completionDisplay(s);
     var note=sensationsDisplay(s);
+    if(!done && !note)return null;
+    var controls=elem("div","session-actions");
+    if(done)controls.appendChild(done);
     if(note)controls.appendChild(note);
     return controls;
   }
@@ -186,7 +194,8 @@
         var box=elem("article","session"+(isCompleted(s)?" completed":""));
         var head=elem("div","session-head");
         head.appendChild(elem("h3","",s.titre||"Sortie"));
-        head.appendChild(actions(s));
+        var summary=actions(s);
+        if(summary)head.appendChild(summary);
         box.appendChild(head);
         if (metadata(s))box.appendChild(elem("p","meta",metadata(s)));
         if (s.objectif)box.appendChild(elem("p","detail","Objectif : "+s.objectif));
@@ -210,7 +219,8 @@
         body.appendChild(elem("strong","",s.titre||"Sortie"));
         if (metadata(s))body.appendChild(elem("small","",metadata(s)));
         item.appendChild(body);
-        item.appendChild(actions(s));
+        var summary=actions(s);
+        if(summary)item.appendChild(summary);
         list.appendChild(item);
       });
       all.appendChild(list);
