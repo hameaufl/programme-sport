@@ -143,9 +143,9 @@
     var input=elem("input");
     input.type="checkbox";input.dataset.sessionId=sessionId(s);
     input.checked=isCompleted(s);
-    input.setAttribute("aria-label","Réalisé : "+(s.titre||"Séance")+" du "+s.date);
+    input.setAttribute("aria-label","Fait : "+(s.titre||"Séance")+" du "+s.date);
     label.appendChild(input);
-    label.appendChild(elem("span","","Réalisé"));
+    label.appendChild(elem("span","","Fait"));
     return label;
   }
   function render() {
