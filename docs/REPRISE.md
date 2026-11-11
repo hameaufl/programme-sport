@@ -46,6 +46,22 @@ Dans `programme.js`, `window.MON_RYTHME_PROGRAMMES` est indexé par le **lundi d
 - Garmin **Venu 4** : futur support des séances prévues et exports d'activités FIT/TCX/GPX/CSV ; aucun fichier présent. Import via Garmin Connect fichier d'abord ; potentiel MCP/API à valider ; **jamais de secret/token dans le dépôt**.
 - Le Coach peut déposer/analyser fichiers et actualiser données, **jamais coder l'affichage** ; Maturation peut préparer l'interface avec approbation.
 
+## Publication systématique et diagnostic Pages
+
+**Après toute demande de changement ou toute décision pertinente au projet :**
+- Exécuter et committer les changements autorisés dans le **même échange** : `main` est la source de vérité du dépôt.
+- Documenter systématiquement la décision et l'action dans `docs/DECISIONS.md` et `docs/JOURNAL.md` ; si une décision ne mène à aucun changement de code, consigner le résultat / blocage.
+- Relire les fichiers sur GitHub et mentionner les SHA réellement créés. Ne jamais présenter une modification non poussée comme effectuée.
+- Vérifier la **publication Pages** si possible, et préciser explicitement lorsqu'elle n'est pas vérifiable.
+
+**Distinguer dépôt et site :**
+- `index.html` actuel : **lecture seule**, indicateurs « Fait » et « Sensations », aucune case à cocher, aucun `localStorage`.
+- `publication.txt` à la racine est un témoin de version cible. Vérification depuis le navigateur : `https://hameaufl.github.io/programme-sport/publication.txt?v=20261111`.
+- `index.html` comprend un méta-identifiant invisible `mon-rythme-version=2026-11-11-statique-fait-sensations-v1`.
+- Si le témoin ne se charge pas ou si l'ancien HTML reste visible avec une URL `?v=...`, examiner **Settings → Pages** (source `main` / `/(root)` si publication depuis la branche) et **Actions → pages build and deployment**.
+- Le nom du témoin est technique, sans affichage supplémentaire dans l'application. Après de futurs changements de l'IHM, **mettre à jour sa version** et le document `publication.txt` pour diagnostiquer d'éventuelles publications obsolètes.
+- Les sensations ne s'affichent **que si `sensations` n'est pas vide**. L'absence de note ne prouve pas une panne d'affichage.
+
 ## Vérifications avant chaque commit
 
 - Les 18 séances initiales (15 courses, 3 kinés), dates et `id` restent intacts sauf décision expresse de coaching.
