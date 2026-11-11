@@ -6,6 +6,13 @@
 
 À renseigner selon les informations fournies par le propriétaire, sans supposition.
 
+## Bilan de podologie — pièce attendue
+
+- **Statut :** bilan annoncé, non reçu.
+- **Périmètre prévu :** posture et appuis des pieds.
+- **Constats / mesures / recommandations :** aucune donnée renseignée.
+- **Stockage du document et de ses informations :** à confirmer selon la visibilité choisie pour les données de santé versionnées.
+
 ## Aspects mécaniques / articulaires / musculaires
 
 À renseigner : articulations ou régions concernées, contraintes connues, éventuelles évaluations faites par un professionnel.
