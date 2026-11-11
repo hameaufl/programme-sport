@@ -9,7 +9,7 @@ Consulter [`docs/ROLES.md`](docs/ROLES.md). Un même agent peut porter les deux 
 - **Maturation** : consignes, processus, architecture, passation multi-LLM, maintenance de Mon Rythme et amélioration de l'IHM sur demande. **Aucun ajout visuel sans sollicitation ou approbation explicite**, même dans ce rôle.
 - **Coach** : analyse des retours et du contexte santé volontairement fourni, programmation course/renforcement/récupération, adaptation des séances suivantes. Peut diminuer, maintenir, augmenter, reporter une séance **ou attendre** si la situation le justifie. Analyse possible dès le lendemain, pas de modification obligatoire à chaque retour.
 
-Dossier dédié au suivi versionné : [`sante/`](sante/README.md). Les documents sont actuellement **des modèles vides**, pas des antécédents attestés. **Le dépôt actuel est public** et GitHub Pages publie depuis sa racine : avant toute écriture de données médicales personnelles, vérifier que l'utilisateur accepte explicitement **le dépôt cible et sa visibilité publique**, ou utiliser un dépôt de santé privé autorisé. Ne jamais inférer un diagnostic.
+Dossier de santé versionné : [`sante/`](sante/README.md). Le propriétaire a **explicitement validé le caractère public** des données de santé publiées dans ce dépôt. Les modèles restent vides tant qu'aucune donnée n'est fournie. Ne jamais inventer un diagnostic, des antécédents, des sensations ou une réalisation.
 
 ## Mise à jour des séances sur Android
 
@@ -19,14 +19,15 @@ Le programme est chargé via une URL `programme.js?actualisation=...` renouvelé
 
 **L'agent chargé de l'IHM et de sa maintenance est exclusivement en casquette Maturation** (instruction explicite du propriétaire). Ne pas prendre la casquette Coach, décider des adaptations d'entraînement ou interpréter médicalement les retours sans attribution explicite ultérieure. Un autre agent peut assurer le coaching ; la coexistence théorique des deux rôles ne donne pas mandat automatique de les cumuler.
 
-## Journal local des sensations
+## Suivi intégralement statique — décision en vigueur
 
-- Ajout demandé et approuvé : un **champ « Sensations »** très court à côté de la case **« Fait »** pour chaque séance, dans « Programme du jour » et « Séances de la semaine ».
-- Saisie libre, au plus 160 caractères, sans échelle ni diagnostic imposé. Objectif utilisateur : **absence de douleur**, suivi synthétique des sensations.
-- Stockage exclusivement dans `localStorage["mon-rythme-sensations-v1"]`, avec les **mêmes identifiants stables de séances** que les cases. Les deux vues sont synchronisées à la saisie. Les cases utilisent toujours `mon-rythme-suivi-v1`.
-- **Ne jamais exporter automatiquement les sensations personnelles dans GitHub**, public, ni les envoyer à un tiers. Aucune synchronisation interappareil ; elles peuvent disparaître si le stockage du navigateur est vidé.
-- **Bilan du podologue attendu** : future référence initiale concernant posture et appuis des pieds, **non reçu à cette date**. Ne pas en imaginer le contenu. Après réception, demander où enregistrer les données sensibles (dépôt public ou dépôt privé distinct) avant toute publication/versionnement sur GitHub.
-- Ces champs font partie de l'interface **explicitement demandée**, et non d'une autorisation générale de rajouter d'autres blocs graphiques.
+- **Aucune donnée de suivi en stockage local** : pas de `localStorage`, `sessionStorage`, champ utilisateur ni cases modifiables dans l'IHM.
+- `programme.js` est la **source unique versionnée** : chaque séance contient `fait: false` tant qu'aucune réalisation n'est confirmée, puis `fait: true` après retour explicite ; `sensations: ""` tant qu'aucune note n'est transmise, puis un texte court synthétisé par l'agent à partir du retour.
+- Interface en **lecture seule** : « ☐ Fait » ou « ☑ Fait » et, uniquement si disponible, « Sensations : … » dans les vues du jour et de la semaine.
+- L'utilisateur communique oralement ou par message ses sorties et sensations à l'agent. L'agent **Maturation** transcrit factuellement dans `programme.js`, sans prendre de décisions sportives. Le **Coach** analyse, si mandaté, et peut proposer les adaptations du programme.
+- **Statuts et sensations sont publics, versionnés et visibles depuis tous les appareils après publication**. Choix de publicité explicitement accepté par le propriétaire. Ne pas conserver deux sources divergentes.
+- Les identifiants `id` sont stables ; ne pas déplacer ou renommer arbitrairement les séances. **Ne jamais cocher automatiquement** une séance passée ou inventer un ressenti.
+- **Bilan du podologue attendu** : future référence sur posture et appuis des pieds, non reçu et contenu inconnu. Dépôt public explicitement accepté pour les données fournies ; aucune donnée fictive.
 
 ## Règle prioritaire : aucun ajout visuel non sollicité
 
@@ -54,8 +55,8 @@ L'agent peut **proposer** une amélioration visuelle si elle apporte une réelle
 - Choix selon les sensations transmises : **diminuer**, **maintenir** ou **augmenter prudemment** les durées et distances ; ne jamais augmenter systématiquement.
 - Respecter les jours de récupération, les contraintes du bracelet et le renforcement des genoux. Si douleur inhabituelle ou persistante : privilégier l'arrêt, le repos et l'avis du kiné ou d'un professionnel adapté plutôt que forcer la progression.
 - **Ne jamais considérer une case « Fait » comme un compte rendu de sensations.** Demander les informations manquantes uniquement lorsqu'elles sont nécessaires.
-- **Confidentialité** : le dépôt étant public, ne pas publier les comptes rendus personnels, douleurs ou autres informations de santé sans demande explicite de l'utilisateur. N'y documenter que les règles générales, les choix de programme et les séances publiques explicitement autorisées.
-- À chaque modification du programme, conserver les identifiants des séances déjà publiées et journaliser la modification fonctionnelle sans reproduire de données médicales privées.
+- **Publication consentie** : le propriétaire a expressément choisi le dépôt public pour les retours de santé versionnés. Publier uniquement les retours réellement fournis et les résumés validés par sa demande, sans supposition.
+- À chaque modification du programme, conserver les identifiants des séances ; inscrire les comptes rendus factuels fournis dans `programme.js` (ou `sante/` pour l'historique de santé), sans extrapolation ni double source contradictoire.
 
 ## Priorités de travail
 
@@ -76,13 +77,13 @@ L'agent peut **proposer** une amélioration visuelle si elle apporte une réelle
 - `programme.js` : séances datées et identifiants de séance ; les semaines sont indexées par leur **lundi**.
 - La **semaine civile** de l'interface va du lundi au dimanche. À l'ouverture, afficher la semaine actuelle et le jour actuel ; bouton « Semaine en cours » dynamique.
 - Garder le site utilisable sur ordinateur et sur Android via un raccourci standalone.
-- **Suivi local :** `localStorage`, clé `mon-rythme-suivi-v1`. Les coches ne se synchronisent pas entre appareils. **Préserver les `id` des séances** même en cas de changement de leur titre.
+- **Suivi statique :** `fait` et `sensations` dans `programme.js`, commit GitHub puis affichage public sur tous les appareils. Aucun stockage du suivi dans le navigateur. **Préserver les `id`**.
 - Séances : 15 sorties de course actuellement, plus 3 rendez-vous « Kiné · Genoux » les 4, 9 et 18 novembre 2026. Aucune séance de marche seule.
 - Les libellés de bracelet sont **2M+3C** et **2M+5C**, pas « mode A » ni « mode B ». Le mode 21 minutes continues est facultatif en fin de cycle.
 - Objectifs : perspective **trimestrielle ou au-delà**, et non jalons hebdomadaires. L'interface actuelle montre seulement une phrase à puce sous « Mes objectifs ».
 - Pas de sous-titre dans le bandeau « Mon programme. », pas de description sous « Mon calendrier », pas de pied de page.
 - Ne pas inventer d'horaires de kiné, de résultats réels, de symptômes ou de séances réalisées.
-- Les données de programme publiées sur GitHub Pages sont **publiques**. Les coches, elles, restent locales. Ne pas ajouter au dépôt de détails privés ou de transcription intégrale de conversations sans demande explicite.
+- Les programmes, cases « Fait » et notes « Sensations » publiés sur GitHub Pages sont **publics** par choix explicite du propriétaire. Ne pas ajouter d'éléments inconnus ou publier des transcriptions intégrales sans demande.
 
 ## Avant de travailler dans une nouvelle conversation
 
