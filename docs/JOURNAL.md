@@ -108,6 +108,17 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Fichiers de documentation** : `AGENTS.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`. Programme de course et interface inchangés.
 
 
+### 11 novembre 2026 — Deux casquettes, espace santé versionné, cache Android
+
+- **Demande** : organiser la reprise par futurs LLM autour des deux casquettes **Maturation** (amélioration du projet, consignes et IHM, sans ajouts visuels non approuvés) et **Coach** (santé, entraînements, récupération, suivi selon les sensations).
+- **Décision Coach** : possibilité d'adapter dès le lendemain, **de ne pas modifier**, de reporter ou d'attendre plusieurs retours. Les ajustements ne sont pas automatiques.
+- **Santé** : création d'un répertoire versionné `sante/` et de modèles de profil / journal. **Aucune donnée médicale personnelle ajoutée**. Alerte : dépôt GitHub et GitHub Pages **publics** ; avant un premier enregistrement sensible, confirmer explicitement le dépôt cible et sa visibilité. Option alternative : dépôt privé.
+- **Cache** : la problématique est liée à la réponse HTTP `programme.js`, pas à un attribut de balise HTML. Au **chargement initial**, le script demande `./programme.js?actualisation=<horodatage>`, initialise ensuite le calendrier, et renouvelle la requête après retour au premier plan ou restauration historique. Repli vers la ressource classique en cas d'échec initial. Aucune nouvelle commande ni modification graphique.
+- **Fichiers** : `index.html`, `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`, `README.md`, `sante/README.md`, `sante/PROFIL.md`, `sante/SUIVI.md`.
+- **Commits clés** : `bc3d047` (chargement anti-cache), `7806012` (rôles), `b514c92` (santé, structure), `6a742ee` (agents), `3614f15` (reprise), `888057e` (contexte), `622268b` (décisions), `6a9d1a7` (README).
+- **Tests à contrôler** : 18 séances et identifiants inchangés, fonctionnalité locale « Fait », intégrité du JavaScript, absence de nouvelle UI, présence des documents. Pas de test direct sur l'Android de l'utilisateur.
+- **Limites** : le navigateur peut servir un ancien `index.html` pendant un temps ; le déploiement Pages peut être différé. Une URL anti-cache ne garantit pas que le CDN a déjà reçu la dernière publication.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
