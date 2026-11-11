@@ -88,6 +88,15 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Compatibilité :** ni les identifiants de séance ni la clé de `localStorage` ne sont modifiés. Les coches préexistantes sont conservées par le code.
 - **Vérification :** à effectuer à la relecture des fichiers GitHub ; pas de test physique du raccourci Android.
 
+### 11 novembre 2026 — Descriptions courtes et listes à puces
+
+- **Demande** : descriptions de séances plus directes, sans verbes superflus ni répétitions ; utiliser des puces.
+- **Décision** : une seule description du déroulé par séance ; suppression des champs `objectif` et `details` redondants ; `etapes` synthétiques avec style nominal. Consigne éditoriale persistante pour les agents.
+- **Fichiers** : `programme.js`, `index.html`, `AGENTS.md`, `docs/DECISIONS.md`, `docs/CONTEXTE.md`, `docs/JOURNAL.md`.
+- **Commits** : `cf65195` (données), `677aac2` (puces), `a75c73e` (consignes).
+- **Vérifications prévues** : 15 courses, 3 kinés, 18 identifiants inchangés, cases « Fait » et sauvegarde locale inchangées.
+- **Limite** : aucune vérification physique du raccourci Android ; déploiement GitHub Pages à contrôler indépendamment.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
