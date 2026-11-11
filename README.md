@@ -21,7 +21,7 @@ Site **statique**, adapté au téléphone (y compris raccourci installé sur And
 - **Mon programme.** : titre sans sous-titre de départ.
 - **Mes objectifs** : une priorité de reprise agréable, sans recherche de performance. Cette rubrique est destinée à des objectifs **trimestriels ou plus longs** à préciser ultérieurement ; les cinq jalons hebdomadaires ont été retirés.
 - **Mon calendrier** : titre sans texte descriptif sous celui-ci ; semaines civiles **du lundi au dimanche**. La semaine en cours est affichée automatiquement à chaque chargement, avec le jour actuel sélectionné. Le bouton « Semaine en cours » recalcule la date lorsqu'on clique dessus. En gardant la page ouverte sur le jour actuel, le passage de minuit peut également actualiser le jour affiché.
-- **Programme du jour** et **Séances de la semaine** : chaque séance peut être cochée comme **Réalisé**. Une coche s'affiche également sur les jours dont toutes les séances sont terminées.
+- **Programme du jour** et **Séances de la semaine** : chaque séance peut être cochée comme **Fait**. Une coche s'affiche également sur les jours dont toutes les séances sont terminées.
 - Aucun pied de page.
 
 ## Sauvegarde du suivi
