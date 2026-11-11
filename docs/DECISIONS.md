@@ -165,3 +165,12 @@
 - Même rendu dans le détail quotidien et la liste hebdomadaire ; sensations seulement si elles sont renseignées.
 - **Pas de modification du programme sportif** ni des valeurs `fait` / `sensations` ; rôle Maturation uniquement.
 - L'utilisateur confirme que la publication **GitHub Actions s'est déclenchée et achevée automatiquement**, sans `Run workflow` manuel. Le déclenchement sur push des fichiers du site reste en place.
+
+## 19. Prévention des échecs GitHub Pages et bouton Semaine en cours — 11 novembre 2026
+
+- **Constat log [run 43101058284](https://github.com/hameaufl/programme-sport/actions/runs/43101058284)** : checkout, configuration, assemblage et téléversement du site **réussis** ; échec uniquement de `actions/deploy-pages@v4` avec `Found 0 artifact(s)` puis `No artifacts named "github-pages" were found`.
+- **Preuve complémentaire** : l'artefact `github-pages` ID `13892446293` existe dans ce run et a été téléversé avec succès. Le problème correspond à une visibilité retardée de l'artefact dans l'API GitHub, connue dans [actions/deploy-pages#451](https://github.com/actions/deploy-pages/issues/451).
+- **Correction Maturation** : séparation en deux jobs `build` et `deploy` liés par `needs: build` ; attente contrôlée de la visibilité de l'artefact (API GitHub, permissions `actions: read`), puis déploiement. Pas de second upload dans le même run.
+- **Prévention** : nouveau `scripts/verifier-site.cjs` pour contrôler statiquement le code et les données avant publication, sans dépendance externe ; une modification invalide bloque le pipeline au stade `build`.
+- **IHM approuvée** : bouton existant « Semaine en cours » identifiable même sans survol (fond et bordure verts, ombre légère), avec hover plus prononcé. Aucune nouvelle commande graphique, aucun changement sportif.
+- **Méthode** : tests, commit unique code + décisions, contrôle Actions. Aucune garantie de succès lors de pannes GitHub externes.

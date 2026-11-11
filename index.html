@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#234735">
-  <meta name="mon-rythme-version" content="2026-11-11-fait-uniquement-v2">
+  <meta name="mon-rythme-version" content="2026-11-11-bouton-ci-v3">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -30,7 +30,9 @@
     .week-nav button{border:1px solid var(--line);background:white;color:var(--green);min-width:37px;border-radius:11px;padding:8px 11px;font-weight:700}
     .week-nav button:hover{background:var(--soft)}
     #rangeLabel{min-width:163px;text-align:center;font-size:13px;font-weight:800}
-    .week-nav .today{border-color:transparent;background:transparent;font-size:12px}
+    .week-nav .today{border-color:#94b29a;background:#e1f0e3;color:#234735;font-size:12px;padding:8px 13px;box-shadow:0 1px 3px rgba(35,71,53,.12)}
+    .week-nav .today:hover{border-color:#719b7a;background:#d0e7d4;box-shadow:0 2px 5px rgba(35,71,53,.16)}
+    .week-nav .today:active{background:#c0ddc6;box-shadow:none}
     .days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
     .day{min-width:0;min-height:145px;background:white;text-align:left;color:inherit;display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:17px;padding:16px 12px}
     .day:hover{border-color:#8fb397}.day[aria-pressed="true"]{border:2px solid #427554;background:#f0f7ef;padding:15px 11px}

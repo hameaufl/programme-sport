@@ -11,43 +11,73 @@ on:
       - icon-512.png
       - manifest.webmanifest
       - publication.txt
+      - scripts/verifier-site.cjs
       - .github/workflows/publier-pages.yml
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: mon-rythme-pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    name: Publier le site statique
+  build:
+    name: Vérifier et préparer le site
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
     steps:
       - name: Récupérer les sources
         uses: actions/checkout@v4
 
-      - name: Configurer GitHub Pages
-        uses: actions/configure-pages@v5
+      - name: Contrôler le site et les données
+        run: node scripts/verifier-site.cjs
 
-      - name: Assembler uniquement les fichiers du site
+      - name: Préparer les fichiers à publier
         shell: bash
         run: |
+          set -euo pipefail
           mkdir -p _site
           cp index.html programme.js favicon.svg icon-192.png icon-512.png manifest.webmanifest publication.txt _site/
           touch _site/.nojekyll
 
-      - name: Préparer l'artefact Pages
+      - name: Envoyer l'artefact Pages
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+
+  deploy:
+    name: Vérifier et publier sur Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      actions: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Attendre la disponibilité de l'artefact via GitHub
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            count="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" --jq '[.artifacts[] | select(.name == "github-pages" and .expired == false)] | length' || echo "0")"
+            if [ "$count" = "1" ]; then
+              echo "Artefact github-pages visible (essai $attempt)."
+              sleep 5
+              exit 0
+            fi
+            echo "Artefact non visible (essai $attempt/12) ; nouvel essai dans 5 s."
+            sleep 5
+          done
+          echo "::error::Artefact github-pages introuvable ; déploiement non lancé."
+          exit 1
 
       - name: Déployer GitHub Pages
         id: deployment

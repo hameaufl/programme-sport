@@ -2,6 +2,15 @@
 
 > **À lire intégralement avant toute modification.** Ce fichier reprend les décisions explicites du propriétaire du projet. Il constitue le point d'entrée des agents capables de travailler sur ce dépôt. Il ne remplace pas les nouvelles instructions directes de l'utilisateur, qui prévalent.
 
+## Contrôles préventifs de publication — décision prioritaire
+
+- **Avant chaque publication** : lancer `node scripts/verifier-site.cjs` ; le workflow bloque si syntaxe JavaScript, fichiers, identifiants, dates, données ou témoin de version sont incohérents.
+- **Jobs séparés** dans `.github/workflows/publier-pages.yml` : `build` valide et transmet l'artefact ; `deploy` attend `needs: build` puis vérifie sa visibilité dans l'API avec tentatives bornées avant de déployer.
+- **Cause observée** dans le run 43101058284 : upload de l'artefact `github-pages` réussi, puis `actions/deploy-pages@v4` indique à tort « No artifacts named github-pages » juste après. Race intermittente documentée dans [actions/deploy-pages#451](https://github.com/actions/deploy-pages/issues/451).
+- Ne pas relancer uniquement l'étape d'upload dans le même run : risque d'artefacts dupliqués. Préférer un nouveau run complet si GitHub connaît une panne transitoire.
+- **Un seul commit atomique** par intervention code + décisions + journal ; vérifier le code avant push, puis statut Actions et si possible Pages. Diagnostiquer à partir des logs plutôt que tenter des commits successifs sans vérification.
+- Les services GitHub peuvent encore connaître des défaillances indépendantes du code ; ne jamais promettre zéro échec.
+
 ## Publication systématique — obligation prioritaire
 
 **À chaque retour utilisateur concernant le projet, à chaque décision adoptée et à chaque modification du code ou du contenu :**

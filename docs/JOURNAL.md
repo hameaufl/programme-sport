@@ -177,6 +177,16 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Version témoin** : `2026-11-11-fait-uniquement-v2`. Vérifier le nouveau workflow et le fichier témoin Pages après publication.
 - **Tests** : syntaxe JavaScript, absence de suivi local, cohérence des deux vues, vérification de l'état GitHub et du déploiement. Aucun test physique du téléphone.
 
+### 11 novembre 2026 — Pipeline Pages fiabilisé et bouton « Semaine en cours »
+
+- **Demande** : analyse du dernier workflow `failure`, réduction systématique des erreurs futures, bouton trop discret au repos.
+- **Logs analysés** : [run 43101058284](https://github.com/hameaufl/programme-sport/actions/runs/43101058284), artefact `github-pages` ID `13892446293` bien uploadé ; `deploy-pages` ne le trouve pas immédiatement (issue officielle [#451](https://github.com/actions/deploy-pages/issues/451)).
+- **Correction** : jobs `build` et `deploy` distincts, attente de visibilité de l'artefact via API et permissions nécessaires ; test prépublication `node scripts/verifier-site.cjs`.
+- **Interface** : uniquement styles CSS du bouton « Semaine en cours » avec fond pâle, bordure et ombre visibles au repos.
+- **Fichiers** : `.github/workflows/publier-pages.yml`, `scripts/verifier-site.cjs`, `index.html`, `publication.txt`, `AGENTS.md`, `README.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`.
+- **Contrôles** : cohérence code, données et témoin de publication ; résultat du nouveau workflow à inspecter après commit.
+- **Limite** : les erreurs de plateforme GitHub non déterministes restent possibles.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre

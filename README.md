@@ -2,6 +2,13 @@
 
 Site statique en français, adapté à l'ordinateur et au raccourci Android standalone. Dépôt **public** : [hameaufl/programme-sport](https://github.com/hameaufl/programme-sport). Site GitHub Pages attendu : https://hameaufl.github.io/programme-sport/.
 
+## Publication plus fiable
+
+- Incident du [run 43101058284](https://github.com/hameaufl/programme-sport/actions/runs/43101058284) : artefact Pages bien téléversé, mais introuvable par le déploiement lancé immédiatement ; problème connu [actions/deploy-pages#451](https://github.com/actions/deploy-pages/issues/451).
+- Désormais deux jobs `build` → `deploy` : contrôle des fichiers/données avec `node scripts/verifier-site.cjs`, chargement de l'artefact, puis attente de sa disponibilité et publication.
+- Les modifications de code et décisions sont regroupées dans un commit, sans publications successives inutiles. Vérification du statut final GitHub Actions.
+- « Semaine en cours » : bouton plus visible au repos, sans autre ajout à l'interface.
+
 ## Publication et diagnostic Android
 
 ### Correctif au blocage des déploiements Pages
