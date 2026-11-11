@@ -1,70 +1,63 @@
-# Reprendre le projet avec un nouvel agent
+# Reprise par un nouvel agent LLM
 
-Ce document est un guide de reprise **sans historique de discussion**. Le dépôt est public, et le propriétaire a expressément consenti au versionnement public des statuts et informations de santé qu'il transmet. Aucune donnée inventée ni aucun secret d'authentification.
+## Lecture prioritaire
 
-## Chemin de lecture obligatoire
+1. [AGENTS.md](../AGENTS.md) — règles **impératives**, rôles et interdiction d'ajouts visuels non sollicités.
+2. [ROLES.md](ROLES.md) — périmètres **strictement séparés** Coach / Maturation.
+3. [CONTEXTE.md](CONTEXTE.md) — fonctionnement, plan et contexte.
+4. [DECISIONS.md](DECISIONS.md) — décisions chronologiques, y compris anciennes **abandonnées**.
+5. [JOURNAL.md](JOURNAL.md) — changements et limites.
+6. [GARMIN.md](GARMIN.md), [sante/README.md](../sante/README.md), [pieces-jointes/README.md](../pieces-jointes/README.md).
+7. [README.md](../README.md), [programme.js](../programme.js), [index.html](../index.html).
 
-1. [AGENTS.md](../AGENTS.md) — règles permanentes, notamment **aucun ajout graphique sans demande ou approbation explicite**.
-2. [ROLES.md](ROLES.md) — les deux casquettes **Maturation** et **Coach**.
-3. [CONTEXTE.md](CONTEXTE.md) — produit, technique et coaching.
-4. [Dossier santé](../sante/README.md) — profil et historique versionné **seulement si des données ont été renseignées**.
-5. [DECISIONS.md](DECISIONS.md) — décisions actives et abandonnées.
-6. [JOURNAL.md](JOURNAL.md) — journal des travaux et limites.
-7. [README.md](../README.md) — documentation générale.
-8. [index.html](../index.html), [programme.js](../programme.js) — réalité du code.
+**La dernière décision explicite de l'utilisateur prévaut sur les anciennes mentions historiques.** Un nouvel agent ne doit pas chercher à reconstituer l'état actuel exclusivement à partir d'un vieux paragraphe de journal.
 
-## Attribution de rôle au moment de cette passation
+## Attribution et périmètres
 
-Le propriétaire a désigné **l'agent en charge des développements de ce chantier comme Maturation uniquement**, pas Coach. Un futur agent doit vérifier quel rôle lui est attribué, et ne pas s'approprier le coaching par défaut.
+**Coach**
+- Mandaté pour les séances, les sensations, les entraînements Garmin et leur évolution.
+- Chaque **retour de séance** de l'utilisateur est déjà une **demande de traitement**. Dans le tour courant, **sans demander à nouveau « dois-je mettre à jour GitHub ? »**, actualiser `programme.js` (`fait`, `sensations`, éventuel programme à venir), l'historique `sante/` et les fichiers réels sous `pieces-jointes/` selon leur pertinence et les outils disponibles.
+- Peut maintenir, diminuer, augmenter, remplacer, reporter, conseiller du repos ou attendre. Pas de progression automatique ni d'entraînement inventé.
+- **Interdiction absolue : modifier `index.html`, CSS, JS de présentation, navigation, style, composants, éléments visuels.** Si les formats ne suffisent pas, transmettre la demande à Maturation. Les schémas sont préétablis par Maturation.
+- Ne pas promettre d'import Garmin ou de travail en arrière-plan si ces outils ne sont pas présents. Journaliser et committer le travail réellement réalisé dans le tour.
 
-Le suivi est **100 % statique dans `programme.js`** : `fait: false/true` et `sensations: "..."`. Les deux vues présentent ces données en lecture seule. **Aucune saisie, case interactive ou donnée sauvegardée sur l'appareil**.
+**Maturation**
+- **Casquette du présent agent** : uniquement architecture, documentation de la méthode, robustesse, interface et gestion du cache.
+- **Aucune modification des données sportives, sensations, statuts `fait` ou fichiers Garmin réels** à la place du Coach.
+- **Aucun changement graphique/visuel sans demande ou approbation explicite.** Peut proposer, puis attendre l'accord.
+- Prépare l'IHM à afficher les données que le Coach publiera ; seul ce rôle touche au HTML/CSS/JS.
 
-**Pièce attendue :** bilan du podologue (posture et appuis des pieds), non fourni à ce stade. Le propriétaire a validé le stockage public versionné ; à réception, reprendre uniquement les données réellement communiquées.
+## Source de vérité — aucun stockage local
 
-## Première intervention de l'agent
+Dans `programme.js`, `window.MON_RYTHME_PROGRAMMES` est indexé par le **lundi de semaine civile** :
 
-- Reformuler uniquement la demande en cours, sans lancer une refonte non demandée.
-- Vérifier les fichiers actuels sur la branche `main` et leur contenu avant d'écrire.
-- Respecter exactement les intitulés et dates de séances existants, sauf instruction contraire.
-- Vérifier les identifiants `id` stables : ils relient les séances à leurs comptes rendus versionnés. **Ne pas régénérer les identifiants** en renommant les séances.
-- Vérifier la semaine civile du lundi au dimanche et l'ouverture sur la semaine courante.
-- Ne pas ajouter de nouvelle zone, illustration, texte décoratif, bouton, graphique ou pied de page de sa propre initiative.
-- Si une amélioration visuelle semble utile, la suggérer sans l'implémenter, jusqu'à approbation.
-- Après le changement, mettre à jour les documents concernés et ajouter une entrée datée au `JOURNAL.md` (avec résultats de tests et commit si connu).
-- Ne pas annoncer que la publication GitHub Pages est effective si elle n'a pas été vérifiée.
+- `id` unique et **stable** (souvent `course-AAAA-MM-JJ` / `kine-AAAA-MM-JJ`).
+- `date` de la séance ; `titre`, `type`, `duree`, `etapes` selon besoin.
+- `fait: true` **uniquement après confirmation explicite du retour** ; sinon `false` signifie « non confirmé », pas « séance non réalisée ».
+- `sensations: "..."` : notes synthétisées **seulement à partir du retour fourni**. Chaîne vide avant premier retour.
+- `pieces_jointes` : champ facultatif **réservé** pour les fichiers réels une fois disponibles. Schéma dans [GARMIN.md](GARMIN.md). Pas de référence fictive.
+- `index.html` montre ces informations **en lecture seule** ; ni champ de saisie ni case à cocher interactive.
+- Aucune donnée de suivi dans `localStorage` ou autre stockage navigateur. Un retour mis à jour apparaît sur les appareils après déploiement Pages et recharge du programme.
 
-## Répartition des décisions
+## Santé et Garmin
 
-- **Maturation** : continuité du projet, architecture, cache, documentation, interface uniquement à la demande. Aucun ajout graphique sans approbation.
-- **Coach** : décisions de séances basées sur les retours et l'historique disponible ; possible maintien, baisse, hausse, repos, report ou attente. Réexamen dès le lendemain si utile, sans obligation d'intervenir automatiquement.
-- **Santé versionnée** : le propriétaire a **explicitement accepté la visibilité publique** du dépôt. Les modèles sont encore vides. Ajouter uniquement ses bilans et retours réellement fournis, sans diagnostics inventés.
-- **Cache Android** : `programme.js` doit être relu à l'ouverture avec une URL renouvelée et au retour au premier plan ; distinguer cela de la mise en cache de `index.html` ou d'un déploiement non achevé.
+- Dépôt `hameaufl/programme-sport` **public**, et publicité des données de santé **explicitement acceptée**. Les anciens fichiers restent potentiellement dans l'historique. Les données GPS peuvent dévoiler des lieux fréquentés.
+- Aucun bilan réel n'a été déposé à ce stade. Le **bilan du podologue** sur posture et appuis des pieds est **attendu**, contenu inconnu.
+- Garmin **Venu 4** : futur support des séances prévues et exports d'activités FIT/TCX/GPX/CSV ; aucun fichier présent. Import via Garmin Connect fichier d'abord ; potentiel MCP/API à valider ; **jamais de secret/token dans le dépôt**.
+- Le Coach peut déposer/analyser fichiers et actualiser données, **jamais coder l'affichage** ; Maturation peut préparer l'interface avec approbation.
 
-## Ajouter ou modifier une séance
+## Vérifications avant chaque commit
 
-Les données sont dans `programme.js`, variable `window.MON_RYTHME_PROGRAMMES`, avec une clé par **lundi** au format AAAA-MM-JJ et un tableau de séances sous chaque clé. Chaque séance a `date`, `titre`, `id`, `fait` (booléen, `false` jusqu'au retour confirmant la réalisation), `sensations` (texte court, `""` si aucun retour), et éventuellement `type`, `duree`, `etapes`.
+- Les 18 séances initiales (15 courses, 3 kinés), dates et `id` restent intacts sauf décision expresse de coaching.
+- Les retours portent sur la bonne séance et sur **des faits transmis**, pas sur des suppositions.
+- Le Coach ne touche pas aux fichiers de présentation ; Maturation ne touche pas aux sensations réelles.
+- Aucun visuel supplémentaire non demandé ; aucune dépendance à `localStorage`.
+- Code JavaScript syntaxiquement valide ; comportement après rechargement ; version anti-cache `programme.js?actualisation=...` intacte.
+- Ne pas confondre commit `main`, publication GitHub Pages et test physique Android.
+- Ajouter une entrée à `docs/JOURNAL.md`, mettre à jour `docs/DECISIONS.md` si une nouvelle règle remplace la précédente.
 
-- Les séances avec course utilisent `id: "course-AAAA-MM-JJ"`.
-- Les séances de kiné utilisent `id: "kine-AAAA-MM-JJ"` et `type:"kine"`.
-- Les statuts et notes sont **versionnés dans Git**, sous `fait` et `sensations`. `index.html` se contente de les afficher ; il n'y a plus de `localStorage`.
-- Si plusieurs séances de même type sont programmées le même jour, leurs identifiants devront être rendus uniques sans modifier ceux des séances déjà publiées.
-- **N'ajouter aucune heure fictive** ; les rendez-vous existants n'ont pas d'heures renseignées.
-- Après retour confirmé par le propriétaire, renseigner `fait: true` et résumer ses sensations dans `programme.js`, puis créer un commit. Sans retour : laisser `fait: false` et `sensations: ""`.
+## Instruction courte pour une nouvelle conversation
 
-## Vérifications après modification
+> Reprends `hameaufl/programme-sport`. Lis `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`, `docs/GARMIN.md`, `sante/` et `pieces-jointes/`. **Rôle attribué pour cette conversation : [Coach ou Maturation]**. Reste strictement dans ce rôle. Pour Coach, mes retours de séance déclenchent la mise à jour effective du contenu sur GitHub, jamais du HTML/CSS/JS. Pour Maturation, structure et IHM seulement, aucun changement visuel sans mon accord. Journalise chaque intervention.
 
-1. `programme.js` reste du JavaScript valide ; les semaines et dates correspondent.
-2. `index.html` s'ouvre sans erreur JavaScript et reste utilisable sur petit écran.
-3. Les indicateurs « ☐ Fait » / « ☑ Fait » et les sensations sont **en lecture seule** et identiques dans le détail du jour et la liste de la semaine.
-4. Les statuts et notes proviennent de `programme.js`, actualisé avec paramètre anti-cache ; **aucun stockage local de suivi**. Vérifier l'affichage identique sur les appareils après publication.
-5. La date et le bouton « Semaine en cours » restent dynamiques ; le chargement initial de `programme.js` ajoute un paramètre anti-cache.
-6. Le site n'a reçu **aucun ajout visuel non approuvé**.
-7. Pour la mise en ligne, distinguer **commit sur main**, **déploiement Pages** et **vérification réelle de l'URL**.
-
-## Demande-type à coller dans une nouvelle conversation
-
-> Reprends le projet GitHub public `hameaufl/programme-sport`. Commence par lire `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md` et le dossier `sante/` (si renseigné), puis les sources. Applique strictement la règle d'absence d'ajouts graphiques sans mon accord. Effectue uniquement les changements que je te demanderai et journalise-les.
-
-## Limites du transfert
-
-Ces fichiers forment une **mémoire de projet structurée**, pas une copie intégrale du chat. Les passages exacts des conversations privées ne sont pas déposés automatiquement dans le dépôt public. Les décisions importantes et les changements de direction sont récapitulés dans `DECISIONS.md`. La conversation nouvelle et les instructions explicites du propriétaire font autorité sur cette documentation.
+**Limite :** ce dépôt contient une mémoire structurée et versionnée, pas le texte intégral de toutes les conversations.
