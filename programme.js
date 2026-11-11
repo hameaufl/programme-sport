@@ -39,11 +39,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-11",
       "titre": "Séance 1 · 2M+3C",
       "duree": "17 min",
-      "objectif": "9 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "2 min de marche, puis 3 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 3 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-11"
     },
@@ -51,11 +50,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-13",
       "titre": "Séance 2 · 2M+3C",
       "duree": "17 min",
-      "objectif": "9 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "2 min de marche, puis 3 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 3 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-13"
     }
@@ -65,11 +63,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-16",
       "titre": "Séance 3 · 2M+3C",
       "duree": "17 min",
-      "objectif": "9 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "2 min de marche, puis 3 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 3 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-16"
     },
@@ -77,11 +74,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-18",
       "titre": "Séance 1 · 2M+3C",
       "duree": "17 min",
-      "objectif": "9 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "2 min de marche, puis 3 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 3 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-18"
     },
@@ -95,11 +91,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-20",
       "titre": "Séance 2 · 2M+3C",
       "duree": "17 min",
-      "objectif": "9 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "2 min de marche, puis 3 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 3 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-20"
     }
@@ -109,11 +104,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-23",
       "titre": "Séance 3 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-23"
     },
@@ -121,11 +115,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-25",
       "titre": "Séance 1 · 2M+3C",
       "duree": "17 min",
-      "objectif": "9 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 3 min C) + 2 min M. Rester à une allure permettant de parler ; marcher pendant une phase de course si nécessaire.",
       "etapes": [
-        "2 min de marche, puis 3 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 3 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-25"
     },
@@ -133,11 +126,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-27",
       "titre": "Séance 2 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-27"
     }
@@ -147,11 +139,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-11-30",
       "titre": "Séance 3 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-11-30"
     },
@@ -159,11 +150,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-12-02",
       "titre": "Séance 1 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-12-02"
     },
@@ -171,11 +161,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-12-04",
       "titre": "Séance 2 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-12-04"
     }
@@ -185,11 +174,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-12-07",
       "titre": "Séance 3 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-12-07"
     },
@@ -197,11 +185,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-12-09",
       "titre": "Séance 1 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-12-09"
     },
@@ -209,11 +196,10 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-12-11",
       "titre": "Séance 2 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile"
       ],
       "id": "course-2026-12-11"
     }
@@ -223,12 +209,11 @@ window.MON_RYTHME_PROGRAMMES = {
       "date": "2026-12-14",
       "titre": "Séance 3 · 2M+5C",
       "duree": "23 min",
-      "objectif": "15 min de course au total, à allure facile.",
-      "details": "Programme du bracelet : 3 × (2 min M + 5 min C) + 2 min M. Utiliser ce mode si le programme 2M+3C est devenu confortable, sinon répéter le 2M+3C. Option facultative en fin de cycle : mode C (3 min M + 21 min C + 3 min M) uniquement si les séances B sont très confortables, sans douleur ni fatigue inhabituelle. Sinon conserver B et repousser l'objectif de course continue.",
       "etapes": [
-        "2 min de marche, puis 5 min de course : répéter 3 fois.",
-        "Terminer par 2 min de marche.",
-        "Option facultative si prêt : 3 min marche + 21 min course continue + 3 min marche (mode C, 27 min)."
+        "3 × (2 min marche + 5 min course)",
+        "2 min de marche finale",
+        "Allure facile",
+        "Option si très à l'aise : 3 min marche + 21 min course continue + 3 min marche"
       ],
       "id": "course-2026-12-14"
     }
