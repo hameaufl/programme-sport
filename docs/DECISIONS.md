@@ -59,3 +59,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Garder l'icône et le titre sur **une seule ligne**, la flèche à gauche, avec un petit espacement ; ne pas les centrer séparément.
 - Conserver exactement le bouton principal **« Accéder à mes séances »** pleine largeur **sans icône**, sans sous-texte et avec la même destination.
 - Cette consigne concerne **la carte affichée dans la réponse ChatGPT du Coach**, pas l'interface du site GitHub Pages.
+
+## 11 novembre 2026 — Sens de « se mettre à jour » pour tout agent
+
+- **Instruction utilisateur explicite** : « se mettre à jour » signifie **prendre connaissance de l'état du dépôt GitHub**, notamment des nouveaux commits reçus depuis la dernière consultation.
+- Cette demande vise la **mémoire opérationnelle de l'agent**, pas le code ni le contenu du site : **aucun changement de fichier, décision de Coach, commit, journal, push ou workflow** sur la seule demande de lecture.
+- S'applique aux **deux casquettes** : Coach consulte son domaine `personnel/` et les règles ; Maturation consulte les règles, code et documents techniques. La réponse se limite à une confirmation ou aux changements pertinents au rôle.
+- Si une modification est demandée en plus, elle est une **instruction distincte**, exécutée dans le périmètre habituel.
+- La présente inscription de cette règle est l'exception initiale autorisée pour assurer le transfert de consigne aux futurs LLM.

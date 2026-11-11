@@ -68,6 +68,13 @@
 - **Action Maturation** : adaptation des consignes de la carte dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et ajout de la décision dans `docs/DECISIONS.md`.
 - Aucun changement du code de l'application, des données sportives ou du workflow Pages ; commit documentaire uniquement.
 
+## 11 novembre 2026 — Définition de « se mettre à jour »
+
+- **Décision** : l'expression adressée à un agent LLM signifie **relire les connaissances du dépôt et les nouveaux commits de `main`**, sans écriture sur GitHub.
+- **Précision** : pas de push, de journal, de modification de code ou de données et pas de déploiement lorsque cette demande est seule. Un ordre distinct peut autoriser une modification.
+- **Portée** : Coach et Maturation ; les informations consultées et le résumé restent pertinents au rôle attribué.
+- **Action Maturation** : une seule mise à jour documentaire pour ancrer cette règle dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, le registre des décisions et ce journal. Aucune modification du site.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

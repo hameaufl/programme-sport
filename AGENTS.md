@@ -1,5 +1,16 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## « Se mettre à jour » — lecture seule du dépôt (règle prioritaire)
+
+Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation) de « se mettre à jour », « actualiser ses connaissances » ou de « prendre connaissance des dernières modifications » :
+1. **Lire le dépôt GitHub actuel**, en particulier `main`, les commits arrivés depuis la dernière consultation si cette référence est connue, puis les fichiers pertinents au rôle (`AGENTS.md`, `docs/REPRISE.md`, `docs/ROLES.md`, documentation et sources du domaine concerné).
+2. **Assimiler les décisions et l'état réel du projet** pour la suite de la conversation ; résumer brièvement les nouveautés pertinentes au rôle ou simplement confirmer la lecture si rien n'a changé.
+3. **Ne rien modifier sur GitHub** : pas de commit, push, nouvelle entrée de journal, modification de données, ajustement sportif, intervention d'interface ou déclenchement volontaire du workflow. **Ne pas confondre la mise à jour de ses connaissances avec une mise à jour du site.**
+4. **Exception seulement si l'utilisateur donne également une demande explicite distincte de modification** : traiter cette seconde demande dans les limites du rôle, selon les règles habituelles de versionnement.
+5. Si l'accès à GitHub est indisponible, le dire clairement et **ne pas prétendre** avoir lu les derniers commits. Ne jamais considérer le résumé d'un ancien chat comme une preuve de l'état courant du dépôt.
+
+**Cette règle de lecture seule prime sur l'obligation générale de committer les décisions** quand le message utilisateur est *uniquement* une demande de « mise à jour » de l'agent. La présente adoption de la règle est elle-même une décision de Maturation, à documenter une seule fois.
+
 ## Indexation volontairement désactivée — règle permanente
 
 - La page publique **ne doit pas être indexée** par les moteurs de recherche respectant `noindex`. Maintenir dans `index.html` les balises `<meta name="robots" content="noindex, nofollow">` et `<meta name="googlebot" content="noindex, nofollow">`.

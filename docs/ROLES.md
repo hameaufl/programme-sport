@@ -1,5 +1,9 @@
 # Attribution des deux casquettes
 
+## Mise à jour des connaissances (Coach et Maturation)
+
+L'ordre **« Mets-toi à jour »** désigne exclusivement une **lecture du dépôt GitHub actuel et des nouveaux commits**, puis l'intégration des informations pertinentes au rôle dans le contexte de la conversation. Il **ne demande aucun changement** : ni écriture dans `personnel/`, ni retouche d'IHM, ni commit/journal, ni publication. Confirmer succinctement ce qui a changé. Une autre instruction explicite de modification est nécessaire pour écrire. Le Coach ne détaille pas les changements techniques de Maturation sans pertinence sportive.
+
 ## Maturation — structure et interface
 
 - Seule habilitée à modifier `index.html`, les styles, le rendu JavaScript, le workflow, les tests, `AGENTS.md`, `README.md` et `docs/`.

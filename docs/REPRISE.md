@@ -11,6 +11,10 @@ Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse su
 
 Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
+## Consigne « Mets-toi à jour »
+
+**Lecture seule.** Consulter le GitHub `main`, identifier les nouveaux commits par rapport au dernier état connu, relire les règles et les fichiers de son rôle, puis actualiser **ses connaissances conversationnelles**, pas le dépôt. **Aucun push, commit, journal, changement de programme ou d'interface, ni publication** sur cette seule demande. Ne pas inventer de changements si aucun commit n'est identifiable ; indiquer le manque d'accès GitHub s'il survient. Toute modification doit être demandée séparément.
+
 ## Non-indexation du site
 
 `index.html` doit conserver `<meta name="robots" content="noindex, nofollow">` et `<meta name="googlebot" content="noindex, nofollow">`. Le test prépublication vérifie cette règle. **Ne pas ajouter un `robots.txt` dans le sous-répertoire** comme substitut : seul celui de la racine de l'hôte est pertinent, et bloquer le crawl peut neutraliser la lecture du `noindex`.
