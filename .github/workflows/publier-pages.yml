@@ -1,0 +1,54 @@
+name: Publier Mon Rythme
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - programme.js
+      - favicon.svg
+      - icon-192.png
+      - icon-512.png
+      - manifest.webmanifest
+      - publication.txt
+      - .github/workflows/publier-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: mon-rythme-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Publier le site statique
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Récupérer les sources
+        uses: actions/checkout@v4
+
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Assembler uniquement les fichiers du site
+        shell: bash
+        run: |
+          mkdir -p _site
+          cp index.html programme.js favicon.svg icon-192.png icon-512.png manifest.webmanifest publication.txt _site/
+          touch _site/.nojekyll
+
+      - name: Préparer l'artefact Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Déployer GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
