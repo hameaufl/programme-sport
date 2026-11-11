@@ -101,3 +101,9 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Le Coach **traduit le vocabulaire de l'utilisateur en termes techniques pertinents** sans inventer des groupes musculaires ou conclure sur une technique non confirmée.
 - La partie **« Sensations »** et le suivi santé détaillé demeurent les emplacements pour la narration, les douleurs et les nuances ; la liste ne doit pas les reprendre.
 - Les intitulés affichés proviennent de `personnel/programme.js` (`exercicesRealises`, le cas échéant) ou de **« Réalisé »** dans `personnel/sante/SUIVI.md`, séparé par points-virgules ; **ne pas créer de doublon** lorsque l'une des sources contient déjà les faits.
+
+## 12 novembre 2026 — Renommage du titre du bloc réalisé
+
+- **Dernière décision prioritaire** : dans la vue « Programme du jour », le titre de la liste des exercices d'une séance confirmée est désormais **« Séance »**, et non « Déroulé de la séance ».
+- **« Programme prévu »** reste le titre pour les séances non confirmées, afin de distinguer les exercices planifiés des exercices réalisés.
+- Le format en puces courtes, les sensations distinctes, les données du Coach et le résumé hebdomadaire restent inchangés. Les intitulés anciens dans cet historique décrivent les versions précédentes, pas la règle actuelle.

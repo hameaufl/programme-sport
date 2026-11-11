@@ -34,9 +34,9 @@ Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation
 - **Limite assumée :** `noindex` n'est ni un mot de passe ni une garantie contre tous les moteurs/robots ; le dépôt GitHub et les ressources non-HTML restent publics et potentiellement découvrables. Ne jamais présenter le site comme confidentiel ou inaccessible sans l'URL.
 - À chaque modification future de l'HTML, garder la directive et vérifier sa publication. Aucune modification visuelle n'est nécessaire.
 
-## Déroulé de la séance — intitulés ultra-concis (Coach)
+## Séance — intitulés ultra-concis (Coach)
 
-- Dans le **« Déroulé de la séance »**, écrire une **liste à puces d'intitulés très courts**, idéalement **2 à 8 mots par puce** : noms d'exercices, mouvements ou étapes, **sans phrase verbale**, sans sujet, sans récit et sans mention inutile du patient ou du praticien.
+- Dans le **« Séance »**, écrire une **liste à puces d'intitulés très courts**, idéalement **2 à 8 mots par puce** : noms d'exercices, mouvements ou étapes, **sans phrase verbale**, sans sujet, sans récit et sans mention inutile du patient ou du praticien.
 - Exemple de style attendu : **« Bilan initial »**, **« Étirements »**, **« Presse à cuisses · 40 et 50 kg »**, **« Marche latérale avec bande élastique »**. Ce sont des **exemples de formulation**, pas une prescription à recopier pour chaque séance.
 - Employer le **terme sportif ou biomécanique établi** qui correspond réellement au mouvement décrit en langage courant ; **ne pas surinterpréter** le geste. Conserver uniquement les charges, répétitions ou accessoires **transmis**, et ne pas inventer de muscle sollicité, d'exercice ou d'intensité.
 - Pour alimenter le rendu, maintenir des intitulés aussi brefs dans `exercicesRealises` ou la rubrique **« Réalisé »** de `personnel/sante/SUIVI.md` (éléments séparés par **point-virgule**), selon la source existante. **Éviter les doublons** entre ces sources ; utiliser la source déjà documentée en priorité.
@@ -45,9 +45,9 @@ Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation
 
 ## Déroulé de séance — présentation et source réelle
 
-- **Demande utilisateur** : en vue « Programme du jour », séparer **« Déroulé de la séance »** (liste à puces des exercices effectivement réalisés) et **« Sensations »** (paragraphe de ressenti et limites). La partie « Déroulé » apparaît **avant** « Sensations ».
+- **Demande utilisateur** : en vue « Programme du jour », séparer **« Séance »** (liste à puces des exercices effectivement réalisés) et **« Sensations »** (paragraphe de ressenti et limites). La partie « Déroulé » apparaît **avant** « Sensations ».
 - Pour une séance **non réalisée**, utiliser l'intitulé **« Programme prévu »** et lister les `etapes` de `personnel/programme.js`. Ne jamais présenter ces étapes prévisionnelles comme ayant été effectuées.
-- Pour une séance **réalisée**, afficher dans « Déroulé de la séance » les valeurs **explicites et factuelles** de `exercicesRealises` si le Coach les a consignées dans `personnel/programme.js`. Sinon, lire les éléments déjà transmis dans l'entrée **« Réalisé »** de `personnel/sante/SUIVI.md` portant le même `id`. S'il n'existe aucun détail authentifié, indiquer qu'il n'a pas été précisé, **sans inventer** d'exercices.
+- Pour une séance **réalisée**, afficher dans « Séance » les valeurs **explicites et factuelles** de `exercicesRealises` si le Coach les a consignées dans `personnel/programme.js`. Sinon, lire les éléments déjà transmis dans l'entrée **« Réalisé »** de `personnel/sante/SUIVI.md` portant le même `id`. S'il n'existe aucun détail authentifié, indiquer qu'il n'a pas été précisé, **sans inventer** d'exercices.
 - Le champ de données **facultatif** `exercicesRealises: string[]` appartient au **Coach seul** et ne peut contenir que des mouvements réellement rapportés ; ne pas le renseigner pour une séance non confirmée. **Aucune réécriture de données personnelles par Maturation.**
 - La zone **« Sensations »** conserve pour l'instant le format paragraphe ; le Coach reformule le ressenti décrit en vocabulaire biomécanique pédagogique, mais ne peut pas transformer une supposition en fait médical. Préserver les limites comme la douleur lors de charges plus élevées.
 - Garder le résumé de semaine minimal : date, titre et statut ✓ Fait seulement si confirmé. Tests et rendu restent **en lecture seule**, sans stockage navigateur.

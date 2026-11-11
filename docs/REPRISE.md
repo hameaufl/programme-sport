@@ -13,11 +13,11 @@ Maturation maintient exclusivement structure/interface/tests et ne touche pas au
 
 ## Règle Coach sur la longueur du déroulé
 
-**Les puces « Déroulé de la séance » doivent être nominales, très courtes (environ 2 à 8 mots), sans phrases narratives.** Exemples : « Bilan initial » ; « Étirements » ; « Presse à cuisses · 40 et 50 kg » ; « Marche latérale avec bande élastique ». Le Coach transcrit le vocabulaire courant en termes sportifs **sans invention**. Écrire ces libellés concis dans `exercicesRealises` ou dans `personnel/sante/SUIVI.md` après **« Réalisé : »** séparés par des points-virgules. **Sensations** conserve la description des douleurs/ressentis distincte du déroulé.
+**Les puces « Séance » doivent être nominales, très courtes (environ 2 à 8 mots), sans phrases narratives.** Exemples : « Bilan initial » ; « Étirements » ; « Presse à cuisses · 40 et 50 kg » ; « Marche latérale avec bande élastique ». Le Coach transcrit le vocabulaire courant en termes sportifs **sans invention**. Écrire ces libellés concis dans `exercicesRealises` ou dans `personnel/sante/SUIVI.md` après **« Réalisé : »** séparés par des points-virgules. **Sensations** conserve la description des douleurs/ressentis distincte du déroulé.
 
 ## Déroulé et sensations — dernière décision
 
-- Dans la vue détaillée, afficher **« Déroulé de la séance »** sous le titre si la séance est confirmée : liste des exercices réellement rapportés, provenant de `s.exercicesRealises` (liste de chaînes facultative, rédigée par le Coach) ou de **« Réalisé »** dans `personnel/sante/SUIVI.md` pour le même identifiant. Jamais déduire de faits depuis un programme prévu ni des sensations. Si rien n'est documenté, afficher une mention d'absence.
+- Dans la vue détaillée, afficher **« Séance »** sous le titre si la séance est confirmée : liste des exercices réellement rapportés, provenant de `s.exercicesRealises` (liste de chaînes facultative, rédigée par le Coach) ou de **« Réalisé »** dans `personnel/sante/SUIVI.md` pour le même identifiant. Jamais déduire de faits depuis un programme prévu ni des sensations. Si rien n'est documenté, afficher une mention d'absence.
 - Pour une séance non réalisée, afficher **« Programme prévu »** et les `etapes` prévisionnelles existantes, sans laisser entendre qu'elles ont été effectuées.
 - **« Sensations »** sous le déroulé, en paragraphe pour cette première version. Le Coach peut reformuler avec le vocabulaire sportif technique approprié et compréhensible, en distinguant interprétation et diagnostic. Maturation ne modifie pas `personnel/`.
 - Le journal `SUIVI.md` est **déjà publié** par le workflow ; aucun nouveau fichier de données requis pour la page. Un bloc de suivi antérieur existe pour la kiné du 4 novembre.

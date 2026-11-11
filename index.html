@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-11-deroule-seance-v8">
+  <meta name="mon-rythme-version" content="2026-11-12-seance-titre-v9">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -179,7 +179,7 @@
   // Ne jamais utiliser les étapes prévues comme preuve de réalisation.
   function derouleDisplay(s) {
     var box=elem("section","session-programme");
-    box.appendChild(elem("h4","",isCompleted(s)?"Déroulé de la séance":"Programme prévu"));
+    box.appendChild(elem("h4","",isCompleted(s)?"Séance":"Programme prévu"));
     var activities=isCompleted(s)
       ? (Array.isArray(s.exercicesRealises) && s.exercicesRealises.length
           ? s.exercicesRealises

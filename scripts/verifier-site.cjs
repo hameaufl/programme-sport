@@ -49,7 +49,7 @@ const weeklyStart = html.indexOf('var all=document.getElementById("allContent")'
 const dailyRender = html.slice(dayStart,weeklyStart);
 assert.ok(dailyRender.includes("box.appendChild(derouleDisplay(s));"), "Déroulé de la séance absent du détail quotidien");
 assert.ok(dailyRender.indexOf("derouleDisplay(s)") < dailyRender.indexOf("sensationsDisplay(s)"), "Le déroulé doit précéder les sensations");
-assert.ok(html.includes('isCompleted(s)?"Déroulé de la séance":"Programme prévu"'), "Ne jamais présenter le programme prévu comme réalisé");
+assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"'), "Pour une séance réalisée, le titre doit être Séance ; conserver Programme prévu sinon");
 assert.ok(html.includes("s.exercicesRealises") && html.includes("realisesJournal[s.id]"), "Lecture des exercices réalisés absente");
 assert.ok(html.includes("analyserJournalRealise(markdown)") && html.includes('./personnel/sante/SUIVI.md?actualisation='), "Source réelle du journal santé non lue");
 assert.ok(!html.includes('Sensations :'), "La section sensations ne doit pas retrouver un affichage en colonnes");
