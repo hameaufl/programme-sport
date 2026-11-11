@@ -58,3 +58,9 @@
 - Fichiers de reprise : `AGENTS.md`, `docs/REPRISE.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`.
 - Garder le registre et le journal à jour après de futures interventions.
 - Le dépôt étant **public**, transférer une **synthèse fonctionnelle et décisionnelle**, et non des secrets ni une transcription complète privée.
+
+## 7. Libellé des coches — décision la plus récente (11 novembre 2026)
+
+- **Nouvelle demande explicite :** remplacer « Réalisé » par **« Fait »** dans les deux vues et les libellés d'accessibilité.
+- Ce choix **remplace** la décision précédente demandant le masculin « Réalisé ». Conserver l'historique ci-dessus pour la traçabilité, mais appliquer **« Fait »** comme libellé actif.
+- Aucune modification des identifiants de séance, des dates, ni du stockage local `mon-rythme-suivi-v1` ; les coches déjà enregistrées restent associées aux mêmes séances.
