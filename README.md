@@ -7,7 +7,9 @@
 Pour reprendre ce projet sans l'historique de conversation, lire ensuite :
 
 - [Guide de reprise](docs/REPRISE.md)
+- [Rôles Maturation et Coach](docs/ROLES.md)
 - [Contexte et architecture](docs/CONTEXTE.md)
+- [Espace de suivi santé](sante/README.md)
 - [Registre des décisions](docs/DECISIONS.md)
 - [Journal chronologique](docs/JOURNAL.md)
 
@@ -15,6 +17,18 @@ Ces documents restituent les **décisions pertinentes et le contexte fonctionnel
 
 
 Site **statique**, adapté au téléphone (y compris raccourci installé sur Android) et à l'ordinateur, publié sur **GitHub Pages**.
+
+## Accompagnement et santé versionnée
+
+**Maturation** : architecture, documentation, méthode de travail, maintenance de Mon Rythme, évolutions d'interface explicitement demandées ou approuvées. **Coach** : planification et adaptation course/renforcement/récupération sur la base des comptes rendus et du contexte fourni, avec possibilité de réduire, maintenir, augmenter, reporter ou attendre.
+
+Un espace `sante/` comporte des **modèles encore vides** pour antécédents, aspects mécaniques et journal des sensations. Le dépôt de ce site est **public** ; un dossier santé au même endroit n'est pas privé, même s'il n'est pas lié depuis l'application. Les données personnelles devront être volontairement orientées vers un dépôt dont la visibilité a été explicitement confirmée ; un second dépôt **privé** est recommandé pour une véritable confidentialité, tout en conservant l'historique Git.
+
+## Fraîcheur du programme sur Android
+
+À l'ouverture de la page, `programme.js` est demandé avec une URL renouvelée : `programme.js?actualisation=<horodatage>`. Le calendrier est initialisé après ce chargement. Au retour dans l'application, un nouveau téléchargement du programme est tenté, puis l'affichage est recalculé. En cas d'échec initial de la requête anti-cache, repli vers `programme.js` sans paramètre.
+
+Pas de modification visuelle. Les coches « Fait » et leur clé `localStorage` restent inchangées. Cette technique vise le cache du **programme** : elle ne neutralise ni le cache du fichier HTML `index.html`, ni les délais de déploiement de GitHub Pages. Elle ne garantit pas non plus l'accès hors ligne.
 
 ## Interface
 
@@ -64,6 +78,8 @@ La progression en course est adaptée du *Programme fractionné I* (La Clinique 
 
 - `index.html` : interface responsive, navigation hebdomadaire et cases sauvegardées en local ;
 - `programme.js` : contenu **statique** des séances et identifiants stables ;
+- `sante/` : modèles de suivi santé **sans données personnelles enregistrées à ce stade**, espace de versionnement potentiel ;
+- `docs/ROLES.md` et `AGENTS.md` : responsabilités Coach/Maturation et consignes persistantes ;
 - `favicon.svg`, `manifest.webmanifest`, `icon-192.png`, `icon-512.png` : présentation et installation mobile ;
 - `.nojekyll` : publication directe via GitHub Pages.
 
