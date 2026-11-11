@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-11-suivi-sante-v6">
+  <meta name="mon-rythme-version" content="2026-11-11-seances-sensations-v7">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -55,15 +55,17 @@
     .session h3{font-size:17px;margin:0}.session .meta{color:#63816b;font-size:12px;margin:7px 0 0}
     .session .detail{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;margin:10px 0 0}
     .session ul{font-size:14px;padding-left:21px;margin:10px 0 0}.session li+li{margin-top:6px}
-    .week-list{display:grid;gap:9px}.week-item{display:flex;gap:13px;align-items:baseline;background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+    .week-list{display:grid;gap:9px}
+    .week-item{display:flex;gap:13px;align-items:center;background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
     .week-item .date{width:106px;flex:none;font-size:12px;font-weight:800;color:#406b4d}
-    .week-item .body{font-size:14px}.week-item .body small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+    .week-item .body{font-size:14px;min-width:0;flex:1;overflow-wrap:anywhere}
     .goal-list{margin:10px 0 0;padding-left:23px;color:var(--muted);font-size:14px}
     .goal-list li{padding-left:4px}
-    .session-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-    .session-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-width:0}
-    .sensations-entry{display:inline-flex;align-items:baseline;gap:7px;min-width:0;max-width:100%;color:#395b42;font-size:13px}
-    .sensations-entry .note{overflow-wrap:anywhere;color:var(--muted)}
+    .session-head{display:flex;justify-content:flex-start;align-items:center;gap:10px 14px;flex-wrap:wrap}
+    .session-head h3{min-width:0;overflow-wrap:anywhere}
+    .sensations-entry{margin-top:18px;padding-top:15px;border-top:1px solid #dce8df;min-width:0}
+    .sensations-entry h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
+    .sensations-entry .note{color:#4e6955;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;line-height:1.55}
     .done-control{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:#286b3b;font-size:13px;font-weight:700}
     .done-mark{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#2d7b46;color:white;font-size:13px;line-height:1;font-weight:850}
     .session.completed,.week-item.completed{background:#f0f7ef}
@@ -71,11 +73,11 @@
     .health-preview h2{font-size:21px;margin:0 0 5px}.health-preview p{font-size:14px;color:#5c7965;margin:0;max-width:480px}
     .health-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#234735;color:#fff;text-decoration:none;font-size:14px;font-weight:750;padding:13px 20px;border-radius:13px;min-height:46px;white-space:nowrap}
     .health-cta:hover{background:#335f43}.health-cta:focus-visible{outline:3px solid #86b896;outline-offset:3px}
-    .week-item .session-actions{margin-left:auto;align-self:center}
+    .week-item .done-control{margin-left:auto;flex:none}
     .day .status.complete{color:#2a7042}
     .day .status.complete:before{background:#2a7042}
     @media(max-width:930px){.days{grid-template-columns:repeat(4,minmax(0,1fr))}}
-    @media(max-width:650px){.health-preview{padding:21px}.health-cta{width:100%}.week-item{flex-wrap:wrap}.week-item .session-actions{margin-left:0}.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
+    @media(max-width:650px){.health-preview{padding:21px}.health-cta{width:100%}.week-item{flex-wrap:wrap;gap:8px 10px}.week-item .done-control{margin-left:auto}.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
     @media print{body{background:white}.shell{width:100%;padding:0 14px}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.week-nav{display:none}.days{grid-template-columns:repeat(7,minmax(0,1fr))}.day{min-height:100px;padding:8px!important}.day[aria-pressed="true"]{border-width:1px}}
   </style>
 </head>
@@ -163,19 +165,10 @@
   }
   function sensationsDisplay(s) {
     if(typeof s.sensations!=="string"||!s.sensations.trim())return null;
-    var box=elem("span","sensations-entry");
-    box.appendChild(elem("strong","","Sensations :"));
-    box.appendChild(elem("span","note",s.sensations));
+    var box=elem("div","sensations-entry");
+    box.appendChild(elem("h4","","Sensations"));
+    box.appendChild(elem("p","note",s.sensations.trim()));
     return box;
-  }
-  function actions(s) {
-    var done=completionDisplay(s);
-    var note=sensationsDisplay(s);
-    if(!done && !note)return null;
-    var controls=elem("div","session-actions");
-    if(done)controls.appendChild(done);
-    if(note)controls.appendChild(note);
-    return controls;
   }
   function render() {
     var goals=document.getElementById("goalsList");goals.replaceChildren();
@@ -210,13 +203,15 @@
         var box=elem("article","session"+(isCompleted(s)?" completed":""));
         var head=elem("div","session-head");
         head.appendChild(elem("h3","",s.titre||"Sortie"));
-        var summary=actions(s);
-        if(summary)head.appendChild(summary);
+        var done=completionDisplay(s);
+        if(done)head.appendChild(done);
         box.appendChild(head);
         if (metadata(s))box.appendChild(elem("p","meta",metadata(s)));
         if (s.objectif)box.appendChild(elem("p","detail","Objectif : "+s.objectif));
         if (s.details)box.appendChild(elem("p","detail",s.details));
         if (Array.isArray(s.etapes)&&s.etapes.length){var list=elem("ul");s.etapes.forEach(function(step){list.appendChild(elem("li","",step));});box.appendChild(list);}
+        var note=sensationsDisplay(s);
+        if(note)box.appendChild(note);
         cards.appendChild(box);
       });
       dayContent.appendChild(cards);
@@ -233,10 +228,9 @@
         item.appendChild(elem("span","date",format(date,{weekday:"short",day:"numeric",month:"short"})));
         var body=elem("div","body");
         body.appendChild(elem("strong","",s.titre||"Sortie"));
-        if (metadata(s))body.appendChild(elem("small","",metadata(s)));
         item.appendChild(body);
-        var summary=actions(s);
-        if(summary)item.appendChild(summary);
+        var done=completionDisplay(s);
+        if(done)item.appendChild(done);
         list.appendChild(item);
       });
       all.appendChild(list);

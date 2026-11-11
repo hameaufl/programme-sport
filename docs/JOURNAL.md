@@ -85,6 +85,16 @@
 - **Vérification GitHub Actions :** [run 43113273035](https://github.com/hameaufl/programme-sport/actions/runs/43113273035), `completed / success`. Contrôles prépublication, artefact et déploiement des deux pages réussis.
 - **Commit de création** : `60cf51dfbef414529dd468d967d879c3963921d4`. Affichage sur Android et chargement effectif depuis le téléphone non vérifiés.
 
+
+## 11 novembre 2026 — Épurer la semaine et améliorer l'affichage des sensations
+
+- **Signalement** : le compte rendu de kiné du 4 novembre apparaît à tort dans le résumé de semaine ; sensations mal alignées à côté du libellé ; ✓ Fait trop éloigné du titre.
+- **Correction Maturation** : dissocier les rendus hebdomadaire et quotidien dans `index.html` ; semaine = date, titre, éventuellement ✓ Fait ; détail = ✓ Fait à côté du titre, puis bloc vertical titre « Sensations » + paragraphe sous les étapes. Ajustements CSS et affichage mobile.
+- **Coach** : ajout d'une consigne pédagogique pour reformuler le langage courant avec des termes techniques compréhensibles, en distinguant faits attestés et hypothèses ; pas de diagnostic inféré.
+- **Données sportives** : aucun changement de `personnel/programme.js` ou des comptes rendus de santé. Les informations déjà écrites ne sont pas réinterprétées par Maturation.
+- **Prévention** : tests statiques supplémentaires dans `scripts/verifier-site.cjs` sur la séparation des vues et la présentation des sensations ; conservation de la version HTML synchronisée avec `publication.txt`.
+- **État de déploiement** : à contrôler sur le workflow GitHub Actions après commit.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

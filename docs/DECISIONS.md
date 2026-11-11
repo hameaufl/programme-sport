@@ -76,3 +76,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Aucune duplication** des informations personnelles dans une seconde source et **aucun bilan médical créé par Maturation**. Les données absentes restent explicitement non renseignées.
 - Le rendu Markdown utilise seulement du texte sûr et des listes, jamais d'HTML provenant des documents. Affichage des entrées datées avec un titre `### AAAA-MM-JJ` ; les modèles de journal ne sont pas affichés comme des comptes rendus.
 - Déploiement `sante.html` + sources Markdown par GitHub Actions, balises `noindex` sur les deux pages, et contrôles avant publication.
+
+## 11 novembre 2026 — Séparer le résumé hebdomadaire du compte rendu détaillé
+
+- Dans **« Séances de la semaine »**, conserver la date et le titre, ajouter uniquement ✓ « Fait » si la séance est confirmée. **Ne jamais afficher les sensations dans cette vue**, ni les métadonnées détaillées. Une séance non confirmée ne reçoit pas de statut visuel, selon la décision antérieure.
+- Dans **« Programme du jour »**, aligner ✓ « Fait » directement à côté du titre de la séance ; afficher les sensations **après le déroulé** avec un **titre « Sensations » sans deux-points** puis un paragraphe en pleine largeur. Corriger les retours à la ligne et débordements mobiles.
+- Casquette **Coach** : lorsque l'utilisateur parle de mouvements ou sensations en termes courants, employer une terminologie anatomique/biomécanique ou de préparation physique adaptée et brièvement expliquée, **sans présenter de supposition comme un diagnostic ou un fait confirmé**.
+- Les notes et statuts réels restent inchangés ; seule l'interface et les consignes de rédaction des futurs comptes rendus évoluent.
+- Ajouter un test prépublication pour empêcher le retour des notes dans la liste hebdomadaire.

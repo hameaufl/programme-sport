@@ -11,6 +11,13 @@ Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse su
 
 Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
+## Règles d'affichage du programme et reformulation par le Coach
+
+- **« Séances de la semaine »** : date et titre, avec **✓ Fait seulement si `fait:true`** ; jamais les notes de sensations ni les métadonnées d'effort dans cette vue synthétique. Conserver l'absence d'indication pour `fait:false`.
+- **« Programme du jour »** : ✓ Fait à côté du titre ; **« Sensations » comme titre indépendant, sans deux-points**, suivi d'un paragraphe en dessous des étapes de la séance, seulement si une note existe.
+- **Coach** : traduire les descriptions courantes de l'utilisateur en vocabulaire technique pertinent, brièvement expliqué, sans inventer un diagnostic, une chaîne musculaire certaine ou une mesure. Cette règle relève du contenu Coach ; Maturation n'écrit pas les ressentis.
+- Les validations de `scripts/verifier-site.cjs` doivent préserver ces distinctions à chaque publication.
+
 ## Deuxième page : suivi santé
 
 L'interface comprend `sante.html`, accessible depuis une carte de redirection en bas de `index.html`. Elle présente les statistiques dérivées de `personnel/programme.js`, les sections du profil `personnel/sante/PROFIL.md` et les comptes rendus datés (`### AAAA-MM-JJ`) de `personnel/sante/SUIVI.md`, sans données personnelles dupliquées. Le Coach se contente de mettre à jour `personnel/`; Maturation seule intervient sur l'affichage. Le workflow publie l'HTML et les sources nécessaires, sans supprimer les balises `noindex`.
