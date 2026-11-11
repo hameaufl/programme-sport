@@ -20,6 +20,17 @@ L'agent peut **proposer** une amélioration visuelle si elle apporte une réelle
 - N'inventer aucune précision, durée, consigne médicale ou séance.
 - Cette règle textuelle est complémentaire à l'interdiction d'ajouts graphiques non approuvés.
 
+
+## Ajustements sportifs à partir des comptes rendus
+
+- À réception d'un **compte rendu après chaque sortie**, réévaluer le programme **sans attendre la semaine suivante**.
+- **Dès le lendemain**, adapter la séance si elle est prévue ce jour-là ; sinon adapter **la prochaine séance prévue**, sans inventer une sortie un jour de repos.
+- Choix selon les sensations transmises : **diminuer**, **maintenir** ou **augmenter prudemment** les durées et distances ; ne jamais augmenter systématiquement.
+- Respecter les jours de récupération, les contraintes du bracelet et le renforcement des genoux. Si douleur inhabituelle ou persistante : privilégier l'arrêt, le repos et l'avis du kiné ou d'un professionnel adapté plutôt que forcer la progression.
+- **Ne jamais considérer une case « Fait » comme un compte rendu de sensations.** Demander les informations manquantes uniquement lorsqu'elles sont nécessaires.
+- **Confidentialité** : le dépôt étant public, ne pas publier les comptes rendus personnels, douleurs ou autres informations de santé sans demande explicite de l'utilisateur. N'y documenter que les règles générales, les choix de programme et les séances publiques explicitement autorisées.
+- À chaque modification du programme, conserver les identifiants des séances déjà publiées et journaliser la modification fonctionnelle sans reproduire de données médicales privées.
+
 ## Priorités de travail
 
 1. Respecter la demande précise la plus récente de l'utilisateur.
