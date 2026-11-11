@@ -22,8 +22,8 @@ Dépôt : https://github.com/hameaufl/programme-sport — branche `main`, dépô
 - Bannière existante « Programme Sport » et titre **« Mon programme. »**, **sans** phrase supplémentaire de départ.
 - Section **« Mes objectifs »** : actuellement **une seule puce** : « La priorité est de retrouver des sensations agréables, sans recherche de performance. » Les objectifs futurs sont **trimestriels ou plus longs**, pas des jalons hebdomadaires. Ne pas réintroduire les anciennes cartes de cinq étapes.
 - Section **« Mon calendrier »**, **sans texte descriptif directement sous ce titre**. Semaines du lundi au dimanche, toujours. À l'ouverture, semaine actuelle et jour actuel sélectionnés. Flèches précédent/suivant, bouton **« Semaine en cours »** recalculé depuis la date effective.
-- **« Programme du jour »** : détail de la séance ou des séances du jour, avec une case **« Réalisé »** par séance.
-- **« Séances de la semaine »** : liste hebdomadaire, chacune avec sa case **« Réalisé »**.
+- **« Programme du jour »** : détail de la séance ou des séances du jour, avec une case **« Fait »** par séance.
+- **« Séances de la semaine »** : liste hebdomadaire, chacune avec sa case **« Fait »**.
 - Une journée peut contenir simultanément course et kiné (cas du 18 novembre). Les coches restent indépendantes.
 - **Aucun pied de page**.
 - Aucune icône supplémentaire, bannière, texte explicatif, tableau de bord ou indicateur ajouté de la propre initiative d'un agent.
