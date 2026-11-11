@@ -102,10 +102,18 @@
     </section>
   </main>
 </div>
-<script src="./programme.js"></script>
 <script>
 (function () {
   "use strict";
+  // Renouvellement de l'URL à chaque ouverture : données du programme hors cache.
+  function chargerProgramme(actualiser, callback) {
+    var source=document.createElement("script");
+    source.src="./programme.js"+(actualiser?"?actualisation="+Date.now():"");
+    source.onload=function(){source.remove();callback(true);};
+    source.onerror=function(){source.remove();callback(false);};
+    document.head.appendChild(source);
+  }
+  function initialiser() {
   var today=new Date();
   var weekStart=monday(today);
   var dayIndex=(today.getDay()+6)%7;
@@ -236,11 +244,21 @@
   render();
   // Une page laissée ouverte pendant la nuit affiche la nouvelle date sans rechargement.
   setInterval(refreshToday,60000);
-  document.addEventListener("visibilitychange",function(){if(document.visibilityState!=="visible")return;
+  function actualiserProgramme() {
     refreshToday();
-    var script=document.createElement("script");script.src="./programme.js?maj="+Date.now();
-    script.onload=function(){script.remove();render();};script.onerror=function(){script.remove();};
-    document.head.appendChild(script);
+    chargerProgramme(true,function(ok){if(ok)render();});
+  }
+  document.addEventListener("visibilitychange",function(){
+    if(document.visibilityState==="visible")actualiserProgramme();
+  });
+  window.addEventListener("pageshow",function(event){
+    if(event.persisted)actualiserProgramme();
+  });
+  } // initialiser
+  chargerProgramme(true,function(ok){
+    if(ok){initialiser();return;}
+    // En cas d'échec réseau, essayer la ressource déjà connue du navigateur.
+    chargerProgramme(false,function(){initialiser();});
   });
 }());
 </script>
