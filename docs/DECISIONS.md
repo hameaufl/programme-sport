@@ -84,3 +84,12 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Casquette **Coach** : lorsque l'utilisateur parle de mouvements ou sensations en termes courants, employer une terminologie anatomique/biomécanique ou de préparation physique adaptée et brièvement expliquée, **sans présenter de supposition comme un diagnostic ou un fait confirmé**.
 - Les notes et statuts réels restent inchangés ; seule l'interface et les consignes de rédaction des futurs comptes rendus évoluent.
 - Ajouter un test prépublication pour empêcher le retour des notes dans la liste hebdomadaire.
+
+## 11 novembre 2026 — Découpage des séances : déroulé et sensations
+
+- Choix éditorial pour la première version : **« Déroulé de la séance »** (plus approprié qu'un titre « Programme » pour les réalisations) suivi de **« Sensations »**, conservé en paragraphe. La liste à puces doit exposer les **faits réalisés**, sans mise en forme qui les confonde avec le ressenti.
+- Pour les séances **programmées et non confirmées**, titre **« Programme prévu »** et `etapes` existantes ; jamais un programme planifié étiqueté « réalisé ».
+- Pour les séances **réalisées**, première source : nouveau champ **optionnel** `exercicesRealises: string[]` du programme versionné (à renseigner exclusivement par le Coach). En son absence, rendre la section « Réalisé » du journal `personnel/sante/SUIVI.md` correspondant à l'ID, découpée en puces aux points-virgules. Le journal est déjà sur Pages ; aucun doublon de données dans l'IHM.
+- La première séance de kiné a un compte rendu véritable dans le journal : les exercices déjà rapportés apparaissent sans exiger que Maturation réécrive le programme.
+- **Responsabilité du Coach** : distinguer faits (exercices), sensations (ressenti), hypothèses (chaînes musculaires sollicitées), et reformuler avec une terminologie compréhensible ; ne pas inférer de diagnostic. Aucun changement du contenu sportif par Maturation.
+- Conserver le résumé hebdomadaire épuré et l'absence de cases cliquables. Ajouter validation structurelle prépublication, garder les deux pages et `publication.txt` sur la même version.

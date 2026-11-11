@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-11-seances-sensations-v7">
+  <meta name="mon-rythme-version" content="2026-11-11-deroule-seance-v8">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -54,7 +54,11 @@
     .session{border:1px solid #dfe9dc;background:#fafcf9;border-radius:14px;padding:18px 20px}
     .session h3{font-size:17px;margin:0}.session .meta{color:#63816b;font-size:12px;margin:7px 0 0}
     .session .detail{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;margin:10px 0 0}
-    .session ul{font-size:14px;padding-left:21px;margin:10px 0 0}.session li+li{margin-top:6px}
+    .session ul{font-size:14px;padding-left:21px;margin:9px 0 0}.session li+li{margin-top:6px}
+    .session-programme{margin-top:17px;min-width:0}
+    .session-programme h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
+    .session-programme .program-notes{font-size:14px;color:#607a66;margin:6px 0 9px;white-space:pre-wrap;overflow-wrap:anywhere}
+    .session-programme .program-empty{font-size:13px;color:#7a8d7c;margin:5px 0 0;font-style:italic}
     .week-list{display:grid;gap:9px}
     .week-item{display:flex;gap:13px;align-items:center;background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
     .week-item .date{width:106px;flex:none;font-size:12px;font-weight:800;color:#406b4d}
@@ -137,6 +141,7 @@
   var today=new Date();
   var weekStart=monday(today);
   var dayIndex=(today.getDay()+6)%7;
+  var realisesJournal=Object.create(null);
   // Semaines civiles du lundi au dimanche, indépendantes des dates de début du cycle.
   function monday(date) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);d.setDate(d.getDate()-(d.getDay()+6)%7);return d;}
   function plus(date,n) {var d=new Date(date);d.setDate(d.getDate()+n);return d;}
@@ -169,6 +174,60 @@
     box.appendChild(elem("h4","","Sensations"));
     box.appendChild(elem("p","note",s.sensations.trim()));
     return box;
+  }
+  // Déroulé factuel : exercices déclarés par le Coach ou description « Réalisé » du journal de santé.
+  // Ne jamais utiliser les étapes prévues comme preuve de réalisation.
+  function derouleDisplay(s) {
+    var box=elem("section","session-programme");
+    box.appendChild(elem("h4","",isCompleted(s)?"Déroulé de la séance":"Programme prévu"));
+    var activities=isCompleted(s)
+      ? (Array.isArray(s.exercicesRealises) && s.exercicesRealises.length
+          ? s.exercicesRealises
+          : (realisesJournal[s.id]||[]))
+      : (Array.isArray(s.etapes)?s.etapes:[]);
+    activities=activities.filter(function(item){return typeof item==="string"&&item.trim();});
+    if(activities.length) {
+      var list=elem("ul");
+      activities.forEach(function(item){list.appendChild(elem("li","",item.trim()));});
+      box.appendChild(list);
+    } else {
+      box.appendChild(elem("p","program-empty",isCompleted(s)
+        ?"Les exercices effectués n'ont pas encore été détaillés."
+        :"Le contenu de cette séance n'a pas encore été précisé."));
+    }
+    if(!isCompleted(s)){
+      if(s.objectif)box.appendChild(elem("p","program-notes","Objectif : "+s.objectif));
+      if(s.details)box.appendChild(elem("p","program-notes",s.details));
+    }
+    return box;
+  }
+  // Le journal sous personnel/ est la source des réalisations déjà consignées.
+  // Lire uniquement les rubriques explicites « Identifiant » et « Réalisé »,
+  // sans interprétation ni reproduction permanente dans le code de l'IHM.
+  function analyserJournalRealise(markdown) {
+    var byId=Object.create(null),entry=null;
+    function save(){
+      if(!entry||!entry.id||!entry.realise)return;
+      var lines=entry.realise.split(/\s*;\s*/).map(function(v){return v.trim();}).filter(Boolean);
+      if(lines.length)byId[entry.id]=lines;
+    }
+    markdown.split(/\r?\n/).forEach(function(raw){
+      if(/^##\s/.test(raw)){save();entry={id:"",realise:""};return;}
+      if(!entry)return;
+      var id=raw.match(/^-\s+\*\*Identifiant\s*:\*\*\s*`([^`]+)`/i);
+      if(id){entry.id=id[1];return;}
+      var realise=raw.match(/^-\s+\*\*Réalisé\s*:\*\*\s*(.+)$/i);
+      if(realise)entry.realise=realise[1];
+    });
+    save();
+    return byId;
+  }
+  function actualiserJournal(){
+    if(typeof fetch!=="function")return;
+    fetch("./personnel/sante/SUIVI.md?actualisation="+Date.now(),{cache:"no-store"})
+      .then(function(response){if(!response.ok)throw Error("Journal indisponible");return response.text();})
+      .then(function(markdown){realisesJournal=analyserJournalRealise(markdown);render();})
+      .catch(function(){/* Programme toujours consultable ; ne jamais simuler des exercices. */});
   }
   function render() {
     var goals=document.getElementById("goalsList");goals.replaceChildren();
@@ -207,9 +266,7 @@
         if(done)head.appendChild(done);
         box.appendChild(head);
         if (metadata(s))box.appendChild(elem("p","meta",metadata(s)));
-        if (s.objectif)box.appendChild(elem("p","detail","Objectif : "+s.objectif));
-        if (s.details)box.appendChild(elem("p","detail",s.details));
-        if (Array.isArray(s.etapes)&&s.etapes.length){var list=elem("ul");s.etapes.forEach(function(step){list.appendChild(elem("li","",step));});box.appendChild(list);}
+        box.appendChild(derouleDisplay(s));
         var note=sensationsDisplay(s);
         if(note)box.appendChild(note);
         cards.appendChild(box);
@@ -255,11 +312,13 @@
   document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=monday(now);dayIndex=(now.getDay()+6)%7;render();});
   document.getElementById("days").addEventListener("click",function(event){var button=event.target.closest("button[data-day]");if(button){dayIndex=Number(button.dataset.day);render();}});
   render();
+  actualiserJournal();
   // Une page laissée ouverte pendant la nuit affiche la nouvelle date sans rechargement.
   setInterval(refreshToday,60000);
   function actualiserProgramme() {
     refreshToday();
     chargerProgramme(true,function(ok){if(ok)render();});
+    actualiserJournal();
   }
   document.addEventListener("visibilitychange",function(){
     if(document.visibilityState==="visible")actualiserProgramme();

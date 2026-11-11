@@ -11,6 +11,13 @@ Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse su
 
 Maturation maintient exclusivement structure/interface/tests et ne touche pas aux données sportives. Toute évolution visuelle nécessite approbation explicite. Documenter toute décision dans **le journal du rôle**, pousser et vérifier les fichiers.
 
+## Déroulé et sensations — dernière décision
+
+- Dans la vue détaillée, afficher **« Déroulé de la séance »** sous le titre si la séance est confirmée : liste des exercices réellement rapportés, provenant de `s.exercicesRealises` (liste de chaînes facultative, rédigée par le Coach) ou de **« Réalisé »** dans `personnel/sante/SUIVI.md` pour le même identifiant. Jamais déduire de faits depuis un programme prévu ni des sensations. Si rien n'est documenté, afficher une mention d'absence.
+- Pour une séance non réalisée, afficher **« Programme prévu »** et les `etapes` prévisionnelles existantes, sans laisser entendre qu'elles ont été effectuées.
+- **« Sensations »** sous le déroulé, en paragraphe pour cette première version. Le Coach peut reformuler avec le vocabulaire sportif technique approprié et compréhensible, en distinguant interprétation et diagnostic. Maturation ne modifie pas `personnel/`.
+- Le journal `SUIVI.md` est **déjà publié** par le workflow ; aucun nouveau fichier de données requis pour la page. Un bloc de suivi antérieur existe pour la kiné du 4 novembre.
+
 ## Règles d'affichage du programme et reformulation par le Coach
 
 - **« Séances de la semaine »** : date et titre, avec **✓ Fait seulement si `fait:true`** ; jamais les notes de sensations ni les métadonnées d'effort dans cette vue synthétique. Conserver l'absence d'indication pour `fait:false`.

@@ -44,6 +44,17 @@ const weeklyList = html.slice(html.indexOf('var all=document.getElementById("all
 assert.ok(weeklyList.includes('var done=completionDisplay(s);'), "La liste hebdomadaire doit montrer seulement le statut Fait");
 assert.ok(!weeklyList.includes("sensationsDisplay(s)") && !weeklyList.includes("metadata(s)"), "La liste hebdomadaire doit rester synthétique sans sensations ni métadonnées");
 assert.ok(html.includes('box.appendChild(note);') && html.includes('head.appendChild(done);'), "Le détail doit placer Fait au titre et les sensations sous les étapes");
+const dayStart = html.indexOf("var dayContent=document.getElementById");
+const weeklyStart = html.indexOf('var all=document.getElementById("allContent")');
+const dailyRender = html.slice(dayStart,weeklyStart);
+assert.ok(dailyRender.includes("box.appendChild(derouleDisplay(s));"), "Déroulé de la séance absent du détail quotidien");
+assert.ok(dailyRender.indexOf("derouleDisplay(s)") < dailyRender.indexOf("sensationsDisplay(s)"), "Le déroulé doit précéder les sensations");
+assert.ok(html.includes('isCompleted(s)?"Déroulé de la séance":"Programme prévu"'), "Ne jamais présenter le programme prévu comme réalisé");
+assert.ok(html.includes("s.exercicesRealises") && html.includes("realisesJournal[s.id]"), "Lecture des exercices réalisés absente");
+assert.ok(html.includes("analyserJournalRealise(markdown)") && html.includes('./personnel/sante/SUIVI.md?actualisation='), "Source réelle du journal santé non lue");
+assert.ok(!html.includes('Sensations :'), "La section sensations ne doit pas retrouver un affichage en colonnes");
+const journalSource = read("personnel/sante/SUIVI.md");
+assert.ok(journalSource.includes("kine-2026-11-04") && journalSource.includes("**Réalisé :**"), "Le journal réel de kiné doit rester disponible pour le détail");
 assert.ok(html.includes('box.appendChild(elem("h4","","Sensations"));') && html.includes('box.appendChild(elem("p","note",s.sensations.trim()));'), "Les sensations doivent avoir un titre et un paragraphe distincts");
 assert.ok(!html.includes('Sensations :'), "La présentation en colonnes Sensations : doit avoir disparu");
 const sandbox = { window: {} };
@@ -65,6 +76,10 @@ for (const [monday, sessions] of Object.entries(weeks)) {
     assert.ok(typeof s.titre === "string" && s.titre.trim(), "Titre absent");
     assert.equal(typeof s.fait, "boolean", "Statut invalide");
     assert.equal(typeof s.sensations, "string", "Sensations invalides");
+    if (Object.hasOwn(s, "exercicesRealises")) {
+      assert.ok(Array.isArray(s.exercicesRealises) && s.exercicesRealises.every(x => typeof x === "string" && x.trim()), "Liste des exercices réalisés invalide");
+      assert.equal(s.fait, true, "Des exercices réalisés exigent une séance confirmée");
+    }
     const date = new Date(s.date + "T12:00:00Z");
     assert.ok(!Number.isNaN(+date), "Date incorrecte");
     const week = new Date(date);

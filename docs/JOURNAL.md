@@ -105,6 +105,15 @@
 - **Correctif** : commit `bc3b4619d0e000c1bd22d5e39210a870d0609873` (versions HTML alignées). Commit IHM initial `04fd78e49c1c5ae9ea529ee0bf214cdd8429a9c9`.
 - **Limite restante** : rendu réel sur téléphone Android non testé par l'agent.
 
+## 11 novembre 2026 — Ajouter le déroulé factuel au détail de séance
+
+- **Demande** : afficher une liste de ce qui a été fait au-dessus des sensations, dans le détail du jour. Permettre au Coach de reformuler les sensations, avec termes sportifs techniques mais sans surinterprétation.
+- **Conception** : section « Déroulé de la séance » en puces pour `fait:true`, basée sur `exercicesRealises` facultatif ou sur la ligne « Réalisé » déjà présente dans le journal santé du même ID ; « Programme prévu » pour les séances non confirmées. Les sensations restent séparées en paragraphe.
+- **Cas existant** : séance de kiné du 4 novembre, déjà décrite dans `personnel/sante/SUIVI.md` ; **aucun texte sportif nouveau ni modification de `personnel/`**.
+- **IHM** : mise à jour de `index.html` uniquement pour le rendu, conservation de la synthèse hebdomadaire, du statut à côté du titre et de l'affichage mobile.
+- **Qualité** : nouveaux contrôles de séparation du prévu/réalisé, de la source santé et du type des `exercicesRealises` facultatifs. Publication des deux pages avec version commune `2026-11-11-deroule-seance-v8`.
+- **Résultat du déploiement** : à inscrire après contrôle GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

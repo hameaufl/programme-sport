@@ -34,6 +34,15 @@ Quand l'utilisateur demande à **n'importe quel agent LLM** (Coach ou Maturation
 - **Limite assumée :** `noindex` n'est ni un mot de passe ni une garantie contre tous les moteurs/robots ; le dépôt GitHub et les ressources non-HTML restent publics et potentiellement découvrables. Ne jamais présenter le site comme confidentiel ou inaccessible sans l'URL.
 - À chaque modification future de l'HTML, garder la directive et vérifier sa publication. Aucune modification visuelle n'est nécessaire.
 
+## Déroulé de séance — présentation et source réelle
+
+- **Demande utilisateur** : en vue « Programme du jour », séparer **« Déroulé de la séance »** (liste à puces des exercices effectivement réalisés) et **« Sensations »** (paragraphe de ressenti et limites). La partie « Déroulé » apparaît **avant** « Sensations ».
+- Pour une séance **non réalisée**, utiliser l'intitulé **« Programme prévu »** et lister les `etapes` de `personnel/programme.js`. Ne jamais présenter ces étapes prévisionnelles comme ayant été effectuées.
+- Pour une séance **réalisée**, afficher dans « Déroulé de la séance » les valeurs **explicites et factuelles** de `exercicesRealises` si le Coach les a consignées dans `personnel/programme.js`. Sinon, lire les éléments déjà transmis dans l'entrée **« Réalisé »** de `personnel/sante/SUIVI.md` portant le même `id`. S'il n'existe aucun détail authentifié, indiquer qu'il n'a pas été précisé, **sans inventer** d'exercices.
+- Le champ de données **facultatif** `exercicesRealises: string[]` appartient au **Coach seul** et ne peut contenir que des mouvements réellement rapportés ; ne pas le renseigner pour une séance non confirmée. **Aucune réécriture de données personnelles par Maturation.**
+- La zone **« Sensations »** conserve pour l'instant le format paragraphe ; le Coach reformule le ressenti décrit en vocabulaire biomécanique pédagogique, mais ne peut pas transformer une supposition en fait médical. Préserver les limites comme la douleur lors de charges plus élevées.
+- Garder le résumé de semaine minimal : date, titre et statut ✓ Fait seulement si confirmé. Tests et rendu restent **en lecture seule**, sans stockage navigateur.
+
 ## Vocabulaire professionnel du Coach à partir des mots de l'utilisateur
 
 - **Traduire les ressentis et gestes décrits en langage courant** en vocabulaire anatomique, biomécanique, physiologique et sportif **accessible** lorsque la correspondance est fondée : mouvement, articulation, groupes musculaires, type de contraction, stabilité, contrôle moteur, chaîne cinétique, charge, mobilité ou récupération.

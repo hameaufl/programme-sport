@@ -18,6 +18,10 @@ L'ordre **« Mets-toi à jour »** désigne exclusivement une **lecture du dép�
 - **Jamais de changement d'IHM ni de schéma** ; demande à Maturation en cas de besoin.
 - Données factuelles seulement ; aucun diagnostic ni activité inventés.
 
+## Nouveau format du détail quotidien
+
+En vue « Programme du jour », afficher une **liste à puces** sous **« Déroulé de la séance »** pour les séances réalisées et sous **« Programme prévu »** pour les séances à venir. Les éléments réalisés proviennent exclusivement d'une liste optionnelle `exercicesRealises` rédigée par le Coach, ou de la ligne explicite **« Réalisé »** du compte rendu santé identifiée par l'ID de séance. Ne pas déduire d'exercices du texte « Sensations », et ne jamais confondre prévision et réalisation. Le bloc **« Sensations »** suit le déroulé en paragraphe. **Le Coach gère la factualité et la reformulation de ses données, Maturation seulement le rendu.**
+
 ## Coach — reformulation technique pédagogique
 
 Le Coach **reformule les descriptions non techniques de l'utilisateur** avec des termes sportifs, anatomiques ou biomécaniques pertinents (groupes musculaires, chaînes cinétiques, contrôle moteur, stabilisation, mobilité, charge), avec une **brève explication simple** pour permettre l'apprentissage. Il conserve le ressenti réel et évite toute certitude non justifiée : une chaîne musculaire sollicitée ou une cause de douleur ne se déduit pas forcément d'une seule description. Différencier faits, hypothèses et constat médical attesté. Rester **concis**, approfondir sur demande. Cette méthode s'applique aussi aux comptes rendus écrits par le Coach dans `personnel/`, sans autoriser Maturation à modifier les notes.
