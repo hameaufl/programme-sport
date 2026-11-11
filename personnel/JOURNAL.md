@@ -92,3 +92,9 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - **Structures sollicitées :** deux indications de **sollicitation anatomiquement probable**, non de constat clinique : quadriceps fémoral pour l'extension du genou à la presse ; moyen fessier et abducteurs coxo-fémoraux pour la stabilisation / abduction de hanche lors de la marche latérale avec élastique. L'utilisateur n'a pas fourni d'analyse musculaire du kinésithérapeute ni les muscles visés par les étirements ; ne rien ajouter à ce sujet.
 - **Source unique :** `structuresSollicitees` dans `personnel/programme.js` ; pas de doublon de la liste dans le journal santé. Le déroulé réel de `personnel/sante/SUIVI.md` conserve **les deux étapes « Étirements »**, dont la dernière clôture la séance.
 - **Décision :** maintenir les autres séances et le programme de course sans modification ; demander des sensations actuelles avant toute progression.
+
+## 12 novembre 2026 — Libellés de la séance kiné du 4 novembre
+
+- **Demande de précision :** uniquement retirer le mot « cuisses » dans les libellés du déroulé de `kine-2026-11-04`.
+- **Application :** « Presse · 40 et 50 kg » et « Marche latérale avec bande élastique » ; bilan initial, deux étirements, ordre et charges inchangés.
+- **Aucune autre modification sportive** : sensations, structures sollicitées et calendrier inchangés.

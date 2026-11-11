@@ -8,7 +8,7 @@
 
 - **Identifiant :** `kine-2026-11-04`
 - **Prévu :** première séance de kinésithérapie des genoux.
-- **Réalisé :** Bilan initial ; Étirements ; Presse à cuisses · 40 et 50 kg ; Marche latérale avec bande élastique (cuisses) ; Étirements.
+- **Réalisé :** Bilan initial ; Étirements ; Presse · 40 et 50 kg ; Marche latérale avec bande élastique ; Étirements.
 - **Durée :** non précisée.
 - **Sensations :** À la presse, j'ai eu des douleurs à partir de 60-70 kilos, donc je suis resté sur 50 kilos.
 - **Après la séance / récupération :** non renseignées.
