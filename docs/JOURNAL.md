@@ -129,7 +129,7 @@
 - **Modification Maturation** : intitulé du bloc dans `index.html` ; validation synchronisée dans `scripts/verifier-site.cjs` ; consignes opérationnelles à jour dans `AGENTS.md`, `docs/ROLES.md` et `docs/REPRISE.md`.
 - Les séances à venir restent sous **« Programme prévu »** ; les exercices, sensations et données personnelles ne sont pas modifiés.
 - Version commune des deux pages HTML et du témoin : `2026-11-12-seance-titre-v9`.
-- Publication : à confirmer après le contrôle GitHub Actions.
+- Publication : [run 43117155992](https://github.com/hameaufl/programme-sport/actions/runs/43117155992), `completed / success`. Validation, artefact et déploiement Pages réussis ; commit IHM `c3c02f5f746c46634136411c2486a67259d13768`.
 
 ## Journal futur
 
