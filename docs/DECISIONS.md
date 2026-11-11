@@ -82,3 +82,26 @@
 - Le bracelet ayant des programmes prédéfinis, ne pas inventer des séances incompatibles avec ses modes sans en discuter.
 - **Confidentialité du dépôt public** : consigner ici la méthode et les choix fonctionnels, **pas les comptes rendus privés ou informations de santé personnelles** sans demande explicite.
 
+## 10. Organisation obligatoire des agents : Maturation et Coach — 11 novembre 2026
+
+- Les agents LLM doivent avoir **deux casquettes complémentaires** :
+  - **Maturation** : faire évoluer les consignes, l'architecture, la transmission du contexte et le fonctionnement technique/IHM de Mon Rythme.
+  - **Coach** : santé et sport, planification course/renforcement/récupération, adaptation personnalisée à partir des comptes rendus.
+- **Maturation peut intervenir sur l'IHM**, mais la règle antérieure reste prioritaire : **aucun ajout d'élément visuel ou graphique sans demande ou accord explicite**. Une proposition n'est pas une autorisation d'exécuter.
+- Le **Coach peut aussi choisir de ne pas changer immédiatement** le programme, attendre des retours supplémentaires, reporter ou conserver une séance. La correction antérieure « dès le lendemain » signifie une **possibilité de réévaluation rapide**, et non une obligation automatique de modifier ou d'ajouter une sortie.
+
+## 11. Santé personnelle versionnée — 11 novembre 2026
+
+- Demande d'un **répertoire dédié `sante/`** pour un historique versionné des antécédents, aspects mécaniques, autres contraintes et comptes rendus utiles au Coach.
+- Les modèles `sante/PROFIL.md` et `sante/SUIVI.md` sont créés **sans information médicale personnelle inventée ou enregistrée**.
+- Le propriétaire souhaite des informations de santé **dans un historique Git versionné** ; cette décision remplace l'ancien refus absolu de toute donnée personnelle versionnée.
+- **Point restant à clarifier avant une écriture sensible** : le dépôt actuel est **public** et utilisé pour GitHub Pages. Vouloir un historique versionné ne vaut pas confirmation de publication publique de données de santé. Informer le propriétaire et confirmer la destination ainsi que sa visibilité avant de pousser un antécédent ou un symptôme ; possibilité d'un dépôt santé **privé distinct**.
+- Les coches « Fait » demeurent en `localStorage` indépendamment de ce journal santé ; aucune synchronisation implicite.
+
+## 12. Fraîcheur du programme / cache Android — 11 novembre 2026
+
+- Problème signalé : après actualisation du site Android standalone, des données de séance restent parfois anciennes jusqu'à vidage du cache.
+- L'utilisateur suggère un « tag HTML par programme du jour » permettant de détecter un changement. **Décision technique** : le cache HTTP fonctionne au niveau des **ressources**, pas à celui d'un attribut de balise HTML ; ne pas ajouter une UI d'actualisation non demandée.
+- Implémentation : chargement initial de `programme.js` par script dynamique vers `./programme.js?actualisation=<horodatage>`, puis actualisation à chaque retour au premier plan et à la restauration depuis l'historique navigateur. Repli sur la ressource standard si la requête fraîche échoue.
+- Le `localStorage` et les identifiants de séances restent inchangés.
+- Limites : une ancienne version de `index.html` peut rester en cache ; GitHub Pages peut nécessiter un délai de publication. Pas de garantie instantanée sur les réseaux et caches intermédiaires, ni de prise en charge hors ligne garantie.
