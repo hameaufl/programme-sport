@@ -38,7 +38,7 @@ Les données sont dans `programme.js`, variable `window.MON_RYTHME_PROGRAMMES`, 
 
 1. `programme.js` reste du JavaScript valide ; les semaines et dates correspondent.
 2. `index.html` s'ouvre sans erreur JavaScript et reste utilisable sur petit écran.
-3. Les cases « Réalisé » peuvent être cochées/décochées dans le détail du jour et la liste de la semaine ; les deux présentations reflètent la même donnée.
+3. Les cases « Fait » peuvent être cochées/décochées dans le détail du jour et la liste de la semaine ; les deux présentations reflètent la même donnée.
 4. Après rechargement, le suivi local est conservé ; pas de synchronisation interappareil.
 5. La date et le bouton « Semaine en cours » restent dynamiques.
 6. Le site n'a reçu **aucun ajout visuel non approuvé**.
