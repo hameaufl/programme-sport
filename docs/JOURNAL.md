@@ -119,6 +119,32 @@ Ce journal couvre les **principales étapes et décisions de la conversation de 
 - **Tests à contrôler** : 18 séances et identifiants inchangés, fonctionnalité locale « Fait », intégrité du JavaScript, absence de nouvelle UI, présence des documents. Pas de test direct sur l'Android de l'utilisateur.
 - **Limites** : le navigateur peut servir un ancien `index.html` pendant un temps ; le déploiement Pages peut être différé. Une URL anti-cache ne garantit pas que le CDN a déjà reçu la dernière publication.
 
+### 11 novembre 2026 — Rôles exclusifs, Coach autonome sur les contenus, futur Garmin
+
+**Demande de l'utilisateur :**
+- Après réception d'un compte rendu de sortie, le **Coach** doit comprendre que la mise à jour du dépôt fait partie de sa tâche, **sans consigne séparée** ; il peut adapter le programme, publier le résumé des sensations, modifier `fait`, associer des pièces jointes Garmin, ou conserver les séances si la progression n'est pas appropriée.
+- **Interdiction absolue de modifier l'IHM pour le Coach**, y compris HTML, CSS, JavaScript de rendu, éléments visuels ou navigation.
+- **Maturation** reste seule habilitée à préparer l'interface, les formats et l'architecture ; ajout visuel **uniquement à la demande ou après approbation**. Le présent agent reste **Maturation uniquement**.
+- Future **Garmin Venu 4** : entraînements prévus et exports d'activités réellement effectuées, avec tracé, distance, allure, données sportives réellement disponibles ; option d'import fichier ou, plus tard, MCP/API. GitHub doit contenir tout l'historique durable.
+- L'utilisateur a confirmé **explicitement le caractère public** de ses données de santé versionnées ; les données personnelles ne sont pas encore reçues.
+
+**Fichiers :**
+- `AGENTS.md` : règle prioritaire de séparation et déclenchement du travail Coach après un retour.
+- `docs/ROLES.md` : périmètres exclusifs et types d'actions permis/interdits.
+- `docs/REPRISE.md`, `docs/CONTEXTE.md`, `docs/DECISIONS.md`, `README.md` : reprise multi-agents alignée sur l'état actuel.
+- `docs/GARMIN.md` et `pieces-jointes/README.md` : conventions futures des pièces jointes, aucun fichier Garmin réel.
+- `sante/README.md`, `sante/PROFIL.md`, `sante/SUIVI.md` : stockage public confirmé, modèles **non renseignés**.
+
+**État technique vérifié avant documentation** :
+- `index.html` est **en lecture seule** avec statuts « Fait » et notes « Sensations », **sans localStorage**.
+- `programme.js` contient 18 séances, valeurs initiales `fait:false`, `sensations:""`, aucun retour réel ni fichier Garmin déposé.
+- Le système de rafraîchissement de `programme.js` avec URL renouvelée reste en place. Aucune modification de l'IHM dans cette intervention de définition des rôles.
+
+**Limites** :
+- Aucune API/MCP Garmin n'est actuellement connectée ; les fichiers d'export reçus pourront être intégrés directement au dépôt par un agent Coach muni des outils.
+- La compatibilité réelle d'un entraînement Garmin généré nécessite une validation. **Pas de travail en arrière-plan non configuré**.
+- Dépôt GitHub public : d'éventuels trajets GPS peuvent révéler des lieux personnels ; les contenus restent versionnés dans Git.
+
 ## Modèle pour les prochaines entrées
 
 ### AAAA-MM-JJ — Titre
