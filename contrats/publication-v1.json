@@ -17,7 +17,9 @@
     "structuresSollicitees",
     "sensations",
     "pieces_jointes",
-    "aidesExercices"
+    "aidesExercices",
+    "exercicesDuRapport",
+    "structuresDuRapport"
   ],
   "index": [
     "schemaVersion",
