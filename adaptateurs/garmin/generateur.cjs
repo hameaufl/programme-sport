@@ -13,6 +13,7 @@ function serial(id){let n=2166136261;for(const b of Buffer.from(id,"utf8")){n^=b
 // Adaptateur FIT : prescriptions STRUCTURÉES, sans dépendance aux libellés du Web.
 function asciiOnly(t){return String(t).normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[–—]/g,"-").replace(/[’]/g,"'").replace(/×/g,"x");}
 function parseRenfo(s){
+ if(s&&Array.isArray(s.blocs)&&s.blocs.some(b=>b&&b.nature==="retour_au_calme"))throw Error("Renfo : retour au calme redondant avec les étirements");
  if(!s||s.type!=="renfo"||!/^renfo-\d{4}-\d{2}-\d{2}$/.test(s.id)||
     !Array.isArray(s.blocs)||s.blocs.length!==5)throw Error("Renfo structuré requis");
  const first=s.blocs[0],end=s.blocs.at(-1),exercises=s.blocs.slice(1,-1);
