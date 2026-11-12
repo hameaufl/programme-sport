@@ -149,3 +149,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **IHM** : lien de téléchargement sur le détail de séance ; **navigation hebdomadaire inchangée**. Générateur autonome `scripts/generer-garmin.cjs` et contrôles de la structure FIT intégrés à la CI.
 - **Règle Coach** : produire automatiquement le FIT quand un programme est ajouté ou modifié et que ses étapes sont reconnues ; refuser une conversion approximative pour un modèle non pris en charge.
 - **Limite de compatibilité** : Venu 4 prend en charge les entraînements structurés envoyés depuis Garmin Connect, **pas de preuve d'import d'un FIT Workout tiers** via Garmin Connect ou directement via USB. Pas de garantie sans essai réel.
+
+## 12 novembre 2026 — Lien Garmin sans sous-texte et génération Coach automatique
+
+- À la demande de l'utilisateur, **supprimer de l'IHM** la ligne « Fichier d'entraînement prévu · transfert vers Venu 4 à tester » située sous le téléchargement FIT. Conserver le lien et son texte, sans autre élément visuel.
+- Les informations de limites ou d'essai technique **restent dans la documentation**, sans surcharge visible sur la page de séance.
+- **Coach** : dès qu'un programme course/marche est présenté, créé ou modifié et que ses étapes sont reconnues, générer le FIT Workout **spontanément** dans le même flux, l'attacher à la séance JSON individuelle et vérifier les tests et la publication. Aucun deuxième ordre explicite requis.
+- En cas de format d'étapes non pris en charge, **refuser un FIT approximatif** et demander un changement technique à Maturation.
+- **Aucune altération des données d'entraînement existantes**, des sensations et des structures ; navigation hebdomadaire inchangée. Régressions prévenues par tests du lien et de l'absence de sous-texte.

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-garmin-fit-exemple-v14">
+  <meta name="mon-rythme-version" content="2026-11-12-garmin-lien-simple-v15">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -62,7 +62,6 @@
     .session-garmin{margin-top:13px;display:flex;flex-direction:column;align-items:start;gap:5px}
     .garmin-download{color:#234735;font-size:14px;font-weight:750;text-decoration:underline;text-underline-offset:3px}
     .garmin-download:focus-visible{outline:3px solid #86b896;outline-offset:3px}
-    .garmin-note{color:#728475;font-size:12px}
     .session-structures{margin-top:18px;padding-top:15px;border-top:1px solid #dce8df;min-width:0}
     .session-structures h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
     .session-structures ul{color:#4e6955;overflow-wrap:anywhere}
@@ -204,7 +203,6 @@
     link.href="./"+entry.chemin;
     link.download=entry.chemin.split("/").pop();
     box.appendChild(link);
-    box.appendChild(elem("span","garmin-note","Fichier d'entraînement prévu · transfert vers Venu 4 à tester"));
     return box;
   }
   // Ne pas déduire de muscles ou tendons depuis les exercices : seul le Coach documente ces structures.

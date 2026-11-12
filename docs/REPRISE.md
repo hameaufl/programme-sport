@@ -4,6 +4,10 @@
 
 `scripts/verifier-changements.cjs` interdit désormais, par défaut, la disparition d'un champ ou le changement de date d'une séance existante. Une modification explicitement demandée doit être expliquée et signalée par `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit. Ces marqueurs ne remplacent pas l'accord utilisateur. Les autres champs et séances doivent rester inchangés.
 
+## Garmin — consigne prioritaire de reprise
+
+Le Coach génère automatiquement le FIT Workout de chaque **nouveau programme de course/marche reconnu**, sans relance de l'utilisateur : lire le fichier `personnel/seances/AAAA/MM/<id>.json`, exécuter `node scripts/generer-garmin.cjs <id>`, associer le `.fit` dans `pieces_jointes`, conserver les autres champs, commit et valider le déploiement. Aucune invention pour un autre type de programme : demander une adaptation technique. **La page affiche uniquement le lien de téléchargement Garmin, sans sous-légende ni commentaire sur les tests ou le transfert.** Les limites de transfert éventuelles sont détaillées dans `personnel/GARMIN.md`, pas dans l'IHM.
+
 ## FIT Workout Garmin — nouveau contrat
 
 À réception d'un programme structuré, le Coach produit automatiquement, quand `etapes` est reconnu, `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit` avec `node scripts/generer-garmin.cjs <id>`, puis ajoute le champ optionnel `pieces_jointes` au **seul JSON de la séance**. Génération actuellement limitée aux fractions marche/course `N × (X min marche + Y min course)` + `Z min de marche finale`. Durées et CRC validés dans la CI. Un fichier FIT Workout **n'est pas** un export d'activité ; sa compatibilité avec l'import direct Garmin Connect/Venu 4 reste **à confirmer sur la montre**. Navigation hebdomadaire inchangée.
@@ -18,7 +22,7 @@ Coach : lire l'ID, modifier uniquement le JSON de cette séance, ne pas écraser
 Lire d'abord [AGENTS.md](../AGENTS.md), puis [ROLES.md](ROLES.md).
 
 - **Maturation :** [CONTEXTE.md](CONTEXTE.md), [DECISIONS.md](DECISIONS.md), [JOURNAL.md](JOURNAL.md), `index.html`, `scripts/`, workflow.
-- **Coach :** [personnel/README.md](../personnel/README.md), [personnel/DECISIONS.md](../personnel/DECISIONS.md), [personnel/JOURNAL.md](../personnel/JOURNAL.md), [personnel/programme.js](../personnel/programme.js), [personnel/sante/](../personnel/sante/README.md), [personnel/GARMIN.md](../personnel/GARMIN.md).
+- **Coach :** [personnel/README.md](../personnel/README.md), [personnel/DECISIONS.md](../personnel/DECISIONS.md), [personnel/JOURNAL.md](../personnel/JOURNAL.md), [personnel/seances/](../personnel/seances/), [personnel/sante/](../personnel/sante/README.md), [personnel/GARMIN.md](../personnel/GARMIN.md).
 
 **Sources personnelles uniques actuelles** : fichiers `personnel/seances/AAAA/MM/<id>.json` et `personnel/config.json`, complétés par les rapports/événements individualisés. Les vues de semaines sont générées dans l'artefact, jamais copiées dans Git.
 

@@ -2,6 +2,10 @@
 
 **Statut au 12 novembre 2026 : premier entraînement prévu généré au format FIT Workout pour la séance du 11 novembre, et lien de téléchargement intégré au détail de cette séance. Aucun MCP Garmin connecté ; réception effective du fichier par la Venu 4 non testée.**
 
+## Consigne de rédaction pour le Coach et l'interface
+
+Lorsqu'un programme course/marche est présenté, créé ou modifié, **générer spontanément le FIT Workout** depuis les étapes si leur format est reconnu. Exécuter `node scripts/generer-garmin.cjs <id>`, contrôler le binaire et rattacher le fichier à la séance via `pieces_jointes`. Ne pas attendre un ordre spécifique de génération, mais **refuser les approximations** pour des structures non prises en charge. Les détails de compatibilité figurent dans ce document ; **le site affiche uniquement « Télécharger l'entraînement Garmin (.FIT) », sans ligne explicative en dessous**. Le Coach ne touche pas à l'IHM.
+
 ## Format FIT retenu et limites de transfert
 
 - **Choix** : FIT **Workout**, conforme aux messages Garmin `file_id`, `workout`, `workout_step` ; distinct de FIT **Activity** pour une sortie enregistrée. L'exemple du mercredi 11 novembre contient **7 étapes** : marche 2 min, course 3 min, répétées trois fois ; marche finale 2 min, soit **17 min**. Aucun objectif de vitesse ou de fréquence cardiaque chiffré n'a été ajouté.

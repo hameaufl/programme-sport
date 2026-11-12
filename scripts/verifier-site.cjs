@@ -58,4 +58,6 @@ const binary=garmin.validateWorkoutFile(actualFit,planned);
 assert.equal(binary.seconds,1020,"Total FIT erroné");
 assert.ok(html.includes('fitDisplay(s)')&&html.includes('link.href="./"+entry.chemin'),"Lien de téléchargement FIT absent du détail");
 assert.ok(!html.includes("Importer dans Garmin Connect"),"Ne pas promettre un import Garmin Connect non documenté");
+assert.ok(html.includes("Télécharger l'entraînement Garmin (.FIT)"),"L'intitulé du lien de téléchargement doit être conservé");
+assert.ok(!html.includes("Fichier d'entraînement prévu · transfert vers Venu 4 à tester")&&!html.includes("garmin-note"),"Aucun avertissement technique affiché sous le lien Garmin");
 console.log("Validation OK :",data.sessions.length,"séances,",data.reports.size,"rapports,",data.events.length,"événements ; 5000 séances fictives regroupées sans perte.");

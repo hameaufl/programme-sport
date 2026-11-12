@@ -189,6 +189,15 @@
 - **Déploiement confirmé** : [run 43130205690](https://github.com/hameaufl/programme-sport/actions/runs/43130205690), `completed / success` (tests, build, artefact et publication GitHub Pages). Commit principal : `09abd968dd452b607a70be711d9cab4862dabf54`.
 - **Contrôle indépendant** : le blob FIT publié correspond au fichier de 395 octets, SHA Git `83c34a15985b80227b789f4e4b8d7c305cc0c217` ; CRC de l'en-tête et du fichier confirmé par un second algorithme bit-à-bit. Les 7 étapes totalisent 1 020 secondes. **Acceptation dans Garmin Connect ou sur la Venu 4 non testée**.
 
+## 12 novembre 2026 — Alléger l'accès Garmin et fiabiliser les consignes Coach
+
+- **IHM** : supprimer exclusivement la légende « Fichier d'entraînement prévu · transfert vers Venu 4 à tester » et son style dédié. Le lien « Télécharger l'entraînement Garmin (.FIT) » demeure à l'identique dans le détail de séance.
+- **Coach** : règle prioritaire de génération FIT spontanée lors de la présentation/création/modification d'un programme course/marche pris en charge, rattachement au JSON individuel, commit et validation ; aucune conversion approximative.
+- **Consignes** : `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `personnel/GARMIN.md` ; les précautions de transfert restent documentées mais non affichées.
+- **Contrôle** : test de non-régression de l'interface, préservation du lien FIT et des 7 étapes d'exemple dans `scripts/verifier-site.cjs`. Versions `index.html`, `sante.html` et `publication.txt` synchronisées sous `2026-11-12-garmin-lien-simple-v15`.
+- **Données du Coach et FIT binaire existants** : aucun changement.
+- **Déploiement** : à vérifier après publication.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

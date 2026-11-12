@@ -4,6 +4,10 @@
 
 Le Coach conserve **tous les champs présents** lors de la mise à jour d'une séance individuelle ; la CI refuse désormais toute suppression implicite d'une propriété ou changement de date. Ces opérations exigent une demande explicite et les marqueurs `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit, sans contourner artificiellement le contrôle.
 
+## Garmin — réflexe du Coach et IHM minimaliste
+
+Dès qu'une séance de course/marche structurée est **présentée, créée ou modifiée**, le Coach tente **spontanément** de générer un FIT Workout correspondant **si le générateur prend en charge les étapes**, sans attendre un second ordre. Il enregistre le binaire `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit`, l'attache **à la seule séance** via `pieces_jointes`, vérifie durée/CRC et livraison puis commit. **Aucune altération d'un bilan sportif existant**. Si le programme n'est pas pris en charge : pas d'approximation, demander une évolution du générateur à Maturation. **Rendu : uniquement le lien « Télécharger l'entraînement Garmin (.FIT) », aucun sous-texte technique.** Le Coach n'intervient pas sur le HTML.
+
 ## Coach — entraînements Garmin prévus
 
 À la création ou à la mise à jour d'un programme course/marche compatible avec le générateur, le Coach produit **un FIT Workout** depuis les étapes réelles du JSON individuel (`node scripts/generer-garmin.cjs <id>`), enregistre `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit` et ajoute uniquement le lien `pieces_jointes` à cette séance. Les durées doivent correspondre **strictement** au programme ; aucun rythme/fréquence cardiaque chiffrés imaginaires. Si la structure est inconnue, pas de génération : demander une extension technique à Maturation. **Ne pas confondre FIT Workout et FIT Activity.** Pas de promesse de transfert direct à la Venu 4 sans validation réelle.
