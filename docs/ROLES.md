@@ -1,5 +1,12 @@
 # Attribution des deux casquettes
 
+## Garmin : Renfo comme Course à pied (consigne du 12 novembre 2026)
+
+- **Coach** : générer automatiquement et associer un **FIT Workout musculation à chaque Renfo**, lors de sa création ou de la modification de ses étapes, à l'identique du flux de pièces jointes de course. Séries et instructions vérifiées, pauses à la seconde près, pas ouverts lorsque le nombre de répétitions impose un avancement manuel. Rattacher la pièce au seul fichier JSON exact et conserver les autres champs.
+- **Maturation** : maintenir `scripts/generer-garmin.cjs` et les tests pour les deux sports ; lien FIT commun déjà présent dans `index.html`, aucune mise en page supplémentaire nécessaire. Ne pas confondre Workout et activité réelle.
+- **Suivi** : tous les Renfos encore prévus doivent posséder leur FIT ; ne pas recréer un Renfo supprimé, ni faire avancer une séance à la place de l'utilisateur.
+
+
 ## Séances Renfo : séparation Coach / Maturation (12 novembre 2026)
 
 - **Coach :** ordonner `etapes` en cinq puces brèves (mise en route, trois exercices, retour au calme) ; placer répétitions, durées et repos dans chaque puce. Associer les PNG des trois exercices, même répétés, en réutilisant la banque. Ne pas introduire de paragraphes supplémentaires sous la liste.

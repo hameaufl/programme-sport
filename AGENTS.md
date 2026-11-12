@@ -1,5 +1,13 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Garmin FIT Workout systématique pour les Renfos (12 novembre 2026)
+
+- **Dès qu'un Renfo est créé ou que ses séries, étapes ou repos sont modifiés**, produire un véritable fichier Garmin **FIT Workout de musculation** pour **chaque séance concernée**, comme pour la course : `node scripts/generer-garmin.cjs renfo-AAAA-MM-JJ`, puis rattacher via `pieces_jointes` (`role: entrainement_prevu`, `format: fit`) à `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit`. Ne jamais attendre que l'utilisateur redemande la création. Conserver les PNG et les autres champs.
+- **Respect du plan, pas d'invention** : l'échauffement et le retour au calme sont minutés (4 min chacun), les pauses entre séries respectent les valeurs de chaque `etapes` (45 ou 60 s), les répétitions et les maintiens dans des fourchettes sont des **étapes ouvertes à valider manuellement sur la montre**. Ne pas fabriquer une durée exacte pour les séries ni une séance effectuée. La montre suit 17 étapes pour les Renfos actuels (9 séries, 6 repos, échauffement et retour au calme).
+- **Évolution de séance** : le générateur valide les mouvements connus et les chronos réellement présents. Si un exercice nouveau ou un schéma de série différent n'est pas pris en charge, **étendre et tester le générateur avant de publier** ; aucune approximation, ni FIT Activity. Vérifier les CRC, le sport musculation, les étapes, la présence de chacun des liens et les contrôles GitHub Actions. Les tests physiques d'import dans Garmin Connect/Venu 4 restent à réaliser.
+- **Interface** : réutiliser exclusivement le lien de téléchargement FIT déjà commun aux sorties ; ne pas ajouter de notice technique dans le détail des séances. La gestion du HTML appartient à Maturation.
+
+
 ## Récupération ciblée avant kiné (décision datée du 12 novembre)
 
 - **Dimanche 15 novembre :** aucun Renfo ; la séance non réalisée initialement planifiée est supprimée sur demande explicite.

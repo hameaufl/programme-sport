@@ -94,6 +94,29 @@ for(const s of renfo){
 assert.ok(html.includes('var aid=aids.find')&&html.includes('showExerciseHelp(aid.png,item)')&&html.includes('id="exerciseDialog"'),"Fenêtre d'aide PNG cliquable absente");
 const buildScript=read("scripts/construire-site.cjs");
 assert.ok(buildScript.includes('path.join(dest,"assets/renfo/png")'),"PNG absents de l'artefact");
+
+const strengthSessions=data.sessions.filter(s=>s.type==="renfo");
+for(const s of strengthSessions){
+  assert.ok(s.pieces_jointes&&s.pieces_jointes.length===1,"FIT Renfo manquant : "+s.id);
+  const attached=s.pieces_jointes[0];
+  assert.equal(attached.role,"entrainement_prevu");
+  assert.equal(attached.format,"fit");
+  assert.equal(attached.chemin,"personnel/pieces-jointes/seances/"+s.id+"/prevu/"+s.id+".fit");
+  const plan=garmin.parseSession(s);
+  assert.equal(plan.sport,5,"Renfo doit utiliser le sport musculation");
+  assert.equal(plan.steps.length,17,"17 étapes FIT par séance de renfo");
+  assert.equal(plan.steps.filter(x=>x.durationType===5).length,9,"9 séries ouvertes à valider manuellement");
+  assert.equal(plan.timedSeconds,780,"Temps explicites échauffement/repos/retour 13 min");
+  assert.equal(plan.durationSeconds,null,"Ne pas inventer de chronomètre total pour les répétitions à durée variable");
+  const fit=fs.readFileSync(require("node:path").join(ROOT,attached.chemin));
+  const checked=garmin.validateWorkoutFile(fit,plan);
+  assert.equal(checked.steps,17);
+  assert.equal(checked.sport,"strength_training");
+  assert.equal(checked.timedSeconds,780);
+}
+const invalidRenfo=JSON.parse(JSON.stringify(strengthSessions[0]));
+invalidRenfo.etapes[1]="Exercice inconnu · 3 × 10 ; repos 60 s entre séries";
+assert.throws(()=>garmin.parseSession(invalidRenfo),/non reconnu/);
 assert.equal(renfo.length,14,"Deux renfos la semaine du 9 et trois les autres semaines");
 assert.ok(renfo.some(s=>s.id==="renfo-2026-11-16"),"Renfo du lundi 16 manquant");
 assert.ok(!renfo.some(s=>s.id==="renfo-2026-11-15"||s.id==="renfo-2026-11-17"),"Anciennes dates de Renfo toujours présentes");

@@ -47,3 +47,8 @@
 
 - **Demande actualisée** : **aucun Renfo dimanche 15 novembre**, et passage du Renfo initialement prévu le mardi **17** au **lundi 16 novembre**, afin de garder le **mardi 17 comme journée de récupération** avant le rendez-vous kiné du **mercredi 18**. Cette décision remplace la précédente programmation du dimanche 15 et du mardi 17, et prime sur la fréquence cible pour cette semaine incomplète.
 - **Conséquence du lundi** : course à pied prévue ce jour-là également. Ne pas déduire que les deux séances seront réalisées ni que l'utilisateur tolère cette double charge ; ajustement selon symptômes.
+
+## 12 novembre 2026 — Fichiers Garmin demandés aussi pour le renforcement
+
+- **Préférence de fonctionnement** : tout Renfo doit disposer automatiquement d'un **FIT Workout** à télécharger sur Mon Rythme, sans demande supplémentaire, exactement comme les séances de course. Conserver l'organisation et les contenus du Renfo et les PNG ; générer et contrôler la pièce Garmin dès la programmation.
+- **Précision de représentation** : les pauses chiffrées sont minutées ; les séries restent ouvertes avec validation manuelle car les maintiens sont décrits comme une plage (8–10 s) et l'utilisateur peut écourter une séance. Cela permet d'éviter des durées inventées et n'affirme pas une synchronisation Garmin effectivement testée.

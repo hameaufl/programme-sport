@@ -101,3 +101,10 @@
 - **Application** : renfo-2026-11-17 est remplacé par renfo-2026-11-16 avec **exactement les mêmes exercices, temps et images PNG** ; renfo-2026-11-15 est supprimé car pas réalisé. Dimanche 15 et mardi 17 sont sans Renfo ; mardi 17 est jour de récupération avant le kiné du mercredi 18.
 - **Charge à surveiller** : lundi 16 contient déjà une course prévue ; ces deux activités ne sont pas à faire coûte que coûte le même jour. En cas de douleurs au pied ou à la hanche, ou de fatigue, **réduire ou renoncer au Renfo ou à la course** selon les symptômes, sans rattraper automatiquement. Les autres dates restent inchangées.
 - Suppression strictement demandée et contrôlée via marqueur `[suppression-seance-validée]` réservé aux deux séances non réalisées (15, 17 novembre) et création du lundi 16 ; aucune dérogation générale aux protections de données.
+
+## 12 novembre 2026 — FIT Workout de Renfo pour toutes les séances
+
+- **Demande explicite :** désormais générer systématiquement un **entraînement Garmin pour chaque Renfo**, comme pour toute course, sans redemander de confirmation. Les 14 Renfos restants après le déplacement 17→16 et la suppression du 15 novembre sont tous concernés.
+- **Choix technique** : sport `strength_training`, Workout FIT séparé par séance, **17 pas dont neuf séries ouvertes** à terminer manuellement afin de préserver les plages de maintien 8–10 s et les répétitions sans inventer de temps précis ; les quatre minutes de mise en route et de récupération, ainsi que les pauses de 45/60 s, sont minutées. Aucune nouvelle prescription de charge sportive.
+- **Conservation** : seuls les champs `pieces_jointes` sont ajoutés dans les 14 JSON ; `fait`, dates, IDs, chronos de description, sensations et PNG restent identiques. Aucun fichier pour les renfos supprimés.
+- **Autonomie du Coach** : à tout nouveau Renfo ou changement d'étapes, générer/régénérer, valider les CRC et le programme, associer un unique FIT prévu, vérifier les liens et la publication. Les détails sont documentés dans `personnel/GARMIN.md` ; la compatibilité réelle avec l'import Garmin Connect/Venu 4 reste à tester.

@@ -238,3 +238,10 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - **Maturation ponctuelle à la demande de l'utilisateur** : masquer les paragraphes Objectif et Détails sous la liste `etapes` des **seules séances Renfo**, pour éviter la verbosité et la duplication des consignes. Les autres types de séances restent inchangés.
 - **Règle permanente** : formats et responsabilités détaillés dans `AGENTS.md` et `docs/ROLES.md` ; chaque puce affiche son volume et son chrono. Les trois gestes gardent obligatoirement leurs aides PNG ; la mise en route et le retour au calme n'en nécessitent pas.
 - **Tests** : 15 Renfos répartis en cinq semaines à trois séances, dont 12/14/15 novembre ; cinq étapes séquentielles avec temps et trois PNG par session.
+
+## 12 novembre 2026 — Générateur FIT étendu au Renfo
+
+- Demande de l'utilisateur : fichier Garmin FIT Workout pour **chaque Renfo**, à l'instar des courses. Aucun changement d'interface : le lien existant détecte `pieces_jointes` quel que soit le type de séance.
+- `scripts/generer-garmin.cjs` accepte désormais `renfo-AAAA-MM-JJ`, encode le sport `strength_training` (5), les étapes chronométrées et les séries ouvertes avec notes. Le parseur refuse les gestes inconnus ou consignes de temps non vérifiables ; la génération course reste inchangée.
+- Tests `scripts/verifier-site.cjs` : contrôle du FIT de chacune des 14 séances restantes, des 17 pas, du sport musculation, de 9 étapes manuelles et des 780 s d'échauffement/pauses/retour au calme, plus cas de rejet d'un exercice inconnu.
+- Les 14 binaires sont stockés dans `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit` ; fichiers PNG et affichage de la page inchangés. Import physique Garmin Connect/Venu 4 non prouvé.

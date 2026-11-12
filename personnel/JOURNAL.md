@@ -149,3 +149,9 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - À la demande de l'utilisateur, **Renfo mardi 17 → lundi 16 novembre** avec contenu inchangé, et **Renfo dimanche 15 supprimé**, tous deux non réalisés. Nouveau Renfo du lundi prévu, également non réalisé.
 - Dimanche 15 et mardi 17 sans Renfo ; mardi précédant la kiné du 18 réservé à la récupération. Le lundi 16 a déjà une course prévue, à adapter selon les sensations.
 - La protection de suppression de la CI reçoit une exception **limitée à ces deux IDs et au déplacement validé**. Les tests vérifient désormais 14 Renfos sur le cycle.
+
+## 12 novembre 2026 — Quatorze FIT Workout Renfo et génération future automatique
+
+- Le propriétaire demande un fichier d'entraînement Garmin pour **chaque** Renfo, comme pour les courses. Après sa correction de calendrier, les dates actives sont : 12, 14, 16, 19, 21, 24, 26, 28 novembre et 1, 3, 5, 8, 10, 12 décembre. **Renfo du 15 et du 17 novembre supprimés** ; ne générer aucun FIT pour ces anciennes dates.
+- **Action Coach** : quatorze FIT binaires de type Workout musculation créés et attachés individuellement ; 9 séries ouvertes et 6 pauses minutées par séance, avec 4 min de préparation et 4 min de récupération. Éviter d'assimiler ces fichiers à des activités réellement pratiquées.
+- **Action technique Maturation** : extension du générateur de FIT pour les Renfos tout en conservant le format course ; validation systématique des nouveaux programmes et des liens lors de la construction du site. Aucun changement de page ou des PNG.
