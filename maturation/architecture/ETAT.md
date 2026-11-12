@@ -33,3 +33,7 @@
 ## 12 novembre 2026 — Vue indépendante de l'inventaire du Coach
 
 Le site inclut maintenant `addons/web/pages/equipements.html` : consultation mobile/ordinateur des seuls équipements réellement disponibles. Les données `domaines/coaching/donnees/equipements.json` demeurent canoniques et ne sont ni copiées ni modifiées par la page. Projection minimale via `coaching.equipements()` et `adaptateurs/projections/coaching.cjs`, publication explicite standard uniquement, aucun équipement dans la publication restreinte. Contrôles de non-fuite et validation métier dans la CI.
+
+## 12 novembre 2026 — Libellé de la page des équipements
+
+La quatrième page Web porte le nom **« Mes équipements »** sur l'ensemble des vues et dans son titre. La navigation demeure centralisée, le chemin `equipements.html` et les données du Coach restent inchangés. Un contrôle de non-régression couvre le nouveau libellé.

@@ -1,5 +1,11 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## PRIORITÉ — nom de la quatrième page « Mes équipements » (12 novembre 2026)
+
+- **Décision explicite du propriétaire :** la quatrième page s'intitule **« Mes équipements »** partout : navigation commune sur les quatre pages, titre de l'onglet et bandeau de la page, tests et documentation de reprise Maturation / Coach. Le composant commun d'en-tête est l'unique source du libellé de navigation.
+- Conserver les identifiants, les chemins `equipements.html`, `domaines/coaching/donnees/equipements.json` et `data/coaching/equipements.json`, ainsi que les ports, projections, autorisations de publication et données de matériel réelles. Il s'agit exclusivement d'un changement de nom d'affichage et non d'une modification métier.
+
+
 ## PRIORITÉ — composant d'en-tête unique et bandeaux réduits d'un tiers (12 novembre 2026)
 
 - **Nouvelle décision explicite :** « ↗ mon rythme. » reste **un lien vers l'accueil sur les quatre pages**, y compris « Mon programme ». Il doit toujours conserver la couleur du texte de marque, sans soulignement, ni bleu/violet ou changement de couleur en état visité, survolé ou actif ; conserver un focus clavier visible.
@@ -25,13 +31,13 @@ Sur demande explicite du propriétaire, les **14 anciens Renfos ont été retir�
 
 ## PRIORITÉ — navigation générale en haut, à droite du logo (12 novembre 2026)
 
-- **Dernière décision du propriétaire, prioritaire sur les descriptions historiques :** déplacer sur **les quatre pages** l'unique menu de navigation de fin de page dans l'en-tête, directement à droite du logo « mon rythme. ». Afficher, dans cet ordre strict : **Mon programme, Le cap du Coach, Mon suivi santé, Mon équipement**.
+- **Dernière décision du propriétaire, prioritaire sur les descriptions historiques :** déplacer sur **les quatre pages** l'unique menu de navigation de fin de page dans l'en-tête, directement à droite du logo « mon rythme. ». Afficher, dans cet ordre strict : **Mon programme, Le cap du Coach, Mon suivi santé, Mes équipements**.
 - Présentation **légère, uniforme et réellement répartie** : même largeur de conteneur pour les quatre pages (max. 1160 px) ; la navigation occupe **toute la largeur disponible à droite de la marque**, avec **quatre boutons de largeur équilibrée**, suffisamment espacés. Ne pas regrouper quatre petits boutons serrés au bord droit. Sous 1000 px, placer les quatre boutons sur une ligne pleine largeur sous la marque ; sous 600 px, passer à **deux colonnes de boutons** de taille tactile suffisante, sans débordement ni chevauchement. Signaler la page courante ; conserver les libellés complets.
 - **Ne plus afficher** de menu de pied de page ni de bouton séparé « ← Mon programme ». Le **même en-tête complet** est obligatoire sur les quatre pages : logo « mon rythme. » cliquable, **date locale française à droite du nom** et menu dans l'ordre Programme / Coach / Santé / Équipement (seule la page active change). Aligner la ligne de base de la date sur celle du nom, avec un léger correctif vertical, plutôt que centrer deux blocs de typographies différentes. La date de chacune des pages est renseignée et rafraîchie par **`addons/web/public/en-tete.js`**, copié au build, sans duplication de script inline ; conserver le repli responsive sans débordement. Cette présentation relève de Maturation et ne modifie ni les données métier ni leurs contrats de projection.
 
 ## PRIORITÉ — ne pas dupliquer la navigation ni les titres de section (12 novembre 2026)
 
-- La barre de navigation commune dans l'en-tête, à droite du logo, est l'unique navigation générale des quatre pages ; **ne pas recréer sur « Mon programme » les trois grandes cartes/boutons « Mon suivi santé », « Le cap du Coach » et « Mon équipement »**, puisqu'elles font double emploi avec elle.
+- La barre de navigation commune dans l'en-tête, à droite du logo, est l'unique navigation générale des quatre pages ; **ne pas recréer sur « Mon programme » les trois grandes cartes/boutons « Mon suivi santé », « Le cap du Coach » et « Mes équipements »**, puisqu'elles font double emploi avec elle.
 - Sous les titres de section de niveau 2 (`h2`) des quatre pages, **ne pas ajouter de phrases de sous-titre qui ne font que reformuler le titre, expliquer l'évidence ou répéter un encart**. Rester concis. Les données réellement utiles (chiffres, faits, dates, descriptions d'activité, légendes nécessaires, analyses du Coach) restent visibles à leur place ; ne pas supprimer des contenus métier pour épurer la présentation.
 - Cette décision de présentation générale reste sous casquette Maturation. `scripts/verifier-site.cjs` contrôle l'absence des raccourcis redondants et des sous-titres superflus.
 
@@ -49,7 +55,7 @@ Sur demande explicite du propriétaire, les **14 anciens Renfos ont été retir�
 ## PRIORITÉ — bandeaux de titres et navigation communs aux quatre pages (12 novembre 2026)
 
 - Les quatre pages `addons/web/pages/{index,sante,coach,equipements}.html` utilisent une présentation homogène de l'encart de titre : grande hauteur de référence Santé, typographie et ornements harmonisés, pictogramme SVG décoratif propre à la rubrique. Aucun sous-titre ni surtitre dans le bandeau équipement ; les quatre bandeaux ne contiennent que le titre et le pictogramme.
-- La feuille partagée `addons/web/public/style-commun.css` détermine ces bandeaux et la navigation commune **en haut, à droite du logo**, sur les quatre pages ; ordre fixé : **Mon programme → Le cap du Coach → Mon suivi santé → Mon équipement**. Boutons cohérents, répartis sur la largeur disponible ; affichage responsive à quatre puis deux colonnes, page courante signalée. **Même bloc marque + date sur les quatre pages**, géré par `en-tete.js`. **Aucun bouton de retour distinct « ← Mon programme » ni navigation du bas**.
+- La feuille partagée `addons/web/public/style-commun.css` détermine ces bandeaux et la navigation commune **en haut, à droite du logo**, sur les quatre pages ; ordre fixé : **Mon programme → Le cap du Coach → Mon suivi santé → Mes équipements**. Boutons cohérents, répartis sur la largeur disponible ; affichage responsive à quatre puis deux colonnes, page courante signalée. **Même bloc marque + date sur les quatre pages**, géré par `en-tete.js`. **Aucun bouton de retour distinct « ← Mon programme » ni navigation du bas**.
 - Maturation maintient cette interface générale, son comportement responsive, l'accessibilité et la politique `noindex`. Le Coach conserve uniquement sa dérogation locale pour le rendu des données métier. Copier la feuille partagée dans l'artefact Pages ; les tests de `scripts/verifier-site.cjs` vérifient ces invariants.
 
 ## PRIORITÉ ABSOLUE — autonomie du Coach sur les éléments Web qui affichent des données métier (12 novembre 2026)
@@ -64,7 +70,7 @@ Sur demande explicite du propriétaire, les **14 anciens Renfos ont été retir�
 
 **Exceptions intactes :** « Mets-toi à jour » seul = lecture du dépôt sans écriture ; aucune modification de séance réalisée sans fait confirmé ; aucune écriture Garmin/MCP sans demande explicite pour des dates précises. Cette autonomie s'exerce **au cours d'un échange métier**, pas comme une tâche de surveillance en arrière-plan.
 
-## PRIORITÉ — inventaire des équipements et page « Mon équipement » (12 novembre 2026)
+## PRIORITÉ — inventaire des équipements et page « Mes équipements » (12 novembre 2026)
 
 - **Source métier unique :** le Coach conserve et maintient `domaines/coaching/donnees/equipements.json` ; il n'ajoute, ne supprime ni ne change la disponibilité d'un équipement sans une déclaration explicite du propriétaire. Le poids du corps n'est pas un équipement à inventer. Les absences et les projets d'achat ne deviennent jamais des possessions par déduction.
 - **Nouvelle vue en lecture seule :** `addons/web/pages/equipements.html` consomme exclusivement `data/coaching/equipements.json`. La donnée Web est fabriquée par `adaptateurs/projections/coaching.cjs::projeterEquipements()` à partir du **port existant** `coaching.equipements()` et du modèle `verifierEquipements()` ; aucune copie de l'inventaire, chemin métier, décision sportive, synchronisation Garmin ni règle de disponibilité ne doit être intégrée au HTML.

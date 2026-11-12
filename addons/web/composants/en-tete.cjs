@@ -4,7 +4,7 @@ const pages=Object.freeze([
   {id:"index",label:"Mon programme",href:"./"},
   {id:"coach",label:"Le cap du Coach",href:"./coach.html"},
   {id:"sante",label:"Mon suivi santé",href:"./sante.html"},
-  {id:"equipements",label:"Mon équipement",href:"./equipements.html"}
+  {id:"equipements",label:"Mes équipements",href:"./equipements.html"}
 ]);
 function rendreEnTete(page){
   if(!pages.some(p=>p.id===page))throw new Error("Page inconnue : "+page);
