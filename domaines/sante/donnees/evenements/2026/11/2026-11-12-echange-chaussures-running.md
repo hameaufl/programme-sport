@@ -7,3 +7,8 @@
 - **Symptômes et tolérance :** suite à la course du 11 novembre avec les Mizuno, douleur de hanche droite à 5/10 et douleurs des pieds détaillées dans le rapport de cette sortie. **Pendant les essais de course sur tapis le 12 novembre, aucune douleur à la hanche droite rapportée**, en contraste avec mercredi. Les sensations plantaires pendant l'essai, les sensations après les essais et la tolérance des Saucony sur goudron **n'ont pas encore été précisées**. Aucun lien causal établi entre les anciennes chaussures, les surfaces ou les douleurs ; l'absence de douleur à la hanche durant l'essai ne constitue pas une résolution confirmée en extérieur.
 - **Qualification :** essai comparatif en magasin réellement effectué, sans le compter comme une séance du programme de course.
 - **Source :** informations directement rapportées par l'utilisateur le 12 novembre 2026 au soir.
+
+### Précision reçue le 12 novembre 2026 au soir — ressenti plantaire pendant le test
+
+- **Pied droit :** le propriétaire a **plutôt eu l'impression d'une disparition de la douleur pendant les essais sur tapis** avec ses semelles récentes, mais précise que **la douleur reste globalement présente**. Il n'est pas certain de l'interprétation, évoquant la possibilité d'une persistance résiduelle de la douleur de la sortie du 11 novembre, **sans pouvoir conclure**.
+- **Statut :** perception subjective d'une diminution possible durant l'essai, et non disparition confirmée ni absence de douleur après la séance. Aucune intensité chiffrée ni temporalité plus précise déclarée. Cette précision complète la mention antérieure « sensations plantaires non précisées ».
