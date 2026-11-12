@@ -105,3 +105,9 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Ajout du protocole `GUIDE-ESSAIS-ISOLES.md`, avec deux textes d'initialisation distincts, SHAs fixes `main` et branche, et règles pour garder les critères d'évaluation invisibles aux conversations A/B.
 - Ce guide n'exécute aucun nouvel agent : les expériences croisées doivent encore être menées dans des conversations séparées, en lecture seule. **Aucun résultat A/B ni gain non observé n'est revendiqué.**
 - Les tests dirigés enregistrés précédemment ne sont pas réétiquetés comme « indépendants ». Aucune donnée métier/Garmin et aucun `main` modifiés.
+
+## 13 novembre 2026 — Contrôles des permissions et préparation du dépouillement A/B
+- **20 cas fictifs** de préconditions (opérations Garmin, date exacte, modèle relu, envoi montre, suppressions, droits Coach/Maturation/Gardien) ont été ajoutés via `verifier-autorisations.cjs` et `tests/cas-autorisations.json`, avec tests unitaires. **Ils ne déclenchent aucune action réelle et ne sont pas interposés techniquement devant les connecteurs ChatGPT.**
+- Le workflow de gouvernance PR [43329967634](https://github.com/hameaufl/programme-sport/actions/runs/43329967634), le push [43329957889](https://github.com/hameaufl/programme-sport/actions/runs/43329957889) et la refonte PR [43329967757](https://github.com/hameaufl/programme-sport/actions/runs/43329967757) ont réussi sur `112de20714bb203bcb4398b37b239996aa077922`.
+- Un **dépouillement A/B vérifiable sur le plan de la forme** a été préparé via `EVALUATION-AB.json` (toutes les observations à `null`), `verifier-evaluation-ab.cjs` et tests négatifs. Le script refuse tout gain chiffré avant d'avoir des observations des dix paires ; même complet, le score nécessite validation humaine et examen des erreurs critiques.
+- **Statut A/B réel : non exécuté ; aucun gain démontré.** Aucune fusion `main`, aucune action Garmin, aucune modification de données métier.

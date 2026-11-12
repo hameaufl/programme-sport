@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "objectif": "releves_anonymises_de_deux_conversations_vraiment_distinctes",
+  "versionA": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "versionB": "c6f5b58dacfa9fc96c976b60c966302ed754b525",
+  "etat": "non_execute",
+  "note": "Aucun resultat observé. Les sorties simulées précédentes ne sont pas comptées comme essais A/B.",
+  "criteres": [
+    "fidelite",
+    "autorisations",
+    "tracabilite",
+    "qualite",
+    "coherence",
+    "clarte"
+  ],
+  "resultats": [
+    {
+      "id": "SC-01",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-02",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-03",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-04",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-05",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-06",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-07",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-08",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-09",
+      "A": null,
+      "B": null
+    },
+    {
+      "id": "SC-10",
+      "A": null,
+      "B": null
+    }
+  ]
+}

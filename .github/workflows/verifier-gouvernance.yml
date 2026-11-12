@@ -29,5 +29,7 @@ jobs:
         run: node --test maturation/gouvernance/tests/*.test.cjs
       - name: Contrôler les traces des simulations, sans attribuer de gain fictif
         run: node maturation/gouvernance/verifier-simulations.cjs
+      - name: Vérifier le statut et les données d'évaluation A/B (aucun gain inventé)
+        run: node maturation/gouvernance/verifier-evaluation-ab.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs

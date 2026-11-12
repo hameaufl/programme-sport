@@ -90,3 +90,10 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] **Deux conversations isolées**, ancien Coach A et coordinateur B, sur les dix mêmes demandes et scénarios cachés complémentaires.
 - [ ] Notation objective et lecture croisée des erreurs, omissions, coûts de coordination et refus d'actions non autorisées.
 - [ ] Validation de toute évolution comportementale par le Gardien selon les règles prévues et accord explicite du propriétaire pour fusion.
+
+## 13 novembre 2026 — Sécurisation des préconditions et préparation du verdict A/B
+- [x] 20 simulations de décisions sensibles sur des entrées structurées, sans aucune commande vers GitHub/Garmin.
+- [x] Dépouillement de dix paires A/B **initialisé vide**, avec validation du schéma, contrôle des notes 0 à 2 et refus de métriques prématurées.
+- [ ] Comparaison réellement exécutée dans deux conversations distinctes, avec versions figées des règles.
+- [ ] Audit des observations anonymisées et des erreurs critiques, sans publication de données personnelles.
+- [ ] Arbitrages restants et visa Gardien ; accord du propriétaire pour toute fusion.
