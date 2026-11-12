@@ -109,7 +109,6 @@ for(const s of strengthSessions){
   assert.equal(plan.timedSeconds,780,"Temps explicites échauffement/repos/retour 13 min");
   assert.equal(plan.durationSeconds,null,"Ne pas inventer de chronomètre total pour les répétitions à durée variable");
   const fit=fs.readFileSync(require("node:path").join(ROOT,attached.chemin));
-  console.log("Diagnostic Renfo FIT",s.id,"fichier",fit.length,"dataSize",fit.readUInt32LE(4),"header",fit.subarray(0,16).toString("hex"),"fin",fit.subarray(-32).toString("hex"),"crc_at_expected",fit.readUInt16LE(fit.readUInt32LE(4)+14),"crc_computed_expected",garmin.crcFit(fit.subarray(0,fit.readUInt32LE(4)+14)));
   const checked=garmin.validateWorkoutFile(fit,plan);
   assert.equal(checked.steps,17);
   assert.equal(checked.sport,"strength_training");
