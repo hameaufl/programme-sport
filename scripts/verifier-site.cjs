@@ -56,22 +56,13 @@ const fakeWeeks=new Map();
 for(const s of synthetic){const w=monday(s.date);if(!fakeWeeks.has(w))fakeWeeks.set(w,[]);fakeWeeks.get(w).push(s);}
 assert.equal([...fakeWeeks.values()].reduce((n,list)=>n+list.length,0),5000,"Test synthétique 5000 séances : aucune perte");
 assert.ok([...fakeWeeks.values()].every(list=>list.length<=12),"Les fichiers hebdomadaires doivent rester bornés avec un planning normal");
-const garmin=require("./generer-garmin.cjs");
-const sample=data.sessions.find(s=>s.id==="course-2026-11-11");
-assert.ok(sample&&sample.pieces_jointes&&sample.pieces_jointes.length===1,"Exemple Garmin non relié à la séance du 11 novembre");
-const planned=garmin.parseSession(sample);
-assert.equal(planned.durationSeconds,17*60,"Durée de la séance Garmin incorrecte");
-assert.equal(planned.steps.length,7,"Sept étapes attendues pour la séance du 11 novembre");
-const expectedSeconds=[120,180,120,180,120,180,120];
-assert.deepEqual(planned.steps.map(x=>x.seconds),expectedSeconds,"Les fractions de marche/course doivent être identiques au programme prévu");
-const fitPath=require("node:path").join(ROOT,"adaptateurs/garmin/fichiers",sample.id+".fit");
-const actualFit=fs.readFileSync(fitPath);
-const binary=garmin.validateWorkoutFile(actualFit,planned);
-assert.equal(binary.seconds,1020,"Total FIT erroné");
-assert.ok(html.includes('fitDisplay(s)')&&html.includes('link.href="./"+entry.url'),"Lien de téléchargement FIT absent du détail");
-assert.ok(!html.includes("Importer dans Garmin Connect"),"Ne pas promettre un import Garmin Connect non documenté");
-assert.ok(html.includes("Télécharger l'entraînement Garmin (.FIT)"),"L'intitulé du lien de téléchargement doit être conservé");
-assert.ok(!html.includes("Fichier d'entraînement prévu · transfert vers Venu 4 à tester")&&!html.includes("garmin-note"),"Aucun avertissement technique affiché sous le lien Garmin");
+const mcp=require("../adaptateurs/garmin/mcp.cjs");
+assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(html),"Aucune référence à des programmes de montre dans le site");
+assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(sante),"Aucune référence à des programmes de montre dans la vue Santé");
+assert.ok(!read("scripts/construire-site.cjs").includes("fichiers/garmin"),"Pas de copie de binaires lors de la publication");
+assert.ok(!fs.existsSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers")),"Anciennes pièces binaires toujours présentes");
+assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("pieces_jointes"),"Le contrat Web ne doit pas exposer d'entraînements externes");
+for(const seance of data.sessions)assert.ok(!Object.hasOwn(seance,"pieces_jointes"),"Pièce jointe externe encore projetée : "+seance.id);
 const titlesStart=html.indexOf("  function titreActiviteJour(s) {");
 const titlesEnd=html.indexOf("  function render() {",titlesStart);
 assert.ok(titlesStart>=0&&titlesEnd>titlesStart, "Fonctions de libellé des jours absentes");
@@ -108,51 +99,32 @@ assert.ok(html.includes('var aid=aids.find')&&html.includes('showExerciseHelp(ai
 const buildScript=read("scripts/construire-site.cjs");
 assert.ok(buildScript.includes('path.join(dest,"assets/renfo/png")'),"PNG absents de l'artefact");
 
-const strengthSessions=data.sessions.filter(s=>s.type==="renfo");
-for(const s of strengthSessions){
-  assert.ok(s.pieces_jointes&&s.pieces_jointes.length===1,"FIT Renfo manquant : "+s.id);
-  const attached=s.pieces_jointes[0];
-  assert.equal(attached.role,"entrainement_prevu");
-  assert.equal(attached.format,"fit");
-  assert.equal(attached.url,"fichiers/garmin/"+s.id+".fit");
-  const plan=garmin.parseSession(s);
-  assert.equal(plan.sport,5,"Renfo doit utiliser le sport musculation");
-  assert.equal(plan.steps.length,2+s.blocs.filter(b=>b.nature==="exercice").reduce((n,b)=>n+2*b.series-1,0),"FIT et blocs structurés incohérents");
-  assert.equal(plan.steps.filter(x=>x.durationType===5).length,s.blocs.filter(b=>b.nature==="exercice").reduce((n,b)=>n+b.series,0),"Chaque série doit rester ouverte");
-  assert.equal(plan.timedSeconds,plan.steps.reduce((n,b)=>n+b.seconds,0),"Temps FIT calculé sur les blocs");
-  assert.equal(plan.durationSeconds,null,"Ne pas inventer de chronomètre total pour les répétitions à durée variable");
-  const fit=fs.readFileSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers",s.id+".fit"));
-  const checked=garmin.validateWorkoutFile(fit,plan);
-  assert.equal(checked.steps,plan.steps.length);
-  assert.equal(checked.sport,"strength_training");
-  assert.equal(checked.timedSeconds,plan.timedSeconds);
-  assert.equal(plan.steps.at(-1).name,"Etirements doux");
-  assert.equal(plan.steps.at(-1).seconds,s.blocs.at(-1).dureeSecondes);
-}
+// L'adaptateur MCP ne réalise aucun appel distant sans sélection du Coach.
+const selection=mcp.preparer(renfo.map(s=>s.id));
+assert.equal(selection.statut,"PREPARATION_LOCALE_SEULEMENT");
+assert.equal(selection.modeles.length,2,"Les 14 Renfos réutilisent exactement deux prescriptions");
+assert.equal(selection.modeles.reduce((n,m)=>n+m.dates.length,0),renfo.length);
+const idsDistants=Object.fromEntries(selection.modeles.map((m,i)=>[m.empreinte,i+1]));
+const calendrier=mcp.preparerCalendrier(selection,idsDistants);
+assert.equal(calendrier.statut,"A_CONFIRMATION_EXPLICITE");
+assert.equal(calendrier.schedules.length,renfo.length);
+assert.equal(mcp.preparerCalendrier(selection,idsDistants,calendrier.schedules).schedules.length,0,"Pas de doublon de calendrier");
+assert.throws(()=>mcp.preparerCalendrier(selection,{}),/non vérifié/,"Pas d'identifiant distant inventé");
+assert.throws(()=>mcp.preparer([renfo[0].id,renfo[0].id]),/doublons/);
+const renfoRedondant={...data.plans.get(renfo[0].id),blocs:[...data.plans.get(renfo[0].id).blocs,{nature:"retour_au_calme"}]};
+assert.throws(()=>mcp.empreinte(renfoRedondant),/redondant/);
+const courseSimple=data.plans.get("course-2026-11-13");
+const dto=mcp.dtoCourse(courseSimple,"MR · Test technique");
+assert.equal(dto.workoutSegments[0].workoutSteps.length,8,"Trois fractions, marche finale et étirements");
+assert.ok(dto.workoutSegments[0].workoutSteps.every(e=>e.targetType.workoutTargetTypeKey==="no.target"),"Aucune zone cardiaque inventée");
+assert.equal(dto.workoutSegments[0].workoutSteps.at(-1).endConditionValue,180,"Étirements conservés");
+assert.throws(()=>mcp.dtoCourse(data.plans.get(renfo[0].id),"Test"),/Renfo non validée/);
+assert.throws(()=>mcp.dtoCourse(data.plans.get("course-2026-12-14"),"Test"),/Option/,"Ne pas supprimer une alternative à l'insu du Coach");
 const plannedCourses=data.sessions.filter(s=>s.id.startsWith("course-")&&!s.fait);
 const historyCourse=data.sessions.find(s=>s.id==="course-2026-11-11");
-assert.equal(historyCourse.fait,true,"Historique de sortie effectué à préserver");
-assert.equal(historyCourse.etapes.length,3,"Ne pas modifier la séance de course terminée");
-for(const s of plannedCourses){
- assert.ok(s.etapes.at(-1).startsWith("Étirements doux · 3 min : "), "Étirements de course absents : "+s.id);
- assert.ok(s.pieces_jointes?.some(p=>p.role==="entrainement_prevu"),"FIT course manquant : "+s.id);
- const plan=garmin.parseSession(s);
- assert.equal(plan.steps.at(-1).name,"Etirements doux","Les étirements doivent être dans le FIT course");
- assert.equal(plan.steps.at(-1).seconds,180,"Trois minutes d'étirements prévus par sortie");
- const ref=s.pieces_jointes.find(p=>p.role==="entrainement_prevu");
- assert.equal(ref.url,"fichiers/garmin/"+s.id+".fit");
- const fit=fs.readFileSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers",s.id+".fit"));
- const validation=garmin.validateWorkoutFile(fit,plan);
- assert.equal(validation.seconds,parseInt(s.duree,10)*60,"Durée course et FIT incohérente");
-}
-if(strengthSessions.length){
- const redundantRenfo={...strengthSessions[0],blocs:[...strengthSessions[0].blocs]};
- redundantRenfo.blocs.splice(-1,0,{nature:"retour_au_calme",dureeSecondes:240});
- assert.throws(()=>garmin.parseSession(redundantRenfo),/retour au calme redondant/,"Pas de récupération en double");
- const invalidRenfo={...strengthSessions[0],blocs:strengthSessions[0].blocs.map(b=>({...b}))};
- invalidRenfo.blocs[1].mouvementId="mouvement-inconnu";
- assert.throws(()=>garmin.parseSession(invalidRenfo),/non reconnu/);
-}
+assert.equal(historyCourse.fait,true,"Historique de sortie effectuée préservé");
+assert.equal(historyCourse.etapes.length,3,"Ne pas modifier la course réalisée");
+for(const c of plannedCourses)assert.ok(c.etapes.at(-1).startsWith("Étirements doux · 3 min : "),"Étirements prévus conservés : "+c.id);
 assert.ok(html.includes('s.type!=="renfo"'),"Renfo : ne pas afficher de paragraphes supplémentaires");
 for(const s of renfo){const d=data.plans.get(s.id).dureeEstimeeMinutes;assert.equal(s.duree,d.min+"–"+d.max+" min","Durée Renfo issue du plan structuré");}
 const banque=JSON.parse(read("addons/web/public/assets/renfo/banque.json"));
