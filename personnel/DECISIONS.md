@@ -94,3 +94,10 @@
 - **Dates nouvelles** : jeudi **12**, samedi **14**, dimanche **15 novembre**, non réalisées, variantes A/B/A à la charge indicative de 30–36 min ; ne pas les déclarer réalisées. Le dimanche est un créneau **facultatif**, du fait de la séance du samedi et de la course du lundi 16 ; l'accumulation et les douleurs à l'appui ou à la hanche motivent l'annulation/la réduction si nécessaire.
 - **Contenu** : 15 Renfos au total, chacun avec une mise en route ~4 min, trois exercices chronométrés et un retour au calme ~4 min ; conserver tous les liens de la banque PNG. Des chronos indicatifs sont des objectifs de séance, non des activités Garmin réalisées ou une prescription à tenir malgré la douleur.
 - **Casquette Maturation strictement ponctuelle** : pour les Renfos, masquer les textes Objectif/Détails sous la liste tout en préservant les champs sources ; enregistrer la règle dans `AGENTS.md` et `docs/ROLES.md`, adapter les tests. Aucun changement aux séances Course/Kiné.
+
+## 12 novembre 2026 — Ajustement de récupération avant la kiné du 18 novembre
+
+- **Nouvelle demande explicite** : déplacer le **Renfo du mardi 17 novembre au lundi 16 novembre**, et **supprimer** la séance du dimanche 15 novembre pour préserver la récupération. Il s'agit d'un déplacement de créneau, non d'une séance réalisée.
+- **Application** : renfo-2026-11-17 est remplacé par renfo-2026-11-16 avec **exactement les mêmes exercices, temps et images PNG** ; renfo-2026-11-15 est supprimé car pas réalisé. Dimanche 15 et mardi 17 sont sans Renfo ; mardi 17 est jour de récupération avant le kiné du mercredi 18.
+- **Charge à surveiller** : lundi 16 contient déjà une course prévue ; ces deux activités ne sont pas à faire coûte que coûte le même jour. En cas de douleurs au pied ou à la hanche, ou de fatigue, **réduire ou renoncer au Renfo ou à la course** selon les symptômes, sans rattraper automatiquement. Les autres dates restent inchangées.
+- Suppression strictement demandée et contrôlée via marqueur `[suppression-seance-validée]` réservé aux deux séances non réalisées (15, 17 novembre) et création du lundi 16 ; aucune dérogation générale aux protections de données.

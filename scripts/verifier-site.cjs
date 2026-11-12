@@ -94,13 +94,16 @@ for(const s of renfo){
 assert.ok(html.includes('var aid=aids.find')&&html.includes('showExerciseHelp(aid.png,item)')&&html.includes('id="exerciseDialog"'),"Fenêtre d'aide PNG cliquable absente");
 const buildScript=read("scripts/construire-site.cjs");
 assert.ok(buildScript.includes('path.join(dest,"assets/renfo/png")'),"PNG absents de l'artefact");
-assert.equal(renfo.length,15,"Trois renfos par semaine, semaine du 12 novembre incluse");
+assert.equal(renfo.length,14,"Deux renfos la semaine du 9 et trois les autres semaines");
+assert.ok(renfo.some(s=>s.id==="renfo-2026-11-16"),"Renfo du lundi 16 manquant");
+assert.ok(!renfo.some(s=>s.id==="renfo-2026-11-15"||s.id==="renfo-2026-11-17"),"Anciennes dates de Renfo toujours présentes");
 const renfoParSemaine=new Map();
 for(const session of renfo){
   const week=monday(session.date);
   renfoParSemaine.set(week,(renfoParSemaine.get(week)||0)+1);
 }
-for(const week of ["2026-11-09","2026-11-16","2026-11-23","2026-11-30","2026-12-07"])
+assert.equal(renfoParSemaine.get("2026-11-09"),2,"Dimanche 15 novembre réservé au repos");
+for(const week of ["2026-11-16","2026-11-23","2026-11-30","2026-12-07"])
   assert.equal(renfoParSemaine.get(week),3,"Trois Renfos requis semaine "+week);
 assert.ok(html.includes('s.type!=="renfo"'),"Renfo : ne pas afficher de paragraphes supplémentaires");
 for(const s of renfo)assert.equal(s.duree,"30–36 min","Durée Renfo non triplée");

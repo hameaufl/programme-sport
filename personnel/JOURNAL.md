@@ -143,3 +143,9 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - Toutes les séances Renfo prévues présentent désormais **cinq puces chronologiques**, avec échauffement 4 min, exercices et leurs durées/pauses, retour au calme 4 min. Les anciennes descriptions longues sont supprimées du rendu, mais les champs `objectif`/`details` restent présents.
 - Banque PNG et exercices déjà choisis inchangés ; les schémas ne sont pas redessinés. Séance du dimanche 15 particulièrement facultative compte tenu de la densité.
 - Consignes durables mises à jour avec casquette éphémère Maturation. Statut/identifiant/date des 12 Renfos existants ainsi que course et kiné conservés.
+
+## 12 novembre 2026 — Correction de la semaine du 16 novembre
+
+- À la demande de l'utilisateur, **Renfo mardi 17 → lundi 16 novembre** avec contenu inchangé, et **Renfo dimanche 15 supprimé**, tous deux non réalisés. Nouveau Renfo du lundi prévu, également non réalisé.
+- Dimanche 15 et mardi 17 sans Renfo ; mardi précédant la kiné du 18 réservé à la récupération. Le lundi 16 a déjà une course prévue, à adapter selon les sensations.
+- La protection de suppression de la CI reçoit une exception **limitée à ces deux IDs et au déplacement validé**. Les tests vérifient désormais 14 Renfos sur le cycle.

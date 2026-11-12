@@ -1,5 +1,13 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Récupération ciblée avant kiné (décision datée du 12 novembre)
+
+- **Dimanche 15 novembre :** aucun Renfo ; la séance non réalisée initialement planifiée est supprimée sur demande explicite.
+- **Lundi 16 novembre :** Renfo déplacé depuis le mardi 17, sans changer les exercices. Une course est également programmée le lundi ; tenir compte de la charge cumulée et des douleurs.
+- **Mardi 17 novembre :** récupération avant la kiné du mercredi 18 ; ne pas remettre automatiquement un Renfo le mardi.
+- Les exceptions de suppression validées sont inscrites dans le journal et le contrôle de portée ; elles ne constituent **pas** une autorisation générale de supprimer des séances.
+
+
 ## Renfo — consigne permanente de rédaction et de rendu compact (12 novembre 2026)
 
 - **Coach :** chaque séance de renforcement doit contenir **une seule liste chronologique** `etapes` : « Mise en route », chaque exercice dans l'ordre, « Retour au calme ». Toutes les puces incluent **les temps, séries/répétitions, maintiens et pauses pertinents** directement sur la même ligne, avec un vocabulaire simple. Ne pas reléguer ces informations dans un long paragraphe `details`.

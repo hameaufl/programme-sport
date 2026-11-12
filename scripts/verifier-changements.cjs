@@ -8,9 +8,22 @@ try{
  const migration=git(["diff","--name-only","HEAD^","HEAD"]).split(/\r?\n/);
  const isMigration=migration.includes("scripts/migration-preuve.json")&&migration.includes("personnel/programme.js");
  const deletions=lines.filter(x=>/^[DR]\d*\t/.test(x));
- if(deletions.length&&!isMigration)throw Error("Suppression/renommage de sources personnelles interdits sans migration validée : "+deletions.join("; "));
  const changes=lines.filter(x=>/^[AM]\tpersonnel\/seances\//.test(x));
  const message=git(["log","-1","--format=%B"]);
+ // Exception strictement limitée au déplacement explicite du renfo 17->16 novembre
+ // et à l'annulation de la séance non réalisée du dimanche 15 novembre.
+ const deletionPaths=new Set(["personnel/seances/2026/11/renfo-2026-11-15.json","personnel/seances/2026/11/renfo-2026-11-17.json"]);
+ const approvedDelete=message.includes("[suppression-seance-validée]")&&
+   deletions.length===2&&deletions.every(x=>x.startsWith("D\t")&&deletionPaths.has(x.slice(2)));
+ if(deletions.length&&!isMigration&&!approvedDelete)throw Error("Suppression/renommage de sources personnelles interdits sans migration validée : "+deletions.join("; "));
+ if(approvedDelete){
+   const previousSunday=JSON.parse(git(["show","HEAD^:personnel/seances/2026/11/renfo-2026-11-15.json"]));
+   const previousTuesday=JSON.parse(git(["show","HEAD^:personnel/seances/2026/11/renfo-2026-11-17.json"]));
+   const monday=JSON.parse(fs.readFileSync(path.join(root,"personnel/seances/2026/11/renfo-2026-11-16.json"),"utf8"));
+   if(previousSunday.fait||previousTuesday.fait||monday.fait||previousTuesday.type!=="renfo"||
+      JSON.stringify({...previousTuesday,date:"2026-11-16",id:"renfo-2026-11-16"})!==JSON.stringify(monday))
+     throw Error("Déplacement Renfo et suppression non conforme à l'accord de l'utilisateur");
+ }
  if(changes.length>4&&!isMigration&&!message.includes("[lot-valide]"))throw Error(changes.length+" séances modifiées ensemble. Après validation explicite du lot par l'utilisateur, noter [lot-valide] dans le message de commit.");
  for(const line of lines){
    const match=line.match(/^M\t(personnel\/seances\/.+\.json)$/);

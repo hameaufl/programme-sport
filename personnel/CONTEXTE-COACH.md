@@ -42,3 +42,8 @@
 - **Demande utilisateur explicite :** trois séances Renfo **dès aujourd'hui, jeudi 12 novembre**, jusqu'au dimanche 15, avant les semaines déjà programmées à trois Renfos. Répartition retenue **12, 14, 15 novembre** ; dimanche rapproché du samedi et de la course du lundi : séance particulièrement facultative selon les douleurs et la récupération, et non modèle de répartition à reproduire systématiquement.
 - **Préférence durable de description :** éviter les paragraphes ; **des puces concises dans l'ordre exact** (mise en route, gestes, fin) comprenant toutes les informations de temps/chrono, répétitions et repos sur chaque ligne. La nomenclature simple et les aides PNG déjà approuvées restent essentielles.
 - **Maturation ponctuelle demandée** uniquement pour graver cette règle et pour que l'interface ne répète plus de paragraphe sous la liste Renfo.
+
+## 12 novembre 2026 — Récupération avant la kinésithérapie
+
+- **Demande actualisée** : **aucun Renfo dimanche 15 novembre**, et passage du Renfo initialement prévu le mardi **17** au **lundi 16 novembre**, afin de garder le **mardi 17 comme journée de récupération** avant le rendez-vous kiné du **mercredi 18**. Cette décision remplace la précédente programmation du dimanche 15 et du mardi 17, et prime sur la fréquence cible pour cette semaine incomplète.
+- **Conséquence du lundi** : course à pied prévue ce jour-là également. Ne pas déduire que les deux séances seront réalisées ni que l'utilisateur tolère cette double charge ; ajustement selon symptômes.
