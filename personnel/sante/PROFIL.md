@@ -6,7 +6,7 @@
 
 ## Antécédents utiles à la pratique sportive
 
-- **Périostites chroniques**, selon l'utilisateur, depuis environ **un an**, se manifestant à la reprise ou pendant la course. Précisions sur la localisation et éventuelle confirmation diagnostique non transmises.
+- **Périostites chroniques**, selon l'utilisateur, depuis **des années**, se manifestant à la reprise ou pendant la course. Précisions sur la localisation et éventuelle confirmation diagnostique non transmises.
 - **Quatrième métatarsien du pied gauche :** douleurs récurrentes rapportées ; **pas de douleur à cet endroit lors de la sortie du 11 novembre**.
 - **Hallux valgus du pied droit** rapporté ; douleur de 3/10 restée stable lors de la sortie du 11 novembre.
 
@@ -33,7 +33,7 @@
 
 ## Tolérance à l'effort et récupération
 
-- **Course à pied :** douleurs décrites comme des périostites récurrentes depuis environ un an, lors de la pratique.
+- **Course à pied :** douleurs décrites comme des périostites récurrentes depuis des années, lors de la pratique.
 - **Sortie marche-course du 11 novembre :** quatrième métatarsien gauche sans gêne ; plante gauche 2–3/10 juste avant le talon ; plante droite 5–6/10 à l'appui juste avant le talon ; genou gauche 1–2/10 en fin de séance ; genou droit sans gêne ; hallux valgus droit 3/10 ; hanche droite 5/10 apparue à mi-sortie. Voir le compte rendu spécifique pour la chronologie et le contexte.
 - **Évolution depuis la sortie / récupération :** pas encore précisée.
 - **Prudence pour la reprise :** ne pas courir en présence de douleurs significatives à l'appui ; ajuster la suite selon les ressentis et les avis professionnels, sans augmenter automatiquement la charge.
