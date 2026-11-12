@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-suivi-essentiel-v21">
+  <meta name="mon-rythme-version" content="2026-11-12-cap-coach-v22">
   <meta name="description" content="Mon suivi de reprise sportive, en quelques repères visuels.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -27,7 +27,6 @@
     .hero:after{content:"";position:absolute;right:-82px;bottom:-155px;width:390px;height:390px;border:1px solid rgba(255,255,255,.17);border-radius:50%;box-shadow:0 0 0 43px rgba(255,255,255,.035),0 0 0 100px rgba(255,255,255,.03);pointer-events:none}
     .eyebrow{color:#d3e7d5;letter-spacing:1.5px;text-transform:uppercase;font-size:11px;font-weight:800;margin:0 0 13px}
     h1{margin:0;font-size:clamp(32px,5vw,51px);font-weight:780;letter-spacing:-1.9px;line-height:1.08}
-    .hero-sub{color:#d7e9db;max-width:455px;font-size:15px;margin:15px 0 0}
     .hero-mark{width:95px;height:95px;border:1px solid rgba(255,255,255,.36);border-radius:50%;display:grid;place-items:center;flex:none;position:relative;z-index:1}
     .hero-mark svg{width:50px;height:50px;stroke:#f5faf4;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
     section{margin-top:32px}
@@ -70,11 +69,10 @@
     .milestone .date-day{color:#866c43}
     .milestone .date-month{color:#967c54}
     .empty{padding:20px;background:#f3f7f2;border-radius:13px;color:#708375;font-size:14px}
-    .footnote{margin:25px 0 0;border-top:1px solid var(--line);padding:18px 0 0;color:#78897a;font-size:12px}
     @media(max-width:720px){.hero{padding:31px 26px;min-height:210px}.hero-mark{width:64px;height:64px}.hero-mark svg{width:35px;height:35px}.stats{gap:9px}.stat{min-height:129px;padding:17px 15px}.lower-grid{grid-template-columns:1fr}.section-heading{align-items:start;flex-direction:column;gap:5px}}
-    @media(max-width:530px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:8px 11px;font-size:12px}.hero{border-radius:19px}.hero-mark{display:none}.hero-sub{font-size:14px}.stat{padding:16px 12px;min-height:116px;border-radius:15px}.stat-number{font-size:33px}.stat-title{font-size:11px}.graph-box,.list-box{padding:18px}.week-row{grid-template-columns:86px 1fr 50px;gap:9px}.week-label,.week-count{font-size:11px}h2{font-size:21px}section{margin-top:26px}}
+    @media(max-width:530px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:8px 11px;font-size:12px}.hero{border-radius:19px}.hero-mark{display:none}.stat{padding:16px 12px;min-height:116px;border-radius:15px}.stat-number{font-size:33px}.stat-title{font-size:11px}.graph-box,.list-box{padding:18px}.week-row{grid-template-columns:86px 1fr 50px;gap:9px}.week-label,.week-count{font-size:11px}h2{font-size:21px}section{margin-top:26px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-    @media print{body{background:#fff}.shell{width:100%;padding:0}.hero{background:#f3f7f1;color:var(--ink);border:1px solid var(--line)}.hero-sub,.eyebrow{color:var(--muted)}.back{display:none}}
+    @media print{body{background:#fff}.shell{width:100%;padding:0}.hero{background:#f3f7f1;color:var(--ink);border:1px solid var(--line)},.eyebrow{color:var(--muted)}.back{display:none}}
   </style>
 </head>
 <body>
@@ -88,7 +86,6 @@
         <div>
           <p class="eyebrow">Mon Rythme · Suivi personnel</p>
           <h1>Mon suivi santé.</h1>
-          <p class="hero-sub">L'essentiel de ma reprise, sans les notes de fond.</p>
         </div>
         <div class="hero-mark" aria-hidden="true">
           <svg viewBox="0 0 50 50"><path d="M6 28h9l6-13 7 22 6-13h10"/><circle cx="25" cy="25" r="23" opacity=".3"/></svg>
@@ -126,7 +123,6 @@
           <div class="list-box"><div class="rows" id="healthEvents" aria-live="polite"><div class="empty">Chargement des repères…</div></div></div>
         </section>
       </div>
-      <p class="footnote">Les observations détaillées restent dans le domaine Santé ; les décisions et adaptations dans la mémoire du Coach. Cette vue ne constitue pas un avis médical.</p>
     </main>
   </div>
   <script>
