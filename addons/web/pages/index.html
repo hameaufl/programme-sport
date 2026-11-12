@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-cap-coach-visuel-v24">
+  <meta name="mon-rythme-version" content="2026-11-12-entetes-navigation-v25">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -98,12 +98,18 @@
     @media(max-width:350px){.health-preview{grid-template-columns:1fr}.health-cta{width:100%}}
     @media print{body{background:white}.shell{width:100%;padding:0 14px}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.week-nav{display:none}.days{grid-template-columns:repeat(7,minmax(0,1fr))}.day{min-height:100px;padding:8px!important}.day[aria-pressed="true"]{border-width:1px}}
   </style>
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-entetes-navigation-v25">
 </head>
 <body>
 <div class="shell">
   <header><div class="brand"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></div><time id="todayLabel"></time></header>
   <main>
-    <div class="hero"><p class="eyebrow">Programme Sport</p><h1>Mon programme.</h1></div>
+    <div class="hero">
+        <div class="hero-copy"><h1>Mon programme.</h1></div>
+        <div class="hero-mark" aria-hidden="true">
+          <svg viewBox="0 0 50 50"><rect x="8" y="11" width="34" height="32" rx="5"/><path d="M8 20h34M17 7v8M33 7v8M16 28h5M29 28h5M16 35h5"/></svg>
+        </div>
+      </div>
     <section aria-labelledby="goalsHeading" class="goals">
       <div class="section-top"><div>
         <h2 id="goalsHeading">Mes objectifs</h2>
@@ -147,6 +153,12 @@
       </div>
     </section>
   </main>
+  <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
+    <span class="site-nav-link is-current" aria-current="page">Mon programme</span>
+    <a class="site-nav-link" href="./sante.html">Mon suivi santé</a>
+    <a class="site-nav-link" href="./coach.html">Le cap du Coach</a>
+    <a class="site-nav-link" href="./equipements.html">Mon équipement</a>
+  </nav>
 </div>
 <dialog id="exerciseDialog" class="exercise-dialog" aria-labelledby="exerciseTitle">
   <button type="button" id="exerciseClose" class="exercise-close" aria-label="Fermer le schéma">×</button>

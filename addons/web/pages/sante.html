@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-cap-coach-visuel-v24">
+  <meta name="mon-rythme-version" content="2026-11-12-entetes-navigation-v25">
   <meta name="description" content="Mon suivi de reprise sportive, en quelques repères visuels.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -74,6 +74,7 @@
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
     @media print{body{background:#fff}.shell{width:100%;padding:0}.hero{background:#f3f7f1;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--muted)}.back{display:none}}
   </style>
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-entetes-navigation-v25">
 </head>
 <body>
   <div class="shell">
@@ -83,10 +84,7 @@
     </header>
     <main>
       <div class="hero">
-        <div>
-          <p class="eyebrow">Mon Rythme · Suivi personnel</p>
-          <h1>Mon suivi santé.</h1>
-        </div>
+        <div class="hero-copy"><h1>Mon suivi santé.</h1></div>
         <div class="hero-mark" aria-hidden="true">
           <svg viewBox="0 0 50 50"><path d="M6 28h9l6-13 7 22 6-13h10"/><circle cx="25" cy="25" r="23" opacity=".3"/></svg>
         </div>
@@ -124,6 +122,12 @@
         </section>
       </div>
     </main>
+  <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
+    <a class="site-nav-link" href="./">Mon programme</a>
+    <span class="site-nav-link is-current" aria-current="page">Mon suivi santé</span>
+    <a class="site-nav-link" href="./coach.html">Le cap du Coach</a>
+    <a class="site-nav-link" href="./equipements.html">Mon équipement</a>
+  </nav>
   </div>
   <script>
   (function(){

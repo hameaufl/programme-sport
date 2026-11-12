@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-cap-coach-visuel-v24">
+  <meta name="mon-rythme-version" content="2026-11-12-entetes-navigation-v25">
   <meta name="description" content="Objectif, intentions et points d'attention du Coach pour ma reprise.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -56,6 +56,7 @@
     @media(max-width:530px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:8px 11px;font-size:12px}.hero{border-radius:19px}.goal{gap:12px}.goal-symbol{width:38px;height:38px;font-size:22px}section{margin-top:27px}h2{font-size:22px}.attention{padding:3px 17px}}
     @media print{body{background:white}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.back{display:none}}
   </style>
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-entetes-navigation-v25">
 </head>
 <body>
   <div class="shell">
@@ -65,8 +66,10 @@
     </header>
     <main>
       <div class="hero">
-        <p class="eyebrow">Mon Rythme · Accompagnement</p>
-        <h1>Le cap du Coach.</h1>
+        <div class="hero-copy"><h1>Le cap du Coach.</h1></div>
+        <div class="hero-mark" aria-hidden="true">
+          <svg viewBox="0 0 50 50"><circle cx="24" cy="26" r="17"/><circle cx="24" cy="26" r="9"/><path d="M24 26 41 9M34 9h7v7"/></svg>
+        </div>
       </div>
       <section aria-labelledby="objectiveTitle">
         <div class="section-head"><h2 id="objectiveTitle">Mon objectif personnel</h2></div>
@@ -91,12 +94,13 @@
         <div class="section-head"><h2 id="watchTitle">Ses points d'attention</h2></div>
         <div id="coachWatch" class="attention" aria-live="polite"><div class="empty">Chargement des points d'attention…</div></div>
       </section>
-      <div class="readmore">
-        <span>La stratégie évolue avec les objectifs et les retours des séances réellement effectuées.</span>
-        <a href="./sante.html">Voir mon suivi santé ↗</a>
-      </div>
-      <div class="readmore"><span>Le matériel réellement disponible guide le choix des exercices.</span><a href="./equipements.html">Mon équipement ↗</a></div>
     </main>
+  <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
+    <a class="site-nav-link" href="./">Mon programme</a>
+    <a class="site-nav-link" href="./sante.html">Mon suivi santé</a>
+    <span class="site-nav-link is-current" aria-current="page">Le cap du Coach</span>
+    <a class="site-nav-link" href="./equipements.html">Mon équipement</a>
+  </nav>
   </div>
   <script>
     (function(){

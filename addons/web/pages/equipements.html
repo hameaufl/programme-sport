@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-cap-coach-visuel-v24">
+  <meta name="mon-rythme-version" content="2026-11-12-entetes-navigation-v25">
   <meta name="description" content="Mes équipements sportifs actuellement disponibles à la maison.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -57,6 +57,7 @@
     @media(max-width:650px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px;font-size:12px}.hero{border-radius:19px;padding:31px 25px;min-height:190px}.hero-mark{display:none}.equipment-grid{grid-template-columns:1fr}.equipment{min-height:190px;padding:23px}.overview{padding:20px;gap:15px}.count-unit{max-width:60px}section{margin-top:27px}h2{font-size:22px}}
     @media print{body{background:#fff}.shell{width:100%}.hero{background:#f5f8f4;color:var(--ink);border:1px solid var(--line)}.eyebrow,.subtitle{color:var(--mid)}.back{display:none}}
   </style>
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-entetes-navigation-v25">
 </head>
 <body>
   <div class="shell">
@@ -66,16 +67,9 @@
     </header>
     <main>
       <div class="hero">
-        <div>
-          <p class="eyebrow">Mon Rythme · À la maison</p>
-          <h1>Mon équipement.</h1>
-          <p class="subtitle">Le matériel dont je dispose pour mes entraînements.</p>
-        </div>
+        <div class="hero-copy"><h1>Mon équipement.</h1></div>
         <div class="hero-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64">
-            <path d="M8 47V29a7 7 0 0 1 7-7h6M56 47V29a7 7 0 0 0-7-7h-6"/>
-            <circle cx="32" cy="21" r="11"/><path d="M19 41a13 13 0 0 1 26 0v7H19zM15 52h34"/>
-          </svg>
+          <svg viewBox="0 0 50 50"><circle cx="34" cy="19" r="10"/><rect x="7" y="36" width="35" height="10" rx="5"/><path d="M14 36v10M24 36v10"/></svg>
         </div>
       </div>
       <section class="overview" aria-label="Nombre d'équipements disponibles">
@@ -91,11 +85,13 @@
           <div class="empty">Chargement du matériel disponible…</div>
         </div>
       </section>
-      <nav class="navigation" aria-label="Autres vues de Mon Rythme">
-        <a class="nav-link" href="./coach.html">Le cap du Coach ↗</a>
-        <a class="nav-link" href="./sante.html">Mon suivi santé ↗</a>
-      </nav>
     </main>
+  <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
+    <a class="site-nav-link" href="./">Mon programme</a>
+    <a class="site-nav-link" href="./sante.html">Mon suivi santé</a>
+    <a class="site-nav-link" href="./coach.html">Le cap du Coach</a>
+    <span class="site-nav-link is-current" aria-current="page">Mon équipement</span>
+  </nav>
   </div>
   <script>
     (function(){
