@@ -125,11 +125,12 @@ const programmeHeader=html.slice(html.indexOf('<header class="site-header">'),ht
 const brandWrapStart=programmeHeader.indexOf('<div class="site-brand-wrap">');
 const datePosition=programmeHeader.indexOf('<time id="todayLabel"></time>');
 const brandWrapEnd=programmeHeader.indexOf('</div>',brandWrapStart);
+const marqueEnd=programmeHeader.indexOf('</a>',brandWrapStart);
 assert.ok(html.indexOf('<nav class="site-navigation"')<html.indexOf('<main>')&&
- brandWrapStart>=0&&datePosition>brandWrapEnd&&
- datePosition<programmeHeader.indexOf('</div>',brandWrapEnd+6)&&
- programmeHeader.indexOf('<nav class="site-navigation"')>datePosition,
- "Sur toutes les pages, la date doit être à droite du logo et avant le menu");
+ brandWrapStart>=0&&marqueEnd>brandWrapStart&&datePosition>marqueEnd&&
+ datePosition<brandWrapEnd&&
+ programmeHeader.indexOf('<nav class="site-navigation"')>brandWrapEnd,
+ "Sur toutes les pages, la date doit suivre la marque et précéder le menu");
 for(const [nom,page] of pagesVisuelles){
  assert.ok(!page.includes('class="section-note"')&&!page.includes('class="hint"')&&!page.includes('class="help"'),
   "Sous-titre redondant sous un titre de section : "+nom);
