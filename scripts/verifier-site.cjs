@@ -84,9 +84,11 @@ for(const [page,source] of pagesVisuelles){
  const navPos=source.indexOf('<nav class="site-navigation"');
  const brandPos=source.indexOf('<div class="site-brand-wrap">',headerStart);
  const brandEnd=source.indexOf('</div>',brandPos);
+ const brandLinkEnd=source.indexOf('</a>',brandPos);
  const datePos=source.indexOf('<time id="todayLabel"></time>',brandPos);
- assert.ok(headerStart>=0&&brandPos>headerStart&&brandEnd>brandPos&&
-  datePos>brandEnd&&datePos<navPos&&navPos<headerEnd&&headerEnd<source.indexOf('<main>')&&
+ assert.ok(headerStart>=0&&brandPos>headerStart&&brandLinkEnd>brandPos&&
+  datePos>brandLinkEnd&&datePos<brandEnd&&brandEnd<navPos&&
+  navPos<headerEnd&&headerEnd<source.indexOf('<main>')&&
   source.includes('<a class="brand" href="./" aria-label="Accueil Mon Rythme">'),
   "Logo, date et menu identiques dans l'en-tête des quatre pages : "+page);
  assert.equal((menu.match(/class="site-nav-link/g)||[]).length,4,"Quatre destinations attendues : "+page);
