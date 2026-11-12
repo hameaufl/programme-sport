@@ -101,7 +101,14 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 
 ## 12 novembre 2026 — Profil mécanique et démarche médicale éventuelle
 
-- L'utilisateur fournit un bilan de référence : pieds extra-larges (113 mm, petit 43), difficultés de chaussage avec semelles orthopédiques, douleurs du quatrième métatarsien gauche, hallux valgus droit, périostites récurrentes depuis environ un an, douleur du genou gauche en hyperextension et hyperlaxité généralisée avec sentiment de renforcement musculaire insuffisant.
+- L'utilisateur fournit un bilan de référence : pieds extra-larges (113 mm, petit 43), difficultés de chaussage avec semelles orthopédiques, douleurs du quatrième métatarsien gauche, hallux valgus droit, périostites récurrentes depuis des années, douleur du genou gauche en hyperextension et hyperlaxité généralisée avec sentiment de renforcement musculaire insuffisant.
 - **Hypothèses non confirmées :** compression métatarsienne entre os voisins dans des chaussures trop étroites ; éventuelle contribution de la largeur des chaussures aux douleurs plantaires près du talon.
 - **Précision du médecin selon l'utilisateur :** échographie du pied évoquée pour la douleur au quatrième métatarsien ; radiographie ou autre modalité à déterminer. Éventuelle nouvelle consultation d'ici quelques semaines si la douleur persiste malgré les semelles ; aucun examen ni rendez-vous acté.
 - **Action Coach :** renseignement de `personnel/sante/PROFIL.md` uniquement pour le contenu santé et journalisation de la décision ; aucune modification de séance ni génération de FIT Workout, aucun diagnostic inventé.
+
+## 12 novembre 2026 — Intitulés des sorties et ancienneté des périostites
+
+- Demande explicite de modification groupée des 15 séances de course : abandon des numéros « Séance 1/2/3 » au profit des titres **« Course à pied · 2M+3C »** (6 sorties) et **« Course à pied · 2M+5C »** (9 sorties).
+- Seuls les champs `titre` des 15 séances sont modifiés ; les dates, ID, étapes prévues, réalisations, sensations, autres données et pièces Garmin restent intacts. Les rendez-vous de kinésithérapie ne changent pas.
+- Correction de l'antécédent rapporté : les **périostites existent depuis des années**, et non depuis un an ; rectification des deux mentions dans `personnel/sante/PROFIL.md` ainsi que dans le présent journal.
+- Aucun FIT régénéré : pas de changement d'étapes prévues. Lot explicitement demandé par l'utilisateur et commité avec `[lot-valide]`.
