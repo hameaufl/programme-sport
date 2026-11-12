@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-liste-seances-sans-resume-v19">
+  <meta name="mon-rythme-version" content="2026-11-12-seances-sans-pieces-v20">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -59,9 +59,6 @@
     .session-programme h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
     .session-programme .program-notes{font-size:14px;color:#607a66;margin:6px 0 9px;white-space:pre-wrap;overflow-wrap:anywhere}
     .session-programme .program-empty{font-size:13px;color:#7a8d7c;margin:5px 0 0;font-style:italic}
-    .session-garmin{margin-top:13px;display:flex;flex-direction:column;align-items:start;gap:5px}
-    .garmin-download{color:#234735;font-size:14px;font-weight:750;text-decoration:underline;text-underline-offset:3px}
-    .garmin-download:focus-visible{outline:3px solid #86b896;outline-offset:3px}
     .session-structures{margin-top:18px;padding-top:15px;border-top:1px solid #dce8df;min-width:0}
     .session-structures h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
     .session-structures ul{color:#4e6955;overflow-wrap:anywhere}
@@ -241,17 +238,6 @@
     if(typeof dialog.close==="function")dialog.close();
     else dialog.removeAttribute("open");
   }
-  // Une pièce jointe prévue ne représente jamais une activité enregistrée.
-  function fitDisplay(s) {
-    var files=Array.isArray(s.pieces_jointes)?s.pieces_jointes:[];
-    var entry=files.find(function(f){return f&&f.role==="entrainement_prevu"&&f.format==="fit"&&typeof f.url==="string"&&f.url==="fichiers/garmin/"+s.id+".fit";});
-    if(!entry)return null;
-    var box=elem("div","session-garmin"),link=elem("a","garmin-download","Télécharger l'entraînement Garmin (.FIT)");
-    link.href="./"+entry.url;
-    link.download=entry.url.split("/").pop();
-    box.appendChild(link);
-    return box;
-  }
   // Ne pas déduire de muscles ou tendons depuis les exercices : seul le Coach documente ces structures.
   // Présentation brève : les précautions générales sur une analyse biomécanique
   // ne font pas partie des noms anatomiques affichés dans cette liste.
@@ -326,8 +312,6 @@
         box.appendChild(head);
         if (metadata(s))box.appendChild(elem("p","meta",metadata(s)));
         box.appendChild(derouleDisplay(s));
-        var fichier=fitDisplay(s);
-        if(fichier)box.appendChild(fichier);
         var structures=structuresDisplay(s);
         if(structures)box.appendChild(structures);
         var note=sensationsDisplay(s);

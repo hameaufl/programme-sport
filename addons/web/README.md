@@ -1,11 +1,10 @@
 # Add-on Web — présentation remplaçable
 
-Les seules sources d'interface sont `pages/index.html`, `pages/sante.html`, `public/` (icônes et PNG) et les archives d'images non publiées. Aucune prescription, aucun rapport de santé, aucun fait réalisé n'a de source canonique dans ce dossier.
+L'application Mon Rythme présente le calendrier, les séances, le suivi et les aides PNG, mais ne crée, ne stocke et ne distribue **aucun fichier d'entraînement pour une montre**. Les prescriptions et faits ne sont jamais canoniques dans ce dossier.
 
-L'extension consomme les projections `data/index.json`, `data/semaines/<lundi>.json`, `data/sante/journal/`, `data/sante/profil.md` et les URL de fichiers FIT produites par les adaptateurs. La sélection des données est `contrats/publication-v1.json`, jamais un accès direct aux dossiers privés.
+- Pages : `pages/index.html`, `pages/sante.html` ; ressources : `public/`.
+- Données : `data/index.json`, `data/semaines/<lundi>.json`, `data/sante/journal/`, `data/sante/profil.md`.
+- Publication filtrée par `contrats/publication-v1.json` ou `contrats/publication-prive-v1.json`.
+- Construction : `node scripts/construire-site.cjs`. `MON_RYTHME_WEB=0` désactive l'add-on et `MON_RYTHME_POLITIQUE=prive` choisit une projection restreinte.
 
-- `node scripts/construire-site.cjs` produit `_site/` sans modifier les domaines.
-- `MON_RYTHME_WEB=0 node scripts/construire-site.cjs` désactive l'extension.
-- `MON_RYTHME_POLITIQUE=prive node scripts/construire-site.cjs` produit une projection volontairement restreinte, sans ressenti, profil ou fichier FIT public.
-
-Le HTML est indépendant des formats source : il ne reçoit que les URL publiques et les champs du contrat de lecture. Les schémas PNG et les règles de navigation appartiennent à l'add-on.
+Les connexions et synchronisations externes restent indépendantes de l'application. Aucun lien de téléchargement de programme, référence de service tiers ni binaire n'est exposé.

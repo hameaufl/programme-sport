@@ -3,8 +3,8 @@ const fs=require("node:fs"),path=require("node:path");
 const {ROOT,collect,exposed,summary}=require("./donnees.cjs");
 const depots=require("../adaptateurs/fichiers/depots.cjs");
 function build(){
- // La désactivation de l'add-on Web ne dépend d'aucune donnée personnelle ni de Garmin.
- if(process.env.MON_RYTHME_WEB==="0"){console.log("Add-on Web désactivé : domaines et Garmin autonomes");return;}
+ // L'add-on Web n'est pas nécessaire aux domaines métier ou aux services externes.
+ if(process.env.MON_RYTHME_WEB==="0"){console.log("Add-on Web désactivé : domaines autonomes");return;}
  const mode=process.env.MON_RYTHME_POLITIQUE==="prive"?"prive":"courante";
  const fichier=mode==="prive"?"publication-prive-v1.json":"publication-v1.json";
  const policy=JSON.parse(fs.readFileSync(path.join(ROOT,"contrats",fichier),"utf8"));
@@ -48,9 +48,6 @@ function build(){
  // Ressources uniquement d'interface : pas de PNG/GIF dans les domaines métier.
  const images=path.join(ROOT,"addons/web/public/assets/renfo/png");
  if(fs.existsSync(images))fs.cpSync(images,path.join(dest,"assets/renfo/png"),{recursive:true});
- // Fichiers Garmin issus d'un adaptateur autonome.
- const fitDir=path.join(ROOT,"adaptateurs/garmin/fichiers");
- if(policy.media?.garminPublics&&fs.existsSync(fitDir))fs.cpSync(fitDir,path.join(dest,"fichiers/garmin"),{recursive:true});
  // Compatibilité des HTML mis en cache : option volontaire, désactivée par défaut
  // car elle republierait l'ensemble des séances sans contrôle de minimisation.
  if(process.env.MON_RYTHME_LEGACY==="1"){
