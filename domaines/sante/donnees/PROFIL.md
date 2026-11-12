@@ -45,7 +45,7 @@
 - **Pointure habituelle :** petit **43 (EU)** ; le passage aux tailles 44 puis 45 concerne les deux paires de running essayées/achetées, sans conclure que la nouvelle pointure est définitivement adaptée.
 - **Chaussage compliqué :** besoin de modèles réellement adaptés à un pied large de 113 mm et aux semelles orthopédiques, pour les chaussures de ville comme de course.
 - **Hypothèse de chaussant trop étroit :** évoquée par l'utilisateur pour les anciennes chaussures ; l'essai comparatif et l'échange du 12 novembre ne prouvent pas que leur largeur causait les douleurs ni que les nouvelles chaussures les résoudront.
-- **Tolérance des Saucony après les essais :** ressenti durant les 20–30 min sur tapis et évolution des douleurs ensuite **non encore précisés** ; ne pas assimiler l'essai à une reprise du programme de course.
+- **Ressenti pendant les essais sur tapis du 12 novembre :** **aucune douleur à la hanche droite ressentie**, contrairement à la sortie du 11 novembre sur goudron (hanche droite 5/10 à mi-sortie). Sensations plantaires pendant les essais et évolution après l'effort **non précisées** ; ne pas assimiler le test à une reprise du programme ni à une démonstration de tolérance en extérieur. La différence peut dépendre de plusieurs facteurs simultanés (terrain, allure, chaussures, contexte).
 - **Objectif :** reprise de course progressive et confortable, sans forcer sur les douleurs.
 
 ## Sources et dates de mise à jour
