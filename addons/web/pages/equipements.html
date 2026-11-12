@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-navigation-large-v28">
+  <meta name="mon-rythme-version" content="2026-11-12-header-date-v29">
   <meta name="description" content="Mes équipements sportifs actuellement disponibles à la maison.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -53,20 +53,22 @@
     @media(max-width:650px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:31px 25px;min-height:190px}.hero-mark{display:none}.equipment-grid{grid-template-columns:1fr}.equipment{min-height:190px;padding:23px}.overview{padding:20px;gap:15px}.count-unit{max-width:60px}section{margin-top:27px}h2{font-size:22px}}
     @media print{body{background:#fff}.shell{width:100%}.hero{background:#f5f8f4;color:var(--ink);border:1px solid var(--line)}.eyebrow,.subtitle{color:var(--mid)}}
   </style>
-  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-navigation-large-v28">
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-header-date-v29">
+  <script defer src="./en-tete.js?v=2026-11-12-header-date-v29"></script>
 </head>
 <body>
   <div class="shell">
     <header class="site-header">
       <div class="site-brand-wrap">
-        <a class="brand" href="./" aria-label="Retour à Mon Rythme"><span class="brand-icon" aria-hidden="true">↗</span><span>mon rythme.</span></a>
+        <a class="brand" href="./" aria-label="Accueil Mon Rythme"><span class="brand-icon" aria-hidden="true">↗</span><span>mon rythme.</span></a>
+        <time id="todayLabel"></time>
       </div>
-    <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
-      <a class="site-nav-link" href="./">Mon programme</a>
-      <a class="site-nav-link" href="./coach.html">Le cap du Coach</a>
-      <a class="site-nav-link" href="./sante.html">Mon suivi santé</a>
-      <span class="site-nav-link is-current" aria-current="page">Mon équipement</span>
-    </nav>
+      <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
+        <a class="site-nav-link" href="./">Mon programme</a>
+        <a class="site-nav-link" href="./coach.html">Le cap du Coach</a>
+        <a class="site-nav-link" href="./sante.html">Mon suivi santé</a>
+        <span class="site-nav-link is-current" aria-current="page">Mon équipement</span>
+      </nav>
     </header>
     <main>
       <div class="hero">
