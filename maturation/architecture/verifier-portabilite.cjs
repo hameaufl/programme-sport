@@ -28,4 +28,14 @@ for(const week of withoutPrivate.weeks.keys())for(const s of exposed(week,withou
  assert.ok(!Object.hasOwn(s,"pieces_jointes"));
  assert.ok(!Object.hasOwn(s,"aidesExercices"));
 }
+
+const orientation=require("../../domaines/coaching/donnees/orientation.json");
+const objectifs=require("../../domaines/coaching/donnees/objectifs.json");
+const projeterOrientation=require("../../adaptateurs/projections/coaching.cjs").projeterOrientation;
+const contratPublic=require("../../contrats/publication-v1.json");
+const vue=projeterOrientation({orientation,objectifs},contratPublic);
+assert.equal(vue.objectifPersonnel,objectifs.objectifs[0],"La projection repose sur le domaine Coaching, sans Santé ni Web");
+assert.equal(vue.phase,orientation.phase);
+assert.equal(projeterOrientation({orientation,objectifs},policy),null,"La stratégie doit pouvoir être débranchée");
+
 console.log("Portabilité validée : "+withoutPrivate.sessions.length+" programmes sans Santé, Coaching privé ni extension Web.");

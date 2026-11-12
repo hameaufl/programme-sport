@@ -38,7 +38,7 @@ for(const f of obs){
  const p=JSON.parse(fs.readFileSync(f,"utf8"));
  assert.deepEqual(Object.keys(p).sort(),["seanceId","sensations"],"Une observation contient des attributs d'autres domaines");
 }
-const html=["index.html","sante.html"].map(n=>fs.readFileSync(path.join(ROOT,"addons/web/pages",n),"utf8"));
+const html=["index.html","sante.html","coach.html"].map(n=>fs.readFileSync(path.join(ROOT,"addons/web/pages",n),"utf8"));
 for(const page of html)assert.ok(!/domaines\/(?:sante|planification|activites|coaching)\/donnees\/|personnel\/sante\//.test(page),
  "Le Web connaît les sources internes d'un domaine");
 console.log("Frontières validées : "+plans.length+" plans, "+execs.length+" activités réalisées, "+obs.length+" observations, aucune dépendance entrante Web/Garmin.");
