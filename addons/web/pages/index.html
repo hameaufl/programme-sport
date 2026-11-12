@@ -183,7 +183,7 @@
   function libelleEtapeRenfo(texte) {
     if(/^Mise en route · /.test(texte))return "Echauffement";
     if(/^Étirements doux · /.test(texte))return "Étirements";
-    // Les volumes restent dans le domaine métier et le programme Garmin.
+    // La liste publique n’affiche que le nom des étapes de renforcement.
     return texte.split(" · ")[0];
   }
   function derouleDisplay(s) {
