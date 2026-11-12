@@ -1,4 +1,11 @@
 # Garmin MCP — contrat d'orchestration pour le Coach (bêta, 12 novembre 2026)
+## RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)
+
+- Le nom publié de chaque entraînement doit **correspondre exactement à celui de la bibliothèque Garmin Connect** et être **un nom définitif lisible**, sans suffixe technique ajouté par le Coach tel que « (corrigé) », « (test) », « (brouillon) » ou numérotation de versions de dépannage. Une correction ou un remplacement de modèle **ne justifie jamais** d'afficher une étiquette d'incident au propriétaire. Distinguer d'un numéro volontaire faisant partie du vrai nom choisi par l'utilisateur.
+- À défaut d'un outil de renommage sur Garmin MCP, **recréer à l'identique** le modèle sous son nom définitif (nom seul modifié), relire les deux via `get_workout_by_id(raw=true)` et vérifier exhaustivement **sport, 17 étapes, catégories/noms d'exercices, répétitions, repos, minutages et descriptions**. Une fois vérifiée la version neuve, et après avoir exclu un modèle planifié, utilisé ou d'identité incertaine, **supprimer uniquement l'ancienne copie créée par le Coach dans cette opération de correction**, avec aperçu `delete_workout(confirm=false)`, confirmation `confirm=true` et relecture finale de la bibliothèque. Ne pas réutiliser cette règle pour effacer des modèles historiques ou valides sans instruction précise de remplacement.
+- **Renfo actuel :** « Mon Rythme - Renfo A » est le nom Garmin **confirmé**, après recréation sous le nom propre et vérification des 17 étapes strictement identiques ; l'ancienne copie « Mon Rythme - Renfo A (corrigé) » est supprimée sur la base de la demande de renommage et de l'autorisation de nettoyage des intermédiaires. Le champ `nomEntrainementMontre` de `renfo-2026-11-13` et la projection Web doivent être exactement « Mon Rythme - Renfo A ». Aucune inscription au calendrier Garmin ni envoi à la montre, aucune déclaration de réalisation.
+- À chaque création/renommage, **livrer atomiquement** la source métier, le rendu public, les tests et la procédure Coach ; vérifier CI et la version réellement publiée. Les noms des cinq étapes Renfo restent sobres et les données détaillées restent dans Garmin et Planification.
+
 
 ## PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)
 

@@ -347,7 +347,8 @@ assert.equal(libelleEtapeRenfo("Ouverture du genou sur le côté · 3 × 10 par 
 assert.equal(libelleEtapeRenfo("Bras et jambe opposés sur le dos · 3 × 8"),"Bras et jambe opposés sur le dos","Renfo seulement le nom");
 assert.ok(html.includes('if(s.type==="renfo"&&!isCompleted(s))activities=activities.map(libelleEtapeRenfo);'),
  "Les libellés courts doivent être employés dans le rendu du programme");
-const nomRenfoValide="Mon Rythme - Renfo A (corrigé)";
+const nomRenfoValide="Mon Rythme - Renfo A";
+assert.ok(!/\s+\((?:corrigé|version corrigée|test|brouillon)\)$/i.test(nomRenfoValide),"Nom final Garmin sans étiquette de correction");
 const sourceRenfo=data.plans.get("renfo-2026-11-13");
 assert.equal(sourceRenfo.nomEntrainementMontre,nomRenfoValide,"Planification doit enregistrer le nom exact relu dans Garmin");
 const verifierNomMontre=require("../domaines/planification/modele.cjs").verifier;
