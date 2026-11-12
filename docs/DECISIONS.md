@@ -180,3 +180,12 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Les 36 séances ont été converties en plans à blocs typés, activités effectivement réalisées et observations de santé distinctes. Les comptes rendus et archives Coach ont été déplacés sans changement factuel. Les 33 FIT ont été déplacés avec leur SHA d'origine ; l'interface n'en détient aucun.
 - L'extension Web a ses propres sources et ressources sous `addons/web/`, ne reçoit que des champs autorisés via une projection. Tests : parité historique complète, CI de build standard et de publication restreinte, absence de dépendance du cœur envers le Web.
 - La politique de publication historique reste publique; la variante restreinte prépare un transfert futur vers un autre support et **n'efface pas les copies déjà publiques**. La publication de cette refonte sur `main` ne doit intervenir qu'après CI verte.
+
+## 12 novembre 2026 — Mon Rythme sans fichiers d'entraînement ; Garmin Connect par MCP
+
+- **Choix explicitement validé** : supprimer tous les 33 fichiers FIT d'entraînements prévus du dépôt courant, retirer le générateur local et tous les téléchargements/mentions Garmin du site Web. Le Web continue d'afficher les 36 programmes, leurs informations, les états et les PNG.
+- **Architecture** : adaptation séparée `adaptateurs/garmin/mcp.cjs`, sans effet de bord ; la source reste les blocs structurés de Planification V2. La création dans Garmin Connect et l'affectation de dates sont opérées par le Coach via le MCP personnalisé, jamais par le Web ou une CI.
+- **Modèles réutilisables** : même entraînement pour plusieurs dates du calendrier ; premier contrôle des modèles existants obligatoire. Nommage non encore fixé ; réutiliser les prescriptions identiques et ne pas créer un modèle par date.
+- **Bêta** : aucune création ni programmation Garmin avant demande explicite sur une ou plusieurs dates nommées par le propriétaire. Ne pas anticiper plusieurs semaines ; aucun envoi automatique à la montre. Premier essai complet Venu 4 restant à confirmer.
+- **Contrôles** : vérifier l'absence de fichiers externes et de références dans toute sortie Web, y compris publication standard/restrictive. Les programmes effectués, ressentis et rapports existants sont préservés ; les anciens binaires restent techniquement dans l'historique Git.
+

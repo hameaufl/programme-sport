@@ -4,7 +4,6 @@ const path=require("node:path");
 const local=require("../fichiers/stockage.cjs");
 const depotFichiers=require("../fichiers/depots.cjs");
 const mediasWeb=require("../web/medias.cjs");
-const fitCatalogue=require("../garmin/catalogue.cjs");
 const planModel=require("../../domaines/planification/modele.cjs");
 const activities=require("../../domaines/activites/modele.cjs");
 const health=require("../../domaines/sante/modele.cjs");
@@ -15,7 +14,7 @@ function monday(iso){
  return d.toISOString().slice(0,10);
 }
 function filesIn(dir,ext){return local.enumerer(path.relative(ROOT,dir).split(path.sep).join("/"),ext);}
-function collect(depots=depotFichiers,{medias=mediasWeb,garmin=fitCatalogue}={}){
+function collect(depots=depotFichiers,{medias=mediasWeb}={}){
  const cycle=depots.planification.cycle(),prefs=coaching.verifierObjectifs(depots.coaching.objectifs());
  if(cycle.schemaVersion!==1||!planModel.dateValide(cycle.debutCycle))throw Error("Cycle sportif invalide");
  const catalogue=depots.planification.mouvements();
@@ -42,8 +41,6 @@ function collect(depots=depotFichiers,{medias=mediasWeb,garmin=fitCatalogue}={})
   const s=planModel.presenter(p,mouvements),a=execution.get(p.id),o=observations.get(p.id);
   s.fait=!!a;s.sensations=o?o.sensations:"";
   if(a)for(const key of ["exercicesRealises","structuresSollicitees"])if(Object.hasOwn(a,key))s[key]=a[key];
-  const attachment=garmin?garmin.reference(p.id):null;
-  if(attachment)s.pieces_jointes=[attachment];
   if(medias){
    const aides=(p.blocs||[]).filter(b=>b.nature==="exercice").map(b=>{
     const png=images.get(b.mouvementId);if(!png)throw Error("Illustration absente : "+b.mouvementId);

@@ -16,7 +16,6 @@
     "exercicesRealises",
     "structuresSollicitees",
     "sensations",
-    "pieces_jointes",
     "aidesExercices",
     "exercicesDuRapport",
     "structuresDuRapport"
@@ -34,8 +33,5 @@
     "evenementsPublics": true,
     "comptesRendusPublicsDansVues": true
   },
-  "note": "Politique explicite reflétant les fonctionnalités publiques existantes. Réduire ces autorisations avant tout transfert de données vers un stockage confidentiel; aucune nouvelle propriété n'est exportable par défaut.",
-  "media": {
-    "garminPublics": true
-  }
+  "note": "Le Web n'expose aucun programme de montre, fichier binaire, identifiant de compte ni intégration externe. Les champs métiers autorisés restent publiés sur un site public."
 }

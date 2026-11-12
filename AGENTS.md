@@ -1,4 +1,16 @@
 # AGENTS.md — règles obligatoires des agents LLM
+
+## PRIORITÉ ABSOLUE — Garmin Connect par MCP, phase bêta (12 novembre 2026)
+
+**La gestion des entraînements Garmin ne fait plus partie de l'application Web.** Mon Rythme affiche le programme depuis les domaines métier, sans lien, document, téléchargement ni fichier FIT. Les anciens fichiers binaires et le générateur local sont supprimés. Les sections historiques qui imposent de générer un FIT à chaque séance sont **abrogées**.
+
+- **Coach : écriture Garmin exclusivement sur demande explicite** du propriétaire, pour la séance du jour demandée ou les **dates exactes qu'il indique**. Jamais de création, programmation, envoi, déplacement, suppression ou modification sur des semaines à l'avance. « Mets-toi à jour » et les simples retours sportifs n'autorisent **aucune écriture Garmin**.
+- **Réutilisation** : un modèle peut servir à plusieurs dates du calendrier Garmin Connect via le même ID. Lire d'abord get_workouts, get_workout_by_id et get_scheduled_workouts ; éviter les doublons. Utiliser upload_workout / upload_workouts uniquement pour les modèles manquants demandés, puis schedule_workouts / schedule_week sur les dates autorisées. Succès partiels possibles ; contrôler chaque lot avant et après.
+- **Nommage ouvert** : titre court descriptif du contenu, à choisir ou proposer au premier usage ; ne figer ni mois, ni date, ni haut/bas du corps sans justification. Ne jamais inventer d'ID Garmin. Si le contenu change, comparer et versionner le modèle, jamais remplacer silencieusement celui de dates déjà planifiées.
+- **Synchronisation à tester** : une date Garmin Connect ne prouve ni réalisation ni visibilité immédiate sur la Venu 4. push_workout_to_device est distinct, non idempotent, uniquement sur demande. Un compte récent peut montrer une bibliothèque vide et aucun appareil dans le MCP.
+- **Architecture V2** : seule source métier = blocs structurés de domaines/planification ; activités effectuées = Activités ; observations = Santé ; décisions = Coaching. L'adaptateur adaptateurs/garmin/mcp.cjs prépare en lecture seule les modèles/dates ; l'agent Coach effectue les appels MCP autorisés, jamais l'interface, la CI ou un build. Détails dans adaptateurs/garmin/MCP.md.
+- **Fidélité** : ne pas inventer zone de fréquence cardiaque, répétitions, identité d'exercice ou étirements. Si une séance (notamment Renfo avec mise en route/étirements ou course à option) n'est pas fidèlement convertible, bloquer la création et faire valider la conversion par Maturation. Aucun secret, identifiant de compte ou jeton dans le dépôt public.
+
 ## PRIORITÉ — architecture modulaire V2 (approuvée le 12 novembre 2026)
 
 **Cette section prévaut sur toute référence historique à `personnel/` dans les documents précédents. Le dossier `personnel/` n'est plus une source de données.** Les rôles sont séparés par la *propriété des faits* et par des ports métier, et non par une page HTML.
@@ -8,10 +20,10 @@
 - **Coach / santé et ressentis** : `domaines/sante/donnees/ressentis/seances/AAAA/MM/<id>.json`, `domaines/sante/donnees/PROFIL.md`, `rapports/` et `evenements/`. Ne jamais placer `sensations` dans un plan ni modifier une observation à la faveur d'une modification de programme.
 - **Coach / décisions et préférences** : `domaines/coaching/donnees/` (`objectifs.json`, `CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md`). L'adaptation consulte les autres domaines par **identifiant stable**, sans dupliquer les faits de santé.
 - **Maturation / technique** : `maturation/`, `contrats/`, modules purs `domaines/*/modele.cjs`, ports `adaptateurs/fichiers/depots.cjs`, projections, tests et workflows. Maturation ne produit pas les décisions sportives ni les faits personnels.
-- **Garmin** : `adaptateurs/garmin/fichiers/<id>.fit`, générateur `node scripts/generer-garmin.cjs <id>` à partir des **blocs structurés**, sans dépendre du texte d'interface.
+- **Garmin (bêta)** : connecteur MCP autonome. L’adaptateur `adaptateurs/garmin/mcp.cjs` prépare la sélection en lecture seule. Aucun fichier binaire ni liaison depuis le Web ; le Coach écrit uniquement à la demande du propriétaire.
 - **Site Web add-on** : `addons/web/pages/`, `addons/web/public/`. Le site n'est jamais source métier. Il lit uniquement les projections de `adaptateurs/projections/lecture.cjs`, filtrées par `contrats/publication-v1.json`.
 - **Publication** : le dépôt et le site restent publics. Le mode expérimental `MON_RYTHME_POLITIQUE=prive` réduit les sorties, **ne rend pas privées les anciennes publications ni l'historique Git**. Une confidentialité réelle requiert un nouveau stockage et un accès authentifié.
-- **Préservation** : garder la précision et les identifiants existants, modifier le seul domaine concerné, respecter les marques de changement. Après édition d'une prescription, régénérer le FIT lié s'il existe. Aucun changement Web sans demande, et jamais de données sensibles nouvelles exposées par défaut.
+- **Préservation** : garder faits et identifiants, modifier seulement le domaine concerné. Ne jamais créer d'entraînement Garmin automatiquement après une modification de plan ; seul un ordre explicite autorise le MCP. Aucun changement Web sans demande, aucune donnée sensible nouvelle publiée.
 
 Contrats détaillés : `contrats/DEPENDANCES.md`, `contrats/PORTS.md`, `maturation/architecture/PLAN.md`. Les passages documentant d'anciens chemins constituent **de l'historique**, pas des instructions pour écrire dans ces emplacements.
 

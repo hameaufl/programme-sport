@@ -46,6 +46,9 @@ jobs:
       - name: Générer les vues hebdomadaires et le suivi public existant
         run: node scripts/construire-site.cjs
 
+      - name: Contrôler l'absence de fichiers externes dans le site public
+        run: node maturation/architecture/verifier-publication.cjs
+
       - name: Envoyer l'artefact Pages
         uses: actions/upload-pages-artifact@v4
         with:

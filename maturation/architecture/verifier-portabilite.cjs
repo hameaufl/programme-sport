@@ -9,7 +9,7 @@ const replaceHealth={
  sante:{...depots.sante,observations:()=>[],rapports:()=>[],evenements:()=>[],profil:()=>""},
  coaching:{...depots.coaching,objectifs:()=>({schemaVersion:1,objectifs:[]})}
 };
-const withoutPrivate=collect(replaceHealth,{medias:null,garmin:null});
+const withoutPrivate=collect(replaceHealth,{medias:null});
 assert.equal(withoutPrivate.sessions.length,complete.sessions.length,"La planification dépend du stockage Santé");
 assert.equal(withoutPrivate.weeks.size,complete.weeks.size,"Les semaines dépendent du stockage Santé");
 assert.equal(withoutPrivate.reports.size,0);
@@ -28,4 +28,4 @@ for(const week of withoutPrivate.weeks.keys())for(const s of exposed(week,withou
  assert.ok(!Object.hasOwn(s,"pieces_jointes"));
  assert.ok(!Object.hasOwn(s,"aidesExercices"));
 }
-console.log("Portabilité validée : "+withoutPrivate.sessions.length+" programmes sans Santé, Coaching privé, Garmin ni extension Web.");
+console.log("Portabilité validée : "+withoutPrivate.sessions.length+" programmes sans Santé, Coaching privé ni extension Web.");
