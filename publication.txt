@@ -1,5 +1,5 @@
 Mon Rythme — témoin de publication
-Version attendue : 2026-11-12-cap-coach-v22
+Version attendue : 2026-11-12-inventaire-v23
 Programme : coche verte et Fait uniquement si séance confirmée ; sensations statiques si renseignées
 Interface : aucun stockage local ni coche interactive
 Dépôt : https://github.com/hameaufl/programme-sport
@@ -8,3 +8,5 @@ Note : la présence de ce fichier sur GitHub ne prouve pas sa disponibilité sur
 Suivi Santé : tableau de bord visuel ; profil complet conservé dans Santé mais non publié comme fichier Web ; événements projetés sous forme de date et titre uniquement.
 
 Page Le cap du Coach : projection explicite du domaine Coaching (objectif, tendances conditionnelles et vigilance), jamais les fichiers métier complets ; publication restreinte sans projection Coaching.
+
+Inventaire des équipements : page indépendante avec projection filtrée (disponibles uniquement), sans duplication de l'inventaire métier et sans publication en mode restreint.

@@ -2,7 +2,7 @@
 const fs=require("node:fs"),path=require("node:path");
 const {ROOT,collect,exposed,summary}=require("./donnees.cjs");
 const depots=require("../adaptateurs/fichiers/depots.cjs");
-const {projeterOrientation}=require("../adaptateurs/projections/coaching.cjs");
+const {projeterOrientation,projeterEquipements}=require("../adaptateurs/projections/coaching.cjs");
 function build(){
  // L'add-on Web n'est pas nécessaire aux domaines métier ou aux services externes.
  if(process.env.MON_RYTHME_WEB==="0"){console.log("Add-on Web désactivé : domaines autonomes");return;}
@@ -29,7 +29,7 @@ function build(){
   fs.mkdirSync(path.dirname(file),{recursive:true});
   fs.writeFileSync(file,JSON.stringify(value,null,2)+"\n","utf8");
  }
- for(const name of ["index.html","sante.html","coach.html"])copy("addons/web/pages/"+name,name);
+ for(const name of ["index.html","sante.html","coach.html","equipements.html"])copy("addons/web/pages/"+name,name);
  for(const name of ["favicon.svg","icon-192.png","icon-512.png","manifest.webmanifest"])copy("addons/web/public/"+name,name);
  for(const name of ["publication.txt",".nojekyll"])copy(name,name);
  const index=summary(model);
@@ -40,6 +40,10 @@ function build(){
  if(policy.coaching?.orientationPublique===true){
   const vueCoach=projeterOrientation({orientation:depotsActifs.coaching.orientation(),objectifs:depotsActifs.coaching.objectifs()},policy);
   if(vueCoach)json("data/coaching/orientation.json",vueCoach);
+ }
+ if(policy.coaching?.equipementsPublics===true){
+  const materiel=projeterEquipements(depotsActifs.coaching.equipements(),policy);
+  if(materiel)json("data/coaching/equipements.json",materiel);
  }
  for(const week of index.semaines)json("data/semaines/"+week+".json",{schemaVersion:1,semaine:week,sessions:exposed(week,model,policy)});
  if(policy.sante.profilPublic)copy("domaines/sante/donnees/PROFIL.md","data/sante/profil.md");

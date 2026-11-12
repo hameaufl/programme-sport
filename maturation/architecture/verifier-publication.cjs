@@ -13,6 +13,7 @@ const listing=files(site);
 assert.ok(listing.some(p=>p.endsWith("index.html")),"Accueil absent");
 assert.ok(listing.some(p=>p.endsWith("sante.html")),"Page de suivi absente");
 assert.ok(listing.some(p=>p.endsWith("coach.html")),"Page de stratégie Coach absente");
+assert.ok(listing.some(p=>p.endsWith("equipements.html")),"Page inventaire des équipements absente");
 assert.ok(!listing.some(p=>/data[\\/]sante[\\/]profil\.md$/.test(p)),"Profil Santé narratif toujours publié sur le site");
 
 for(const file of listing){
@@ -52,5 +53,18 @@ for(const v of coachData.vigilances)assert.deepEqual(Object.keys(v).sort(),["suj
 assert.ok(!/sourcesMetier|statut|CONTEXTE-COACH|DECISIONS\.md|JOURNAL\.md|domaines\/sante\/donnees/.test(JSON.stringify(coachData)),
  "Notes internes ou références aux sources publiées sur le site");
 assert.ok(!listing.some(f=>/^domaines\/coaching|^data\/coaching\/.*\.md$/.test(path.relative(site,f).replace(/\\/g,"/"))),"Fichiers métier du Coach copiés dans le site");
+
+
+const equipFile=path.join(site,"data/coaching/equipements.json");
+assert.ok(fs.existsSync(equipFile),"Projection des équipements disponibles manquante");
+const equipView=JSON.parse(fs.readFileSync(equipFile,"utf8"));
+assert.deepEqual(Object.keys(equipView).sort(),["schemaVersion","miseAJour","equipements"].sort(),"Champs métier non autorisés dans le matériel publié");
+const sourceEquip=require("../../domaines/coaching/donnees/equipements.json");
+assert.equal(equipView.equipements.length,sourceEquip.equipements.filter(x=>x.statut==="disponible").length);
+for(const item of equipView.equipements){
+ assert.deepEqual(Object.keys(item).sort(),Object.keys(item).filter(k=>["nom","diametreCmApprox"].includes(k)).sort(),"Attribut d'équipement non autorisé sur le Web");
+ assert.ok(sourceEquip.equipements.some(x=>x.nom===item.nom&&x.statut==="disponible"),"Un équipement non disponible a été publié");
+}
+assert.ok(!/provenance|notes|non_confirme|sourcesMetier|absence/.test(JSON.stringify(equipView)),"Donnée métier privée ou état de disponibilité incorrect dans la publication");
 
 console.log("Publication sans fichiers d'entraînement validée : "+listing.length+" ressources.");

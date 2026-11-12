@@ -298,3 +298,10 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Maturation fournit `orientation.json`, sa validation et sa projection filtrée, et une page autonome « Le cap du Coach ». Le contenu initial du résumé est une synthèse des décisions déjà documentées (reprise confortable, adaptation après chaque retour, récupération et tolérance), **pas une nouvelle prescription ni une observation médicale**. Les données de Santé et les activités ne sont pas modifiées.
 - La page « Mon suivi santé » perd la phrase d'introduction et la note de bas de page mentionnées explicitement par l'utilisateur ; les indicateurs, la chronologie et les sources sont conservés.
 
+## 12 novembre 2026 — Page dédiée à l'inventaire du matériel à domicile
+
+- Le propriétaire demande une **nouvelle page Web indépendante** qui lui permet de consulter les équipements réellement disponibles à la maison. Cette décision ne modifie ni la source des équipements ni leur disponibilité.
+- L'unique source métier demeure `domaines/coaching/donnees/equipements.json`, maintenue par le Coach sur retour explicite. L'adaptateur filtre les seuls équipements `disponible` et n'expose que le nom et les dimensions connues. Le site n'embarque pas les absences, les projets d'acquisition, les notes ou la provenance du matériel.
+- La page `addons/web/pages/equipements.html` lit `data/coaching/equipements.json` généré par le projecteur `adaptateurs/projections/coaching.cjs`. La politique standard active ce résumé ; la politique restreinte le désactive. Aucun stockage ni saisie navigateur, aucune synchronisation Garmin, aucune logique sportive dans le Web.
+- Présentation initiale basée sur les seules disponibilités confirmées : tapis de sol et ballon de gymnastique d'environ 80 cm. Leur présence est dérivée de la source, non codée en dur dans la page. Tout nouvel équipement confirmé doit apparaître après la prochaine publication, sans modification de l'interface.
+

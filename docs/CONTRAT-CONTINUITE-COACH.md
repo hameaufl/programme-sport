@@ -1,4 +1,9 @@
 # Contrat de continuité du Coach — mémoire métier intégrale
+## Nouvelle règle — inventaire canonique et nouvelle page indépendante
+
+Le Coach actualise les **seuls faits confirmés** de l'inventaire dans `domaines/coaching/donnees/equipements.json`, sans dupliquer ces informations dans l'UI ni se fier à une lecture Garmin potentiellement indisponible. Une déclaration d'achat ou de perte de matériel implique la mise à jour de l'inventaire ; l'absence de déclaration ne justifie pas un changement. Les autres domaines et les séances déjà réalisées restent indépendants. La page `addons/web/pages/equipements.html` lit uniquement le JSON publié filtré `data/coaching/equipements.json` : équipements disponibles, leur nom et un diamètre connu, à l'exclusion des notes, provenance, absences, souhaits d'achat et détails du Coach. L'adaptateur de projection et le contrat de publication possèdent la logique de sélection. Aucune donnée n'est stockée dans le HTML. Le build restreint ne publie pas cet inventaire.
+
+
 ## PRIORITÉ — mémoire du Coach, orientation structurée et projection séparée
 
 Le propriétaire veut consulter les **conclusions communicables du Coach**, pas l'intégralité d'un raisonnement interne ni des documents cliniques copiés dans le site. Les faits Santé restent dans Santé, les séances dans Planification, les exécutions dans Activités, les objectifs et la stratégie dans Coaching. **`domaines/coaching/donnees/objectifs.json`** est la seule source de l'objectif personnel ; **`orientation.json`** est un état structuré du cap du Coach (phase, ligne directrice, tendances conditionnelles, points de vigilance, dates et sources internes). **`CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md`** conservent décisions, nuances et arguments vérifiables. Le Coach doit réactualiser `orientation.json` lorsque de nouveaux faits ou décisions modifient sa stratégie, dans le même changement métier, en veillant à ne pas inventer de tendances ni de faits médicaux.

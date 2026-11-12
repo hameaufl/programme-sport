@@ -37,5 +37,10 @@ const vue=projeterOrientation({orientation,objectifs},contratPublic);
 assert.equal(vue.objectifPersonnel,objectifs.objectifs[0],"La projection repose sur le domaine Coaching, sans Santé ni Web");
 assert.equal(vue.phase,orientation.phase);
 assert.equal(projeterOrientation({orientation,objectifs},policy),null,"La stratégie doit pouvoir être débranchée");
+const equipementMetier=depots.coaching.equipements();
+const projeterEquipements=require("../../adaptateurs/projections/coaching.cjs").projeterEquipements;
+assert.equal(projeterEquipements(equipementMetier,policy),null,"L'inventaire doit pouvoir être débranché");
+const listePubliee=projeterEquipements(equipementMetier,contratPublic);
+assert.equal(listePubliee.equipements.length,equipementMetier.equipements.filter(x=>x.statut==="disponible").length,"La projection ne doit dépendre que de Coaching");
 
 console.log("Portabilité validée : "+withoutPrivate.sessions.length+" programmes sans Santé, Coaching privé ni extension Web.");

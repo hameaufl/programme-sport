@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#234735">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="mon-rythme-version" content="2026-11-12-inventaire-v23">
+  <meta name="description" content="Mes équipements sportifs actuellement disponibles à la maison.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <title>Mon équipement · Mon Rythme</title>
+  <style>
+    :root{color-scheme:light;--ink:#223b2d;--green:#234735;--mid:#426c50;--muted:#687b6d;--line:#dfe7dd;--soft:#edf4eb;--bg:#f7f9f5;--white:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit}a:focus-visible{outline:3px solid #84b590;outline-offset:3px}
+    .shell{width:min(1070px,calc(100% - 36px));margin:0 auto;padding:0 0 65px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:87px}
+    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-size:20px;font-weight:800;letter-spacing:-.5px}
+    .brand-icon{width:41px;height:41px;background:var(--green);color:#fff;border-radius:13px;display:grid;place-items:center;font-size:22px}
+    .back{display:inline-flex;text-decoration:none;color:var(--green);background:white;border:1px solid #c8d9ca;padding:10px 15px;border-radius:12px;font-size:13px;font-weight:750}
+    .back:hover{background:var(--soft)}
+    .hero{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px;background:radial-gradient(circle at 100% 0%,rgba(168,210,176,.29),transparent 34%),var(--green);color:#fff;border-radius:24px;padding:39px 43px;min-height:217px}
+    .eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#cce2d0;margin:0 0 11px}
+    h1{font-size:clamp(34px,5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-1.7px;margin:0}
+    .subtitle{color:#d9e9da;font-size:15px;margin:11px 0 0}
+    .hero-mark{width:103px;height:103px;flex:none;position:relative;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);border-radius:25px;background:rgba(255,255,255,.07)}
+    .hero-mark svg{width:61px;height:61px;stroke:#e1f2df;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    section{margin-top:33px}
+    .overview{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;background:white;border:1px solid var(--line);border-radius:19px;padding:24px 28px}
+    .overview-label{font-size:12px;font-weight:750;color:var(--mid);text-transform:uppercase;letter-spacing:1.1px}
+    .overview-desc{font-size:14px;color:var(--muted);margin:6px 0 0}
+    .count-box{display:flex;align-items:baseline;gap:10px}
+    .count{font-size:clamp(40px,6vw,56px);font-weight:800;line-height:1;color:var(--green);font-variant-numeric:tabular-nums}
+    .count-unit{color:var(--muted);font-size:13px;max-width:75px;line-height:1.25}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 17px}
+    h2{font-size:24px;letter-spacing:-.7px;line-height:1.2;margin:0}
+    .hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+    .date{color:#617769;font-size:12px;letter-spacing:.1px}
+    .equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .equipment{position:relative;min-height:215px;display:flex;flex-direction:column;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:19px;padding:26px 25px;overflow:hidden}
+    .equipment:after{content:"";position:absolute;width:160px;height:160px;border:1px solid #e7efe8;border-radius:50%;top:-100px;right:-38px;pointer-events:none}
+    .equip-head{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+    .equip-number{display:grid;place-items:center;width:47px;height:47px;flex:none;background:var(--soft);color:var(--green);font-size:18px;font-weight:800;border-radius:15px}
+    .status{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:6px 10px;background:#edf7ee;color:#347048;font-size:11px;font-weight:800;white-space:nowrap}
+    .status:before{content:"";width:7px;height:7px;border-radius:50%;background:#5b9b6c}
+    .equip-name{font-size:clamp(20px,3vw,25px);font-weight:780;letter-spacing:-.7px;line-height:1.25;margin:23px 0 0}
+    .equip-detail{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:#57715f;font-size:13px;border:1px solid #dbe8dd;border-radius:9px;background:#f6faf5;padding:7px 10px}
+    .equipment:not(:has(.equip-detail)) .equip-name{margin-bottom:9px}
+    .empty{grid-column:1/-1;padding:30px 24px;border:1px dashed #cbd9ce;border-radius:17px;color:var(--muted);background:white;font-size:14px}
+    .navigation{display:flex;gap:15px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:21px;margin-top:33px}
+    .nav-link{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13px;color:var(--mid);font-weight:750}
+    .nav-link:hover{text-decoration:underline}
+    @media(max-width:650px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px;font-size:12px}.hero{border-radius:19px;padding:31px 25px;min-height:190px}.hero-mark{display:none}.equipment-grid{grid-template-columns:1fr}.equipment{min-height:190px;padding:23px}.overview{padding:20px;gap:15px}.count-unit{max-width:60px}section{margin-top:27px}h2{font-size:22px}}
+    @media print{body{background:#fff}.shell{width:100%}.hero{background:#f5f8f4;color:var(--ink);border:1px solid var(--line)}.eyebrow,.subtitle{color:var(--mid)}.back{display:none}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="./" aria-label="Retour à Mon Rythme"><span class="brand-icon" aria-hidden="true">↗</span><span>mon rythme.</span></a>
+      <a class="back" href="./">← Mon programme</a>
+    </header>
+    <main>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Mon Rythme · À la maison</p>
+          <h1>Mon équipement.</h1>
+          <p class="subtitle">Le matériel dont je dispose pour mes entraînements.</p>
+        </div>
+        <div class="hero-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M8 47V29a7 7 0 0 1 7-7h6M56 47V29a7 7 0 0 0-7-7h-6"/>
+            <circle cx="32" cy="21" r="11"/><path d="M19 41a13 13 0 0 1 26 0v7H19zM15 52h34"/>
+          </svg>
+        </div>
+      </div>
+      <section class="overview" aria-label="Nombre d'équipements disponibles">
+        <div><div class="overview-label">Mon inventaire actuel</div><p class="overview-desc">Uniquement les équipements confirmés comme disponibles.</p></div>
+        <div class="count-box"><output id="equipmentCount" class="count">—</output><span class="count-unit">équipements disponibles</span></div>
+      </section>
+      <section aria-labelledby="equipmentTitle">
+        <div class="section-head">
+          <div><h2 id="equipmentTitle">À ma disposition</h2><p class="hint">Inventaire utilisé pour adapter mes séances de renforcement.</p></div>
+          <span class="date" id="inventoryDate"></span>
+        </div>
+        <div id="equipmentList" class="equipment-grid" aria-live="polite">
+          <div class="empty">Chargement du matériel disponible…</div>
+        </div>
+      </section>
+      <nav class="navigation" aria-label="Autres vues de Mon Rythme">
+        <a class="nav-link" href="./coach.html">Le cap du Coach ↗</a>
+        <a class="nav-link" href="./sante.html">Mon suivi santé ↗</a>
+      </nav>
+    </main>
+  </div>
+  <script>
+    (function(){
+      "use strict";
+      function node(tag,cls,value){
+        var element=document.createElement(tag);
+        if(cls)element.className=cls;
+        if(value!==undefined)element.textContent=value;
+        return element;
+      }
+      function show(data){
+        if(!data||data.schemaVersion!==1||!Array.isArray(data.equipements))throw Error("Inventaire invalide");
+        var root=document.getElementById("equipmentList");
+        root.replaceChildren();
+        document.getElementById("equipmentCount").textContent=String(data.equipements.length);
+        if(!data.equipements.length){
+          root.appendChild(node("div","empty","Aucun équipement disponible n'est actuellement confirmé."));
+        }
+        data.equipements.forEach(function(e,index){
+          if(!e||typeof e.nom!=="string")return;
+          var card=node("article","equipment"),head=node("div","equip-head");
+          head.appendChild(node("span","equip-number",String(index+1).padStart(2,"0")));
+          head.appendChild(node("span","status","Disponible"));
+          card.appendChild(head);
+          card.appendChild(node("h3","equip-name",e.nom));
+          if(typeof e.diametreCmApprox==="number"&&e.diametreCmApprox>0){
+            card.appendChild(node("span","equip-detail","Diamètre approximatif · "+e.diametreCmApprox+" cm"));
+          }
+          root.appendChild(card);
+        });
+        var date=new Date(data.miseAJour+"T12:00:00");
+        document.getElementById("inventoryDate").textContent=isNaN(date.getTime())?"":"Mis à jour le "+new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"long",year:"numeric"}).format(date);
+      }
+      function fail(){
+        document.getElementById("equipmentCount").textContent="—";
+        document.getElementById("inventoryDate").textContent="";
+        document.getElementById("equipmentList").replaceChildren(node("div","empty","L'inventaire n'est pas disponible actuellement."));
+      }
+      var requestId=0;
+      function load(){
+        var token=++requestId;
+        fetch("./data/coaching/equipements.json",{cache:"no-store"})
+          .then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();})
+          .then(function(d){if(token===requestId)show(d);})
+          .catch(function(){if(token===requestId)fail();});
+      }
+      load();
+      document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")load();});
+      window.addEventListener("pageshow",function(e){if(e.persisted)load();});
+    }());
+  </script>
+</body>
+</html>

@@ -1,4 +1,9 @@
 # Reprise entre LLM — Mon Rythme
+## PRIORITÉ — page de matériel et séparation forte
+
+`domaines/coaching/donnees/equipements.json` reste le **seul inventaire** du matériel du propriétaire, maintenu par le Coach à partir de retours explicites. Ne pas interpréter un équipement absent ou un achat envisagé comme disponible. Le Web `addons/web/pages/equipements.html` affiche une projection limitée aux noms des seuls équipements **disponibles** et à un éventuel diamètre (`data/coaching/equipements.json`) générée par `adaptateurs/projections/coaching.cjs` via le port `coaching.equipements()`. La politique standard autorise cette seule vue, la politique restreinte la désactive. **Ne jamais intégrer de données métier en dur dans la page**, ni déplacer les sources dans le répertoire Web. Une mise à jour du modèle métier suffit à actualiser la vue lors de la publication suivante.
+
+
 ## PRIORITÉ de reprise — garder la stratégie métier du Coach et l'exposer proprement
 
 Le dépôt organise strictement les **sources métier** (Santé, Activités, Planification, Coaching) indépendamment du site. La mémoire réflexive exploitable du Coach appartient à `domaines/coaching/donnees/CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md` et non à une page Web. `objectifs.json` contient l'objectif personnel du propriétaire ; le Coach doit s'y aligner. Après une décision d'adaptation ou un nouveau retour influençant sa stratégie, le Coach doit **réviser `orientation.json` en même temps** que la justification dans ses notes, en distinguant intentions sous condition, points de vigilance et décision effectivement appliquée.
