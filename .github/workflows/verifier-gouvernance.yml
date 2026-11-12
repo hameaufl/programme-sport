@@ -25,5 +25,7 @@ jobs:
         run: node maturation/gouvernance/verifier-referentiel.cjs
       - name: Tester les cas de refus des vérificateurs
         run: node --test maturation/gouvernance/tests/*.test.cjs
+      - name: Contrôler les traces des simulations, sans attribuer de gain fictif
+        run: node maturation/gouvernance/verifier-simulations.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs

@@ -93,3 +93,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Inventaire reproductible de **143 objets fichiers** (chemin, taille et SHA Git) du commit initial, enregistré sous `references/inventaire-base.json` et revérifiable par le verrou.
 - **Dix scénarios** sans écritures réelles préparés ; leurs résultats comparatifs sont **en attente d'exécution**. Un gain de fiabilité du Coach ne peut pas être revendiqué à ce stade.
 - La revue logique Gardien conserve son statut **bloqué**, aucun visa indépendant, aucune fusion dans `main` et aucune opération Garmin.
+
+## 13 novembre 2026 — Première simulation dirigée du Coach coordinateur
+- Dix scénarios `SC-01` à `SC-10` parcourus **sous les rôles successifs du même ChatGPT**, avec réponses et trois observations d'auto-revue par scénario, consignées dans `RESULTATS-ESSAIS-COACH.json` et `ESSAI-DIRIGE-2026-11-13.md`.
+- Aucun sous-agent indépendant ni deuxième conversation « Coach historique » n'a été exécuté. Les attentes étaient connues lors de la rédaction : **pas de mesure A/B, pas de taux de fiabilité comparable, pas de visa indépendant**.
+- Cas non réellement éprouvés : validité d'une vraie activité incomplète, déplacement avec date cible, permissions Garmin via un outil, livraison Web réelle. La prochaine campagne doit isoler les deux conditions, ajouter des scénarios cachés et comparer les preuves observables.
+- Ajout d'un contrôle CI de cohérence **du journal des simulations uniquement**, qui refuse un gain inventé ou un visa Gardien fictif ; il n'évalue pas les réponses LLM.
+- Aucun changement dans les faits ou prescriptions métier, aucune opération Garmin et aucune fusion dans `main`.

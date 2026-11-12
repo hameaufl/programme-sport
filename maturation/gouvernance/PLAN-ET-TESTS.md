@@ -83,3 +83,10 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] **Dix scénarios comparatifs fictifs préparés** dans `SCENARIOS-SIMULATION.json` et `CAMPAGNE-COMPARATIVE.md`.
 - [ ] **Exécution comparée réelle** de ces dix scénarios et analyse des écarts. Les tests automatiques ne remplacent pas les réponses Coach.
 - [ ] Visa Gardien, arbitrages, et accord explicite du propriétaire avant toute fusion.
+
+## 13 novembre 2026 — Premier parcours comportemental, portée de la preuve
+- [x] Dix réponses simulées du coordinateur, avec routage des rôles et limites de vérification, consignées dans `ESSAI-DIRIGE-2026-11-13.md` et `RESULTATS-ESSAIS-COACH.json`.
+- [x] CI vérifiant l'existence, la cohérence des réponses/traces et l'absence de **résultats A/B inventés**.
+- [ ] **Deux conversations isolées**, ancien Coach A et coordinateur B, sur les dix mêmes demandes et scénarios cachés complémentaires.
+- [ ] Notation objective et lecture croisée des erreurs, omissions, coûts de coordination et refus d'actions non autorisées.
+- [ ] Validation de toute évolution comportementale par le Gardien selon les règles prévues et accord explicite du propriétaire pour fusion.

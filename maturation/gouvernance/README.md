@@ -36,3 +36,7 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 ## Vérification automatique et essais (13 novembre 2026)
 - [Contrôles exécutables](CONTROLES-AUTOMATIQUES.md) et [inventaire initial des fichiers Git](references/inventaire-base.json).
 - [Campagne comparative des dix simulations](CAMPAGNE-COMPARATIVE.md) et [scénarios JSON](SCENARIOS-SIMULATION.json) ; résultats de comportement **non encore mesurés**.
+
+## Premier passage des scénarios (13 novembre 2026)
+- [Rapport de simulation dirigée](ESSAI-DIRIGE-2026-11-13.md) et [traces détaillées des dix réponses](RESULTATS-ESSAIS-COACH.json).
+- Il s'agit de dix réponses rédigées **avec les critères connus, au sein du même ChatGPT**. Aucun gain comparatif A/B ni validation indépendante n'est revendiqué ; le [contrôle de cohérence des traces](verifier-simulations.cjs) bloque ces affirmations prématurées.
