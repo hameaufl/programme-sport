@@ -111,3 +111,8 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Le workflow de gouvernance PR [43329967634](https://github.com/hameaufl/programme-sport/actions/runs/43329967634), le push [43329957889](https://github.com/hameaufl/programme-sport/actions/runs/43329957889) et la refonte PR [43329967757](https://github.com/hameaufl/programme-sport/actions/runs/43329967757) ont réussi sur `112de20714bb203bcb4398b37b239996aa077922`.
 - Un **dépouillement A/B vérifiable sur le plan de la forme** a été préparé via `EVALUATION-AB.json` (toutes les observations à `null`), `verifier-evaluation-ab.cjs` et tests négatifs. Le script refuse tout gain chiffré avant d'avoir des observations des dix paires ; même complet, le score nécessite validation humaine et examen des erreurs critiques.
 - **Statut A/B réel : non exécuté ; aucun gain démontré.** Aucune fusion `main`, aucune action Garmin, aucune modification de données métier.
+
+## 13 novembre 2026 — Correction d'un test A/B détectée par la CI
+- La première exécution du dépouillement A/B sur `201d1f27b52b7c449580741a4d51b0bed01c9462` a **échoué** dans les tests unitaires : un raccourci d'objet JavaScript utilisait `paires` alors que le compteur local s'appelle `pairs`, uniquement lorsque les dix paires fictives de test sont complètes.
+- La CI a correctement refusé cette livraison ; l'erreur est corrigée dans `verifier-evaluation-ab.cjs`. Le tableau public d'observations reste **intégralement vide** et aucun gain A/B n'est déclaré.
+- Aucun fichier de domaine métier, aucun adaptateur, ni aucune opération Garmin n'ont été affectés ; cette correction reste sur la PR brouillon.

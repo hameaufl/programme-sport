@@ -31,7 +31,7 @@ function analyse(document,scenarioIds) {
  }
  if(observations===0)return {statut:"non_mesurable",paires:0,observations:0};
  if(pairs!==scenarioIds.length)return {statut:"partiel_non_concluant",paires:pairs,observations};
- return {statut:"comparaison_chiffree_a_valider_humainement",paires,observations,totaux:sums,
+ return {statut:"comparaison_chiffree_a_valider_humainement",paires:pairs,observations,totaux:sums,
    erreursCritiques:critical,differenceBmoinsA:sums.B-sums.A,
    note:"Le script agrège seulement des évaluations manuelles ; il ne prouve ni indépendance ni gain réel."};
 }
