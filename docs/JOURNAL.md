@@ -164,7 +164,7 @@
 - Les sources restent individuelles et GitHub garde l'historique ; les semaines JSON et le journal paginé ne sont que des **résultats de build**, absents du dépôt.
 - Calendrier hebdomadaire inchangé. Lecture réseau à la demande par semaine, jusqu'à huit semaines en mémoire. Page santé : compteurs déjà calculés et événements paginés par 30.
 - Tests de date, identifiants, intégrité et correspondance rapports/séances ; test artificiel à 5 000 entrées. Le Coach modifie les fichiers ciblés.
-- **Déploiement** : à confirmer après réussite de GitHub Actions.
+- **Contrôle de migration et déploiement** : [run 43125039245](https://github.com/hameaufl/programme-sport/actions/runs/43125039245), `completed / success` : 18 séances, 7 semaines, 1 rapport, 2 événements et test synthétique de 5 000 séances. Migration commit `61eb40ca3910754604f20bc42c0d6b634277b398`. **Audit indépendant après commit** : les 18 objets JSON correspondent exactement aux originaux, la configuration et les commentaires sont identiques et le journal d'origine est entièrement reconstituable octet pour octet.
 
 ## 12 novembre 2026 — Finalisation : compatibilité des anciennes pages et consignes opérationnelles
 
@@ -172,13 +172,13 @@
 - Remplacement des références obsolètes à `personnel/programme.js` dans les documentations opérationnelles, sans changer les données de séances ou le contenu des rapports.
 - **Premier essai de compatibilité** : run [43125822813](https://github.com/hameaufl/programme-sport/actions/runs/43125822813), échec du build (`ReferenceError` sur l'index non initialisé). Aucun déploiement produit ; correction : itérer les clés de `model.weeks` sans dépendre de l'index encore non créé.
 - **Correction supplémentaire de déclenchement** : les évolutions du générateur `scripts/construire-site.cjs` ne déclenchaient pas le workflow (seul `scripts/verifier-site.cjs` figurait dans le filtre). Le filtre inclut désormais `scripts/**` pour valider **toute** modification de génération, de données ou de tests.
-- **Déploiement après ce commit** : à vérifier sur GitHub Actions.
+- **Compatibilité et scripts déployés** : [run 43126109156](https://github.com/hameaufl/programme-sport/actions/runs/43126109156), `completed / success` après correction du générateur et extension du déclenchement CI à `scripts/**`.
 
 ## 12 novembre 2026 — Renforcer le garde-fou contre l'écrasement des champs
 
 - **Intégrité post-migration** : en plus des identifiants stables et de l'interdiction de suppressions de fichiers, la CI compare chaque séance modifiée à sa version précédente : **propriétés supprimées ou dates modifiées interdites par défaut**.
 - Un accord utilisateur explicite, matérialisé dans le message de commit par `[suppression-champ-validée]` ou `[date-validée]`, est indispensable pour ces opérations intentionnelles. Une modification ordinaire des sensations ou structures conserve les autres champs.
-- Aucun changement de contenu sportif ni de navigation. Vérifier GitHub Actions.
+- **Validation finale** : [run 43126434526](https://github.com/hameaufl/programme-sport/actions/runs/43126434526), `completed / success` : tests, construction et GitHub Pages. Les **24 fichiers de données individuelles/configuration et journal** conservent exactement les mêmes SHA Git que juste après la migration (18 séances, 1 rapport, 2 événements, configuration et notes) ; aucune altération des données du Coach. Aucun changement de navigation. La vitesse sur appareil Android n'a pas été mesurée physiquement.
 
 ## Journal futur
 
