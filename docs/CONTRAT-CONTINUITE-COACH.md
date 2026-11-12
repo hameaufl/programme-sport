@@ -1,4 +1,11 @@
 # Contrat de continuité du Coach — mémoire métier intégrale
+## PRIORITÉ — mémoire du Coach, orientation structurée et projection séparée
+
+Le propriétaire veut consulter les **conclusions communicables du Coach**, pas l'intégralité d'un raisonnement interne ni des documents cliniques copiés dans le site. Les faits Santé restent dans Santé, les séances dans Planification, les exécutions dans Activités, les objectifs et la stratégie dans Coaching. **`domaines/coaching/donnees/objectifs.json`** est la seule source de l'objectif personnel ; **`orientation.json`** est un état structuré du cap du Coach (phase, ligne directrice, tendances conditionnelles, points de vigilance, dates et sources internes). **`CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md`** conservent décisions, nuances et arguments vérifiables. Le Coach doit réactualiser `orientation.json` lorsque de nouveaux faits ou décisions modifient sa stratégie, dans le même changement métier, en veillant à ne pas inventer de tendances ni de faits médicaux.
+
+Seul un projecteur dédié (`adaptateurs/projections/coaching.cjs`) construit à partir des ports Coaching le JSON public minimal `data/coaching/orientation.json`, soumis à `contrats/publication-v1.json` ; la politique restreinte n'en publie rien. L'add-on `addons/web/pages/coach.html` n'utilise aucune source brute et n'interprète pas des notes libres ; il se limite à afficher le contrat. Pas de raisonnement interne brut, de données médicales détaillées, d'historique de décisions ou de liens physiques métier exposés dans la projection. Toujours rappeler que le dépôt et le site standard sont publics. Cette décision remplace les instructions historiques qui plaçaient les commentaires du Coach dans l'interface Santé.
+
+
 
 ## Règle prioritaire du 12 novembre 2026 — choix autonome d'exercices Garmin
 

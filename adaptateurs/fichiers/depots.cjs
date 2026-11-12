@@ -31,6 +31,7 @@ const depots={
   profil:()=>local.texte("domaines/sante/donnees/PROFIL.md")
  },
  coaching:{objectifs:()=>local.json("domaines/coaching/donnees/objectifs.json"),
-  equipements:()=>local.json("domaines/coaching/donnees/equipements.json")}
+  equipements:()=>local.json("domaines/coaching/donnees/equipements.json"),
+  orientation:()=>local.json("domaines/coaching/donnees/orientation.json")}
 };
 module.exports=depots;

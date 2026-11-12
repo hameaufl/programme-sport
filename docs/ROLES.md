@@ -1,4 +1,11 @@
 # Attribution des deux casquettes
+## Découplage prioritaire — stratégie du Coach et projection Web
+
+- **Coach** : décide des orientations sportives, enregistre ses analyses explicites dans Coaching, met à jour `domaines/coaching/donnees/orientation.json` lors des nouveaux retours/décisions, et maintient l'alignement avec `objectifs.json`. Les intentions sont conditionnelles et sourcées, jamais une promesse de progression.
+- **Maturation** : ne définit pas les décisions sportives ; maintient uniquement modèles, ports, contrats de publication, `adaptateurs/projections/coaching.cjs`, UI `addons/web/pages/coach.html` et tests. Il ne peut pas recopier un rapport de Santé ou l'intégralité de la mémoire du Coach vers le Web.
+- **Mon suivi santé** : conserve son tableau de bord visuel sans les deux phrases supprimées. **Le cap du Coach** : nouvelle vue indépendante alimentée par une projection à champs permis. Sources métier conservées dans leurs domaines. Le site et le dépôt restent publics, la politique de publication restreinte ne publie aucune stratégie.
+
+
 
 ## Règle prioritaire du Coach — exercices officiels, animations facultatives
 

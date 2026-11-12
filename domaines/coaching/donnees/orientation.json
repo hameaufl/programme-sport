@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "miseAJour": "2026-11-12",
+  "phase": "Reprise progressive, centrée sur le confort",
+  "ligneDirectrice": "Adapter la course et le renforcement à partir des séances réellement effectuées et des sensations rapportées, plutôt que poursuivre une progression automatique.",
+  "tendances": [
+    {
+      "id": "ajustement",
+      "horizon": "Après chaque retour",
+      "intention": "Réévaluer la prochaine séance prévue",
+      "condition": "Maintenir, alléger ou reporter selon les sensations et la récupération effectivement décrites."
+    },
+    {
+      "id": "renforcement",
+      "horizon": "Prochaines séances",
+      "intention": "Poursuivre un renforcement accessible",
+      "condition": "Vérifier d’abord la tolérance des mouvements et garder une charge facultative ; choisir uniquement des exercices du catalogue Garmin compatibles avec le matériel."
+    },
+    {
+      "id": "progression",
+      "horizon": "Lorsque les retours le permettent",
+      "intention": "Envisager une progression mesurée",
+      "condition": "Aucune hausse automatique de fréquence, de durée ou de difficulté tant que les retours ne permettent pas de la justifier."
+    }
+  ],
+  "vigilances": [
+    {
+      "id": "appuis",
+      "sujet": "Confort des appuis",
+      "attention": "Observer les gênes plantaires et leur évolution à l'effort et après l'effort, sans présumer leur cause."
+    },
+    {
+      "id": "articulations",
+      "sujet": "Stabilité et mouvements",
+      "attention": "Prendre en compte les sensations signalées à la hanche et au genou ; éviter les amplitudes douloureuses ou forcées."
+    },
+    {
+      "id": "recuperation",
+      "sujet": "Récupération entre les séances",
+      "attention": "Vérifier la réponse aux enchaînements course, renforcement et kinésithérapie avant de modifier le programme."
+    }
+  ],
+  "sourcesMetier": [
+    "coaching:contexte",
+    "coaching:decisions",
+    "sante:profil",
+    "sante:rapport:course-2026-11-11"
+  ],
+  "statut": "orientation provisoire fondée sur les données et choix consignés au 12 novembre ; à réévaluer au prochain retour réel"
+}

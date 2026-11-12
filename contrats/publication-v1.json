@@ -33,5 +33,8 @@
     "evenementsPublics": true,
     "comptesRendusPublicsDansVues": true
   },
-  "note": "Le Web publie uniquement les indicateurs de suivi, les séances déjà autorisées et les métadonnées date/titre des événements Santé. Le profil médical détaillé et les descriptions d'événements restent dans les sources métier du dépôt. Aucun programme de montre, binaire ni identifiant de compte n'est exposé."
+  "note": "Le Web publie uniquement les indicateurs de suivi, les séances déjà autorisées et les métadonnées date/titre des événements Santé. Le profil médical détaillé et les descriptions d'événements restent dans les sources métier du dépôt. Aucun programme de montre, binaire ni identifiant de compte n'est exposé. Une projection séparée et minimale de l'orientation du Coach est publiée seulement selon le contrat coaching ; les fichiers de mémoire interne ne sont jamais copiés.",
+  "coaching": {
+    "orientationPublique": true
+  }
 }

@@ -197,3 +197,11 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Portée :** ne modifier aucune séance déjà écrite ou réalisée du seul fait de cette nouvelle préférence. Aucun envoi ni création Garmin n'est autorisé par cette décision : la règle de bêta imposant des dates explicitement demandées demeure. Les anciens choix de dessins PNG concernent la présentation Web et ne confèrent pas un statut officiel Garmin aux anciens mouvements.
 - **Références fabricant :** https://support.garmin.com/en-US/?faq=IPD6X8JSLBAUQOXvz7zBO6 ; documentation Venu 4 https://www8.garmin.com/manuals/webhelp/GUID-2CF5620C-E585-4E0A-9CC3-9565533EEE4D/EN-US/GUID-B7EDF898-AC46-4504-A12A-A1FFA1756878.html.
 
+## 12 novembre 2026 — Synthèse visible de la stratégie du Coach, domaines inchangés
+
+- **Demande du propriétaire :** confirmer la séparation forte entre l'acquisition/détention de l'information métier et sa représentation dans l'add-on Web ; conserver chaque fait dans Santé, Activités, Planification ou Coaching. Les futurs agents doivent lire et suivre cette règle avant toute modification.
+- **Nouvelle page :** « Le cap du Coach », accessible depuis Mon Rythme, présente l'objectif personnel canonique, une ligne directrice actuelle, des intentions à venir **conditionnelles** et des points d'attention. Ce ne sont ni des entraînements déjà décidés ni une copie des notes de raisonnement. Les informations doivent rester dans un modèle Coaching indépendant ; seule une projection à liste blanche est publiée.
+- **Responsabilité durable du Coach :** mettre à jour `domaines/coaching/donnees/orientation.json` et les justifications `DECISIONS.md` / `JOURNAL.md` quand son orientation évolue à la suite de nouveaux faits ou des objectifs exprimés, sans modifier des données médicales hors de leur domaine. Ne pas écrire à la suite d'un simple « Mets-toi à jour » en lecture seule.
+- **Choix de présentation :** supprimer de « Mon suivi santé » la phrase sous le titre (« L'essentiel de ma reprise, sans les notes de fond. ») ainsi que la phrase en bas expliquant les sources et l'absence d'avis médical ; ne pas les remettre.
+- **Confidentialité :** le site standard et les sources du dépôt sont publics ; la projection ne publie ni les sources médicales ni les notes du Coach. La politique restreinte supprime entièrement cette projection.
+

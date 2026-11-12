@@ -46,3 +46,5 @@ Ce document appartient au domaine `domaines/sante/`. Les sources sont sous `doma
 - Retour de séance → mise à jour du programme et du journal **dans l'échange courant**, si l'agent dispose des outils GitHub. Ne pas attendre une demande répétée de publication.
 - Ne pas déduire une blessure des seules séances de kiné.
 - Toute modification de l'IHM, du schéma des pièces jointes ou des contrôles visuels est **interdite au Coach** : intervention Maturation seulement.
+
+**Décision d'interface du 12 novembre 2026 :** la page `sante.html` ne porte aucune stratégie de coaching. Les deux phrases sous le titre et en pied de page ont été retirées à la demande du propriétaire ; elles ne doivent pas être réintroduites. Une page distincte « Le cap du Coach » lit une projection autorisée et minimale du domaine Coaching, sans déplacer ni supprimer les données cliniques.

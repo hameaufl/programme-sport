@@ -1,4 +1,11 @@
 # Reprise entre LLM — Mon Rythme
+## PRIORITÉ de reprise — garder la stratégie métier du Coach et l'exposer proprement
+
+Le dépôt organise strictement les **sources métier** (Santé, Activités, Planification, Coaching) indépendamment du site. La mémoire réflexive exploitable du Coach appartient à `domaines/coaching/donnees/CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md` et non à une page Web. `objectifs.json` contient l'objectif personnel du propriétaire ; le Coach doit s'y aligner. Après une décision d'adaptation ou un nouveau retour influençant sa stratégie, le Coach doit **réviser `orientation.json` en même temps** que la justification dans ses notes, en distinguant intentions sous condition, points de vigilance et décision effectivement appliquée.
+
+La page `addons/web/pages/coach.html` (« Le cap du Coach ») ne lit **que** la projection `data/coaching/orientation.json`, produite par `adaptateurs/projections/coaching.cjs` sous contrat d'autorisation explicite. Aucun document brut, diagnostic, log, chemin de dossier ou raisonnement complet ne doit y être copié. Dans la publication restreinte, cette projection est absente. Les deux phrases supprimées de `sante.html` ne doivent pas réapparaître. Les textes détaillés Santé restent dans leurs fichiers canoniques. « Mets-toi à jour » seul est une lecture, pas une autorisation de modifier quoi que ce soit.
+
+
 
 ## PRIORITÉ de reprise — personnalisation avec exercices Garmin officiels
 

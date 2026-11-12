@@ -16,6 +16,8 @@ for(const w of index.semaines){
 }
 assert.equal(count,require("../../adaptateurs/fichiers/depots.cjs").planification.seances().length,"Programmes conservés en mode de publication restreinte");
 assert.ok(!fs.existsSync(path.join(site,"data/sante/profil.md")),"Profil Santé publié malgré l'interdiction");
+assert.ok(!fs.existsSync(path.join(site,"data/coaching/orientation.json")),"Orientation du Coach publiée malgré la politique restreinte");
+assert.equal(policy.coaching.orientationPublique,false,"La politique restreinte doit exclure la projection du Coach");
 assert.ok(!fs.existsSync(path.join(site,"fichiers/garmin")),"Un ancien stockage de fichiers externes a été publié");
 assert.ok(!fs.existsSync(path.join(site,"personnel")),"Ancien dossier personnel publié");
 const journal=read("data/sante/journal/index.json");

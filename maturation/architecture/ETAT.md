@@ -23,3 +23,9 @@
 - **Portée :** ne modifier aucune séance déjà écrite ou réalisée du seul fait de cette nouvelle préférence. Aucun envoi ni création Garmin n'est autorisé par cette décision : la règle de bêta imposant des dates explicitement demandées demeure. Les anciens choix de dessins PNG concernent la présentation Web et ne confèrent pas un statut officiel Garmin aux anciens mouvements.
 - **Références fabricant :** https://support.garmin.com/en-US/?faq=IPD6X8JSLBAUQOXvz7zBO6 ; documentation Venu 4 https://www8.garmin.com/manuals/webhelp/GUID-2CF5620C-E585-4E0A-9CC3-9565533EEE4D/EN-US/GUID-B7EDF898-AC46-4504-A12A-A1FFA1756878.html.
 
+## 12 novembre 2026 — Séparation stricte de l'orientation Coach et de la vue Web
+
+- `domaines/coaching/donnees/orientation.json` : état métier des intentions conditionnelles du Coach, aligné sur `objectifs.json`. Les documents de continuité enregistrent ses raisons et références ; le profil et les observations restent dans Santé.
+- `adaptateurs/projections/coaching.cjs` : projection explicitement limitée par les contrats de publication. Standard : un résumé public des objectifs, tendances et points de vigilance ; politique restreinte : aucun résumé. Le Web ne consulte pas les fichiers internes.
+- `addons/web/pages/coach.html` : nouvelle interface autonome « Le cap du Coach » accessible depuis l'accueil. `addons/web/pages/sante.html` ne présente plus la phrase de présentation sous le titre ni la note de bas de page demandées à supprimer.
+- Garder une mémoire métier transmissible : mise à jour de la stratégie résumée dans le même changement que les choix du Coach ; aucune séance sportive créée ou modifiée automatiquement par la page.

@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-suivi-essentiel-v21">
+  <meta name="mon-rythme-version" content="2026-11-12-cap-coach-v22">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -84,6 +84,7 @@
     .done-control{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;color:#286b3b;font-size:13px;font-weight:700}
     .done-mark{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#2d7b46;color:white;font-size:13px;line-height:1;font-weight:850}
     .session.completed,.week-item.completed{background:#f0f7ef}
+    .insights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
     .health-preview{background:#edf5eb;border:1px solid #cce1d0;border-radius:20px;padding:20px 25px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px}
     .health-preview h2{font-size:21px;margin:0}
     .health-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#234735;color:#fff;text-decoration:none;font-size:14px;font-weight:750;padding:13px 20px;border-radius:13px;min-height:46px;white-space:nowrap}
@@ -92,6 +93,7 @@
     .day .status.complete{color:#2a7042}
     .day .status.complete:before{background:#2a7042}
     @media(max-width:930px){.days{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media(max-width:760px){.insights-grid{grid-template-columns:1fr}}
     @media(max-width:650px){.health-preview{padding:17px 15px;gap:10px}.health-preview h2{font-size:18px}.health-cta{padding:11px 12px;font-size:12px;min-height:43px}.week-item{flex-wrap:wrap;gap:8px 10px}.week-item .done-control{margin-left:auto}.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
     @media(max-width:350px){.health-preview{grid-template-columns:1fr}.health-cta{width:100%}}
     @media print{body{background:white}.shell{width:100%;padding:0 14px}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.week-nav{display:none}.days{grid-template-columns:repeat(7,minmax(0,1fr))}.day{min-height:100px;padding:8px!important}.day[aria-pressed="true"]{border-width:1px}}
@@ -130,10 +132,14 @@
       <div class="section-top"><h2 id="headingAll">Séances de la semaine</h2></div>
       <div id="allContent" aria-live="polite"></div>
     </section>
-    <section aria-labelledby="headingHealth">
+    <section class="insights-grid" aria-label="Suivi personnel et stratégie">
       <div class="health-preview">
         <h2 id="headingHealth">Mon suivi santé</h2>
         <a class="health-cta" href="./sante.html">Voir le suivi <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="health-preview">
+        <h2>Le cap du Coach</h2>
+        <a class="health-cta" href="./coach.html">Voir sa stratégie <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>

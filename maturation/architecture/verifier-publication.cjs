@@ -12,6 +12,7 @@ function files(dir){
 const listing=files(site);
 assert.ok(listing.some(p=>p.endsWith("index.html")),"Accueil absent");
 assert.ok(listing.some(p=>p.endsWith("sante.html")),"Page de suivi absente");
+assert.ok(listing.some(p=>p.endsWith("coach.html")),"Page de stratégie Coach absente");
 assert.ok(!listing.some(p=>/data[\\/]sante[\\/]profil\.md$/.test(p)),"Profil Santé narratif toujours publié sur le site");
 
 for(const file of listing){
@@ -41,4 +42,15 @@ for(const page of journalIndex.pages){
   assert.ok(typeof event.title==="string"&&event.title.trim(),"Événement sans intitulé");
  }
 }
+
+const coachFile=path.join(site,"data/coaching/orientation.json");
+assert.ok(fs.existsSync(coachFile),"Projection publique de la stratégie Coach manquante");
+const coachData=JSON.parse(fs.readFileSync(coachFile,"utf8"));
+assert.deepEqual(Object.keys(coachData).sort(),["schemaVersion","miseAJour","objectifPersonnel","phase","ligneDirectrice","tendances","vigilances"].sort(),"Fuite de données métier dans la projection Coach");
+for(const t of coachData.tendances)assert.deepEqual(Object.keys(t).sort(),["horizon","intention","condition"].sort(),"Champ non autorisé dans les tendances du Coach");
+for(const v of coachData.vigilances)assert.deepEqual(Object.keys(v).sort(),["sujet","attention"].sort(),"Champ non autorisé dans les vigilances du Coach");
+assert.ok(!/sourcesMetier|statut|CONTEXTE-COACH|DECISIONS\.md|JOURNAL\.md|domaines\/sante\/donnees/.test(JSON.stringify(coachData)),
+ "Notes internes ou références aux sources publiées sur le site");
+assert.ok(!listing.some(f=>/^domaines\/coaching|^data\/coaching\/.*\.md$/.test(path.relative(site,f).replace(/\\/g,"/"))),"Fichiers métier du Coach copiés dans le site");
+
 console.log("Publication sans fichiers d'entraînement validée : "+listing.length+" ressources.");
