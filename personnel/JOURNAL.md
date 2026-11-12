@@ -98,3 +98,10 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - **Demande de précision :** uniquement retirer le mot « cuisses » dans les libellés du déroulé de `kine-2026-11-04`.
 - **Application :** « Presse · 40 et 50 kg » et « Marche latérale avec bande élastique » ; bilan initial, deux étirements, ordre et charges inchangés.
 - **Aucune autre modification sportive** : sensations, structures sollicitées et calendrier inchangés.
+
+## 12 novembre 2026 — Profil mécanique et démarche médicale éventuelle
+
+- L'utilisateur fournit un bilan de référence : pieds extra-larges (113 mm, petit 43), difficultés de chaussage avec semelles orthopédiques, douleurs du quatrième métatarsien gauche, hallux valgus droit, périostites récurrentes depuis environ un an, douleur du genou gauche en hyperextension et hyperlaxité généralisée avec sentiment de renforcement musculaire insuffisant.
+- **Hypothèses non confirmées :** compression métatarsienne entre os voisins dans des chaussures trop étroites ; éventuelle contribution de la largeur des chaussures aux douleurs plantaires près du talon.
+- **Précision du médecin selon l'utilisateur :** échographie du pied évoquée pour la douleur au quatrième métatarsien ; radiographie ou autre modalité à déterminer. Éventuelle nouvelle consultation d'ici quelques semaines si la douleur persiste malgré les semelles ; aucun examen ni rendez-vous acté.
+- **Action Coach :** renseignement de `personnel/sante/PROFIL.md` uniquement pour le contenu santé et journalisation de la décision ; aucune modification de séance ni génération de FIT Workout, aucun diagnostic inventé.
