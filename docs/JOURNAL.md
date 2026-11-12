@@ -213,7 +213,7 @@
 - **Exemples contrôlés** : « Course », « Course, Kiné », « Course, Kiné, Mobilité » et « Course, Course » ; « — » pour un jour sans séance.
 - **Périmètre** : `index.html`, tests `scripts/verifier-site.cjs` et documentation de la présentation, sans modification des données du Coach ni de la navigation.
 - **Versions** : `2026-11-12-libelles-jour-virgule-v16` dans les deux pages et le témoin.
-- **Publication** : à vérifier après l'exécution GitHub Actions.
+- **Publication réussie** : [run 43135765836](https://github.com/hameaufl/programme-sport/actions/runs/43135765836), `completed / success` : validation, génération et déploiement GitHub Pages confirmés. Commit IHM : `9cb1be29666b4125f33272e7c49699f96dac9a3d`.
 
 ## Journal futur
 
