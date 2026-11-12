@@ -68,7 +68,7 @@ assert.ok(!html.includes('class="insights-grid"')&&!html.includes('class="health
 assert.ok(html.indexOf('<div id="allContent"')<html.indexOf('<nav class="site-navigation"'),
  "La navigation commune doit suivre les sections du programme sans cartes intermédiaires");
 for(const [nom,page] of pagesVisuelles){
- assert.ok(!/<h2[^>]*>[^<]*<\\/h2>\\s*<p\\s+class="(?:section-note|hint|help)"/.test(page),
+ assert.ok(!page.includes('class="section-note"')&&!page.includes('class="hint"')&&!page.includes('class="help"'),
   "Sous-titre redondant sous un titre de section : "+nom);
 }
 assert.ok(!sante.includes('class="section-note"'),"Les quatre descriptions redondantes du suivi Santé doivent disparaître");
