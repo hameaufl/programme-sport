@@ -4,17 +4,29 @@
     {
       "id": "pont-sol",
       "titre": "Pont de bassin au sol",
-      "consignes": "Depuis le dos, pieds au sol, soulever le bassin en contrôlant l'alignement"
+      "consignes": "Depuis le dos, pieds au sol, soulever le bassin en contrôlant l'alignement",
+      "garmin": {
+        "category": "HIP_RAISE",
+        "exerciseName": "HIP_RAISE"
+      }
     },
     {
       "id": "ouverture-genou",
       "titre": "Ouverture du genou sur le côté",
-      "consignes": "Allongé sur le côté, pieds joints, ouvrir puis refermer le genou supérieur"
+      "consignes": "Allongé sur le côté, pieds joints, ouvrir puis refermer le genou supérieur",
+      "garmin": {
+        "category": "HIP_STABILITY",
+        "exerciseName": "CLAM_SHELLS"
+      }
     },
     {
       "id": "dead-bug",
       "titre": "Bras et jambe opposés sur le dos",
-      "consignes": "Sur le dos, éloigner un bras et la jambe opposée sans creuser le dos"
+      "consignes": "Sur le dos, éloigner un bras et la jambe opposée sans creuser le dos",
+      "garmin": {
+        "category": "HIP_STABILITY",
+        "exerciseName": "DEAD_BUG"
+      }
     },
     {
       "id": "bird-dog",

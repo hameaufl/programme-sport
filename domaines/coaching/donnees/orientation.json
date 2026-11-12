@@ -12,9 +12,9 @@
     },
     {
       "id": "renforcement",
-      "horizon": "Prochaines séances",
-      "intention": "Poursuivre un renforcement accessible",
-      "condition": "Vérifier d’abord la tolérance des mouvements et garder une charge facultative ; choisir uniquement des exercices du catalogue Garmin compatibles avec le matériel."
+      "horizon": "Après validation de la première séance",
+      "intention": "Repartir sur une seule séance Renfo adaptée",
+      "condition": "Brouillon du 14 novembre (30–33 min) à valider ; aucune autre séance Renfo active et aucune création Garmin tant que contenu et date ne sont pas explicitement validés."
     },
     {
       "id": "progression",
@@ -47,5 +47,5 @@
     "sante:rapport:course-2026-11-11",
     "sante:evenement:2026-11-12-echange-chaussures-running"
   ],
-  "statut": "orientation provisoire au 12 novembre : hanche droite indolore pendant les essais sur tapis, douleur plantaire possiblement atténuée pendant ce test mais globalement toujours présente ; conditions et évolution à confirmer avant course."
+  "statut": "12 novembre 2026 : 14 anciens Renfos archivés et retirés du calendrier actif, une seule nouvelle proposition le 14 novembre à valider ; prudence sur les douleurs plantaires inchangée."
 }

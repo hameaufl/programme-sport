@@ -281,6 +281,9 @@ assert.equal(resumeJour([{type:"renfo",titre:"Renfo"}]),"Renfo", "Renfo visible 
 assert.ok(html.includes("var label=resumeJour(dailySessions);"), "Le calendrier doit utiliser les libellés composés");
 assert.ok(!html.includes("Course + kiné"), "L'ancien séparateur + doit disparaître");
 const renfo=data.sessions.filter(x=>x.type==="renfo");
+assert.equal(renfo.length,1,"Un seul nouveau Renfo est actif, les 14 anciens sont archivés");
+assert.equal(renfo[0].id,"renfo-2026-11-14");
+assert.equal(data.execution.has(renfo[0].id),false,"Le nouveau Renfo est une proposition non réalisée");
 for(const s of renfo){
   assert.ok(/^renfo-\d{4}-\d{2}-\d{2}$/.test(s.id),"Identifiant renfo incorrect");
   assert.equal(s.titre,"Renfo");
@@ -305,21 +308,22 @@ assert.ok(buildScript.includes('path.join(dest,"assets/renfo/png")'),"PNG absent
 // L'adaptateur MCP ne réalise aucun appel distant sans sélection du Coach.
 const selection=mcp.preparer(renfo.map(s=>s.id));
 assert.equal(selection.statut,"PREPARATION_LOCALE_SEULEMENT");
-assert.equal(selection.modeles.length,2,"Les 14 Renfos réutilisent exactement deux prescriptions");
+assert.equal(selection.modeles.length,1,"Une seule prescription Renfo est active");
 assert.equal(selection.modeles.reduce((n,m)=>n+m.dates.length,0),renfo.length);
 const idsDistants=Object.fromEntries(selection.modeles.map((m,i)=>[m.empreinte,i+1]));
 const calendrier=mcp.preparerCalendrier(selection,idsDistants);
 assert.equal(calendrier.statut,"A_CONFIRMATION_EXPLICITE");
 assert.equal(calendrier.schedules.length,renfo.length);
 assert.equal(mcp.preparerCalendrier(selection,idsDistants,calendrier.schedules).schedules.length,0,"Pas de doublon de calendrier");
-const memeJour=mcp.preparer(["course-2026-11-16","renfo-2026-11-16"]);
+const memeJour=mcp.preparer(["course-2026-11-16",renfo[0].id]);
 assert.equal(memeJour.modeles.length,2);
 const idsJour=Object.fromEntries(memeJour.modeles.map((m,i)=>[m.empreinte,i+101]));
 const propositionsJour=mcp.preparerCalendrier(memeJour,idsJour);
 assert.equal(propositionsJour.schedules.length,2,"Une course et un Renfo peuvent être programmés le même jour");
 const calendrierPartiel=mcp.preparerCalendrier(memeJour,idsJour,[propositionsJour.schedules[0]]);
 assert.equal(calendrierPartiel.schedules.length,1,"Ne pas recréer le modèle déjà présent");
-assert.equal(calendrierPartiel.alertes.length,1,"Signaler une autre séance le même jour avant écriture");
+const autreSeance=mcp.preparerCalendrier(memeJour,idsJour,[{calendar_date:renfo[0].date,workout_id:999}]);
+assert.equal(autreSeance.alertes.length,1,"Signaler une autre séance déjà présente le jour du Renfo");
 assert.throws(()=>mcp.preparerCalendrier(selection,{}),/non vérifié/,"Pas d'identifiant distant inventé");
 assert.throws(()=>mcp.preparer([renfo[0].id,renfo[0].id]),/doublons/);
 const renfoRedondant={...data.plans.get(renfo[0].id),blocs:[...data.plans.get(renfo[0].id).blocs,{nature:"retour_au_calme"}]};

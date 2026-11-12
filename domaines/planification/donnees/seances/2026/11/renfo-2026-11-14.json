@@ -3,30 +3,30 @@
   "date": "2026-11-14",
   "titre": "Renfo",
   "type": "renfo",
-  "objectif": "Renfo facultatif : adapter aux douleurs et à la récupération.",
-  "details": "",
+  "objectif": "Première séance reconstruite pour retrouver du confort ; proposition à valider avant création Garmin MCP.",
+  "details": "Brouillon sportif à valider. Facultatif : reporter si douleur plantaire droite à l'appui, douleur de hanche ou récupération insuffisante. Aucun entraînement Garmin créé.",
   "dureeEstimeeMinutes": {
-    "min": 29,
-    "max": 35
+    "min": 30,
+    "max": 33
   },
   "blocs": [
     {
       "nature": "mise_en_route",
       "dureeSecondes": 240,
-      "consignes": "de mouvements doux d’épaules et de hanches"
+      "consignes": "de mouvements doux des épaules et des hanches, sans appui douloureux"
     },
     {
       "nature": "exercice",
-      "mouvementId": "bird-dog",
+      "mouvementId": "pont-sol",
       "series": 3,
-      "repetitions": 8,
-      "parCote": true,
-      "consignes": "5 s par mouvement",
+      "repetitions": 10,
+      "parCote": false,
+      "consignes": "tenir 8–10 s en haut, détente 5 s entre montées",
       "separateurRepos": ", repos ",
-      "reposEntreSeriesSecondes": 45,
+      "reposEntreSeriesSecondes": 60,
       "estimationMinutes": {
-        "min": 6,
-        "max": 7
+        "min": 10,
+        "max": 11
       }
     },
     {
@@ -35,33 +35,32 @@
       "series": 3,
       "repetitions": 10,
       "parCote": true,
-      "consignes": "3 s pour ouvrir et 3 s pour fermer",
+      "consignes": "3 s pour ouvrir et 3 s pour fermer ; bassin immobile",
       "separateurRepos": ", repos ",
       "reposEntreSeriesSecondes": 45,
       "estimationMinutes": {
-        "min": 7,
-        "max": 8
+        "min": 8,
+        "max": 9
       }
     },
     {
       "nature": "exercice",
-      "mouvementId": "pont-ballon",
+      "mouvementId": "dead-bug",
       "series": 3,
-      "repetitions": 10,
-      "parCote": false,
-      "consignes": "tenir 8–10 s, repos 5 s entre montées",
-      "separateurRepos": " et ",
-      "reposEntreSeriesSecondes": 60,
+      "repetitions": 8,
+      "parCote": true,
+      "consignes": "4 s par mouvement ; dos neutre sans cambrure",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 45,
       "estimationMinutes": {
-        "min": 10,
-        "max": 12
-      },
-      "complement": "facultatif si instable"
+        "min": 5,
+        "max": 6
+      }
     },
     {
       "nature": "etirements",
       "dureeSecondes": 180,
-      "consignes": "fessiers, hanches et épaules ; 20 s par côté, sans forcer"
+      "consignes": "hanches, fessiers et épaules ; étirements doux sans forcer"
     }
   ]
 }

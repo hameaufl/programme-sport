@@ -107,3 +107,7 @@
 - **Ressenti déclaré :** pendant les 20–30 min d'essai sur tapis, le propriétaire a **plutôt cru ressentir une disparition de la douleur sous le pied droit**, sans pouvoir l'affirmer ; il précise qu'**elle reste globalement présente**. Il s'interroge sur l'éventualité d'un reliquat de la douleur de la sortie du 11 novembre, sans certitude. Aucun score chiffré de douleur durant l'essai n'est apporté.
 - **Interprétation :** conserver simultanément la **possible diminution perçue pendant le test** et la **persistance globale de la douleur**. Ne pas transformer cela en disparition confirmée ni attribuer le changement au seul modèle de chaussure ou au tapis.
 - **Application :** demander un retour actualisé avant toute reprise et garder la décision de ne pas courir si la douleur importante à l'appui persiste ; ne modifier ni les activités du 11 novembre ni le calendrier Garmin.
+
+## 12 novembre 2026 — Programme Renfo reconstruit sur validation
+
+La fréquence antérieure de trois Renfos hebdomadaires est **suspendue provisoirement** par la dernière demande du propriétaire. Seul un nouveau brouillon pour le 14 novembre reste dans la planification, jusqu'à validation de la séance et de sa date ; anciens plans conservés dans l'archive `domaines/planification/archives/2026-11-12/`. La création via Garmin MCP ne doit intervenir qu'après validation explicite ; aucun calendrier Garmin modifié. Douleur plantaire encore présente : renforcement facultatif et report si symptômes significatifs à l'appui.

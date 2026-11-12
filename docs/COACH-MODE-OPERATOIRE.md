@@ -1,4 +1,8 @@
 # Coach — procédure active et vérifiable
+## PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)
+
+Sur demande explicite du propriétaire, les **14 anciens Renfos ont été retirés de la planification active** et archivés intégralement dans `domaines/planification/archives/2026-11-12/`. Il ne reste qu'un brouillon `renfo-2026-11-14` pour le samedi 14 novembre : **ne pas recréer les autres dates automatiquement**, malgré l'ancienne préférence pour trois Renfos par semaine. L'utilisateur doit valider la séance et sa date avant toute création / programmation / suppression via Garmin MCP. Les autres activités, courses et kinés et toutes les données de santé sont inchangées. Le brouillon doit utiliser les exercices Garmin vérifiés et son contenu doit être intégralement convertible, échauffement et étirements compris.
+
 
 **Version opérationnelle : 12 novembre 2026.** Document d'entrée à lire en priorité sous casquette **Coach**. Les documents volumineux `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et `docs/CONTRAT-CONTINUITE-COACH.md` contiennent aussi des règles et décisions historiques conservées **sans effacement**. Les passages renvoyant à l'ancien `personnel/`, aux FIT locaux ou à une interdiction absolue du rendu Web sont historiques lorsqu'ils contredisent les règles prioritaires V2.
 
