@@ -171,7 +171,8 @@
 - Pour éviter une rupture lors du chargement d'un ancien HTML PWA/Android conservé en cache, le build prépare un `programme.js` et un `SUIVI.md` **agrégés uniquement dans `_site/`**. Aucun fichier source monolithique supplémentaire dans Git ; les nouvelles pages utilisent toujours les vues JSON hebdomadaires.
 - Remplacement des références obsolètes à `personnel/programme.js` dans les documentations opérationnelles, sans changer les données de séances ou le contenu des rapports.
 - **Premier essai de compatibilité** : run [43125822813](https://github.com/hameaufl/programme-sport/actions/runs/43125822813), échec du build (`ReferenceError` sur l'index non initialisé). Aucun déploiement produit ; correction : itérer les clés de `model.weeks` sans dépendre de l'index encore non créé.
-- **Deuxième essai** : à vérifier sur GitHub Actions.
+- **Correction supplémentaire de déclenchement** : les évolutions du générateur `scripts/construire-site.cjs` ne déclenchaient pas le workflow (seul `scripts/verifier-site.cjs` figurait dans le filtre). Le filtre inclut désormais `scripts/**` pour valider **toute** modification de génération, de données ou de tests.
+- **Déploiement après ce commit** : à vérifier sur GitHub Actions.
 
 ## Journal futur
 

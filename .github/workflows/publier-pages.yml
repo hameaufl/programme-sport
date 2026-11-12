@@ -12,7 +12,7 @@ on:
       - icon-512.png
       - manifest.webmanifest
       - publication.txt
-      - scripts/verifier-site.cjs
+      - "scripts/**"
       - .github/workflows/publier-pages.yml
   workflow_dispatch:
 
