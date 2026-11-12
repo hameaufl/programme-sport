@@ -1,4 +1,10 @@
 # Reprise entre LLM — Mon Rythme
+
+## Entrée opérationnelle Coach — 12 novembre 2026
+
+**Lire en premier [COACH-MODE-OPERATOIRE.md](COACH-MODE-OPERATOIRE.md)** pour exécuter une mise à jour métier. Ce document centralise la checklist en architecture V2 : à **chaque activité `fait:true`**, le Coach renseigne `structuresSollicitees` de façon autonome dans **Activités**, ainsi que les gestes confirmés et le suivi Santé ; il vérifie tests, projection et **publication effective**. Les passages historiques ci-dessous sont conservés sans perte et ne remplacent pas ce processus lorsqu'ils évoquent l'ancien `personnel/` ou un caractère facultatif désormais obsolète du champ. Garmin MCP n'est jamais écrit sans dates explicitement demandées.
+
+
 ## PRIORITÉ — menu unique dans l'en-tête, à droite du logo
 
 Sur **les quatre pages**, la navigation commune est désormais dans l'**en-tête**, à droite de « mon rythme. » : **Mon programme → Le cap du Coach → Mon suivi santé → Mon équipement**. Boutons petits, arrondis et visuellement légers, groupés côté droit (non centrés) ; sur mobile, ils passent à la ligne tout en restant alignés à droite. **Aucun menu en pied de page ni bouton de retour « ← Mon programme »** : le lien du menu remplit ce rôle. Le logo des pages secondaires continue de pointer vers le programme ; la date demeure affichée sous le logo de la page programme. `addons/web/public/style-commun.css` est la source visuelle partagée ; `scripts/verifier-site.cjs` prévient les régressions. Cette règle remplace les anciennes dispositions sur la navigation basse.

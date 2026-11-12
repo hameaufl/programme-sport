@@ -1,4 +1,12 @@
 # AGENTS.md — règles obligatoires des agents LLM
+
+## DÉMARRAGE OBLIGATOIRE — rôle Coach et livraison complète (12 novembre 2026)
+
+**Procédure opérationnelle unique à lire avant toute intervention du Coach : [docs/COACH-MODE-OPERATOIRE.md](docs/COACH-MODE-OPERATOIRE.md).** Elle donne la checklist active de saisie et de publication, notamment l'obligation de renseigner `structuresSollicitees` pour **toute activité confirmée**, sans attendre de demande supplémentaire. Le modèle Activités et les tests de site bloquent maintenant les omissions.
+
+**Ordre de lecture et de priorité :** consigne explicite du propriétaire → règles actives en tête d'`AGENTS.md` + protocole opérationnel → contrat de continuité et sources métiers V2 → sections historiques conservées ci-dessous. En cas de contradiction avec un ancien chemin `personnel/`, une ancienne méthode FIT ou un ancien champ facultatif, suivre l'architecture actuelle et le protocole. **Aucun contenu métier historique n'est supprimé.** Coach = faits/choix sportifs ; Maturation = schémas, tests et infrastructure. Chaque intervention métier doit inclure la vérification de la projection et de la publication Web, pas seulement le commit.
+
+
 ## PRIORITÉ — navigation générale en haut, à droite du logo (12 novembre 2026)
 
 - **Dernière décision du propriétaire, prioritaire sur les descriptions historiques :** déplacer sur **les quatre pages** l'unique menu de navigation de fin de page dans l'en-tête, directement à droite du logo « mon rythme. ». Afficher, dans cet ordre strict : **Mon programme, Le cap du Coach, Mon suivi santé, Mon équipement**.

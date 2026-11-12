@@ -1,4 +1,10 @@
 # Attribution des deux casquettes
+
+## Entrée opérationnelle Coach — 12 novembre 2026
+
+**Lire en premier [COACH-MODE-OPERATOIRE.md](COACH-MODE-OPERATOIRE.md)** pour exécuter une mise à jour métier. Ce document centralise la checklist en architecture V2 : à **chaque activité `fait:true`**, le Coach renseigne `structuresSollicitees` de façon autonome dans **Activités**, ainsi que les gestes confirmés et le suivi Santé ; il vérifie tests, projection et **publication effective**. Les passages historiques ci-dessous sont conservés sans perte et ne remplacent pas ce processus lorsqu'ils évoquent l'ancien `personnel/` ou un caractère facultatif désormais obsolète du champ. Garmin MCP n'est jamais écrit sans dates explicitement demandées.
+
+
 ## PRIORITÉ ABSOLUE — interface métier du Coach, interface générale de Maturation (12 novembre 2026)
 
 **Autorisation permanente du propriétaire, sans demande répétée :** dans chaque échange où le Coach traite ou modifie des données métier, il contrôle d'office la fidélité des composants de Mon Rythme qui présentent ces données. Il met à jour les seules sources `domaines/*/donnees/` pertinentes et, **si le rendu métier existant est insuffisant**, corrige dans le même travail **uniquement les fragments de `addons/web/pages/` qui affichent ces données** (HTML local, code de rendu et style strictement local). Si la projection fonctionne déjà, **aucune retouche de code Web** : le build publie la nouvelle donnée.

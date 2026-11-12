@@ -21,6 +21,12 @@ Les domaines métier de `domaines/*/donnees/` sont la **seule source de vérité
 5. **Pousser et contrôler GitHub Actions** « Publier Mon Rythme » pour le SHA publié. Vérifier **build = success**, **deploy = success** et le contrôle final de version. Le workflow compare la propriété `buildVersion` servie sur `data/index.json` au préfixe du SHA de la publication. Les pages sont disponibles à <https://hameaufl.github.io/programme-sport/>.
 6. **Informer clairement :** « données enregistrées et site publié » seulement si la publication est confirmée ; sinon « données enregistrées, publication en échec / en cours / non confirmée », avec cause et suite à donner. Ne jamais confondre statut du dépôt et affichage public.
 
+## Contrôle systématique des structures sollicitées
+
+À **chaque activité sportive réellement confirmée**, le Coach doit remplir dans `domaines/activites/donnees/seances/AAAA/MM/<id>.json` le tableau non vide `structuresSollicitees`, même pour un test sur tapis, une séance de kiné ou une activité hors cycle. Le champ vient de l'analyse des mouvements déclarés, pas d'une donnée clinique mesurée. Pour les gestes inconnus, une mention explicite « À préciser par le Coach » vaut mieux qu'une liste anatomique inventée. Le détail « Mon programme » doit afficher **Séance → Structures sollicitées → Sensations** avec les champs projetés.
+
+Les validations `domaines/activites/modele.cjs` et `scripts/verifier-site.cjs` rendent cette omission bloquante **avant** déploiement et comparent la projection aux activités canoniques. Toute écriture métier inclut aussi le contrôle de publication et de version servie. Checklist complète : `docs/COACH-MODE-OPERATOIRE.md`.
+
 ## Erreur évitée le 12 novembre 2026
 
 La ligne de titre d'un événement Santé doit commencer **exactement** par `### AAAA-MM-JJ — Titre`. Un titre tel que `### 2026-11-12 au soir — …` est invalide : le parseur attend le tiret immédiatement après la date et le build s'arrête avant la génération du site. Les nuances horaires se notent **dans le contenu de l'événement** et ne modifient pas le format canonique.

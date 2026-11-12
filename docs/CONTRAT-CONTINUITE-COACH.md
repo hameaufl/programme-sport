@@ -1,4 +1,10 @@
 # Contrat de continuité du Coach — mémoire métier intégrale
+
+## Entrée opérationnelle Coach — 12 novembre 2026
+
+**Lire en premier [COACH-MODE-OPERATOIRE.md](COACH-MODE-OPERATOIRE.md)** pour exécuter une mise à jour métier. Ce document centralise la checklist en architecture V2 : à **chaque activité `fait:true`**, le Coach renseigne `structuresSollicitees` de façon autonome dans **Activités**, ainsi que les gestes confirmés et le suivi Santé ; il vérifie tests, projection et **publication effective**. Les passages historiques ci-dessous sont conservés sans perte et ne remplacent pas ce processus lorsqu'ils évoquent l'ancien `personnel/` ou un caractère facultatif désormais obsolète du champ. Garmin MCP n'est jamais écrit sans dates explicitement demandées.
+
+
 ## PRIORITÉ ABSOLUE — entretien automatique et borné du rendu Web métier (12 novembre 2026)
 
 **Autorisation permanente du propriétaire :** la responsabilité du Coach comprend **à la fois** le raisonnement et l'enregistrement des données métier, **et** la vérification systématique de leur restitution dans Mon Rythme. À chaque nouveau retour, fait confirmé, décision ou changement de programme traité, le Coach examine les vues alimentées par ces données, **sans devoir recevoir une seconde instruction sur le site**. L'ordre normal est : domaine canonique V2 → projection et contrat de publication existants → composant de rendu métier. Lorsque l'affichage est déjà à jour via le build, **ne changer aucun fichier Web**.

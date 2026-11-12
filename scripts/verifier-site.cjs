@@ -6,6 +6,28 @@ const {ROOT,collect,exposed,summary,monday}=require("./donnees.cjs");
 const read=p=>fs.readFileSync(require("node:path").join(ROOT,p),"utf8");
 const html=read("addons/web/pages/index.html"),sante=read("addons/web/pages/sante.html"),coachPage=read("addons/web/pages/coach.html"),equipPage=read("addons/web/pages/equipements.html");
 const data=collect(),index=summary(data);
+
+// Obligation structurante : aucun compte rendu d'activité confirmée sans analyse anatomique du Coach.
+const verifierActivite=require("../domaines/activites/modele.cjs").verifier;
+const fictive={seanceId:"verification-structures-2026-11-12",fait:true};
+assert.throws(()=>verifierActivite(fictive),/Structures sollicitées obligatoires/,
+ "Une activité réalisée ne peut omettre les structures sollicitées");
+assert.throws(()=>verifierActivite({...fictive,structuresSollicitees:[]}),/Structures sollicitées obligatoires/,
+ "Le champ ne peut être une liste vide");
+assert.throws(()=>verifierActivite({...fictive,structuresSollicitees:[" "]}),/Structures sollicitées obligatoires/,
+ "Les libellés anatomiques ne peuvent être blancs");
+for(const [id,realisation] of data.execution){
+ assert.ok(Array.isArray(realisation.structuresSollicitees)&&realisation.structuresSollicitees.length,
+   "Activité confirmée sans structures : "+id);
+ const seance=data.sessions.find(s=>s.id===id);
+ assert.ok(seance&&seance.fait===true,"Réalisation absente de la vue : "+id);
+ assert.deepEqual(seance.structuresSollicitees,realisation.structuresSollicitees,
+   "Structures affichées différentes de la source Activités : "+id);
+ const vue=exposed(monday(seance.date),data).find(s=>s.id===id);
+ assert.ok(vue,"Séance manquante de la projection publique : "+id);
+ assert.deepEqual(vue.structuresSollicitees,realisation.structuresSollicitees,
+   "Structures non projetées dans Mon Rythme : "+id);
+}
 assert.equal(data.sessions.length,new Set(data.sessions.map(s=>s.id)).size,"Identifiants uniques");
 assert.ok(data.sessions.length>0,"Programme vide");
 assert.ok(data.sessions.every(x=>monday(x.date)),"Dates et semaines cohérentes");
