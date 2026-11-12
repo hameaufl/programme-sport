@@ -1,5 +1,12 @@
 # Attribution des deux casquettes
 
+## Règle prioritaire — exercices officiels + équipement confirmé
+
+- **Coach** : choisit seul les exercices de nouveaux Renfos à partir de références réelles, vérifiées dans le catalogue Garmin, sans jamais inventer un exercice ni employer une fausse équivalence. Préfère les exercices documentés ; consulte avant chaque choix `domaines/coaching/donnees/equipements.json`, contrôle l'absence d'accessoires non disponibles, fixe les répétitions et le volume selon la tolérance. Préserve la séparation des faits sportifs.
+- **Maturation** : garantit le modèle et les validateurs du matériel, les contraintes d'intégration MCP et les tests ; ne choisit pas les exercices sportifs. Aucun entraînement personnalisé n'est garanti animé sur la Venu 4 : les animations sont réservées aux séances prédéfinies Garmin compatibles.
+- **Arbitrage** : si l'animation sur la montre est impérative, rechercher un entraînement Garmin prédéfini animé et signaler les limites d'adaptation des séries/répétitions avant de le substituer à la planification personnelle. Aucune création MCP hors demande de dates explicites.
+
+
 ## Garmin MCP — responsabilités actuelles, phase bêta
 
 - Coach : uniquement pour les dates demandées, comparer les blocs du plan V2 à la bibliothèque et au calendrier Garmin ; réutiliser les modèles, appeler le MCP pour créer/programmer exactement les dates choisies ; contrôler les résultats. Aucun lot anticipé et aucun passage automatique à « réalisé ». Nommage encore à définir.

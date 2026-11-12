@@ -5,3 +5,5 @@
 - Le Coach exécute, depuis sa conversation et **uniquement après demande explicite**, les outils MCP de lecture, de création et de programmation. Ni la CI ni l'add-on Web ne se connectent à un compte Garmin.
 - Réutiliser un modèle existant pour plusieurs dates ; le nommage reste un choix du propriétaire et le premier envoi/synchronisation sur la Venu 4 est à confirmer.
 - Référence opérationnelle : [MCP.md](MCP.md). Les fichiers supprimés ne sont accessibles que dans l'historique Git, pas sur le site.
+
+**Choix des nouveaux exercices Renfo :** se reporter à `MCP.md` : seuls les mouvements officiels Garmin vérifiés et réalisables avec l'inventaire `domaines/coaching/donnees/equipements.json` sont admissibles. La classification ne suffit pas à afficher une animation sur la Venu 4 : seules certaines séances Garmin prédéfinies en proposent. Aucun référentiel officiel fictif ne doit être maintenu dans l'adaptateur.
