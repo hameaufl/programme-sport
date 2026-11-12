@@ -1,0 +1,66 @@
+{
+  "id": "renfo-2026-11-26",
+  "date": "2026-11-26",
+  "titre": "Renfo",
+  "type": "renfo",
+  "objectif": "Renfo facultatif : adapter aux douleurs et à la récupération.",
+  "details": "",
+  "dureeEstimeeMinutes": {
+    "min": 29,
+    "max": 35
+  },
+  "blocs": [
+    {
+      "nature": "mise_en_route",
+      "dureeSecondes": 240,
+      "consignes": "de mouvements doux d’épaules et de hanches"
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "pont-sol",
+      "series": 3,
+      "repetitions": 10,
+      "parCote": false,
+      "consignes": "tenir 8–10 s, repos 5 s entre montées",
+      "separateurRepos": " et ",
+      "reposEntreSeriesSecondes": 60,
+      "estimationMinutes": {
+        "min": 10,
+        "max": 12
+      }
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "ouverture-genou",
+      "series": 3,
+      "repetitions": 10,
+      "parCote": true,
+      "consignes": "3 s pour ouvrir et 3 s pour fermer",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 45,
+      "estimationMinutes": {
+        "min": 7,
+        "max": 8
+      }
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "dead-bug",
+      "series": 3,
+      "repetitions": 8,
+      "parCote": true,
+      "consignes": "4 s par mouvement",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 45,
+      "estimationMinutes": {
+        "min": 5,
+        "max": 6
+      }
+    },
+    {
+      "nature": "etirements",
+      "dureeSecondes": 180,
+      "consignes": "fessiers, avant des hanches et arrière des cuisses ; 20 s par côté, sans forcer"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "course-2026-12-02",
+  "date": "2026-12-02",
+  "titre": "Course à pied · 2M+5C",
+  "type": "course",
+  "dureeEstimeeMinutes": {
+    "min": 26,
+    "max": 26
+  },
+  "blocs": [
+    {
+      "nature": "fractions",
+      "repetitions": 3,
+      "marcheSecondes": 120,
+      "courseSecondes": 300
+    },
+    {
+      "nature": "marche_finale",
+      "dureeSecondes": 120
+    },
+    {
+      "nature": "allure",
+      "niveau": "facile"
+    },
+    {
+      "nature": "etirements",
+      "dureeSecondes": 180,
+      "consignes": "mollets, fessiers et arrière des cuisses ; 20 s par côté, sans douleur ni hyperextension"
+    }
+  ]
+}
