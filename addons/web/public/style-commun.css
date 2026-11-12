@@ -68,7 +68,8 @@ header.site-header {
 }
 .site-brand-wrap {
   display:flex;
-  align-items:center;
+  /* Aligner les lignes de base : la petite date ne flotte plus au-dessus du nom. */
+  align-items:baseline;
   flex-wrap:nowrap;
   gap:clamp(10px,1.4vw,18px);
   min-width:0;
@@ -82,6 +83,8 @@ header.site-header {
 }
 .site-brand-wrap #todayLabel {
   display:inline-block;
+  position:relative;
+  top:2px;
   margin:0;
   padding:0 0 0 13px;
   border-left:1px solid #ccdacf;
@@ -165,7 +168,7 @@ header.site-header {
   .hero .hero-mark {width:52px;height:52px;display:grid}
   .hero .hero-mark svg {width:29px;height:29px}
 }
-@media(max-width:360px) {
+@media(max-width:420px) {
   .site-brand-wrap {gap:8px;flex-wrap:wrap}
   .site-brand-wrap #todayLabel {font-size:10px}
   .site-navigation {gap:7px}

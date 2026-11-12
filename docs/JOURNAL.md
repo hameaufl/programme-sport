@@ -339,3 +339,9 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Nouvelle capture de Mon programme : navigation compacte trop regroupée à droite et date séparée sous le nom du site. Demande de cohérence entre les quatre barres et d'un responsive mobile abouti.
 - Présentation uniforme : conteneur global élargi et commun, logo/nom sur la même ligne que la date du programme, menu à quatre colonnes égales utilisant l'espace horizontal restant. À largeur réduite, menu sur une ligne dédiée ; en téléphone, grille deux colonnes avec cibles tactiles de 44–45 px. La marque des pages secondaires conserve son lien vers le programme.
 - Tests des classes d'en-tête communes, du placement de la date, de la version et des points de rupture CSS ; aucune donnée métier ni projection modifiée.
+
+## 12 novembre 2026 — Alignement de la date et duplication de l'en-tête
+
+- Nouvelle demande du propriétaire : abaisser très légèrement la date par rapport au nom de la marque, puis dupliquer tout l'en-tête de « Mon programme » sur Santé, Cap du Coach et Équipement.
+- Création d'un **bloc d'en-tête identique sur les quatre pages** : marque cliquable, date locale française à droite, menu à quatre destinations inchangé (seul l'état actif diffère). Le CSS aligne les lignes de base et applique un décalage optique de 2 px pour la date, avec repli sur les écrans étroits.
+- La date utilise un **seul script `addons/web/public/en-tete.js`** sur toutes les pages, et n'est plus mise à jour séparément dans la logique du calendrier ; le build publie ce script. Tests ajoutés pour la structure du header, le format français de date et les ressources de publication. Aucun fait sportif, donnée Santé, planification ni contrat métier modifié.
