@@ -8,3 +8,5 @@ L'application Mon Rythme présente le calendrier, les séances, le suivi et les 
 - Construction : `node scripts/construire-site.cjs`. `MON_RYTHME_WEB=0` désactive l'add-on et `MON_RYTHME_POLITIQUE=prive` choisit une projection restreinte.
 
 Les connexions et synchronisations externes restent indépendantes de l'application. Aucun lien de téléchargement de programme, référence de service tiers ni binaire n'est exposé.
+
+**Suivi santé (version simplifiée)** : la page `sante.html` ne restitue plus le profil médical textuel. Elle montre les compteurs, la progression hebdomadaire et les jalons datés. Les sources intégrales restent dans `domaines/sante/donnees/`, le raisonnement du Coach dans `domaines/coaching/donnees/`. Le contrat `contrats/publication-v1.json` et le build ne publient plus le profil brut ni les paragraphes des événements dans l'artefact web.

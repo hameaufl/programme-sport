@@ -1,6 +1,8 @@
 Mon Rythme — témoin de publication
-Version attendue : 2026-11-12-seances-sans-pieces-v20
+Version attendue : 2026-11-12-suivi-essentiel-v21
 Programme : coche verte et Fait uniquement si séance confirmée ; sensations statiques si renseignées
 Interface : aucun stockage local ni coche interactive
 Dépôt : https://github.com/hameaufl/programme-sport
 Note : la présence de ce fichier sur GitHub ne prouve pas sa disponibilité sur GitHub Pages.
+
+Suivi Santé : tableau de bord visuel ; profil complet conservé dans Santé mais non publié comme fichier Web ; événements projetés sous forme de date et titre uniquement.

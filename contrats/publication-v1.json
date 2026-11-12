@@ -29,9 +29,9 @@
     "buildVersion"
   ],
   "sante": {
-    "profilPublic": true,
+    "profilPublic": false,
     "evenementsPublics": true,
     "comptesRendusPublicsDansVues": true
   },
-  "note": "Le Web n'expose aucun programme de montre, fichier binaire, identifiant de compte ni intégration externe. Les champs métiers autorisés restent publiés sur un site public."
+  "note": "Le Web publie uniquement les indicateurs de suivi, les séances déjà autorisées et les métadonnées date/titre des événements Santé. Le profil médical détaillé et les descriptions d'événements restent dans les sources métier du dépôt. Aucun programme de montre, binaire ni identifiant de compte n'est exposé."
 }

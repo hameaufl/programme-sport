@@ -31,13 +31,13 @@ Ce document appartient au domaine `domaines/sante/`. Les sources sont sous `doma
 - `sante/rapports/` conserve l'historique détaillé, lié par identifiant sans recopier la séance entière.
 - Les pièces Garmin réelles sont conservées dans `personnel/pieces-jointes/` ; procédures dans [docs/GARMIN.md](../GARMIN.md).
 
-## Affichage sur la page Mon suivi santé
+## Affichage sur la page Mon suivi santé — décision visuelle du 12 novembre 2026
 
-- La page `sante.html` lit ce répertoire **en lecture seule** lors du chargement ; la source unique reste dans GitHub, sans copie de contenu.
-- Les rubriques `##` de `PROFIL.md` alimentent les cartes « Mes repères de santé ». Les rubriques non renseignées restent vides sur la page.
-- Les événements effectivement datés dans `evenements/` sont agrégés par le build en pages de 30 ; les comptes rendus de séance restent liés via leur `id` dans `rapports/`.
-- Le Coach renseigne **seulement** les informations transmises ; Maturation ne modifie pas les observations du profil ni le journal.
-- Les fichiers `personnel/seances/` restent la référence pour `fait`, `sensations`, structures et compteurs pré-calculés.
+- Le profil clinique et fonctionnel complet est conservé **sans perte** dans `donnees/PROFIL.md`. Il n'est plus projeté vers `_site/data/sante/profil.md` et la page ne le charge plus pour le restituer en longues cartes de texte. Les données demeurent accessibles au Coach dans son domaine, sans devoir figurer dans l'interface.
+- Les rapports complets de séances restent sous `donnees/rapports/`, les ressentis dans `donnees/ressentis/seances/` et les événements datés dans `donnees/evenements/`. L'architecture, les champs métier et l'historique ne sont pas supprimés.
+- `addons/web/pages/sante.html` est maintenant une **synthèse visuelle** : compteurs factuels de séances réalisées/programmées et de retours, distribution par semaine des réalisations, dernières séances confirmées et titres/dates des événements récents. Aucun diagnostic, hypothèse du Coach ni dossier clinique complet n'est affiché.
+- Le build limite les événements publiés à `{date,title}` ; leurs paragraphes `lines` ne sont plus copiés dans les fichiers du site. Les informations restent conservées intégralement dans le dépôt source (toujours public, y compris ses anciens commits). En mode privé la publication santé demeure désactivée.
+- Une donnée non confirmée ou indisponible n'est pas remplacée par un diagnostic, une performance ou un zéro supposé ; le Web reste une vue en lecture seule sans stockage local.
 
 ## Règles de saisie (Coach)
 
