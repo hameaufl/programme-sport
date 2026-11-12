@@ -310,3 +310,9 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Le propriétaire confirme une responsabilité de bout en bout lors des interventions métier : enregistrement canonique V2, contrôle systématique des éléments Web qui affichent les données concernées, correction locale du rendu uniquement si nécessaire, sans seconde demande.
 - La présentation générale (menus, navigation, structure globale, identité visuelle, styles partagés, nouveaux composants transverses), les ports, projections, contrats, scripts et CI restent exclusivement à Maturation. Aucun changement Web quand la projection existante est suffisante.
 - Consignes harmonisées dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/CONTRAT-CONTINUITE-COACH.md`, `README.md` et `docs/DECISIONS.md`. La lecture seule de « Mets-toi à jour » et les autorisations datées Garmin restent inchangées. Aucune page ni donnée métier modifiée par ce commit documentaire.
+
+## 12 novembre 2026 — Unification des en-têtes et de la navigation
+
+- Demande du propriétaire : encarts titres de même hauteur et même forme que « Mon suivi santé », pictogrammes cohérents sur les quatre pages, retrait des sous-titres dans « Mon équipement ».
+- Réalisation Maturation : feuille commune pour les en-têtes, les pictogrammes et les liens ; quatre destinations identiques en bas de chaque page ; retour « Mon programme » conservé en haut à droite des trois pages secondaires. L'ancien menu partiel Équipement et les deux encarts de renvoi du Coach sont remplacés par la navigation uniforme.
+- Version de publication synchronisée ; tests statiques du contrat visuel, du responsive et de la présence de la feuille dans l'artefact. Aucune source métier, projection ni opération Garmin modifiée.

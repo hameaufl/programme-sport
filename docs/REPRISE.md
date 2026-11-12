@@ -1,4 +1,8 @@
 # Reprise entre LLM — Mon Rythme
+## PRIORITÉ — présentation unifiée des pages
+
+Les quatre vues `index.html` (programme), `sante.html`, `coach.html` et `equipements.html` ont un **encart de titre grand format homogène**, inspiré du suivi Santé, avec pictogramme SVG propre à chaque vue et sans sous-titre à l'intérieur. La mise en forme est commune dans `addons/web/public/style-commun.css`, copié au build. Les quatre pages possèdent **la même barre de navigation en bas** avec page courante identifiée. Les trois pages secondaires gardent `← Mon programme` en haut à droite ; le programme n'a pas ce bouton. Maturation entretient cette interface générale ; le Coach ne modifie que les composants de rendu des données métier expressément autorisés. Vérifier liens, responsive et version harmonisée lors de chaque intervention.
+
 ## PRIORITÉ ABSOLUE — réflexe automatique de synchronisation métier/Web, périmètre limité du Coach
 
 À **chaque échange métier** (nouveau retour, décision, séance ou objectif ajusté, correction d'affichage métier), le Coach lit le dernier `main`, traite et sauvegarde les faits dans les domaines V2 appropriés, puis **vérifie sans attendre une demande supplémentaire** que les éléments Web qui affichent ces données les restituent fidèlement. Si le rendu généré à partir des projections autorisées est déjà correct, **ne pas éditer le Web** : la publication après push est automatique. Si le rendu des données est réellement incorrect/incomplet, le Coach est autorisé à corriger dans le même échange **seulement le fragment de rendu des données métier concernées** dans `addons/web/pages/` (HTML/JS et styles locaux strictement limités à ce fragment).

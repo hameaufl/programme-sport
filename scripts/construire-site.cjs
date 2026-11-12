@@ -30,7 +30,7 @@ function build(){
   fs.writeFileSync(file,JSON.stringify(value,null,2)+"\n","utf8");
  }
  for(const name of ["index.html","sante.html","coach.html","equipements.html"])copy("addons/web/pages/"+name,name);
- for(const name of ["favicon.svg","icon-192.png","icon-512.png","manifest.webmanifest"])copy("addons/web/public/"+name,name);
+ for(const name of ["favicon.svg","icon-192.png","icon-512.png","manifest.webmanifest","style-commun.css"])copy("addons/web/public/"+name,name);
  for(const name of ["publication.txt",".nojekyll"])copy(name,name);
  const index=summary(model);
  index.buildVersion=process.env.GITHUB_SHA?process.env.GITHUB_SHA.slice(0,12):"local";

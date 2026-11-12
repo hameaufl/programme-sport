@@ -1,4 +1,10 @@
 # Décisions techniques — Maturation
+## 12 novembre 2026 — Bandeaux et navigation générale harmonisés
+
+- À la demande du propriétaire, les quatre pages partagent le grand encart de titre de référence Santé : hauteur desktop/mobile identique, typographie, fond/ornement et pictogramme SVG cohérents. « Mon équipement » perd les textes de sous-titre ; les autres bandeaux sont épurés pour préserver l'uniformité.
+- Même navigation à quatre destinations en bas de **chaque** page (programme, santé, cap du Coach, équipement), avec la page courante identifiée. Les trois pages secondaires gardent « ← Mon programme » en haut à droite ; aucun retour redondant en haut de la page programme.
+- Feuille partagée `addons/web/public/style-commun.css`, copiée lors du build, tests ajoutés dans `scripts/verifier-site.cjs`. Aucune modification des sources métier, projections, plans, observations ou règles Garmin.
+
 ## 12 novembre 2026 — Autonomie permanente du Coach, limitée à l'affichage des données métier
 
 - **Décision explicite du propriétaire** : le Coach doit, à chaque travail métier, enregistrer les faits/décisions dans les domaines V2 **et** s'assurer sans relance que les composants Web concernés présentent correctement ces données.

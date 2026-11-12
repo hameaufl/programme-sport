@@ -27,6 +27,41 @@ for(const page of [html,sante,coachPage,equipPage]){
 }
 const version=html.match(/<meta name="mon-rythme-version" content="([^"]+)"/)?.[1];
 assert.ok(version&&[sante,coachPage,equipPage].every(page=>page.includes('name="mon-rythme-version" content="'+version+'"'))&&read("publication.txt").includes(version),"Versions des quatre vues incohérentes");
+
+// Navigation et encarts communs : présentation cohérente, hors des données métier.
+const pagesVisuelles=[["index",html],["sante",sante],["coach",coachPage],["equipements",equipPage]];
+const styleCommun=read("addons/web/public/style-commun.css");
+assert.ok(styleCommun.includes("min-height:232px")&&styleCommun.includes("min-height:210px")&&
+ styleCommun.includes("grid-template-columns:repeat(4,minmax(0,1fr))"),"Styles communs des en-têtes et de la navigation absents");
+const destinations=[
+ ["index","Mon programme","./"],
+ ["sante","Mon suivi santé","./sante.html"],
+ ["coach","Le cap du Coach","./coach.html"],
+ ["equipements","Mon équipement","./equipements.html"]
+];
+for(const [page,source] of pagesVisuelles){
+ assert.ok(source.includes('href="./style-commun.css?v='+version+'">'),"Feuille partagée absente : "+page);
+ assert.ok(source.includes('<div class="hero">')&&source.includes('<div class="hero-copy"><h1>')&&
+   source.includes('class="hero-mark" aria-hidden="true"')&&source.includes('<svg viewBox="0 0 50 50">'),
+   "Grand encart ou pictogramme absent : "+page);
+ assert.ok(!source.includes('<p class="eyebrow">')&&!source.includes('<p class="subtitle">'),
+   "Sous-titre réintroduit dans un encart : "+page);
+ const menus=source.match(/<nav class="site-navigation"[\s\S]*?<\/nav>/g)||[];
+ assert.equal(menus.length,1,"Une navigation commune en bas est obligatoire : "+page);
+ const menu=menus[0];
+ assert.equal((menu.match(/class="site-nav-link/g)||[]).length,4,"Quatre destinations attendues : "+page);
+ assert.equal((menu.match(/aria-current="page"/g)||[]).length,1,"Une seule page courante : "+page);
+ for(const [id,label,href] of destinations){
+   if(id===page)assert.ok(menu.includes('aria-current="page">'+label+'</span>'),"Page active incorrecte : "+page);
+   else assert.ok(menu.includes('href="'+href+'">'+label+'</a>'),"Lien de bas de page incorrect : "+page+" / "+label);
+ }
+ if(page!=="index")assert.ok(source.includes('<a class="back" href="./">← Mon programme</a>'),
+   "Retour haut droit vers le programme manquant : "+page);
+ else assert.ok(!source.includes('class="back"'),"Pas de retour vers lui-même en haut du programme");
+}
+assert.ok(read("scripts/construire-site.cjs").includes('"style-commun.css"'),
+ "La feuille de style doit être copiée dans l'artefact de publication");
+
 assert.ok(![html,sante,coachPage,equipPage].some(p=>p.includes("personnel/programme.js")),"Les pages doivent utiliser les vues générées");
 assert.ok(html.includes("data/semaines/")&&html.includes('id="previous"')&&html.includes('id="following"')&&html.includes('id="reset"'),"Calendrier hebdomadaire brisé");
 assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"')&&html.includes('"Structures sollicitées"')&&html.includes('"Sensations"'),"Trois sections des séances manquantes");

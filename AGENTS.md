@@ -1,4 +1,10 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ — bandeaux de titres et navigation communs aux quatre pages (12 novembre 2026)
+
+- Les quatre pages `addons/web/pages/{index,sante,coach,equipements}.html` utilisent une présentation homogène de l'encart de titre : grande hauteur de référence Santé, typographie et ornements harmonisés, pictogramme SVG décoratif propre à la rubrique. Aucun sous-titre ni surtitre dans le bandeau équipement ; les quatre bandeaux ne contiennent que le titre et le pictogramme.
+- La feuille partagée `addons/web/public/style-commun.css` détermine ces bandeaux, le retour `← Mon programme` en haut à droite des trois pages secondaires et la navigation commune vers les **quatre pages en bas de chaque page**, avec la page courante signalée. La page programme n'affiche pas de bouton haut droit vers elle-même.
+- Maturation maintient cette interface générale, son comportement responsive, l'accessibilité et la politique `noindex`. Le Coach conserve uniquement sa dérogation locale pour le rendu des données métier. Copier la feuille partagée dans l'artefact Pages ; les tests de `scripts/verifier-site.cjs` vérifient ces invariants.
+
 ## PRIORITÉ ABSOLUE — autonomie du Coach sur les éléments Web qui affichent des données métier (12 novembre 2026)
 
 **Autorisation permanente expresse du propriétaire :** lors de toute intervention métier du Coach (nouveau retour, fait confirmé, décision, adaptation de séance, changement d'objectif ou correction d'un affichage métier), celui-ci **met à jour les sources canoniques concernées et contrôle systématiquement, dans le même travail, que Mon Rythme présente fidèlement ces données**, sans attendre une seconde demande portant sur le site. Cette habilitation ciblée prévaut sur les anciennes consignes réservant tout HTML/CSS/JS à Maturation ou interdisant tout changement Web sans demande.
