@@ -31,4 +31,25 @@ function verifierMaterielRequis(inventaire,requis){
  }
  return true;
 }
-module.exports={verifierObjectifs,verifierEquipements,verifierMaterielRequis};
+
+function verifierOrientation(data){
+ if(!data||data.schemaVersion!==1||!/^\d{4}-\d{2}-\d{2}$/.test(data.miseAJour||""))
+  throw Error("Orientation du Coach invalide");
+ function texte(value,max=700){return typeof value==="string"&&value.trim().length>0&&value.length<=max;}
+ if(!texte(data.phase,150)||!texte(data.ligneDirectrice))throw Error("Cap du Coach invalide");
+ function elements(tableau,champs){
+  if(!Array.isArray(tableau)||tableau.length>8)throw Error("Liste de stratégie du Coach invalide");
+  const ids=new Set();
+  for(const item of tableau){
+   if(!item||typeof item!=="object"||!texte(item.id,80)||!/^[a-z0-9-]+$/.test(item.id)||ids.has(item.id)||
+      !champs.every(c=>texte(item[c])))throw Error("Élément de stratégie du Coach invalide");
+   ids.add(item.id);
+  }
+ }
+ elements(data.tendances,["horizon","intention","condition"]);
+ elements(data.vigilances,["sujet","attention"]);
+ if(!Array.isArray(data.sourcesMetier)||!data.sourcesMetier.every(x=>texte(x,300)))throw Error("Traçabilité de stratégie invalide");
+ if(!texte(data.statut,350))throw Error("Statut de stratégie invalide");
+ return data;
+}
+module.exports={verifierObjectifs,verifierEquipements,verifierMaterielRequis,verifierOrientation};

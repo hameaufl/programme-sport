@@ -23,5 +23,8 @@
     "evenementsPublics": false,
     "comptesRendusPublicsDansVues": false
   },
-  "note": "Projection réduite sans information Santé ni historique détaillé. Aucun fichier d'entraînement externe n'est publié. La confidentialité réelle requiert la gestion des anciennes URL et de l'historique Git."
+  "note": "Projection réduite sans information Santé ni historique détaillé. Aucun fichier d'entraînement externe n'est publié. La confidentialité réelle requiert la gestion des anciennes URL et de l'historique Git. Le résumé métier de Coaching est également désactivé dans cette projection restreinte.",
+  "coaching": {
+    "orientationPublique": false
+  }
 }
