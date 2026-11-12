@@ -186,7 +186,7 @@
     // La liste publique n’affiche que le nom des étapes de renforcement.
     return texte.split(" · ")[0];
   }
-  // Le nom exact du modèle Garmin apparaît dans le même titre que « Programme prévu ».
+  // Le nom du programme prévu est intégré au même titre, sans ligne supplémentaire.
   function titreProgramme(s) {
     if(isCompleted(s))return "Séance";
     var nom=typeof s.nomEntrainementMontre==="string"?s.nomEntrainementMontre.trim():"";
