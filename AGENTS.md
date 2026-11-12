@@ -1,5 +1,13 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Renforcement : banque d'images PNG obligatoire pour le Coach
+
+- Pour **chaque nouvelle séance de type Renfo**, y compris tout exercice déjà pratiqué ou connu de l'utilisateur, associer une aide visuelle PNG à **chaque mouvement** indiqué dans `etapes`. Il n'y a **jamais d'exception au motif que l'exercice est familier**.
+- **Banque canonique organisée :** `assets/renfo/banque.json` référence les PNG originaux sous `assets/renfo/png/<slug>.png`. Avant d'ajouter un mouvement, consulter la banque, réutiliser le schéma existant s'il décrit bien le même geste, et éviter les doublons de fichiers.
+- **Exercice absent :** le Coach crée un **PNG statique explicite** montrant une silhouette, la posture et des flèches de mouvement, ajoute le PNG à la banque et actualise `banque.json`, puis inscrit un lien `aidesExercices: [{ "exercice": "<libellé exact de etapes>", "png": "assets/renfo/png/<slug>.png" }]` dans **chaque séance concernée**. Vérifier la validité de chaque PNG, son association à l'exercice, la publication et l'ouverture dans l'interface. Le Coach crée les **contenus des aides**, Maturation maintient le composant de présentation.
+- **Interface Maturation :** petit bouton `?` en ligne (pas de retour gênant), ouvrant une fenêtre `dialog` avec PNG agrandi et fermeture `×`, également fermable par Échap ou clic sur le fond. **Ni GIF ni nouvelle fenêtre externe** pour ces aides. Les cinq PNG déjà approuvés par le propriétaire ne doivent pas être redessinés.
+- **Dose Renfo demandée au 12 novembre 2026 :** trois créneaux hebdomadaires, environ 30–36 minutes chacun plutôt que 10–12 ; l'ajustement réel dépend de la récupération et des symptômes. Équipement à domicile : tapis et ballon d'environ 80 cm, pas d'élastique. Les mouvements restent modulables, l'hyperlaxité et les douleurs à l'appui priment sur une durée cible.
+
 ## Présentation du calendrier — libellés de plusieurs activités
 
 - Dans **chaque case du calendrier hebdomadaire**, lister les activités du jour **dans l'ordre**, avec **une virgule suivie d'un espace** entre chaque élément (ex. **« Course, Kiné »**), **sans signe « + »**.

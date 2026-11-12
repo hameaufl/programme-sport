@@ -81,13 +81,19 @@ for(const s of renfo){
   assert.ok(s.etapes.length>=2&&Array.isArray(s.aidesExercices),"Exercices ou animations manquants");
   for(const exercise of s.etapes){
     const match=s.aidesExercices.find(a=>a.exercice===exercise);
-    assert.ok(match&&/^assets\/renfo\/[a-z0-9-]+\.gif$/.test(match.gif),"Lien GIF manquant : "+exercise);
-    const file=require("node:path").join(ROOT,match.gif);
+    assert.ok(match&&/^assets\/renfo\/png\/[a-z0-9-]+\.png$/.test(match.png),"Lien PNG manquant : "+exercise);
+    const file=require("node:path").join(ROOT,match.png);
     const bytes=fs.readFileSync(file);
-    assert.equal(bytes.toString("ascii",0,6),"GIF89a","Animation invalide : "+match.gif);
+    assert.equal(bytes.subarray(0,8).toString("hex"),"89504e470d0a1a0a","Image PNG invalide : "+match.png);
   }
 }
-assert.ok(html.includes('var aid=aids.find')&&html.includes('help.href="./"+aid.gif'),"Aide GIF cliquable manquante");
+assert.ok(html.includes('var aid=aids.find')&&html.includes('showExerciseHelp(aid.png,item)')&&html.includes('id="exerciseDialog"'),"Fenêtre d'aide PNG cliquable absente");
 const buildScript=read("scripts/construire-site.cjs");
-assert.ok(buildScript.includes('path.join(dest,"assets/renfo")'),"GIFs absents de l'artefact");
+assert.ok(buildScript.includes('path.join(dest,"assets/renfo/png")'),"PNG absents de l'artefact");
+assert.equal(renfo.length,12,"Trois renfos par semaine pendant quatre semaines attendus");
+for(const s of renfo)assert.equal(s.duree,"30–36 min","Durée Renfo non triplée");
+const banque=JSON.parse(read("assets/renfo/banque.json"));
+assert.equal(banque.exercices.length,5,"Banque PNG incomplète");
+const known=new Set(banque.exercices.map(e=>e.png));
+for(const s of renfo)for(const help of s.aidesExercices)assert.ok(known.has(help.png),"Aide non référencée dans la banque : "+help.png);
 console.log("Validation OK :",data.sessions.length,"séances,",data.reports.size,"rapports,",data.events.length,"événements ; 5000 séances fictives regroupées sans perte.");

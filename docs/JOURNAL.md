@@ -225,3 +225,10 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Corriger le libellé quotidien des séances de course **sans champ `type`** : afficher « Course à pied » à partir de l'identifiant ou du titre existants, sans modifier les données personnelles. Préserver « Kiné », ajouter « Renfo » et conserver les activités multiples séparées par une virgule.
 - Cinq GIFs schématiques légers générés à partir des mêmes gestes que les animations pédagogiques présentées au propriétaire (pont de bassin au sol, ouverture de genou, mouvement opposé sur le dos, à quatre pattes, pont avec ballon). Les sources originales présentées en conversation ne sont pas déposées telles quelles ; variantes schématiques optimisées pour une publication légère.
 - Étendre le build pour copier `assets/renfo/` et la CI pour contrôler les liens, les fichiers GIF et les intitulés du calendrier. Ne pas changer la navigation entre les semaines, la page santé, l'accès Garmin ni les statuts sportifs.
+
+## 12 novembre 2026 — PNG originaux et dialogue d'aide Renfo
+
+- Demande utilisateur : réutiliser à l'identique les cinq schémas PNG approuvés ; les GIF ne s'affichent pas (carré gris) et sont retirés des liens et de l'artefact Pages. Aucun redessin des PNG.
+- `index.html` : bouton d'aide `?` réduit à 16 px, placé sur la ligne de l'exercice avec espace insécable, ouvrant un `<dialog>` responsive illustré par le PNG, fermeture `×`, Échap ou fond ; pas de navigation externe.
+- `assets/renfo/banque.json` : cinq gestes et leurs PNG sources ; `scripts/construire-site.cjs` publie uniquement la banque d'images PNG, pas les GIF historiques. `scripts/verifier-site.cjs` contrôle chaque liaison Renfo/PNG, la signature PNG, les 12 séances et la fenêtre.
+- La navigation hebdomadaire, les intitulés Course à pied/Kiné, les liens Garmin et le suivi santé ne sont pas modifiés, en dehors du marqueur de version synchronisé dans les deux pages et le témoin.

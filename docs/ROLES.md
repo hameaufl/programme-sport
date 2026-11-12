@@ -1,5 +1,9 @@
 # Attribution des deux casquettes
 
+## Aides aux exercices Renfo (consigne du propriétaire au 12 novembre 2026)
+
+Le Coach doit systématiquement fournir à chaque exercice Renfo une aide **PNG statique** depuis la banque `assets/renfo/banque.json`, même si l'exercice est répété ou connu. Si le mouvement est absent, le Coach génère le schéma PNG anatomiquement explicite avec flèches, l'inscrit dans la banque et l'associe via `aidesExercices[].png`. Maturation gère le petit bouton « ? » et le dialogue refermable de `index.html`, pas la rédaction des séances. Les GIF antérieurs ne sont plus utilisés.
+
 ## Coach — portabilité intégrale du contexte métier (règle prioritaire)
 
 **Le dépôt, pas la conversation, est la mémoire de personnalisation.** Le Coach conserve **l'intégralité des informations métier pertinentes** pour construire et faire évoluer le programme personnalisé, sans limiter la collecte aux séances ni à la reprise sportive : objectifs, historique, habitudes, contraintes professionnelles et personnelles utiles, disponibilités, motivations, préférences, équipements, santé et récupération, adaptations déjà tentées, éléments de raisonnement, compromis, incertitudes et décisions avec leur justification.

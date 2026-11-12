@@ -128,3 +128,11 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - Intégration après validation par l'utilisateur : quatre sessions `Renfo` hebdomadaires prévues, non faites (17 et 24 novembre, 1er et 8 décembre), cinq GIFs simplifiés d'aide aux gestes et liens dans les détails de séance. Pas de modification des séances course ou kiné existantes.
 - Correction d'interface demandée : les cases des jours du calendrier doivent afficher « Course à pied », pas « Séance », pour les courses plus anciennes dépourvues de champ `type` ; préserver le séparateur virgule et la capitalisation.
 - Garder la portée Coach limitée aux faits dans `personnel/` ; la mise en page et le build relèvent de Maturation, demandés directement par l'utilisateur dans le même échange.
+
+## 12 novembre 2026 — Trois renfos plus longs, PNG statiques et consigne permanente
+
+- L'utilisateur juge le Renfo initial beaucoup trop court et demande environ **×3 de durée** et **3 séances de renfo par semaine**, réparties, avec adaptation après ses retours.
+- Relecture des séances existantes et programmation sur 4 semaines : conserver 4 séances Renfo existantes et ajouter 8 séances, soit 12 au total, mardi/jeudi/samedi, chacune 30–36 min prévues, mode facultatif selon symptômes et récupération.
+- Exemples de volumes de kiné communiqués (ponts 3 × 10 avec effort de 20 s et repos 5 s, marche latérale élastique presque 10 min) : consigner dans `personnel/CONTEXTE-COACH.md` sans les attribuer à une séance précise ni en faire une prescription automatique à domicile.
+- Remplacement effectif des aides GIF par les **PNG originaux que l'utilisateur a validés** ; banque unique documentée, question mark plus petit, image agrandie dans une fenêtre intégrée fermable. Règle permanente enregistrée dans `AGENTS.md` et `docs/ROLES.md`.
+- Aucun changement apporté aux séances course, kiné ou Garmin. Publication et contrôles du site obligatoires.

@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-21",
+  "titre": "Renfo",
+  "type": "renfo",
+  "id": "renfo-2026-11-21",
+  "duree": "30–36 min",
+  "fait": false,
+  "sensations": "",
+  "etapes": [
+    "Pont de bassin au sol · 3 fois 10 montées (tenir 8–10 s en haut)",
+    "Ouverture du genou sur le côté · 3 fois 10 de chaque côté",
+    "Bras et jambe opposés sur le dos · 3 fois 8 de chaque côté"
+  ],
+  "objectif": "Renfo progressif facultatif. Objectif d'environ une demi-heure sans impact, à réduire en cas de douleur au pied, à la hanche ou au genou, de fatigue ou de mauvaise récupération.",
+  "details": "Échauffement doux 4 min (mobiliser épaules et hanches, sans forcer). Pour chaque mouvement : faire les répétitions lentement, puis recommencer 3 fois au total. Rester environ 5 s au retour entre les montées de bassin ; environ 45 s de pause entre mouvements et 90 s entre les trois tours. Terminer par 4 min de récupération douce. Jamais d'hyperextension du genou. Si douleur croissante, arrêter ; le ballon reste facultatif.",
+  "aidesExercices": [
+    {
+      "exercice": "Pont de bassin au sol · 3 fois 10 montées (tenir 8–10 s en haut)",
+      "png": "assets/renfo/png/pont-sol.png"
+    },
+    {
+      "exercice": "Ouverture du genou sur le côté · 3 fois 10 de chaque côté",
+      "png": "assets/renfo/png/ouverture-genou.png"
+    },
+    {
+      "exercice": "Bras et jambe opposés sur le dos · 3 fois 8 de chaque côté",
+      "png": "assets/renfo/png/dead-bug.png"
+    }
+  ]
+}

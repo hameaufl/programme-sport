@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-28",
+  "titre": "Renfo",
+  "type": "renfo",
+  "id": "renfo-2026-11-28",
+  "duree": "30–36 min",
+  "fait": false,
+  "sensations": "",
+  "etapes": [
+    "À quatre pattes : bras et jambe opposés · 3 fois 8 de chaque côté",
+    "Ouverture du genou sur le côté · 3 fois 10 de chaque côté",
+    "Pont avec ballon · 3 fois 10 montées (facultatif, tenir 8–10 s)"
+  ],
+  "objectif": "Renfo progressif facultatif. Objectif d'environ une demi-heure sans impact, à réduire en cas de douleur au pied, à la hanche ou au genou, de fatigue ou de mauvaise récupération.",
+  "details": "Échauffement doux 4 min (mobiliser épaules et hanches, sans forcer). Pour chaque mouvement : faire les répétitions lentement, puis recommencer 3 fois au total. Rester environ 5 s au retour entre les montées de bassin ; environ 45 s de pause entre mouvements et 90 s entre les trois tours. Terminer par 4 min de récupération douce. Jamais d'hyperextension du genou. Si douleur croissante, arrêter ; le ballon reste facultatif.",
+  "aidesExercices": [
+    {
+      "exercice": "À quatre pattes : bras et jambe opposés · 3 fois 8 de chaque côté",
+      "png": "assets/renfo/png/bird-dog.png"
+    },
+    {
+      "exercice": "Ouverture du genou sur le côté · 3 fois 10 de chaque côté",
+      "png": "assets/renfo/png/ouverture-genou.png"
+    },
+    {
+      "exercice": "Pont avec ballon · 3 fois 10 montées (facultatif, tenir 8–10 s)",
+      "png": "assets/renfo/png/pont-ballon.png"
+    }
+  ]
+}

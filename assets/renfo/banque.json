@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "description": "Banque canonique des aides statiques PNG aux exercices de renforcement dans Mon Rythme",
+  "exercices": [
+    {
+      "id": "pont-sol",
+      "titre": "Pont de bassin au sol",
+      "png": "assets/renfo/png/pont-sol.png",
+      "mouvement": "Depuis le dos, pieds au sol, soulever le bassin en contrôlant l'alignement"
+    },
+    {
+      "id": "ouverture-genou",
+      "titre": "Ouverture du genou sur le côté",
+      "png": "assets/renfo/png/ouverture-genou.png",
+      "mouvement": "Allongé sur le côté, pieds joints, ouvrir puis refermer le genou supérieur"
+    },
+    {
+      "id": "dead-bug",
+      "titre": "Bras et jambe opposés sur le dos",
+      "png": "assets/renfo/png/dead-bug.png",
+      "mouvement": "Sur le dos, éloigner un bras et la jambe opposée sans creuser le dos"
+    },
+    {
+      "id": "bird-dog",
+      "titre": "À quatre pattes : bras et jambe opposés",
+      "png": "assets/renfo/png/bird-dog.png",
+      "mouvement": "À quatre pattes, tendre bras et jambe opposés puis revenir en gardant le tronc stable"
+    },
+    {
+      "id": "pont-ballon",
+      "titre": "Pont avec ballon",
+      "png": "assets/renfo/png/pont-ballon.png",
+      "mouvement": "Sur le dos, talons sur le gros ballon stable, soulever doucement le bassin"
+    }
+  ]
+}
