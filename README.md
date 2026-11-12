@@ -1,61 +1,62 @@
-# Mon Rythme — application statique
+# Mon Rythme — architecture modulaire et données fortement ségrégées
 
-## Continuité de la personnalisation entre différents LLM Coach
+## Situation actuelle
 
-La mémoire métier de la personnalisation est **dans GitHub, pas seulement dans la conversation**. Toute information pertinente reçue par le Coach — objectifs, contraintes, préférences, habitudes, santé, matériel, historique, motifs et évolutions du programme — doit être persistée dans sa source sous `personnel/`, avec les nuances nécessaires à une reprise fidèle. Pour les connaissances transversales sans fichier source dédié, le Coach crée et entretient `personnel/CONTEXTE-COACH.md`. **Le dépôt est public** : `noindex` ne protège pas la confidentialité.
+Le projet dispose de **quatre domaines métier autonomes**, d'adaptateurs remplaçables et d'un add-on Web. Le dépôt et la publication GitHub Pages restent **publics** tant qu'un hébergement privé et une authentification n'ont pas été approuvés.
 
-[Consulter le contrat complet de continuité du Coach](docs/CONTRAT-CONTINUITE-COACH.md). Une demande isolée « Mets-toi à jour » reste une consultation en lecture seule.
+| Périmètre | Sources canoniques | Responsabilité |
+| --- | --- | --- |
+| Planification | `domaines/planification/donnees/` | Prescriptions et mouvements typés, calendrier, cycle |
+| Activités réalisées | `domaines/activites/donnees/` | Exécution réellement confirmée, compte rendu sportif |
+| Santé personnelle | `domaines/sante/donnees/` | Observations, profil, rapports et événements |
+| Coaching personnalisé | `domaines/coaching/donnees/` | Objectifs, préférences, décisions, motivations et nuances |
+| Adaptateurs | `adaptateurs/` | Stockage, projections autorisées, génération et fichiers FIT |
+| Site Web optionnel | `addons/web/` | Deux pages et médias, aucune donnée métier canonique |
+| Maturation | `maturation/`, `contrats/`, `scripts/`, `.github/` | Architecture, contrats, migrations et CI |
 
+Un identifiant de séance stable relie ces périmètres. Il n'existe **pas de source de santé ni de réalisation à l'intérieur d'une séance prévue** : les programmes sont des blocs structurés, rendus en phrases uniquement pour les consommateurs. Le générateur FIT consomme les blocs numériques plutôt que les phrases du site.
 
-## Entraînements Garmin (exemple du 11 novembre 2026)
+## Commandes utiles
 
-Un premier fichier **FIT Workout** est disponible dans le détail de la séance de course du **11 novembre** : 3 × (2 min marche + 3 min course) puis 2 min marche, soit 17 min. Il se télécharge directement depuis Mon Rythme et est stocké dans `personnel/pieces-jointes/seances/course-2026-11-11/prevu/`. La compatibilité syntaxique est testée ; **l'installation du fichier FIT Workout externe dans Garmin Connect ou sur la Venu 4 n'est pas confirmée**. Les séances que l'utilisateur crée dans Garmin Connect peuvent, elles, être envoyées à la montre.
+```sh
+node scripts/verifier-site.cjs
+node scripts/verifier-changements.cjs
+node maturation/architecture/verifier-portabilite.cjs
+node scripts/construire-site.cjs
 
-Le script `node scripts/generer-garmin.cjs <id>` génère les FIT Workout pour les formats de séries marche/course pris en charge ; le Coach doit rattacher les vrais fichiers à la séance individuelle, et ne jamais produire un FIT Activity fictif.
+# Construire une publication restreinte (simulation sans Santé, Coaching ni FIT)
+MON_RYTHME_POLITIQUE=prive node scripts/construire-site.cjs
+node maturation/architecture/verifier-publication-prive.cjs
 
-## Sources séparées et vues de consultation rapides
+# Désactiver entièrement l'add-on Web
+MON_RYTHME_WEB=0 node scripts/construire-site.cjs
 
-La source du calendrier est désormais **un fichier JSON par séance** sous `personnel/seances/AAAA/MM/<id>.json` ; objectifs et cycle dans `personnel/config.json`. Les rapports et événements santé sont individualisés. GitHub Actions valide toutes les données, puis produit dans l'artefact Pages un **index léger et un JSON pour chaque semaine** : le navigateur ne récupère que la semaine consultée. La page santé consulte les compteurs pré-calculés et des pages d'événements de 30 entrées.
+# FIT depuis une prescription structurée, sans dépendre du Web
+node scripts/generer-garmin.cjs renfo-2026-11-12
+```
 
-**Aucun clone des séances dans le dépôt** : `data/` n'existe que dans `_site/`, créé par `node scripts/construire-site.cjs`. `personnel/programme.js` a été retiré après transfert des 18 objets **sans modification**, et la correspondance originale est conservée sous forme de métadonnées dans `scripts/migration-preuve.json`.
+## Contrats et ports
 
-Le Coach ne change que le fichier de séance ciblé ; la CI contrôle les suppressions et les gros lots. Navigation actuelle exclusivement **hebdomadaire**.
+La lecture des données est injectée par `adaptateurs/fichiers/depots.cjs`, avec un port indépendant par domaine. `adaptateurs/projections/lecture.cjs` compose les informations autorisées sans être une source de vérité. Pour passer Santé sur un stockage privé, remplacer **seulement** le port Santé; ne pas modifier Planification ni l'add-on Web.
 
+Le fichier `contrats/publication-v1.json` décrit **explicitement** les données autorisées sur le site courant. L'exemple `contrats/publication-prive-v1.json` permet de générer une version sans données de santé, sans commentaires privés et sans FIT. Les sélections sont en **liste blanche, refus par défaut**. Le mode privé du build n'est **pas** un mécanisme d'authentification.
 
-Site : https://hameaufl.github.io/programme-sport/ — dépôt GitHub public, branche `main`.
+## Fiabilité de la migration
 
-## Indexation par les moteurs de recherche
+La refonte a séparé 36 séances et 33 FIT. Les prescriptions historiques ont été converties en blocs typés avec vérification aller-retour des textes. `maturation/architecture/verifier-migration.cjs` compare la migration au commit de référence : tous les champs, les FIT octet par octet, les documents de santé et de coaching déplacés. Ce test est **ponctuel** : il ne doit pas bloquer les modifications sportives ultérieures.
 
-**Décision du propriétaire : site public, mais non indexé.** L'HTML contient `robots: noindex, nofollow` et `googlebot: noindex, nofollow`. Le contrôle automatique bloque les publications si ces métadonnées sont absentes.
+La CI du dépôt teste les modèles, leurs frontières, l'absence de fuite dans les projections, le générateur FIT et le build. Les pages ne sont servies que comme projection de données. Les ressources historiques de compatibilité Android ne sont plus publiées automatiquement (opt-in `MON_RYTHME_LEGACY=1` seulement en politique courante, après évaluation du risque d'exposition).
 
-Un `robots.txt` dans ce sous-dossier GitHub Pages ne remplace pas les directives de page : le fichier `robots.txt` effectif doit résider à la racine de l'hôte. Ne pas bloquer le robot avec un `robots.txt` si l'on attend qu'il découvre `noindex`.
+## Confidentialité et limites
 
-**Limites :** les directives sont respectées par les moteurs compatibles, mais n'offrent pas d'authentification ; les données de `personnel/`, les fichiers éventuels et le dépôt GitHub public peuvent être découverts ou partagés autrement. Une page déjà indexée pourra nécessiter une nouvelle exploration pour disparaître.
+**Important :** le dépôt a été public, ses commits anciens et les publications précédentes ont contenu des données personnelles. Même après déplacement vers un stockage privé, les anciennes copies, URLs, caches, forks et historiques peuvent rester accessibles. Les directives `noindex` n'apportent aucune confidentialité. Une migration privée réelle devra inclure contrôle d'accès, politique d'export, assainissement des anciennes expositions et stratégie de révocation. Aucune information de santé nouvelle ne doit être publiée par simple ajout de champ.
 
-## Deux vues de Mon Rythme
+## Exploitation et responsabilité
 
-- [Mon programme](https://hameaufl.github.io/programme-sport/) : calendrier et séances.
-- [Mon suivi santé](https://hameaufl.github.io/programme-sport/sante.html) : première interface de bilan de la reprise sportive, profil, journal et réalisations confirmées.
+- **Coach** écrit les seules données dans `domaines/*/donnees/` selon leur nature, vérifie les IDs et la traçabilité, et régénère les FIT prévus concernés.
+- **Maturation** gère les modules purs, contrats, adaptateurs, fichiers du Web, schémas, migration et validation, mais pas les faits sportifs ni les décisions cliniques.
+- **Web** demeure supprimable sans affecter la création de séances ou la génération Garmin.
 
-La seconde page s'appuie sur les **vues générées** depuis les fichiers individuels de séance, les événements de santé et `personnel/sante/PROFIL.md`. Les deux pages sont marquées `noindex` ; les fichiers servis par Pages restent publics.
+[Contrat d'architecture](contrats/DEPENDANCES.md) · [Ports](contrats/PORTS.md) · [Plan de refonte](maturation/architecture/PLAN.md) · [Consignes Coach](docs/CONTRAT-CONTINUITE-COACH.md) · [Rôles](docs/ROLES.md)
 
-## Architecture sans doublon de données
-
-- **Construction :** `index.html`, [docs/](docs/REPRISE.md), [AGENTS.md](AGENTS.md), `scripts/`, `.github/`.
-- **Données personnelles :** [personnel/](personnel/README.md) — une source **par séance**, rapports et événements individualisés, santé et futures pièces jointes.
-
-La page ne charge que `data/index.json` puis `data/semaines/<lundi>.json` au besoin. Les artefacts restent des **résultats temporaires de publication** et non des copies entretenues dans Git. Pour les anciens HTML mis en cache, le build produit temporairement des fichiers de compatibilité sous `_site/personnel/`, sans source concurrente.
-
-## Casquettes et publication
-
-- **Coach :** travaille uniquement dans `personnel/`, actualise les retours/activités dans l'échange ; aucun changement d'interface.
-- **Maturation :** construit l'application, les scripts, la documentation et la présentation ; aucun ajout graphique sans demande ou approbation.
-- **Push automatique :** tout commit touchant `personnel/**` sur `main` **déclenche GitHub Actions**. Le Coach doit contrôler `success`, pas utiliser `Run workflow` habituellement.
-
-[Voir la procédure de reprise](docs/REPRISE.md) · [Voir les rôles](docs/ROLES.md) · [Voir les déploiements](https://github.com/hameaufl/programme-sport/actions/workflows/publier-pages.yml).
-
-## Contrôles
-
-`node scripts/verifier-site.cjs` : contrats des séances individuelles, identifiants, semaines, rapports et événements, test fictif 5 000 séances, JavaScript et versions. `node scripts/verifier-changements.cjs` contrôle la portée des modifications ; `node scripts/construire-site.cjs` produit les JSON hebdomadaires, le journal paginé et les fichiers de compatibilité hors Git.
-
-La publication automatique utilise des jobs `build` et `deploy` séparés, avec vérification de la disponibilité de l'artefact avant déploiement. Le site peut momentanément subir un délai de diffusion/cache ; un commit ne suffit pas à attester une publication réussie.
+Site public existant : https://hameaufl.github.io/programme-sport/

@@ -2,6 +2,14 @@
 
 **Règle prioritaire au 12 novembre 2026.** Le dépôt GitHub `hameaufl/programme-sport`, branche `main`, est la **mémoire métier persistante et transmissible** de la personnalisation. Aucune connaissance nécessaire à un futur programme adapté ne doit dépendre de la seule mémoire d'une conversation ou d'un agent. Cette exigence dépasse la reprise sportive et dépasse les informations affichées dans les pages web.
 
+## Architecture métier V2 : cohésion et déplacement de données
+
+Cette version remplace toutes les mentions du dépôt monolithique `personnel/` comme source opérationnelle. La planification ne détient plus `fait`, `sensations`, `structuresSollicitees`, les références d'image ni les chemins FIT. Le Coach conserve les décisions et leurs raisons dans Coaching, en reliant les observations de Santé et les activités par `seanceId`. Les étapes d'entraînement sont stockées en `blocs` typés et la forme en puces du site est une projection.
+
+L'interface Web est exclusivement un add-on; le générateur Garmin est un adaptateur indépendant. Tout changement de support Santé/Coaching doit remplacer un port d'accès, sans toucher aux domaines Planification ni au code du Web. Les fichiers demeurent actuellement **publics dans Git et dans les anciennes publications**; une migration technique n'est pas une anonymisation ni une révocation de l'historique.
+
+La procédure des nouveaux programmes et comptes rendus : modifier la source du domaine pertinent, conserver les liens `id`, valider les schémas, et produire le FIT prévu lorsque nécessaire. Ne jamais recopier les informations de santé dans un plan pour faciliter l'affichage.
+
 ## 1. Ce que le Coach doit conserver
 
 Enregistrer **toute information utile, explicite ou contextualisée, pouvant influencer directement ou indirectement le programme personnalisé**, même si elle n'entraîne aucune modification immédiate du calendrier et même si elle paraît secondaire à court terme :
@@ -18,21 +26,23 @@ Le Coach **ne trie pas ces éléments uniquement selon ce qui est visible sur le
 
 ## 2. Où écrire, sans doublons ni réécriture globale
 
-Le Coach est **le seul auteur des faits personnels** sous `personnel/`. Il actualise la source adaptée et conserve les liens vers celle-ci :
+Le Coach est **le seul auteur des faits et choix sportifs personnels** dans les dossiers `donnees/` des quatre domaines. Maturation maintient exclusivement les modèles, schémas, adaptateurs et validations. Chaque source canonique contient seulement les faits de **son domaine** :
 
 | Nature de l'information | Source canonique |
 | --- | --- |
-| Profil durable et nuances transversales influençant la personnalisation (préférences, habitudes, contraintes, motivations, contexte de vie utile, stratégies de personnalisation) | **`personnel/CONTEXTE-COACH.md`**, à créer et à maintenir par le Coach, s'il n'existe pas |
-| Objectifs et paramètres de cycle structurés | `personnel/config.json` ; leur justification et évolution dans `personnel/DECISIONS.md` |
-| Séance précise, prévu/réalisé, ressenti court, groupes sollicités | `personnel/seances/AAAA/MM/<id>.json` |
-| Récit et nuances détaillés d'une séance | `personnel/sante/rapports/AAAA/MM/<id>.md` |
-| Profil santé durable | `personnel/sante/PROFIL.md` |
-| Événement de santé ou d'équipement daté, non lié à une séance | `personnel/sante/evenements/AAAA/MM/<date>-<sujet>.md` |
-| Décisions longitudinales, raisons, alternatives et révisions | `personnel/DECISIONS.md` |
-| Chronologie des nouveaux apports, actions, hypothèses et points en attente | `personnel/JOURNAL.md` |
-| Contraintes de fichiers, modèle Garmin et liens vers les originaux | `personnel/GARMIN.md` et `personnel/pieces-jointes/` |
+| Profil durable et nuances transversales influençant la personnalisation (préférences, habitudes, contraintes, motivations, contexte de vie utile, stratégies de personnalisation) | **`domaines/coaching/donnees/CONTEXTE-COACH.md`**, à créer et à maintenir par le Coach, s'il n'existe pas |
+| Objectifs et paramètres de cycle structurés | `domaines/planification/donnees/cycle.json` et `domaines/coaching/donnees/objectifs.json` ; leur justification et évolution dans `domaines/coaching/donnees/DECISIONS.md` |
+| Programme prescrit (date, titre, blocs, durée indicative), **sans réalisation ni santé** | `domaines/planification/donnees/seances/AAAA/MM/<id>.json` |
+| Activité effectivement confirmée, déroulé factuel et structures sollicitées | `domaines/activites/donnees/seances/AAAA/MM/<id>.json` |
+| Sensations et symptômes rapportés pour la séance | `domaines/sante/donnees/ressentis/seances/AAAA/MM/<id>.json` |
+| Récit et nuances détaillés d'une séance | `domaines/sante/donnees/rapports/AAAA/MM/<id>.md` |
+| Profil santé durable | `domaines/sante/donnees/PROFIL.md` |
+| Événement de santé ou d'équipement daté, non lié à une séance | `domaines/sante/donnees/evenements/AAAA/MM/<date>-<sujet>.md` |
+| Décisions longitudinales, raisons, alternatives et révisions | `domaines/coaching/donnees/DECISIONS.md` |
+| Chronologie des nouveaux apports, actions, hypothèses et points en attente | `domaines/coaching/donnees/JOURNAL.md` |
+| Contraintes de fichiers, modèle Garmin et liens vers les originaux | `adaptateurs/garmin/GARMIN.md` et `adaptateurs/garmin/fichiers/` |
 
-**Ne pas créer plusieurs vérités concurrentes.** Une synthèse durable peut **pointer vers** une séance, un rapport, une décision ou une pièce jointe ; elle n'en recopie pas les données chiffrées ou médicales. Les résumés doivent conserver l'accès aux détails et ne jamais les remplacer. `personnel/CONTEXTE-COACH.md` est un **répertoire de connaissances transversales**, pas une copie de tous les fichiers ; le Coach le crée avec des rubriques de son choix à la première information ne disposant pas déjà d'une source canonique.
+**Ne pas créer plusieurs vérités concurrentes.** Une synthèse durable peut **pointer vers** une séance, un rapport, une décision ou une pièce jointe ; elle n'en recopie pas les données chiffrées ou médicales. Les résumés doivent conserver l'accès aux détails et ne jamais les remplacer. `domaines/coaching/donnees/CONTEXTE-COACH.md` est un **répertoire de connaissances transversales**, pas une copie de tous les fichiers ; le Coach le crée avec des rubriques de son choix à la première information ne disposant pas déjà d'une source canonique.
 
 ## 3. Niveau de finesse exigé
 
@@ -73,7 +83,7 @@ Pour un élément transversal, le Coach peut employer cette structure **indicati
 Avant toute recommandation personnalisée, le nouveau Coach doit :
 
 1. Consulter `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et **ce contrat**.
-2. Lire `personnel/README.md`, puis `personnel/CONTEXTE-COACH.md` **s'il existe**, `personnel/DECISIONS.md`, `personnel/JOURNAL.md`, `personnel/sante/PROFIL.md`, `personnel/config.json` et les données pertinentes du cycle actuel.
+2. Lire `personnel/README.md`, puis `domaines/coaching/donnees/CONTEXTE-COACH.md` **s'il existe**, `domaines/coaching/donnees/DECISIONS.md`, `domaines/coaching/donnees/JOURNAL.md`, `domaines/sante/donnees/PROFIL.md`, `domaines/planification/donnees/cycle.json` et `domaines/coaching/donnees/objectifs.json` et les données pertinentes du cycle actuel.
 3. Recouper les rapports de séance, événements, mesures, équipements, pièces jointes et derniers commits ; ne pas conclure à l'absence d'un fait simplement parce qu'il n'apparaît pas dans une synthèse.
 4. Distinguer **faits durables**, **état actuel**, **hypothèses**, **décisions remplacées** et **points encore à éclaircir**. **Ne pas demander à l'utilisateur de répéter une information déjà documentée.**
 5. Vérifier qu'il connaît les contraintes et raisons des choix qui conditionnent le programme **avant** de proposer une adaptation.

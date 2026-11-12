@@ -267,3 +267,10 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Application aux 14 Renfos non réalisés : mêmes dates, IDs, exercices, séries, pauses, aides PNG, étirements, fait et sensations ; suppression du seul bloc redondant « Retour au calme ». Durée indicative 33–39 → 29–35 min, FIT Workout prévu 18 → 17 pas ; temps minuté 960 → 720 s. Aucune modification des sorties Course, des séances Kiné ou des activités déjà réalisées.
 - Pour les Renfos futurs : cinq étapes chronologiques, FIT synchronisé avec le JSON et vérification de l'absence de retour au calme supplémentaire. Aucune preuve d'exécution sportive créée.
 - Intervention Maturation : parseur FIT, tests de non-régression et binaires FIT actualisés ; déploiement via Actions à vérifier.
+
+## 12 novembre 2026 — Refonte complète en domaines et add-ons, après accord explicite du propriétaire
+
+- Découpage par phases : inventaire et frontières, séparation canonique Planification/Activités/Santé/Coaching, adaptateur Garmin et Web indépendant, puis contrôles de portabilité et confidentialité.
+- Les 36 séances ont été converties en plans à blocs typés, activités effectivement réalisées et observations de santé distinctes. Les comptes rendus et archives Coach ont été déplacés sans changement factuel. Les 33 FIT ont été déplacés avec leur SHA d'origine ; l'interface n'en détient aucun.
+- L'extension Web a ses propres sources et ressources sous `addons/web/`, ne reçoit que des champs autorisés via une projection. Tests : parité historique complète, CI de build standard et de publication restreinte, absence de dépendance du cœur envers le Web.
+- La politique de publication historique reste publique; la variante restreinte prépare un transfert futur vers un autre support et **n'efface pas les copies déjà publiques**. La publication de cette refonte sur `main` ne doit intervenir qu'après CI verte.

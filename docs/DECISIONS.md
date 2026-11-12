@@ -173,3 +173,10 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - Demande : dans les cases du calendrier, afficher les activités **séparées par « , » (virgule et espace)** au lieu de « + », avec **une majuscule initiale pour chacune**. Exemple : **« Course, Kiné »**.
 - Le rendu prend en compte **toutes** les activités du jour dans leur ordre, pas seulement la présence de Course et Kiné, et ne fusionne pas deux séances de même type. Aucun élément de navigation ou champ personnel modifié.
 - La vérification prépublication teste les journées à zéro, une, deux et trois séances, y compris une double activité du même type ; version HTML synchronisée entre les deux pages.
+
+## 12 novembre 2026 — Refonte complète en domaines et add-ons, après accord explicite du propriétaire
+
+- Découpage par phases : inventaire et frontières, séparation canonique Planification/Activités/Santé/Coaching, adaptateur Garmin et Web indépendant, puis contrôles de portabilité et confidentialité.
+- Les 36 séances ont été converties en plans à blocs typés, activités effectivement réalisées et observations de santé distinctes. Les comptes rendus et archives Coach ont été déplacés sans changement factuel. Les 33 FIT ont été déplacés avec leur SHA d'origine ; l'interface n'en détient aucun.
+- L'extension Web a ses propres sources et ressources sous `addons/web/`, ne reçoit que des champs autorisés via une projection. Tests : parité historique complète, CI de build standard et de publication restreinte, absence de dépendance du cœur envers le Web.
+- La politique de publication historique reste publique; la variante restreinte prépare un transfert futur vers un autre support et **n'efface pas les copies déjà publiques**. La publication de cette refonte sur `main` ne doit intervenir qu'après CI verte.
