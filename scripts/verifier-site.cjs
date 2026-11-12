@@ -329,9 +329,16 @@ assert.ok(libelleStart>=0&&libelleEnd>libelleStart,"Fonction de libellé Renfo a
 const libelleEtapeRenfo=vm.runInNewContext(html.slice(libelleStart,libelleEnd)+"\nlibelleEtapeRenfo");
 assert.equal(libelleEtapeRenfo("Mise en route · 4 min Echauffement"),"Echauffement","Échauffement sans autre texte");
 assert.equal(libelleEtapeRenfo("Étirements doux · 3 min : Étirements"),"Étirements","Étirements sans autre texte");
-assert.equal(libelleEtapeRenfo("Pont de bassin au sol · 3 × 10"),"Pont de bassin au sol · 3 × 10","Exercice Renfo conservé");
+assert.equal(libelleEtapeRenfo("Pont de bassin au sol · 3 × 10"),"Pont de bassin au sol","Exercice Renfo sans séries ni répétitions");
+assert.equal(libelleEtapeRenfo("Ouverture du genou sur le côté · 3 × 10 par côté ; 3 s ouvrir"),"Ouverture du genou sur le côté","Exercice Renfo sans tempo");
+assert.equal(libelleEtapeRenfo("Bras et jambe opposés sur le dos · 3 × 8"),"Bras et jambe opposés sur le dos","Renfo seulement le nom");
 assert.ok(html.includes('if(s.type==="renfo"&&!isCompleted(s))activities=activities.map(libelleEtapeRenfo);'),
  "Les libellés courts doivent être employés dans le rendu du programme");
+const renfoPublic=exposed("2026-11-09",data).filter(s=>s.type==="renfo");
+assert.equal(renfoPublic.length,1,"Une seule Renfo publique dans la semaine du 13 novembre");
+assert.deepEqual(renfoPublic[0].etapes,["Echauffement","Pont de bassin au sol","Ouverture du genou sur le côté","Bras et jambe opposés sur le dos","Étirements"],"Renfo public : uniquement les noms, aucun volume ni chrono");
+assert.ok(renfoPublic[0].aidesExercices.every(a=>!/[×;]/.test(a.exercice)),"Aides graphiques Renfo sans volume de répétitions ni tempo");
+assert.ok(renfoPublic[0].aidesExercices.every(a=>["Pont de bassin au sol","Ouverture du genou sur le côté","Bras et jambe opposés sur le dos"].includes(a.exercice)),"Aides graphiques Renfo référencées par nom seul");
 const renfo=data.sessions.filter(x=>x.type==="renfo");
 assert.equal(renfo.length,1,"Un seul nouveau Renfo est actif, les 14 anciens sont archivés");
 assert.equal(renfo[0].id,"renfo-2026-11-13");

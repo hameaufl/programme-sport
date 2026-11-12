@@ -88,6 +88,17 @@ function exposed(week,model,policy=local.json("contrats/publication-v1.json")){
    if(!s.exercicesRealises?.length&&policy.programme.includes("exercicesDuRapport"))view.exercicesDuRapport=rapport.exercices;
    if(!s.structuresSollicitees?.length&&policy.programme.includes("structuresDuRapport"))view.structuresDuRapport=rapport.structures;
   }
+  // Projection Renfo : n'exposer que les intitulés, jamais les séries, répétitions ou repos.
+  if(s.type==="renfo"&&s.fait!==true){
+   const libelle=(texte)=>{
+    if(typeof texte!=="string")return "";
+    if(texte.startsWith("Mise en route · "))return "Echauffement";
+    if(texte.startsWith("Étirements doux · "))return "Étirements";
+    return texte.split(" · ")[0];
+   };
+   if(Array.isArray(view.etapes))view.etapes=view.etapes.map(libelle);
+   if(Array.isArray(view.aidesExercices))view.aidesExercices=view.aidesExercices.map(a=>({...a,exercice:libelle(a.exercice)}));
+  }
   if(Object.hasOwn(view,"blocs"))throw Error("Modèle interne exporté vers le Web");
   return view;
  });

@@ -183,7 +183,8 @@
   function libelleEtapeRenfo(texte) {
     if(/^Mise en route · /.test(texte))return "Echauffement";
     if(/^Étirements doux · /.test(texte))return "Étirements";
-    return texte;
+    // Les volumes restent dans le domaine métier et le programme Garmin.
+    return texte.split(" · ")[0];
   }
   function derouleDisplay(s) {
     var box=elem("section","session-programme");
