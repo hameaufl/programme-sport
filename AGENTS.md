@@ -1,4 +1,12 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ — inventaire des équipements et page « Mon équipement » (12 novembre 2026)
+
+- **Source métier unique :** le Coach conserve et maintient `domaines/coaching/donnees/equipements.json` ; il n'ajoute, ne supprime ni ne change la disponibilité d'un équipement sans une déclaration explicite du propriétaire. Le poids du corps n'est pas un équipement à inventer. Les absences et les projets d'achat ne deviennent jamais des possessions par déduction.
+- **Nouvelle vue en lecture seule :** `addons/web/pages/equipements.html` consomme exclusivement `data/coaching/equipements.json`. La donnée Web est fabriquée par `adaptateurs/projections/coaching.cjs::projeterEquipements()` à partir du **port existant** `coaching.equipements()` et du modèle `verifierEquipements()` ; aucune copie de l'inventaire, chemin métier, décision sportive, synchronisation Garmin ni règle de disponibilité ne doit être intégrée au HTML.
+- **Publication autorisée strictement :** `contrats/publication-v1.json` active la vue des équipements actuellement `disponible`, seulement les **noms** et un éventuel **diamètre approximatif connu** ; le projecteur rejette par défaut l'absence d'autorisation. Ne publier ni `absent`/`non_confirme`, ni notes, ni provenance, ni références internes. `contrats/publication-prive-v1.json` interdit toute projection d'équipement. Le dépôt et le site standard étant publics, cette filtration n'est pas une confidentialité du dépôt.
+- **Autonomie des supports :** une modification de `equipements.json` entraîne au prochain build la mise à jour du site, sans modifier le code de la page ; le Web peut être désactivé et le port peut être migré vers un stockage privé sans toucher au domaine ni à la présentation. Les futurs agents doivent conserver ces frontières et les tests de non-fuite. La règle de bêta Garmin interdisant toute écriture sans demande explicite reste inchangée.
+
+
 ## PRIORITÉ — séparation métier et page « Le cap du Coach » (12 novembre 2026)
 
 **Décision du propriétaire :** Santé, Planification, Activités et Coaching restent des domaines métier indépendants et sources canoniques. `addons/web/` n'est qu'une interface optionnelle et ne doit jamais devenir source de faits, de programme ou de stratégie. Ne pas ajouter des notes métier ou des raisonnements complets dans le HTML, ses scripts ni les fichiers publiés.

@@ -1,4 +1,10 @@
 # Attribution des deux casquettes
+## Responsabilités de la vue « Mon équipement »
+
+- Coach : seule source canonique d'inventaire `domaines/coaching/donnees/equipements.json`, mise à jour lors d'une déclaration explicite d'achat/disponibilité/retrait par le propriétaire. Le Coach consulte cet inventaire pour composer les séances et n'édite jamais le Web.
+- Maturation : garantit `verifierEquipements()`, la projection filtrée `projeterEquipements()`, les deux politiques de publication, la page `addons/web/pages/equipements.html` et les tests. Le Web ne contient ni copie du matériel ni logique sportive ; il affiche les équipements disponibles seulement. La politique restreinte ne publie aucun inventaire.
+
+
 ## Découplage prioritaire — stratégie du Coach et projection Web
 
 - **Coach** : décide des orientations sportives, enregistre ses analyses explicites dans Coaching, met à jour `domaines/coaching/donnees/orientation.json` lors des nouveaux retours/décisions, et maintient l'alignement avec `objectifs.json`. Les intentions sont conditionnelles et sourcées, jamais une promesse de progression.

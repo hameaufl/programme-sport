@@ -29,3 +29,7 @@
 - `adaptateurs/projections/coaching.cjs` : projection explicitement limitée par les contrats de publication. Standard : un résumé public des objectifs, tendances et points de vigilance ; politique restreinte : aucun résumé. Le Web ne consulte pas les fichiers internes.
 - `addons/web/pages/coach.html` : nouvelle interface autonome « Le cap du Coach » accessible depuis l'accueil. `addons/web/pages/sante.html` ne présente plus la phrase de présentation sous le titre ni la note de bas de page demandées à supprimer.
 - Garder une mémoire métier transmissible : mise à jour de la stratégie résumée dans le même changement que les choix du Coach ; aucune séance sportive créée ou modifiée automatiquement par la page.
+
+## 12 novembre 2026 — Vue indépendante de l'inventaire du Coach
+
+Le site inclut maintenant `addons/web/pages/equipements.html` : consultation mobile/ordinateur des seuls équipements réellement disponibles. Les données `domaines/coaching/donnees/equipements.json` demeurent canoniques et ne sont ni copiées ni modifiées par la page. Projection minimale via `coaching.equipements()` et `adaptateurs/projections/coaching.cjs`, publication explicite standard uniquement, aucun équipement dans la publication restreinte. Contrôles de non-fuite et validation métier dans la CI.
