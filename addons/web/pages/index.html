@@ -179,6 +179,12 @@
   }
   // Déroulé factuel : exercices déclarés par le Coach ou description « Réalisé » du journal de santé.
   // Ne jamais utiliser les étapes prévues comme preuve de réalisation.
+  // Libellés d'affichage demandés : ne modifier ni les chronos canoniques ni les étapes MCP.
+  function libelleEtapeRenfo(texte) {
+    if(/^Mise en route · /.test(texte))return "Echauffement";
+    if(/^Étirements doux · /.test(texte))return "Étirements";
+    return texte;
+  }
   function derouleDisplay(s) {
     var box=elem("section","session-programme");
     box.appendChild(elem("h4","",isCompleted(s)?"Séance":"Programme prévu"));
@@ -188,6 +194,7 @@
           : (s.exercicesDuRapport||[]))
       : (Array.isArray(s.etapes)?s.etapes:[]);
     activities=activities.filter(function(item){return typeof item==="string"&&item.trim();});
+    if(s.type==="renfo"&&!isCompleted(s))activities=activities.map(libelleEtapeRenfo);
     if(activities.length) {
       var list=elem("ul");
       activities.forEach(function(item){

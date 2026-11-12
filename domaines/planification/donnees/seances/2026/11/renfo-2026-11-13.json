@@ -3,8 +3,8 @@
   "date": "2026-11-13",
   "titre": "Renfo",
   "type": "renfo",
-  "objectif": "Première séance de renforcement au sol, reportée au vendredi 13 novembre ; confort avant performance. Contenu encore à valider avant création Garmin MCP.",
-  "details": "Brouillon reporté du jeudi 12 au vendredi 13 novembre faute de temps le 12, non réalisé ; échauffement libre 4 min et étirements doux 3 min, sans vidéo imposée. Reporter si douleur plantaire ou articulaire à l'appui. Pas de programme Garmin créé.",
+  "objectif": "Première séance de renforcement au sol, vendredi 13 novembre ; confort avant performance. Modèle Garmin Connect créé et relu, non programmé dans le calendrier Garmin.",
+  "details": "Séance prévue et non réalisée. Echauffement 4 min, trois exercices au sol avec séries et repos, étirements 3 min. Contenu volontairement succinct à l'affichage. Modèle Garmin enregistré dans la bibliothèque, non planifié ni envoyé à la montre. Reporter si douleur à l'appui.",
   "dureeEstimeeMinutes": {
     "min": 30,
     "max": 33
@@ -13,7 +13,7 @@
     {
       "nature": "mise_en_route",
       "dureeSecondes": 240,
-      "consignes": "libre de 4 minutes, progressif et confortable, au choix du propriétaire, sans vidéo ni chorégraphie imposée"
+      "consignes": "Echauffement"
     },
     {
       "nature": "exercice",
@@ -60,7 +60,7 @@
     {
       "nature": "etirements",
       "dureeSecondes": 180,
-      "consignes": "étirements doux 3 minutes, sans forcer"
+      "consignes": "Étirements"
     }
   ]
 }

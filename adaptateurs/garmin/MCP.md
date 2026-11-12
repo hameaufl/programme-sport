@@ -11,6 +11,12 @@
 - Les programmes déjà prévus dans V2 ne sont pas réécrits automatiquement : chaque prochaine adaptation sportive est du ressort du Coach.
 
 
+## Retour d'expérience de création vérifié le 12 novembre 2026
+
+Le 12 novembre, lors du premier upload Renfo du modèle du **13 novembre**, Garmin Connect a retourné `success` mais **a supprimé `exerciseName: CLAM_SHELLS`** sous `HIP_STABILITY`. Cette clé est présente dans un catalogue FIT SDK, mais **absente de la liste de noms acceptés par Garmin Connect**. La bonne clé reconnue sur le compte après nouvel upload/relecture est **`HIP_RAISE / CLAMS`** pour l'ouverture latérale du genou. `HIP_RAISE/HIP_RAISE` et `HIP_STABILITY/DEAD_BUG` ont été conservés eux aussi.
+
+**Contrôle bloquant de chaque modèle créé :** après `upload_workout`, impérativement appeler `get_workout_by_id(raw=true)` et contrôler `sportType`, nombre d'étapes, `stepOrder`, étapes de durée, `reps`, `rest`, descriptions, et **chaque couple `category/exerciseName` non vide et identique à la source**. Ne pas prétendre qu'un exercice officiel est correctement intégré au seul vu d'une réponse `success`. Si un nom est effacé, rechercher une clé Garmin Connect réellement acceptée, créer un modèle corrigé avec validation et **ne pas supprimer le modèle inexact sans demande explicite**, même s'il a été créé pendant l'intervention. Les identifiants de compte et de modèles restent hors GitHub public. Ne pas confondre création, calendrier et envoi vers l'appareil.
+
 ## Décision approuvée
 
 Un entraînement enregistré dans Garmin Connect constitue un **modèle** utilisable à **plusieurs dates** du calendrier. La référence métier reste la prescription V2 structurée, non un fichier Garmin local. **Pendant la bêta, aucune écriture Garmin sans demande expresse pour la séance du jour ou les dates exactes indiquées.** Une création ou une modification de programme sur GitHub ne déclenche pas de création Garmin automatique. Ne jamais remplir par anticipation des semaines ou mois de calendrier.

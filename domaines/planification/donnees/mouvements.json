@@ -15,8 +15,8 @@
       "titre": "Ouverture du genou sur le côté",
       "consignes": "Allongé sur le côté, pieds joints, ouvrir puis refermer le genou supérieur",
       "garmin": {
-        "category": "HIP_STABILITY",
-        "exerciseName": "CLAM_SHELLS"
+        "category": "HIP_RAISE",
+        "exerciseName": "CLAMS"
       }
     },
     {

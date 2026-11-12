@@ -323,6 +323,15 @@ assert.equal(resumeJour([{id:"kine-2026-11-18"}]),"Kiné", "Kiné sans type expl
 assert.equal(resumeJour([{type:"renfo",titre:"Renfo"}]),"Renfo", "Renfo visible dans le calendrier");
 assert.ok(html.includes("var label=resumeJour(dailySessions);"), "Le calendrier doit utiliser les libellés composés");
 assert.ok(!html.includes("Course + kiné"), "L'ancien séparateur + doit disparaître");
+const libelleStart=html.indexOf("  function libelleEtapeRenfo(texte) {");
+const libelleEnd=html.indexOf("  function derouleDisplay(s) {",libelleStart);
+assert.ok(libelleStart>=0&&libelleEnd>libelleStart,"Fonction de libellé Renfo absente");
+const libelleEtapeRenfo=vm.runInNewContext(html.slice(libelleStart,libelleEnd)+"\nlibelleEtapeRenfo");
+assert.equal(libelleEtapeRenfo("Mise en route · 4 min Echauffement"),"Echauffement","Échauffement sans autre texte");
+assert.equal(libelleEtapeRenfo("Étirements doux · 3 min : Étirements"),"Étirements","Étirements sans autre texte");
+assert.equal(libelleEtapeRenfo("Pont de bassin au sol · 3 × 10"),"Pont de bassin au sol · 3 × 10","Exercice Renfo conservé");
+assert.ok(html.includes('if(s.type==="renfo"&&!isCompleted(s))activities=activities.map(libelleEtapeRenfo);'),
+ "Les libellés courts doivent être employés dans le rendu du programme");
 const renfo=data.sessions.filter(x=>x.type==="renfo");
 assert.equal(renfo.length,1,"Un seul nouveau Renfo est actif, les 14 anciens sont archivés");
 assert.equal(renfo[0].id,"renfo-2026-11-13");

@@ -12,9 +12,9 @@
     },
     {
       "id": "renforcement",
-      "horizon": "Première séance demain, vendredi 13 novembre",
+      "horizon": "Première séance prévue le 13 novembre",
       "intention": "Repartir sur une seule séance Renfo adaptée",
-      "condition": "Un seul brouillon Renfo non réalisé le 13 novembre (30–33 min), échauffement libre 4 min, étirements doux 3 min ; les trois exercices sont conservés. Autre course déjà prévue ce jour-là : arbitrer selon la récupération et la douleur aux appuis. Garmin non créé sans validation."
+      "condition": "Renfo A créé et vérifié dans la bibliothèque Garmin Connect, non programmé dans le calendrier, et non réalisé. Échauffement 4 min et étirements 3 min avec libellés courts, séries et récupérations conservées. N'effectuer la séance que si les douleurs et la récupération le permettent."
     },
     {
       "id": "progression",
@@ -47,5 +47,5 @@
     "sante:rapport:course-2026-11-11",
     "sante:evenement:2026-11-12-echange-chaussures-running"
   ],
-  "statut": "12 novembre 2026 au soir : Renfo unique reporté du 12 au 13 novembre faute de temps, non réalisé ; échauffement libre 4 min et étirements doux 3 min, vidéo non fixée. Course du 13 inchangée ; prudence pour douleurs plantaires et récupération ; Garmin non modifié."
+  "statut": "12 novembre 2026 au soir : programme Renfo A du 13 novembre créé via Garmin MCP et vérifié (17 étapes, trois exercices Garmin reconnus après correction CLAMS). Bibliothèque seulement, non planifié et non réalisé. Echauffement et Étirements affichés sans détails. Prudence plantaire et récupération inchangée."
 }
