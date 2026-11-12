@@ -1,5 +1,9 @@
 # Attribution des deux casquettes
 
+## Contrôle de conservation des séances
+
+Le Coach conserve **tous les champs présents** lors de la mise à jour d'une séance individuelle ; la CI refuse désormais toute suppression implicite d'une propriété ou changement de date. Ces opérations exigent une demande explicite et les marqueurs `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit, sans contourner artificiellement le contrôle.
+
 ## Architecture des sources (règle prioritaire de reprise)
 
 **Coach :** mise à jour **ciblée** de `personnel/seances/AAAA/MM/<id>.json` pour une séance ; `personnel/config.json` pour les seuls objectifs/dates du cycle ; compte rendu spécifique dans `personnel/sante/rapports/AAAA/MM/<id>.md` ; événement dans `personnel/sante/evenements/AAAA/MM/<date>-<sujet>.md`. Les contenus `personnel/` sont sa responsabilité. **Ne pas modifier d'autres séances** par commodité. Pour plus de quatre séances changées volontairement : accord explicite, mention `[lot-valide]` dans le commit.

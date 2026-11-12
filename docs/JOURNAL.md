@@ -174,6 +174,12 @@
 - **Correction supplémentaire de déclenchement** : les évolutions du générateur `scripts/construire-site.cjs` ne déclenchaient pas le workflow (seul `scripts/verifier-site.cjs` figurait dans le filtre). Le filtre inclut désormais `scripts/**` pour valider **toute** modification de génération, de données ou de tests.
 - **Déploiement après ce commit** : à vérifier sur GitHub Actions.
 
+## 12 novembre 2026 — Renforcer le garde-fou contre l'écrasement des champs
+
+- **Intégrité post-migration** : en plus des identifiants stables et de l'interdiction de suppressions de fichiers, la CI compare chaque séance modifiée à sa version précédente : **propriétés supprimées ou dates modifiées interdites par défaut**.
+- Un accord utilisateur explicite, matérialisé dans le message de commit par `[suppression-champ-validée]` ou `[date-validée]`, est indispensable pour ces opérations intentionnelles. Une modification ordinaire des sensations ou structures conserve les autres champs.
+- Aucun changement de contenu sportif ni de navigation. Vérifier GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

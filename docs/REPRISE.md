@@ -1,5 +1,9 @@
 # Reprise entre LLM — Mon Rythme
 
+## Prévention des altérations involontaires
+
+`scripts/verifier-changements.cjs` interdit désormais, par défaut, la disparition d'un champ ou le changement de date d'une séance existante. Une modification explicitement demandée doit être expliquée et signalée par `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit. Ces marqueurs ne remplacent pas l'accord utilisateur. Les autres champs et séances doivent rester inchangés.
+
 ## Architecture actuelle : sources individuelles validées
 
 **Prioritaire sur les sections historiques plus bas.** L'ancien `personnel/programme.js` n'existe plus : **18 séances transférées sans modification de leurs champs** dans `personnel/seances/AAAA/MM/<id>.json`. Le fichier `personnel/config.json` conserve objectifs/début du cycle. Comptes rendus individualisés sous `personnel/sante/rapports/`, événements datés sous `personnel/sante/evenements/` ; le texte source du journal a été redistribué **sans perte ni reformulation**. `SUIVI.md` contient les règles/modèle.
