@@ -11,7 +11,7 @@ function verifier(plan,referentiel){
  if(!["course","renfo","kine"].includes(plan.type))throw Error("Planification : type inconnu "+plan.id);
  if(Object.hasOwn(plan,"nomEntrainementMontre")){
   const nom=plan.nomEntrainementMontre;
-  if(typeof nom!=="string"||!nom.trim()||nom!==nom.trim()||nom.length>256||/[\r\n<>]/.test(nom)||/^(?:\d+|https?:\/\/)/i.test(nom))
+  if(typeof nom!=="string"||!nom.trim()||nom!==nom.trim()||nom.length>256||/[\r\n<>]/.test(nom)||(/^(?:\d+|https?:\/\/)/i.test(nom)||/mon[\s_-]*rythme/i.test(nom)))
    throw Error("Planification : nom d’entraînement montre invalide "+plan.id);
  }
  if(plan.dureeEstimeeMinutes){

@@ -14,7 +14,7 @@
       "id": "renforcement",
       "horizon": "Première séance prévue le 13 novembre",
       "intention": "Repartir sur une seule séance Renfo adaptée",
-      "condition": "Un seul Renfo prévu le 13 novembre, non réalisé. Modèle Garmin final « Mon Rythme - Renfo A » en bibliothèque, non programmé ; 17 étapes et 3 exercices inchangés après retrait du suffixe technique. Échauffement et étirements libres, sans séries détaillées sur le Web. Adapter selon douleur et récupération."
+      "condition": "Un seul Renfo prévu le 13 novembre, non réalisé. Modèle Garmin final « Reprise - Renfo A » en bibliothèque, non programmé ; 17 étapes et 3 exercices inchangés. Le préfixe de contexte « Reprise » reflète l'objectif principal actuel de retrouver des sensations agréables, sans pression de performance, et la phase de reprise progressive. Échauffement et étirements libres ; pas de volumes dans le Web. Adapter selon douleur et récupération."
     },
     {
       "id": "progression",
@@ -47,5 +47,5 @@
     "sante:rapport:course-2026-11-11",
     "sante:evenement:2026-11-12-echange-chaussures-running"
   ],
-  "statut": "12 novembre 2026 : Renfo du 13 novembre en bibliothèque Garmin sous le nom définitif « Mon Rythme - Renfo A », 17 étapes identiques à l'ancien modèle renommé par recréation puis nettoyage de la version (corrigé). Non programmé, non réalisé. Renfo Web : intitulés simples, nom Garmin visible. Vigilance plantaire maintenue."
+  "statut": "12 novembre 2026 : Renfo du 13 novembre en bibliothèque Garmin sous le nom « Reprise - Renfo A », correspondant à l'objectif principal de confort et à la phase de reprise progressive. Ancienne copie de marque supprimée après vérification des 17 étapes. Même nom sur Mon programme ; non programmé et non réalisé. Vigilance plantaire inchangée."
 }

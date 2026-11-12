@@ -347,13 +347,18 @@ assert.equal(libelleEtapeRenfo("Ouverture du genou sur le côté · 3 × 10 par 
 assert.equal(libelleEtapeRenfo("Bras et jambe opposés sur le dos · 3 × 8"),"Bras et jambe opposés sur le dos","Renfo seulement le nom");
 assert.ok(html.includes('if(s.type==="renfo"&&!isCompleted(s))activities=activities.map(libelleEtapeRenfo);'),
  "Les libellés courts doivent être employés dans le rendu du programme");
-const nomRenfoValide="Mon Rythme - Renfo A";
+const nomRenfoValide="Reprise - Renfo A";
+const objectifsNom=JSON.parse(read("domaines/coaching/donnees/objectifs.json"));
+const orientationNom=JSON.parse(read("domaines/coaching/donnees/orientation.json"));
+assert.ok(objectifsNom.objectifs[0].includes("sensations agréables")&&orientationNom.phase.startsWith("Reprise"),"Le contexte Reprise doit être justifié par l’objectif principal en cours");
+assert.ok(nomRenfoValide.startsWith(orientationNom.phase.split(" ")[0]+" - "),"Le nom doit porter la qualification de la phase actuelle");
 assert.ok(!/\s+\((?:corrigé|version corrigée|test|brouillon)\)$/i.test(nomRenfoValide),"Nom final Garmin sans étiquette de correction");
 const sourceRenfo=data.plans.get("renfo-2026-11-13");
 assert.equal(sourceRenfo.nomEntrainementMontre,nomRenfoValide,"Planification doit enregistrer le nom exact relu dans Garmin");
 const verifierNomMontre=require("../domaines/planification/modele.cjs").verifier;
 assert.throws(()=>verifierNomMontre({...sourceRenfo,nomEntrainementMontre:"   "},data.mouvements),/nom d.entraînement montre invalide/,"Le nom vide est interdit");
 assert.throws(()=>verifierNomMontre({...sourceRenfo,nomEntrainementMontre:"https://exemple.fr"},data.mouvements),/nom d.entraînement montre invalide/,"Une URL ne remplace jamais le nom du modèle");
+assert.throws(()=>verifierNomMontre({...sourceRenfo,nomEntrainementMontre:"Mon Rythme - Renfo A"},data.mouvements),/nom d.entraînement montre invalide/,"Le nom du site ne doit pas servir de préfixe Garmin");
 assert.equal(data.sessions.find(s=>s.id===sourceRenfo.id).nomEntrainementMontre,nomRenfoValide,"La présentation doit reprendre exactement le nom Garmin");
 const debutTitreProgramme=html.indexOf("  function titreProgramme(s) {");
 const debutDerouleProgramme=html.indexOf("  function derouleDisplay(s) {",debutTitreProgramme);
@@ -363,7 +368,7 @@ const titreProgramme=vm.runInNewContext(
   {isCompleted:s=>s.fait===true}
 );
 assert.equal(titreProgramme({fait:false,nomEntrainementMontre:nomRenfoValide}),
-  "Programme prévu · Mon Rythme - Renfo A","Le nom Garmin doit figurer dans le même titre que Programme prévu");
+  "Programme prévu · Reprise - Renfo A","Le nom Garmin doit figurer dans le même titre que Programme prévu");
 assert.equal(titreProgramme({fait:false}),"Programme prévu","Programme sans modèle Garmin : pas de nom à inventer");
 assert.equal(titreProgramme({fait:true,nomEntrainementMontre:nomRenfoValide}),
   "Séance","Une réalisation n'est pas un programme prévu");

@@ -26,3 +26,6 @@ Pour **toute séance associée à un modèle Garmin créé et relu**, enregistre
 
 Cette règle s'applique **systématiquement à toutes les séances prévues disposant d'un modèle Garmin**, pas seulement au Renfo. Conserver le nom réel vérifié en bibliothèque, les cinq lignes Renfo épurées, toutes les séries/répétitions/tempos/repos dans la prescription et Garmin, et l'absence de données Garmin sensibles sur le Web. Le contrôle CI doit tester **le même en-tête**, l'absence de paragraphe redondant, le cas sans modèle et le cas réalisé, puis vérifier la publication Pages. **Règle d'affichage prioritaire**, qui remplace les consignes antérieures proposant une ligne dédiée au-dessus des étapes.
 
+## 12 novembre 2026 — Contexte objectif dans le nom Garmin
+
+Le champ public `nomEntrainementMontre` est le **nom exact du modèle vérifié dans Garmin**, et non le nom du site. Le Coach détermine son préfixe lisible à partir de l'objectif principal en cours (`domaines/coaching/donnees/objectifs.json`) et de la phase (`orientation.json`), sans supposer de performance ni réutiliser un contexte périmé. Exemple actuel : **« Reprise - Renfo A »**, affiché sur la même ligne que « Programme prévu ». Les blocs métier, la projection minimaliste, le statut prévu et les contraintes de programmation restent inchangés.
