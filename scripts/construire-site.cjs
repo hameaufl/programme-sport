@@ -23,7 +23,7 @@ function build(){
  // Compatibilité des anciens HTML potentiellement gardés en cache Android :
  // ces deux fichiers sont UNIQUEMENT produits dans _site/, jamais dans le dépôt.
  const legacyWeeks={};
- for(const week of index.semaines)legacyWeeks[week]=model.weeks.get(week);
+ for(const week of [...model.weeks.keys()].sort())legacyWeeks[week]=model.weeks.get(week);
  const legacyJS="/* Compatibilité temporaire avec les anciennes pages mises en cache ; données générées. */\n"+
   "window.MON_RYTHME_OBJECTIFS = "+JSON.stringify(model.config.objectifs)+";\n"+
   "window.MON_RYTHME_DEBUT_CYCLE = "+JSON.stringify(model.config.debutCycle)+";\n"+
