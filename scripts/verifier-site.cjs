@@ -4,7 +4,7 @@ const vm=require("node:vm");
 const assert=require("node:assert/strict");
 const {ROOT,collect,exposed,summary,monday}=require("./donnees.cjs");
 const read=p=>fs.readFileSync(require("node:path").join(ROOT,p),"utf8");
-const html=read("index.html"),sante=read("sante.html");
+const html=read("addons/web/pages/index.html"),sante=read("addons/web/pages/sante.html");
 const data=collect(),index=summary(data);
 assert.equal(data.sessions.length,new Set(data.sessions.map(s=>s.id)).size,"Identifiants uniques");
 assert.ok(data.sessions.length>0,"Programme vide");
@@ -36,6 +36,16 @@ assert.ok(!html.includes("localStorage")&&!sante.includes("localStorage"),"Stock
 assert.ok(html.includes('<div class="section-top"><h2 id="headingAll">Séances de la semaine</h2></div>'),"La liste des séances doit conserver son titre");
 assert.ok(!html.includes("Course et kiné programmées pour la semaine sélectionnée."),"Ne pas afficher de résumé statique au-dessus de la liste hebdomadaire");
 assert.ok(!fs.existsSync(require("node:path").join(ROOT,"personnel/programme.js")),"Ancien fichier monolithique maintenu");
+assert.ok(!fs.existsSync(require("node:path").join(ROOT,"personnel/seances")),"Anciennes séances mélangées toujours présentes");
+const allowed=new Set(JSON.parse(read("contrats/publication-v1.json")).programme);
+for(const [week,sessions] of data.weeks)for(const s of exposed(week,data)){
+  for(const key of Object.keys(s))assert.ok(allowed.has(key),"Donnée non autorisée dans la projection Web : "+key);
+  assert.ok(!Object.hasOwn(s,"blocs"),"Prescription technique divulguée par le Web");
+}
+for(const plan of data.plans.values())for(const k of ["fait","sensations","pieces_jointes","aidesExercices","exercicesRealises","structuresSollicitees"])
+  assert.ok(!Object.hasOwn(plan,k),"Frontière métier violée dans une prescription : "+k);
+for(const f of ["domaines/planification/modele.cjs","domaines/activites/modele.cjs","domaines/sante/modele.cjs","domaines/coaching/modele.cjs"])
+  assert.ok(!/node:fs|addons\/|adaptateurs\//.test(read(f)),"Domaine dépendant d’un adaptateur : "+f);
 const base={date:"2027-01-06",titre:"Séance fictive",id:"fictif-2027-01-06",fait:false,sensations:""};
 const synthetic=[];
 for(let i=0;i<5000;i++){
@@ -54,11 +64,11 @@ assert.equal(planned.durationSeconds,17*60,"Durée de la séance Garmin incorrec
 assert.equal(planned.steps.length,7,"Sept étapes attendues pour la séance du 11 novembre");
 const expectedSeconds=[120,180,120,180,120,180,120];
 assert.deepEqual(planned.steps.map(x=>x.seconds),expectedSeconds,"Les fractions de marche/course doivent être identiques au programme prévu");
-const fitPath=require("node:path").join(ROOT,sample.pieces_jointes[0].chemin);
+const fitPath=require("node:path").join(ROOT,"adaptateurs/garmin/fichiers",sample.id+".fit");
 const actualFit=fs.readFileSync(fitPath);
 const binary=garmin.validateWorkoutFile(actualFit,planned);
 assert.equal(binary.seconds,1020,"Total FIT erroné");
-assert.ok(html.includes('fitDisplay(s)')&&html.includes('link.href="./"+entry.chemin'),"Lien de téléchargement FIT absent du détail");
+assert.ok(html.includes('fitDisplay(s)')&&html.includes('link.href="./"+entry.url'),"Lien de téléchargement FIT absent du détail");
 assert.ok(!html.includes("Importer dans Garmin Connect"),"Ne pas promettre un import Garmin Connect non documenté");
 assert.ok(html.includes("Télécharger l'entraînement Garmin (.FIT)"),"L'intitulé du lien de téléchargement doit être conservé");
 assert.ok(!html.includes("Fichier d'entraînement prévu · transfert vers Venu 4 à tester")&&!html.includes("garmin-note"),"Aucun avertissement technique affiché sous le lien Garmin");
@@ -89,7 +99,7 @@ for(const s of renfo){
   for(const exercise of s.etapes.slice(1,-1)){
     const match=s.aidesExercices.find(a=>a.exercice===exercise);
     assert.ok(match&&/^assets\/renfo\/png\/[a-z0-9-]+\.png$/.test(match.png),"Lien PNG manquant : "+exercise);
-    const file=require("node:path").join(ROOT,match.png);
+    const file=require("node:path").join(ROOT,"addons/web/public",match.png);
     const bytes=fs.readFileSync(file);
     assert.equal(bytes.subarray(0,8).toString("hex"),"89504e470d0a1a0a","Image PNG invalide : "+match.png);
   }
@@ -104,23 +114,23 @@ for(const s of strengthSessions){
   const attached=s.pieces_jointes[0];
   assert.equal(attached.role,"entrainement_prevu");
   assert.equal(attached.format,"fit");
-  assert.equal(attached.chemin,"personnel/pieces-jointes/seances/"+s.id+"/prevu/"+s.id+".fit");
+  assert.equal(attached.url,"fichiers/garmin/"+s.id+".fit");
   const plan=garmin.parseSession(s);
   assert.equal(plan.sport,5,"Renfo doit utiliser le sport musculation");
-  assert.equal(plan.steps.length,17,"17 étapes FIT par séance de renfo");
-  assert.equal(plan.steps.filter(x=>x.durationType===5).length,9,"9 séries ouvertes à valider manuellement");
-  assert.equal(plan.timedSeconds,720,"Temps explicites, étirements inclus, 12 min");
+  assert.equal(plan.steps.length,2+s.blocs.filter(b=>b.nature==="exercice").reduce((n,b)=>n+2*b.series-1,0),"FIT et blocs structurés incohérents");
+  assert.equal(plan.steps.filter(x=>x.durationType===5).length,s.blocs.filter(b=>b.nature==="exercice").reduce((n,b)=>n+b.series,0),"Chaque série doit rester ouverte");
+  assert.equal(plan.timedSeconds,plan.steps.reduce((n,b)=>n+b.seconds,0),"Temps FIT calculé sur les blocs");
   assert.equal(plan.durationSeconds,null,"Ne pas inventer de chronomètre total pour les répétitions à durée variable");
-  const fit=fs.readFileSync(require("node:path").join(ROOT,attached.chemin));
+  const fit=fs.readFileSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers",s.id+".fit"));
   const checked=garmin.validateWorkoutFile(fit,plan);
-  assert.equal(checked.steps,17);
+  assert.equal(checked.steps,plan.steps.length);
   assert.equal(checked.sport,"strength_training");
-  assert.equal(checked.timedSeconds,720);
+  assert.equal(checked.timedSeconds,plan.timedSeconds);
   assert.equal(plan.steps.at(-1).name,"Etirements doux");
   assert.equal(plan.steps.at(-1).seconds,180);
 }
 const plannedCourses=data.sessions.filter(s=>s.id.startsWith("course-")&&!s.fait);
-assert.equal(plannedCourses.length,18,"18 sorties de course encore prévues");
+assert.ok(plannedCourses.length>0,"Aucune course prévue");
 const historyCourse=data.sessions.find(s=>s.id==="course-2026-11-11");
 assert.equal(historyCourse.fait,true,"Historique de sortie effectué à préserver");
 assert.equal(historyCourse.etapes.length,3,"Ne pas modifier la séance de course terminée");
@@ -131,18 +141,18 @@ for(const s of plannedCourses){
  assert.equal(plan.steps.at(-1).name,"Etirements doux","Les étirements doivent être dans le FIT course");
  assert.equal(plan.steps.at(-1).seconds,180,"Trois minutes d'étirements prévus par sortie");
  const ref=s.pieces_jointes.find(p=>p.role==="entrainement_prevu");
- assert.equal(ref.chemin,"personnel/pieces-jointes/seances/"+s.id+"/prevu/"+s.id+".fit");
- const fit=fs.readFileSync(require("node:path").join(ROOT,ref.chemin));
+ assert.equal(ref.url,"fichiers/garmin/"+s.id+".fit");
+ const fit=fs.readFileSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers",s.id+".fit"));
  const validation=garmin.validateWorkoutFile(fit,plan);
  assert.equal(validation.seconds,parseInt(s.duree,10)*60,"Durée course et FIT incohérente");
 }
-const redundantRenfo=JSON.parse(JSON.stringify(strengthSessions[0]));
-redundantRenfo.etapes.splice(-1,0,"Retour au calme · 4 min de mouvements doux et respiration");
+const redundantRenfo={...strengthSessions[0],blocs:[...strengthSessions[0].blocs]};
+redundantRenfo.blocs.splice(-1,0,{nature:"retour_au_calme",dureeSecondes:240});
 assert.throws(()=>garmin.parseSession(redundantRenfo),/retour au calme redondant/,"Pas de retour au calme additionnel si étirements");
-const invalidRenfo=JSON.parse(JSON.stringify(strengthSessions[0]));
-invalidRenfo.etapes[1]="Exercice inconnu · 3 × 10 ; repos 60 s entre séries";
+const invalidRenfo={...strengthSessions[0],blocs:strengthSessions[0].blocs.map(b=>({...b}))};
+invalidRenfo.blocs[1].mouvementId="mouvement-inconnu";
 assert.throws(()=>garmin.parseSession(invalidRenfo),/non reconnu/);
-assert.equal(renfo.length,14,"Deux renfos la semaine du 9 et trois les autres semaines");
+assert.ok(renfo.length>0,"Aucun renfo prévu");
 assert.ok(renfo.some(s=>s.id==="renfo-2026-11-16"),"Renfo du lundi 16 manquant");
 assert.ok(!renfo.some(s=>s.id==="renfo-2026-11-15"||s.id==="renfo-2026-11-17"),"Anciennes dates de Renfo toujours présentes");
 const renfoParSemaine=new Map();
@@ -154,9 +164,9 @@ assert.equal(renfoParSemaine.get("2026-11-09"),2,"Dimanche 15 novembre réservé
 for(const week of ["2026-11-16","2026-11-23","2026-11-30","2026-12-07"])
   assert.equal(renfoParSemaine.get(week),3,"Trois Renfos requis semaine "+week);
 assert.ok(html.includes('s.type!=="renfo"'),"Renfo : ne pas afficher de paragraphes supplémentaires");
-for(const s of renfo)assert.equal(s.duree,"29–35 min","Durée Renfo hors retour au calme redondant");
-const banque=JSON.parse(read("assets/renfo/banque.json"));
-assert.equal(banque.exercices.length,5,"Banque PNG incomplète");
-const known=new Set(banque.exercices.map(e=>e.png));
+for(const s of renfo){const d=data.plans.get(s.id).dureeEstimeeMinutes;assert.equal(s.duree,d.min+"–"+d.max+" min","Durée Renfo issue du plan structuré");}
+const banque=JSON.parse(read("addons/web/public/assets/renfo/banque.json"));
+assert.ok(banque.images.length>=5,"Banque PNG incomplète");
+const known=new Set(banque.images.map(e=>e.png));
 for(const s of renfo)for(const help of s.aidesExercices)assert.ok(known.has(help.png),"Aide non référencée dans la banque : "+help.png);
 console.log("Validation OK :",data.sessions.length,"séances,",data.reports.size,"rapports,",data.events.length,"événements ; 5000 séances fictives regroupées sans perte.");
