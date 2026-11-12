@@ -1,5 +1,9 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Compatibilité des anciennes pages Android (technique, lecture seule)
+
+L'artefact Pages peut contenir un `personnel/programme.js` et un `personnel/sante/SUIVI.md` **reconstitués au moment du build**, uniquement pour qu'un ancien `index.html` conservé en cache continue de fonctionner. **Ces fichiers n'existent pas comme sources dans Git** : un Coach ne doit **jamais** chercher à les modifier ou à les recréer. Le projet utilise uniquement les fichiers sources unitaires sous `personnel/seances/`, `personnel/sante/rapports/` et `personnel/sante/evenements/`.
+
 ## Architecture actuelle prioritaire : un fichier par séance — consigne Coach
 
 **Cette section remplace toutes les anciennes instructions mentionnant `personnel/programme.js`.** Le fichier monolithique a été retiré après une migration des 18 séances **sans altération de leurs champs**.

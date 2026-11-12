@@ -166,6 +166,12 @@
 - Tests de date, identifiants, intégrité et correspondance rapports/séances ; test artificiel à 5 000 entrées. Le Coach modifie les fichiers ciblés.
 - **Déploiement** : à confirmer après réussite de GitHub Actions.
 
+## 12 novembre 2026 — Finalisation : compatibilité des anciennes pages et consignes opérationnelles
+
+- Pour éviter une rupture lors du chargement d'un ancien HTML PWA/Android conservé en cache, le build prépare un `programme.js` et un `SUIVI.md` **agrégés uniquement dans `_site/`**. Aucun fichier source monolithique supplémentaire dans Git ; les nouvelles pages utilisent toujours les vues JSON hebdomadaires.
+- Remplacement des références obsolètes à `personnel/programme.js` dans les documentations opérationnelles, sans changer les données de séances ou le contenu des rapports.
+- État de déploiement : à vérifier sur GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

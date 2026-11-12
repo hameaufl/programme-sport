@@ -16,7 +16,7 @@ L'ordre **« Mets-toi à jour »** désigne exclusivement une **lecture du dép�
 ## Maturation — structure et interface
 
 - Seule habilitée à modifier `index.html`, les styles, le rendu JavaScript, le workflow, les tests, `AGENTS.md`, `README.md` et `docs/`.
-- Prépare la lecture des données publiées depuis `personnel/programme.js`.
+- Prépare la lecture des données générées par semaine depuis les séances unitaires de `personnel/seances/`.
 - **Interdiction de consigner une séance comme faite, de rédiger des sensations ou de prescrire un ajustement sportif.**
 - Aucun nouvel élément visuel sans demande ou accord explicite.
 

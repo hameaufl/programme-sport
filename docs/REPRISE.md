@@ -12,7 +12,7 @@ Lire d'abord [AGENTS.md](../AGENTS.md), puis [ROLES.md](ROLES.md).
 - **Maturation :** [CONTEXTE.md](CONTEXTE.md), [DECISIONS.md](DECISIONS.md), [JOURNAL.md](JOURNAL.md), `index.html`, `scripts/`, workflow.
 - **Coach :** [personnel/README.md](../personnel/README.md), [personnel/DECISIONS.md](../personnel/DECISIONS.md), [personnel/JOURNAL.md](../personnel/JOURNAL.md), [personnel/programme.js](../personnel/programme.js), [personnel/sante/](../personnel/sante/README.md), [personnel/GARMIN.md](../personnel/GARMIN.md).
 
-**Source personnelle unique** : `personnel/programme.js`, pas de `programme.js` à la racine. L'HTML charge cette ressource directement. Aucune copie permanente dans le dépôt.
+**Sources personnelles uniques actuelles** : fichiers `personnel/seances/AAAA/MM/<id>.json` et `personnel/config.json`, complétés par les rapports/événements individualisés. Les vues de semaines sont générées dans l'artefact, jamais copiées dans Git.
 
 Le Coach modifie `personnel/` à la réception d'un compte rendu, puis pousse sur `main`. **GitHub Actions se déclenche automatiquement** pour `personnel/**`, sans demande « Run workflow ». Contrôler `success` et ne pas annoncer un déploiement pendant `queued` / `failure`. Il ne change jamais l'IHM.
 

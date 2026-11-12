@@ -13,25 +13,26 @@
 ## Fichiers
 
 - [PROFIL.md](PROFIL.md) : antécédents, aspects mécaniques et fonctionnels, bilans reçus, contraintes utiles. **Aucune donnée clinique renseignée**.
-- [SUIVI.md](SUIVI.md) : historique des comptes rendus et décisions du Coach, après réception des retours. **Aucun retour réel consigné**.
-- `journal/AAAA-MM-JJ.md` : format futur facultatif par compte rendu (créer uniquement pour des données réelles).
+- [SUIVI.md](SUIVI.md) : modèles et règles générales seulement. Les comptes rendus réels sont sous `rapports/AAAA/MM/<id>.md` et les événements sous `evenements/AAAA/MM/`.
+- `rapports/AAAA/MM/<id>.md` : un compte rendu de séance réelle par identifiant.
+- `evenements/AAAA/MM/<date>-<sujet>.md` : un événement de santé réel par fichier.
 
 **Bilan podologue attendu** : future référence initiale sur posture et appuis des pieds. Document **non reçu** ; aucune mesure ou conclusion à déduire.
 
 ## Source de vérité des séances
 
-- `personnel/programme.js` porte `fait` et `sensations` **statiquement** pour chaque séance, rédigés et mis à jour par le **Coach**.
+- Chaque fichier `personnel/seances/AAAA/MM/<id>.json` porte les champs `fait` et `sensations` de la séance, rédigés par le **Coach**.
 - **Pas de `localStorage`**, pas de saisie ou export depuis l'IHM. Les statuts/sensations apparaissent en lecture seule sur Mon Rythme.
-- `sante/` peut conserver l'historique détaillé, sans créer de contradiction avec les résumés de `personnel/programme.js`.
+- `sante/rapports/` conserve l'historique détaillé, lié par identifiant sans recopier la séance entière.
 - Les pièces Garmin réelles sont conservées dans `personnel/pieces-jointes/` ; procédures dans [docs/GARMIN.md](../GARMIN.md).
 
 ## Affichage sur la page Mon suivi santé
 
 - La page `sante.html` lit ce répertoire **en lecture seule** lors du chargement ; la source unique reste dans GitHub, sans copie de contenu.
 - Les rubriques `##` de `PROFIL.md` alimentent les cartes « Mes repères de santé ». Les rubriques non renseignées restent vides sur la page.
-- Les comptes rendus effectifs dans `SUIVI.md` peuvent être datés par un titre `### AAAA-MM-JJ — titre` ; la page ignore le modèle `### AAAA-MM-JJ` sans vraie date et affiche uniquement les entrées réelles.
+- Les événements effectivement datés dans `evenements/` sont agrégés par le build en pages de 30 ; les comptes rendus de séance restent liés via leur `id` dans `rapports/`.
 - Le Coach renseigne **seulement** les informations transmises ; Maturation ne modifie pas les observations du profil ni le journal.
-- `personnel/programme.js` reste la référence pour `fait`, `sensations` et les compteurs de séances affichés.
+- Les fichiers `personnel/seances/` restent la référence pour `fait`, `sensations`, structures et compteurs pré-calculés.
 
 ## Règles de saisie (Coach)
 

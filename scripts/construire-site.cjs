@@ -20,6 +20,25 @@ function build(){
  for(const name of ["index.html","sante.html","favicon.svg","icon-192.png","icon-512.png","manifest.webmanifest","publication.txt",".nojekyll"])copy(name);
  copy("personnel/sante/PROFIL.md");
  // Original des fichiers de santé consultable via GitHub, non nécessaire au fonctionnement du navigateur.
+ // Compatibilité des anciens HTML potentiellement gardés en cache Android :
+ // ces deux fichiers sont UNIQUEMENT produits dans _site/, jamais dans le dépôt.
+ const legacyWeeks={};
+ for(const week of index.semaines)legacyWeeks[week]=model.weeks.get(week);
+ const legacyJS="/* Compatibilité temporaire avec les anciennes pages mises en cache ; données générées. */\n"+
+  "window.MON_RYTHME_OBJECTIFS = "+JSON.stringify(model.config.objectifs)+";\n"+
+  "window.MON_RYTHME_DEBUT_CYCLE = "+JSON.stringify(model.config.debutCycle)+";\n"+
+  "window.MON_RYTHME_PROGRAMMES = "+JSON.stringify(legacyWeeks)+";\n";
+ const legacyProgram=path.join(dest,"personnel/programme.js");
+ fs.mkdirSync(path.dirname(legacyProgram),{recursive:true});
+ fs.writeFileSync(legacyProgram,legacyJS,"utf8");
+ const oldJournal=fs.readFileSync(path.join(ROOT,"personnel/sante/SUIVI.md"),"utf8");
+ const reportContents=model.reportFiles.map(p=>fs.readFileSync(p,"utf8")).join("");
+ const eventContents=model.eventFiles.map(p=>fs.readFileSync(p,"utf8")).join("");
+ const journalOldStyle=oldJournal.replace("## Équipement de reprise — événements datés",reportContents+"## Équipement de reprise — événements datés")
+   .replace("## Modèle d'entrée",eventContents+"## Modèle d'entrée");
+ const compatibleJournal=path.join(dest,"personnel/sante/SUIVI.md");
+ fs.mkdirSync(path.dirname(compatibleJournal),{recursive:true});
+ fs.writeFileSync(compatibleJournal,journalOldStyle,"utf8");
  const index=summary(model);
  index.buildVersion=process.env.GITHUB_SHA?process.env.GITHUB_SHA.slice(0,12):"local";
  json("data/index.json",index);

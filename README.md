@@ -24,14 +24,14 @@ Un `robots.txt` dans ce sous-dossier GitHub Pages ne remplace pas les directives
 - [Mon programme](https://hameaufl.github.io/programme-sport/) : calendrier et séances.
 - [Mon suivi santé](https://hameaufl.github.io/programme-sport/sante.html) : première interface de bilan de la reprise sportive, profil, journal et réalisations confirmées.
 
-La seconde page est **alimentée directement** par `personnel/programme.js` et les deux fichiers `personnel/sante/PROFIL.md` et `personnel/sante/SUIVI.md`, sans copier le contenu individuel dans le HTML. Les deux pages sont marquées `noindex`; les fichiers servis par Pages restent publics.
+La seconde page s'appuie sur les **vues générées** depuis les fichiers individuels de séance, les événements de santé et `personnel/sante/PROFIL.md`. Les deux pages sont marquées `noindex` ; les fichiers servis par Pages restent publics.
 
 ## Architecture sans doublon de données
 
 - **Construction :** `index.html`, [docs/](docs/REPRISE.md), [AGENTS.md](AGENTS.md), `scripts/`, `.github/`.
-- **Données personnelles :** [personnel/](personnel/README.md) — une seule source versionnée `personnel/programme.js`, état des séances, sensations, santé et futures pièces jointes.
+- **Données personnelles :** [personnel/](personnel/README.md) — une source **par séance**, rapports et événements individualisés, santé et futures pièces jointes.
 
-La page charge directement `./personnel/programme.js` ; **aucun deuxième fichier programme dans Git**. L'artefact temporaire GitHub Pages est un résultat technique de publication, pas une copie entretenue dans le dépôt.
+La page ne charge que `data/index.json` puis `data/semaines/<lundi>.json` au besoin. Les artefacts restent des **résultats temporaires de publication** et non des copies entretenues dans Git. Pour les anciens HTML mis en cache, le build produit temporairement des fichiers de compatibilité sous `_site/personnel/`, sans source concurrente.
 
 ## Casquettes et publication
 
@@ -43,6 +43,6 @@ La page charge directement `./personnel/programme.js` ; **aucun deuxième fichie
 
 ## Contrôles
 
-`node scripts/verifier-site.cjs` : contrats des données, identifiants et semaines, JavaScript, absence de stockage local, chemin unique, témoin de version.
+`node scripts/verifier-site.cjs` : contrats des séances individuelles, identifiants, semaines, rapports et événements, test fictif 5 000 séances, JavaScript et versions. `node scripts/verifier-changements.cjs` contrôle la portée des modifications ; `node scripts/construire-site.cjs` produit les JSON hebdomadaires, le journal paginé et les fichiers de compatibilité hors Git.
 
 La publication automatique utilise des jobs `build` et `deploy` séparés, avec vérification de la disponibilité de l'artefact avant déploiement. Le site peut momentanément subir un délai de diffusion/cache ; un commit ne suffit pas à attester une publication réussie.

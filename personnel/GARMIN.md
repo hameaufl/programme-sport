@@ -4,7 +4,7 @@
 
 ## Objectif et répartition des rôles
 
-- **Coach** : reçoit les retours, analyse les exports Garmin, versionne les fichiers réellement transmis, met à jour `personnel/programme.js` et les comptes rendus, décide ou conserve le programme. Crée éventuellement un fichier d'entraînement prévu pour la montre **après validation technique de son format**.
+- **Coach** : reçoit les retours, analyse les exports Garmin, versionne les fichiers réellement transmis, met à jour le **fichier individuel de séance `personnel/seances/AAAA/MM/<id>.json`** et son compte rendu lié, décide ou conserve le programme. Crée éventuellement un fichier d'entraînement prévu pour la montre **après validation technique de son format**.
 - **Maturation** : définit le **contrat des fichiers et données**, prépare l'architecture puis, **après demande ou approbation** du propriétaire, ajoute les liens/commandes dans l'IHM. Le Coach **ne modifie jamais l'interface** et Maturation **ne traite pas le coaching**.
 
 ## Emplacement proposé pour les pièces jointes
@@ -22,7 +22,7 @@ Créer les répertoires de séance **uniquement lorsqu'un vrai fichier est reçu
 
 ## Contrat de données facultatif — à utiliser uniquement pour une vraie pièce jointe
 
-Pour le moment, `personnel/programme.js` n'a **aucun** champ `pieces_jointes`. À la première pièce jointe, le Coach peut utiliser ce schéma déjà documenté **si l'IHM actuelle n'a pas besoin d'être modifiée** :
+Pour le moment, les fichiers individuels de `personnel/seances/` n'ont **aucun** champ `pieces_jointes`. À la première pièce jointe, le Coach peut utiliser ce schéma déjà documenté **si l'IHM actuelle n'a pas besoin d'être modifiée** :
 
 ```json
 "pieces_jointes": [
@@ -55,7 +55,7 @@ Référence : [Garmin Connect Developer Program — Personal API](https://develo
 À chaque retour sportif, le Coach doit, si les outils et informations sont disponibles dans le tour en cours :
 1. Identifier la séance et ses fichiers par `id`.
 2. Déposer et versionner le fichier réel dans `personnel/pieces-jointes/`.
-3. Renseigner `fait`, `sensations` et toute adaptation décidée dans `personnel/programme.js`.
+3. Renseigner `fait`, `sensations` et toute adaptation décidée **dans le seul fichier JSON de la séance concernée**.
 4. Compléter l'historique `personnel/sante/` si pertinent.
 5. Commit, journaliser les changements et répondre de manière concise.
 
