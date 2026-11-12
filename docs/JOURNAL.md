@@ -232,3 +232,9 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - `index.html` : bouton d'aide `?` réduit à 16 px, placé sur la ligne de l'exercice avec espace insécable, ouvrant un `<dialog>` responsive illustré par le PNG, fermeture `×`, Échap ou fond ; pas de navigation externe.
 - `assets/renfo/banque.json` : cinq gestes et leurs PNG sources ; `scripts/construire-site.cjs` publie uniquement la banque d'images PNG, pas les GIF historiques. `scripts/verifier-site.cjs` contrôle chaque liaison Renfo/PNG, la signature PNG, les 12 séances et la fenêtre.
 - La navigation hebdomadaire, les intitulés Course à pied/Kiné, les liens Garmin et le suivi santé ne sont pas modifiés, en dehors du marqueur de version synchronisé dans les deux pages et le témoin.
+
+## 12 novembre 2026 — Le Renfo affiche uniquement les puces chronométrées
+
+- **Maturation ponctuelle à la demande de l'utilisateur** : masquer les paragraphes Objectif et Détails sous la liste `etapes` des **seules séances Renfo**, pour éviter la verbosité et la duplication des consignes. Les autres types de séances restent inchangés.
+- **Règle permanente** : formats et responsabilités détaillés dans `AGENTS.md` et `docs/ROLES.md` ; chaque puce affiche son volume et son chrono. Les trois gestes gardent obligatoirement leurs aides PNG ; la mise en route et le retour au calme n'en nécessitent pas.
+- **Tests** : 15 Renfos répartis en cinq semaines à trois séances, dont 12/14/15 novembre ; cinq étapes séquentielles avec temps et trois PNG par session.

@@ -1,5 +1,12 @@
 # Attribution des deux casquettes
 
+## Séances Renfo : séparation Coach / Maturation (12 novembre 2026)
+
+- **Coach :** ordonner `etapes` en cinq puces brèves (mise en route, trois exercices, retour au calme) ; placer répétitions, durées et repos dans chaque puce. Associer les PNG des trois exercices, même répétés, en réutilisant la banque. Ne pas introduire de paragraphes supplémentaires sous la liste.
+- **Maturation :** afficher `etapes` et ses petits boutons d'aide PNG, **masquer `objectif` et `details` pour les Renfos prévus uniquement**, sans toucher à leurs champs ni au rendu de Course/Kiné. Vérifier les chronos, trois liens PNG et le calendrier.
+- **Exception de lancement :** 3 renfos les 12, 14 et 15 novembre, puis trois par semaine ; dimanche 15 facultatif, pas de nouvelle norme de séances consécutives.
+
+
 ## Aides aux exercices Renfo (consigne du propriétaire au 12 novembre 2026)
 
 Le Coach doit systématiquement fournir à chaque exercice Renfo une aide **PNG statique** depuis la banque `assets/renfo/banque.json`, même si l'exercice est répété ou connu. Si le mouvement est absent, le Coach génère le schéma PNG anatomiquement explicite avec flèches, l'inscrit dans la banque et l'associe via `aidesExercices[].png`. Maturation gère le petit bouton « ? » et le dialogue refermable de `index.html`, pas la rédaction des séances. Les GIF antérieurs ne sont plus utilisés.

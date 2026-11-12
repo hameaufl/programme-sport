@@ -221,7 +221,7 @@
         ?"Les exercices effectués n'ont pas encore été détaillés."
         :"Le contenu de cette séance n'a pas encore été précisé."));
     }
-    if(!isCompleted(s)){
+    if(!isCompleted(s) && s.type!=="renfo"){
       if(s.objectif)box.appendChild(elem("p","program-notes","Objectif : "+s.objectif));
       if(s.details)box.appendChild(elem("p","program-notes",s.details));
     }

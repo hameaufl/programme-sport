@@ -78,8 +78,12 @@ const renfo=data.sessions.filter(x=>x.type==="renfo");
 for(const s of renfo){
   assert.ok(/^renfo-\d{4}-\d{2}-\d{2}$/.test(s.id),"Identifiant renfo incorrect");
   assert.equal(s.titre,"Renfo");
-  assert.ok(s.etapes.length>=2&&Array.isArray(s.aidesExercices),"Exercices ou animations manquants");
-  for(const exercise of s.etapes){
+  assert.equal(s.etapes.length,5,"Renfo : mise en route + 3 exercices + retour au calme");
+  assert.ok(Array.isArray(s.aidesExercices)&&s.aidesExercices.length===3,"Trois aides PNG par Renfo requises");
+  assert.match(s.etapes[0],/^Mise en route · 4 min/,"Mise en route manquante");
+  assert.match(s.etapes[4],/^Retour au calme · 4 min/,"Retour au calme manquant");
+  assert.ok(s.etapes.every(e=>e.includes(" · ")&&/\d+\s*(?:min|s)/.test(e)),"Chaque bullet doit comporter un chrono");
+  for(const exercise of s.etapes.slice(1,-1)){
     const match=s.aidesExercices.find(a=>a.exercice===exercise);
     assert.ok(match&&/^assets\/renfo\/png\/[a-z0-9-]+\.png$/.test(match.png),"Lien PNG manquant : "+exercise);
     const file=require("node:path").join(ROOT,match.png);
@@ -90,7 +94,15 @@ for(const s of renfo){
 assert.ok(html.includes('var aid=aids.find')&&html.includes('showExerciseHelp(aid.png,item)')&&html.includes('id="exerciseDialog"'),"Fenêtre d'aide PNG cliquable absente");
 const buildScript=read("scripts/construire-site.cjs");
 assert.ok(buildScript.includes('path.join(dest,"assets/renfo/png")'),"PNG absents de l'artefact");
-assert.equal(renfo.length,12,"Trois renfos par semaine pendant quatre semaines attendus");
+assert.equal(renfo.length,15,"Trois renfos par semaine, semaine du 12 novembre incluse");
+const renfoParSemaine=new Map();
+for(const session of renfo){
+  const week=monday(session.date);
+  renfoParSemaine.set(week,(renfoParSemaine.get(week)||0)+1);
+}
+for(const week of ["2026-11-09","2026-11-16","2026-11-23","2026-11-30","2026-12-07"])
+  assert.equal(renfoParSemaine.get(week),3,"Trois Renfos requis semaine "+week);
+assert.ok(html.includes('s.type!=="renfo"'),"Renfo : ne pas afficher de paragraphes supplémentaires");
 for(const s of renfo)assert.equal(s.duree,"30–36 min","Durée Renfo non triplée");
 const banque=JSON.parse(read("assets/renfo/banque.json"));
 assert.equal(banque.exercices.length,5,"Banque PNG incomplète");

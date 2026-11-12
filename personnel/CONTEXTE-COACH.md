@@ -36,3 +36,9 @@
 - L'utilisateur précise, à titre d'**ordre de grandeur** et **sans rattacher ces volumes à une séance datée précise**, que des ponts de bassin en kinésithérapie peuvent comprendre **3 séries de 10 répétitions**, avec **20 secondes d'effort par répétition et 5 secondes de repos entre elles**.
 - Il rapporte également **presque 10 minutes de marche latérale avec élastique** dans des séances de kinésithérapie. Cet élastique **n'est pas disponible à domicile**.
 - Ce sont des **exemples de charges tolérées en encadrement**, et non des prescriptions pour l'autonomie : préserver une version moins exigeante au départ (ponts de 8–10 secondes de maintien) et réévaluer selon les symptômes, particulièrement pied droit, hanche droite et hyperextension du genou gauche.
+
+## 12 novembre 2026 — Format et démarrage anticipé souhaités
+
+- **Demande utilisateur explicite :** trois séances Renfo **dès aujourd'hui, jeudi 12 novembre**, jusqu'au dimanche 15, avant les semaines déjà programmées à trois Renfos. Répartition retenue **12, 14, 15 novembre** ; dimanche rapproché du samedi et de la course du lundi : séance particulièrement facultative selon les douleurs et la récupération, et non modèle de répartition à reproduire systématiquement.
+- **Préférence durable de description :** éviter les paragraphes ; **des puces concises dans l'ordre exact** (mise en route, gestes, fin) comprenant toutes les informations de temps/chrono, répétitions et repos sur chaque ligne. La nomenclature simple et les aides PNG déjà approuvées restent essentielles.
+- **Maturation ponctuelle demandée** uniquement pour graver cette règle et pour que l'interface ne répète plus de paragraphe sous la liste Renfo.

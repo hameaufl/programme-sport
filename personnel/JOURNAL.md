@@ -136,3 +136,10 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - Exemples de volumes de kiné communiqués (ponts 3 × 10 avec effort de 20 s et repos 5 s, marche latérale élastique presque 10 min) : consigner dans `personnel/CONTEXTE-COACH.md` sans les attribuer à une séance précise ni en faire une prescription automatique à domicile.
 - Remplacement effectif des aides GIF par les **PNG originaux que l'utilisateur a validés** ; banque unique documentée, question mark plus petit, image agrandie dans une fenêtre intégrée fermable. Règle permanente enregistrée dans `AGENTS.md` et `docs/ROLES.md`.
 - Aucun changement apporté aux séances course, kiné ou Garmin. Publication et contrôles du site obligatoires.
+
+## 12 novembre 2026 — Renfo immédiat et descriptions séquentielles
+
+- Trois nouveaux Renfos non réalisés datés du **12, 14 et 15 novembre**, en supplément des douze Renfos des quatre semaines suivantes ; **15 Renfos en tout**, trois par semaine sur cinq semaines.
+- Toutes les séances Renfo prévues présentent désormais **cinq puces chronologiques**, avec échauffement 4 min, exercices et leurs durées/pauses, retour au calme 4 min. Les anciennes descriptions longues sont supprimées du rendu, mais les champs `objectif`/`details` restent présents.
+- Banque PNG et exercices déjà choisis inchangés ; les schémas ne sont pas redessinés. Séance du dimanche 15 particulièrement facultative compte tenu de la densité.
+- Consignes durables mises à jour avec casquette éphémère Maturation. Statut/identifiant/date des 12 Renfos existants ainsi que course et kiné conservés.

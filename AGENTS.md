@@ -1,5 +1,13 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Renfo — consigne permanente de rédaction et de rendu compact (12 novembre 2026)
+
+- **Coach :** chaque séance de renforcement doit contenir **une seule liste chronologique** `etapes` : « Mise en route », chaque exercice dans l'ordre, « Retour au calme ». Toutes les puces incluent **les temps, séries/répétitions, maintiens et pauses pertinents** directement sur la même ligne, avec un vocabulaire simple. Ne pas reléguer ces informations dans un long paragraphe `details`.
+- **Images :** une aide PNG est obligatoire pour **chaque exercice réel** de la liste, y compris s'il est connu ou répété. « Mise en route » et « Retour au calme » sont des étapes générales, non des exercices illustrés. Les liens doivent être tirés de `assets/renfo/banque.json` ; les PNG validés ne sont pas redessinés.
+- **Maturation :** présenter les séances Renfo prévues avec **la liste seule**, sans afficher de paragraphe Objectif ni Détails sous le déroulé ; conserver les champs `objectif` et `details` dans la source pour compatibilité et le suivi. Garder le petit `?` et la fenêtre PNG, sans toucher aux autres activités.
+- **Plan :** trois Renfos dès **jeudi 12 novembre**, puis samedi 14 et dimanche 15 sur la première semaine incomplète ; ensuite mardi/jeudi/samedi. Deux jours consécutifs de renfo dans cette première semaine sont **exceptionnels**, non une règle : le dimanche est spécialement facultatif, à omettre si fatigue ou douleur, sans rattrapage.
+
+
 ## Renforcement : banque d'images PNG obligatoire pour le Coach
 
 - Pour **chaque nouvelle séance de type Renfo**, y compris tout exercice déjà pratiqué ou connu de l'utilisateur, associer une aide visuelle PNG à **chaque mouvement** indiqué dans `etapes`. Il n'y a **jamais d'exception au motif que l'exercice est familier**.
