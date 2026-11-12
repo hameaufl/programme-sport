@@ -207,3 +207,10 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - **Précision utilisateur :** le matériel disponible chez le kinésithérapeute n'est pas celui de la maison. Les exercices de Renfo domestique ne doivent utiliser que le matériel personnel, plus le poids du corps.
 - **Correction Coach :** dans `domaines/coaching/donnees/equipements.json`, conserver seulement `tapis_sol` (disponible) et `ballon_gymnastique` (disponible, ~80 cm) ; supprimer les entrées d'élastiques absents, d'haltères absents et d'accessoires non confirmés. Les faits de possession ne changent pas : seule la convention de l'inventaire devient **équipements possédés uniquement**.
 - **Continuité :** préciser la distinction maison / kiné dans le contexte du Coach, sans modifier de séance, prescription, activité confirmée, source Santé, page Web ou calendrier Garmin. Ajouts futurs sur déclaration explicite du propriétaire.
+
+## 12 novembre 2026 au soir — Échange Mizuno / Saucony confirmé
+
+- Le propriétaire précise la référence de la paire du 2 novembre : **Mizuno Neo Vista 2, pointure 44**, portée chez le podologue pour la confection des semelles puis lors de la sortie du 11 novembre, à laquelle ont succédé les douleurs déjà consignées.
+- **Échange réalisé** ce jeudi soir en magasin : **Saucony Hurricane 26, pointure 45**, pour une pointure habituelle 43 ; plusieurs essayages et **20–30 min environ de course sur tapis avec les semelles orthopédiques obtenues le 9 novembre**.
+- L'ancienne visite prévue le 13 est ainsi remplacée par une visite **réellement effectuée le 12**. Confort, douleurs pendant/après l'essai et bénéfice durable **non encore rapportés** ; cause des douleurs du 11 novembre toujours incertaine.
+- **Suivi Coach :** nouvel événement Santé, mise à jour du profil, complément au rapport de la sortie historique sans toucher à son exécution ni à ses sensations, et rappel de la prudence avant la course du 13. Aucun changement de planning ni aucune action Garmin.
