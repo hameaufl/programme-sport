@@ -1,0 +1,866 @@
+{
+  "date": "2026-11-12",
+  "branche": "maturation/architecture-multiagents",
+  "sha_reference": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+  "portee": "Inventaire exhaustif des titres Markdown des huit documents normatifs choisis ; il n'est pas un inventaire clause par clause de tout le dépôt.",
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "sha_blob": "daef2f580f3b15217eb02259d5fd89681f3815fb",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "EXPÉRIMENTATION MULTI-AGENTS — BRANCHE DE TRAVAIL UNIQUEMENT (12 novembre 2026)"
+        },
+        {
+          "line": 14,
+          "niveau": 2,
+          "titre": "RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)"
+        },
+        {
+          "line": 24,
+          "niveau": 2,
+          "titre": "RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)"
+        },
+        {
+          "line": 30,
+          "niveau": 2,
+          "titre": "RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)"
+        },
+        {
+          "line": 38,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)"
+        },
+        {
+          "line": 46,
+          "niveau": 2,
+          "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)"
+        },
+        {
+          "line": 53,
+          "niveau": 2,
+          "titre": "PRIORITÉ ACTUELLE — Renfo A du 13 novembre créé dans Garmin Connect (12 novembre 2026 au soir)"
+        },
+        {
+          "line": 57,
+          "niveau": 2,
+          "titre": "PRIORITÉ LA PLUS RÉCENTE — Renfo au vendredi 13 novembre, échauffement libre (12 novembre 2026 au soir)"
+        },
+        {
+          "line": 62,
+          "niveau": 2,
+          "titre": "PRIORITÉ — nom de la quatrième page « Mes équipements » (12 novembre 2026)"
+        },
+        {
+          "line": 68,
+          "niveau": 2,
+          "titre": "PRIORITÉ — composant d'en-tête unique et bandeaux réduits d'un tiers (12 novembre 2026)"
+        },
+        {
+          "line": 75,
+          "niveau": 2,
+          "titre": "PRIORITÉ ACTUELLE — Premier Renfo déplacé au jeudi 12 novembre 2026"
+        },
+        {
+          "line": 79,
+          "niveau": 2,
+          "titre": "PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)"
+        },
+        {
+          "line": 84,
+          "niveau": 2,
+          "titre": "DÉMARRAGE OBLIGATOIRE — rôle Coach et livraison complète (12 novembre 2026)"
+        },
+        {
+          "line": 91,
+          "niveau": 2,
+          "titre": "PRIORITÉ — navigation générale en haut, à droite du logo (12 novembre 2026)"
+        },
+        {
+          "line": 97,
+          "niveau": 2,
+          "titre": "PRIORITÉ — ne pas dupliquer la navigation ni les titres de section (12 novembre 2026)"
+        },
+        {
+          "line": 103,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — miroir Web vérifié après chaque mise à jour métier (12 novembre 2026)"
+        },
+        {
+          "line": 114,
+          "niveau": 2,
+          "titre": "PRIORITÉ — bandeaux de titres et navigation communs aux quatre pages (12 novembre 2026)"
+        },
+        {
+          "line": 120,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — autonomie du Coach sur les éléments Web qui affichent des données métier (12 novembre 2026)"
+        },
+        {
+          "line": 132,
+          "niveau": 2,
+          "titre": "PRIORITÉ — inventaire des équipements et page « Mes équipements » (12 novembre 2026)"
+        },
+        {
+          "line": 140,
+          "niveau": 2,
+          "titre": "PRIORITÉ — séparation métier et page « Le cap du Coach » (12 novembre 2026)"
+        },
+        {
+          "line": 153,
+          "niveau": 2,
+          "titre": "PRIORITÉ — programme Renfo personnalisé, catalogue Garmin officiel, pédagogie (12 novembre 2026)"
+        },
+        {
+          "line": 165,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — Garmin Connect par MCP, phase bêta (12 novembre 2026)"
+        },
+        {
+          "line": 176,
+          "niveau": 2,
+          "titre": "PRIORITÉ — architecture modulaire V2 (approuvée le 12 novembre 2026)"
+        },
+        {
+          "line": 194,
+          "niveau": 2,
+          "titre": "Règle prioritaire Renfo — les étirements remplacent le retour au calme (12 novembre 2026)"
+        },
+        {
+          "line": 201,
+          "niveau": 2,
+          "titre": "Étirements post-séance — systématiques pour les nouveaux programmes, sans retoucher les séances réalisées (12 novembre 2026)"
+        },
+        {
+          "line": 210,
+          "niveau": 2,
+          "titre": "Séances de la semaine — pas de texte de résumé statique"
+        },
+        {
+          "line": 216,
+          "niveau": 2,
+          "titre": "Garmin FIT Workout systématique pour les Renfos (12 novembre 2026)"
+        },
+        {
+          "line": 224,
+          "niveau": 2,
+          "titre": "Récupération ciblée avant kiné (décision datée du 12 novembre)"
+        },
+        {
+          "line": 232,
+          "niveau": 2,
+          "titre": "Renfo — consigne permanente de rédaction et de rendu compact (12 novembre 2026)"
+        },
+        {
+          "line": 240,
+          "niveau": 2,
+          "titre": "Renforcement : banque d'images PNG obligatoire pour le Coach"
+        },
+        {
+          "line": 248,
+          "niveau": 2,
+          "titre": "Présentation du calendrier — libellés de plusieurs activités"
+        },
+        {
+          "line": 254,
+          "niveau": 2,
+          "titre": "Continuité métier du Coach — dépôt GitHub comme mémoire intégrale (priorité absolue)"
+        },
+        {
+          "line": 267,
+          "niveau": 2,
+          "titre": "Compatibilité des anciennes pages Android (technique, lecture seule)"
+        },
+        {
+          "line": 271,
+          "niveau": 2,
+          "titre": "Garmin — comportement systématique du Coach et présentation épurée"
+        },
+        {
+          "line": 280,
+          "niveau": 2,
+          "titre": "Garmin Venu 4 — génération des entraînements programmés (règle Coach)"
+        },
+        {
+          "line": 290,
+          "niveau": 2,
+          "titre": "Architecture actuelle prioritaire : un fichier par séance — consigne Coach"
+        },
+        {
+          "line": 302,
+          "niveau": 2,
+          "titre": "Suivi santé — interface compacte et événements datés"
+        },
+        {
+          "line": 309,
+          "niveau": 2,
+          "titre": "Nouvelle page de suivi santé — structure et responsabilités"
+        },
+        {
+          "line": 318,
+          "niveau": 2,
+          "titre": "« Se mettre à jour » — lecture seule du dépôt (règle prioritaire)"
+        },
+        {
+          "line": 329,
+          "niveau": 2,
+          "titre": "Contrôle préalable obligatoire de la version des deux pages"
+        },
+        {
+          "line": 335,
+          "niveau": 2,
+          "titre": "Indexation volontairement désactivée — règle permanente"
+        },
+        {
+          "line": 343,
+          "niveau": 2,
+          "titre": "Structures sollicitées — libellés anatomiques directs (règle la plus récente)"
+        },
+        {
+          "line": 352,
+          "niveau": 2,
+          "titre": "Sensations nominales et structures sollicitées — priorité pour le Coach"
+        },
+        {
+          "line": 367,
+          "niveau": 2,
+          "titre": "Séance — intitulés ultra-concis (Coach)"
+        },
+        {
+          "line": 376,
+          "niveau": 2,
+          "titre": "Déroulé de séance — présentation et source réelle"
+        },
+        {
+          "line": 385,
+          "niveau": 2,
+          "titre": "Vocabulaire professionnel du Coach à partir des mots de l'utilisateur"
+        },
+        {
+          "line": 393,
+          "niveau": 2,
+          "titre": "Réponses du Coach — concision et périmètre stricts"
+        },
+        {
+          "line": 401,
+          "niveau": 2,
+          "titre": "Carte de navigation Mon Rythme — rendu approuvé pour le Coach"
+        },
+        {
+          "line": 412,
+          "niveau": 2,
+          "titre": "Réponse Coach — lien vers Mon Rythme et détail de séance"
+        },
+        {
+          "line": 420,
+          "niveau": 2,
+          "titre": "Deux casquettes exclusives"
+        },
+        {
+          "line": 428,
+          "niveau": 2,
+          "titre": "Séparation physique obligatoire — aucune duplication"
+        },
+        {
+          "line": 437,
+          "niveau": 2,
+          "titre": "Mise à jour GitHub et continuité — systématique"
+        },
+        {
+          "line": 446,
+          "niveau": 2,
+          "titre": "Contrat technique à préserver"
+        },
+        {
+          "line": 455,
+          "niveau": 2,
+          "titre": "Reprise"
+        }
+      ]
+    },
+    {
+      "path": "docs/ROLES.md",
+      "sha_blob": "104214e1e7e6930605cc7daa1b921f36f7042686",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "Entrée opérationnelle Coach — 12 novembre 2026"
+        },
+        {
+          "line": 8,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — interface métier du Coach, interface générale de Maturation (12 novembre 2026)"
+        },
+        {
+          "line": 16,
+          "niveau": 2,
+          "titre": "Responsabilités de la vue « Mes équipements »"
+        },
+        {
+          "line": 22,
+          "niveau": 2,
+          "titre": "Découplage prioritaire — stratégie du Coach et projection Web"
+        },
+        {
+          "line": 30,
+          "niveau": 2,
+          "titre": "Règle prioritaire du Coach — exercices officiels, animations facultatives"
+        },
+        {
+          "line": 37,
+          "niveau": 2,
+          "titre": "Garmin MCP — responsabilités actuelles, phase bêta"
+        },
+        {
+          "line": 43,
+          "niveau": 2,
+          "titre": "PRIORITÉ — responsabilités sous l'architecture V2"
+        },
+        {
+          "line": 52,
+          "niveau": 2,
+          "titre": "Renfo : étirements comme retour au calme unique (règle prioritaire du 12 novembre 2026)"
+        },
+        {
+          "line": 58,
+          "niveau": 2,
+          "titre": "Étirements intégrés aux programmes prévus (12 novembre 2026)"
+        },
+        {
+          "line": 65,
+          "niveau": 2,
+          "titre": "Garmin : Renfo comme Course à pied (consigne du 12 novembre 2026)"
+        },
+        {
+          "line": 72,
+          "niveau": 2,
+          "titre": "Séances Renfo : séparation Coach / Maturation (12 novembre 2026)"
+        },
+        {
+          "line": 79,
+          "niveau": 2,
+          "titre": "Aides aux exercices Renfo (consigne du propriétaire au 12 novembre 2026)"
+        },
+        {
+          "line": 83,
+          "niveau": 2,
+          "titre": "Coach — portabilité intégrale du contexte métier (règle prioritaire)"
+        },
+        {
+          "line": 92,
+          "niveau": 2,
+          "titre": "Contrôle de conservation des séances"
+        },
+        {
+          "line": 96,
+          "niveau": 2,
+          "titre": "Garmin — réflexe du Coach et IHM minimaliste"
+        },
+        {
+          "line": 100,
+          "niveau": 2,
+          "titre": "Coach — entraînements Garmin prévus"
+        },
+        {
+          "line": 104,
+          "niveau": 2,
+          "titre": "Architecture des sources (règle prioritaire de reprise)"
+        },
+        {
+          "line": 113,
+          "niveau": 2,
+          "titre": "Mise à jour des connaissances (Coach et Maturation)"
+        },
+        {
+          "line": 117,
+          "niveau": 2,
+          "titre": "Maturation — structure et interface"
+        },
+        {
+          "line": 124,
+          "niveau": 2,
+          "titre": "Coach — contenu personnel"
+        },
+        {
+          "line": 131,
+          "niveau": 2,
+          "titre": "Coach — analyse anatomique sans avertissements dans les puces (priorité)"
+        },
+        {
+          "line": 135,
+          "niveau": 2,
+          "titre": "Coach — nouvelles règles de rédaction"
+        },
+        {
+          "line": 142,
+          "niveau": 2,
+          "titre": "Présentation concise des exercices par le Coach"
+        },
+        {
+          "line": 146,
+          "niveau": 2,
+          "titre": "Nouveau format du détail quotidien"
+        },
+        {
+          "line": 150,
+          "niveau": 2,
+          "titre": "Coach — reformulation technique pédagogique"
+        },
+        {
+          "line": 154,
+          "niveau": 2,
+          "titre": "Réponses du Coach"
+        },
+        {
+          "line": 158,
+          "niveau": 2,
+          "titre": "Carte de navigation dans les réponses Coach — dernier choix"
+        },
+        {
+          "line": 166,
+          "niveau": 2,
+          "titre": "Lien et précisions de séance dans les réponses"
+        },
+        {
+          "line": 173,
+          "niveau": 2,
+          "titre": "Publication et validation"
+        }
+      ]
+    },
+    {
+      "path": "docs/COACH-MODE-OPERATOIRE.md",
+      "sha_blob": "5d3d23f5cc9f43480331bd2164d9f3cc4f7fa9a1",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)"
+        },
+        {
+          "line": 13,
+          "niveau": 2,
+          "titre": "RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)"
+        },
+        {
+          "line": 19,
+          "niveau": 2,
+          "titre": "RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)"
+        },
+        {
+          "line": 27,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)"
+        },
+        {
+          "line": 35,
+          "niveau": 2,
+          "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)"
+        },
+        {
+          "line": 42,
+          "niveau": 2,
+          "titre": "DERNIER ÉTAT — Renfo A créé, rendu allégé, reconnaissance Garmin vérifiée"
+        },
+        {
+          "line": 46,
+          "niveau": 2,
+          "titre": "PRIORITÉ LA PLUS RÉCENTE — Renfo au vendredi 13 novembre, échauffement libre (12 novembre 2026 au soir)"
+        },
+        {
+          "line": 50,
+          "niveau": 2,
+          "titre": "PRIORITÉ ACTUELLE — Premier Renfo déplacé au jeudi 12 novembre 2026"
+        },
+        {
+          "line": 54,
+          "niveau": 2,
+          "titre": "PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)"
+        },
+        {
+          "line": 61,
+          "niveau": 2,
+          "titre": "1. Vérification avant de conseiller ou d'écrire"
+        },
+        {
+          "line": 68,
+          "niveau": 2,
+          "titre": "2. Route de chaque information, sans doublon"
+        },
+        {
+          "line": 81,
+          "niveau": 2,
+          "titre": "3. Checklist impérative pour **chaque activité confirmée** — avant le commit"
+        },
+        {
+          "line": 91,
+          "niveau": 2,
+          "titre": "4. Mode d'intervention Web et tests"
+        },
+        {
+          "line": 101,
+          "niveau": 2,
+          "titre": "5. Garde-fous prioritaires"
+        },
+        {
+          "line": 109,
+          "niveau": 2,
+          "titre": "6. Reprise / historique"
+        }
+      ]
+    },
+    {
+      "path": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "sha_blob": "2c856df3d8a3ffb3c05fdcc7507c903967953c2e",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "Entrée opérationnelle Coach — 12 novembre 2026"
+        },
+        {
+          "line": 8,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — entretien automatique et borné du rendu Web métier (12 novembre 2026)"
+        },
+        {
+          "line": 16,
+          "niveau": 2,
+          "titre": "Nouvelle règle — inventaire canonique et nouvelle page indépendante"
+        },
+        {
+          "line": 21,
+          "niveau": 2,
+          "titre": "PRIORITÉ — mémoire du Coach, orientation structurée et projection séparée"
+        },
+        {
+          "line": 29,
+          "niveau": 2,
+          "titre": "Règle prioritaire du 12 novembre 2026 — choix autonome d'exercices Garmin"
+        },
+        {
+          "line": 35,
+          "niveau": 2,
+          "titre": "Nouvelle règle prioritaire — connecteur Garmin MCP en bêta"
+        },
+        {
+          "line": 42,
+          "niveau": 2,
+          "titre": "Architecture métier V2 : cohésion et déplacement de données"
+        },
+        {
+          "line": 50,
+          "niveau": 2,
+          "titre": "1. Ce que le Coach doit conserver"
+        },
+        {
+          "line": 64,
+          "niveau": 2,
+          "titre": "2. Où écrire, sans doublons ni réécriture globale"
+        },
+        {
+          "line": 84,
+          "niveau": 2,
+          "titre": "3. Niveau de finesse exigé"
+        },
+        {
+          "line": 98,
+          "niveau": 3,
+          "titre": "AAAA-MM-JJ — Sujet"
+        },
+        {
+          "line": 107,
+          "niveau": 2,
+          "titre": "4. Protocole obligatoire à chaque échange métier"
+        },
+        {
+          "line": 118,
+          "niveau": 2,
+          "titre": "5. Reprise par un autre agent LLM"
+        },
+        {
+          "line": 130,
+          "niveau": 2,
+          "titre": "6. Confidentialité et périmètre"
+        }
+      ]
+    },
+    {
+      "path": "docs/REPRISE.md",
+      "sha_blob": "128de02fedabc7dbd4ce6e5e97db4d02d929ffba",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "PRIORITÉ — en-tête réellement réutilisé, logo toujours lié et bandeaux compacts"
+        },
+        {
+          "line": 10,
+          "niveau": 2,
+          "titre": "Entrée opérationnelle Coach — 12 novembre 2026"
+        },
+        {
+          "line": 15,
+          "niveau": 2,
+          "titre": "PRIORITÉ — en-tête partagé, date à droite et navigation pleine largeur"
+        },
+        {
+          "line": 21,
+          "niveau": 2,
+          "titre": "PRIORITÉ — sobriété des titres de section et navigation sans doublon"
+        },
+        {
+          "line": 25,
+          "niveau": 2,
+          "titre": "PRIORITÉ — présentation unifiée des pages"
+        },
+        {
+          "line": 29,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — réflexe automatique de synchronisation métier/Web, périmètre limité du Coach"
+        },
+        {
+          "line": 37,
+          "niveau": 2,
+          "titre": "PRIORITÉ — page de matériel et séparation forte"
+        },
+        {
+          "line": 42,
+          "niveau": 2,
+          "titre": "PRIORITÉ de reprise — garder la stratégie métier du Coach et l'exposer proprement"
+        },
+        {
+          "line": 50,
+          "niveau": 2,
+          "titre": "PRIORITÉ de reprise — personnalisation avec exercices Garmin officiels"
+        },
+        {
+          "line": 56,
+          "niveau": 2,
+          "titre": "PRIORITÉ — connecteur Garmin MCP en bêta"
+        },
+        {
+          "line": 60,
+          "niveau": 2,
+          "titre": "ÉTAT PRIORITAIRE — architecture V2"
+        },
+        {
+          "line": 70,
+          "niveau": 2,
+          "titre": "Prérequis prioritaire de toute reprise Coach — contexte métier complet"
+        },
+        {
+          "line": 81,
+          "niveau": 2,
+          "titre": "Prévention des altérations involontaires"
+        },
+        {
+          "line": 85,
+          "niveau": 2,
+          "titre": "Garmin — consigne prioritaire de reprise"
+        },
+        {
+          "line": 89,
+          "niveau": 2,
+          "titre": "FIT Workout Garmin — nouveau contrat"
+        },
+        {
+          "line": 93,
+          "niveau": 2,
+          "titre": "Architecture actuelle : sources individuelles validées"
+        },
+        {
+          "line": 111,
+          "niveau": 2,
+          "titre": "Dernière correction Coach — intitulés anatomiques sans précaution entre parenthèses"
+        },
+        {
+          "line": 115,
+          "niveau": 2,
+          "titre": "Nouvelle priorité : sensations très courtes et muscles/chaînes sollicités"
+        },
+        {
+          "line": 122,
+          "niveau": 2,
+          "titre": "Règle Coach sur la longueur du déroulé"
+        },
+        {
+          "line": 126,
+          "niveau": 2,
+          "titre": "Déroulé et sensations — dernière décision"
+        },
+        {
+          "line": 133,
+          "niveau": 2,
+          "titre": "Règles d'affichage du programme et reformulation par le Coach"
+        },
+        {
+          "line": 140,
+          "niveau": 2,
+          "titre": "Affichage compact du suivi santé"
+        },
+        {
+          "line": 146,
+          "niveau": 2,
+          "titre": "Deuxième page : suivi santé"
+        },
+        {
+          "line": 150,
+          "niveau": 2,
+          "titre": "Consigne « Mets-toi à jour »"
+        },
+        {
+          "line": 154,
+          "niveau": 2,
+          "titre": "Non-indexation du site"
+        },
+        {
+          "line": 160,
+          "niveau": 2,
+          "titre": "Carte approuvée pour les réponses du Coach"
+        },
+        {
+          "line": 164,
+          "niveau": 2,
+          "titre": "Lien à remettre à l'utilisateur"
+        },
+        {
+          "line": 168,
+          "niveau": 2,
+          "titre": "Style du Coach"
+        },
+        {
+          "line": 172,
+          "niveau": 2,
+          "titre": "Vérifications prépublication"
+        },
+        {
+          "line": 176,
+          "niveau": 2,
+          "titre": "Instruction de transfert"
+        }
+      ]
+    },
+    {
+      "path": "docs/PROCEDURE-MIROIR-WEB.md",
+      "sha_blob": "f13b74dee6cbce23b817d5ce55f2b87e0034616c",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "Principe durable"
+        },
+        {
+          "line": 9,
+          "niveau": 2,
+          "titre": "Procédure à chaque nouveau fait métier"
+        },
+        {
+          "line": 24,
+          "niveau": 2,
+          "titre": "Contrôle systématique des structures sollicitées"
+        },
+        {
+          "line": 30,
+          "niveau": 2,
+          "titre": "Erreur évitée le 12 novembre 2026"
+        },
+        {
+          "line": 34,
+          "niveau": 2,
+          "titre": "Partage des rôles"
+        }
+      ]
+    },
+    {
+      "path": "adaptateurs/garmin/MCP.md",
+      "sha_blob": "537b7fc124785d656332c7d01147adb2dfcd3b92",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)"
+        },
+        {
+          "line": 13,
+          "niveau": 2,
+          "titre": "RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)"
+        },
+        {
+          "line": 19,
+          "niveau": 2,
+          "titre": "RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)"
+        },
+        {
+          "line": 27,
+          "niveau": 2,
+          "titre": "PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)"
+        },
+        {
+          "line": 36,
+          "niveau": 2,
+          "titre": "Nouvelle condition pour créer des programmes de Renfo — Garmin officiel uniquement"
+        },
+        {
+          "line": 47,
+          "niveau": 2,
+          "titre": "Retour d'expérience de création vérifié le 12 novembre 2026"
+        },
+        {
+          "line": 53,
+          "niveau": 2,
+          "titre": "Décision approuvée"
+        },
+        {
+          "line": 59,
+          "niveau": 2,
+          "titre": "Séquence strictement manuelle, à suivre pour les dates demandées"
+        },
+        {
+          "line": 70,
+          "niveau": 2,
+          "titre": "Validation du contenu et limites"
+        },
+        {
+          "line": 78,
+          "niveau": 2,
+          "titre": "Responsabilités"
+        },
+        {
+          "line": 82,
+          "niveau": 2,
+          "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)"
+        }
+      ]
+    },
+    {
+      "path": "contrats/DEPENDANCES.md",
+      "sha_blob": "57c5d832fb70d749a2ef822653049033652123f8",
+      "sections": [
+        {
+          "line": 3,
+          "niveau": 2,
+          "titre": "Règles opposables"
+        },
+        {
+          "line": 14,
+          "niveau": 2,
+          "titre": "Flux autorisés"
+        },
+        {
+          "line": 30,
+          "niveau": 2,
+          "titre": "Règles de sécurité"
+        },
+        {
+          "line": 36,
+          "niveau": 2,
+          "titre": "Projection de stratégie Coaching (12 novembre 2026)"
+        }
+      ]
+    }
+  ]
+}

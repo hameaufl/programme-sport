@@ -64,3 +64,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 
 ## Références existantes à préserver
 `AGENTS.md`, `docs/ROLES.md`, `docs/COACH-MODE-OPERATOIRE.md`, `docs/CONTRAT-CONTINUITE-COACH.md`, `docs/DECISIONS.md`, `docs/JOURNAL.md`, `docs/REPRISE.md`, `docs/PROCEDURE-MIROIR-WEB.md`, `domaines/coaching/donnees/DECISIONS.md`, `domaines/coaching/donnees/JOURNAL.md`, `domaines/coaching/donnees/CONTEXTE-COACH.md`, les sources de `domaines/{planification,activites,sante,coaching}/`, et les contrats/validations de `maturation/architecture/`. Leur signification et leurs contraintes de sécurité préexistantes demeurent applicables.
+
+## 12 novembre 2026 — Audit de couverture des rôles historiques (premier passage)
+- À la demande du propriétaire, audit comparatif des obligations Maturation/Coach et des nouveaux contrats séquentiels, consigné dans `AUDIT-COUVERTURE.md` et `MATRICE-COUVERTURE.md` ; inventaire des rubriques dans `INVENTAIRE-RUBRIQUES.json`.
+- Résultat : **sources historiques conservées**, mais nouvelles instructions spécialisées **non encore exhaustives**. 85 familles d'exigences examinées : 17 explicites, 37 partielles, 28 non transcrites, 3 conflits à arbitrer ; 162 rubriques identifiées dans 8 sources prescriptives principales.
+- Lacunes : continuité métier fine, activités/structures sollicitées, orientation, prescriptions Renfo, garanties Garmin, règles de présentation et publication. Conflits documentaires : anciens noms Garmin, nettoyage de copies, génération FIT abrogée, ancienne interdiction Web totale et chemins `personnel/` obsolètes.
+- **Verdict : activation sur `main` non acceptable en l'état** ; correction, avis réel du Gardien et tests comparatifs à effectuer. L'audit n'est pas une certification clause-par-clause et ne crée aucune validation implicite du Gardien.
+- Aucune donnée métier ni règle sportive modifiée lors de l'audit ; aucun appel Garmin ; branche et PR brouillon conservées sans fusion.

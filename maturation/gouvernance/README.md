@@ -18,3 +18,8 @@ Ce chantier traite l'organisation et les consignes des agents, **pas les perform
 Le mécanisme choisi n'est **pas** une infrastructure autonome multi-LLM : dans ChatGPT, Coach coordonne des **rôles logiques successifs** avec des obligations de sortie et des contrôles reproductibles. Le dépôt contient la mémoire et les procédures ; l'activation dépend de la lecture effective des instructions de cette branche.
 
 Les workflows existants de publication restent inchangés. La branche ne publie pas de nouveau site : la publication GitHub Pages opérationnelle reste celle de `main`. La fusion nécessite une **approbation explicite du propriétaire** après essais et contrôles.
+
+## Audit de couverture (12 novembre 2026)
+- [Verdict et écarts](AUDIT-COUVERTURE.md) : constats et blocages avant activation.
+- [Matrice de couverture](MATRICE-COUVERTURE.md) : exigences, références, propriétaires proposés et preuves attendues.
+- [Inventaire des rubriques](INVENTAIRE-RUBRIQUES.json) : index vérifiable des sections de huit textes normatifs, sans copie de leurs données.
