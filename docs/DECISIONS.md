@@ -1,4 +1,11 @@
 # Décisions techniques — Maturation
+## 12 novembre 2026 — Navigation générale compacte à droite du logo (nouvelle priorité)
+
+- Le propriétaire remplace la navigation de pied de page par un **menu en haut, à droite du logo** sur les quatre vues. Ordre imposé : **Mon programme, Le cap du Coach, Mon suivi santé, Mon équipement** (inversion de Coach et Santé).
+- Petits boutons arrondis et légers, côte à côte, **ancrage à droite** et repli responsive également aligné à droite plutôt qu'un groupe centré ; page active discrètement distinguée.
+- Suppression des boutons indépendants « ← Mon programme » des pages secondaires, désormais doublons du lien de menu ; conservation du lien de marque vers la racine et de l'affichage de la date de la page programme. Plus de menu commun sous le contenu.
+- Source de styles unique `addons/web/public/style-commun.css`, contrôles renforcés dans `scripts/verifier-site.cjs`, version de publication harmonisée. Seule la présentation est modifiée ; les domaines métier et les projections restent intacts. **Cette décision prime sur les entrées précédentes parlant de navigation basse.**
+
 ## 12 novembre 2026 — Supprimer les navigations et sous-titres redondants
 
 - Trois grandes cartes de lien en bas du programme (suivi Santé, cap du Coach, équipement) sont retirées : la barre commune à quatre destinations remplit déjà ce rôle, sur cette page et sur les autres.

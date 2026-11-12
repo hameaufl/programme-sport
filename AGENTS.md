@@ -1,7 +1,13 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ — navigation générale en haut, à droite du logo (12 novembre 2026)
+
+- **Dernière décision du propriétaire, prioritaire sur les descriptions historiques :** déplacer sur **les quatre pages** l'unique menu de navigation de fin de page dans l'en-tête, directement à droite du logo « mon rythme. ». Afficher, dans cet ordre strict : **Mon programme, Le cap du Coach, Mon suivi santé, Mon équipement**.
+- Présentation **légère et compacte** : boutons discrets, arrondis, côte à côte, ancrés au bord droit (distribution de droite vers la gauche, pas de groupe centré). Sur petit écran, autoriser le retour à la ligne en gardant l'alignement à droite. Signaler la page courante ; conserver les quatre destinations accessibles avec libellés complets.
+- **Ne plus afficher** de menu de pied de page ni de bouton séparé « ← Mon programme » dans les pages secondaires. Garder le logo cliquable vers le programme dans ces pages, et préserver la date actuelle sous le logo sur « Mon programme ». La présentation et sa règle de test appartiennent à Maturation ; ne toucher ni aux données métier ni aux contrats de projection.
+
 ## PRIORITÉ — ne pas dupliquer la navigation ni les titres de section (12 novembre 2026)
 
-- La barre de navigation commune en bas des quatre pages est l'unique navigation générale de pied de page ; **ne pas recréer sur « Mon programme » les trois grandes cartes/boutons « Mon suivi santé », « Le cap du Coach » et « Mon équipement »**, puisqu'elles font double emploi avec elle.
+- La barre de navigation commune dans l'en-tête, à droite du logo, est l'unique navigation générale des quatre pages ; **ne pas recréer sur « Mon programme » les trois grandes cartes/boutons « Mon suivi santé », « Le cap du Coach » et « Mon équipement »**, puisqu'elles font double emploi avec elle.
 - Sous les titres de section de niveau 2 (`h2`) des quatre pages, **ne pas ajouter de phrases de sous-titre qui ne font que reformuler le titre, expliquer l'évidence ou répéter un encart**. Rester concis. Les données réellement utiles (chiffres, faits, dates, descriptions d'activité, légendes nécessaires, analyses du Coach) restent visibles à leur place ; ne pas supprimer des contenus métier pour épurer la présentation.
 - Cette décision de présentation générale reste sous casquette Maturation. `scripts/verifier-site.cjs` contrôle l'absence des raccourcis redondants et des sous-titres superflus.
 
@@ -19,7 +25,7 @@
 ## PRIORITÉ — bandeaux de titres et navigation communs aux quatre pages (12 novembre 2026)
 
 - Les quatre pages `addons/web/pages/{index,sante,coach,equipements}.html` utilisent une présentation homogène de l'encart de titre : grande hauteur de référence Santé, typographie et ornements harmonisés, pictogramme SVG décoratif propre à la rubrique. Aucun sous-titre ni surtitre dans le bandeau équipement ; les quatre bandeaux ne contiennent que le titre et le pictogramme.
-- La feuille partagée `addons/web/public/style-commun.css` détermine ces bandeaux, le retour `← Mon programme` en haut à droite des trois pages secondaires et la navigation commune vers les **quatre pages en bas de chaque page**, avec la page courante signalée. La page programme n'affiche pas de bouton haut droit vers elle-même.
+- La feuille partagée `addons/web/public/style-commun.css` détermine ces bandeaux et la navigation commune **en haut, à droite du logo**, sur les quatre pages ; ordre fixé : **Mon programme → Le cap du Coach → Mon suivi santé → Mon équipement**. Petits boutons côte à côte, groupe aligné à droite (et repli à droite sur mobile), page courante signalée. **Aucun bouton de retour distinct « ← Mon programme » ni navigation du bas** sur les pages secondaires.
 - Maturation maintient cette interface générale, son comportement responsive, l'accessibilité et la politique `noindex`. Le Coach conserve uniquement sa dérogation locale pour le rendu des données métier. Copier la feuille partagée dans l'artefact Pages ; les tests de `scripts/verifier-site.cjs` vérifient ces invariants.
 
 ## PRIORITÉ ABSOLUE — autonomie du Coach sur les éléments Web qui affichent des données métier (12 novembre 2026)

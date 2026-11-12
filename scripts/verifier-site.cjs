@@ -32,11 +32,13 @@ assert.ok(version&&[sante,coachPage,equipPage].every(page=>page.includes('name="
 const pagesVisuelles=[["index",html],["sante",sante],["coach",coachPage],["equipements",equipPage]];
 const styleCommun=read("addons/web/public/style-commun.css");
 assert.ok(styleCommun.includes("min-height:232px")&&styleCommun.includes("min-height:210px")&&
- styleCommun.includes("grid-template-columns:repeat(4,minmax(0,1fr))"),"Styles communs des en-têtes et de la navigation absents");
+ styleCommun.includes("header.site-header")&&styleCommun.includes(".site-navigation {")&&
+ styleCommun.includes("justify-content:flex-end")&&!styleCommun.includes("grid-template-columns:repeat(4,minmax(0,1fr))"),
+ "En-têtes ou navigation légère alignée à droite non conformes");
 const destinations=[
  ["index","Mon programme","./"],
- ["sante","Mon suivi santé","./sante.html"],
  ["coach","Le cap du Coach","./coach.html"],
+ ["sante","Mon suivi santé","./sante.html"],
  ["equipements","Mon équipement","./equipements.html"]
 ];
 for(const [page,source] of pagesVisuelles){
@@ -47,17 +49,24 @@ for(const [page,source] of pagesVisuelles){
  assert.ok(!source.includes('<p class="eyebrow">')&&!source.includes('<p class="subtitle">'),
    "Sous-titre réintroduit dans un encart : "+page);
  const menus=source.match(/<nav class="site-navigation"[\s\S]*?<\/nav>/g)||[];
- assert.equal(menus.length,1,"Une navigation commune en bas est obligatoire : "+page);
+ assert.equal(menus.length,1,"Une seule navigation commune attendue : "+page);
  const menu=menus[0];
+ const headerStart=source.indexOf('<header class="site-header">'),headerEnd=source.indexOf('</header>',headerStart);
+ const navPos=source.indexOf('<nav class="site-navigation"');
+ assert.ok(headerStart>=0&&navPos>headerStart&&navPos<headerEnd&&headerEnd<source.indexOf('<main>'),
+  "La navigation doit se trouver dans l'en-tête, à droite du logo : "+page);
  assert.equal((menu.match(/class="site-nav-link/g)||[]).length,4,"Quatre destinations attendues : "+page);
- assert.equal((menu.match(/aria-current="page"/g)||[]).length,1,"Une seule page courante : "+page);
+ assert.equal((menu.match(/aria-current="page"/g)||[]).length,1,"Un seul onglet actif : "+page);
+ let previous=-1;
  for(const [id,label,href] of destinations){
+   const start=menu.indexOf(">"+label+"<");
+   assert.ok(start>previous,"Ordre de navigation incorrect (Programme, Coach, Santé, Équipement) : "+page);
+   previous=start;
    if(id===page)assert.ok(menu.includes('aria-current="page">'+label+'</span>'),"Page active incorrecte : "+page);
-   else assert.ok(menu.includes('href="'+href+'">'+label+'</a>'),"Lien de bas de page incorrect : "+page+" / "+label);
+   else assert.ok(menu.includes('href="'+href+'">'+label+'</a>'),"Lien d'en-tête incorrect : "+page+" / "+label);
  }
- if(page!=="index")assert.ok(source.includes('<a class="back" href="./">← Mon programme</a>'),
-   "Retour haut droit vers le programme manquant : "+page);
- else assert.ok(!source.includes('class="back"'),"Pas de retour vers lui-même en haut du programme");
+ assert.ok(!source.includes('class="back"')&&!source.includes('← Mon programme'),
+   "Bouton de retour redondant à retirer de l'en-tête : "+page);
 }
 assert.ok(read("scripts/construire-site.cjs").includes('"style-commun.css"'),
  "La feuille de style doit être copiée dans l'artefact de publication");
@@ -65,8 +74,9 @@ assert.ok(read("scripts/construire-site.cjs").includes('"style-commun.css"'),
 // Éviter les raccourcis et sous-titres qui dupliquent désormais les titres et la navigation.
 assert.ok(!html.includes('class="insights-grid"')&&!html.includes('class="health-preview"')&&
  !html.includes('class="health-cta"'),"Les trois anciens raccourcis du programme doivent être supprimés");
-assert.ok(html.indexOf('<div id="allContent"')<html.indexOf('<nav class="site-navigation"'),
- "La navigation commune doit suivre les sections du programme sans cartes intermédiaires");
+assert.ok(html.indexOf('<nav class="site-navigation"')<html.indexOf('<main>')&&
+ html.includes('<time id="todayLabel"></time>')&&html.includes('class="site-brand-wrap"'),
+ "La navigation doit précéder le programme et sa date reste affichée sous le logo");
 for(const [nom,page] of pagesVisuelles){
  assert.ok(!page.includes('class="section-note"')&&!page.includes('class="hint"')&&!page.includes('class="help"'),
   "Sous-titre redondant sous un titre de section : "+nom);

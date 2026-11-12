@@ -327,3 +327,9 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Demande utilisateur illustrée par capture : retirer de Mon programme les trois grandes cartes vers Suivi Santé, Cap du Coach et Équipement, devenues redondantes avec la navigation commune située juste en dessous.
 - Épuration des descriptions purement décoratives sous les `h2` sur Santé et Équipement ; suppression également de deux étiquettes redondantes dans des encarts Équipement/Coach. Aucune modification des données ou légendes informatives.
 - Feuilles et sélecteurs CSS devenus inutiles retirés, test de non-régression ajouté, version de publication harmonisée. Les quatre destinations du bas et les boutons de retour restent intacts.
+
+## 12 novembre 2026 — Navigation en haut, compacte et alignée à droite
+
+- Nouvelle demande : inverser « Le cap du Coach » et « Mon suivi santé » dans les quatre menus ; déplacer la navigation en haut, à droite du logo « mon rythme. », supprimer les menus en pied de page et les anciens boutons distincts « ← Mon programme ».
+- Réalisation : barre commune de quatre petites pastilles arrondies, discrètes, ancrées à droite, alignement conservé au retour à la ligne sur mobile ; marque de la page courante. Date du jour préservée sous le logo de la page programme.
+- Feuille partagée et tests adaptés ; version synchronisée sur les quatre pages et `publication.txt`. Aucune donnée métier, aucune projection et aucun élément de suivi sportif modifié.
