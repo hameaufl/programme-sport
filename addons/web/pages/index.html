@@ -383,7 +383,8 @@
   function chargerIndex(){
     var stamp=Date.now();
     fetchJSON("./data/index.json?actualisation="+stamp).then(function(index){
-      if(!Array.isArray(index.semaines)||!Array.isArray(index.objectifs))throw Error("Index incomplet");
+      if(!Array.isArray(index.semaines))throw Error("Index incomplet");
+      if(!Array.isArray(index.objectifs))index.objectifs=[];
       dataIndex=index;objectifs=index.objectifs;cache.clear();chargerSemaine();
     }).catch(afficherErreur);
   }
