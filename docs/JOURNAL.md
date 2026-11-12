@@ -316,3 +316,8 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Demande du propriétaire : encarts titres de même hauteur et même forme que « Mon suivi santé », pictogrammes cohérents sur les quatre pages, retrait des sous-titres dans « Mon équipement ».
 - Réalisation Maturation : feuille commune pour les en-têtes, les pictogrammes et les liens ; quatre destinations identiques en bas de chaque page ; retour « Mon programme » conservé en haut à droite des trois pages secondaires. L'ancien menu partiel Équipement et les deux encarts de renvoi du Coach sont remplacés par la navigation uniforme.
 - Version de publication synchronisée ; tests statiques du contrat visuel, du responsive et de la présence de la feuille dans l'artefact. Aucune source métier, projection ni opération Garmin modifiée.
+
+## 12 novembre 2026 — Remise en forme non sémantique de l'en-tête d'un événement
+
+- Un événement ajouté depuis le domaine Santé portait `### 2026-11-12 au soir — ...`, alors que le lecteur V2 impose `### AAAA-MM-JJ — ...`. Cela bloquait les validations et la publication de toutes les pages.
+- Correction strictement syntaxique : déplacer « au soir » après le titre descriptif, sans changer la date de l'événement, ses notes, les faits, les symptômes ou toute autre donnée. Aucune réinterprétation métier par Maturation.

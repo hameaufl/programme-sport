@@ -1,4 +1,4 @@
-### 2026-11-12 au soir — Échange des chaussures de running en magasin
+### 2026-11-12 — Échange des chaussures de running en magasin (au soir)
 
 - **Chaussures précédentes :** Mizuno Neo Vista 2, pointure 44 (EU), achetées le 2 novembre 2026 ; paire utilisée chez le podologue pour fabriquer les nouvelles semelles orthopédiques et lors de la sortie marche-course du 11 novembre.
 - **Visite confirmée :** retour au magasin le jeudi 12 novembre 2026 au soir avec la paire précédente, en avance par rapport à la visite initialement envisagée pour le 13 novembre.
