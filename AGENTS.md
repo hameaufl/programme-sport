@@ -1,4 +1,8 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ LA PLUS RÉCENTE — Renfo au vendredi 13 novembre, échauffement libre (12 novembre 2026 au soir)
+
+Le seul Renfo actif est **`renfo-2026-11-13`**, reporté du jeudi 12 au vendredi 13 novembre faute de temps. Son contenu courant ne fixe **aucune vidéo ni chorégraphie** : **échauffement de 4 minutes**, **étirements doux de 3 minutes**. Les vidéos envoyées par l'utilisateur sont de simples idées pour son choix personnel, et la vidéo précédemment proposée par le Coach n'est plus la référence. Le brouillon du 12 est archivé intégralement dans `domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json`, les 14 anciennes séances archivées sont intactes. La séance n'est **pas réalisée** et aucun modèle Garmin n'a été créé. Une course existe aussi le vendredi 13 : veiller au confort des appuis et à la récupération, sans modifier cette course automatiquement. Le contenu reste à valider avant tout usage Garmin.
+
 
 ## PRIORITÉ — nom de la quatrième page « Mes équipements » (12 novembre 2026)
 

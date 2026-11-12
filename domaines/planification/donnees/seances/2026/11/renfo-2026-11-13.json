@@ -1,0 +1,66 @@
+{
+  "id": "renfo-2026-11-13",
+  "date": "2026-11-13",
+  "titre": "Renfo",
+  "type": "renfo",
+  "objectif": "Première séance de renforcement au sol, reportée au vendredi 13 novembre ; confort avant performance. Contenu encore à valider avant création Garmin MCP.",
+  "details": "Brouillon reporté du jeudi 12 au vendredi 13 novembre faute de temps le 12, non réalisé ; échauffement libre 4 min et étirements doux 3 min, sans vidéo imposée. Reporter si douleur plantaire ou articulaire à l'appui. Pas de programme Garmin créé.",
+  "dureeEstimeeMinutes": {
+    "min": 30,
+    "max": 33
+  },
+  "blocs": [
+    {
+      "nature": "mise_en_route",
+      "dureeSecondes": 240,
+      "consignes": "libre de 4 minutes, progressif et confortable, au choix du propriétaire, sans vidéo ni chorégraphie imposée"
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "pont-sol",
+      "series": 3,
+      "repetitions": 10,
+      "parCote": false,
+      "consignes": "tenir 8–10 s en haut, détente 5 s entre montées",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 60,
+      "estimationMinutes": {
+        "min": 10,
+        "max": 11
+      }
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "ouverture-genou",
+      "series": 3,
+      "repetitions": 10,
+      "parCote": true,
+      "consignes": "3 s pour ouvrir et 3 s pour fermer ; bassin immobile",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 45,
+      "estimationMinutes": {
+        "min": 8,
+        "max": 9
+      }
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "dead-bug",
+      "series": 3,
+      "repetitions": 8,
+      "parCote": true,
+      "consignes": "4 s par mouvement ; dos neutre sans cambrure",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 45,
+      "estimationMinutes": {
+        "min": 5,
+        "max": 6
+      }
+    },
+    {
+      "nature": "etirements",
+      "dureeSecondes": 180,
+      "consignes": "étirements doux 3 minutes, sans forcer"
+    }
+  ]
+}

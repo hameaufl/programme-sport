@@ -325,8 +325,9 @@ assert.ok(html.includes("var label=resumeJour(dailySessions);"), "Le calendrier 
 assert.ok(!html.includes("Course + kiné"), "L'ancien séparateur + doit disparaître");
 const renfo=data.sessions.filter(x=>x.type==="renfo");
 assert.equal(renfo.length,1,"Un seul nouveau Renfo est actif, les 14 anciens sont archivés");
-assert.equal(renfo[0].id,"renfo-2026-11-12");
-assert.equal(renfo[0].date,"2026-11-12","Date du seul Renfo déplacée sur demande du propriétaire");
+assert.equal(renfo[0].id,"renfo-2026-11-13");
+assert.equal(renfo[0].date,"2026-11-13","Renfo reporté à demain, 13 novembre, sur demande du propriétaire");
+assert.ok(read("domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json").includes('"id": "renfo-2026-11-12"'),"Brouillon du 12 novembre préservé");
 assert.ok(read("domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json").includes('"id": "renfo-2026-11-14"'),"Ancien brouillon archivé");
 assert.equal(data.execution.has(renfo[0].id),false,"Le nouveau Renfo est une proposition non réalisée");
 for(const s of renfo){
@@ -334,7 +335,8 @@ for(const s of renfo){
   assert.equal(s.titre,"Renfo");
   assert.equal(s.etapes.length,s.blocs.length,"Les étapes visibles doivent refléter les blocs structurés");
   assert.ok(Array.isArray(s.aidesExercices)&&s.aidesExercices.length===s.blocs.filter(b=>b.nature==="exercice").length,"Une aide PNG par exercice réel");
-  assert.match(s.etapes[0],/^Mise en route · 5 min/,"Mise en route rythmée de cinq minutes manquante");
+  assert.match(s.etapes[0],/^Mise en route · 4 min/,"Échauffement libre de 4 minutes manquant");
+  assert.match(s.etapes.at(-1),/^Étirements doux · 3 min/,"Étirements doux de 3 minutes manquants");
   assert.match(s.etapes.at(-1),/^Étirements doux · 3 min : /,"Étirements doux chronométrés manquants");
   assert.ok(!s.etapes.some(e=>/^Retour au calme\b/i.test(e)),"Pas de retour au calme redondant si étirements");
   assert.ok(s.etapes.every(e=>e.includes(" · ")&&/\d+\s*(?:min|s)/.test(e)),"Chaque bullet doit comporter un chrono");
