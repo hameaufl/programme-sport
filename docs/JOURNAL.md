@@ -260,3 +260,10 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Le générateur Garmin et les tests reconnaissent cette étape de 180 s sur les deux types de séances. La course réalisée du 11 novembre est laissée telle quelle ; les 18 autres courses et 14 Renfos reçoivent cette dernière étape et sont ré-exportés en FIT. La même source sert au web et à la montre ; pas de texte spécifique ajouté au HTML.
 - Pour le Renfo, le bloc général est une étape de récupération, à l'instar de la mise en route/du retour au calme, et n'est pas un exercice technique individuel : les aides PNG déjà approuvées restent celles des trois mouvements prescrits. Aucune autre image changée.
 - Les 32 FIT sont validés à la CI (CRC, durées, noms et nombres d'étapes) et la publication Pages répercutera les changements de descriptif. La compatibilité réelle d'import Garmin reste distincte et non démontrée.
+
+## 12 novembre 2026 — Étirements seuls pour la récupération finale du Renfo
+
+- Nouvelle préférence explicite du propriétaire, prioritaire sur les anciennes prescriptions : lorsqu'un Renfo prévu contient un bloc d'étirements doux, ces étirements font office de retour au calme. Ne pas ajouter 4 min de mouvements doux/respiration après les exercices. Conserver la mise en route de 4 min au début.
+- Application aux 14 Renfos non réalisés : mêmes dates, IDs, exercices, séries, pauses, aides PNG, étirements, fait et sensations ; suppression du seul bloc redondant « Retour au calme ». Durée indicative 33–39 → 29–35 min, FIT Workout prévu 18 → 17 pas ; temps minuté 960 → 720 s. Aucune modification des sorties Course, des séances Kiné ou des activités déjà réalisées.
+- Pour les Renfos futurs : cinq étapes chronologiques, FIT synchronisé avec le JSON et vérification de l'absence de retour au calme supplémentaire. Aucune preuve d'exécution sportive créée.
+- Intervention Maturation : parseur FIT, tests de non-régression et binaires FIT actualisés ; déploiement via Actions à vérifier.

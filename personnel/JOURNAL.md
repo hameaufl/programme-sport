@@ -162,3 +162,9 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - **18 courses à venir** : un bloc final 3 min pour mollets/fessiers/ischio-jambiers, sans douleur ou hyperextension ; durée totale prévue augmentée de 3 min, mode et option éventuelle inchangés. **14 Renfos à venir** : 3 min de récupération douce sur les muscles ciblés (A/B) après les 4 min de retour au calme ; durée prévue 33–39 min, et trois aides PNG d'exercices techniques conservées.
 - **Garmin** : 32 FIT Workout générés/régénérés depuis les plans, incluant explicitement le bloc d'étirements ; ne pas inventer de données d'activité réalisée. L'interface s'appuie toujours sur les fichiers JSON ; aucun exercice exécuté ni résultat médical n'a été inventé.
 - **Séance réalisée du 11 novembre** : inchangée, même si l'étirement aurait pu être utile ; ne pas lui attribuer rétroactivement un geste non déclaré.
+
+## 12 novembre 2026 — Étirements seuls pour la récupération finale du Renfo
+
+- Nouvelle préférence explicite du propriétaire, prioritaire sur les anciennes prescriptions : lorsqu'un Renfo prévu contient un bloc d'étirements doux, ces étirements font office de retour au calme. Ne pas ajouter 4 min de mouvements doux/respiration après les exercices. Conserver la mise en route de 4 min au début.
+- Application aux 14 Renfos non réalisés : mêmes dates, IDs, exercices, séries, pauses, aides PNG, étirements, fait et sensations ; suppression du seul bloc redondant « Retour au calme ». Durée indicative 33–39 → 29–35 min, FIT Workout prévu 18 → 17 pas ; temps minuté 960 → 720 s. Aucune modification des sorties Course, des séances Kiné ou des activités déjà réalisées.
+- Pour les Renfos futurs : cinq étapes chronologiques, FIT synchronisé avec le JSON et vérification de l'absence de retour au calme supplémentaire. Aucune preuve d'exécution sportive créée.
