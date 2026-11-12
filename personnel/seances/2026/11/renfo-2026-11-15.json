@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-15",
+  "titre": "Renfo",
+  "type": "renfo",
+  "id": "renfo-2026-11-15",
+  "duree": "30–36 min",
+  "fait": false,
+  "sensations": "",
+  "etapes": [
+    "Mise en route · 4 min de mouvements doux d’épaules et de hanches",
+    "Pont de bassin au sol · 3 × 10 ; tenir 8–10 s, repos 5 s entre montées et 60 s entre séries (~10–12 min)",
+    "Ouverture du genou sur le côté · 3 × 10 par côté ; 3 s pour ouvrir et 3 s pour fermer, repos 45 s entre séries (~7–8 min)",
+    "Bras et jambe opposés sur le dos · 3 × 8 par côté ; 4 s par mouvement, repos 45 s entre séries (~5–6 min)",
+    "Retour au calme · 4 min de mouvements doux et respiration"
+  ],
+  "objectif": "Renfo facultatif : adapter aux douleurs et à la récupération.",
+  "details": "",
+  "aidesExercices": [
+    {
+      "exercice": "Pont de bassin au sol · 3 × 10 ; tenir 8–10 s, repos 5 s entre montées et 60 s entre séries (~10–12 min)",
+      "png": "assets/renfo/png/pont-sol.png"
+    },
+    {
+      "exercice": "Ouverture du genou sur le côté · 3 × 10 par côté ; 3 s pour ouvrir et 3 s pour fermer, repos 45 s entre séries (~7–8 min)",
+      "png": "assets/renfo/png/ouverture-genou.png"
+    },
+    {
+      "exercice": "Bras et jambe opposés sur le dos · 3 × 8 par côté ; 4 s par mouvement, repos 45 s entre séries (~5–6 min)",
+      "png": "assets/renfo/png/dead-bug.png"
+    }
+  ]
+}

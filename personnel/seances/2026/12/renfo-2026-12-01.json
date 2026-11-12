@@ -7,23 +7,25 @@
   "fait": false,
   "sensations": "",
   "etapes": [
-    "Pont de bassin au sol · 3 fois 10 montées (tenir 8–10 s en haut)",
-    "Ouverture du genou sur le côté · 3 fois 10 de chaque côté",
-    "Bras et jambe opposés sur le dos · 3 fois 8 de chaque côté"
+    "Mise en route · 4 min de mouvements doux d’épaules et de hanches",
+    "Pont de bassin au sol · 3 × 10 ; tenir 8–10 s, repos 5 s entre montées et 60 s entre séries (~10–12 min)",
+    "Ouverture du genou sur le côté · 3 × 10 par côté ; 3 s pour ouvrir et 3 s pour fermer, repos 45 s entre séries (~7–8 min)",
+    "Bras et jambe opposés sur le dos · 3 × 8 par côté ; 4 s par mouvement, repos 45 s entre séries (~5–6 min)",
+    "Retour au calme · 4 min de mouvements doux et respiration"
   ],
-  "objectif": "Renfo progressif facultatif. Objectif d'environ une demi-heure sans impact, à réduire en cas de douleur au pied, à la hanche ou au genou, de fatigue ou de mauvaise récupération.",
-  "details": "Échauffement doux 4 min (mobiliser épaules et hanches, sans forcer). Pour chaque mouvement : faire les répétitions lentement, puis recommencer 3 fois au total. Rester environ 5 s au retour entre les montées de bassin ; environ 45 s de pause entre mouvements et 90 s entre les trois tours. Terminer par 4 min de récupération douce. Jamais d'hyperextension du genou. Si douleur croissante, arrêter ; le ballon reste facultatif.",
+  "objectif": "Renfo facultatif : adapter aux douleurs et à la récupération.",
+  "details": "",
   "aidesExercices": [
     {
-      "exercice": "Pont de bassin au sol · 3 fois 10 montées (tenir 8–10 s en haut)",
+      "exercice": "Pont de bassin au sol · 3 × 10 ; tenir 8–10 s, repos 5 s entre montées et 60 s entre séries (~10–12 min)",
       "png": "assets/renfo/png/pont-sol.png"
     },
     {
-      "exercice": "Ouverture du genou sur le côté · 3 fois 10 de chaque côté",
+      "exercice": "Ouverture du genou sur le côté · 3 × 10 par côté ; 3 s pour ouvrir et 3 s pour fermer, repos 45 s entre séries (~7–8 min)",
       "png": "assets/renfo/png/ouverture-genou.png"
     },
     {
-      "exercice": "Bras et jambe opposés sur le dos · 3 fois 8 de chaque côté",
+      "exercice": "Bras et jambe opposés sur le dos · 3 × 8 par côté ; 4 s par mouvement, repos 45 s entre séries (~5–6 min)",
       "png": "assets/renfo/png/dead-bug.png"
     }
   ]
