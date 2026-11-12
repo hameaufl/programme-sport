@@ -130,10 +130,19 @@ header.site-header {
   header.site-header {min-height:0;padding:13px 0 17px;row-gap:13px}
   .site-navigation {flex:0 0 100%;justify-content:flex-end;margin-left:0}
 }
+@media(max-width:720px) {
+  .hero {min-height:210px;padding:31px 26px}
+  .hero .hero-mark {width:64px;height:64px;display:grid}
+  .hero .hero-mark svg {width:35px;height:35px}
+}
 @media(max-width:530px) {
   header.site-header {min-height:0;padding:12px 0 16px;row-gap:12px}
   .site-navigation {gap:6px}
   .site-nav-link {min-height:34px;padding:7px 10px;font-size:11px}
+  .hero {min-height:210px;border-radius:19px;gap:12px;padding:28px 23px}
+  .hero h1 {font-size:clamp(28px,8vw,39px);letter-spacing:-1.2px}
+  .hero .hero-mark {width:52px;height:52px;display:grid}
+  .hero .hero-mark svg {width:29px;height:29px}
 }
 @media(prefers-reduced-motion:reduce) {
   .site-nav-link {transition:none}
