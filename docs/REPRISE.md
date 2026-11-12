@@ -1,5 +1,12 @@
 # Reprise entre LLM — Mon Rythme
 
+## PRIORITÉ — en-tête réellement réutilisé, logo toujours lié et bandeaux compacts
+
+Le logo « ↗ mon rythme. » est un **lien sur toutes les pages**, y compris l'accueil, et **ne doit jamais être bleu/violet ni souligné**. La différence venait des copies HTML et des styles de lien locaux non uniformes ; le style partagé `addons/web/public/style-commun.css` fixe désormais la couleur et `text-decoration:none` pour les états normal, visité, survol et actif. Le HTML n'est plus dupliqué : `addons/web/composants/en-tete.cjs` est **l'unique source de rendu** de la marque, de la date et du menu. Chaque page `addons/web/pages/{index,coach,sante,equipements}.html` contient seulement un emplacement `data-mon-rythme-en-tete`, rempli par `scripts/construire-site.cjs` **avant publication**. La navigation fonctionne sans JavaScript dans les HTML générés ; la date locale est rafraîchie par `en-tete.js`.
+
+Les bandeaux de titres partagent une hauteur ramenée d'environ un tiers : **155 px au lieu de 232** sur grand écran, **140 px au lieu de 210** sur téléphone ; paddings, titres et pictogrammes ont été ajustés pour rester lisibles. Les tests de `scripts/verifier-site.cjs` valident le composant réutilisé, le style, l'absence de copies locales et les nouvelles dimensions. La règle est prioritaire sur toute ancienne mention de bandeaux plus grands ou de logo non cliquable.
+
+
 ## Entrée opérationnelle Coach — 12 novembre 2026
 
 **Lire en premier [COACH-MODE-OPERATOIRE.md](COACH-MODE-OPERATOIRE.md)** pour exécuter une mise à jour métier. Ce document centralise la checklist en architecture V2 : à **chaque activité `fait:true`**, le Coach renseigne `structuresSollicitees` de façon autonome dans **Activités**, ainsi que les gestes confirmés et le suivi Santé ; il vérifie tests, projection et **publication effective**. Les passages historiques ci-dessous sont conservés sans perte et ne remplacent pas ce processus lorsqu'ils évoquent l'ancien `personnel/` ou un caractère facultatif désormais obsolète du champ. Garmin MCP n'est jamais écrit sans dates explicitement demandées.

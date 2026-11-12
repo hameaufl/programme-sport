@@ -1,7 +1,7 @@
 /* Présentation des en-têtes et de la navigation commune ; aucune donnée métier. */
 .hero {
-  min-height:232px;
-  padding:39px 43px;
+  min-height:155px;
+  padding:25px 32px;
   border-radius:24px;
   position:relative;
   overflow:hidden;
@@ -30,14 +30,14 @@
 .hero .hero-copy {position:relative;z-index:1;flex:1;min-width:0}
 .hero h1 {
   margin:0;
-  font-size:clamp(32px,5vw,51px);
+  font-size:clamp(29px,4.4vw,43px);
   font-weight:800;
   letter-spacing:-1.8px;
   line-height:1.08;
 }
 .hero .hero-mark {
-  width:95px;
-  height:95px;
+  width:68px;
+  height:68px;
   flex:none;
   border:1px solid rgba(255,255,255,.36);
   border-radius:50%;
@@ -48,8 +48,8 @@
   z-index:1;
 }
 .hero .hero-mark svg {
-  width:50px;
-  height:50px;
+  width:37px;
+  height:37px;
   stroke:#f5faf4;
   stroke-width:2;
   fill:none;
@@ -80,7 +80,18 @@ header.site-header {
   gap:11px;
   flex:none;
   white-space:nowrap;
+  color:var(--ink,#22392b);
+  text-decoration:none;
 }
+/* La marque ne prend jamais les styles de lien par défaut. */
+.site-brand-wrap a.brand:link,
+.site-brand-wrap a.brand:visited,
+.site-brand-wrap a.brand:hover,
+.site-brand-wrap a.brand:active {
+  color:var(--ink,#22392b);
+  text-decoration:none;
+}
+.site-brand-wrap a.brand:focus-visible {outline:3px solid #8aba98;outline-offset:3px;border-radius:10px}
 .site-brand-wrap #todayLabel {
   display:inline-block;
   position:relative;
@@ -151,9 +162,9 @@ header.site-header {
   .site-navigation {width:100%;grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 @media(max-width:720px) {
-  .hero {min-height:210px;padding:31px 26px}
-  .hero .hero-mark {width:64px;height:64px;display:grid}
-  .hero .hero-mark svg {width:35px;height:35px}
+  .hero {min-height:140px;padding:20px 23px}
+  .hero .hero-mark {width:48px;height:48px;display:grid}
+  .hero .hero-mark svg {width:27px;height:27px}
 }
 @media(max-width:600px) {
   .shell {width:calc(100% - 26px)}
@@ -163,10 +174,10 @@ header.site-header {
   .site-brand-wrap #todayLabel {font-size:10px;padding-left:10px}
 }
 @media(max-width:530px) {
-  .hero {min-height:210px;border-radius:19px;gap:12px;padding:28px 23px}
-  .hero h1 {font-size:clamp(28px,8vw,39px);letter-spacing:-1.2px}
-  .hero .hero-mark {width:52px;height:52px;display:grid}
-  .hero .hero-mark svg {width:29px;height:29px}
+  .hero {min-height:140px;border-radius:19px;gap:12px;padding:18px 20px}
+  .hero h1 {font-size:clamp(25px,7vw,34px);letter-spacing:-1.2px}
+  .hero .hero-mark {width:42px;height:42px;display:grid}
+  .hero .hero-mark svg {width:24px;height:24px}
 }
 @media(max-width:420px) {
   .site-brand-wrap {gap:8px;flex-wrap:wrap}

@@ -1,5 +1,13 @@
 # Décisions techniques — Maturation
 
+## 12 novembre 2026 — Source HTML unique d'en-tête et bandeaux réduits
+
+- **Demande explicite du propriétaire :** conserver « mon rythme. » cliquable partout, mais sans soulignement ni bleu/violet ou variation de couleur selon la page/état. Le défaut de style était lié aux quatre copies d'en-tête HTML (et à l'absence de `a{color:inherit}` sur l'accueil). Appliquer dans la feuille commune les états `:link`, `:visited`, `:hover`, `:active`, avec focus clavier visible.
+- **Dette technique corrigée :** `addons/web/composants/en-tete.cjs` est maintenant **la seule source HTML** pour la marque, la date et le menu (page courante variable). Les pages sources n'ont qu'un emplacement explicite ; `scripts/construire-site.cjs` les compose en HTML statique avant déploiement. `scripts/verifier-site.cjs` vérifie le composant commun et refuse un emplacement absent.
+- **Bandeaux de titre des quatre pages :** réduire la hauteur de référence d'environ 1/3, de 232 à **155 px** sur bureau et de 210 à **140 px** sur mobile, sans sacrifier les titres ni la lisibilité des pictogrammes ; styles communs dans `addons/web/public/style-commun.css`, aucun changement dans les projections et les domaines métier.
+- Cette décision **remplace** toute mention historique de logo non cliquable sur l'accueil et d'en-tête HTML dupliqué ou de bandeaux grands formats.
+
+
 ## 12 novembre 2026 — Date alignée et en-tête réellement identique sur quatre pages
 
 - Constat du propriétaire : la date sur « Mon programme » semblait légèrement trop haute par rapport au texte du logo. Demande : corriger cette différence, puis **reproduire l'en-tête complet sur les trois autres pages**.

@@ -345,3 +345,9 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Nouvelle demande du propriétaire : abaisser très légèrement la date par rapport au nom de la marque, puis dupliquer tout l'en-tête de « Mon programme » sur Santé, Cap du Coach et Équipement.
 - Création d'un **bloc d'en-tête identique sur les quatre pages** : marque cliquable, date locale française à droite, menu à quatre destinations inchangé (seul l'état actif diffère). Le CSS aligne les lignes de base et applique un décalage optique de 2 px pour la date, avec repli sur les écrans étroits.
 - La date utilise un **seul script `addons/web/public/en-tete.js`** sur toutes les pages, et n'est plus mise à jour séparément dans la logique du calendrier ; le build publie ce script. Tests ajoutés pour la structure du header, le format français de date et les ressources de publication. Aucun fait sportif, donnée Santé, planification ni contrat métier modifié.
+
+## 12 novembre 2026 — Marque non soulignée, header mutualisé et bandeaux plus petits
+
+- Le propriétaire corrige son choix précédent : « mon rythme. » reste cliquable même sur la page principale, mais ne doit ni devenir bleu/violet ni être souligné. Il demande pourquoi l'en-tête n'était pas réutilisé et une réduction d'un tiers des bandeaux de titre.
+- Cause : copies HTML des quatre headers et stylage partiel du lien sur l'accueil. Solution Maturation : un module de rendu `addons/web/composants/en-tete.cjs` injecté au build, pages sources réduites à un marqueur, liens nav disponibles dans le HTML publié même sans JavaScript, feuille CSS traitant les différents états du lien de marque.
+- Hauteur de référence des bandeaux réduite de 232 à 155 px sur bureau et de 210 à 140 px sur téléphone, avec marges, typographie et pictogrammes ajustés. Tests du composant, du responsive et du build. Aucun changement de données métier, plans, activités ou Garmin.

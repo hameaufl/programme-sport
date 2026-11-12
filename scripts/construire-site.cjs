@@ -3,6 +3,7 @@ const fs=require("node:fs"),path=require("node:path");
 const {ROOT,collect,exposed,summary}=require("./donnees.cjs");
 const depots=require("../adaptateurs/fichiers/depots.cjs");
 const {projeterOrientation,projeterEquipements}=require("../adaptateurs/projections/coaching.cjs");
+const {composerPage}=require("../addons/web/composants/en-tete.cjs");
 function build(){
  // L'add-on Web n'est pas nécessaire aux domaines métier ou aux services externes.
  if(process.env.MON_RYTHME_WEB==="0"){console.log("Add-on Web désactivé : domaines autonomes");return;}
@@ -29,7 +30,12 @@ function build(){
   fs.mkdirSync(path.dirname(file),{recursive:true});
   fs.writeFileSync(file,JSON.stringify(value,null,2)+"\n","utf8");
  }
- for(const name of ["index.html","sante.html","coach.html","equipements.html"])copy("addons/web/pages/"+name,name);
+ // Une seule source HTML pour le header ; les pages publiées restent statiques, même sans JS.
+ for(const name of ["index.html","sante.html","coach.html","equipements.html"]){
+  const page=name.slice(0,-5);
+  const source=fs.readFileSync(path.join(ROOT,"addons/web/pages",name),"utf8");
+  fs.writeFileSync(path.join(dest,name),composerPage(source,page),"utf8");
+ }
  for(const name of ["favicon.svg","icon-192.png","icon-512.png","manifest.webmanifest","style-commun.css","en-tete.js"])copy("addons/web/public/"+name,name);
  for(const name of ["publication.txt",".nojekyll"])copy(name,name);
  const index=summary(model);

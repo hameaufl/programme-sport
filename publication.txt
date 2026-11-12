@@ -1,5 +1,5 @@
 Mon Rythme — témoin de publication
-Version attendue : 2026-11-12-header-date-v29
+Version attendue : 2026-11-12-entete-mutualise-bandeaux-v31
 Programme : coche verte et Fait uniquement si séance confirmée ; sensations statiques si renseignées
 Interface : aucun stockage local ni coche interactive
 Dépôt : https://github.com/hameaufl/programme-sport
@@ -20,3 +20,5 @@ Navigation haute : ordre Mon programme / Le cap du Coach / Mon suivi santé / Mo
 Navigation uniformisée : en-tête de largeur commune 1160 px, menu à quatre boutons répartis sur la largeur disponible ; date placée à droite de « mon rythme. » sur la page Programme ; menu sur une ligne dédiée sous 1000 px et deux colonnes sur petit mobile.
 
 En-tête recopié sur les quatre pages : logo cliquable, date française locale à droite du nom, alignement vertical par lignes de base et léger ajustement vers le bas ; menu identique avec onglet actif. Date mise à jour par un seul script commun, également en cas de retour sur l'onglet et de changement de jour.
+
+Navigation : lien de marque non souligné et de couleur constante sur les quatre pages. En-tête HTML issu d'un composant unique injecté lors du build. Bandeaux de titres abaissés à 155 px sur bureau et 140 px sur mobile, soit environ un tiers en moins.

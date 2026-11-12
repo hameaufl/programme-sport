@@ -4,7 +4,11 @@ const vm=require("node:vm");
 const assert=require("node:assert/strict");
 const {ROOT,collect,exposed,summary,monday}=require("./donnees.cjs");
 const read=p=>fs.readFileSync(require("node:path").join(ROOT,p),"utf8");
-const html=read("addons/web/pages/index.html"),sante=read("addons/web/pages/sante.html"),coachPage=read("addons/web/pages/coach.html"),equipPage=read("addons/web/pages/equipements.html");
+const {composerPage,rendreEnTete}=require("../addons/web/composants/en-tete.cjs");
+const html=composerPage(read("addons/web/pages/index.html"),"index"),
+ sante=composerPage(read("addons/web/pages/sante.html"),"sante"),
+ coachPage=composerPage(read("addons/web/pages/coach.html"),"coach"),
+ equipPage=composerPage(read("addons/web/pages/equipements.html"),"equipements");
 const data=collect(),index=summary(data);
 
 // Obligation structurante : aucun compte rendu d'activité confirmée sans analyse anatomique du Coach.
@@ -53,9 +57,21 @@ assert.ok(version&&[sante,coachPage,equipPage].every(page=>page.includes('name="
 // Navigation et encarts communs : présentation cohérente, hors des données métier.
 const pagesVisuelles=[["index",html],["sante",sante],["coach",coachPage],["equipements",equipPage]];
 const styleCommun=read("addons/web/public/style-commun.css");
-assert.ok(styleCommun.includes("min-height:232px")&&styleCommun.includes("min-height:210px")&&
+// Le HTML du header est composé depuis une seule source, pas copié entre quatre pages.
+for(const [id] of pagesVisuelles){
+ const raw=read("addons/web/pages/"+id+".html");
+ assert.ok(raw.includes('data-mon-rythme-en-tete="'+id+'"'),"Emplacement du header absent : "+id);
+ assert.ok(!raw.includes('<header class="site-header">'),"HTML dupliqué du header : "+id);
+ assert.ok(rendreEnTete(id).includes('<a class="brand" href="./"'),"Marque cliquable manquante : "+id);
+}
+assert.throws(()=>composerPage('<main></main>',"index"),/emplacement/,"Le build doit refuser un header manquant");
+assert.ok(styleCommun.includes("min-height:155px")&&styleCommun.includes("min-height:140px")&&
+ styleCommun.includes("padding:25px 32px")&&styleCommun.includes("padding:18px 20px")&&
  styleCommun.includes("header.site-header")&&styleCommun.includes(".site-brand-wrap #todayLabel")&&
  styleCommun.includes("align-items:baseline")&&styleCommun.includes("top:2px")&&
+ styleCommun.includes(".site-brand-wrap a.brand:visited")&&
+ styleCommun.includes("text-decoration:none")&&
+ styleCommun.includes("color:var(--ink,#22392b)")&&
  styleCommun.includes("@media(max-width:420px)")&&
  styleCommun.includes(".shell {width:min(1160px")&&
  styleCommun.includes("grid-template-columns:repeat(4,minmax(0,1fr))")&&
