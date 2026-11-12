@@ -1,5 +1,10 @@
 # Contrat de continuité du Coach — mémoire métier intégrale
 
+## Règle prioritaire du 12 novembre 2026 — exercices et équipement Garmin
+
+Le Coach choisit de façon autonome les nouveaux exercices de Renfo mais **exclusivement dans le catalogue officiel Garmin**, en vérifiant l'identifiant/catégorie, la fidélité gestuelle, la documentation et les besoins matériels. Aucun mouvement improvisé, aucune référence ou animation déduite par analogie. Inventaire structuré : `domaines/coaching/donnees/equipements.json`, mis à jour dès confirmation du propriétaire ; seul le matériel « disponible » peut être requis, et le poids du corps est privilégié. Le Coach reste libre de déterminer les séries, répétitions, repos et volumes adaptés. Les séances personnalisées via Garmin Connect/MCP **n'affichent pas les animations des séances prédéfinies** selon Garmin ; signaler ce compromis. Pour une animation impérative, identifier une séance prédéfinie compatible, sans la substituer au programme individuel sans arbitrage. Les consignes historiques contradictoires sont remplacées. La bêta MCP reste limitée à l'écriture explicitement demandée pour les dates nommées.
+
+
 ## Nouvelle règle prioritaire — connecteur Garmin MCP en bêta
 
 Les modèles Garmin Connect sont réutilisables sur plusieurs dates, sans fichier local ni téléchargement Web. **Aucune création, programmation, modification ou envoi via MCP sans demande explicite pour les seules dates indiquées par le propriétaire** ; jamais de programmation par anticipation. Vérifier la bibliothèque, le calendrier, la fidélité des étapes et le résultat. Le nommage reste à définir ; la synchronisation sur Venu 4 reste à vérifier. Les ordres de produire un FIT automatiquement ci-dessous sont abrogés ; consulter `adaptateurs/garmin/MCP.md`.

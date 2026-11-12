@@ -56,6 +56,27 @@ const fakeWeeks=new Map();
 for(const s of synthetic){const w=monday(s.date);if(!fakeWeeks.has(w))fakeWeeks.set(w,[]);fakeWeeks.get(w).push(s);}
 assert.equal([...fakeWeeks.values()].reduce((n,list)=>n+list.length,0),5000,"Test synthétique 5000 séances : aucune perte");
 assert.ok([...fakeWeeks.values()].every(list=>list.length<=12),"Les fichiers hebdomadaires doivent rester bornés avec un planning normal");
+// Référentiel de matériel autonome : un équipement absent ou non confirmé est interdit.
+const materiel=require("../domaines/coaching/donnees/equipements.json");
+const coachModele=require("../domaines/coaching/modele.cjs");
+const depot=require("../adaptateurs/fichiers/depots.cjs");
+assert.deepEqual(depot.coaching.equipements(),materiel,"Le port d'équipement doit fournir l'inventaire canonique");
+assert.equal(coachModele.verifierEquipements(materiel),materiel);
+const equipe=new Map(materiel.equipements.map(e=>[e.id,e]));
+assert.equal(equipe.get("tapis_sol")?.statut,"disponible");
+assert.equal(equipe.get("ballon_gymnastique")?.statut,"disponible");
+assert.equal(equipe.get("ballon_gymnastique")?.caracteristiques?.diametreCmApprox,80);
+assert.equal(equipe.get("elastiques_resistance")?.statut,"absent");
+assert.equal(equipe.get("halteres")?.statut,"absent");
+assert.equal(equipe.get("autres_accessoires")?.statut,"non_confirme");
+assert.equal(coachModele.verifierMaterielRequis(materiel,[]),true,"Un exercice au poids du corps ne requiert aucun accessoire");
+assert.equal(coachModele.verifierMaterielRequis(materiel,["tapis_sol","ballon_gymnastique"]),true);
+for(const id of ["elastiques_resistance","halteres","autres_accessoires","materiel_non_declare"])
+ assert.throws(()=>coachModele.verifierMaterielRequis(materiel,[id]),/indisponible ou non confirmé/,"Matériel non déclaré ou absent à bloquer : "+id);
+assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:[...materiel.equipements,materiel.equipements[0]]}),/doublonné/,"Doublons à rejeter");
+assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:materiel.equipements.map((e,i)=>i?e:{...e,statut:"achete"})}),/mal formé/,"Statut non vérifié à rejeter");
+assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("equipements"),"Inventaire distinct des données publiques Web");
+assert.ok(read("AGENTS.md").includes("exercices officiels Garmin")&&read("adaptateurs/garmin/MCP.md").includes("animations"),"Règle Coach officielle et limites d'animation à conserver");
 const mcp=require("../adaptateurs/garmin/mcp.cjs");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(html),"Aucune référence à des programmes de montre dans le site");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(sante),"Aucune référence à des programmes de montre dans la vue Santé");

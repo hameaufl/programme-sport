@@ -1,5 +1,10 @@
 # Reprise entre LLM — Mon Rythme
 
+## Nouvelle priorité de reprise Coach — catalogue Garmin, animation et matériel
+
+Chaque NOUVELLE prescription Renfo se construit exclusivement avec des exercices **réellement classifiés Garmin**, dont le Coach vérifie lui-même les clés officielles, les instructions/démonstrations disponibles et les prérequis de matériel. Pas d'exercice improvisé ni d'équivalence conjecturale. Inventaire autoritatif : `domaines/coaching/donnees/equipements.json` : tapis et ballon de gymnastique ~80 cm disponibles, élastiques et haltères absents, autres équipements non confirmés. Le Coach ajuste librement le volume et les répétitions **des exercices officiels choisis**, sans modifier leur gestuelle. Garmin confirme que les **animations sur Venu 4 ne sont pas fournies dans les entraînements personnalisés**, même classifiés ; elles proviennent de certains entraînements prédéfinis. Si l'animation est indispensable, rechercher ces séances officielles et exposer le compromis avant de les choisir. Anciennes séances inchangées ; phase bêta MCP : aucune écriture sans ordre explicite pour dates précises. Détails : `adaptateurs/garmin/MCP.md`.
+
+
 ## PRIORITÉ — connecteur Garmin MCP en bêta
 
 Le propriétaire a remplacé les anciens fichiers locaux par la création et la planification via son MCP personnalisé. Le Web ne propose plus de téléchargement de programme. **Aucune écriture Garmin sans demande explicite pour les dates nommées** ; pas d'anticipation de plusieurs semaines, ni envoi automatique à la montre. Lire la bibliothèque et le calendrier avant de réutiliser/créer les modèles. Nommage encore ouvert. `adaptateurs/garmin/mcp.cjs` prépare en lecture seule, `adaptateurs/garmin/MCP.md` documente les opérations. Les consignes historiques de production de FIT ci-dessous sont abrogées.

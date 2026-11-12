@@ -30,6 +30,7 @@ const depots={
   evenements:()=>documents("domaines/sante/donnees/evenements",".md"),
   profil:()=>local.texte("domaines/sante/donnees/PROFIL.md")
  },
- coaching:{objectifs:()=>local.json("domaines/coaching/donnees/objectifs.json")}
+ coaching:{objectifs:()=>local.json("domaines/coaching/donnees/objectifs.json"),
+  equipements:()=>local.json("domaines/coaching/donnees/equipements.json")}
 };
 module.exports=depots;

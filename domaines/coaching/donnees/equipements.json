@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "maj": "2026-11-12",
+  "provenance": "Déclarations du propriétaire, 12 novembre 2026 ; à réviser uniquement sur nouveau retour explicite.",
+  "equipements": [
+    {
+      "id": "tapis_sol",
+      "nom": "Tapis de sol",
+      "statut": "disponible"
+    },
+    {
+      "id": "ballon_gymnastique",
+      "nom": "Gros ballon de gymnastique",
+      "statut": "disponible",
+      "caracteristiques": {
+        "diametreCmApprox": 80
+      },
+      "notes": "Usage individuel uniquement si stabilité et confort suffisants."
+    },
+    {
+      "id": "elastiques_resistance",
+      "nom": "Élastiques de résistance",
+      "statut": "absent",
+      "notes": "Usage en kinésithérapie ne prouve pas une possession à domicile."
+    },
+    {
+      "id": "halteres",
+      "nom": "Haltères",
+      "statut": "absent"
+    },
+    {
+      "id": "autres_accessoires",
+      "nom": "Autres accessoires de musculation non déclarés",
+      "statut": "non_confirme"
+    }
+  ]
+}

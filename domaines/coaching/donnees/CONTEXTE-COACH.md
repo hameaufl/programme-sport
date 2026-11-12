@@ -4,6 +4,9 @@
 
 ## Matériel réellement disponible à domicile
 
+**Règle actuelle prioritaire :** pour les nouvelles prescriptions, consulter `equipements.json` et le référentiel officiel Garmin avant de choisir le mouvement. Les animations d'une séance personnalisée sur Venu 4 ne sont pas disponibles selon le support Garmin ; la préférence d'animation demande une recherche de séance prédéfinie, pas l'invention d'une animation.
+
+
 - **Tapis de sol :** disponible.
 - **Gros ballon de gymnastique :** diamètre approximatif **80 cm**, disponible. L'utilisateur l'a déjà utilisé au cours de sa kinésithérapie, mais son usage seul à domicile reste conditionné au confort et à la stabilité.
 - **Élastiques de résistance : aucun à domicile.** L'élastique évoqué lors des séances de kiné était utilisé dans ce contexte professionnel, pas décrit comme acquis pour la maison.
@@ -75,4 +78,12 @@
 - Mon Rythme affiche les séances, dates et aides visuelles, **sans aucun document ou téléchargement d'entraînement Garmin**. Les 33 FIT locaux et leur générateur ont été supprimés du HEAD, ainsi que la publication des pièces. Les données sportives prévues et réalisées sont conservées sans altération.
 - Opérations autorisées uniquement à la demande : lectures get_workouts/get_scheduled_workouts, puis upload_workout(s) et schedule_workouts sur sélection contrôlée, vérification des succès. Le module `adaptateurs/garmin/mcp.cjs` prépare en lecture seule ; le Coach effectue les appels MCP, jamais la CI ou le site.
 - Les exercices de Renfo doivent conserver échauffement, séries, repos et étirements sans retour au calme redondant. Tant que la représentation Garmin des mouvements et du déroulé complet n'est pas vérifiée, ne pas créer un Renfo approximatif. Ne jamais inventer des zones cardiaques et ne pas conclure à une réalisation ou une synchro depuis la seule programmation.
+
+## 12 novembre 2026 — Nouvelle préférence Garmin : gestes officiels, pédagogie, animation et suivi du matériel
+
+- **Décision utilisateur applicable aux futurs exercices et révisions de Renfo :** le Coach sélectionne **autonomement** ses mouvements exclusivement dans le **catalogue officiel des exercices Garmin**. Il vérifie catégorie, identité du geste, éventuelle fiche/description, besoin de matériel et pertinence pour le programme. Il ne crée aucun mouvement inédit, ne rebaptise pas un mouvement voisin et ne suppose jamais un exercice « reconnu » sans vérification ; le Coach garde la responsabilité du choix des exercices ainsi que du volume, des séries et des répétitions adaptés.
+- **Préférence pédagogique forte :** exercices documentés et, idéalement, animés sur la Venu 4. **Limite vérifiée du constructeur :** Garmin ne fournit les animations sur montre que pour certains entraînements **prédéfinis**, et **pas pour les séances personnalisées** créées dans Garmin Connect/MCP, même avec des exercices classifiés. Le Coach doit expliciter cette différence et privilégier un vrai entraînement prédéfini animé si l'animation est impérative, sans le substituer automatiquement au plan personnalisé ; choix d'arbitrage restant ouvert.
+- **Nouvelle source de vérité de l'équipement :** `domaines/coaching/donnees/equipements.json`, modélisée et validée indépendamment des prescriptions. Déclarés disponibles : tapis de sol et gros ballon de gymnastique (~80 cm). Déclarés absents : élastiques de résistance et haltères. Aucun autre accessoire n'est confirmé. Le poids du corps est privilégié. Les envies d'achat ne prouvent pas la disponibilité ; seul un retour explicite du propriétaire actualise l'inventaire.
+- **Portée :** ne modifier aucune séance déjà écrite ou réalisée du seul fait de cette nouvelle préférence. Aucun envoi ni création Garmin n'est autorisé par cette décision : la règle de bêta imposant des dates explicitement demandées demeure. Les anciens choix de dessins PNG concernent la présentation Web et ne confèrent pas un statut officiel Garmin aux anciens mouvements.
+- **Références fabricant :** https://support.garmin.com/en-US/?faq=IPD6X8JSLBAUQOXvz7zBO6 ; documentation Venu 4 https://www8.garmin.com/manuals/webhelp/GUID-2CF5620C-E585-4E0A-9CC3-9565533EEE4D/EN-US/GUID-B7EDF898-AC46-4504-A12A-A1FFA1756878.html.
 
