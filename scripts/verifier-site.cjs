@@ -55,6 +55,8 @@ const pagesVisuelles=[["index",html],["sante",sante],["coach",coachPage],["equip
 const styleCommun=read("addons/web/public/style-commun.css");
 assert.ok(styleCommun.includes("min-height:232px")&&styleCommun.includes("min-height:210px")&&
  styleCommun.includes("header.site-header")&&styleCommun.includes(".site-brand-wrap #todayLabel")&&
+ styleCommun.includes("align-items:baseline")&&styleCommun.includes("top:2px")&&
+ styleCommun.includes("@media(max-width:420px)")&&
  styleCommun.includes(".shell {width:min(1160px")&&
  styleCommun.includes("grid-template-columns:repeat(4,minmax(0,1fr))")&&
  styleCommun.includes("grid-template-columns:repeat(2,minmax(0,1fr))")&&
@@ -69,6 +71,7 @@ const destinations=[
 ];
 for(const [page,source] of pagesVisuelles){
  assert.ok(source.includes('href="./style-commun.css?v='+version+'">'),"Feuille partagée absente : "+page);
+ assert.ok(source.includes('defer src="./en-tete.js?v='+version+'"></script>'),"Script de date commun absent : "+page);
  assert.ok(source.includes('<div class="hero">')&&source.includes('<div class="hero-copy"><h1>')&&
    source.includes('class="hero-mark" aria-hidden="true"')&&source.includes('<svg viewBox="0 0 50 50">'),
    "Grand encart ou pictogramme absent : "+page);
@@ -81,9 +84,11 @@ for(const [page,source] of pagesVisuelles){
  const navPos=source.indexOf('<nav class="site-navigation"');
  const brandPos=source.indexOf('<div class="site-brand-wrap">',headerStart);
  const brandEnd=source.indexOf('</div>',brandPos);
- assert.ok(headerStart>=0&&brandPos>headerStart&&brandEnd>brandPos&&brandEnd<navPos&&
-  navPos<headerEnd&&headerEnd<source.indexOf('<main>'),
-  "Même disposition de marque et menu dans l'en-tête sur les quatre pages : "+page);
+ const datePos=source.indexOf('<time id="todayLabel"></time>',brandPos);
+ assert.ok(headerStart>=0&&brandPos>headerStart&&brandEnd>brandPos&&
+  datePos>brandEnd&&datePos<navPos&&navPos<headerEnd&&headerEnd<source.indexOf('<main>')&&
+  source.includes('<a class="brand" href="./" aria-label="Accueil Mon Rythme">'),
+  "Logo, date et menu identiques dans l'en-tête des quatre pages : "+page);
  assert.equal((menu.match(/class="site-nav-link/g)||[]).length,4,"Quatre destinations attendues : "+page);
  assert.equal((menu.match(/aria-current="page"/g)||[]).length,1,"Un seul onglet actif : "+page);
  let previous=-1;
@@ -97,8 +102,21 @@ for(const [page,source] of pagesVisuelles){
  assert.ok(!source.includes('class="back"')&&!source.includes('← Mon programme'),
    "Bouton de retour redondant à retirer de l'en-tête : "+page);
 }
-assert.ok(read("scripts/construire-site.cjs").includes('"style-commun.css"'),
- "La feuille de style doit être copiée dans l'artefact de publication");
+assert.ok(read("scripts/construire-site.cjs").includes('"style-commun.css"')&&
+ read("scripts/construire-site.cjs").includes('"en-tete.js"'),
+ "Le CSS et le script de date partagés doivent être copiés dans l'artefact de publication");
+const scriptDate=read("addons/web/public/en-tete.js");
+new vm.Script(scriptDate);
+const fauxTime={textContent:"",dateTime:""};
+const DateFixe=class extends Date{constructor(...args){super(...(args.length?args:["2026-11-12T12:00:00Z"]));}};
+vm.runInNewContext(scriptDate,{
+ Date:DateFixe,Intl,
+ document:{readyState:"complete",getElementById:id=>id==="todayLabel"?fauxTime:null,
+   addEventListener:()=>{},hidden:false},
+ window:{addEventListener:()=>{},setInterval:()=>{}}
+});
+assert.equal(fauxTime.dateTime,"2026-11-12","La date doit être locale au navigateur et renseigner <time>");
+assert.match(fauxTime.textContent,/12 novembre 2026/,"La date commune doit être affichée en français");
 
 // Éviter les raccourcis et sous-titres qui dupliquent désormais les titres et la navigation.
 assert.ok(!html.includes('class="insights-grid"')&&!html.includes('class="health-preview"')&&
@@ -111,7 +129,7 @@ assert.ok(html.indexOf('<nav class="site-navigation"')<html.indexOf('<main>')&&
  brandWrapStart>=0&&datePosition>brandWrapEnd&&
  datePosition<programmeHeader.indexOf('</div>',brandWrapEnd+6)&&
  programmeHeader.indexOf('<nav class="site-navigation"')>datePosition,
- "Sur le programme, la date doit être à droite du logo et avant le menu");
+ "Sur toutes les pages, la date doit être à droite du logo et avant le menu");
 for(const [nom,page] of pagesVisuelles){
  assert.ok(!page.includes('class="section-note"')&&!page.includes('class="hint"')&&!page.includes('class="help"'),
   "Sous-titre redondant sous un titre de section : "+nom);
