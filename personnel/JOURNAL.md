@@ -120,3 +120,11 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - **Aménagement anticipé :** quatre créneaux très courts **facultatifs** ajoutés les samedis **21, 28 novembre, 5 et 12 décembre**, mode **2M+3C raccourci à 1 répétition** : 2 min marche, 3 min course, 2 min marche = 7 min au total. Ne pas les effectuer en cas de douleur à l'appui, de douleur de hanche ou de mauvaise récupération ; pas de séance de rattrapage automatique.
 - **Objectif cinq séances** : non encore programmé ; réévaluer après des retours positifs sur plusieurs sorties et la tolérance de quatre séances. La programmation existante, les séances déjà réalisées et les consultations restent intactes.
 - **Garmin** : quatre FIT Workout de 3 étapes créés et liés à chaque nouvelle séance ; aucun enregistrement d'activité inventé. Aucune modification d'IHM.
+
+## 12 novembre 2026 — Matériel réel, animations et premiers renfos
+
+- Nouvelle précision utilisateur : uniquement tapis de sol et gros ballon d'environ 80 cm, **aucun élastique ni autre équipement** disponible à domicile. Il signalera toute acquisition ultérieure ; priorité aux mouvements au poids du corps adaptés à l'hyperlaxité et à la douleur.
+- Besoin pédagogique explicite : intitulés français accessibles, six mouvements plutôt qu'une nomenclature de séries compliquée, GIF par exercice via `?` ouvrant directement l'animation, bouton Retour du smartphone conservé. Les préférences durables sont détaillées dans `personnel/CONTEXTE-COACH.md`.
+- Intégration après validation par l'utilisateur : quatre sessions `Renfo` hebdomadaires prévues, non faites (17 et 24 novembre, 1er et 8 décembre), cinq GIFs simplifiés d'aide aux gestes et liens dans les détails de séance. Pas de modification des séances course ou kiné existantes.
+- Correction d'interface demandée : les cases des jours du calendrier doivent afficher « Course à pied », pas « Séance », pour les courses plus anciennes dépourvues de champ `type` ; préserver le séparateur virgule et la capitalisation.
+- Garder la portée Coach limitée aux faits dans `personnel/` ; la mise en page et le build relèvent de Maturation, demandés directement par l'utilisateur dans le même échange.

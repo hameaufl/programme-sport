@@ -51,6 +51,8 @@ function build(){
    json("data/sante/journal/"+name,{schemaVersion:1,events:model.events.slice(page*pageSize,(page+1)*pageSize)});
  }
  json("data/sante/journal/index.json",{schemaVersion:1,total:model.events.length,pages});
+ const animations=path.join(ROOT,"assets/renfo");
+ if(fs.existsSync(animations))fs.cpSync(animations,path.join(dest,"assets/renfo"),{recursive:true});
  const attachments=path.join(ROOT,"personnel/pieces-jointes/seances");
  if(fs.existsSync(attachments))fs.cpSync(attachments,path.join(dest,"personnel/pieces-jointes/seances"),{recursive:true});
  console.log("Préparation réussie :",model.sessions.length,"séances,",index.semaines.length,"semaines,",model.reports.size,"rapports,",model.events.length,"événements");

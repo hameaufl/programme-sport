@@ -1,5 +1,5 @@
 Mon Rythme — témoin de publication
-Version attendue : 2026-11-12-libelles-jour-virgule-v16
+Version attendue : 2026-11-12-renfo-gifs-course-jour-v17
 Programme : coche verte et Fait uniquement si séance confirmée ; sensations statiques si renseignées
 Interface : aucun stockage local ni coche interactive
 Dépôt : https://github.com/hameaufl/programme-sport

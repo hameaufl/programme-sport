@@ -1,0 +1,30 @@
+{
+  "date": "2026-12-08",
+  "titre": "Renfo",
+  "type": "renfo",
+  "id": "renfo-2026-12-08",
+  "duree": "10–12 min",
+  "fait": false,
+  "sensations": "",
+  "etapes": [
+    "À quatre pattes : bras et jambe opposés · 6 par côté",
+    "Ouverture du genou sur le côté · 6 par côté",
+    "Pont avec ballon · 6 fois (facultatif)"
+  ],
+  "objectif": "Renforcement doux et facultatif, sans douleur articulaire qui augmente.",
+  "details": "Faire chaque mouvement une seule fois, lentement. Pause 30 secondes si besoin. Ne pas forcer ni tendre le genou jusqu'en hyperextension. Si une douleur apparaît, arrêter le mouvement. Ballon : facultatif si stable et confortable.",
+  "aidesExercices": [
+    {
+      "exercice": "À quatre pattes : bras et jambe opposés · 6 par côté",
+      "gif": "assets/renfo/bird-dog.gif"
+    },
+    {
+      "exercice": "Ouverture du genou sur le côté · 6 par côté",
+      "gif": "assets/renfo/ouverture-genou.gif"
+    },
+    {
+      "exercice": "Pont avec ballon · 6 fois (facultatif)",
+      "gif": "assets/renfo/pont-ballon.gif"
+    }
+  ]
+}

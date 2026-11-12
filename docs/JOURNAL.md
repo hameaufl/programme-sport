@@ -218,3 +218,10 @@
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.
+
+## 12 novembre 2026 — Animations d'exercice et libellé « Course à pied »
+
+- À la demande de l'utilisateur, intégrer des liens `?` discrets sur chaque exercice des séances Renfo, pointant vers des **fichiers GIF autonomes** servis par Pages, dans le même onglet pour permettre un retour navigateur immédiat. Aucune modale ni visionneuse supplémentaire.
+- Corriger le libellé quotidien des séances de course **sans champ `type`** : afficher « Course à pied » à partir de l'identifiant ou du titre existants, sans modifier les données personnelles. Préserver « Kiné », ajouter « Renfo » et conserver les activités multiples séparées par une virgule.
+- Cinq GIFs schématiques légers générés à partir des mêmes gestes que les animations pédagogiques présentées au propriétaire (pont de bassin au sol, ouverture de genou, mouvement opposé sur le dos, à quatre pattes, pont avec ballon). Les sources originales présentées en conversation ne sont pas déposées telles quelles ; variantes schématiques optimisées pour une publication légère.
+- Étendre le build pour copier `assets/renfo/` et la CI pour contrôler les liens, les fichiers GIF et les intitulés du calendrier. Ne pas changer la navigation entre les semaines, la page santé, l'accès Garmin ni les statuts sportifs.

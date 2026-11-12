@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-libelles-jour-virgule-v16">
+  <meta name="mon-rythme-version" content="2026-11-12-renfo-gifs-course-jour-v17">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -74,6 +74,8 @@
     .goal-list li{padding-left:4px}
     .session-head{display:flex;justify-content:flex-start;align-items:center;gap:10px 14px;flex-wrap:wrap}
     .session-head h3{min-width:0;overflow-wrap:anywhere}
+    .exercise-help{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;min-width:27px;height:27px;margin-left:8px;border:1.5px solid #708978;border-radius:50%;color:#234735;font-size:15px;font-weight:800;text-decoration:none;background:#f0f7ef}
+    .exercise-help:hover{background:#dcecdf}.exercise-help:focus-visible{outline:3px solid #86b896;outline-offset:2px}
     .sensations-entry{margin-top:18px;padding-top:15px;border-top:1px solid #dce8df;min-width:0}
     .sensations-entry h4{color:#395b42;font-size:14px;font-weight:750;margin:0 0 6px}
     .sensations-entry .note{color:#4e6955;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;line-height:1.55}
@@ -181,7 +183,19 @@
     activities=activities.filter(function(item){return typeof item==="string"&&item.trim();});
     if(activities.length) {
       var list=elem("ul");
-      activities.forEach(function(item){list.appendChild(elem("li","",item.trim()));});
+      activities.forEach(function(item){
+        var li=elem("li","",item.trim());
+        var aids=Array.isArray(s.aidesExercices)?s.aidesExercices:[];
+        var aid=aids.find(function(a){return a&&a.exercice===item&&typeof a.gif==="string"&&/^assets\/renfo\/[a-z0-9-]+\.gif$/.test(a.gif);});
+        if(aid){
+          var help=elem("a","exercise-help","?");
+          help.href="./"+aid.gif;
+          help.setAttribute("aria-label","Voir le GIF : "+item);
+          help.title="Voir le mouvement animé";
+          li.appendChild(help);
+        }
+        list.appendChild(li);
+      });
       box.appendChild(list);
     } else {
       box.appendChild(elem("p","program-empty",isCompleted(s)
@@ -230,10 +244,14 @@
   }
 
   function titreActiviteJour(s) {
-    var type=typeof s.type==="string"&&s.type.trim()?s.type.trim():"Séance";
-    if(type==="kine")return "Kiné";
-    if(type==="course")return "Course";
-    return type.charAt(0).toLocaleUpperCase("fr-FR")+type.slice(1);
+    var type=typeof s.type==="string"&&s.type.trim()?s.type.trim():"";
+    var id=typeof s.id==="string"?s.id:"";
+    var title=typeof s.titre==="string"?s.titre:"";
+    if(type==="kine"||id.startsWith("kine-"))return "Kiné";
+    if(type==="course"||id.startsWith("course-")||title.startsWith("Course à pied"))return "Course à pied";
+    if(type==="renfo"||id.startsWith("renfo-"))return "Renfo";
+    if(type)return type.charAt(0).toLocaleUpperCase("fr-FR")+type.slice(1);
+    return title||"Séance";
   }
   function resumeJour(sessions) {
     return sessions.length?sessions.map(titreActiviteJour).join(", "):"—";

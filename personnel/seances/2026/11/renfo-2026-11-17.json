@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-17",
+  "titre": "Renfo",
+  "type": "renfo",
+  "id": "renfo-2026-11-17",
+  "duree": "10–12 min",
+  "fait": false,
+  "sensations": "",
+  "etapes": [
+    "Pont de bassin au sol · 6 fois",
+    "Ouverture du genou sur le côté · 6 par côté",
+    "Bras et jambe opposés sur le dos · 6 par côté"
+  ],
+  "objectif": "Renforcement doux et facultatif, sans douleur articulaire qui augmente.",
+  "details": "Faire chaque mouvement une seule fois, lentement. Pause 30 secondes si besoin. Ne pas forcer ni tendre le genou jusqu'en hyperextension. Si une douleur apparaît, arrêter le mouvement. Ballon : facultatif si stable et confortable.",
+  "aidesExercices": [
+    {
+      "exercice": "Pont de bassin au sol · 6 fois",
+      "gif": "assets/renfo/pont-sol.gif"
+    },
+    {
+      "exercice": "Ouverture du genou sur le côté · 6 par côté",
+      "gif": "assets/renfo/ouverture-genou.gif"
+    },
+    {
+      "exercice": "Bras et jambe opposés sur le dos · 6 par côté",
+      "gif": "assets/renfo/dead-bug.gif"
+    }
+  ]
+}

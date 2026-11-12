@@ -65,10 +65,29 @@ const titlesEnd=html.indexOf("  function render() {",titlesStart);
 assert.ok(titlesStart>=0&&titlesEnd>titlesStart, "Fonctions de libellé des jours absentes");
 const {titreActiviteJour,resumeJour}=vm.runInNewContext(html.slice(titlesStart,titlesEnd)+"\n({titreActiviteJour,resumeJour});");
 assert.equal(resumeJour([]),"—", "Jour sans séance inchangé");
-assert.equal(resumeJour([{type:"course"}]),"Course", "Majuscule pour une sortie seule");
-assert.equal(resumeJour([{type:"course"},{type:"kine"}]),"Course, Kiné", "Virgule et espace entre deux activités");
-assert.equal(resumeJour([{type:"course"},{type:"kine"},{type:"mobilité"}]),"Course, Kiné, Mobilité", "Toutes les activités doivent apparaître, même au-delà de deux");
-assert.equal(resumeJour([{type:"course"},{type:"course"}]),"Course, Course", "Ne pas masquer une seconde séance du même type");
+assert.equal(resumeJour([{type:"course"}]),"Course à pied", "Titre du calendrier pour une course");
+assert.equal(resumeJour([{type:"course"},{type:"kine"}]),"Course à pied, Kiné", "Virgule et espace entre deux activités");
+assert.equal(resumeJour([{type:"course"},{type:"kine"},{type:"mobilité"}]),"Course à pied, Kiné, Mobilité", "Toutes les activités doivent apparaître, même au-delà de deux");
+assert.equal(resumeJour([{type:"course"},{type:"course"}]),"Course à pied, Course à pied", "Ne pas masquer une seconde séance du même type");
+assert.equal(resumeJour([{id:"course-2026-11-13",titre:"Course à pied · 2M+3C"}]),"Course à pied", "Course identifiée sans type explicite");
+assert.equal(resumeJour([{id:"kine-2026-11-18"}]),"Kiné", "Kiné sans type explicite");
+assert.equal(resumeJour([{type:"renfo",titre:"Renfo"}]),"Renfo", "Renfo visible dans le calendrier");
 assert.ok(html.includes("var label=resumeJour(dailySessions);"), "Le calendrier doit utiliser les libellés composés");
 assert.ok(!html.includes("Course + kiné"), "L'ancien séparateur + doit disparaître");
+const renfo=data.sessions.filter(x=>x.type==="renfo");
+for(const s of renfo){
+  assert.ok(/^renfo-\d{4}-\d{2}-\d{2}$/.test(s.id),"Identifiant renfo incorrect");
+  assert.equal(s.titre,"Renfo");
+  assert.ok(s.etapes.length>=2&&Array.isArray(s.aidesExercices),"Exercices ou animations manquants");
+  for(const exercise of s.etapes){
+    const match=s.aidesExercices.find(a=>a.exercice===exercise);
+    assert.ok(match&&/^assets\/renfo\/[a-z0-9-]+\.gif$/.test(match.gif),"Lien GIF manquant : "+exercise);
+    const file=require("node:path").join(ROOT,match.gif);
+    const bytes=fs.readFileSync(file);
+    assert.equal(bytes.toString("ascii",0,6),"GIF89a","Animation invalide : "+match.gif);
+  }
+}
+assert.ok(html.includes('var aid=aids.find')&&html.includes('help.href="./"+aid.gif'),"Aide GIF cliquable manquante");
+const buildScript=read("scripts/construire-site.cjs");
+assert.ok(buildScript.includes('path.join(dest,"assets/renfo")'),"GIFs absents de l'artefact");
 console.log("Validation OK :",data.sessions.length,"séances,",data.reports.size,"rapports,",data.events.length,"événements ; 5000 séances fictives regroupées sans perte.");
