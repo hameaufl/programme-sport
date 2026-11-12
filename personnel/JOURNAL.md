@@ -112,3 +112,11 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - Seuls les champs `titre` des 15 séances sont modifiés ; les dates, ID, étapes prévues, réalisations, sensations, autres données et pièces Garmin restent intacts. Les rendez-vous de kinésithérapie ne changent pas.
 - Correction de l'antécédent rapporté : les **périostites existent depuis des années**, et non depuis un an ; rectification des deux mentions dans `personnel/sante/PROFIL.md` ainsi que dans le présent journal.
 - Aucun FIT régénéré : pas de changement d'étapes prévues. Lot explicitement demandé par l'utilisateur et commité avec `[lot-valide]`.
+
+## 12 novembre 2026 — Reprise très progressive avec quatrième sortie optionnelle
+
+- Demande de l'utilisateur : viser progressivement **5 sorties de course par semaine**, avec adaptation autonome par le Coach à **4, 3 ou moins** selon les sensations et le risque de blessure. Il insiste sur une pratique régulière mais tranquille pour réhabituer progressivement le corps à l'effort.
+- **Analyse Coach :** la douleur à l'appui sous le pied droit (5–6/10) et celle de la hanche droite (5/10) lors du 11 novembre rendent une augmentation immédiate à cinq injustifiée. Ne pas banaliser ces douleurs ; une légère gêne stable n'est pas nécessairement un motif d'arrêt, mais la douleur significative ou aggravée impose de réduire et de faire réévaluer si elle persiste.
+- **Aménagement anticipé :** quatre créneaux très courts **facultatifs** ajoutés les samedis **21, 28 novembre, 5 et 12 décembre**, mode **2M+3C raccourci à 1 répétition** : 2 min marche, 3 min course, 2 min marche = 7 min au total. Ne pas les effectuer en cas de douleur à l'appui, de douleur de hanche ou de mauvaise récupération ; pas de séance de rattrapage automatique.
+- **Objectif cinq séances** : non encore programmé ; réévaluer après des retours positifs sur plusieurs sorties et la tolérance de quatre séances. La programmation existante, les séances déjà réalisées et les consultations restent intactes.
+- **Garmin** : quatre FIT Workout de 3 étapes créés et liés à chaque nouvelle séance ; aucun enregistrement d'activité inventé. Aucune modification d'IHM.
