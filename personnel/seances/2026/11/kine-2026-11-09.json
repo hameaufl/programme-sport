@@ -3,6 +3,19 @@
   "titre": "Kiné · Genoux",
   "type": "kine",
   "id": "kine-2026-11-09",
-  "fait": false,
-  "sensations": ""
+  "fait": true,
+  "sensations": "Vélo : douleurs au-dessus du genou gauche, à la jonction avec le quadriceps, aux niveaux 5 à 8 ; niveau 4 conservé sans forcer.",
+  "exercicesRealises": [
+    "Vélo · niveau 4",
+    "Presse · 50 kg",
+    "Marche latérale avec élastique",
+    "Ponts de bassin sur ballon · 3 positions",
+    "Étirements"
+  ],
+  "structuresSollicitees": [
+    "Genou / extension — quadriceps fémoral",
+    "Hanche / abduction et stabilisation — moyen fessier, abducteurs coxo-fémoraux",
+    "Hanche / extension — grand fessier",
+    "Genou / flexion — ischio-jambiers"
+  ]
 }
