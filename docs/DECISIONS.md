@@ -1,5 +1,13 @@
 # Décisions techniques — Maturation
 
+## 12 novembre 2026 — Date alignée et en-tête réellement identique sur quatre pages
+
+- Constat du propriétaire : la date sur « Mon programme » semblait légèrement trop haute par rapport au texte du logo. Demande : corriger cette différence, puis **reproduire l'en-tête complet sur les trois autres pages**.
+- Les quatre en-têtes possèdent désormais **exactement la même structure** (marque cliquable, date `<time>`, menu Programme / Coach / Santé / Équipement), à l'exception de l'état du bouton actif. La date se trouve sur la même ligne, à droite du nom, sur **toutes les pages**.
+- Alignement vertical par **ligne de base** dans `style-commun.css`, avec léger décalage de la date vers le bas de 2 px pour la correction optique ; le repli sous 420 px évite toute collision. Le format français et la date locale ne sont calculés que par `addons/web/public/en-tete.js`, commun aux quatre vues et copié au build. Les anciens réglages de la date dans l'inline JavaScript du programme sont retirés.
+- `scripts/verifier-site.cjs` vérifie le même bloc marque/date/menu sur les quatre pages et le script de date, et contrôle une date française déterministe. Les règles métier, projections, CI et politiques de publication restent inchangées. Cette décision prime sur les mentions historiques « date seulement sur Mon programme ».
+
+
 ## 12 novembre 2026 — Largeur harmonisée et date latérale dans l'en-tête
 
 - Après vérification visuelle de la page Programme, le propriétaire signale que les quatre boutons étaient trop serrés à l'extrémité droite et que la date sous la marque déstabilisait l'ensemble. Il demande un en-tête réellement **uniforme sur les quatre pages**, plus large et adapté aux mobiles.
