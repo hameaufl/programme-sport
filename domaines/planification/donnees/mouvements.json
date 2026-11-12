@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "mouvements": [
+    {
+      "id": "pont-sol",
+      "titre": "Pont de bassin au sol",
+      "consignes": "Depuis le dos, pieds au sol, soulever le bassin en contrôlant l'alignement"
+    },
+    {
+      "id": "ouverture-genou",
+      "titre": "Ouverture du genou sur le côté",
+      "consignes": "Allongé sur le côté, pieds joints, ouvrir puis refermer le genou supérieur"
+    },
+    {
+      "id": "dead-bug",
+      "titre": "Bras et jambe opposés sur le dos",
+      "consignes": "Sur le dos, éloigner un bras et la jambe opposée sans creuser le dos"
+    },
+    {
+      "id": "bird-dog",
+      "titre": "À quatre pattes : bras et jambe opposés",
+      "consignes": "À quatre pattes, tendre bras et jambe opposés puis revenir en gardant le tronc stable"
+    },
+    {
+      "id": "pont-ballon",
+      "titre": "Pont avec ballon",
+      "consignes": "Sur le dos, talons sur le gros ballon stable, soulever doucement le bassin"
+    }
+  ]
+}

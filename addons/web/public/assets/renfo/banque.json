@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "images": [
+    {
+      "mouvementId": "pont-sol",
+      "png": "assets/renfo/png/pont-sol.png"
+    },
+    {
+      "mouvementId": "ouverture-genou",
+      "png": "assets/renfo/png/ouverture-genou.png"
+    },
+    {
+      "mouvementId": "dead-bug",
+      "png": "assets/renfo/png/dead-bug.png"
+    },
+    {
+      "mouvementId": "bird-dog",
+      "png": "assets/renfo/png/bird-dog.png"
+    },
+    {
+      "mouvementId": "pont-ballon",
+      "png": "assets/renfo/png/pont-ballon.png"
+    }
+  ]
+}
