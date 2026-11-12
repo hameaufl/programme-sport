@@ -27,7 +27,7 @@
     {
       "id": "appuis",
       "sujet": "Confort des appuis",
-      "attention": "Observer les gênes plantaires pendant et après l'effort, y compris avec les Saucony Hurricane 26 et les nouvelles semelles après l'échange du 12 novembre ; l'essai en magasin ne démontre pas encore leur tolérance ni l'origine des douleurs."
+      "attention": "Douleur plantaire droite persistante après la sortie du 11 novembre ; impression incertaine de diminution ou disparition temporaire pendant l'essai Saucony avec semelles sur tapis le 12, sans disparition durable confirmée. Surveiller la douleur à l'appui, la récupération et les retours en extérieur ; ne pas inférer une cause unique."
     },
     {
       "id": "articulations",
@@ -47,5 +47,5 @@
     "sante:rapport:course-2026-11-11",
     "sante:evenement:2026-11-12-echange-chaussures-running"
   ],
-  "statut": "orientation provisoire au 12 novembre ; absence de douleur à la hanche droite pendant l'essai sur tapis rapportée, mais ressenti plantaire et tolérance après effort/en extérieur encore inconnus ; à réévaluer au prochain retour réel"
+  "statut": "orientation provisoire au 12 novembre : hanche droite indolore pendant les essais sur tapis, douleur plantaire possiblement atténuée pendant ce test mais globalement toujours présente ; conditions et évolution à confirmer avant course."
 }
