@@ -214,3 +214,8 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - **Échange réalisé** ce jeudi soir en magasin : **Saucony Hurricane 26, pointure 45**, pour une pointure habituelle 43 ; plusieurs essayages et **20–30 min environ de course sur tapis avec les semelles orthopédiques obtenues le 9 novembre**.
 - L'ancienne visite prévue le 13 est ainsi remplacée par une visite **réellement effectuée le 12**. **Précision ultérieure le même soir : pas de douleur ressentie à la hanche droite pendant les essais sur tapis** (contre douleur de hanche droite le 11 en ville). Ressenti plantaire pendant l'essai, récupération après celui-ci et bénéfice durable non encore rapportés ; rôle respectif des chaussures, des semelles, de la surface et de l'allure indéterminé.
 - **Suivi Coach :** nouvel événement Santé, mise à jour du profil, complément au rapport de la sortie historique sans toucher à son exécution ni à ses sensations, et rappel de la prudence avant la course du 13. Aucun changement de planning ni aucune action Garmin.
+
+## 12 novembre 2026 au soir — Complément de ressenti du test tapis
+
+- Le propriétaire **croit avoir ressenti une diminution, voire une disparition temporaire** de la douleur plantaire droite pendant les essais en magasin. Il souligne toutefois que la douleur **reste globalement présente** et n'est pas en mesure d'expliquer pourquoi ; hypothèse personnelle d'un reliquat de la sortie du 11 novembre.
+- **Qualification :** ressenti incertain, sans score ni absence durable confirmée. À enregistrer dans l'événement Santé du 12 novembre et le profil ; ne pas compter le test comme une séance d'entraînement autonome. Prudence inchangée pour la course du 13, sans mise à jour des séances ni du calendrier Garmin.
