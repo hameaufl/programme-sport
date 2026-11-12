@@ -52,3 +52,10 @@
 
 - **Préférence de fonctionnement** : tout Renfo doit disposer automatiquement d'un **FIT Workout** à télécharger sur Mon Rythme, sans demande supplémentaire, exactement comme les séances de course. Conserver l'organisation et les contenus du Renfo et les PNG ; générer et contrôler la pièce Garmin dès la programmation.
 - **Précision de représentation** : les pauses chiffrées sont minutées ; les séries restent ouvertes avec validation manuelle car les maintiens sont décrits comme une plage (8–10 s) et l'utilisateur peut écourter une séance. Cela permet d'éviter des durées inventées et n'affirme pas une synchronisation Garmin effectivement testée.
+
+## 12 novembre 2026 — Étirements systématiques dans les programmes à venir
+
+- **Demande utilisateur** : ajouter de manière permanente une **partie étirements adaptée aux groupes musculaires réellement sollicités** dans **toutes les séances de course à pied et de Renfo déjà créées mais non réalisées**, ainsi que dans chaque nouvelle séance. L'utilisateur précise explicitement de **ne modifier aucune séance déjà exécutée**.
+- **Double persistance exigée** : l'information doit apparaître **dans la description de la séance sur le site** et **dans le fichier d'entraînement Garmin FIT Workout correspondant**, en partant du **JSON individuel comme source unique** ; une mise à jour du seul texte ou du seul fichier est incomplète. Ne pas présumer que l'ajout de l'étirement signifie qu'il a réellement été pratiqué.
+- **Dose initiale retenue** : bloc final **3 min**, doux et facultatif, après la course (mollets, fessiers, arrière des cuisses) et après le Renfo (hanches, fessiers/ischio-jambiers ou épaules selon variante). Viser environ 20 secondes par côté pour chaque groupe avec transitions, mais ne pas pousser les articulations dans leurs amplitudes extrêmes, compte tenu de l'hyperlaxité. Les douleurs plantaires, de hanche ou du genou imposent de ne pas forcer, d'écourter ou d'omettre le bloc.
+- **Historique préservé** : la course effectivement réalisée le **11 novembre** garde ses étapes, sensations, durée et FIT d'origine. Aucun étirement rétroactif n'y est inventé.

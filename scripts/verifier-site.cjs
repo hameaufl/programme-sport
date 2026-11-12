@@ -80,12 +80,13 @@ const renfo=data.sessions.filter(x=>x.type==="renfo");
 for(const s of renfo){
   assert.ok(/^renfo-\d{4}-\d{2}-\d{2}$/.test(s.id),"Identifiant renfo incorrect");
   assert.equal(s.titre,"Renfo");
-  assert.equal(s.etapes.length,5,"Renfo : mise en route + 3 exercices + retour au calme");
+  assert.equal(s.etapes.length,6,"Renfo : mise en route + 3 exercices + retour au calme + étirements");
   assert.ok(Array.isArray(s.aidesExercices)&&s.aidesExercices.length===3,"Trois aides PNG par Renfo requises");
   assert.match(s.etapes[0],/^Mise en route · 4 min/,"Mise en route manquante");
   assert.match(s.etapes[4],/^Retour au calme · 4 min/,"Retour au calme manquant");
+  assert.match(s.etapes[5],/^Étirements doux · 3 min : /,"Étirements doux chronométrés manquants");
   assert.ok(s.etapes.every(e=>e.includes(" · ")&&/\d+\s*(?:min|s)/.test(e)),"Chaque bullet doit comporter un chrono");
-  for(const exercise of s.etapes.slice(1,-1)){
+  for(const exercise of s.etapes.slice(1,-2)){
     const match=s.aidesExercices.find(a=>a.exercice===exercise);
     assert.ok(match&&/^assets\/renfo\/png\/[a-z0-9-]+\.png$/.test(match.png),"Lien PNG manquant : "+exercise);
     const file=require("node:path").join(ROOT,match.png);
@@ -106,15 +107,34 @@ for(const s of strengthSessions){
   assert.equal(attached.chemin,"personnel/pieces-jointes/seances/"+s.id+"/prevu/"+s.id+".fit");
   const plan=garmin.parseSession(s);
   assert.equal(plan.sport,5,"Renfo doit utiliser le sport musculation");
-  assert.equal(plan.steps.length,17,"17 étapes FIT par séance de renfo");
+  assert.equal(plan.steps.length,18,"18 étapes FIT par séance de renfo");
   assert.equal(plan.steps.filter(x=>x.durationType===5).length,9,"9 séries ouvertes à valider manuellement");
-  assert.equal(plan.timedSeconds,780,"Temps explicites échauffement/repos/retour 13 min");
+  assert.equal(plan.timedSeconds,960,"Temps explicites, étirements inclus, 16 min");
   assert.equal(plan.durationSeconds,null,"Ne pas inventer de chronomètre total pour les répétitions à durée variable");
   const fit=fs.readFileSync(require("node:path").join(ROOT,attached.chemin));
   const checked=garmin.validateWorkoutFile(fit,plan);
-  assert.equal(checked.steps,17);
+  assert.equal(checked.steps,18);
   assert.equal(checked.sport,"strength_training");
-  assert.equal(checked.timedSeconds,780);
+  assert.equal(checked.timedSeconds,960);
+  assert.equal(plan.steps.at(-1).name,"Etirements doux");
+  assert.equal(plan.steps.at(-1).seconds,180);
+}
+const plannedCourses=data.sessions.filter(s=>s.id.startsWith("course-")&&!s.fait);
+assert.equal(plannedCourses.length,18,"18 sorties de course encore prévues");
+const historyCourse=data.sessions.find(s=>s.id==="course-2026-11-11");
+assert.equal(historyCourse.fait,true,"Historique de sortie effectué à préserver");
+assert.equal(historyCourse.etapes.length,3,"Ne pas modifier la séance de course terminée");
+for(const s of plannedCourses){
+ assert.ok(s.etapes.at(-1).startsWith("Étirements doux · 3 min : "), "Étirements de course absents : "+s.id);
+ assert.ok(s.pieces_jointes?.some(p=>p.role==="entrainement_prevu"),"FIT course manquant : "+s.id);
+ const plan=garmin.parseSession(s);
+ assert.equal(plan.steps.at(-1).name,"Etirements doux","Les étirements doivent être dans le FIT course");
+ assert.equal(plan.steps.at(-1).seconds,180,"Trois minutes d'étirements prévus par sortie");
+ const ref=s.pieces_jointes.find(p=>p.role==="entrainement_prevu");
+ assert.equal(ref.chemin,"personnel/pieces-jointes/seances/"+s.id+"/prevu/"+s.id+".fit");
+ const fit=fs.readFileSync(require("node:path").join(ROOT,ref.chemin));
+ const validation=garmin.validateWorkoutFile(fit,plan);
+ assert.equal(validation.seconds,parseInt(s.duree,10)*60,"Durée course et FIT incohérente");
 }
 const invalidRenfo=JSON.parse(JSON.stringify(strengthSessions[0]));
 invalidRenfo.etapes[1]="Exercice inconnu · 3 × 10 ; repos 60 s entre séries";
@@ -131,7 +151,7 @@ assert.equal(renfoParSemaine.get("2026-11-09"),2,"Dimanche 15 novembre réservé
 for(const week of ["2026-11-16","2026-11-23","2026-11-30","2026-12-07"])
   assert.equal(renfoParSemaine.get(week),3,"Trois Renfos requis semaine "+week);
 assert.ok(html.includes('s.type!=="renfo"'),"Renfo : ne pas afficher de paragraphes supplémentaires");
-for(const s of renfo)assert.equal(s.duree,"30–36 min","Durée Renfo non triplée");
+for(const s of renfo)assert.equal(s.duree,"33–39 min","Étirements non inclus dans la durée Renfo");
 const banque=JSON.parse(read("assets/renfo/banque.json"));
 assert.equal(banque.exercices.length,5,"Banque PNG incomplète");
 const known=new Set(banque.exercices.map(e=>e.png));

@@ -22,13 +22,14 @@ function parseRenfo(s){
   "Pont avec ballon":"Pont ballon"
  };
  const first=String(s.etapes[0]).match(/^Mise en route · (\d+) min(?:\s|$)/);
- const last=String(s.etapes.at(-1)).match(/^Retour au calme · (\d+) min(?:\s|$)/);
- if(!first||!last)throw Error("Mise en route et retour au calme non chronométrés");
- const warm=Number(first[1]),cool=Number(last[1]);
- if(warm<1||warm>60||cool<1||cool>60)throw Error("Durée du Renfo invalide");
+ const last=String(s.etapes.at(-2)).match(/^Retour au calme · (\d+) min(?:\s|$)/);
+ const stretching=String(s.etapes.at(-1)).match(/^Étirements doux · (\d+) min : (.+)$/);
+ if(!first||!last||!stretching)throw Error("Renfo : mise en route, retour au calme et étirements chronométrés nécessaires");
+ const warm=Number(first[1]),cool=Number(last[1]),stretch=Number(stretching[1]);
+ if(warm<1||warm>60||cool<1||cool>60||stretch<1||stretch>10)throw Error("Durée du Renfo invalide");
  const steps=[{name:"Mise en route",seconds:warm*60,intensity:2}];
  const asciiOnly=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[–—]/g,"-").replace(/[’]/g,"'").replace(/×/g,"x");
- for(const source of s.etapes.slice(1,-1)){
+ for(const source of s.etapes.slice(1,-2)){
   const line=String(source);
   const match=line.match(/^(.+?) · (\d+) × (\d+)( par côté)? ; (.+)$/);
   if(!match||!Object.hasOwn(aliases,match[1]))throw Error("Exercice de renfo non reconnu : "+line);
@@ -45,6 +46,7 @@ function parseRenfo(s){
   }
  }
  steps.push({name:"Retour au calme",seconds:cool*60,intensity:3});
+ steps.push({name:"Etirements doux",seconds:stretch*60,intensity:3,notes:asciiOnly(stretching[2])});
  if(steps.length>64)throw Error("Renfo trop long pour un FIT Workout");
  const timedSeconds=steps.reduce((sum,step)=>sum+step.seconds,0);
  return {id:s.id,date:s.date,steps,durationSeconds:null,timedSeconds,sport:5,
@@ -56,12 +58,22 @@ function parseSession(s){
  const etapes=s.etapes||[];
  const pattern=String(etapes[0]||"").match(/^(\d+)\s*[×x]\s*\(\s*(\d+)\s*min\s+marche\s*\+\s*(\d+)\s*min\s+course\s*\)$/i);
  const last=String(etapes[1]||"").match(/^(\d+)\s*min\s+de\s+marche\s+finale$/i);
- if(!pattern||!last||etapes.length<2||etapes.length>3||etapes.some((e,i)=>i>=2&&e!=="Allure facile"))throw Error("Étapes non prises en charge, pas de FIT approximatif");
+ const tail=String(etapes.at(-1)||"").match(/^Étirements doux · (\d+) min : (.+)$/);
+ if(!pattern||!last||!Array.isArray(etapes)||etapes.length<2)
+  throw Error("Étapes non prises en charge, pas de FIT approximatif");
+ if(!tail&&s.fait!==true)throw Error("Les sorties prévues doivent contenir des étirements");
+ const extras=etapes.slice(2,tail?-1:undefined);
+ const option="Option si très à l'aise : 3 min marche + 21 min course continue + 3 min marche";
+ if(extras.length>2||extras.some((e,i)=>i===0?e!=="Allure facile":e!==option))
+  throw Error("Étapes supplémentaires non prises en charge");
+ const stretch=tail?Number(tail[1]):0;
+ if(stretch<0||stretch>10||tail&&stretch<1)throw Error("Durée d'étirement invalide");
  const [reps,walk,run]=pattern.slice(1).map(Number),end=Number(last[1]);
  if(reps<1||reps>20||walk<1||walk>90||run<1||run>120||end<1||end>90)throw Error("Paramètres FIT invalides");
  const steps=[];
  for(let i=0;i<reps;i++){steps.push({name:"Marche "+(i+1),seconds:walk*60,intensity:i===0?2:1});steps.push({name:"Course "+(i+1),seconds:run*60,intensity:0});}
  steps.push({name:"Marche finale",seconds:end*60,intensity:3});
+ if(stretch)steps.push({name:"Etirements doux",seconds:stretch*60,intensity:3});
  const seconds=steps.reduce((a,x)=>a+x.seconds,0),reported=String(s.duree||"").match(/^(\d+)\s*min$/);
  if(reported&&Number(reported[1])*60!==seconds)throw Error("Durée incohérente avec le programme");
  return {id:s.id,date:s.date,steps,durationSeconds:seconds,timedSeconds:seconds,sport:1,name:s.date.slice(5).replace("-","/")+" "+walk+"M+"+run+"C"};

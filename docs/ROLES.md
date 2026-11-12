@@ -1,5 +1,12 @@
 # Attribution des deux casquettes
 
+## Étirements intégrés aux programmes prévus (12 novembre 2026)
+
+- **Coach** : ajouter un bloc final de 3 min d'étirements doux ciblés aux séances Course/Renfo **non réalisées**, directement dans leur source `etapes`, adapter `duree` et générer/régénérer leur FIT Workout. Le site affiche ce bloc depuis le JSON. Respecter `fait`, IDs, dates, sensations, exercices rapportés et entraînements historiques ; ne pas retoucher les séances réalisées.
+- **Maturation** : maintenir le parseur FIT et les tests pour reconnaître ce bloc final dans les deux sports, sans texte dupliqué dans le HTML. Le bloc générique de récupération n'est pas un nouvel exercice Renfo spécifique exigeant un PNG : les exercices techniques conservent tous leur aide.
+- **Contrainte de sécurité** : mouvements doux sans extrêmes d'amplitude, notamment en présence d'hyperlaxité, du genou gauche et des douleurs plantaires. Ne jamais rendre ces étirements obligatoires malgré la douleur.
+
+
 ## Garmin : Renfo comme Course à pied (consigne du 12 novembre 2026)
 
 - **Coach** : générer automatiquement et associer un **FIT Workout musculation à chaque Renfo**, lors de sa création ou de la modification de ses étapes, à l'identique du flux de pièces jointes de course. Séries et instructions vérifiées, pauses à la seconde près, pas ouverts lorsque le nombre de répétitions impose un avancement manuel. Rattacher la pièce au seul fichier JSON exact et conserver les autres champs.

@@ -253,3 +253,10 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Ajouter un contrôle de non-régression dans `scripts/verifier-site.cjs` et documenter la règle dans `AGENTS.md`.
 - Synchroniser les versions des deux pages et de `publication.txt` : `2026-11-12-liste-seances-sans-resume-v19`.
 - Publication : vérification après GitHub Actions.
+
+## 12 novembre 2026 — Étirements post-effort dans la source et dans les FIT
+
+- Le propriétaire demande un bloc final d'étirements doux de récupération sur chaque Course/Renfo programmée, présent **à la fois dans le JSON affiché et dans le FIT Workout correspondant**, sans modifier les séances réellement faites.
+- Le générateur Garmin et les tests reconnaissent cette étape de 180 s sur les deux types de séances. La course réalisée du 11 novembre est laissée telle quelle ; les 18 autres courses et 14 Renfos reçoivent cette dernière étape et sont ré-exportés en FIT. La même source sert au web et à la montre ; pas de texte spécifique ajouté au HTML.
+- Pour le Renfo, le bloc général est une étape de récupération, à l'instar de la mise en route/du retour au calme, et n'est pas un exercice technique individuel : les aides PNG déjà approuvées restent celles des trois mouvements prescrits. Aucune autre image changée.
+- Les 32 FIT sont validés à la CI (CRC, durées, noms et nombres d'étapes) et la publication Pages répercutera les changements de descriptif. La compatibilité réelle d'import Garmin reste distincte et non démontrée.

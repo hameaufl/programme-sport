@@ -1,5 +1,14 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Étirements post-séance — systématiques pour les nouveaux programmes, sans retoucher les séances réalisées (12 novembre 2026)
+
+- **Coach** : tout programme de **course à pied ou Renfo encore prévu** comporte un **bloc de 3 min d'étirements doux**, adapté aux chaînes musculaires sollicitées. Le bloc figure **dans la liste chronologique `etapes` du fichier JSON de séance**, donc aussi dans le descriptif du site, **et dans son entraînement Garmin FIT Workout prévu**, régénéré/validé dans le même changement. Le champ `duree` doit inclure les 3 min. Ne pas se contenter d'un texte ajouté uniquement au site ni uniquement au FIT.
+- **Interdiction de rétroactivité** : ne jamais modifier une séance `fait: true` ni son rapport ou son FIT historique à la faveur de cette demande. La sortie du 11 novembre est préservée à l'identique. Pour les séances prévues, ne pas modifier `fait`, `sensations`, les IDs/dates, les informations de suivi ou les données Garmin réalisées.
+- **Course** : après la marche finale et les éventuelles indications d'allure/option, écrire « Étirements doux · 3 min : mollets, fessiers et arrière des cuisses ; 20 s par côté, sans douleur ni hyperextension ». Mode marche/course, allures et options restent inchangés ; le FIT inclut cette étape de 180 s en dernier.
+- **Renfo** : conserver la mise en route, les trois exercices avec leurs aides PNG et le retour au calme existants, puis **ajouter en dernière puce** « Étirements doux · 3 min : ... » ciblant fessiers/hanches/arrière des cuisses pour les ponts au sol ou hanches/épaules/fessiers pour les mouvements à quatre pattes/ballon. L'aide PNG demeure obligatoire pour chacun des **trois exercices précis**, pas pour le bloc général de récupération, comme pour « Mise en route » / « Retour au calme ».
+- **Prudence en présence d'hyperlaxité et de douleurs** : positions stables, amplitudes confortables, sans rebond, extension forcée, douleur croissante ni contrainte plantaire. Tout bloc est **facultatif** si les symptômes empêchent son exécution, malgré sa présence dans le programme. Ne jamais prétendre qu'il a été réalisé. Si le format FIT ne permet pas de restituer les consignes sans approximation, étendre le générateur et les tests avant publication.
+
+
 ## Séances de la semaine — pas de texte de résumé statique
 
 - Sous le titre **« Séances de la semaine »**, afficher **directement la liste** des séances. Ne pas ajouter de phrase d’introduction qui énumère des activités (comme « Course et kiné… ») : cette information est déjà portée par la liste et peut changer.

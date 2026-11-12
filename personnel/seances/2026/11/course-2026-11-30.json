@@ -1,13 +1,21 @@
 {
   "date": "2026-11-30",
   "titre": "Course à pied · 2M+5C",
-  "duree": "23 min",
+  "duree": "26 min",
   "etapes": [
     "3 × (2 min marche + 5 min course)",
     "2 min de marche finale",
-    "Allure facile"
+    "Allure facile",
+    "Étirements doux · 3 min : mollets, fessiers et arrière des cuisses ; 20 s par côté, sans douleur ni hyperextension"
   ],
   "id": "course-2026-11-30",
   "fait": false,
-  "sensations": ""
+  "sensations": "",
+  "pieces_jointes": [
+    {
+      "role": "entrainement_prevu",
+      "chemin": "personnel/pieces-jointes/seances/course-2026-11-30/prevu/course-2026-11-30.fit",
+      "format": "fit"
+    }
+  ]
 }

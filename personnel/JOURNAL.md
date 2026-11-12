@@ -155,3 +155,10 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - Le propriétaire demande un fichier d'entraînement Garmin pour **chaque** Renfo, comme pour les courses. Après sa correction de calendrier, les dates actives sont : 12, 14, 16, 19, 21, 24, 26, 28 novembre et 1, 3, 5, 8, 10, 12 décembre. **Renfo du 15 et du 17 novembre supprimés** ; ne générer aucun FIT pour ces anciennes dates.
 - **Action Coach** : quatorze FIT binaires de type Workout musculation créés et attachés individuellement ; 9 séries ouvertes et 6 pauses minutées par séance, avec 4 min de préparation et 4 min de récupération. Éviter d'assimiler ces fichiers à des activités réellement pratiquées.
 - **Action technique Maturation** : extension du générateur de FIT pour les Renfos tout en conservant le format course ; validation systématique des nouveaux programmes et des liens lors de la construction du site. Aucun changement de page ou des PNG.
+
+## 12 novembre 2026 — Étirements dans les séances encore programmées
+
+- L'utilisateur demande un bloc d'étirements doux après les courses et Renfos, directement dans le descriptif et le fichier Garmin. Il précise qu'il ne faut **pas retoucher les séances déjà effectuées**.
+- **18 courses à venir** : un bloc final 3 min pour mollets/fessiers/ischio-jambiers, sans douleur ou hyperextension ; durée totale prévue augmentée de 3 min, mode et option éventuelle inchangés. **14 Renfos à venir** : 3 min de récupération douce sur les muscles ciblés (A/B) après les 4 min de retour au calme ; durée prévue 33–39 min, et trois aides PNG d'exercices techniques conservées.
+- **Garmin** : 32 FIT Workout générés/régénérés depuis les plans, incluant explicitement le bloc d'étirements ; ne pas inventer de données d'activité réalisée. L'interface s'appuie toujours sur les fichiers JSON ; aucun exercice exécuté ni résultat médical n'a été inventé.
+- **Séance réalisée du 11 novembre** : inchangée, même si l'étirement aurait pu être utile ; ne pas lui attribuer rétroactivement un geste non déclaré.
