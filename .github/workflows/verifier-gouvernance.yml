@@ -1,0 +1,29 @@
+name: Vérifier la gouvernance expérimentale (sans publier)
+
+on:
+  push:
+    branches:
+      - "maturation/architecture-multiagents"
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  gouvernance:
+    # Les autres PR du dépôt ne doivent pas dépendre des dossiers expérimentaux.
+    if: github.ref == 'refs/heads/maturation/architecture-multiagents' || github.head_ref == 'maturation/architecture-multiagents'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer tout l'historique et les références main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Vérifier la traçabilité des rôles et des décisions
+        run: node maturation/gouvernance/verifier-referentiel.cjs
+      - name: Tester les cas de refus des vérificateurs
+        run: node --test maturation/gouvernance/tests/*.test.cjs
+      - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
+        run: node maturation/gouvernance/verifier-integrite-metier.cjs
