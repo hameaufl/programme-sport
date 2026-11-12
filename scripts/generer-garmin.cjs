@@ -22,14 +22,14 @@ function parseRenfo(s){
   "Pont avec ballon":"Pont ballon"
  };
  const first=String(s.etapes[0]).match(/^Mise en route · (\d+) min(?:\s|$)/);
- const last=String(s.etapes.at(-2)).match(/^Retour au calme · (\d+) min(?:\s|$)/);
  const stretching=String(s.etapes.at(-1)).match(/^Étirements doux · (\d+) min : (.+)$/);
- if(!first||!last||!stretching)throw Error("Renfo : mise en route, retour au calme et étirements chronométrés nécessaires");
- const warm=Number(first[1]),cool=Number(last[1]),stretch=Number(stretching[1]);
- if(warm<1||warm>60||cool<1||cool>60||stretch<1||stretch>10)throw Error("Durée du Renfo invalide");
+ if(!first||!stretching)throw Error("Renfo : mise en route et étirements chronométrés nécessaires");
+ if(s.etapes.some(e=>/^Retour au calme\b/i.test(String(e))))throw Error("Renfo : retour au calme redondant avec les étirements");
+ const warm=Number(first[1]),stretch=Number(stretching[1]);
+ if(warm<1||warm>60||stretch<1||stretch>10)throw Error("Durée du Renfo invalide");
  const steps=[{name:"Mise en route",seconds:warm*60,intensity:2}];
  const asciiOnly=t=>t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[–—]/g,"-").replace(/[’]/g,"'").replace(/×/g,"x");
- for(const source of s.etapes.slice(1,-2)){
+ for(const source of s.etapes.slice(1,-1)){
   const line=String(source);
   const match=line.match(/^(.+?) · (\d+) × (\d+)( par côté)? ; (.+)$/);
   if(!match||!Object.hasOwn(aliases,match[1]))throw Error("Exercice de renfo non reconnu : "+line);
@@ -45,7 +45,6 @@ function parseRenfo(s){
    if(i<series)steps.push({name:"Repos "+aliases[match[1]],seconds:rest,intensity:1});
   }
  }
- steps.push({name:"Retour au calme",seconds:cool*60,intensity:3});
  steps.push({name:"Etirements doux",seconds:stretch*60,intensity:3,notes:asciiOnly(stretching[2])});
  if(steps.length>64)throw Error("Renfo trop long pour un FIT Workout");
  const timedSeconds=steps.reduce((sum,step)=>sum+step.seconds,0);
