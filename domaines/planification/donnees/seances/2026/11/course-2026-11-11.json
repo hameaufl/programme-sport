@@ -1,0 +1,26 @@
+{
+  "id": "course-2026-11-11",
+  "date": "2026-11-11",
+  "titre": "Course à pied · 2M+3C",
+  "type": "course",
+  "dureeEstimeeMinutes": {
+    "min": 17,
+    "max": 17
+  },
+  "blocs": [
+    {
+      "nature": "fractions",
+      "repetitions": 3,
+      "marcheSecondes": 120,
+      "courseSecondes": 180
+    },
+    {
+      "nature": "marche_finale",
+      "dureeSecondes": 120
+    },
+    {
+      "nature": "allure",
+      "niveau": "facile"
+    }
+  ]
+}
