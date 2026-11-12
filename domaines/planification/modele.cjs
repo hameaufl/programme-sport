@@ -9,6 +9,11 @@ function heures(s){return Number.isInteger(s)&&s>0&&s%60===0;}
 function verifier(plan,referentiel){
  if(!plan||typeof plan!=="object"||!/^[a-z0-9-]+$/.test(plan.id||"")||!dateValide(plan.date)||typeof plan.titre!=="string"||!plan.titre.trim())throw Error("Planification : identité invalide");
  if(!["course","renfo","kine"].includes(plan.type))throw Error("Planification : type inconnu "+plan.id);
+ if(Object.hasOwn(plan,"nomEntrainementMontre")){
+  const nom=plan.nomEntrainementMontre;
+  if(typeof nom!=="string"||!nom.trim()||nom!==nom.trim()||nom.length>256||/[\r\n<>]/.test(nom)||/^(?:\d+|https?:\/\/)/i.test(nom))
+   throw Error("Planification : nom d’entraînement montre invalide "+plan.id);
+ }
  if(plan.dureeEstimeeMinutes){
   const d=plan.dureeEstimeeMinutes;
   if(!Number.isInteger(d.min)||!Number.isInteger(d.max)||d.min<1||d.max<d.min)throw Error("Planification : durée incorrecte "+plan.id);
@@ -51,7 +56,7 @@ function texteBloc(b,ref){
 function presenter(plan,ref){
  verifier(plan,ref);
  const obj={id:plan.id,date:plan.date,titre:plan.titre,type:plan.type};
- for(const key of ["heure","distance","objectif","details"])if(Object.hasOwn(plan,key))obj[key]=plan[key];
+ for(const key of ["heure","distance","objectif","details","nomEntrainementMontre"])if(Object.hasOwn(plan,key))obj[key]=plan[key];
  if(plan.dureeEstimeeMinutes){const d=plan.dureeEstimeeMinutes;obj.duree=d.min===d.max?d.min+" min":d.min+"–"+d.max+" min";}
  if(plan.blocs)obj.etapes=plan.blocs.map(b=>texteBloc(b,ref));
  return obj;

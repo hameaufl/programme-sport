@@ -15,3 +15,7 @@ Sur demande du propriétaire, le seul brouillon actif est déplacé du 14 au **1
 ## 12 novembre 2026 au soir — Nouveau report du premier Renfo
 
 La seule séance active est désormais `renfo-2026-11-13` (**vendredi 13 novembre**) au lieu du brouillon `renfo-2026-11-12`, conservé intégralement dans `domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json`. Échauffement libre de **4 min**, étirements doux de **3 min** sans vidéo fixée ; exercices et séries inchangés. Séance non réalisée et sans modèle Garmin créé. Une course existe déjà ce même jour et reste inchangée sous réserve d'un réexamen du confort à l'appui ; les archives et activités passées sont conservées.
+
+## 12 novembre 2026 — Nom exact de l'entraînement à charger
+
+Pour **toute séance associée à un modèle Garmin créé et relu**, enregistrer obligatoirement son nom textuel exact dans `nomEntrainementMontre` de la source Planification correspondante. La projection publique sous contrat `publication-v1.json` affiche alors « Entraînement à charger sur la montre : <nom> » au-dessus des étapes. Aucune référence chiffrée, aucun lien ni détail du modèle Garmin n'est publié ; le contrat privé n'expose pas ce nom. Le modèle canonique vérifie la validité du champ ; si aucun entraînement n'existe encore, **ne pas inventer de nom**. Les prescriptions restent intégrales dans les blocs métier et la programmation distante reste une action séparée soumise à autorisation.

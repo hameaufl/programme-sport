@@ -189,6 +189,9 @@
   function derouleDisplay(s) {
     var box=elem("section","session-programme");
     box.appendChild(elem("h4","",isCompleted(s)?"Séance":"Programme prévu"));
+    if(!isCompleted(s) && typeof s.nomEntrainementMontre==="string" && s.nomEntrainementMontre.trim()){
+      box.appendChild(elem("p","program-notes","Entraînement à charger sur la montre : "+s.nomEntrainementMontre.trim()));
+    }
     var activities=isCompleted(s)
       ? (Array.isArray(s.exercicesRealises) && s.exercicesRealises.length
           ? s.exercicesRealises

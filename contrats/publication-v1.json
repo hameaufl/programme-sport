@@ -6,6 +6,7 @@
     "date",
     "titre",
     "type",
+    "nomEntrainementMontre",
     "heure",
     "duree",
     "distance",
@@ -33,7 +34,7 @@
     "evenementsPublics": true,
     "comptesRendusPublicsDansVues": true
   },
-  "note": "Le Web publie uniquement les indicateurs de suivi, les séances déjà autorisées et les métadonnées date/titre des événements Santé. Le profil médical détaillé et les descriptions d'événements restent dans les sources métier du dépôt. Aucun programme de montre, binaire ni identifiant de compte n'est exposé. Une projection séparée et minimale de l'orientation du Coach est publiée seulement selon le contrat coaching ; les fichiers de mémoire interne ne sont jamais copiés. L'inventaire Web ne publie que les équipements disponibles avec leur nom et un éventuel diamètre, sans états absents, notes, provenance ou données internes.",
+  "note": "Le Web publie uniquement les indicateurs de suivi, les séances déjà autorisées et les métadonnées date/titre des événements Santé. Le profil médical détaillé et les descriptions d'événements restent dans les sources métier du dépôt. Seul le nom exact de l'entraînement Garmin créé et relu peut être affiché pour identifier le modèle à charger sur la montre ; aucune structure détaillée du programme, aucun binaire, identifiant distant, lien de téléchargement ou identifiant de compte n'est exposé. Une projection séparée et minimale de l'orientation du Coach est publiée seulement selon le contrat coaching ; les fichiers de mémoire interne ne sont jamais copiés. L'inventaire Web ne publie que les équipements disponibles avec leur nom et un éventuel diamètre, sans états absents, notes, provenance ou données internes.",
   "coaching": {
     "orientationPublique": true,
     "equipementsPublics": true

@@ -1,5 +1,14 @@
 # Garmin MCP — contrat d'orchestration pour le Coach (bêta, 12 novembre 2026)
 
+## PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)
+
+**Décision explicite du propriétaire :** dès qu'un entraînement est créé ou réutilisé dans Garmin Connect pour une séance, le Coach **doit obligatoirement renseigner son nom exact et vérifié** dans le champ canonique `nomEntrainementMontre` de `domaines/planification/donnees/seances/AAAA/MM/<id>.json`. Le nom est celui **effectivement relu** via Garmin MCP (`get_workout_by_id` ou bibliothèque), pas un intitulé supposé, ni le titre générique « Renfo », ni un identifiant numérique. Pour toute date explicitement associée à ce modèle, enregistrer la même référence textuelle vérifiée. Le Coach doit vérifier que la projection publique l'expose et que la page **Mon programme** indique clairement **« Entraînement à charger sur la montre : <nom exact> »** au-dessus des étapes. Ne jamais considérer l'opération terminée tant que les tests, le déploiement et le nom affiché n'ont pas été vérifiés. Règle obligatoire pour **toutes les séances possédant un modèle Garmin créé**, pas seulement les Renfos.
+
+**Séparation métier impérative :** le champ contient **uniquement le nom public exact**. Aucun ID Garmin, jeton, compte, URL privée, FIT ou structure détaillée ne rejoint le dépôt public ou le Web. Une séance dont le modèle n'est pas encore créé n'a pas de nom à inventer : le remplir **immédiatement après création et relecture confirmées**, dans le même cycle de livraison. Les cinq lignes du Renfo restent **« Echauffement », noms des exercices, « Étirements »**, sans volumes ni durées ; le nom Garmin se trouve dans un encart séparé, non dans ces lignes. Un modèle dans la bibliothèque **n'est pas automatiquement programmé au calendrier ni transféré à la montre** ; ces opérations demandent leurs autorisations habituelles.
+
+**Application immédiate :** `renfo-2026-11-13` référence le modèle toujours présent et validé dans Garmin Connect sous le nom exact **« Mon Rythme - Renfo A (corrigé) »**. La version intermédiaire erronée a été supprimée. Ce modèle n'a pas été inscrit au calendrier Garmin et la séance n'est pas marquée réalisée.
+
+
 ## Nouvelle condition pour créer des programmes de Renfo — Garmin officiel uniquement
 
 - Avant de définir **une nouvelle prescription** de renfo, le Coach recherche et vérifie les exercices existants dans les données **officielles** Garmin : clé exacte, catégorie, gestuelle correspondante, description pédagogique et matériel requis. Choisir seul les exercices, mais **ne jamais inventer** un mouvement, une catégorie ou un identifiant Garmin ; remplacer un exercice non répertorié par un autre mouvement officiellement disponible et convenant à l'objectif plutôt que le rebaptiser. Se méfier des exercices qui portent le même nom mais utilisent un élastique ou une charge absente.
@@ -21,7 +30,7 @@ Le 12 novembre, lors du premier upload Renfo du modèle du **13 novembre**, Garm
 
 Un entraînement enregistré dans Garmin Connect constitue un **modèle** utilisable à **plusieurs dates** du calendrier. La référence métier reste la prescription V2 structurée, non un fichier Garmin local. **Pendant la bêta, aucune écriture Garmin sans demande expresse pour la séance du jour ou les dates exactes indiquées.** Une création ou une modification de programme sur GitHub ne déclenche pas de création Garmin automatique. Ne jamais remplir par anticipation des semaines ou mois de calendrier.
 
-Le site Mon Rythme ne connaît plus d'entraînements Garmin : aucun lien de téléchargement, identifiant distant, fichier binaire ou référence historique. Ne pas réintroduire cette fonction dans le Web. Les deux mondes restent reliés seulement par la date et la prescription dans la décision du Coach.
+Le site Mon Rythme n'expose **aucun modèle complet, lien de téléchargement, identifiant distant, fichier binaire ou référence de compte Garmin**. **Exception explicitement autorisée par le propriétaire :** le nom exact vérifié du modèle Garmin est une métadonnée publique de la séance, stockée dans Planification et affichée par la projection en liste blanche sous la rubrique « Entraînement à charger sur la montre ». Les prescriptions détaillées, le calendrier distant et les identifiants restent hors du Web.
 
 ## Séquence strictement manuelle, à suivre pour les dates demandées
 

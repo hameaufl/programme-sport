@@ -347,8 +347,23 @@ assert.equal(libelleEtapeRenfo("Ouverture du genou sur le côté · 3 × 10 par 
 assert.equal(libelleEtapeRenfo("Bras et jambe opposés sur le dos · 3 × 8"),"Bras et jambe opposés sur le dos","Renfo seulement le nom");
 assert.ok(html.includes('if(s.type==="renfo"&&!isCompleted(s))activities=activities.map(libelleEtapeRenfo);'),
  "Les libellés courts doivent être employés dans le rendu du programme");
+const nomRenfoValide="Mon Rythme - Renfo A (corrigé)";
+const sourceRenfo=data.plans.get("renfo-2026-11-13");
+assert.equal(sourceRenfo.nomEntrainementMontre,nomRenfoValide,"Planification doit enregistrer le nom exact relu dans Garmin");
+const verifierNomMontre=require("../domaines/planification/modele.cjs").verifier;
+assert.throws(()=>verifierNomMontre({...sourceRenfo,nomEntrainementMontre:"   "},data.mouvements),/nom d.entraînement montre invalide/,"Le nom vide est interdit");
+assert.throws(()=>verifierNomMontre({...sourceRenfo,nomEntrainementMontre:"https://exemple.fr"},data.mouvements),/nom d.entraînement montre invalide/,"Une URL ne remplace jamais le nom du modèle");
+assert.equal(data.sessions.find(s=>s.id===sourceRenfo.id).nomEntrainementMontre,nomRenfoValide,"La présentation doit reprendre exactement le nom Garmin");
+assert.ok(html.includes('Entraînement à charger sur la montre : ')&&html.includes('s.nomEntrainementMontre.trim()'),
+  "Le nom du programme Garmin doit être clairement affiché au-dessus des étapes du programme prévu");
+assert.ok(JSON.parse(read("contrats/publication-v1.json")).programme.includes("nomEntrainementMontre"),
+  "Le nom du modèle doit être explicitement autorisé dans le contrat public");
+const vuePriveeRenfo=exposed("2026-11-09",data,JSON.parse(read("contrats/publication-prive-v1.json"))).find(s=>s.id===sourceRenfo.id);
+assert.ok(vuePriveeRenfo&&!Object.hasOwn(vuePriveeRenfo,"nomEntrainementMontre"),
+  "La politique privée n'expose pas le nom du modèle Garmin");
 const renfoPublic=exposed("2026-11-09",data).filter(s=>s.type==="renfo");
 assert.equal(renfoPublic.length,1,"Une seule Renfo publique dans la semaine du 13 novembre");
+assert.equal(renfoPublic[0].nomEntrainementMontre,nomRenfoValide,"Le nom exact Garmin doit être publié sur Mon programme");
 assert.deepEqual(renfoPublic[0].etapes,["Echauffement","Pont de bassin au sol","Ouverture du genou sur le côté","Bras et jambe opposés sur le dos","Étirements"],"Renfo public : uniquement les noms, aucun volume ni chrono");
 assert.ok(renfoPublic[0].aidesExercices.every(a=>!/[×;]/.test(a.exercice)),"Aides graphiques Renfo sans volume de répétitions ni tempo");
 assert.ok(renfoPublic[0].aidesExercices.every(a=>["Pont de bassin au sol","Ouverture du genou sur le côté","Bras et jambe opposés sur le dos"].includes(a.exercice)),"Aides graphiques Renfo référencées par nom seul");
