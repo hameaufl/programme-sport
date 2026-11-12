@@ -1,4 +1,10 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ — ne pas dupliquer la navigation ni les titres de section (12 novembre 2026)
+
+- La barre de navigation commune en bas des quatre pages est l'unique navigation générale de pied de page ; **ne pas recréer sur « Mon programme » les trois grandes cartes/boutons « Mon suivi santé », « Le cap du Coach » et « Mon équipement »**, puisqu'elles font double emploi avec elle.
+- Sous les titres de section de niveau 2 (`h2`) des quatre pages, **ne pas ajouter de phrases de sous-titre qui ne font que reformuler le titre, expliquer l'évidence ou répéter un encart**. Rester concis. Les données réellement utiles (chiffres, faits, dates, descriptions d'activité, légendes nécessaires, analyses du Coach) restent visibles à leur place ; ne pas supprimer des contenus métier pour épurer la présentation.
+- Cette décision de présentation générale reste sous casquette Maturation. `scripts/verifier-site.cjs` contrôle l'absence des raccourcis redondants et des sous-titres superflus.
+
 ## PRIORITÉ ABSOLUE — miroir Web vérifié après chaque mise à jour métier (12 novembre 2026)
 
 **Demande permanente du propriétaire :** Mon Rythme est une **projection publiée** des informations pertinentes détenues par le Coach, jamais un deuxième lieu de saisie. Lorsqu'un retour métier conduit à des changements dans les domaines, le Coach doit non seulement mettre à jour les sources canoniques et vérifier les vues, mais aussi **contrôler le bon déroulement de la publication GitHub Pages et la version réellement servie**. La présence d'un commit ne signifie pas que le site est à jour.

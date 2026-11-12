@@ -1,4 +1,10 @@
 # Décisions techniques — Maturation
+## 12 novembre 2026 — Supprimer les navigations et sous-titres redondants
+
+- Trois grandes cartes de lien en bas du programme (suivi Santé, cap du Coach, équipement) sont retirées : la barre commune à quatre destinations remplit déjà ce rôle, sur cette page et sur les autres.
+- Sous les titres de section de niveau 2, supprimer les sous-titres n'ajoutant aucun fait : les quatre notes introductives Santé, la phrase sous « À ma disposition » et la description répétitive du compteur de matériel ; épurer aussi l'étiquette répétitive de l'objectif Coach.
+- **Ne pas enlever** les compteurs, les titres, les données factuelles, les dates, la légende des courbes, le détail des séances ou la stratégie réelle du Coach. Navigation haute et basse, style commun et projections métier restent inchangés.
+
 ## 12 novembre 2026 — Bandeaux et navigation générale harmonisés
 
 - À la demande du propriétaire, les quatre pages partagent le grand encart de titre de référence Santé : hauteur desktop/mobile identique, typographie, fond/ornement et pictogramme SVG cohérents. « Mon équipement » perd les textes de sous-titre ; les autres bandeaux sont épurés pour préserver l'uniformité.

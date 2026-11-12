@@ -62,6 +62,20 @@ for(const [page,source] of pagesVisuelles){
 assert.ok(read("scripts/construire-site.cjs").includes('"style-commun.css"'),
  "La feuille de style doit être copiée dans l'artefact de publication");
 
+// Éviter les raccourcis et sous-titres qui dupliquent désormais les titres et la navigation.
+assert.ok(!html.includes('class="insights-grid"')&&!html.includes('class="health-preview"')&&
+ !html.includes('class="health-cta"'),"Les trois anciens raccourcis du programme doivent être supprimés");
+assert.ok(html.indexOf('<div id="allContent"')<html.indexOf('<nav class="site-navigation"'),
+ "La navigation commune doit suivre les sections du programme sans cartes intermédiaires");
+for(const [nom,page] of pagesVisuelles){
+ assert.ok(!/<h2[^>]*>[^<]*<\\/h2>\\s*<p\\s+class="(?:section-note|hint|help)"/.test(page),
+  "Sous-titre redondant sous un titre de section : "+nom);
+}
+assert.ok(!sante.includes('class="section-note"'),"Les quatre descriptions redondantes du suivi Santé doivent disparaître");
+assert.ok(!equipPage.includes('class="hint"')&&!equipPage.includes('class="overview-desc"'),
+ "La liste et le compteur d'équipements ne doivent pas répéter leur propre fonction");
+assert.ok(!coachPage.includes('class="goal-label"'),"La carte objectif ne doit pas répéter le titre de sa section");
+
 assert.ok(![html,sante,coachPage,equipPage].some(p=>p.includes("personnel/programme.js")),"Les pages doivent utiliser les vues générées");
 assert.ok(html.includes("data/semaines/")&&html.includes('id="previous"')&&html.includes('id="following"')&&html.includes('id="reset"'),"Calendrier hebdomadaire brisé");
 assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"')&&html.includes('"Structures sollicitées"')&&html.includes('"Sensations"'),"Trois sections des séances manquantes");

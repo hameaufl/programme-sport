@@ -1,5 +1,5 @@
 Mon Rythme — témoin de publication
-Version attendue : 2026-11-12-entetes-navigation-v25
+Version attendue : 2026-11-12-navigation-epuree-v26
 Programme : coche verte et Fait uniquement si séance confirmée ; sensations statiques si renseignées
 Interface : aucun stockage local ni coche interactive
 Dépôt : https://github.com/hameaufl/programme-sport
@@ -12,3 +12,5 @@ Page Le cap du Coach : projection explicite du domaine Coaching (objectif, tenda
 Inventaire des équipements : page indépendante avec projection filtrée (disponibles uniquement), sans duplication de l'inventaire métier et sans publication en mode restreint.
 
 En-têtes et navigation : quatre bandeaux harmonisés (hauteur, titre, pictogramme) et une barre commune de quatre destinations en bas ; retour « Mon programme » en haut à droite des pages secondaires.
+
+Navigation épurée : trois raccourcis redondants retirés de Mon programme ; sous-titres de niveau 2 sans apport retirés des pages Santé et Équipement, étiquette répétitive du Coach retirée ; contenu métier et menu commun conservés.

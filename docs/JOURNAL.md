@@ -321,3 +321,9 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 
 - Un événement ajouté depuis le domaine Santé portait `### 2026-11-12 au soir — ...`, alors que le lecteur V2 impose `### AAAA-MM-JJ — ...`. Cela bloquait les validations et la publication de toutes les pages.
 - Correction strictement syntaxique : déplacer « au soir » après le titre descriptif, sans changer la date de l'événement, ses notes, les faits, les symptômes ou toute autre donnée. Aucune réinterprétation métier par Maturation.
+
+## 12 novembre 2026 — Déduplication de la navigation et des sous-titres
+
+- Demande utilisateur illustrée par capture : retirer de Mon programme les trois grandes cartes vers Suivi Santé, Cap du Coach et Équipement, devenues redondantes avec la navigation commune située juste en dessous.
+- Épuration des descriptions purement décoratives sous les `h2` sur Santé et Équipement ; suppression également de deux étiquettes redondantes dans des encarts Équipement/Coach. Aucune modification des données ou légendes informatives.
+- Feuilles et sélecteurs CSS devenus inutiles retirés, test de non-régression ajouté, version de publication harmonisée. Les quatre destinations du bas et les boutons de retour restent intacts.
