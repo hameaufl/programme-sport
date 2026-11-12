@@ -40,7 +40,20 @@ for(const [mondayDate,ss] of data.weeks){
   assert.equal(views.length,ss.length,"Toutes les séances doivent être présentes dans la semaine");
   for(let i=0;i<ss.length;i++){
     assert.equal(views[i].id,ss[i].id,"Aucun changement d'identifiant lors de la génération");
-    for(const key of Object.keys(ss[i]))assert.deepEqual(views[i][key],ss[i][key],"Champ source altéré : "+ss[i].id+"."+key);
+    for(const key of Object.keys(ss[i])){
+      // Renfo : les étapes et aides sont volontairement épurées dans la projection Web,
+      // les valeurs métier complètes restent présentes dans la collection canonique.
+      if(ss[i].type==="renfo"&&ss[i].fait!==true&&["etapes","aidesExercices"].includes(key))continue;
+      assert.deepEqual(views[i][key],ss[i][key],"Champ source altéré : "+ss[i].id+"."+key);
+    }
+    if(ss[i].type==="renfo"&&ss[i].fait!==true){
+      assert.deepEqual(views[i].etapes,["Echauffement","Pont de bassin au sol","Ouverture du genou sur le côté","Bras et jambe opposés sur le dos","Étirements"],
+        "Projection Web Renfo : cinq noms sans quantités");
+      assert.ok(views[i].aidesExercices.every(a=>a.exercice===a.exercice.split(" · ")[0]),
+        "Projection Web Renfo : aides sous forme de noms uniquement");
+      assert.ok(ss[i].etapes.some(e=>e.includes(" × "))&&ss[i].etapes[0].includes("4 min")&&ss[i].etapes.at(-1).includes("3 min"),
+        "Les durées et volumes métier Renfo doivent rester complets");
+    }
   }
 }
 assert.equal(index.compteurs.programmees,data.sessions.length);
