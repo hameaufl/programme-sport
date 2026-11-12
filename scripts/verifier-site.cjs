@@ -119,9 +119,8 @@ const equipe=new Map(materiel.equipements.map(e=>[e.id,e]));
 assert.equal(equipe.get("tapis_sol")?.statut,"disponible");
 assert.equal(equipe.get("ballon_gymnastique")?.statut,"disponible");
 assert.equal(equipe.get("ballon_gymnastique")?.caracteristiques?.diametreCmApprox,80);
-assert.equal(equipe.get("elastiques_resistance")?.statut,"absent");
-assert.equal(equipe.get("halteres")?.statut,"absent");
-assert.equal(equipe.get("autres_accessoires")?.statut,"non_confirme");
+assert.deepEqual([...equipe.keys()].sort(),["ballon_gymnastique","tapis_sol"],"L'inventaire domicile ne doit contenir que les équipements réellement possédés");
+assert.ok([...equipe.values()].every(e=>e.statut==="disponible"),"Un équipement absent ou non confirmé ne doit pas figurer dans l'inventaire");
 assert.equal(coachModele.verifierMaterielRequis(materiel,[]),true,"Un exercice au poids du corps ne requiert aucun accessoire");
 assert.equal(coachModele.verifierMaterielRequis(materiel,["tapis_sol","ballon_gymnastique"]),true);
 for(const id of ["elastiques_resistance","halteres","autres_accessoires","materiel_non_declare"])
