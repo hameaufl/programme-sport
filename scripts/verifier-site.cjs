@@ -61,6 +61,14 @@ assert.throws(()=>domaineCoach.verifierOrientation({...sourceCoach,phase:""}),/i
 assert.throws(()=>domaineCoach.verifierOrientation({...sourceCoach,tendances:[...sourceCoach.tendances,sourceCoach.tendances[0]]}),/invalide/,"Identifiants de tendances dupliqués interdits");
 assert.ok(coachPage.includes("./data/coaching/orientation.json")&&coachPage.includes('id="coachObjective"')&&
  coachPage.includes('id="coachTrends"')&&coachPage.includes('id="coachWatch"'),"La page du Coach doit lire sa projection et présenter les trois rubriques");
+const heroCoach=coachPage.slice(coachPage.indexOf('<div class="hero">'),coachPage.indexOf('<section aria-labelledby="objectiveTitle">'));
+assert.ok(!heroCoach.includes('id="coachPhase"')&&!heroCoach.includes('id="coachDirection"')&&!heroCoach.includes('id="coachDate"'),"Le bandeau vert doit être réservé au titre");
+const enchainementCoach=['id="objectiveTitle"','id="orientationTitle"','id="trendsTitle"','id="watchTitle"'].map(id=>coachPage.indexOf(id));
+assert.ok(enchainementCoach.every(i=>i>=0)&&enchainementCoach.every((i,n)=>n===0||i>enchainementCoach[n-1]),"Hiérarchie des sections du Coach altérée");
+assert.ok(coachPage.includes('class="orientation-card"')&&coachPage.includes('id="coachPhase"')&&
+ coachPage.includes('id="coachDirection"')&&coachPage.includes('id="coachDate"'),"La nouvelle section doit préserver le cap, sa description et sa date");
+assert.ok(!coachPage.includes("Des intentions conditionnelles, pas des séances ajoutées au calendrier.")&&
+ !coachPage.includes("Les éléments que le Coach prendra en compte dans ses prochains ajustements."),"Sous-titres supprimés à ne pas réintroduire");
 assert.ok(html.includes('href="./coach.html"')&&coachPage.includes('href="./sante.html"'),"Navigation vers la stratégie ou le suivi santé absente");
 assert.ok(!/domaines\/(?:coaching|sante|activites|planification)\/donnees\//.test(coachPage),"La page ne doit pas connaître les chemins des domaines");
 assert.ok(!sante.includes("L'essentiel de ma reprise, sans les notes de fond.")&&

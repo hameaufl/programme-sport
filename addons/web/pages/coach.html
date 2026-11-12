@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-inventaire-v23">
+  <meta name="mon-rythme-version" content="2026-11-12-cap-coach-visuel-v24">
   <meta name="description" content="Objectif, intentions et points d'attention du Coach pour ma reprise.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -26,13 +26,13 @@
     .hero{background:radial-gradient(circle at 94% -10%,rgba(168,210,176,.32),transparent 33%),var(--green);color:white;border-radius:24px;padding:40px 43px 36px;position:relative;overflow:hidden}
     .eyebrow{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#cce3cf;font-weight:800;margin:0 0 11px}
     h1{font-size:clamp(34px,5vw,53px);font-weight:800;letter-spacing:-1.8px;line-height:1.08;margin:0}
-    .phase{margin:20px 0 4px;font-size:16px;font-weight:760;color:#ebf5e9;max-width:720px}
-    .intro{color:#d7e9d7;font-size:15px;max-width:800px;margin:7px 0 0}
-    .update{font-size:12px;color:#d1e4d0;margin:18px 0 0}
+    .orientation-card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:26px 28px}
+    .phase{font-size:clamp(18px,3vw,22px);font-weight:760;color:var(--green);letter-spacing:-.45px;line-height:1.35;margin:0}
+    .intro{color:#577260;font-size:15px;line-height:1.65;max-width:850px;margin:12px 0 0}
+    .update{font-size:12px;color:var(--muted);margin:19px 0 0}
     section{margin-top:34px}
     .section-head{margin-bottom:17px}
     h2{font-size:24px;line-height:1.25;letter-spacing:-.75px;margin:0}
-    .section-note{margin:6px 0 0;font-size:13px;color:var(--muted)}
     .goal{display:flex;align-items:flex-start;gap:17px;padding:25px 28px;background:white;border:1px solid var(--line);border-radius:19px}
     .goal-symbol{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--soft);color:var(--green);font-size:27px;flex:none}
     .goal-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#607763}
@@ -54,7 +54,7 @@
     .readmore a:hover{text-decoration:underline}
     @media(max-width:760px){.intents{grid-template-columns:1fr}.intent{gap:8px}.hero{padding:32px 27px}.goal{padding:20px}.readmore{flex-direction:column;align-items:flex-start}}
     @media(max-width:530px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:8px 11px;font-size:12px}.hero{border-radius:19px}.goal{gap:12px}.goal-symbol{width:38px;height:38px;font-size:22px}section{margin-top:27px}h2{font-size:22px}.attention{padding:3px 17px}}
-    @media print{body{background:white}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.intro,.phase,.update,.eyebrow{color:var(--ink)}.back{display:none}}
+    @media print{body{background:white}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.back{display:none}}
   </style>
 </head>
 <body>
@@ -67,9 +67,6 @@
       <div class="hero">
         <p class="eyebrow">Mon Rythme · Accompagnement</p>
         <h1>Le cap du Coach.</h1>
-        <p class="phase" id="coachPhase">Chargement de l'orientation…</p>
-        <p class="intro" id="coachDirection"></p>
-        <p class="update" id="coachDate"></p>
       </div>
       <section aria-labelledby="objectiveTitle">
         <div class="section-head"><h2 id="objectiveTitle">Mon objectif personnel</h2></div>
@@ -78,12 +75,20 @@
           <div><span class="goal-label">Le point de départ des choix du Coach</span><p class="goal-text" id="coachObjective">Chargement de l'objectif…</p></div>
         </div>
       </section>
+      <section aria-labelledby="orientationTitle">
+        <div class="section-head"><h2 id="orientationTitle">L'orientation du Coach</h2></div>
+        <div class="orientation-card">
+          <h3 class="phase" id="coachPhase">Chargement de l'orientation…</h3>
+          <p class="intro" id="coachDirection"></p>
+          <p class="update" id="coachDate"></p>
+        </div>
+      </section>
       <section aria-labelledby="trendsTitle">
-        <div class="section-head"><h2 id="trendsTitle">Ce qu'il envisage</h2><p class="section-note">Des intentions conditionnelles, pas des séances ajoutées au calendrier.</p></div>
+        <div class="section-head"><h2 id="trendsTitle">Ce qu'il envisage</h2></div>
         <div id="coachTrends" class="intents" aria-live="polite"><div class="empty">Chargement des orientations…</div></div>
       </section>
       <section aria-labelledby="watchTitle">
-        <div class="section-head"><h2 id="watchTitle">Ses points d'attention</h2><p class="section-note">Les éléments que le Coach prendra en compte dans ses prochains ajustements.</p></div>
+        <div class="section-head"><h2 id="watchTitle">Ses points d'attention</h2></div>
         <div id="coachWatch" class="attention" aria-live="polite"><div class="empty">Chargement des points d'attention…</div></div>
       </section>
       <div class="readmore">
