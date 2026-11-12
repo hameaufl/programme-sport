@@ -140,3 +140,12 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Publication** : script Node de validation/génération produisant `data/index.json`, semaines détaillées et journal paginé dans `_site/`, sans les stocker dans Git. L'IHM charge uniquement une semaine, avec cache limité à huit semaines ; la page santé charge un résumé et une page de journal à la fois.
 - **Intégrité** : preuve de migration avec commit/blob originaux dans `scripts/migration-preuve.json` ; comparaison 18/18 objets JSON, objectifs et cycle, journal reconstitué identique ; validateur statique + test synthétique 5 000 séances ; script de portée empêchant suppressions et exigeant l'accord `[lot-valide]` au-delà de quatre séances par commit.
 - **Périmètres** : les futures modifications de séance, sensations, structures et rapport restent strictement Coach. Aucun bouton d'accès direct mois ou année.
+
+## 12 novembre 2026 — Premier FIT Workout Garmin pour une séance planifiée
+
+- **Demande** : choisir un fichier d'entraînement exploitable par la Venu 4, générer un exemple pour la séance prévue le 11 novembre 2026, le rattacher au détail du programme et documenter la génération par le Coach. Aucun MCP Garmin pour l'instant.
+- **Choix technique** : FIT **Workout** (distinct d'un FIT Activity), avec en-tête, CRC et messages `file_id`, `workout`, `workout_step`, selon la spécification Garmin. Pour le 11 novembre : **3 × (2 min marche + 3 min course) + 2 min marche**, soit 7 étapes, 17 min, sans cible cardiaque ni vitesse inventée.
+- **Archive source** : `personnel/pieces-jointes/seances/course-2026-11-11/prevu/course-2026-11-11.fit`, lien `pieces_jointes` ajouté à la seule séance concernée. Les données sportives préexistantes restent strictement inchangées.
+- **IHM** : lien de téléchargement sur le détail de séance ; **navigation hebdomadaire inchangée**. Générateur autonome `scripts/generer-garmin.cjs` et contrôles de la structure FIT intégrés à la CI.
+- **Règle Coach** : produire automatiquement le FIT quand un programme est ajouté ou modifié et que ses étapes sont reconnues ; refuser une conversion approximative pour un modèle non pris en charge.
+- **Limite de compatibilité** : Venu 4 prend en charge les entraînements structurés envoyés depuis Garmin Connect, **pas de preuve d'import d'un FIT Workout tiers** via Garmin Connect ou directement via USB. Pas de garantie sans essai réel.

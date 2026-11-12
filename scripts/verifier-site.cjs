@@ -44,4 +44,18 @@ const fakeWeeks=new Map();
 for(const s of synthetic){const w=monday(s.date);if(!fakeWeeks.has(w))fakeWeeks.set(w,[]);fakeWeeks.get(w).push(s);}
 assert.equal([...fakeWeeks.values()].reduce((n,list)=>n+list.length,0),5000,"Test synthétique 5000 séances : aucune perte");
 assert.ok([...fakeWeeks.values()].every(list=>list.length<=12),"Les fichiers hebdomadaires doivent rester bornés avec un planning normal");
+const garmin=require("./generer-garmin.cjs");
+const sample=data.sessions.find(s=>s.id==="course-2026-11-11");
+assert.ok(sample&&sample.pieces_jointes&&sample.pieces_jointes.length===1,"Exemple Garmin non relié à la séance du 11 novembre");
+const planned=garmin.parseSession(sample);
+assert.equal(planned.durationSeconds,17*60,"Durée de la séance Garmin incorrecte");
+assert.equal(planned.steps.length,7,"Sept étapes attendues pour la séance du 11 novembre");
+const expectedSeconds=[120,180,120,180,120,180,120];
+assert.deepEqual(planned.steps.map(x=>x.seconds),expectedSeconds,"Les fractions de marche/course doivent être identiques au programme prévu");
+const fitPath=require("node:path").join(ROOT,sample.pieces_jointes[0].chemin);
+const actualFit=fs.readFileSync(fitPath);
+const binary=garmin.validateWorkoutFile(actualFit,planned);
+assert.equal(binary.seconds,1020,"Total FIT erroné");
+assert.ok(html.includes('fitDisplay(s)')&&html.includes('link.href="./"+entry.chemin'),"Lien de téléchargement FIT absent du détail");
+assert.ok(!html.includes("Importer dans Garmin Connect"),"Ne pas promettre un import Garmin Connect non documenté");
 console.log("Validation OK :",data.sessions.length,"séances,",data.reports.size,"rapports,",data.events.length,"événements ; 5000 séances fictives regroupées sans perte.");

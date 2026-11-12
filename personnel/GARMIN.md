@@ -1,6 +1,15 @@
 # Garmin Venu 4 — futur flux de pièces jointes
 
-**Statut : fonctionnalité envisagée, aucun fichier Garmin ajouté, aucun MCP Garmin connecté, aucune interface modifiée.**
+**Statut au 12 novembre 2026 : premier entraînement prévu généré au format FIT Workout pour la séance du 11 novembre, et lien de téléchargement intégré au détail de cette séance. Aucun MCP Garmin connecté ; réception effective du fichier par la Venu 4 non testée.**
+
+## Format FIT retenu et limites de transfert
+
+- **Choix** : FIT **Workout**, conforme aux messages Garmin `file_id`, `workout`, `workout_step` ; distinct de FIT **Activity** pour une sortie enregistrée. L'exemple du mercredi 11 novembre contient **7 étapes** : marche 2 min, course 3 min, répétées trois fois ; marche finale 2 min, soit **17 min**. Aucun objectif de vitesse ou de fréquence cardiaque chiffré n'a été ajouté.
+- **Fichier réel** : `personnel/pieces-jointes/seances/course-2026-11-11/prevu/course-2026-11-11.fit`. Source du plan : `personnel/seances/2026/11/course-2026-11-11.json` ; les états, sensations, exercices réalisés et structures sollicitées n'ont pas été reformulés.
+- **Pour le Coach** : à chaque création/modification d'un programme marche/course reconnu, exécuter `node scripts/generer-garmin.cjs <id>`, vérifier le fichier, l'associer à l'unique séance via `pieces_jointes`, commit du FIT + JSON. **Ne pas modifier plusieurs séances par commodité** et ne pas inventer de rythme cible. Si la structure du programme n'est pas reconnue, **ne pas générer de fichier** et demander à Maturation de compléter le générateur.
+- **Validation technique** : en-tête `.FIT`, CRC, type Workout (5), sport course, 7 étapes avec temps en millisecondes, durée totale et chemins d'archive. Les résultats sont vérifiés en CI. **Cela ne prouve pas l'import/synchronisation réelle sur une Venu 4.**
+- **Transfert** : Garmin documente la création et l'envoi de séances depuis **Garmin Connect → Entraînement et planification → Entraînements → Envoyer à l'appareil**. Ce flux ne constitue pas la preuve d'un **import externe** de notre FIT Workout dans Garmin Connect. L'import Garmin Connect de fichiers d'activité FIT/TCX/GPX n'est pas le même service. Une éventuelle copie USB dans un dossier `Garmin/NewFiles` dépend de la compatibilité réelle du modèle et doit être testée prudemment, **pas présentée comme garantie**.
+- Références : [Garmin FIT Workout](https://developer.garmin.com/fit/articles/file-types/workout.html), [Garmin Venu 4 — Workouts](https://www8.garmin.com/manuals/webhelp/GUID-2CF5620C-E585-4E0A-9CC3-9565533EEE4D/EN-US/GUID-D5F4F37C-EE1C-49E6-B743-FF5D40B903BE.html), [Garmin Venu 4 — envoyer un entraînement](https://www8.garmin.com/manuals/webhelp/GUID-2CF5620C-E585-4E0A-9CC3-9565533EEE4D/EN-US/GUID-D6E80F0C-F319-47D1-AF95-0884F3386635.html).
 
 ## Objectif et répartition des rôles
 

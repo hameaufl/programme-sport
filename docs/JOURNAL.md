@@ -180,6 +180,14 @@
 - Un accord utilisateur explicite, matérialisé dans le message de commit par `[suppression-champ-validée]` ou `[date-validée]`, est indispensable pour ces opérations intentionnelles. Une modification ordinaire des sensations ou structures conserve les autres champs.
 - **Validation finale** : [run 43126434526](https://github.com/hameaufl/programme-sport/actions/runs/43126434526), `completed / success` : tests, construction et GitHub Pages. Les **24 fichiers de données individuelles/configuration et journal** conservent exactement les mêmes SHA Git que juste après la migration (18 séances, 1 rapport, 2 événements, configuration et notes) ; aucune altération des données du Coach. Aucun changement de navigation. La vitesse sur appareil Android n'a pas été mesurée physiquement.
 
+## 12 novembre 2026 — FIT Workout du programme de course du 11 novembre
+
+- **Source** : séance `course-2026-11-11`, 17 minutes prévues sous forme de trois fractions marche 2 min + course 3 min, marche finale 2 min. Contenu sportif existant conservé ; ajout d'une seule référence de pièce jointe.
+- **Travail Maturation** : générateur `scripts/generer-garmin.cjs`, premier vrai fichier FIT binaire sous `personnel/pieces-jointes/seances/course-2026-11-11/prevu/`, validations FIT et intégrité dans `scripts/verifier-site.cjs`, lien de téléchargement du détail de séance.
+- **Coach** : consignes permanentes de génération automatique pour les modèles reconnus ; aucun FIT approximatif, aucun FIT Activity fictif, aucune cible d'allure ou de FC inventée.
+- **Limite** : conformité binaire testée, **acceptation par Garmin Venu 4 non démontrée** ; transfert à confirmer sans MCP Garmin.
+- **Déploiement** : à contrôler après GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

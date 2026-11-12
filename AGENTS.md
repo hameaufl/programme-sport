@@ -4,6 +4,16 @@
 
 L'artefact Pages peut contenir un `personnel/programme.js` et un `personnel/sante/SUIVI.md` **reconstitués au moment du build**, uniquement pour qu'un ancien `index.html` conservé en cache continue de fonctionner. **Ces fichiers n'existent pas comme sources dans Git** : un Coach ne doit **jamais** chercher à les modifier ou à les recréer. Le projet utilise uniquement les fichiers sources unitaires sous `personnel/seances/`, `personnel/sante/rapports/` et `personnel/sante/evenements/`.
 
+## Garmin Venu 4 — génération des entraînements programmés (règle Coach)
+
+- **Dès qu'un programme de course/marche est créé ou modifié**, le Coach examine le fichier individuel `personnel/seances/AAAA/MM/<id>.json` et génère **dans le même travail** le FIT **Workout** prévu, uniquement si le schéma d'étapes est pris en charge et les durées sont vérifiables.
+- Le format choisi est **FIT Workout** (messages `file_id` type 5, `workout`, `workout_step`), **jamais** un FIT Activity inventé. **Commande** : `node scripts/generer-garmin.cjs course-AAAA-MM-JJ` depuis la racine, avec Node intégré au workflow. Le script lit les `etapes` existantes, refuse une structure non reconnue et vérifie durée, CRC et contenu.
+- Pour la première version, les séries **N × (X min marche + Y min course)** suivies de **Z min de marche finale** (optionnellement « Allure facile ») sont prises en charge. **Aucun objectif cardiaque ou d'allure chiffré inventé**. Si le programme diverge, demander à Maturation d'étendre le générateur, ne pas exporter un FIT approximatif.
+- Enregistrer le fichier généré **sous** `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit`, puis **rattacher exclusivement à la séance** le champ `pieces_jointes: [{"role":"entrainement_prevu","chemin":"personnel/pieces-jointes/seances/<id>/prevu/<id>.fit","format":"fit"}]` sans modifier d'autres propriétés. Ne pas créer de doublon ; régénérer lors d'un changement des étapes prévues et recommencer les contrôles.
+- Le FIT Workout est un **essai technique validé au format binaire** ; la Venu 4 sait suivre les entraînements structurés envoyés via Garmin Connect, mais l'**import d'un fichier FIT Workout externe dans Garmin Connect ou sa copie directe sur Venu 4 n'ont pas été confirmés par essai physique**. Ne jamais affirmer qu'un téléchargement équivaut à une synchronisation ou qu'un import d'activité convient à ce fichier.
+- **Séance réalisée** : ne jamais changer `fait`, les sensations ni l'analyse du Coach lors de la seule génération d'un entraînement prévu. L'archive `realise/` reste réservée aux activités réellement enregistrées.
+- **Aucun MCP Garmin actuellement** ; le transfert automatisé pourra faire l'objet d'une évolution distincte.
+
 ## Architecture actuelle prioritaire : un fichier par séance — consigne Coach
 
 **Cette section remplace toutes les anciennes instructions mentionnant `personnel/programme.js`.** Le fichier monolithique a été retiré après une migration des 18 séances **sans altération de leurs champs**.

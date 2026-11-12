@@ -18,5 +18,12 @@
     "Jambe / propulsion — triceps sural, quadriceps fémoral",
     "Hanche / stabilisation — moyen fessier, grand fessier",
     "Pied / appui — muscles intrinsèques du pied"
+  ],
+  "pieces_jointes": [
+    {
+      "role": "entrainement_prevu",
+      "chemin": "personnel/pieces-jointes/seances/course-2026-11-11/prevu/course-2026-11-11.fit",
+      "format": "fit"
+    }
   ]
 }

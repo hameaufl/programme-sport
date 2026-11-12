@@ -1,6 +1,6 @@
 # Pièces jointes de séances
 
-**Statut : structure documentaire uniquement.** Aucun entraînement Garmin ou export réel enregistré à cette date.
+**Statut : un exemple FIT Workout d'entraînement prévu existe pour `course-2026-11-11`. Aucun export Garmin d'activité réellement enregistrée n'a encore été ajouté dans cette fonction.**
 
 ## Responsabilité
 

@@ -4,6 +4,10 @@
 
 Le Coach conserve **tous les champs présents** lors de la mise à jour d'une séance individuelle ; la CI refuse désormais toute suppression implicite d'une propriété ou changement de date. Ces opérations exigent une demande explicite et les marqueurs `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit, sans contourner artificiellement le contrôle.
 
+## Coach — entraînements Garmin prévus
+
+À la création ou à la mise à jour d'un programme course/marche compatible avec le générateur, le Coach produit **un FIT Workout** depuis les étapes réelles du JSON individuel (`node scripts/generer-garmin.cjs <id>`), enregistre `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit` et ajoute uniquement le lien `pieces_jointes` à cette séance. Les durées doivent correspondre **strictement** au programme ; aucun rythme/fréquence cardiaque chiffrés imaginaires. Si la structure est inconnue, pas de génération : demander une extension technique à Maturation. **Ne pas confondre FIT Workout et FIT Activity.** Pas de promesse de transfert direct à la Venu 4 sans validation réelle.
+
 ## Architecture des sources (règle prioritaire de reprise)
 
 **Coach :** mise à jour **ciblée** de `personnel/seances/AAAA/MM/<id>.json` pour une séance ; `personnel/config.json` pour les seuls objectifs/dates du cycle ; compte rendu spécifique dans `personnel/sante/rapports/AAAA/MM/<id>.md` ; événement dans `personnel/sante/evenements/AAAA/MM/<date>-<sujet>.md`. Les contenus `personnel/` sont sa responsabilité. **Ne pas modifier d'autres séances** par commodité. Pour plus de quatre séances changées volontairement : accord explicite, mention `[lot-valide]` dans le commit.

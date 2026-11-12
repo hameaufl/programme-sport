@@ -30,6 +30,20 @@ function collect(){
     for(const k of ["etapes","exercicesRealises","structuresSollicitees"])if(Object.hasOwn(s,k)&&!listOfStrings(s[k]))throw Error("Liste invalide "+k+" : "+s.id);
     for(const k of ["heure","duree","distance","type","objectif","details"])if(Object.hasOwn(s,k)&&!str(s[k]))throw Error("Champ texte invalide "+k+" : "+s.id);
     if(!s.fait&&((s.exercicesRealises||[]).length||(s.structuresSollicitees||[]).length))throw Error("Séance non faite avec détails réalisés : "+s.id);
+    if(Object.hasOwn(s,"pieces_jointes")){
+      if(!Array.isArray(s.pieces_jointes))throw Error("Pièces jointes invalides : "+s.id);
+      const seenRoles=new Set();
+      for(const a of s.pieces_jointes){
+        if(!a||!["entrainement_prevu","activite_realisee"].includes(a.role)||a.format!=="fit"||typeof a.chemin!=="string")throw Error("Pièce jointe invalide : "+s.id);
+        const prefix="personnel/pieces-jointes/seances/"+s.id+"/"+(a.role==="entrainement_prevu"?"prevu":"realise")+"/";
+        if(seenRoles.has(a.role)||!a.chemin.startsWith(prefix)||!/^[-a-zA-Z0-9_./]+\.fit$/.test(a.chemin)||a.chemin.includes(".."))throw Error("Chemin ou rôle Garmin incorrect : "+s.id);
+        const attachment=path.join(ROOT,a.chemin);
+        if(!fs.existsSync(attachment)||!fs.statSync(attachment).isFile())throw Error("Pièce jointe Garmin introuvable : "+a.chemin);
+        const buf=fs.readFileSync(attachment);
+        if(buf.length<16||buf.toString("ascii",8,12)!==".FIT")throw Error("Fichier FIT invalide : "+a.chemin);
+        seenRoles.add(a.role);
+      }
+    }
     ids.add(s.id);sessions.push(s);
     const week=monday(s.date);
     if(!weeks.has(week))weeks.set(week,[]);

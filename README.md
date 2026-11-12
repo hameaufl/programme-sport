@@ -1,5 +1,11 @@
 # Mon Rythme — application statique
 
+## Entraînements Garmin (exemple du 11 novembre 2026)
+
+Un premier fichier **FIT Workout** est disponible dans le détail de la séance de course du **11 novembre** : 3 × (2 min marche + 3 min course) puis 2 min marche, soit 17 min. Il se télécharge directement depuis Mon Rythme et est stocké dans `personnel/pieces-jointes/seances/course-2026-11-11/prevu/`. La compatibilité syntaxique est testée ; **l'installation du fichier FIT Workout externe dans Garmin Connect ou sur la Venu 4 n'est pas confirmée**. Les séances que l'utilisateur crée dans Garmin Connect peuvent, elles, être envoyées à la montre.
+
+Le script `node scripts/generer-garmin.cjs <id>` génère les FIT Workout pour les formats de séries marche/course pris en charge ; le Coach doit rattacher les vrais fichiers à la séance individuelle, et ne jamais produire un FIT Activity fictif.
+
 ## Sources séparées et vues de consultation rapides
 
 La source du calendrier est désormais **un fichier JSON par séance** sous `personnel/seances/AAAA/MM/<id>.json` ; objectifs et cycle dans `personnel/config.json`. Les rapports et événements santé sont individualisés. GitHub Actions valide toutes les données, puis produit dans l'artefact Pages un **index léger et un JSON pour chaque semaine** : le navigateur ne récupère que la semaine consultée. La page santé consulte les compteurs pré-calculés et des pages d'événements de 30 entrées.

@@ -4,6 +4,10 @@
 
 `scripts/verifier-changements.cjs` interdit désormais, par défaut, la disparition d'un champ ou le changement de date d'une séance existante. Une modification explicitement demandée doit être expliquée et signalée par `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit. Ces marqueurs ne remplacent pas l'accord utilisateur. Les autres champs et séances doivent rester inchangés.
 
+## FIT Workout Garmin — nouveau contrat
+
+À réception d'un programme structuré, le Coach produit automatiquement, quand `etapes` est reconnu, `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit` avec `node scripts/generer-garmin.cjs <id>`, puis ajoute le champ optionnel `pieces_jointes` au **seul JSON de la séance**. Génération actuellement limitée aux fractions marche/course `N × (X min marche + Y min course)` + `Z min de marche finale`. Durées et CRC validés dans la CI. Un fichier FIT Workout **n'est pas** un export d'activité ; sa compatibilité avec l'import direct Garmin Connect/Venu 4 reste **à confirmer sur la montre**. Navigation hebdomadaire inchangée.
+
 ## Architecture actuelle : sources individuelles validées
 
 **Prioritaire sur les sections historiques plus bas.** L'ancien `personnel/programme.js` n'existe plus : **18 séances transférées sans modification de leurs champs** dans `personnel/seances/AAAA/MM/<id>.json`. Le fichier `personnel/config.json` conserve objectifs/début du cycle. Comptes rendus individualisés sous `personnel/sante/rapports/`, événements datés sous `personnel/sante/evenements/` ; le texte source du journal a été redistribué **sans perte ni reformulation**. `SUIVI.md` contient les règles/modèle.
