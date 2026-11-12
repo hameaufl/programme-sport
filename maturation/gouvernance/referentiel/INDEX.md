@@ -30,3 +30,6 @@
 
 ## 13 novembre 2026 — Dossiers d'incohérence soumis au Gardien
 Le registre [INCOHERENCES.md](INCOHERENCES.md) répertorie INC-001 à INC-008 et leur interprétation **proposée** par Maturation. Ce registre est ouvert, non visé ; aucune contradiction n'est réputée arbitrée du seul fait qu'une interprétation est indiquée. Voir aussi [la revue à valider](../REVUE-GARDIEN-A-VALIDER.md).
+
+## 13 novembre 2026 — Avis documentaire du Gardien
+Consulter [REVUE-LOGIQUE-GARDIEN-2026-11-13.md](REVUE-LOGIQUE-GARDIEN-2026-11-13.md). Les priorités techniques y sont analysées sur la base des sources existantes. **Cet examen logique n'est pas une validation formelle indépendante** ; les conflits restent ouverts et le chantier ne peut pas être activé sur `main`.

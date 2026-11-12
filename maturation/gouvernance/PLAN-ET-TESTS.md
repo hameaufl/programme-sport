@@ -68,3 +68,9 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Contrôle déterministe de la couverture et de la non-perte ajouté à la CI (aucun test automatique nouveau n'est annoncé comme opérationnel à ce stade).
 - [ ] Tests comparatifs du Coach ancien/nouveau sur la branche, sans modifier les faits ni Garmin.
 - [ ] Accord explicite du propriétaire avant toute fusion dans `main`.
+
+## Point de contrôle du 13 novembre 2026 — revue du Gardien
+- [x] Revue **logique et explicitement non indépendante** des huit protocoles et INC-001 à INC-008 ; avis daté « **BLOQUÉ pour activation** » dans `referentiel/REVUE-LOGIQUE-GARDIEN-2026-11-13.md`.
+- [ ] Validation effective de toute évolution du comportement avec sources, version et contrôles ; aucune approbation ne doit être inventée.
+- [ ] Index de supersession des décisions historiques, suivi de contrôles automatiques et de scénarios comparatifs.
+- [ ] Consentement explicite du propriétaire avant fusion sur `main`.

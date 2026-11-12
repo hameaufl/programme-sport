@@ -30,3 +30,6 @@
 | Accord propriétaire pour fusion main | **NON ACQUIS** |
 
 L'examen peut être réalisé lors d'une intervention explicitement confiée au rôle Gardien, en conservant la limite de revue logique si elle se déroule dans le même ChatGPT. Toute décision nécessitant autorisation du propriétaire lui sera soumise. **Ne pas confondre le simple dépôt de ce dossier avec son approbation.**
+
+## 13 novembre 2026 — Revue logique réalisée, activation toujours non validée
+La revue [REVUE-LOGIQUE-GARDIEN-2026-11-13.md](referentiel/REVUE-LOGIQUE-GARDIEN-2026-11-13.md) qualifie les INC-001 à INC-008 et propose des résolutions documentaires. **Elle a été effectuée sous casquette Gardien dans le même ChatGPT : aucun sous-agent indépendant, aucune validation formelle d'activation.** Le verdict enregistré est **BLOQUÉ**. Les champs « avis formel » ci-dessus restent en attente d'une étape de validation répondant aux garde-fous.

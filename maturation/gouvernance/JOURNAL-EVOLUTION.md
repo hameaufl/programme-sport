@@ -79,3 +79,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - La fonction Contrôleur qualité reste obligatoire dans le fonctionnement cible ; même modèle ChatGPT = pas de contrôle indépendant fictif. Les scripts/CI et le contrôle de publication effective restent déterminants.
 - **Aucune instruction existante de `AGENTS.md` n'a été remplacée lors de cette étape**, aucune source métier changée, aucune opération Garmin, aucune fusion ou déploiement sur `main`.
 - **Prochain jalon :** avis réellement tracé du Gardien / arbitrages nécessaires, puis intégration des modifications validées par Maturation, contrôles déterministes de non-perte et scénarios comparatifs.
+
+## 13 novembre 2026 — Revue logique du Gardien (protocole séquentiel)
+- Examen des huit fiches et des huit INC existantes, avec lecture des sources V2 et constat ponctuel des chemins PNG et du nom Garmin dans Planification ; résultat dans `referentiel/REVUE-LOGIQUE-GARDIEN-2026-11-13.md`.
+- Avis : **cohérence du découpage jugée plausible, activation BLOQUÉE** tant que couverture clause-par-clause, vérifications automatiques de non-perte et tests comportementaux manquent.
+- La fonction Gardien a été exercée **logiquement dans le même ChatGPT** ; aucun agent réellement indépendant n'a été exécuté, aucune signature de conformité indépendante ni autorisation de modifier les comportements n'est revendiquée.
+- Les huit incohérences restent ouvertes mais disposent d'une qualification documentaire motivée, sans effacement d'historique ni nouvelle décision sportive.
+- **Aucune donnée métier ou opération Garmin modifiée**, aucun déploiement de gouvernance dans `main` ; fusion toujours interdite sans accord explicite du propriétaire.

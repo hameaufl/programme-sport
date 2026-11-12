@@ -29,3 +29,6 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Attributions cibles](COUVERTURE-CIBLE.md) et [table de correspondance](COUVERTURE-PROTOCOLES.json) : 85 exigences historiques regroupées, chacune liée à un responsable **proposé**.
 - [Contradictions et obsolescences](referentiel/INCOHERENCES.md) : huit questions à qualifier par le Gardien.
 - [Dossier de revue du Gardien](REVUE-GARDIEN-A-VALIDER.md) : examen explicitement **en attente**, pas de visa fictif.
+
+## Revue du Gardien — 13 novembre 2026
+- [Examen motivé des huit incohérences](referentiel/REVUE-LOGIQUE-GARDIEN-2026-11-13.md) : contrôle logique effectué avec la casquette Gardien dans la même conversation ; **activation bloquée**, aucun visa indépendant ni nouvelle permission.

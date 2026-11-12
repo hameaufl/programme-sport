@@ -24,3 +24,14 @@ Pour chaque dossier : identifier règles candidates avec chemin/section, qualifi
 
 ## Avis à recueillir
 Un premier **avis de cohérence du Gardien** doit examiner les 85 attributions, les huit fiches proposées et le présent registre. Cette revue ne peut pas être réputée indépendante si elle est simplement simulée par le même modèle ChatGPT. **Au 13 novembre : aucun visa formel n'est enregistré.**
+
+## 13 novembre 2026 — Retour de revue logique sous la casquette Gardien (non indépendant)
+La [revue documentaire du Gardien](REVUE-LOGIQUE-GARDIEN-2026-11-13.md) analyse les huit dossiers INC-001 à INC-008, qualifie leur relation aux sources V2 et examine les huit rôles. **Ce contrôle a été effectué séquentiellement par le même ChatGPT, sans agent évaluateur indépendant.** Il ne constitue ni un visa d'activation ni une autorisation nouvelle ; la règle de clôture du présent registre reste inchangée.
+
+- **INC-001, INC-002** : anciens FIT et `personnel/` = prescriptions historiques remplacées par l'architecture V2.
+- **INC-003, INC-004, INC-005** : règles récentes en vigueur à portée précisément bornée ; exception Web métier, nom Garmin lié à l'objectif, suppression intermédiaire dans la seule opération autorisée.
+- **INC-006** : chronologie des Renfos = états historiques, pas fréquence à recopier comme règle courante.
+- **INC-007** : la banque V2 est sous `addons/web/public/assets/renfo/`, les liens PNG sont projetés depuis `blocs[].mouvementId` ; vérifier cette relation dans les tests, sans recréer d'anciens champs dans Planification.
+- **INC-008** : les scénarios de la branche doivent rester sans écriture ; les opérations métier réelles suivent leurs autorisations et leurs sources canoniques.
+
+**État des huit entrées : ouvert ; priorité interprétable mais sans visa de clôture ni preuve comportementale complète.** Toute activation globale demeure bloquée en attendant les preuves, les contrôles et l'approbation explicite du propriétaire avant fusion.
