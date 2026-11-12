@@ -333,3 +333,9 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - Nouvelle demande : inverser « Le cap du Coach » et « Mon suivi santé » dans les quatre menus ; déplacer la navigation en haut, à droite du logo « mon rythme. », supprimer les menus en pied de page et les anciens boutons distincts « ← Mon programme ».
 - Réalisation : barre commune de quatre petites pastilles arrondies, discrètes, ancrées à droite, alignement conservé au retour à la ligne sur mobile ; marque de la page courante. Date du jour préservée sous le logo de la page programme.
 - Feuille partagée et tests adaptés ; version synchronisée sur les quatre pages et `publication.txt`. Aucune donnée métier, aucune projection et aucun élément de suivi sportif modifié.
+
+## 12 novembre 2026 — Barre de navigation plus large et mieux répartie
+
+- Nouvelle capture de Mon programme : navigation compacte trop regroupée à droite et date séparée sous le nom du site. Demande de cohérence entre les quatre barres et d'un responsive mobile abouti.
+- Présentation uniforme : conteneur global élargi et commun, logo/nom sur la même ligne que la date du programme, menu à quatre colonnes égales utilisant l'espace horizontal restant. À largeur réduite, menu sur une ligne dédiée ; en téléphone, grille deux colonnes avec cibles tactiles de 44–45 px. La marque des pages secondaires conserve son lien vers le programme.
+- Tests des classes d'en-tête communes, du placement de la date, de la version et des points de rupture CSS ; aucune donnée métier ni projection modifiée.

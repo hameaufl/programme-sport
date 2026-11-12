@@ -1,4 +1,12 @@
 # Décisions techniques — Maturation
+
+## 12 novembre 2026 — Largeur harmonisée et date latérale dans l'en-tête
+
+- Après vérification visuelle de la page Programme, le propriétaire signale que les quatre boutons étaient trop serrés à l'extrémité droite et que la date sous la marque déstabilisait l'ensemble. Il demande un en-tête réellement **uniforme sur les quatre pages**, plus large et adapté aux mobiles.
+- Décision de présentation : conteneur commun jusqu'à **1160 px**, marque et menu dans une grille partagée ; **quatre boutons de largeur équilibrée** occupant toute la place restante à droite, avec espaces et styles identiques. Le menu conserve l'ordre Programme / Coach / Santé / Équipement, l'onglet actif et l'absence de pied de navigation.
+- La date affichée sur le Programme passe **sur la même ligne, à droite de « mon rythme. »**, avec séparation fine. Sur les tablettes, menu dédié en quatre colonnes sous la marque (**1000 px et moins**) ; sur téléphone, deux colonnes (**600 px et moins**) et dimension tactile suffisante. Très petit écran : la date peut passer à la ligne, sans masquer les liens.
+- L'unique source est `addons/web/public/style-commun.css`, contrôlée par `scripts/verifier-site.cjs`. Les faits, programmes, observations, données du Coach, projections et contrats sont inchangés. Cette règle prime sur la précédente disposition où les pastilles étaient regroupées au bord droit.
+
 ## 12 novembre 2026 — Navigation générale compacte à droite du logo (nouvelle priorité)
 
 - Le propriétaire remplace la navigation de pied de page par un **menu en haut, à droite du logo** sur les quatre vues. Ordre imposé : **Mon programme, Le cap du Coach, Mon suivi santé, Mon équipement** (inversion de Coach et Santé).
