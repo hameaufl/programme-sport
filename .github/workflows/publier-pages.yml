@@ -4,14 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - index.html
-      - sante.html
-      - "personnel/**"
-      - "assets/renfo/**"
-      - favicon.svg
-      - icon-192.png
-      - icon-512.png
-      - manifest.webmanifest
+      - "addons/web/**"
+      - "domaines/**"
+      - "adaptateurs/**"
+      - "contrats/**"
       - publication.txt
       - "scripts/**"
       - .github/workflows/publier-pages.yml
