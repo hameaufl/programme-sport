@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "usage": "Uniquement analyse hypothétique de préconditions, aucune action sur des systèmes",
+  "cas": [
+    {
+      "id": "CAS-01",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "lecture",
+        "role": "COACH",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {},
+        "cible": {}
+      }
+    },
+    {
+      "id": "CAS-02",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.programmer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {},
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "modeleRelu": true
+        }
+      }
+    },
+    {
+      "id": "CAS-03",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.programmer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.programmer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-14",
+          "workoutId": "modele-fictif",
+          "modeleRelu": true
+        }
+      }
+    },
+    {
+      "id": "CAS-04",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.programmer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.programmer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "modeleRelu": true
+        }
+      }
+    },
+    {
+      "id": "CAS-05",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.envoyer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.programmer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "appareilVerifie": true
+        }
+      }
+    },
+    {
+      "id": "CAS-06",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.envoyer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.envoyer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "appareilVerifie": false
+        }
+      }
+    },
+    {
+      "id": "CAS-07",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.creer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.creer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "signatureValidee": false
+        }
+      }
+    },
+    {
+      "id": "CAS-08",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.creer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.creer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "signatureValidee": true
+        }
+      }
+    },
+    {
+      "id": "CAS-09",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-fictif"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": false,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "CAS-10",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "autre-modele"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "CAS-11",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-fictif"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "CAS-12",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.programmer",
+        "role": "COACH",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.programmer",
+          "accordProprietaire": true,
+          "preuveDemande": "demande explicite factice du propriétaire",
+          "datesExactes": [
+            "2026-11-13"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-fictif",
+          "modeleRelu": true
+        }
+      }
+    },
+    {
+      "id": "CAS-13",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "metier.ecrire",
+        "role": "COACH",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {},
+        "cible": {
+          "chemin": "domaines/planification/donnees/seances/exemple.json"
+        }
+      }
+    },
+    {
+      "id": "CAS-14",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "web.publier",
+        "role": "MATURATION",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {},
+        "cible": {}
+      }
+    },
+    {
+      "id": "CAS-15",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "gouvernance.modifier",
+        "role": "COACH",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "avisGardien": {
+            "verdict": "valide",
+            "shaProposition": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "cible": {
+          "agent": "GARMIN"
+        }
+      }
+    },
+    {
+      "id": "CAS-16",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "gouvernance.modifier",
+        "role": "MATURATION",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {},
+        "cible": {
+          "agent": "GARMIN"
+        }
+      }
+    },
+    {
+      "id": "CAS-17",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "gouvernance.modifier",
+        "role": "MATURATION",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "avisGardien": {
+            "verdict": "valide",
+            "shaProposition": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "cible": {
+          "agent": "GARMIN"
+        }
+      }
+    },
+    {
+      "id": "CAS-18",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "gouvernance.modifier",
+        "role": "MATURATION",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "avisGardien": {
+            "verdict": "valide",
+            "shaProposition": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "cible": {
+          "agent": "GARDIEN"
+        }
+      }
+    },
+    {
+      "id": "CAS-19",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "gouvernance.modifier",
+        "role": "MATURATION",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "avisGardien": {
+            "verdict": "valide",
+            "shaProposition": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "accordProprietaire": true
+        },
+        "cible": {
+          "agent": "GARDIEN"
+        }
+      }
+    },
+    {
+      "id": "CAS-20",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "gouvernance.modifier",
+        "role": "MATURATION",
+        "branche": "main",
+        "autorisation": {
+          "avisGardien": {
+            "verdict": "valide",
+            "shaProposition": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        },
+        "cible": {
+          "agent": "GARMIN"
+        }
+      }
+    }
+  ]
+}
