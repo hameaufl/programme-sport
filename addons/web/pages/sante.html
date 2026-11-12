@@ -6,202 +6,233 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-seances-sans-pieces-v20">
-  <meta name="description" content="Suivi personnel de la reprise d'activité sportive.">
+  <meta name="mon-rythme-version" content="2026-11-12-suivi-essentiel-v21">
+  <meta name="description" content="Mon suivi de reprise sportive, en quelques repères visuels.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icon-192.png">
   <title>Mon suivi santé · Mon Rythme</title>
   <style>
-    :root{color-scheme:light;--ink:#22392b;--green:#234735;--muted:#6b7f70;--line:#dfe8dd;--soft:#edf5eb;--bg:#f6f8f4}
+    :root{color-scheme:light;--ink:#20392c;--green:#234735;--green-2:#43755b;--muted:#67796d;--line:#dfe8dd;--soft:#eaf2e9;--bg:#f7f9f5;--white:#fff;--gold:#ca9a5a}
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-    a:focus-visible{outline:3px solid #83b48e;outline-offset:3px}
-    .shell{width:min(1090px,calc(100% - 36px));margin:auto;padding-bottom:65px}
-    header{min-height:87px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-size:20px;font-weight:800;letter-spacing:-.5px}
+    a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #8aba98;outline-offset:3px}
+    .shell{width:min(1070px,calc(100% - 36px));margin:auto;padding:0 0 64px}
+    header{min-height:87px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-size:20px;font-weight:800;letter-spacing:-.5px}
     .brand-icon{width:41px;height:41px;background:var(--green);color:white;border-radius:13px;display:grid;place-items:center;font-size:22px}
-    .back{border:1px solid #c6d8c9;background:white;text-decoration:none;color:var(--green);padding:10px 14px;border-radius:11px;font-size:13px;font-weight:750}
+    .back{display:inline-flex;align-items:center;gap:8px;border:1px solid #cddccf;background:white;padding:10px 15px;border-radius:12px;text-decoration:none;color:var(--green);font-size:13px;font-weight:750}
     .back:hover{background:var(--soft)}
-    .hero{background:var(--green);border-radius:23px;padding:36px 40px;color:#fff}
-    .eyebrow{text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:1.5px;color:#cce2d0;margin:0 0 9px}
-    h1{font-size:clamp(29px,4.6vw,44px);letter-spacing:-1.35px;line-height:1.13;margin:0}
-    section{margin-top:30px}
-    h2{font-size:23px;letter-spacing:-.6px;margin:0 0 5px}
-    .section-hint{color:var(--muted);font-size:14px;margin:0 0 17px}
-    .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
-    .metric{background:white;border:1px solid var(--line);border-radius:17px;padding:22px}
-    .metric-value{font-size:clamp(27px,4vw,36px);line-height:1.1;font-weight:800;letter-spacing:-1px;display:block;color:var(--green)}
-    .metric-label{display:block;color:var(--muted);font-size:13px;margin-top:7px}
-    .topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-    .topic,.entry{background:white;border:1px solid var(--line);border-radius:17px;padding:23px;min-width:0}
-    .topic h3,.entry h3{font-size:17px;margin:0 0 12px;letter-spacing:-.3px}
-    .topic p,.entry p{font-size:14px;overflow-wrap:anywhere;margin:0 0 8px;color:#4a6452}
-    .topic ul,.entry ul{font-size:14px;color:#4a6452;margin:0;padding-left:20px}
-    .topic li+li,.entry li+li{margin-top:5px}
-    .topic .placeholder{color:#8a9a8c;font-size:13px;font-style:italic}
-    .entries{display:grid;gap:12px}
-    #journalMore{background:white;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font:inherit;font-size:14px;color:var(--green);cursor:pointer}
-    .empty{border:1px dashed #bfd4c3;background:#f2f8f1;color:#607762;padding:22px;border-radius:16px;font-size:14px}
-    .small-print{font-size:13px;color:var(--muted);margin:20px 0 0}
-    @media(max-width:650px){.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px}.hero{border-radius:19px;padding:28px 23px}.metrics{gap:8px}.metric{padding:16px 12px}.metric-label{font-size:12px}.topics{grid-template-columns:1fr}.topic,.entry{padding:19px}.small-print{margin-top:16px}}
-    @media print{body{background:white}.shell{width:100%}.hero{background:#fff;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.back{display:none}}
+    .hero{border-radius:24px;min-height:232px;padding:39px 43px;background:radial-gradient(circle at 90% 16%,rgba(193,223,183,.24),transparent 28%),radial-gradient(circle at 75% 96%,rgba(244,225,188,.12),transparent 36%),var(--green);color:#fff;position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .hero:after{content:"";position:absolute;right:-82px;bottom:-155px;width:390px;height:390px;border:1px solid rgba(255,255,255,.17);border-radius:50%;box-shadow:0 0 0 43px rgba(255,255,255,.035),0 0 0 100px rgba(255,255,255,.03);pointer-events:none}
+    .eyebrow{color:#d3e7d5;letter-spacing:1.5px;text-transform:uppercase;font-size:11px;font-weight:800;margin:0 0 13px}
+    h1{margin:0;font-size:clamp(32px,5vw,51px);font-weight:780;letter-spacing:-1.9px;line-height:1.08}
+    .hero-sub{color:#d7e9db;max-width:455px;font-size:15px;margin:15px 0 0}
+    .hero-mark{width:95px;height:95px;border:1px solid rgba(255,255,255,.36);border-radius:50%;display:grid;place-items:center;flex:none;position:relative;z-index:1}
+    .hero-mark svg{width:50px;height:50px;stroke:#f5faf4;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    section{margin-top:32px}
+    .section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:15px}
+    h2{font-size:23px;line-height:1.25;letter-spacing:-.7px;margin:0}
+    .section-note{color:var(--muted);font-size:13px;margin:5px 0 0}
+    .small-label{font-size:11px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;font-weight:750}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .stat{background:var(--white);border:1px solid var(--line);border-radius:18px;min-height:146px;padding:23px;display:flex;flex-direction:column;justify-content:space-between}
+    .stat:first-child{background:#e7f0e6;border-color:#d4e4d5}
+    .stat-number{display:block;color:var(--green);font-size:clamp(35px,5vw,49px);font-weight:800;line-height:1;letter-spacing:-1.8px;font-variant-numeric:tabular-nums}
+    .stat-title{font-size:13px;color:#536b58;font-weight:650;margin-top:13px}
+    .graph-box,.list-box{background:white;border:1px solid var(--line);border-radius:19px;padding:24px}
+    .week-graph{display:grid;gap:17px}
+    .week-row{display:grid;grid-template-columns:115px 1fr 76px;align-items:center;gap:14px}
+    .week-label{font-size:13px;font-weight:720;color:#486450}
+    .week-track{height:13px;background:#e8efea;border-radius:999px;overflow:hidden;position:relative}
+    .week-done{background:var(--green-2);height:100%;border-radius:999px}
+    .week-count{font-size:12px;color:#657a68;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+    .graph-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid var(--line);margin-top:21px;padding-top:15px}
+    .legend{display:flex;align-items:center;flex-wrap:wrap;gap:15px;font-size:12px;color:var(--muted)}
+    .legend-item{display:inline-flex;align-items:center;gap:7px}
+    .legend-dot{width:10px;height:10px;border-radius:4px;background:var(--green-2)}
+    .legend-dot.pending{background:#dfe9e1}
+    .legend-note{font-size:12px;color:var(--muted)}
+    .lower-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+    .subpanel h2{font-size:21px}
+    .subpanel .section-heading{min-height:47px}
+    .rows{display:grid;gap:0}
+    .item{display:flex;align-items:center;gap:13px;padding:13px 0;min-width:0}
+    .item+.item{border-top:1px solid #edf1eb}
+    .date-block{border-radius:11px;background:#edf4ec;min-width:61px;flex:none;padding:9px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;line-height:1.12}
+    .date-day{font-size:20px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
+    .date-month{font-size:11px;color:#647e6b;font-weight:750;text-transform:uppercase;margin-top:4px}
+    .item-main{flex:1;min-width:0}
+    .item-title{font-size:14px;font-weight:750;overflow-wrap:anywhere}
+    .item-sub{font-size:12px;color:var(--muted);margin-top:3px}
+    .status-dot{width:8px;height:8px;background:#5b9473;flex:none;border-radius:50%}
+    .milestone .date-block{background:#f8f1e7}
+    .milestone .date-day{color:#866c43}
+    .milestone .date-month{color:#967c54}
+    .empty{padding:20px;background:#f3f7f2;border-radius:13px;color:#708375;font-size:14px}
+    .footnote{margin:25px 0 0;border-top:1px solid var(--line);padding:18px 0 0;color:#78897a;font-size:12px}
+    @media(max-width:720px){.hero{padding:31px 26px;min-height:210px}.hero-mark{width:64px;height:64px}.hero-mark svg{width:35px;height:35px}.stats{gap:9px}.stat{min-height:129px;padding:17px 15px}.lower-grid{grid-template-columns:1fr}.section-heading{align-items:start;flex-direction:column;gap:5px}}
+    @media(max-width:530px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:8px 11px;font-size:12px}.hero{border-radius:19px}.hero-mark{display:none}.hero-sub{font-size:14px}.stat{padding:16px 12px;min-height:116px;border-radius:15px}.stat-number{font-size:33px}.stat-title{font-size:11px}.graph-box,.list-box{padding:18px}.week-row{grid-template-columns:86px 1fr 50px;gap:9px}.week-label,.week-count{font-size:11px}h2{font-size:21px}section{margin-top:26px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+    @media print{body{background:#fff}.shell{width:100%;padding:0}.hero{background:#f3f7f1;color:var(--ink);border:1px solid var(--line)}.hero-sub,.eyebrow{color:var(--muted)}.back{display:none}}
   </style>
 </head>
 <body>
   <div class="shell">
     <header>
-      <a class="brand" href="./" aria-label="Retour à Mon Rythme"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></a>
+      <a class="brand" href="./" aria-label="Retour à Mon Rythme"><span class="brand-icon" aria-hidden="true">↗</span><span>mon rythme.</span></a>
       <a class="back" href="./">← Mon programme</a>
     </header>
     <main>
       <div class="hero">
-        <p class="eyebrow">Mon Rythme · Reprise sportive</p>
-        <h1>Mon suivi santé.</h1>
+        <div>
+          <p class="eyebrow">Mon Rythme · Suivi personnel</p>
+          <h1>Mon suivi santé.</h1>
+          <p class="hero-sub">L'essentiel de ma reprise, sans les notes de fond.</p>
+        </div>
+        <div class="hero-mark" aria-hidden="true">
+          <svg viewBox="0 0 50 50"><path d="M6 28h9l6-13 7 22 6-13h10"/><circle cx="25" cy="25" r="23" opacity=".3"/></svg>
+        </div>
       </div>
-      <section aria-labelledby="overviewTitle">
-        <h2 id="overviewTitle">Ma reprise en un coup d'œil</h2>
-        <p class="section-hint">D'après les informations réellement enregistrées dans mon programme.</p>
-        <div class="metrics">
-          <div class="metric"><output class="metric-value" id="countPlanned">—</output><span class="metric-label">Séances programmées</span></div>
-          <div class="metric"><output class="metric-value" id="countDone">—</output><span class="metric-label">Réalisations confirmées</span></div>
-          <div class="metric"><output class="metric-value" id="countNotes">—</output><span class="metric-label">Retours de sensations</span></div>
+      <section aria-labelledby="atGlance">
+        <div class="section-heading">
+          <div><h2 id="atGlance">En un regard</h2><p class="section-note">Des faits enregistrés, jamais des résultats supposés.</p></div>
+        </div>
+        <div class="stats" aria-live="polite">
+          <div class="stat"><output class="stat-number" id="doneCount">—</output><span class="stat-title">Séances réalisées</span></div>
+          <div class="stat"><output class="stat-number" id="feedbackCount">—</output><span class="stat-title">Retours enregistrés</span></div>
+          <div class="stat"><output class="stat-number" id="plannedCount">—</output><span class="stat-title">Séances au programme</span></div>
         </div>
       </section>
-      <section aria-labelledby="profileTitle">
-        <h2 id="profileTitle">Mes repères de santé</h2>
-        <p class="section-hint">Antécédents, appuis, suivi professionnel, mécanique et récupération : uniquement les éléments renseignés.</p>
-        <div id="healthProfile" class="topics" aria-live="polite"><div class="empty">Chargement du profil…</div></div>
+      <section aria-labelledby="weekTitle">
+        <div class="section-heading">
+          <div><h2 id="weekTitle">Au fil des semaines</h2><p class="section-note">Ce qui est confirmé parmi les séances programmées.</p></div>
+        </div>
+        <div class="graph-box">
+          <div class="week-graph" id="weekGraph" aria-live="polite"><div class="empty">Chargement des semaines…</div></div>
+          <div class="graph-footer">
+            <div class="legend"><span class="legend-item"><span class="legend-dot"></span>Réalisées</span><span class="legend-item"><span class="legend-dot pending"></span>Autres séances prévues</span></div>
+            <span class="legend-note">Une séance non confirmée reste non comptabilisée.</span>
+          </div>
+        </div>
       </section>
-      <section aria-labelledby="followTitle">
-        <h2 id="followTitle">Mon journal de suivi</h2>
-        <p class="section-hint">Comptes rendus et points de santé datés, ajoutés à mesure de leur réception.</p>
-        <div id="healthFollow" class="entries" aria-live="polite"><div class="empty">Chargement du journal…</div></div>
-      </section>
-      <p class="small-print">Les rubriques non renseignées restent en attente. Cette page reprend les informations enregistrées sans établir de diagnostic médical.</p>
+      <div class="lower-grid">
+        <section class="subpanel" aria-labelledby="recentTitle">
+          <div class="section-heading"><div><h2 id="recentTitle">Dernières réalisations</h2><p class="section-note">Uniquement les activités confirmées.</p></div></div>
+          <div class="list-box"><div class="rows" id="recentDone" aria-live="polite"><div class="empty">Chargement des séances…</div></div></div>
+        </section>
+        <section class="subpanel" aria-labelledby="eventsTitle">
+          <div class="section-heading"><div><h2 id="eventsTitle">Repères datés</h2><p class="section-note">Les événements de suivi, sans dossiers textuels.</p></div></div>
+          <div class="list-box"><div class="rows" id="healthEvents" aria-live="polite"><div class="empty">Chargement des repères…</div></div></div>
+        </section>
+      </div>
+      <p class="footnote">Les observations détaillées restent dans le domaine Santé ; les décisions et adaptations dans la mémoire du Coach. Cette vue ne constitue pas un avis médical.</p>
     </main>
   </div>
   <script>
-(function () {
-  "use strict";
+  (function(){
+    "use strict";
     function node(tag,cls,value){
-      var el=document.createElement(tag);
-      if(cls)el.className=cls;
-      if(value!==undefined)el.textContent=value;
-      return el;
+      var element=document.createElement(tag);
+      if(cls)element.className=cls;
+      if(value!==undefined)element.textContent=value;
+      return element;
     }
-    function replaceWithEmpty(id,text){
-      var root=document.getElementById(id);
-      root.replaceChildren(node("div","empty",text));
+    function empty(root,message){root.replaceChildren(node("p","empty",message));}
+    function request(path){return fetch(path,{cache:"no-store"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();});}
+    function dateValue(iso){var d=new Date(iso+"T12:00:00");return isNaN(d.getTime())?null:d;}
+    function datePieces(iso){
+      var d=dateValue(iso);
+      if(!d)return {day:"—",month:"—"};
+      return {day:new Intl.DateTimeFormat("fr-FR",{day:"2-digit"}).format(d),
+        month:new Intl.DateTimeFormat("fr-FR",{month:"short"}).format(d).replace(".","")};
     }
-    function clean(text){
-      return text.replace(/\*\*/g,"").replace(/[`_]/g,"").trim();
+    function shortWeek(iso){
+      var d=dateValue(iso);
+      return d?new Intl.DateTimeFormat("fr-FR",{day:"numeric",month:"short"}).format(d):iso;
     }
-    function fillParagraphs(parent,lines){
-      var list=null;
-      lines.forEach(function(raw){
-        var line=raw.trim();
-        if(!line){list=null;return;}
-        if(/^[-*] /.test(line)){
-          if(!list){list=node("ul");parent.appendChild(list);}
-          list.appendChild(node("li","",clean(line.slice(2))));
-        }else{
-          list=null;
-          if(!/^#{1,6} /.test(line))parent.appendChild(node("p","",clean(line)));
-        }
+    function showNumber(id,val){document.getElementById(id).textContent=val===null?"—":String(val);}
+    function showWeeks(weeks){
+      var root=document.getElementById("weekGraph");root.replaceChildren();
+      if(!weeks.length){empty(root,"Aucune séance programmée pour le moment.");return;}
+      weeks.forEach(function(week){
+        var total=week.sessions.length,done=week.sessions.filter(function(s){return s.fait===true;}).length;
+        var row=node("div","week-row"),label=node("span","week-label","Du "+shortWeek(week.semaine));
+        var track=node("div","week-track"),fill=node("div","week-done");
+        fill.style.width=(total?done/total*100:0)+"%";
+        track.setAttribute("role","img");
+        track.setAttribute("aria-label",done+" séance"+(done>1?"s":"")+" réalisée"+(done>1?"s":"")+" sur "+total+" programmée"+(total>1?"s":""));
+        track.appendChild(fill);
+        row.appendChild(label);row.appendChild(track);
+        row.appendChild(node("span","week-count",done+" / "+total));
+        root.appendChild(row);
       });
     }
-    function profileSections(text){
-      var entries=[],current=null;
-      text.split(/\r?\n/).forEach(function(line){
-        var match=line.match(/^## (.+)$/);
-        if(match){current={title:match[1],lines:[]};entries.push(current);}
-        else if(current)current.lines.push(line);
-      });
-      return entries;
+    function addDatedRow(root,date,title,sub,isEvent){
+      var row=node("div","item"+(isEvent?" milestone":"")),parts=datePieces(date);
+      var label=node("div","date-block");
+      label.appendChild(node("span","date-day",parts.day));
+      label.appendChild(node("span","date-month",parts.month));
+      var body=node("div","item-main");
+      body.appendChild(node("div","item-title",title));
+      if(sub)body.appendChild(node("div","item-sub",sub));
+      row.appendChild(label);row.appendChild(body);
+      if(!isEvent)row.appendChild(node("span","status-dot"));
+      root.appendChild(row);
     }
-    function loadProfile(text){
-      var root=document.getElementById("healthProfile");
+    function sessionLabel(s){
+      if(s.type==="course"||String(s.id||"").startsWith("course-"))return "Course à pied";
+      if(s.type==="renfo"||String(s.id||"").startsWith("renfo-"))return "Renforcement";
+      if(s.type==="kine"||String(s.id||"").startsWith("kine-"))return "Kinésithérapie";
+      return s.titre||"Séance";
+    }
+    function showDone(sessions){
+      var root=document.getElementById("recentDone");
       root.replaceChildren();
-      var sections=profileSections(text);
-      if(!sections.length){replaceWithEmpty("healthProfile","Aucune rubrique de santé disponible.");return;}
-      sections.forEach(function(section){
-        var card=node("article","topic");
-        card.appendChild(node("h3","",section.title));
-        var substantive=section.lines.filter(function(v){return v.trim();});
-        if(!substantive.length || (substantive.length===1 && /^_?Aucun renseignement fourni\._?$/.test(substantive[0].trim()))){
-          card.appendChild(node("p","placeholder","Aucune information renseignée pour le moment."));
-        }else fillParagraphs(card,section.lines);
-        root.appendChild(card);
-      });
+      var done=sessions.filter(function(s){return s.fait===true;})
+        .sort(function(a,b){return b.date.localeCompare(a.date)||b.id.localeCompare(a.id);}).slice(0,4);
+      if(!done.length){empty(root,"Aucune séance réalisée n'est encore confirmée.");return;}
+      done.forEach(function(s){addDatedRow(root,s.date,sessionLabel(s),"Séance confirmée",false);});
     }
-
-    function formatDate(iso){
-      var date=new Date(iso+"T12:00:00");
-      return isNaN(date.getTime())?iso:date.toLocaleDateString("fr-FR",{day:"numeric",month:"short",year:"numeric"});
+    function showEvents(events){
+      var root=document.getElementById("healthEvents");root.replaceChildren();
+      if(!events.length){empty(root,"Aucun événement daté disponible.");return;}
+      events.slice(0,4).forEach(function(e){addDatedRow(root,e.date,e.title,"Événement enregistré",true);});
     }
-    function fetchJSON(url){return fetch(url,{cache:"no-cache"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();});}
-    function loadCounters(){
-      fetchJSON("./data/index.json?actualisation="+Date.now()).then(function(data){
-        var stats=data.compteurs||{};
-        document.getElementById("countPlanned").textContent=String(stats.programmees??"—");
-        document.getElementById("countDone").textContent=String(stats.realisees??"—");
-        document.getElementById("countNotes").textContent=String(stats.avecSensations??"—");
-      }).catch(function(){/* Garder les tirets si les compteurs ne sont pas disponibles. */});
-    }
-    function loadMarkdown(path,id,callback){
-      fetch(path+"?actualisation="+Date.now(),{cache:"no-store"})
-        .then(function(response){if(!response.ok)throw Error(String(response.status));return response.text();})
-        .then(callback).catch(function(){replaceWithEmpty(id,"Ces informations ne sont pas disponibles actuellement.");});
-    }
-    var pages=[],nextPage=0,journalRequest=0;
-    function addEvents(events){
-      var root=document.getElementById("healthFollow");
-      events.forEach(function(e){
-        var card=node("article","entry");
-        card.appendChild(node("h3","",formatDate(e.date)+(e.title?" · "+e.title:"")));
-        fillParagraphs(card,e.lines||[]);
-        root.appendChild(card);
-      });
-    }
-    function showNextPage(token){
-      if(nextPage>=pages.length)return;
-      var page=pages[nextPage++],root=document.getElementById("healthFollow");
-      var oldButton=document.getElementById("journalMore");
-      if(oldButton)oldButton.remove();
-      fetchJSON("./data/sante/journal/"+page).then(function(data){
-        if(token!==journalRequest)return;
-        addEvents(data.events||[]);
-        if(nextPage<pages.length){
-          var button=node("button","","Afficher les événements précédents");
-          button.id="journalMore";
-          button.type="button";
-          button.addEventListener("click",function(){showNextPage(token);});
-          root.appendChild(button);
-        }
-      }).catch(function(){if(token===journalRequest)root.appendChild(node("p","empty","Une page du journal est indisponible."));});
-    }
-    function loadJournal(){
-      var token=++journalRequest,root=document.getElementById("healthFollow");
-      root.replaceChildren(node("div","empty","Chargement du journal…"));
-      nextPage=0;
-      fetchJSON("./data/sante/journal/index.json?actualisation="+Date.now()).then(function(index){
-        if(token!==journalRequest)return;
-        pages=index.pages||[];
-        root.replaceChildren();
-        if(!pages.length){replaceWithEmpty("healthFollow","Aucun compte rendu de santé daté n'est encore renseigné.");return;}
-        showNextPage(token);
-      }).catch(function(){if(token===journalRequest)replaceWithEmpty("healthFollow","Le journal n'est pas disponible.");});
-    }
+    var loadId=0;
     function refresh(){
-      loadCounters();
-      loadMarkdown("./data/sante/profil.md","healthProfile",loadProfile);
-      loadJournal();
+      var token=++loadId;
+      request("./data/index.json").then(function(index){
+        var weeks=Array.isArray(index.semaines)?index.semaines:[];
+        return Promise.all(weeks.map(function(w){return request("./data/semaines/"+encodeURIComponent(w)+".json");}))
+          .then(function(parts){
+            if(token!==loadId)return;
+            var all=parts.reduce(function(out,p){return out.concat(p.sessions||[]);},[]);
+            showWeeks(parts);
+            showDone(all);
+            showNumber("doneCount",all.filter(function(s){return s.fait===true;}).length);
+            showNumber("plannedCount",all.length);
+            var n=index.compteurs&&typeof index.compteurs.avecSensations==="number"?index.compteurs.avecSensations:null;
+            showNumber("feedbackCount",n);
+          });
+      }).catch(function(){
+        if(token!==loadId)return;
+        empty(document.getElementById("weekGraph"),"Le récapitulatif n'est pas disponible actuellement.");
+        empty(document.getElementById("recentDone"),"Les séances ne sont pas disponibles actuellement.");
+        ["doneCount","feedbackCount","plannedCount"].forEach(function(id){showNumber(id,null);});
+      });
+      request("./data/sante/journal/index.json").then(function(index){
+        if(token!==loadId)return;
+        if(!Array.isArray(index.pages)||!index.pages.length){showEvents([]);return;}
+        return request("./data/sante/journal/"+index.pages[0]).then(function(data){
+          if(token===loadId)showEvents(Array.isArray(data.events)?data.events:[]);
+        });
+      }).catch(function(){if(token===loadId)empty(document.getElementById("healthEvents"),"Les repères ne sont pas disponibles actuellement.");});
     }
     refresh();
     document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")refresh();});
     window.addEventListener("pageshow",function(event){if(event.persisted)refresh();});
-}());
-</script>
+  }());
+  </script>
 </body>
 </html>
