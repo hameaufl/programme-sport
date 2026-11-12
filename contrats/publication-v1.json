@@ -34,5 +34,8 @@
     "evenementsPublics": true,
     "comptesRendusPublicsDansVues": true
   },
-  "note": "Politique explicite reflétant les fonctionnalités publiques existantes. Réduire ces autorisations avant tout transfert de données vers un stockage confidentiel; aucune nouvelle propriété n'est exportable par défaut."
+  "note": "Politique explicite reflétant les fonctionnalités publiques existantes. Réduire ces autorisations avant tout transfert de données vers un stockage confidentiel; aucune nouvelle propriété n'est exportable par défaut.",
+  "media": {
+    "garminPublics": true
+  }
 }

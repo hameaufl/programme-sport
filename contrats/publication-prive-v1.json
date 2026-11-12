@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "default": "deny",
+  "programme": [
+    "id",
+    "date",
+    "titre",
+    "type",
+    "heure",
+    "duree",
+    "distance",
+    "etapes",
+    "fait"
+  ],
+  "index": [
+    "schemaVersion",
+    "debutCycle",
+    "semaines",
+    "buildVersion"
+  ],
+  "sante": {
+    "profilPublic": false,
+    "evenementsPublics": false,
+    "comptesRendusPublicsDansVues": false
+  },
+  "media": {
+    "garminPublics": false
+  },
+  "note": "Politique exemple : publication sans informations de santé, notes de coaching, bilan, profil, FIT ni historiques détaillés. Nécessite toujours une protection des anciennes URLs publiques et de l'historique Git."
+}
