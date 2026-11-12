@@ -1,4 +1,12 @@
 # Décisions techniques — Maturation
+## 12 novembre 2026 — Autonomie permanente du Coach, limitée à l'affichage des données métier
+
+- **Décision explicite du propriétaire** : le Coach doit, à chaque travail métier, enregistrer les faits/décisions dans les domaines V2 **et** s'assurer sans relance que les composants Web concernés présentent correctement ces données.
+- **Priorité à la projection automatique** : si la donnée métier se répercute déjà correctement à la prochaine publication, le Coach ne modifie aucun code Web.
+- **Dérogation restreinte à l'ancienne exclusivité Web de Maturation** : le Coach peut corriger dans le même travail uniquement les fragments HTML/JS/style local des composants qui affichent les données métier effectivement concernées. **Ne pas toucher** à l'interface générale, la navigation, la structure globale des pages, le design commun, les autres composants, les contrats, les projections, les ports ou la CI. Maturation conserve ces responsabilités et toute extension technique requise.
+- **Qualité et sécurité** : aucune donnée codée en dur dans les pages, projection soumise à la liste blanche, diff limité, validations et publication contrôlées ; aucune écriture Garmin sans ordre sur des dates précises. « Mets-toi à jour » seul reste lecture seule. Cette décision **supplante les mentions historiques contraires** de l'exclusivité d'IHM.
+
+
 
 Les décisions individuelles et la planification sportive se trouvent dans [personnel/DECISIONS.md](../personnel/DECISIONS.md), sans copie des données dans ce document.
 

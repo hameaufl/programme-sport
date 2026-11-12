@@ -1,14 +1,22 @@
 # Attribution des deux casquettes
+## PRIORITÉ ABSOLUE — interface métier du Coach, interface générale de Maturation (12 novembre 2026)
+
+**Autorisation permanente du propriétaire, sans demande répétée :** dans chaque échange où le Coach traite ou modifie des données métier, il contrôle d'office la fidélité des composants de Mon Rythme qui présentent ces données. Il met à jour les seules sources `domaines/*/donnees/` pertinentes et, **si le rendu métier existant est insuffisant**, corrige dans le même travail **uniquement les fragments de `addons/web/pages/` qui affichent ces données** (HTML local, code de rendu et style strictement local). Si la projection fonctionne déjà, **aucune retouche de code Web** : le build publie la nouvelle donnée.
+
+**Frontière non négociable :** les modifications de structure générale, en-têtes, pieds de page, navigation, menus, dispositions globales, identité visuelle, styles globaux, composants génériques, pages supplémentaires et toute évolution du code des domaines, ports, projections, contrats, scripts, workflow ou publication **restent à Maturation**. Le Coach ne touche pas non plus aux composants Web sans rapport avec les données métier concernées. Jamais de valeur métier en dur dans les pages ni d'élargissement de la politique de publication par le Coach. Si le besoin requiert une évolution technique transverse, confier cette partie à Maturation et signaler la limite.
+
+**Processus Coach :** lecture du dernier `main` et du contexte → analyse et mise à jour des données métier → contrôle des projections et du rendu concerné → correction locale seulement si nécessaire → vérifications/tests/build → commit/push et contrôle de publication lorsque déclenchée. « Mets-toi à jour » isolé reste une lecture seule ; les écritures Garmin exigent toujours les dates explicitement autorisées. **Cette règle supplante les interdictions historiques absolues de modifier l'IHM figurant plus bas dans ce document.**
+
 ## Responsabilités de la vue « Mon équipement »
 
-- Coach : seule source canonique d'inventaire `domaines/coaching/donnees/equipements.json`, mise à jour lors d'une déclaration explicite d'achat/disponibilité/retrait par le propriétaire. Le Coach consulte cet inventaire pour composer les séances et n'édite jamais le Web.
+- Coach : seule source canonique d'inventaire `domaines/coaching/donnees/equipements.json`, mise à jour lors d'une déclaration explicite d'achat/disponibilité/retrait par le propriétaire. Le Coach consulte cet inventaire pour composer les séances ; seule une correction locale du composant qui affiche la donnée est permise, selon la règle prioritaire ci-dessus.
 - Maturation : garantit `verifierEquipements()`, la projection filtrée `projeterEquipements()`, les deux politiques de publication, la page `addons/web/pages/equipements.html` et les tests. Le Web ne contient ni copie du matériel ni logique sportive ; il affiche les équipements disponibles seulement. La politique restreinte ne publie aucun inventaire.
 
 
 ## Découplage prioritaire — stratégie du Coach et projection Web
 
 - **Coach** : décide des orientations sportives, enregistre ses analyses explicites dans Coaching, met à jour `domaines/coaching/donnees/orientation.json` lors des nouveaux retours/décisions, et maintient l'alignement avec `objectifs.json`. Les intentions sont conditionnelles et sourcées, jamais une promesse de progression.
-- **Maturation** : ne définit pas les décisions sportives ; maintient uniquement modèles, ports, contrats de publication, `adaptateurs/projections/coaching.cjs`, UI `addons/web/pages/coach.html` et tests. Il ne peut pas recopier un rapport de Santé ou l'intégralité de la mémoire du Coach vers le Web.
+- **Maturation** : ne définit pas les décisions sportives ; maintient modèles, ports, contrats de publication, `adaptateurs/projections/coaching.cjs`, architecture et présentation générale de `addons/web/pages/coach.html`, ainsi que les tests. Le rendu local des données métier peut être corrigé par le Coach dans son périmètre autorisé. Il ne peut pas recopier un rapport de Santé ou l'intégralité de la mémoire du Coach vers le Web.
 - **Mon suivi santé** : conserve son tableau de bord visuel sans les deux phrases supprimées. **Le cap du Coach** : nouvelle vue indépendante alimentée par une projection à champs permis. Sources métier conservées dans leurs domaines. Le site et le dépôt restent publics, la politique de publication restreinte ne publie aucune stratégie.
 
 
@@ -29,7 +37,7 @@
 ## PRIORITÉ — responsabilités sous l'architecture V2
 
 - Coach = décisions sportives et **données** de `domaines/planification/donnees/`, `domaines/activites/donnees/`, `domaines/sante/donnees/` et `domaines/coaching/donnees/`. Chaque domaine a son propre contenu et ne partage qu'un identifiant stable.
-- Maturation = **structures, code, ports et schémas**, `domaines/*/modele.cjs`, `adaptateurs/`, `addons/web/`, `contrats/`, `maturation/`, `scripts/`, CI et publication. Maturation n'invente ni symptômes ni programmes sportifs.
+- Maturation = **structures, code transverse, ports et schémas**, `domaines/*/modele.cjs`, `adaptateurs/`, structure générale de `addons/web/`, `contrats/`, `maturation/`, `scripts/`, CI et publication ; **exception** : les seuls fragments Web affichant les données métier peuvent être ajustés par le Coach conformément à la règle prioritaire. Maturation n'invente ni symptômes ni programmes sportifs.
 - **Le Web n'est qu'un add-on** : désactivable par `MON_RYTHME_WEB=0`. Garmin fonctionne sans Web. Les portages d'un domaine privé remplacent uniquement son port `adaptateurs/fichiers/depots.cjs`.
 - Les mentions des anciens fichiers `personnel/`, `index.html` racine ou `sante.html` racine ci-dessous sont **historiques**. Pour les éditions, suivre la carte actuelle de `AGENTS.md` et le contrat de continuité mis à jour.
 

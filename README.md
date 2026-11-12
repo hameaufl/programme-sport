@@ -53,8 +53,8 @@ La CI du dépôt teste les modèles, leurs frontières, l'absence de fuite dans 
 
 ## Exploitation et responsabilité
 
-- **Coach** écrit les seules données dans `domaines/*/donnees/` selon leur nature, vérifie les IDs et la traçabilité, et régénère les FIT prévus concernés.
-- **Maturation** gère les modules purs, contrats, adaptateurs, fichiers du Web, schémas, migration et validation, mais pas les faits sportifs ni les décisions cliniques.
+- **Coach** tient les seules données métier dans `domaines/*/donnees/`, vérifie les identifiants et la traçabilité, puis contrôle systématiquement leur restitution sur le site. Il peut corriger **uniquement les fragments Web qui affichent ces données métier**, si les projections existantes ne suffisent pas, sans toucher à l'interface générale. Aucun entraînement Garmin n'est créé/programmé automatiquement : les écritures MCP exigent des dates explicitement demandées.
+- **Maturation** gère les modules purs, contrats, adaptateurs, **l'architecture et l'interface générale du Web**, schémas, migration et validation, mais pas les faits sportifs ni les décisions cliniques. Les corrections de rendu local métier constituent la seule exception Web attribuée au Coach.
 - **Web** demeure supprimable sans affecter la création de séances ou la génération Garmin.
 
 [Contrat d'architecture](contrats/DEPENDANCES.md) · [Ports](contrats/PORTS.md) · [Plan de refonte](maturation/architecture/PLAN.md) · [Consignes Coach](docs/CONTRAT-CONTINUITE-COACH.md) · [Rôles](docs/ROLES.md)

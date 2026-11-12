@@ -305,3 +305,8 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - La page `addons/web/pages/equipements.html` lit `data/coaching/equipements.json` généré par le projecteur `adaptateurs/projections/coaching.cjs`. La politique standard active ce résumé ; la politique restreinte le désactive. Aucun stockage ni saisie navigateur, aucune synchronisation Garmin, aucune logique sportive dans le Web.
 - Présentation initiale basée sur les seules disponibilités confirmées : tapis de sol et ballon de gymnastique d'environ 80 cm. Leur présence est dérivée de la source, non codée en dur dans la page. Tout nouvel équipement confirmé doit apparaître après la prochaine publication, sans modification de l'interface.
 
+## 12 novembre 2026 — Habilitation métier ciblée du Coach sur les composants Web
+
+- Le propriétaire confirme une responsabilité de bout en bout lors des interventions métier : enregistrement canonique V2, contrôle systématique des éléments Web qui affichent les données concernées, correction locale du rendu uniquement si nécessaire, sans seconde demande.
+- La présentation générale (menus, navigation, structure globale, identité visuelle, styles partagés, nouveaux composants transverses), les ports, projections, contrats, scripts et CI restent exclusivement à Maturation. Aucun changement Web quand la projection existante est suffisante.
+- Consignes harmonisées dans `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/CONTRAT-CONTINUITE-COACH.md`, `README.md` et `docs/DECISIONS.md`. La lecture seule de « Mets-toi à jour » et les autorisations datées Garmin restent inchangées. Aucune page ni donnée métier modifiée par ce commit documentaire.
