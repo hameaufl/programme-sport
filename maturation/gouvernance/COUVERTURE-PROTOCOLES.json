@@ -1,0 +1,861 @@
+{
+  "schemaVersion": 1,
+  "dateAudit": "2026-11-13",
+  "branche": "maturation/architecture-multiagents",
+  "referenceAudit": "3a03784854495fb5fd07d42ecca96b42d2c2b62d",
+  "statut": "proposition_de_couverture_non_validee_par_le_gardien",
+  "totalExigences": 85,
+  "note": "Attribution exhaustive des 85 familles déjà recensées, pas preuve de conformité sémantique ni de couverture clause-par-clause de toutes les archives.",
+  "attributions": [
+    {
+      "id": "MAT-01",
+      "exigence": "Séparation stricte Planification / Activités / Santé / Coaching, sans import inverse ni duplication.",
+      "source_historique": "[AGENTS.md L176](../../AGENTS.md#L176)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests de frontières existants + vérification des ports",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-02",
+      "exigence": "Maintenir modèles, schémas, validations et modules de domaines purs.",
+      "source_historique": "[docs/ROLES.md L43](../../docs/ROLES.md#L43)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests modèles/CI, matrice des droits d'écriture",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-03",
+      "exigence": "Maintenir les ports de stockage remplaçables et la portabilité sans couplage Web/Garmin.",
+      "source_historique": "[contrats/DEPENDANCES.md L3](../../contrats/DEPENDANCES.md#L3)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Vérification portabilité sans Web",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-04",
+      "exigence": "Projections Web à liste blanche : refus par défaut, aucune source métier brute.",
+      "source_historique": "[contrats/DEPENDANCES.md L3](../../contrats/DEPENDANCES.md#L3)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests publication standard et politique restrictive",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-05",
+      "exigence": "Confidentialité : dépôt et Pages publics, mode dit privé non authentifié.",
+      "source_historique": "[AGENTS.md L176](../../AGENTS.md#L176)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Contrôle de non-fuite + alerte d'exposition",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-06",
+      "exigence": "Tests, scripts, pipelines GitHub Actions et publication restent techniques Maturation.",
+      "source_historique": "[AGENTS.md L103](../../AGENTS.md#L103)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "CI applicable, build, miroir Web et état réel du déploiement",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-07",
+      "exigence": "Vérifier build et déploiement, puis la version réellement servie ; commit seul insuffisant.",
+      "source_historique": "[docs/PROCEDURE-MIROIR-WEB.md L9](../../docs/PROCEDURE-MIROIR-WEB.md#L9)",
+      "proprietaires_suggeres": "Maturation + Coach (suivi)",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Vérifier buildVersion sur site et SHA",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-08",
+      "exigence": "Mise en page, navigation, en-tête partagé des quatre pages et lien marque.",
+      "source_historique": "[AGENTS.md L68](../../AGENTS.md#L68)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests composants communs, absence de duplication",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-09",
+      "exigence": "Rendu responsive, alignement date/logo, boutons accessibles, bandeaux harmonisés.",
+      "source_historique": "[AGENTS.md L91](../../AGENTS.md#L91)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests visuels/responsive et style commun",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-10",
+      "exigence": "Ne pas réintroduire navigation de pied ni liens et sous-titres redondants.",
+      "source_historique": "[AGENTS.md L97](../../AGENTS.md#L97)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests de non-régression UI",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-11",
+      "exigence": "Préserver noindex sans le présenter comme confidentialité.",
+      "source_historique": "[AGENTS.md L335](../../AGENTS.md#L335)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests robots/meta et communication de sécurité",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-12",
+      "exigence": "Coach peut corriger seulement un fragment de rendu métier local, jamais la structure Web générale.",
+      "source_historique": "[AGENTS.md L120](../../AGENTS.md#L120)",
+      "proprietaires_suggeres": "Maturation (frontière) + Coach",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Vérification ciblée du diff dans addons/web/pages",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-13",
+      "exigence": "Projeter l'orientation Coach sans exposer les rapports et notes internes.",
+      "source_historique": "[AGENTS.md L140](../../AGENTS.md#L140)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Contrat de publication + contrôle des champs",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-14",
+      "exigence": "Projeter uniquement les équipements disponibles autorisés, pas les notes ou états absents.",
+      "source_historique": "[AGENTS.md L132](../../AGENTS.md#L132)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Projection d'équipement filtrée, mode restreint",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-15",
+      "exigence": "Maintain adaptateur Garmin en lecture seule ; jamais d'écriture à la construction du site.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L78](../../adaptateurs/garmin/MCP.md#L78)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Absence d'effets de bord du build",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-16",
+      "exigence": "Respecter l'absence d'ajout visuel sans demande/approbation explicite.",
+      "source_historique": "[docs/ROLES.md L117](../../docs/ROLES.md#L117)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Diff UI borné à la demande",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-17",
+      "exigence": "Préserver mécanisme anti-cache Android et compatibilités retenues.",
+      "source_historique": "[AGENTS.md L267](../../AGENTS.md#L267)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Scénario de cache et de navigation Android",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-18",
+      "exigence": "Migration sans perte et historique intact ; identifiants conservés.",
+      "source_historique": "[contrats/DEPENDANCES.md L3](../../contrats/DEPENDANCES.md#L3)",
+      "proprietaires_suggeres": "Maturation + Contrôleur qualité",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Diff global SHA initial / branche / main actuel",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-19",
+      "exigence": "Contrôler schéma exact des en-têtes événements Santé et leur publication.",
+      "source_historique": "[docs/PROCEDURE-MIROIR-WEB.md L30](../../docs/PROCEDURE-MIROIR-WEB.md#L30)",
+      "proprietaires_suggeres": "Maturation (validation) + Analyste",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Échec du build sur mauvais en-tête",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-20",
+      "exigence": "Ne pas dupliquer les faits métier dans docs techniques ni dans HTML.",
+      "source_historique": "[AGENTS.md L428](../../AGENTS.md#L428)",
+      "proprietaires_suggeres": "Maturation + Coach",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Recherche de duplication et vérification des sources",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "MAT-21",
+      "exigence": "Respecter la destination unique « Mes équipements » dans l'en-tête, le titre et les tests.",
+      "source_historique": "[AGENTS.md L62](../../AGENTS.md#L62)",
+      "proprietaires_suggeres": "Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
+      "controle_attendu": "Tests de libellés et des quatre pages",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-01",
+      "exigence": "Relire le dernier contexte pertinent avant de conseiller ; conserver les incertitudes.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L61](../../docs/COACH-MODE-OPERATOIRE.md#L61)",
+      "proprietaires_suggeres": "Coach + Analyste",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Liste des sources consultées, datées",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-02",
+      "exigence": "« Mets-toi à jour » isolé = lecture seule, sans commit/Garmin.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L61](../../docs/COACH-MODE-OPERATOIRE.md#L61)",
+      "proprietaires_suggeres": "Coach",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Aucune écriture dans le diff",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-03",
+      "exigence": "Tout retour métier utile exige écriture dans le même échange, même sans adaptation du calendrier.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L107](../../docs/CONTRAT-CONTINUITE-COACH.md#L107)",
+      "proprietaires_suggeres": "Coach + Analyste",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Présence des éléments apportés dans les domaines",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-04",
+      "exigence": "Conserver intentions, contraintes, préférences, motivations, vécu, équipement, récupération et questions ouvertes.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L50](../../docs/CONTRAT-CONTINUITE-COACH.md#L50)",
+      "proprietaires_suggeres": "Analyste + Coach",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Extraction de chaque apport pertinent et liaison source",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-05",
+      "exigence": "Préserver la précision, provenance, date, unité, nuance, statut et motivation de chaque décision.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L84](../../docs/CONTRAT-CONTINUITE-COACH.md#L84)",
+      "proprietaires_suggeres": "Analyste + Gardien",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Relecture sans résumé destructeur",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-06",
+      "exigence": "Séparer faits réalisés, sensations rapportées, hypothèses, analyse, décisions et intentions.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L61](../../docs/COACH-MODE-OPERATOIRE.md#L61)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Contrôle d'origine et de statut",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-07",
+      "exigence": "Écrire dans les quatre domaines selon le type de fait ; ne pas doubler les sources.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L68](../../docs/COACH-MODE-OPERATOIRE.md#L68)",
+      "proprietaires_suggeres": "Analyste + Planificateur + Stratège",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Validation du chemin canonique par nature",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-08",
+      "exigence": "Une activité est réalisée seulement si confirmée ; une séance prévue n'est pas un fait.",
+      "source_historique": "[AGENTS.md L176](../../AGENTS.md#L176)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Aucun fait:true inféré du programme",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-09",
+      "exigence": "Renseigner spontanément structuresSollicitees non vide dans toute activité confirmée.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L81](../../docs/COACH-MODE-OPERATOIRE.md#L81)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Modèle Activités et miroir Web bloquants",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-10",
+      "exigence": "Structures anatomiques précises regroupées par région/fonction, pas de diagnostic inventé.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L81](../../docs/COACH-MODE-OPERATOIRE.md#L81)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Relecture des gestes confirmés et libellés",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-11",
+      "exigence": "Conserver exercicesRealises exacts, volumes et unités connus ; rien déduit du plan.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L81](../../docs/COACH-MODE-OPERATOIRE.md#L81)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Comparaison rapport source / activités réalisées",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-12",
+      "exigence": "Ressentis courts, fidèles et séparés ; rapport narratif si nuances nécessaires.",
+      "source_historique": "[docs/ROLES.md L135](../../docs/ROLES.md#L135)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Contrôle de non-perte du rapport et du résumé",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-13",
+      "exigence": "Événements et rapports Santé : titres stricts et provenance, pas de détails inventés.",
+      "source_historique": "[docs/PROCEDURE-MIROIR-WEB.md L30](../../docs/PROCEDURE-MIROIR-WEB.md#L30)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Validation syntaxique événement et source",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-14",
+      "exigence": "Lier par identifiants stables, dates/archives conservées, aucune réécriture rétroactive.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L68](../../docs/COACH-MODE-OPERATOIRE.md#L68)",
+      "proprietaires_suggeres": "Analyste + Planificateur",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Contrôle diff et identifiants",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-15",
+      "exigence": "Conserver informations transversales utiles même non visibles sur le site.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L50](../../docs/CONTRAT-CONTINUITE-COACH.md#L50)",
+      "proprietaires_suggeres": "Analyste",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Relecture du contexte durable, sans perte de nuances",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "SUI-16",
+      "exigence": "Dépôt public : secrets et informations personnelles non autorisées exclus des publications.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L130](../../docs/CONTRAT-CONTINUITE-COACH.md#L130)",
+      "proprietaires_suggeres": "Analyste + Contrôleur qualité",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
+      "controle_attendu": "Contrôle de non-fuite et vigilance sur les ajouts sensibles",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "STR-01",
+      "exigence": "Objectifs personnels canoniques objectifs.json, sans copie concurrente dans l'orientation.",
+      "source_historique": "[AGENTS.md L140](../../AGENTS.md#L140)",
+      "proprietaires_suggeres": "Stratège",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
+      "controle_attendu": "Vérification objectif/stratégie",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "STR-02",
+      "exigence": "Actualiser orientation.json dans le même changement quand phase, intentions ou vigilances évoluent.",
+      "source_historique": "[AGENTS.md L140](../../AGENTS.md#L140)",
+      "proprietaires_suggeres": "Stratège",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
+      "controle_attendu": "Contrôle de fraîcheur et sources de l'orientation",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "STR-03",
+      "exigence": "Privilégier confort et reprise, pas de progression automatique ; s'adapter aux retours.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L61](../../docs/COACH-MODE-OPERATOIRE.md#L61)",
+      "proprietaires_suggeres": "Stratège",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
+      "controle_attendu": "Justification de l'arbitrage à partir des faits",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "STR-04",
+      "exigence": "Après un retour, décider maintien, allégement, report ou attente, pas progression systématique.",
+      "source_historique": "[docs/ROLES.md L124](../../docs/ROLES.md#L124)",
+      "proprietaires_suggeres": "Stratège + Coach",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
+      "controle_attendu": "Trace du choix et des éléments motivants",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "STR-05",
+      "exigence": "Conserver contexte et raison des changements, décisions remplacées et incertitudes.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L84](../../docs/CONTRAT-CONTINUITE-COACH.md#L84)",
+      "proprietaires_suggeres": "Stratège + Gardien",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
+      "controle_attendu": "Lien à la décision antérieure, statut et date",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "STR-06",
+      "exigence": "Ne pas prendre des signes ponctuels pour une guérison ; pas de diagnostic.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L101](../../docs/COACH-MODE-OPERATOIRE.md#L101)",
+      "proprietaires_suggeres": "Stratège + Analyste",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
+      "controle_attendu": "Contrôle des formulations prudentes et conditions de reprise",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-01",
+      "exigence": "Séance prescrite dans les blocs V2 et cycle.json, sans fait/sensations.",
+      "source_historique": "[AGENTS.md L176](../../AGENTS.md#L176)",
+      "proprietaires_suggeres": "Planificateur",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Validation du modèle Planification",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-02",
+      "exigence": "Historique, dates, IDs, cours/Kiné et séances effectuées préservés.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L68](../../docs/COACH-MODE-OPERATOIRE.md#L68)",
+      "proprietaires_suggeres": "Planificateur",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Protection des dates et programmes réalisés",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-03",
+      "exigence": "Renfo actuellement actif : seul 13 novembre non réalisé, anciens brouillons archivés.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L42](../../docs/COACH-MODE-OPERATOIRE.md#L42)",
+      "proprietaires_suggeres": "Planificateur",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Lecture de l'état canonique avant toute décision",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-04",
+      "exigence": "Échauffement et étirements, trois exercices, volumes complets en source.",
+      "source_historique": "[AGENTS.md L46](../../AGENTS.md#L46)",
+      "proprietaires_suggeres": "Planificateur",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Blocs structurés, cinq étapes, durées métier",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-05",
+      "exigence": "Projet Renfo visible épuré sans supprimer durées/séries/repetitions métiers.",
+      "source_historique": "[AGENTS.md L46](../../AGENTS.md#L46)",
+      "proprietaires_suggeres": "Planificateur + Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Comparaison source de prescription / projection",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-06",
+      "exigence": "Choix d'exercices officiels et adaptés au matériel vérifié, sans identité Garmin inventée.",
+      "source_historique": "[AGENTS.md L153](../../AGENTS.md#L153)",
+      "proprietaires_suggeres": "Planificateur + Spécialiste Garmin",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Validation clé, catégorie, geste, matériel",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-07",
+      "exigence": "Conserver les aides PNG approuvées et les liens pour chaque exercice Renfo.",
+      "source_historique": "[AGENTS.md L240](../../AGENTS.md#L240)",
+      "proprietaires_suggeres": "Planificateur + Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Contrôle banque/associations et rendu",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-08",
+      "exigence": "Ne pas recréer automatiquement plusieurs Renfos après remise à zéro du plan.",
+      "source_historique": "[AGENTS.md L79](../../AGENTS.md#L79)",
+      "proprietaires_suggeres": "Planificateur",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Contrôle des dates planifiées actuelles et des archives",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-09",
+      "exigence": "Étirements doux non forcés, récupération adaptée, sans inférer leur réalisation.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L101](../../docs/COACH-MODE-OPERATOIRE.md#L101)",
+      "proprietaires_suggeres": "Planificateur + Stratège",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Confort, récupération et maintien de l'historique",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "PLA-10",
+      "exigence": "Ne pas modifier la planification pour simuler des faits réellement effectués.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L42](../../docs/CONTRAT-CONTINUITE-COACH.md#L42)",
+      "proprietaires_suggeres": "Planificateur + Analyste",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
+      "controle_attendu": "Frontière plan / activité confirmée",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-01",
+      "exigence": "Aucune écriture MCP sans demande précise pour les dates explicitement autorisées.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L59](../../adaptateurs/garmin/MCP.md#L59)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Trace des autorisations et dates",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-02",
+      "exigence": "Lire bibliothèque, modèles et calendrier avant toute création ou programmation.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L59](../../adaptateurs/garmin/MCP.md#L59)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Preuve get_workouts et get_scheduled_workouts",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-03",
+      "exigence": "Réutiliser modèles identiques, empreinte complète ; ne pas multiplier les copies par date.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L59](../../adaptateurs/garmin/MCP.md#L59)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Comparaison signature et IDs distants",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-04",
+      "exigence": "Relire après création et vérifier sport, 17 étapes, répétitions, repos, descriptions, chaque exerciseName.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L47](../../adaptateurs/garmin/MCP.md#L47)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "get_workout_by_id(raw=true), comparaison exhaustive",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-05",
+      "exigence": "Ne pas inventer zones cardio, catégories, identifiants, allures, répétitions ou étapes.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L70](../../adaptateurs/garmin/MCP.md#L70)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Validation DTO et catalogues officiels",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-06",
+      "exigence": "Prendre le nom dans objectif/phase en cours, sans marque du site ni suffixe de dépannage.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L3](../../adaptateurs/garmin/MCP.md#L3)",
+      "proprietaires_suggeres": "Spécialiste Garmin + Stratège",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Concordance avec objectifs.json et orientation.json",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-07",
+      "exigence": "Le nom exact vérifié est persisté nomEntrainementMontre et affiché dans le titre prévu.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L13](../../adaptateurs/garmin/MCP.md#L13)",
+      "proprietaires_suggeres": "Spécialiste Garmin + Planificateur + Maturation",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Titre Programme prévu · nom / modèles vus",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-08",
+      "exigence": "Nettoyage des copies créées et non conformes : aperçu, vérification, suppression bornée.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L82](../../adaptateurs/garmin/MCP.md#L82)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "conflit a arbitrer",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Clarifier F:47 contre F:82 sans effacer l'historique",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-09",
+      "exigence": "Planifier, déplacer, supprimer et envoyer vers la montre sont des opérations distinctes.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L59](../../adaptateurs/garmin/MCP.md#L59)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Autorisation spécifique par type d'effet",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-10",
+      "exigence": "Succès MCP ou calendrier ne prouvent ni réalisation ni synchronisation montre.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L59](../../adaptateurs/garmin/MCP.md#L59)",
+      "proprietaires_suggeres": "Spécialiste Garmin + Analyste",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Relecture distante et distinction statuts",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-11",
+      "exigence": "Fichiers FIT/générateur local abrogés en V2 malgré les instructions plus anciennes.",
+      "source_historique": "[AGENTS.md L165](../../AGENTS.md#L165)",
+      "proprietaires_suggeres": "Spécialiste Garmin + Maturation + Gardien",
+      "statut_ancien_audit": "conflit a arbitrer",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Statut remplacé explicite pour A:216, A:271, anciens docs",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-12",
+      "exigence": "Erreur/échec partiel : arrêter, relire, ne pas réessayer à l'aveugle.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L70](../../adaptateurs/garmin/MCP.md#L70)",
+      "proprietaires_suggeres": "Spécialiste Garmin",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Rapport d'erreur et preuve avant reprise",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "GAR-13",
+      "exigence": "Aucun identifiant de compte, cookie, jeton ou secret Garmin dans le dépôt public.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L70](../../adaptateurs/garmin/MCP.md#L70)",
+      "proprietaires_suggeres": "Spécialiste Garmin + Contrôleur qualité",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
+      "controle_attendu": "Vérification de confidentialité",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "COO-01",
+      "exigence": "Coach choisit les rôles métier utiles et applique leurs protocoles successivement.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Coach",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
+      "controle_attendu": "Routage tracé par demande",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "COO-02",
+      "exigence": "Aucune création d'agents indépendants fictifs ; API payante et serveur exclus.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Coach",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
+      "controle_attendu": "Transparence du compte rendu et zéro coût supplémentaire",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "COO-03",
+      "exigence": "Obligation de livraison dans la même conversation, jamais annoncer un commit absent.",
+      "source_historique": "[docs/CONTRAT-CONTINUITE-COACH.md L107](../../docs/CONTRAT-CONTINUITE-COACH.md#L107)",
+      "proprietaires_suggeres": "Coach",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
+      "controle_attendu": "Prouver commit/push et expliquer les blocages",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "COO-04",
+      "exigence": "Ne pas mélanger rôles, ni étendre les permissions Web par délégation.",
+      "source_historique": "[docs/ROLES.md L8](../../docs/ROLES.md#L8)",
+      "proprietaires_suggeres": "Coach",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
+      "controle_attendu": "Contrôle de diff et escalade Maturation",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "COO-05",
+      "exigence": "Réponse Coach concise, avec lien Mon Rythme quand pertinent et détail sur demande.",
+      "source_historique": "[docs/ROLES.md L154](../../docs/ROLES.md#L154)",
+      "proprietaires_suggeres": "Coach",
+      "statut_ancien_audit": "non transcrite",
+      "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
+      "controle_attendu": "Relecture de la réponse finale",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "COO-06",
+      "exigence": "La branche expérimentale ne doit pas activer de comportement sur main sans accord.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Coach + Maturation",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
+      "controle_attendu": "Diff branche/main et approbation écrite",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "REF-01",
+      "exigence": "Distinguer décisions actives, remplacées, historiques, ouvertes et leurs liens.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Gardien",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
+      "controle_attendu": "Registre versions/sources",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "REF-02",
+      "exigence": "Détecter proactivement contradictions, doublons, règles obsolètes et trous.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Gardien",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
+      "controle_attendu": "Registre des incohérences",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "REF-03",
+      "exigence": "Valider préalablement toute proposition de modification des comportements.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Gardien",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
+      "controle_attendu": "Visa daté relié à un diff",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "REF-04",
+      "exigence": "N'applique pas les changements ; ne tranche pas seul les décisions sportives.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Gardien",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
+      "controle_attendu": "Séparation validation/application",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "REF-05",
+      "exigence": "Ses propres règles changent seulement après approbation expresse du propriétaire.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Gardien + propriétaire",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
+      "controle_attendu": "Preuve d'autorisation du propriétaire",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "REF-06",
+      "exigence": "Le registre actif est seulement index : ne pas copier les sources métier.",
+      "source_historique": "[contrats/DEPENDANCES.md L3](../../contrats/DEPENDANCES.md#L3)",
+      "proprietaires_suggeres": "Gardien",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
+      "controle_attendu": "Lien aux sources, absence de doublons/infos sensibles",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "REF-07",
+      "exigence": "Conflit nommage Garmin actuel/historique exige statut de priorité explicite.",
+      "source_historique": "[adaptateurs/garmin/MCP.md L3](../../adaptateurs/garmin/MCP.md#L3)",
+      "proprietaires_suggeres": "Gardien",
+      "statut_ancien_audit": "conflit a arbitrer",
+      "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
+      "controle_attendu": "Graphe de supersession, plus récent Reprise - Renfo A",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "QUA-01",
+      "exigence": "Contrôle final obligatoire et proportionné à toute demande Coach.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Contrôleur qualité",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
+      "controle_attendu": "Verdict validé/refusé/bloqué",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "QUA-02",
+      "exigence": "Comparer résultats au référentiel réellement validé, citer sources/versions.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Contrôleur qualité",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
+      "controle_attendu": "Version des règles, preuves/écarts",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "QUA-03",
+      "exigence": "Ne pas auto-certifier avec le même LLM une validation indépendante fictive.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Contrôleur qualité",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
+      "controle_attendu": "Distinguer revue logique et tests automatisés",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "QUA-04",
+      "exigence": "Après livraison métier, vérifier sources, projections, tests, CI et version Web servie.",
+      "source_historique": "[docs/PROCEDURE-MIROIR-WEB.md L9](../../docs/PROCEDURE-MIROIR-WEB.md#L9)",
+      "proprietaires_suggeres": "Contrôleur qualité",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
+      "controle_attendu": "Étapes CI/Pages réellement exécutées et publiées",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "QUA-05",
+      "exigence": "Inspecter non-perte des sources, archives, données santé et détails de prescriptions.",
+      "source_historique": "[docs/COACH-MODE-OPERATOIRE.md L101](../../docs/COACH-MODE-OPERATOIRE.md#L101)",
+      "proprietaires_suggeres": "Contrôleur qualité",
+      "statut_ancien_audit": "partielle",
+      "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
+      "controle_attendu": "Diff depuis base, empreintes, jamais perte silencieuse",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    },
+    {
+      "id": "QUA-06",
+      "exigence": "Si règle manquante/contradictoire, bloquer et solliciter Gardien/arbitrage.",
+      "source_historique": "[AGENTS.md L3](../../AGENTS.md#L3)",
+      "proprietaires_suggeres": "Contrôleur qualité",
+      "statut_ancien_audit": "explicite",
+      "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
+      "controle_attendu": "Verdict bloqué et référence au conflit",
+      "statut_nouvelle_attribution": "proposee_non_validee"
+    }
+  ]
+}

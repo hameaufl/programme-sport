@@ -23,3 +23,9 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Verdict et écarts](AUDIT-COUVERTURE.md) : constats et blocages avant activation.
 - [Matrice de couverture](MATRICE-COUVERTURE.md) : exigences, références, propriétaires proposés et preuves attendues.
 - [Inventaire des rubriques](INVENTAIRE-RUBRIQUES.json) : index vérifiable des sections de huit textes normatifs, sans copie de leurs données.
+
+## Protocoles proposés (13 novembre 2026 — non validés)
+- [Fiches des huit rôles](agents/) : procédures de travail spécialisées et restrictions héritées, sans activation automatique.
+- [Attributions cibles](COUVERTURE-CIBLE.md) et [table de correspondance](COUVERTURE-PROTOCOLES.json) : 85 exigences historiques regroupées, chacune liée à un responsable **proposé**.
+- [Contradictions et obsolescences](referentiel/INCOHERENCES.md) : huit questions à qualifier par le Gardien.
+- [Dossier de revue du Gardien](REVUE-GARDIEN-A-VALIDER.md) : examen explicitement **en attente**, pas de visa fictif.

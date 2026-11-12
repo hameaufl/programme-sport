@@ -71,3 +71,11 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Lacunes : continuité métier fine, activités/structures sollicitées, orientation, prescriptions Renfo, garanties Garmin, règles de présentation et publication. Conflits documentaires : anciens noms Garmin, nettoyage de copies, génération FIT abrogée, ancienne interdiction Web totale et chemins `personnel/` obsolètes.
 - **Verdict : activation sur `main` non acceptable en l'état** ; correction, avis réel du Gardien et tests comparatifs à effectuer. L'audit n'est pas une certification clause-par-clause et ne crée aucune validation implicite du Gardien.
 - Aucune donnée métier ni règle sportive modifiée lors de l'audit ; aucun appel Garmin ; branche et PR brouillon conservées sans fusion.
+
+## 13 novembre 2026 — Phase suivante : protocoles spécialisés proposés, sans activation
+- À la demande du propriétaire, Maturation a préparé **huit fiches opérationnelles dans `maturation/gouvernance/agents/`** : Maturation, Gardien, Coach, Analyste, Stratège, Planificateur, Garmin et Contrôleur qualité. Ces fiches restent explicitement au statut **brouillon**, non normatif, jusqu'à examen et validation.
+- Les **85 familles d'exigences** de la matrice du 12 novembre ont toutes été attribuées exactement une fois à une fiche cible via `COUVERTURE-PROTOCOLES.json`. **Ceci est une traçabilité d'affectation, pas une preuve d'exhaustivité sémantique ni d'efficacité comportementale**.
+- Huit dossiers de contradictions et d'obsolescence documentaires sont consignés dans `referentiel/INCOHERENCES.md` ; l'historique reste conservé. Le dossier `REVUE-GARDIEN-A-VALIDER.md` sollicite l'examen de la cohérence et la qualification des priorités, sans usurper un visa.
+- La fonction Contrôleur qualité reste obligatoire dans le fonctionnement cible ; même modèle ChatGPT = pas de contrôle indépendant fictif. Les scripts/CI et le contrôle de publication effective restent déterminants.
+- **Aucune instruction existante de `AGENTS.md` n'a été remplacée lors de cette étape**, aucune source métier changée, aucune opération Garmin, aucune fusion ou déploiement sur `main`.
+- **Prochain jalon :** avis réellement tracé du Gardien / arbitrages nécessaires, puis intégration des modifications validées par Maturation, contrôles déterministes de non-perte et scénarios comparatifs.

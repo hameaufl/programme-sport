@@ -27,3 +27,6 @@
 - `AGENTS.md` et `docs/ROLES.md` contiennent des prescriptions historiques sur le nom Garmin, les fichiers FIT et le périmètre Web ; leurs passages plus récents peuvent primer, mais le Gardien doit **documenter explicitement les supersessions** pour éviter des directives simultanément ambiguës.
 - Les recommandations d'architecture en cours de discussion ne doivent pas être qualifiées de décisions sportives.
 - Les incohérences découvertes doivent être enregistrées (statut ouvert/arbitré/clos, sources, gravité, autorité compétente) dans un futur registre dédié ; aucune correction silencieuse.
+
+## 13 novembre 2026 — Dossiers d'incohérence soumis au Gardien
+Le registre [INCOHERENCES.md](INCOHERENCES.md) répertorie INC-001 à INC-008 et leur interprétation **proposée** par Maturation. Ce registre est ouvert, non visé ; aucune contradiction n'est réputée arbitrée du seul fait qu'une interprétation est indiquée. Voir aussi [la revue à valider](../REVUE-GARDIEN-A-VALIDER.md).

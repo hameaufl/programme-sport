@@ -60,3 +60,11 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 
 ## Workflows existants
 `.github/workflows/verifier-refonte.yml` exécute les contrôles de refonte sur les **pull requests** (et les pushes `refonte/**`) ; l'ouverture d'une PR en brouillon depuis `maturation/architecture-multiagents` peut donc vérifier la branche sans publier GitHub Pages. `.github/workflows/publier-pages.yml` est déclenché sur `main` et n'est pas activé par cette branche seule. Des validations de gouvernance supplémentaires sont **à développer ultérieurement** : leur absence ne doit pas être masquée.
+
+## Jalons ajoutés le 13 novembre 2026
+- [x] Fiches **proposées** des huit rôles, sans changement des instructions actives `AGENTS.md`.
+- [x] Affectation documentaire des 85 familles de la matrice et dossier des contradictions.
+- [ ] Revue sémantique du Gardien **réellement tracée** ; statut actif/remplacé des règles qualifié et arbitrages réalisés.
+- [ ] Contrôle déterministe de la couverture et de la non-perte ajouté à la CI (aucun test automatique nouveau n'est annoncé comme opérationnel à ce stade).
+- [ ] Tests comparatifs du Coach ancien/nouveau sur la branche, sans modifier les faits ni Garmin.
+- [ ] Accord explicite du propriétaire avant toute fusion dans `main`.
