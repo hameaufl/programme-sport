@@ -168,3 +168,9 @@
 - **Nouvelle observation rapportée :** durant le test des Saucony avec semelles sur tapis, l'utilisateur a eu l'impression que la douleur sous le pied droit pouvait avoir disparu, mais précise qu'elle **reste présente globalement**. Il évoque lui-même, avec incertitude, un effet résiduel de la sortie du 11 novembre.
 - **Analyse :** signal de confort potentiellement favorable, **non confirmé**, et en présence de symptômes persistants. Impossible à ce stade d'isoler l'effet des chaussures, des semelles ou du tapis ; ne pas conclure à une guérison ni fixer un nouveau niveau de douleur.
 - **Décision inchangée :** la course du 13 novembre n'est pas validée par ce test. Si la douleur plantaire importante à l'appui demeure, éviter la course et demander un avis professionnel si elle persiste ou s'aggrave. Attendre une mise à jour des symptômes pour décider d'un maintien, allègement ou report ; aucun changement de plan ni de Garmin.
+
+## 12 novembre 2026 — Suivi explicite de l'essai sur tapis, hors cycle planifié
+
+- **Fait maintenant précisé :** essai des chaussures avec semelles en magasin sur tapis le 12 novembre : **3 × 8 min de course**, vitesse **8–10 km/h** ; 24 minutes courues confirmées, pauses et temps total non détaillés. Ce volume remplace la seule approximation 20–30 min pour l'activité suivie.
+- **Décision de suivi demandée :** enregistrer l'essai comme une **activité réellement effectuée**, indépendante du programme initial. Créer son identifiant de référence sans inventer un entraînement qui aurait été programmé à l'avance. Les repères datés des 11 et 12 novembre prennent les libellés demandés. Les données restent les sources du Web.
+- **Vigilance inchangée :** aucune douleur de hanche rapportée pendant l'essai, douleur plantaire possiblement atténuée pendant le test mais encore présente globalement. Aucun lien de cause démontré ; la course prévue le 13 reste conditionnelle, pas de création Garmin.

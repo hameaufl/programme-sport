@@ -219,3 +219,10 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 
 - Le propriétaire **croit avoir ressenti une diminution, voire une disparition temporaire** de la douleur plantaire droite pendant les essais en magasin. Il souligne toutefois que la douleur **reste globalement présente** et n'est pas en mesure d'expliquer pourquoi ; hypothèse personnelle d'un reliquat de la sortie du 11 novembre.
 - **Qualification :** ressenti incertain, sans score ni absence durable confirmée. À enregistrer dans l'événement Santé du 12 novembre et le profil ; ne pas compter le test comme une séance d'entraînement autonome. Prudence inchangée pour la course du 13, sans mise à jour des séances ni du calendrier Garmin.
+
+## 12 novembre 2026 — Repères Web et séance d'essai précisée
+
+- **Demande du propriétaire :** « Première sortie de course à pied » pour le repère du 11 novembre, « Échange des chaussures de running » pour celui du 12 novembre ; titres alimentés par les événements canoniques de Santé, sans valeur codée en dur dans le HTML.
+- **Course d'essai du 12 au soir :** **3 fractions de 8 minutes de course sur tapis, entre 8 et 10 km/h**, soit **24 minutes de course cumulée**. La durée des pauses et le détail des chaussures portées lors de chaque fraction ne sont pas connus. Les nouvelles semelles orthopédiques étaient présentes.
+- **Correction d'interprétation :** auparavant conservé seulement comme essai comparatif en magasin, le test doit désormais apparaître comme **activité réalisée** dans Mon Rythme, sur demande explicite, sans être compté comme une sortie prescrite du cycle initial. Santé conserve les sensations sans attribuer une cause certaine aux différences entre tapis et goudron.
+- **Technique métier :** liaison par `course-tapis-2026-11-12` dans Planification (référence de calendrier sans prescription inventée), Activités (réalisation), Santé (ressentis et rapport). Aucune action Garmin ni modification de la sortie du 11 novembre ou des dates futures.
