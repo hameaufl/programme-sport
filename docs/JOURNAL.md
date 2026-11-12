@@ -186,7 +186,8 @@
 - **Travail Maturation** : générateur `scripts/generer-garmin.cjs`, premier vrai fichier FIT binaire sous `personnel/pieces-jointes/seances/course-2026-11-11/prevu/`, validations FIT et intégrité dans `scripts/verifier-site.cjs`, lien de téléchargement du détail de séance.
 - **Coach** : consignes permanentes de génération automatique pour les modèles reconnus ; aucun FIT approximatif, aucun FIT Activity fictif, aucune cible d'allure ou de FC inventée.
 - **Limite** : conformité binaire testée, **acceptation par Garmin Venu 4 non démontrée** ; transfert à confirmer sans MCP Garmin.
-- **Déploiement** : à contrôler après GitHub Actions.
+- **Déploiement confirmé** : [run 43130205690](https://github.com/hameaufl/programme-sport/actions/runs/43130205690), `completed / success` (tests, build, artefact et publication GitHub Pages). Commit principal : `09abd968dd452b607a70be711d9cab4862dabf54`.
+- **Contrôle indépendant** : le blob FIT publié correspond au fichier de 395 octets, SHA Git `83c34a15985b80227b789f4e4b8d7c305cc0c217` ; CRC de l'en-tête et du fichier confirmé par un second algorithme bit-à-bit. Les 7 étapes totalisent 1 020 secondes. **Acceptation dans Garmin Connect ou sur la Venu 4 non testée**.
 
 ## Journal futur
 
