@@ -16,8 +16,8 @@ for(const w of index.semaines){
 }
 assert.equal(count,require("../../adaptateurs/fichiers/depots.cjs").planification.seances().length,"Programmes conservés en mode de publication restreinte");
 assert.ok(!fs.existsSync(path.join(site,"data/sante/profil.md")),"Profil Santé publié malgré l'interdiction");
-assert.ok(!fs.existsSync(path.join(site,"fichiers/garmin")),"Fichiers FIT publiés malgré l'interdiction");
+assert.ok(!fs.existsSync(path.join(site,"fichiers/garmin")),"Un ancien stockage de fichiers externes a été publié");
 assert.ok(!fs.existsSync(path.join(site,"personnel")),"Ancien dossier personnel publié");
 const journal=read("data/sante/journal/index.json");
 assert.equal(journal.total,0);
-console.log("Publication restreinte conforme : aucune santé, aucun FIT, programme conservé.");
+console.log("Publication restreinte conforme : aucune donnée Santé ni binaire externe, programme conservé.");
