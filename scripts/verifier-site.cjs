@@ -60,4 +60,15 @@ assert.ok(html.includes('fitDisplay(s)')&&html.includes('link.href="./"+entry.ch
 assert.ok(!html.includes("Importer dans Garmin Connect"),"Ne pas promettre un import Garmin Connect non documenté");
 assert.ok(html.includes("Télécharger l'entraînement Garmin (.FIT)"),"L'intitulé du lien de téléchargement doit être conservé");
 assert.ok(!html.includes("Fichier d'entraînement prévu · transfert vers Venu 4 à tester")&&!html.includes("garmin-note"),"Aucun avertissement technique affiché sous le lien Garmin");
+const titlesStart=html.indexOf("  function titreActiviteJour(s) {");
+const titlesEnd=html.indexOf("  function render() {",titlesStart);
+assert.ok(titlesStart>=0&&titlesEnd>titlesStart, "Fonctions de libellé des jours absentes");
+const {titreActiviteJour,resumeJour}=vm.runInNewContext(html.slice(titlesStart,titlesEnd)+"\n({titreActiviteJour,resumeJour});");
+assert.equal(resumeJour([]),"—", "Jour sans séance inchangé");
+assert.equal(resumeJour([{type:"course"}]),"Course", "Majuscule pour une sortie seule");
+assert.equal(resumeJour([{type:"course"},{type:"kine"}]),"Course, Kiné", "Virgule et espace entre deux activités");
+assert.equal(resumeJour([{type:"course"},{type:"kine"},{type:"mobilité"}]),"Course, Kiné, Mobilité", "Toutes les activités doivent apparaître, même au-delà de deux");
+assert.equal(resumeJour([{type:"course"},{type:"course"}]),"Course, Course", "Ne pas masquer une seconde séance du même type");
+assert.ok(html.includes("var label=resumeJour(dailySessions);"), "Le calendrier doit utiliser les libellés composés");
+assert.ok(!html.includes("Course + kiné"), "L'ancien séparateur + doit disparaître");
 console.log("Validation OK :",data.sessions.length,"séances,",data.reports.size,"rapports,",data.events.length,"événements ; 5000 séances fictives regroupées sans perte.");

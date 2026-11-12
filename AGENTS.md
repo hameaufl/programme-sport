@@ -1,5 +1,11 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Présentation du calendrier — libellés de plusieurs activités
+
+- Dans **chaque case du calendrier hebdomadaire**, lister les activités du jour **dans l'ordre**, avec **une virgule suivie d'un espace** entre chaque élément (ex. **« Course, Kiné »**), **sans signe « + »**.
+- Chaque intitulé commence par une **majuscule** (Course, Kiné, Mobilité, etc.). En présence de deux séances du même type, conserver **deux intitulés** : chaque séance doit rester représentée.
+- Une journée sans activité affiche « — ». **Ne pas modifier `type`, `titre` ni aucune donnée de `personnel/`** : ce changement est une règle d'affichage de Maturation.
+
 ## Continuité métier du Coach — dépôt GitHub comme mémoire intégrale (priorité absolue)
 
 **Exigence du propriétaire : la qualité de personnalisation doit rester identique si l'agent LLM Coach change.** Le Coach ne doit **jamais conserver uniquement dans la conversation** une connaissance métier utile à la programmation. **Toute information, nuance et décision exploitable pour personnaliser le programme, quel que soit le domaine** (santé, contraintes de vie, horaires, matériel, habitudes, préférences, motivations, historique, retours, objectifs, critères et raisons des adaptations, inconnues), doit être **écrite et vérifiée sur GitHub dans le même échange**, même sans modification immédiate du calendrier.

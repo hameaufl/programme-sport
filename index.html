@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-garmin-lien-simple-v15">
+  <meta name="mon-rythme-version" content="2026-11-12-libelles-jour-virgule-v16">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -229,6 +229,15 @@
     return box;
   }
 
+  function titreActiviteJour(s) {
+    var type=typeof s.type==="string"&&s.type.trim()?s.type.trim():"Séance";
+    if(type==="kine")return "Kiné";
+    if(type==="course")return "Course";
+    return type.charAt(0).toLocaleUpperCase("fr-FR")+type.slice(1);
+  }
+  function resumeJour(sessions) {
+    return sessions.length?sessions.map(titreActiviteJour).join(", "):"—";
+  }
   function render() {
     var goals=document.getElementById("goalsList");goals.replaceChildren();
     (objectifs).forEach(function(g){if(typeof g==="string"&&g.trim())goals.appendChild(elem("li","",g));});
@@ -245,8 +254,7 @@
       btn.appendChild(elem("span","short",format(d,{weekday:"short"})+(key(d)===key(today)?" · auj.":"")));
       btn.appendChild(elem("span","num",String(d.getDate())));
       btn.appendChild(elem("span","month",format(d,{month:"long"})));
-      var sessions=getDay(i);var hasKine=sessions.some(function(s){return s.type==="kine";});var hasCourse=sessions.some(function(s){return s.type!=="kine";});
-      var label=hasKine&&hasCourse?"Course + kiné":hasKine?"Kiné":hasCourse?"Course":"—";
+      var label=resumeJour(dailySessions);
       var allCompleted=count>0&&done===count;
       btn.appendChild(elem("span","status"+(count?" planned":"")+(allCompleted?" complete":""),allCompleted?"✓ "+label:label));
       days.appendChild(btn);

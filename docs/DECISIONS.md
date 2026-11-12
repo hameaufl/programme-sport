@@ -168,3 +168,8 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Exceptions** : « Mets-toi à jour » seul demeure une opération **strictement en lecture seule**. Les connaissances de conversations antérieures inaccessibles ne peuvent pas être reconstituées automatiquement. **Dépôt public** : pas de garantie de confidentialité.
 - **Mise en œuvre Maturation** : contrat technique [CONTRAT-CONTINUITE-COACH.md](CONTRAT-CONTINUITE-COACH.md), règles de priorité et de reprise dans `AGENTS.md`, `docs/ROLES.md` et `docs/REPRISE.md`. Pas d'impact sur `personnel/` ni sur les pages HTML.
 
+## 12 novembre 2026 — Libellé des journées à plusieurs activités
+
+- Demande : dans les cases du calendrier, afficher les activités **séparées par « , » (virgule et espace)** au lieu de « + », avec **une majuscule initiale pour chacune**. Exemple : **« Course, Kiné »**.
+- Le rendu prend en compte **toutes** les activités du jour dans leur ordre, pas seulement la présence de Course et Kiné, et ne fusionne pas deux séances de même type. Aucun élément de navigation ou champ personnel modifié.
+- La vérification prépublication teste les journées à zéro, une, deux et trois séances, y compris une double activité du même type ; version HTML synchronisée entre les deux pages.

@@ -207,6 +207,14 @@
 - **Périmètre** : aucun contenu personnel reformulé ou ajouté, aucun fichier `personnel/` changé ; règles, pas de transfert rétroactif fictif depuis des conversations inaccessibles.
 - **Contrôle** : vérifier que le commit et les instructions sont lisibles sur `main`. Modification documentaire uniquement ; aucune republication Pages requise.
 
+## 12 novembre 2026 — Séparateur des activités quotidiennes
+
+- **Correction Maturation** : remplacement du libellé figé « Course + kiné » par une construction à partir de chaque séance du jour, avec une majuscule par activité et un séparateur **« , »**.
+- **Exemples contrôlés** : « Course », « Course, Kiné », « Course, Kiné, Mobilité » et « Course, Course » ; « — » pour un jour sans séance.
+- **Périmètre** : `index.html`, tests `scripts/verifier-site.cjs` et documentation de la présentation, sans modification des données du Coach ni de la navigation.
+- **Versions** : `2026-11-12-libelles-jour-virgule-v16` dans les deux pages et le témoin.
+- **Publication** : à vérifier après l'exécution GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.
