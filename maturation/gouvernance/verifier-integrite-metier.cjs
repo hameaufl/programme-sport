@@ -8,6 +8,7 @@ const fs = require("node:fs");
 const ROOT = path.resolve(__dirname, "../..");
 const BASE = "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
 const ALLOWED_WORKFLOW = ".github/workflows/verifier-gouvernance.yml";
+const INITIAL_PROTOTYPE = "7a8016955cf74f312e40fc7b82bccca84020c9eb";
 const HISTORICAL_PREFIX = "## RÈGLE MÉTIER ABSOLUE — Nommage Garmin";
 
 function allowed(file) {
@@ -40,6 +41,7 @@ function verifiedMain() {
   try { return git(["rev-parse", "--verify", "refs/remotes/origin/main"]); }
   catch { throw Error("Référence origin/main introuvable. Faire git fetch origin main avant de vérifier."); }
 }
+function prototypeUnchanged(current, firstVersion) { return current === firstVersion; }
 function verifySnapshot() {
   const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, "references", "inventaire-base.json"), "utf8"));
   if (snapshot.schemaVersion !== 1 || snapshot.commitReference !== BASE ||
@@ -83,9 +85,12 @@ function execute() {
   if (unexpectedBaseline.length) {
     throw Error("Dérive non héritée du main courant depuis la référence initiale : " + unexpectedBaseline.join("; "));
   }
+  if (!ancestor(INITIAL_PROTOTYPE, head)) throw Error("Le premier commit expérimental n’est pas un ancêtre de HEAD.");
+  const firstVersion = cp.execFileSync("git", ["show", INITIAL_PROTOTYPE + ":AGENTS.md"], { cwd: ROOT, encoding: "utf8" });
   const orig = git(["show", BASE + ":AGENTS.md"]) + "\n";
   const current = fs.readFileSync(path.join(ROOT, "AGENTS.md"), "utf8");
   const onMain = git(["show", main + ":AGENTS.md"]) + "\n";
+  if (!prototypeUnchanged(current, firstVersion)) throw Error("Instructions expérimentales AGENTS.md modifiées sans validation explicite : verrou de prototype.");
   if (!preservedLegacy(orig, current) || !preservedLegacy(onMain, current)) {
     throw Error("AGENTS.md historique modifié, tronqué, déplacé ou remplacé ; seule l'insertion expérimentale est admise.");
   }
@@ -110,7 +115,7 @@ function execute() {
     " chemins ; diff main→HEAD : " + changed(main, head).length + " chemins (gouvernance exclusivement).");
   console.log("NON-PERTE : OK (octets des autres fichiers identiques au main actuel, consignes historiques AGENTS intactes).");
 }
-module.exports = { allowed, changedUnexpected, preservedLegacy, BASE };
+module.exports = { allowed, changedUnexpected, preservedLegacy, prototypeUnchanged, BASE, INITIAL_PROTOTYPE };
 if (require.main === module) {
   try { execute(); }
   catch (e) { console.error("NON-PERTE : REFUSÉ — " + e.message); process.exitCode = 1; }

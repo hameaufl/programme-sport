@@ -42,3 +42,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - Il s'agit de dix réponses rédigées **avec les critères connus, au sein du même ChatGPT**. Aucun gain comparatif A/B ni validation indépendante n'est revendiqué ; le [contrôle de cohérence des traces](verifier-simulations.cjs) bloque ces affirmations prématurées.
 
 - [Guide de tests A/B isolés dans ChatGPT Plus](GUIDE-ESSAIS-ISOLES.md) : instructions à coller dans deux conversations, résultats encore à recueillir.
+
+- [Audit anti-contournement](AUDIT-ANTI-CONTOURNEMENT.md) : sources épinglées au SHA initial, préambule expérimental figé et tests de falsification.

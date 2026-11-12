@@ -3,7 +3,12 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const ROOT = path.resolve(__dirname, "../..");
+const cp = require("node:child_process");
+const BASE = "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
 const HERE = __dirname;
+function historic(rel) {
+ return cp.execFileSync("git", ["show", BASE + ":" + rel], { cwd: ROOT, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 });
+}
 const roles = {
   MAT: "MATURATION", SUI: "ANALYSTE", STR: "STRATEGE", PLA: "PLANIFICATEUR",
   GAR: "GARMIN", COO: "COACH", REF: "GARDIEN", QUA: "CONTROLEUR-QUALITE"
@@ -14,7 +19,7 @@ function read(rel) { return fs.readFileSync(path.join(ROOT, rel), "utf8"); }
 function duplicates(values) {
   const s = new Set(); return values.filter((v) => s.has(v) || !s.add(v));
 }
-function verifyCoverage(data, matrixText, readFn) {
+function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
   requireTrue(data.schemaVersion === 1, "Version du référentiel de couverture invalide");
   requireTrue(data.totalExigences === 85 && data.attributions?.length === 85, "Couverture : exactement 85 exigences attendues");
   requireTrue(data.statut === "proposition_de_couverture_non_validee_par_le_gardien",
@@ -39,11 +44,12 @@ function verifyCoverage(data, matrixText, readFn) {
       requireTrue(typeof row.exigence === "string" && row.exigence.length > 20 &&
         typeof row.controle_attendu === "string" && row.controle_attendu.length > 10,
         "Livrable/contrôle absent : " + row.id);
-      const link = /^\[([^\]]+) L(\d+)\]\(\.\.\/\.\.\/([^#)]+)#L(\d+)\)$/.exec(row.source_historique || "");
-      requireTrue(link && link[2] === link[4] && link[1] === link[3], "Lien historique invalide : " + row.id);
-      const source = link[3], line = Number(link[2]);
+      const link = /^\[([^\]]+) L(\d+)\]\(https:\/\/github\.com\/hameaufl\/programme-sport\/blob\/([a-f0-9]{40})\/([^#)]+)#L(\d+)\)$/.exec(row.source_historique || "");
+      requireTrue(link && link[2] === link[5] && link[1] === link[4] && link[3] === BASE,
+        "Lien historique non épinglé au SHA initial : " + row.id);
+      const source = link[4], line = Number(link[2]);
       requireTrue(!source.includes("..") && !path.isAbsolute(source) && line > 0, "Chemin source invalide : " + row.id);
-      requireTrue(readFn(source).split(/\r?\n/).length >= line, "Source absente ou ligne hors limites : " + row.id);
+      requireTrue(sourceAtBase(source).split(/\r?\n/).length >= line, "Source historique absente ou ligne hors limites : " + row.id);
     }
   }
   return ids.length;
@@ -60,7 +66,7 @@ function verifyRegister(text) {
 }
 function execute() {
   const data = JSON.parse(read("maturation/gouvernance/COUVERTURE-PROTOCOLES.json"));
-  const n = verifyCoverage(data, read("maturation/gouvernance/MATRICE-COUVERTURE.md"), read);
+  const n = verifyCoverage(data, read("maturation/gouvernance/MATRICE-COUVERTURE.md"), read, historic);
   const inco = verifyRegister(read("maturation/gouvernance/referentiel/INCOHERENCES.md"));
   const audit = read("maturation/gouvernance/referentiel/REVUE-LOGIQUE-GARDIEN-2026-11-13.md");
   const dossier = read("maturation/gouvernance/REVUE-GARDIEN-A-VALIDER.md");

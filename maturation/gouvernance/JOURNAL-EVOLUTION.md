@@ -116,3 +116,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - La première exécution du dépouillement A/B sur `201d1f27b52b7c449580741a4d51b0bed01c9462` a **échoué** dans les tests unitaires : un raccourci d'objet JavaScript utilisait `paires` alors que le compteur local s'appelle `pairs`, uniquement lorsque les dix paires fictives de test sont complètes.
 - La CI a correctement refusé cette livraison ; l'erreur est corrigée dans `verifier-evaluation-ab.cjs`. Le tableau public d'observations reste **intégralement vide** et aucun gain A/B n'est déclaré.
 - Aucun fichier de domaine métier, aucun adaptateur, ni aucune opération Garmin n'ont été affectés ; cette correction reste sur la PR brouillon.
+
+## 13 novembre 2026 — Audit anti-contournement des références historiques et de la charte
+- Découverte : les liens de la matrice utilisaient des numéros de ligne sur la branche ; l'ajout du préambule a décalé `AGENTS.md`. La vérification existante contrôlait seulement que la ligne existait, pas la version exacte qui lui correspondait.
+- **85 liens épinglés** au commit historique immuable `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4`. Le script vérifie le SHA, le chemin, le numéro de ligne et l'existence dans le fichier **au commit de référence**, pas sur la branche décalée.
+- **Verrou exact du préambule** : `AGENTS.md` sur la branche doit rester octet par octet identique à celui du premier commit expérimental `7a8016955cf74f312e40fc7b82bccca84020c9eb`. Une permission glissée dans le préambule fait échouer la CI. Toute modification future volontaire de ce verrou demanderait une revue et les validations de gouvernance correspondantes.
+- Tests négatifs pour source au faux SHA, référence de ligne impossible et préambule altéré. Aucune donnée métier ni opération Garmin modifiée.
+- **Limite :** une référence existante ne démontre pas à elle seule que la règle est sémantiquement bien couverte ; la revue du Gardien et les essais A/B demeurent requis.

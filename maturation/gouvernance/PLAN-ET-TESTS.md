@@ -97,3 +97,10 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Comparaison réellement exécutée dans deux conversations distinctes, avec versions figées des règles.
 - [ ] Audit des observations anonymisées et des erreurs critiques, sans publication de données personnelles.
 - [ ] Arbitrages restants et visa Gardien ; accord du propriétaire pour toute fusion.
+
+## 13 novembre 2026 — Protection supplémentaire contre les faux positifs
+- [x] 85 sources historiques liées au `main` d'origine par des permaliens GitHub.
+- [x] Instructions expérimentales d'`AGENTS.md` verrouillées sur leur premier commit.
+- [x] Tests de refus : SHA de source modifié, référence hors limites, préambule altéré.
+- [ ] Vérification **sémantique** et validation du Gardien, non remplacées par ces tests structurels.
+- [ ] Comparaison A/B en deux conversations distinctes, aucune observation encore obtenue.

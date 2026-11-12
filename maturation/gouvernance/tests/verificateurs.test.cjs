@@ -1,7 +1,7 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { allowed, changedUnexpected, preservedLegacy } = require("../verifier-integrite-metier.cjs");
+const { allowed, changedUnexpected, preservedLegacy, prototypeUnchanged } = require("../verifier-integrite-metier.cjs");
 const { duplicates, verifyRegister, verifyCoverage } = require("../verifier-referentiel.cjs");
 
 test("Modifications de gouvernance permises, domaines et architecture interdits", () => {
@@ -61,4 +61,27 @@ test("Inventaire fixe de dix simulations sans écriture", () => {
     assert.ok(scenario.interdits.includes("ecriture_git") && scenario.interdits.includes("ecriture_garmin"));
     assert.ok(scenario.attendus.length >= 3);
   }
+});
+
+test("Le préambule expérimental ne peut pas acquérir une permission supplémentaire",()=>{
+ const first="# AGENTS.md\n## EXPÉRIMENTATION MULTI-AGENTS\nLecture seule.\n## HISTORIQUE\n";
+ assert.equal(prototypeUnchanged(first,first),true);
+ assert.equal(prototypeUnchanged(first.replace("Lecture seule","Ecriture automatique"),first),false);
+ assert.equal(prototypeUnchanged(first+"Permission sans accord\n",first),false);
+});
+test("Les 85 liens de décision sont épinglés à la source originale immuable",()=>{
+ const fs=require("node:fs"),path=require("node:path"),cp=require("node:child_process");
+ const root=path.resolve(__dirname,"../../..");
+ const base="d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
+ const data=JSON.parse(fs.readFileSync(path.join(__dirname,"..","COUVERTURE-PROTOCOLES.json"),"utf8"));
+ const matrix=fs.readFileSync(path.join(__dirname,"..","MATRICE-COUVERTURE.md"),"utf8");
+ const read=p=>fs.readFileSync(path.join(root,p),"utf8");
+ const historic=p=>cp.execFileSync("git",["show",base+":"+p],{cwd:root,encoding:"utf8"});
+ assert.equal(verifyCoverage(data,matrix,read,historic),85);
+ const wrongSha=structuredClone(data);
+ wrongSha.attributions[0].source_historique=wrongSha.attributions[0].source_historique.replace(base,"e".repeat(40));
+ assert.throws(()=>verifyCoverage(wrongSha,matrix,read,historic));
+ const badLine=structuredClone(data);
+ badLine.attributions[2].source_historique=badLine.attributions[2].source_historique.replace(/#L\d+\)/,"#L999999)");
+ assert.throws(()=>verifyCoverage(badLine,matrix,read,historic));
 });
