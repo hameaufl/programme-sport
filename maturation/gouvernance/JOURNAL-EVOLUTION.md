@@ -100,3 +100,8 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Cas non réellement éprouvés : validité d'une vraie activité incomplète, déplacement avec date cible, permissions Garmin via un outil, livraison Web réelle. La prochaine campagne doit isoler les deux conditions, ajouter des scénarios cachés et comparer les preuves observables.
 - Ajout d'un contrôle CI de cohérence **du journal des simulations uniquement**, qui refuse un gain inventé ou un visa Gardien fictif ; il n'évalue pas les réponses LLM.
 - Aucun changement dans les faits ou prescriptions métier, aucune opération Garmin et aucune fusion dans `main`.
+
+## 13 novembre 2026 — Guide des tests A/B isolés dans ChatGPT Plus
+- Ajout du protocole `GUIDE-ESSAIS-ISOLES.md`, avec deux textes d'initialisation distincts, SHAs fixes `main` et branche, et règles pour garder les critères d'évaluation invisibles aux conversations A/B.
+- Ce guide n'exécute aucun nouvel agent : les expériences croisées doivent encore être menées dans des conversations séparées, en lecture seule. **Aucun résultat A/B ni gain non observé n'est revendiqué.**
+- Les tests dirigés enregistrés précédemment ne sont pas réétiquetés comme « indépendants ». Aucune donnée métier/Garmin et aucun `main` modifiés.

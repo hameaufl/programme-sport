@@ -40,3 +40,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 ## Premier passage des scénarios (13 novembre 2026)
 - [Rapport de simulation dirigée](ESSAI-DIRIGE-2026-11-13.md) et [traces détaillées des dix réponses](RESULTATS-ESSAIS-COACH.json).
 - Il s'agit de dix réponses rédigées **avec les critères connus, au sein du même ChatGPT**. Aucun gain comparatif A/B ni validation indépendante n'est revendiqué ; le [contrôle de cohérence des traces](verifier-simulations.cjs) bloque ces affirmations prématurées.
+
+- [Guide de tests A/B isolés dans ChatGPT Plus](GUIDE-ESSAIS-ISOLES.md) : instructions à coller dans deux conversations, résultats encore à recueillir.
