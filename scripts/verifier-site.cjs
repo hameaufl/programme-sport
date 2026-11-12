@@ -39,6 +39,7 @@ const portsCoach=require("../adaptateurs/fichiers/depots.cjs").coaching;
 const sourceCoach=portsCoach.orientation(),objectifsCoach=portsCoach.objectifs();
 assert.equal(domaineCoach.verifierOrientation(sourceCoach),sourceCoach,"Orientation du Coach absente ou invalide");
 assert.ok(sourceCoach.sourcesMetier.length>0&&sourceCoach.tendances.length>0&&sourceCoach.vigilances.length>0,"Synthèse métier et provenance nécessaires");
+assert.ok(sourceCoach.sourcesMetier.every(ref=>/^(coaching|sante|activites|planification):[a-z0-9:-]+$/.test(ref)),"Références métier logiques uniquement, pas de chemins physiques");
 const policyCoach=JSON.parse(read("contrats/publication-v1.json"));
 const publicCoach=projectionCoach({orientation:sourceCoach,objectifs:objectifsCoach},policyCoach);
 assert.deepEqual(Object.keys(publicCoach).sort(),["schemaVersion","miseAJour","objectifPersonnel","phase","ligneDirectrice","tendances","vigilances"].sort(),"Seuls les champs d'orientation autorisés sont publiés");

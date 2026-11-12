@@ -48,7 +48,7 @@ function verifierOrientation(data){
  }
  elements(data.tendances,["horizon","intention","condition"]);
  elements(data.vigilances,["sujet","attention"]);
- if(!Array.isArray(data.sourcesMetier)||!data.sourcesMetier.every(x=>texte(x,300)))throw Error("Traçabilité de stratégie invalide");
+ if(!Array.isArray(data.sourcesMetier)||!data.sourcesMetier.every(x=>typeof x==="string"&&/^(?:coaching|sante|activites|planification):[a-z0-9:-]+$/.test(x)))throw Error("Traçabilité de stratégie invalide");
  if(!texte(data.statut,350))throw Error("Statut de stratégie invalide");
  return data;
 }

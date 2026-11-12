@@ -41,10 +41,10 @@
     }
   ],
   "sourcesMetier": [
-    "domaines/coaching/donnees/CONTEXTE-COACH.md",
-    "domaines/coaching/donnees/DECISIONS.md",
-    "domaines/sante/donnees/PROFIL.md",
-    "domaines/sante/donnees/rapports/2026/11/course-2026-11-11.md"
+    "coaching:contexte",
+    "coaching:decisions",
+    "sante:profil",
+    "sante:rapport:course-2026-11-11"
   ],
   "statut": "orientation provisoire fondée sur les données et choix consignés au 12 novembre ; à réévaluer au prochain retour réel"
 }
