@@ -27,7 +27,7 @@
     {
       "id": "appuis",
       "sujet": "Confort des appuis",
-      "attention": "Observer les gênes plantaires et leur évolution à l'effort et après l'effort, sans présumer leur cause."
+      "attention": "Observer les gênes plantaires pendant et après l'effort, y compris avec les Saucony Hurricane 26 et les nouvelles semelles après l'échange du 12 novembre ; l'essai en magasin ne démontre pas encore leur tolérance ni l'origine des douleurs."
     },
     {
       "id": "articulations",
@@ -44,7 +44,8 @@
     "coaching:contexte",
     "coaching:decisions",
     "sante:profil",
-    "sante:rapport:course-2026-11-11"
+    "sante:rapport:course-2026-11-11",
+    "sante:evenement:2026-11-12-echange-chaussures-running"
   ],
-  "statut": "orientation provisoire fondée sur les données et choix consignés au 12 novembre ; à réévaluer au prochain retour réel"
+  "statut": "orientation provisoire au 12 novembre ; échange de chaussures confirmé, tolérance et récupération après essai encore inconnues ; à réévaluer au prochain retour réel"
 }
