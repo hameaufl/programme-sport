@@ -1,4 +1,15 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ ABSOLUE — miroir Web vérifié après chaque mise à jour métier (12 novembre 2026)
+
+**Demande permanente du propriétaire :** Mon Rythme est une **projection publiée** des informations pertinentes détenues par le Coach, jamais un deuxième lieu de saisie. Lorsqu'un retour métier conduit à des changements dans les domaines, le Coach doit non seulement mettre à jour les sources canoniques et vérifier les vues, mais aussi **contrôler le bon déroulement de la publication GitHub Pages et la version réellement servie**. La présence d'un commit ne signifie pas que le site est à jour.
+
+- Préparer ensemble tous les fichiers métier nécessaires, **de préférence en un seul commit atomique**, afin de limiter les exécutions GitHub Actions annulées par des commits successifs.
+- Avant publication, contrôler schémas, sources et projections ; en particulier tout événement Santé suit le titre `### AAAA-MM-JJ — Intitulé` (les précisions « au soir » vont dans le corps, jamais entre date et tiret). Un événement mal formé bloque le build.
+- Pour les changements concernés, exécuter les contrôles du site, son build et `node scripts/verifier-miroir-web.cjs`. Le contrôle de miroir compare les sources métier à la projection générée ; il ne doit pas élargir la liste blanche.
+- Après push, examiner l'exécution « Publier Mon Rythme » correspondant au commit : **build et déploiement réussis**, puis vérifier la version publique de `data/index.json` (`buildVersion` = préfixe du SHA du commit). Si la publication échoue ou n'est pas confirmée, **ne pas annoncer un site à jour** ; corriger dans le périmètre autorisé ou signaler explicitement au propriétaire le blocage à confier à Maturation.
+- **Pas de HTML à retoucher lorsque le rendu existant reflète déjà les projections.** Corriger localement une vue métier uniquement dans les limites de l'autorisation Coach ci-dessous. Maturation reste responsable des scripts, contrats, CI, projections et architecture. Les détails de santé non autorisés au Web demeurent dans les domaines métier. Ni site ni dépôt publics ne sont un espace privé.
+- Protocole de référence : [docs/PROCEDURE-MIROIR-WEB.md](docs/PROCEDURE-MIROIR-WEB.md). La demande isolée « Mets-toi à jour » reste une **lecture seule**. Une demande explicite de mise à jour Web, comme celle du 12 novembre, autorise la correction pertinente sans déroger aux règles de sécurité Garmin.
+
 ## PRIORITÉ — bandeaux de titres et navigation communs aux quatre pages (12 novembre 2026)
 
 - Les quatre pages `addons/web/pages/{index,sante,coach,equipements}.html` utilisent une présentation homogène de l'encart de titre : grande hauteur de référence Santé, typographie et ornements harmonisés, pictogramme SVG décoratif propre à la rubrique. Aucun sous-titre ni surtitre dans le bandeau équipement ; les quatre bandeaux ne contiennent que le titre et le pictogramme.

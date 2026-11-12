@@ -46,6 +46,9 @@ jobs:
       - name: Générer les vues hebdomadaires et le suivi public existant
         run: node scripts/construire-site.cjs
 
+      - name: Vérifier la fidélité du miroir Web aux données métier
+        run: node scripts/verifier-miroir-web.cjs
+
       - name: Contrôler l'absence de fichiers externes dans le site public
         run: node maturation/architecture/verifier-publication.cjs
 
@@ -88,3 +91,23 @@ jobs:
       - name: Déployer GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Contrôler la version réellement publiée
+        shell: bash
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          attendu="${GITHUB_SHA:0:12}"
+          for essai in $(seq 1 12); do
+            reponse="$(curl -fsSL --max-time 15 -H 'Cache-Control: no-cache' "${SITE_URL%/}/data/index.json?rev=${GITHUB_SHA}" || true)"
+            version="$(printf '%s' "$reponse" | jq -r '.buildVersion // empty' 2>/dev/null || true)"
+            if [ "$version" = "$attendu" ]; then
+              echo "Miroir Web publié et vérifié : $version"
+              exit 0
+            fi
+            echo "Version visible : ${version:-indisponible} ; attendue : $attendu (essai $essai/12)."
+            sleep 5
+          done
+          echo "::error::La publication n'expose pas encore le commit $attendu."
+          exit 1
