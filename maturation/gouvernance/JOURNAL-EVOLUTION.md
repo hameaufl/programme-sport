@@ -86,3 +86,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - La fonction Gardien a été exercée **logiquement dans le même ChatGPT** ; aucun agent réellement indépendant n'a été exécuté, aucune signature de conformité indépendante ni autorisation de modifier les comportements n'est revendiquée.
 - Les huit incohérences restent ouvertes mais disposent d'une qualification documentaire motivée, sans effacement d'historique ni nouvelle décision sportive.
 - **Aucune donnée métier ou opération Garmin modifiée**, aucun déploiement de gouvernance dans `main` ; fusion toujours interdite sans accord explicite du propriétaire.
+
+## 13 novembre 2026 — Garde-fous déterministes et préparation des simulations
+- Ajout de `verifier-integrite-metier.cjs` et `verifier-referentiel.cjs` avec tests négatifs et nouveau workflow `.github/workflows/verifier-gouvernance.yml` (PR et push de la branche ; **aucune publication**). Le workflow historique `verifier-refonte.yml` reste inchangé.
+- **Première exécution CI réellement réussie** sur le commit `06bdd875e8af50c75627e60cc7369fe9566d4b46` : vérifications de gouvernance PR [43327836528](https://github.com/hameaufl/programme-sport/actions/runs/43327836528), push [43327827607](https://github.com/hameaufl/programme-sport/actions/runs/43327827607), refonte PR [43327836493](https://github.com/hameaufl/programme-sport/actions/runs/43327836493). Les tests constatent la conservation des sources sur ce commit, sans prouver l'exhaustivité sémantique des procédures.
+- Inventaire reproductible de **143 objets fichiers** (chemin, taille et SHA Git) du commit initial, enregistré sous `references/inventaire-base.json` et revérifiable par le verrou.
+- **Dix scénarios** sans écritures réelles préparés ; leurs résultats comparatifs sont **en attente d'exécution**. Un gain de fiabilité du Coach ne peut pas être revendiqué à ce stade.
+- La revue logique Gardien conserve son statut **bloqué**, aucun visa indépendant, aucune fusion dans `main` et aucune opération Garmin.

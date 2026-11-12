@@ -40,7 +40,32 @@ function verifiedMain() {
   try { return git(["rev-parse", "--verify", "refs/remotes/origin/main"]); }
   catch { throw Error("Référence origin/main introuvable. Faire git fetch origin main avant de vérifier."); }
 }
+function verifySnapshot() {
+  const snapshot = JSON.parse(fs.readFileSync(path.join(__dirname, "references", "inventaire-base.json"), "utf8"));
+  if (snapshot.schemaVersion !== 1 || snapshot.commitReference !== BASE ||
+      snapshot.nombreFichiers !== 143 || snapshot.gitTreeSha !== git(["rev-parse", BASE + "^{tree}"])) {
+    throw Error("Inventaire initial invalide ou différent du commit Git de référence.");
+  }
+  const entries = cp.execFileSync("git", ["ls-tree", "-r", "-z", BASE], { cwd: ROOT })
+    .toString("utf8").split("\0").filter(Boolean);
+  const actual = new Map();
+  for (const row of entries) {
+    const m = /^\d+ blob ([a-f0-9]{40})\t(.+)$/.exec(row);
+    if (!m) throw Error("Objet inattendu dans la référence : " + row.slice(0, 100));
+    actual.set(m[2], m[1]);
+  }
+  const declared = new Map(snapshot.fichiers.map((x) => [x.chemin, x.gitBlobSha]));
+  if (actual.size !== snapshot.nombreFichiers || declared.size !== snapshot.nombreFichiers) {
+    throw Error("Fichiers historiques absents ou inventaire en doublon.");
+  }
+  for (const [file, sha] of actual) {
+    if (declared.get(file) !== sha) throw Error("Empreinte historique incohérente : " + file);
+  }
+  return actual.size;
+}
+
 function execute() {
+  const nbFichiersInitiaux = verifySnapshot();
   const head = git(["rev-parse", "HEAD"]), main = verifiedMain();
   if (!ancestor(BASE, head) || !ancestor(BASE, main)) {
     throw Error("Référence initiale absente de l'ascendance de HEAD ou de main : contrôle impossible.");
@@ -75,6 +100,7 @@ function execute() {
     [".github/", "workflows historiques"],
     ["scripts/", "scripts historiques"]
   ];
+  console.log("NON-PERTE : " + nbFichiersInitiaux + " empreintes Git inventoriées et retrouvées à l’identique.");
   console.log("NON-PERTE : BASE " + BASE + " ; main " + main.slice(0, 12) + " ; HEAD " + head.slice(0, 12));
   for (const [p, label] of groups) {
     const n = paths.filter((f) => f.startsWith(p)).length;

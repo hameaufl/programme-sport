@@ -32,3 +32,7 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 
 ## Revue du Gardien — 13 novembre 2026
 - [Examen motivé des huit incohérences](referentiel/REVUE-LOGIQUE-GARDIEN-2026-11-13.md) : contrôle logique effectué avec la casquette Gardien dans la même conversation ; **activation bloquée**, aucun visa indépendant ni nouvelle permission.
+
+## Vérification automatique et essais (13 novembre 2026)
+- [Contrôles exécutables](CONTROLES-AUTOMATIQUES.md) et [inventaire initial des fichiers Git](references/inventaire-base.json).
+- [Campagne comparative des dix simulations](CAMPAGNE-COMPARATIVE.md) et [scénarios JSON](SCENARIOS-SIMULATION.json) ; résultats de comportement **non encore mesurés**.

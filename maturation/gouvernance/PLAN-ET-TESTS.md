@@ -74,3 +74,12 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Validation effective de toute évolution du comportement avec sources, version et contrôles ; aucune approbation ne doit être inventée.
 - [ ] Index de supersession des décisions historiques, suivi de contrôles automatiques et de scénarios comparatifs.
 - [ ] Consentement explicite du propriétaire avant fusion sur `main`.
+
+## 13 novembre 2026 — Automatisation et campagne de tests préparée
+- [x] **Non-perte automatique** : comparaison cumulative depuis `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4`, comparaison stricte à `origin/main`, préservation de tout le texte historique d'`AGENTS.md`.
+- [x] **Inventaire initial des 143 fichiers** et de leurs empreintes Git sous `references/inventaire-base.json` ; pas de duplication de leur contenu.
+- [x] **Cohérence formelle** : vérification des 85 exigences, huit fiches et huit incohérences ouvertes ; aucun visa fictif.
+- [x] **CI dédiée non déployante** sur la branche et sa PR, avec tests de refus.
+- [x] **Dix scénarios comparatifs fictifs préparés** dans `SCENARIOS-SIMULATION.json` et `CAMPAGNE-COMPARATIVE.md`.
+- [ ] **Exécution comparée réelle** de ces dix scénarios et analyse des écarts. Les tests automatiques ne remplacent pas les réponses Coach.
+- [ ] Visa Gardien, arbitrages, et accord explicite du propriétaire avant toute fusion.

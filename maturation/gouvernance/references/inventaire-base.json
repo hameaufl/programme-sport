@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 1,
+  "dateReference": "2026-11-12",
+  "commitReference": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "gitTreeSha": "5cb1d997e3a4cd4fbb34f47a79f08f0cca6b2734",
+  "portee": "Toutes les entrées blob versionnées du dépôt au commit de référence, y compris sources métier, archives et documents. Empreintes Git d'objet, pas SHA-256. Ne contient pas le contenu des fichiers.",
+  "nombreFichiers": 143,
+  "fichiers": [
+    {
+      "chemin": ".github/workflows/publier-pages.yml",
+      "gitBlobSha": "5ac7357bb6b959a716e47a75c9fa01766b0b8bd1",
+      "octets": 3713
+    },
+    {
+      "chemin": ".github/workflows/verifier-refonte.yml",
+      "gitBlobSha": "b9c98be457e5b772614b27979c88f1287fa68b5a",
+      "octets": 1156
+    },
+    {
+      "chemin": ".nojekyll",
+      "gitBlobSha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "octets": 0
+    },
+    {
+      "chemin": "AGENTS.md",
+      "gitBlobSha": "4e4f249f91860086d670434fcc58e35fff6e1307",
+      "octets": 90791
+    },
+    {
+      "chemin": "README.md",
+      "gitBlobSha": "e4cb156f740e913eaf78135a30e4e4360b8a10ea",
+      "octets": 5570
+    },
+    {
+      "chemin": "adaptateurs/README.md",
+      "gitBlobSha": "56e22bed8893568516b3895b5d09aa593653d74e",
+      "octets": 238
+    },
+    {
+      "chemin": "adaptateurs/fichiers/depots.cjs",
+      "gitBlobSha": "7b46fc0b3ac6502a147c6fbc0970b6f34a8585e4",
+      "octets": 2026
+    },
+    {
+      "chemin": "adaptateurs/fichiers/stockage.cjs",
+      "gitBlobSha": "f5b23cf5d47586dc248c05e138832e6f1de14068",
+      "octets": 1252
+    },
+    {
+      "chemin": "adaptateurs/garmin/MCP.md",
+      "gitBlobSha": "537b7fc124785d656332c7d01147adb2dfcd3b92",
+      "octets": 22042
+    },
+    {
+      "chemin": "adaptateurs/garmin/README.md",
+      "gitBlobSha": "0d3ab84cbbccbc0b96ec862ac01f5fc8d86733fd",
+      "octets": 1678
+    },
+    {
+      "chemin": "adaptateurs/garmin/mcp.cjs",
+      "gitBlobSha": "61e8c51923359bcb972f357d5b053ec1969753cc",
+      "octets": 6064
+    },
+    {
+      "chemin": "adaptateurs/projections/coaching.cjs",
+      "gitBlobSha": "3294c0c9317e96dcb81ccf5d6176a2cd928dca00",
+      "octets": 1652
+    },
+    {
+      "chemin": "adaptateurs/projections/lecture.cjs",
+      "gitBlobSha": "52e2973c6d5b019edcab2d62d47657c2c27e07ac",
+      "octets": 6664
+    },
+    {
+      "chemin": "adaptateurs/web/medias.cjs",
+      "gitBlobSha": "2843c3b09c41ab1f92661ea3723c6e5e078cb114",
+      "octets": 707
+    },
+    {
+      "chemin": "addons/web/README-assets.md",
+      "gitBlobSha": "bcf520ddac59f054f9fd2a762407766c4eeae18e",
+      "octets": 981
+    },
+    {
+      "chemin": "addons/web/README.md",
+      "gitBlobSha": "e03d7d1504946a995ebd4d244e1c47ce77821ed7",
+      "octets": 3030
+    },
+    {
+      "chemin": "addons/web/archives/renfo/bird-dog.gif",
+      "gitBlobSha": "39fbd54b71f3cd41080c80ab9d2cb9e7ee0a0985",
+      "octets": 8893
+    },
+    {
+      "chemin": "addons/web/archives/renfo/dead-bug.gif",
+      "gitBlobSha": "dfffef09c073bc0c50869e970ceb9c14cd3f608d",
+      "octets": 8878
+    },
+    {
+      "chemin": "addons/web/archives/renfo/ouverture-genou.gif",
+      "gitBlobSha": "3685f9a5ff2a194761ca373e27c9a74c0cee2258",
+      "octets": 8294
+    },
+    {
+      "chemin": "addons/web/archives/renfo/pont-ballon.gif",
+      "gitBlobSha": "89653209ade47141b22f8c75e83d48dadf5bbbd8",
+      "octets": 9604
+    },
+    {
+      "chemin": "addons/web/archives/renfo/pont-sol.gif",
+      "gitBlobSha": "5db916406ba11b19d9364694d02da2858608a13c",
+      "octets": 8422
+    },
+    {
+      "chemin": "addons/web/composants/en-tete.cjs",
+      "gitBlobSha": "b5f28f7a56c1b6ffc79231bcdbca48fae9cb500c",
+      "octets": 1560
+    },
+    {
+      "chemin": "addons/web/pages/coach.html",
+      "gitBlobSha": "2fc435c5663d71c2f53d8cb7e4f5c4b2a3e432f5",
+      "octets": 10073
+    },
+    {
+      "chemin": "addons/web/pages/equipements.html",
+      "gitBlobSha": "a60814ba906845c22c3c9990a3876b94fdba2ce0",
+      "octets": 9604
+    },
+    {
+      "chemin": "addons/web/pages/index.html",
+      "gitBlobSha": "2689f4d2142fde5bd8bba37ff65d674c083c6d32",
+      "octets": 25399
+    },
+    {
+      "chemin": "addons/web/pages/sante.html",
+      "gitBlobSha": "762c7ceae3b2959ede13fab84c4a8bf0d0b82626",
+      "octets": 15435
+    },
+    {
+      "chemin": "addons/web/public/assets/renfo/banque.json",
+      "gitBlobSha": "551fd2b808df5ed344b86b083ee7d8d60f12330d",
+      "octets": 518
+    },
+    {
+      "chemin": "addons/web/public/assets/renfo/png/bird-dog.png",
+      "gitBlobSha": "a421065c514d105e606d4b9559bc9e319909109e",
+      "octets": 1236224
+    },
+    {
+      "chemin": "addons/web/public/assets/renfo/png/dead-bug.png",
+      "gitBlobSha": "a135760a0ec96155453ce6fd02ea0cd3594e8531",
+      "octets": 1179138
+    },
+    {
+      "chemin": "addons/web/public/assets/renfo/png/ouverture-genou.png",
+      "gitBlobSha": "275cc67f4fc7191b2b5969f1cd1ca02143d832d8",
+      "octets": 1292072
+    },
+    {
+      "chemin": "addons/web/public/assets/renfo/png/pont-ballon.png",
+      "gitBlobSha": "caff4fc48a3a7048114623635f0898591719ab2c",
+      "octets": 1212816
+    },
+    {
+      "chemin": "addons/web/public/assets/renfo/png/pont-sol.png",
+      "gitBlobSha": "3a45872413e7dc0a256f30b10d2e3842ce9d3478",
+      "octets": 1302806
+    },
+    {
+      "chemin": "addons/web/public/en-tete.js",
+      "gitBlobSha": "2fd6e559a95882424aea8ba48d17a556d9ec252c",
+      "octets": 985
+    },
+    {
+      "chemin": "addons/web/public/favicon.svg",
+      "gitBlobSha": "ecfc656de4194a962f0a2a7c0ef5b8f50d654223",
+      "octets": 246
+    },
+    {
+      "chemin": "addons/web/public/icon-192.png",
+      "gitBlobSha": "9c068a6a3f71c5e0be951ef199b3d235ebeda7be",
+      "octets": 4886
+    },
+    {
+      "chemin": "addons/web/public/icon-512.png",
+      "gitBlobSha": "8cf83e194655a761069a154dbfa35ea54f1efddf",
+      "octets": 33366
+    },
+    {
+      "chemin": "addons/web/public/manifest.webmanifest",
+      "gitBlobSha": "5ed84e451d40bbabe943b3846ff61e4d95f79d2e",
+      "octets": 508
+    },
+    {
+      "chemin": "addons/web/public/style-commun.css",
+      "gitBlobSha": "7d983e3aba2cdf7da4f5a4df16ade67240a35a32",
+      "octets": 5199
+    },
+    {
+      "chemin": "contrats/DEPENDANCES.md",
+      "gitBlobSha": "57c5d832fb70d749a2ef822653049033652123f8",
+      "octets": 3276
+    },
+    {
+      "chemin": "contrats/PORTS.md",
+      "gitBlobSha": "a2bb449b7ba1037b567a4262a6ff107c32ff3554",
+      "octets": 2301
+    },
+    {
+      "chemin": "contrats/publication-prive-v1.json",
+      "gitBlobSha": "6d611214831062f4febdd4f43468c618ec9e98c2",
+      "octets": 862
+    },
+    {
+      "chemin": "contrats/publication-v1.json",
+      "gitBlobSha": "7c601dc77fef4ce2a494053e884790dfcd57c35f",
+      "octets": 1590
+    },
+    {
+      "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+      "gitBlobSha": "5d3d23f5cc9f43480331bd2164d9f3cc4f7fa9a1",
+      "octets": 23344
+    },
+    {
+      "chemin": "docs/CONTEXTE.md",
+      "gitBlobSha": "c97e914142dda646d1c2b5dc122fbc9d1c004aef",
+      "octets": 4054
+    },
+    {
+      "chemin": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "gitBlobSha": "2c856df3d8a3ffb3c05fdcc7507c903967953c2e",
+      "octets": 20660
+    },
+    {
+      "chemin": "docs/DECISIONS.md",
+      "gitBlobSha": "67f65c77f2b29666ecf4e6b13d9cac74d6d9fc52",
+      "octets": 42269
+    },
+    {
+      "chemin": "docs/JOURNAL.md",
+      "gitBlobSha": "7d3f3baaf0009925f6583c3db2dd9b1956952e8e",
+      "octets": 50404
+    },
+    {
+      "chemin": "docs/PROCEDURE-MIROIR-WEB.md",
+      "gitBlobSha": "f13b74dee6cbce23b817d5ce55f2b87e0034616c",
+      "octets": 5015
+    },
+    {
+      "chemin": "docs/REPRISE.md",
+      "gitBlobSha": "128de02fedabc7dbd4ce6e5e97db4d02d929ffba",
+      "octets": 29123
+    },
+    {
+      "chemin": "docs/ROLES.md",
+      "gitBlobSha": "104214e1e7e6930605cc7daa1b921f36f7042686",
+      "octets": 25414
+    },
+    {
+      "chemin": "domaines/README.md",
+      "gitBlobSha": "e40bb0dfa60eedb473c962aa9a6e59064adc9ab4",
+      "octets": 336
+    },
+    {
+      "chemin": "domaines/activites/README.md",
+      "gitBlobSha": "a8edd1ef9933a7e4a30c6a5ef18ffbb1fc23cefc",
+      "octets": 1930
+    },
+    {
+      "chemin": "domaines/activites/donnees/seances/2026/11/course-2026-11-11.json",
+      "gitBlobSha": "bf23a0348679169645c722857f2bf9ee9519db37",
+      "octets": 378
+    },
+    {
+      "chemin": "domaines/activites/donnees/seances/2026/11/course-tapis-2026-11-12.json",
+      "gitBlobSha": "7efc8822a71d87237ee1ba464c825798a4f26efb",
+      "octets": 612
+    },
+    {
+      "chemin": "domaines/activites/donnees/seances/2026/11/kine-2026-11-04.json",
+      "gitBlobSha": "8857b5e19dd27c36ccb2c08e41b483f7702f8e6c",
+      "octets": 332
+    },
+    {
+      "chemin": "domaines/activites/donnees/seances/2026/11/kine-2026-11-09.json",
+      "gitBlobSha": "00ac6e0356446f8013422b0b3608353bc83938d3",
+      "octets": 494
+    },
+    {
+      "chemin": "domaines/activites/modele.cjs",
+      "gitBlobSha": "bb19ccf9664f0b92024ad2e08bc6c845777ffcc6",
+      "octets": 990
+    },
+    {
+      "chemin": "domaines/coaching/README.md",
+      "gitBlobSha": "6740ddb3b401631d0ffe5cc80bdf086cc9bdef75",
+      "octets": 4145
+    },
+    {
+      "chemin": "domaines/coaching/donnees/CONTEXTE-COACH.md",
+      "gitBlobSha": "3670f878132f5db12b7b5a838a4f590d3d098e09",
+      "octets": 29606
+    },
+    {
+      "chemin": "domaines/coaching/donnees/DECISIONS.md",
+      "gitBlobSha": "42529afabada6c12de76f2259e02315a4b662d3f",
+      "octets": 49927
+    },
+    {
+      "chemin": "domaines/coaching/donnees/JOURNAL.md",
+      "gitBlobSha": "e98fbe44bd2f9dbe7d7035552f5b5848a700db09",
+      "octets": 51032
+    },
+    {
+      "chemin": "domaines/coaching/donnees/NOTES-CYCLE.txt",
+      "gitBlobSha": "28c1c50c9d2b6d5414006d1ff94df12b97600267",
+      "octets": 1229
+    },
+    {
+      "chemin": "domaines/coaching/donnees/equipements.json",
+      "gitBlobSha": "f54fc10294fb6089938743a18ba86b5f3bccfc48",
+      "octets": 645
+    },
+    {
+      "chemin": "domaines/coaching/donnees/objectifs.json",
+      "gitBlobSha": "cbaf95c06aedcb7e35b0f30e4bf40dce1ed612ed",
+      "octets": 141
+    },
+    {
+      "chemin": "domaines/coaching/donnees/orientation.json",
+      "gitBlobSha": "ac80a980613255e28ef054a32045dc9eac78e276",
+      "octets": 3268
+    },
+    {
+      "chemin": "domaines/coaching/modele.cjs",
+      "gitBlobSha": "2d51e4b955ba6da2f7e1b404e1479237f5d5971f",
+      "octets": 2889
+    },
+    {
+      "chemin": "domaines/planification/README.md",
+      "gitBlobSha": "17a5639c350a12855c4398b2a661a506b568caf9",
+      "octets": 5634
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/README.md",
+      "gitBlobSha": "8be67fa974c714b1e874038aaf7681863c1d9eda",
+      "octets": 833
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json",
+      "gitBlobSha": "a6f821ad8e77541253a506feaa3b841a3eaf9f57",
+      "octets": 2205
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json",
+      "gitBlobSha": "744246a83bc7f0d96a72fc31761386cc5d63aeaf",
+      "octets": 1899
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-12.json",
+      "gitBlobSha": "de578d3b2ca3a80e588fd8f1f8ea0f329e15b4f7",
+      "octets": 1616
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-14.json",
+      "gitBlobSha": "ce1dcd6c0b991d8f3dd959178f6bedb72a9f4e3e",
+      "octets": 1643
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-16.json",
+      "gitBlobSha": "12bec62d4a758147c09ae5a1583197a45ff4a1c3",
+      "octets": 1616
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-19.json",
+      "gitBlobSha": "c55afa1d9060430eec473e34802bdfe9d9222b48",
+      "octets": 1643
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-21.json",
+      "gitBlobSha": "bee7db11f3ccfc68005057fa8052e3cf7594ca4d",
+      "octets": 1616
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-24.json",
+      "gitBlobSha": "5cf031c719dbfbd8c82af1e25b7fb911a4b12c7d",
+      "octets": 1643
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-26.json",
+      "gitBlobSha": "800da6910a673913986a964363a2a6899b3bdce0",
+      "octets": 1616
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-11-28.json",
+      "gitBlobSha": "5bfac615d1b24de2d4926e85c4a990b6abbfe3d6",
+      "octets": 1643
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-12-01.json",
+      "gitBlobSha": "fcb6291f45f5921c7c08c678e7baaeee577a942d",
+      "octets": 1616
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-12-03.json",
+      "gitBlobSha": "18132485d31ce12077a484821a5c152ba41caf0c",
+      "octets": 1643
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-12-05.json",
+      "gitBlobSha": "6554ec2b307e941c3e8e971c60713aefd6501ed0",
+      "octets": 1616
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-12-08.json",
+      "gitBlobSha": "5d18af1257603972c721d779bed35018a1a61ab5",
+      "octets": 1643
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-12-10.json",
+      "gitBlobSha": "c00dfdd32a0757cfd67d08b383a22572394f2af3",
+      "octets": 1616
+    },
+    {
+      "chemin": "domaines/planification/archives/2026-11-12/renfo-2026-12-12.json",
+      "gitBlobSha": "ad9ba3b34ef0e71699fb40fb43b7d1dcf061936b",
+      "octets": 1643
+    },
+    {
+      "chemin": "domaines/planification/donnees/cycle.json",
+      "gitBlobSha": "858a45c7ebf008c7073e20b8ed06d0e53967fceb",
+      "octets": 55
+    },
+    {
+      "chemin": "domaines/planification/donnees/mouvements.json",
+      "gitBlobSha": "741d52dba7b85e7295d9ab52236d234cc26677c2",
+      "octets": 1261
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-11.json",
+      "gitBlobSha": "27835ab3142553be4a90736a6b12d5b123599503",
+      "octets": 452
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-13.json",
+      "gitBlobSha": "5d71c1b9212b9fb5bc92d1713f5f3c71a1146343",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-16.json",
+      "gitBlobSha": "38fe5908ed8d92cab2ffcd12df36b3579177be95",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-18.json",
+      "gitBlobSha": "b8fe514efd0f4b3288741781cde3cefeaf74742e",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-20.json",
+      "gitBlobSha": "d17be1bfd8c13d8f512e814c52a897d441164df9",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-21.json",
+      "gitBlobSha": "5c300ce863dfffeb64694617acf2e3a34e2c697a",
+      "octets": 884
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-23.json",
+      "gitBlobSha": "72dd36f3102876677d2233b1b082a9cb31c2ed08",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-25.json",
+      "gitBlobSha": "bb641522c7c9f1b1c96324494b9717c94154f58c",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-27.json",
+      "gitBlobSha": "34ffedb8ad158f2b26e9837aa41bfdd938b704a7",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-28.json",
+      "gitBlobSha": "1692352021388bce22150ee02285444723b7ccdb",
+      "octets": 884
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-2026-11-30.json",
+      "gitBlobSha": "a47e54b0e477300da5e8a9a01ef835ff069507ae",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/course-tapis-2026-11-12.json",
+      "gitBlobSha": "1d578e605e989200112c2fb1a80bc981a84a0838",
+      "octets": 250
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/kine-2026-11-04.json",
+      "gitBlobSha": "5839b4bf1025d2a07767f02270c7b17b8e2b701e",
+      "octets": 102
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/kine-2026-11-09.json",
+      "gitBlobSha": "611aa6395d98c2e7eeef450060a2bf094ff87c05",
+      "octets": 102
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/kine-2026-11-18.json",
+      "gitBlobSha": "b10aac4825c8e2904124555b491ca3d90781602c",
+      "octets": 102
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+      "gitBlobSha": "d1518903c67a52c028781c8391140b4aa20d04bf",
+      "octets": 2016
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-02.json",
+      "gitBlobSha": "43f663b7486edefe5855be23d89ca242939273ed",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-04.json",
+      "gitBlobSha": "0c1eb8482151cd64351de446ec37948b29fd2220",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-05.json",
+      "gitBlobSha": "159423b1bb20fcec013b05c0ed9f37ca73973f0c",
+      "octets": 884
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-07.json",
+      "gitBlobSha": "9fc425c4663e3fbc2eeefd1ffde014603b5e10c2",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-09.json",
+      "gitBlobSha": "a2ab75f418be651250346b5a1522bce771f34117",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-11.json",
+      "gitBlobSha": "0dd1f4a10e41f09a6f776b394f125c43d83721c1",
+      "octets": 636
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-12.json",
+      "gitBlobSha": "abc07abb362e46a1062f654c00d142e73e02bfc7",
+      "octets": 884
+    },
+    {
+      "chemin": "domaines/planification/donnees/seances/2026/12/course-2026-12-14.json",
+      "gitBlobSha": "3d3b4a5e0a94aec79afd41d74d159b9db1456e03",
+      "octets": 770
+    },
+    {
+      "chemin": "domaines/planification/modele.cjs",
+      "gitBlobSha": "c19277e2b0e3db4776d544c30c02b8f746d887ab",
+      "octets": 4019
+    },
+    {
+      "chemin": "domaines/sante/README.md",
+      "gitBlobSha": "a82fa34ad137f7107ec3d13a54a5fbfa94ae4ec0",
+      "octets": 5719
+    },
+    {
+      "chemin": "domaines/sante/donnees/PROFIL.md",
+      "gitBlobSha": "0e0f0eb9ad15913f4d03525e1a157b04ecfce590",
+      "octets": 7021
+    },
+    {
+      "chemin": "domaines/sante/donnees/SUIVI.md",
+      "gitBlobSha": "6be8bb04d911735d0a62c9087fadd7d5e10383d0",
+      "octets": 1628
+    },
+    {
+      "chemin": "domaines/sante/donnees/evenements/2026/11/2026-11-02-chaussures-running.md",
+      "gitBlobSha": "8ae66fb2c418a7e85171054c70d780adde850914",
+      "octets": 786
+    },
+    {
+      "chemin": "domaines/sante/donnees/evenements/2026/11/2026-11-09-semelles-orthopediques.md",
+      "gitBlobSha": "49b844c6956b96c2916c9f27a50794e1ac5cc86d",
+      "octets": 268
+    },
+    {
+      "chemin": "domaines/sante/donnees/evenements/2026/11/2026-11-11-premiere-sortie-course.md",
+      "gitBlobSha": "b411a747e87b6ecf6a6c41597eae4ebbc5ea4ad4",
+      "octets": 341
+    },
+    {
+      "chemin": "domaines/sante/donnees/evenements/2026/11/2026-11-12-echange-chaussures-running.md",
+      "gitBlobSha": "b24301a627b5cd7e4d10f78e22bcfddd4e8278a1",
+      "octets": 2745
+    },
+    {
+      "chemin": "domaines/sante/donnees/rapports/2026/11/course-2026-11-11.md",
+      "gitBlobSha": "3a592710939198deddebc3a7f2d47ea922d62df1",
+      "octets": 4877
+    },
+    {
+      "chemin": "domaines/sante/donnees/rapports/2026/11/course-tapis-2026-11-12.md",
+      "gitBlobSha": "65d1ce1852f589213c519eace0325fe507a38cd1",
+      "octets": 1161
+    },
+    {
+      "chemin": "domaines/sante/donnees/rapports/2026/11/kine-2026-11-04.md",
+      "gitBlobSha": "9424755946c9b9e58bb9ab116329d252689ad2c2",
+      "octets": 961
+    },
+    {
+      "chemin": "domaines/sante/donnees/rapports/2026/11/kine-2026-11-09.md",
+      "gitBlobSha": "a73a9bee5a890e250624937177a95234f0d6d449",
+      "octets": 2037
+    },
+    {
+      "chemin": "domaines/sante/donnees/ressentis/seances/2026/11/course-2026-11-11.json",
+      "gitBlobSha": "dd602202c3ea6d6fba4cac932159e1a6792800c5",
+      "octets": 396
+    },
+    {
+      "chemin": "domaines/sante/donnees/ressentis/seances/2026/11/course-tapis-2026-11-12.json",
+      "gitBlobSha": "b7099a34ecc36a8174225880fe0e95aeb3a15047",
+      "octets": 312
+    },
+    {
+      "chemin": "domaines/sante/donnees/ressentis/seances/2026/11/kine-2026-11-04.json",
+      "gitBlobSha": "e4173217d122a15dd89b69965aee78f8b80d47fa",
+      "octets": 130
+    },
+    {
+      "chemin": "domaines/sante/donnees/ressentis/seances/2026/11/kine-2026-11-09.json",
+      "gitBlobSha": "bf4d5bd3713095d4db6fc79f15ff9874522786f3",
+      "octets": 187
+    },
+    {
+      "chemin": "domaines/sante/modele.cjs",
+      "gitBlobSha": "c386ebda8dd7091d02bf746d7cfe3c9980c95abf",
+      "octets": 324
+    },
+    {
+      "chemin": "maturation/architecture/AUDIT-SUIVI-SANTE.md",
+      "gitBlobSha": "0175946f5ae4cbb747d4e50fa009d149d3e1d50f",
+      "octets": 2839
+    },
+    {
+      "chemin": "maturation/architecture/ETAT.md",
+      "gitBlobSha": "abf082fd94cb5b59fca85f676506edd220faccfb",
+      "octets": 6847
+    },
+    {
+      "chemin": "maturation/architecture/PLAN.md",
+      "gitBlobSha": "6d5a2c427aa9a87cf864bdf00e344e3637971b3b",
+      "octets": 3104
+    },
+    {
+      "chemin": "maturation/architecture/README-personnel-historique.md",
+      "gitBlobSha": "f151e4eef6323bc457b0fde7a36055e700eaaa8b",
+      "octets": 1566
+    },
+    {
+      "chemin": "maturation/architecture/inventaire-initial.json",
+      "gitBlobSha": "b3cd24792285897f12f0123637923f13eef8fd3a",
+      "octets": 296
+    },
+    {
+      "chemin": "maturation/architecture/verifier-frontieres.cjs",
+      "gitBlobSha": "8930d6ed2c2fc7ce663cced86233c40002a04fa0",
+      "octets": 2910
+    },
+    {
+      "chemin": "maturation/architecture/verifier-portabilite.cjs",
+      "gitBlobSha": "8898832bb75a511118fedd3c5caed5dfa064588c",
+      "octets": 2936
+    },
+    {
+      "chemin": "maturation/architecture/verifier-publication-prive.cjs",
+      "gitBlobSha": "72efd506ce74164b91926870c1f4dd8b53cec770",
+      "octets": 1987
+    },
+    {
+      "chemin": "maturation/architecture/verifier-publication.cjs",
+      "gitBlobSha": "a4d0ee74bdafb1993becda68a88a569a8fb565fd",
+      "octets": 4768
+    },
+    {
+      "chemin": "publication.txt",
+      "gitBlobSha": "00341d4e6a7765e4f72b8672b11702be9c330da9",
+      "octets": 2433
+    },
+    {
+      "chemin": "scripts/construire-site.cjs",
+      "gitBlobSha": "d181f3ae1e7669bb04dff8bb18e6354deca1f440",
+      "octets": 5312
+    },
+    {
+      "chemin": "scripts/donnees.cjs",
+      "gitBlobSha": "a6f4982aa83cd2e7e9aaad758d397a90dce1f89e",
+      "octets": 167
+    },
+    {
+      "chemin": "scripts/migration-preuve.json",
+      "gitBlobSha": "9977437518af53fbbb1af819aaf1bbb37433ce09",
+      "octets": 453
+    },
+    {
+      "chemin": "scripts/verifier-changements.cjs",
+      "gitBlobSha": "db6996d92801059c711b21900878d7807ca2ef34",
+      "octets": 2779
+    },
+    {
+      "chemin": "scripts/verifier-miroir-web.cjs",
+      "gitBlobSha": "d2822d21d7ba66b19539d980660b76c352c25918",
+      "octets": 3029
+    },
+    {
+      "chemin": "scripts/verifier-site.cjs",
+      "gitBlobSha": "e6e30e4b0f2333252594042de3604e67587bc92e",
+      "octets": 42452
+    }
+  ]
+}

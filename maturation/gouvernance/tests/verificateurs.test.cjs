@@ -46,3 +46,19 @@ test("Matrice dégradée ou attributions absentes sont refusées", () => {
   assert.throws(() => verifyCoverage(bad, "", () => ""));
   assert.throws(() => verifyCoverage({ schemaVersion: 0, totalExigences: 85, attributions: [] }, "", () => ""));
 });
+
+test("Inventaire fixe de dix simulations sans écriture", () => {
+  const fs = require("node:fs");
+  const path = require("node:path");
+  const d = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "SCENARIOS-SIMULATION.json"), "utf8"));
+  assert.equal(d.schemaVersion, 1);
+  assert.equal(d.mode, "simulation_sans_ecriture");
+  assert.equal(d.scenarios.length, 10);
+  const ids = d.scenarios.map((x) => x.id);
+  assert.equal(new Set(ids).size, ids.length);
+  for (const scenario of d.scenarios) {
+    assert.ok(scenario.requete.includes("SIMULATION") || scenario.id === "SC-01");
+    assert.ok(scenario.interdits.includes("ecriture_git") && scenario.interdits.includes("ecriture_garmin"));
+    assert.ok(scenario.attendus.length >= 3);
+  }
+});
