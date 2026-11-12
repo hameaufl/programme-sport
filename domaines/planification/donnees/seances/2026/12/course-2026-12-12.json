@@ -1,0 +1,32 @@
+{
+  "id": "course-2026-12-12",
+  "date": "2026-12-12",
+  "titre": "Course à pied · 2M+3C",
+  "type": "course",
+  "objectif": "4e sortie courte et facultative : seulement après récupération satisfaisante, sans douleur à l'appui ni aggravation du pied ou de la hanche. En cas de douleur, reporter ou supprimer la sortie ; aucune obligation de rattrapage.",
+  "dureeEstimeeMinutes": {
+    "min": 10,
+    "max": 10
+  },
+  "blocs": [
+    {
+      "nature": "fractions",
+      "repetitions": 1,
+      "marcheSecondes": 120,
+      "courseSecondes": 180
+    },
+    {
+      "nature": "marche_finale",
+      "dureeSecondes": 120
+    },
+    {
+      "nature": "allure",
+      "niveau": "facile"
+    },
+    {
+      "nature": "etirements",
+      "dureeSecondes": 180,
+      "consignes": "mollets, fessiers et arrière des cuisses ; 20 s par côté, sans douleur ni hyperextension"
+    }
+  ]
+}
