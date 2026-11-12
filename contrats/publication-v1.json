@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "default": "deny",
+  "programme": [
+    "id",
+    "date",
+    "titre",
+    "type",
+    "heure",
+    "duree",
+    "distance",
+    "etapes",
+    "objectif",
+    "details",
+    "fait",
+    "exercicesRealises",
+    "structuresSollicitees",
+    "sensations",
+    "pieces_jointes",
+    "aidesExercices"
+  ],
+  "index": [
+    "schemaVersion",
+    "objectifs",
+    "debutCycle",
+    "semaines",
+    "compteurs",
+    "buildVersion"
+  ],
+  "sante": {
+    "profilPublic": true,
+    "evenementsPublics": true,
+    "comptesRendusPublicsDansVues": true
+  },
+  "note": "Politique explicite reflétant les fonctionnalités publiques existantes. Réduire ces autorisations avant tout transfert de données vers un stockage confidentiel; aucune nouvelle propriété n'est exportable par défaut."
+}
