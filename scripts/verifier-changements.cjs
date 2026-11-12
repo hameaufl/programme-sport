@@ -3,7 +3,7 @@ const cp=require("node:child_process"),path=require("node:path"),fs=require("nod
 const root=path.resolve(__dirname,"..");
 function git(args){return cp.execFileSync("git",args,{cwd:root,encoding:"utf8"}).trim();}
 try{
- const diff=git(["diff","--name-status","HEAD^","HEAD","--","personnel/seances","personnel/sante/rapports","personnel/sante/evenements"]);
+ const diff=git(["diff","--no-renames","--name-status","HEAD^","HEAD","--","personnel/seances","personnel/sante/rapports","personnel/sante/evenements"]);
  const lines=diff?diff.split(/\r?\n/):[];
  const migration=git(["diff","--name-only","HEAD^","HEAD"]).split(/\r?\n/);
  const isMigration=migration.includes("scripts/migration-preuve.json")&&migration.includes("personnel/programme.js");
