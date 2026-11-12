@@ -28,5 +28,12 @@
       "exercice": "Pont avec ballon · 3 × 10 ; tenir 8–10 s, repos 5 s entre montées et 60 s entre séries (~10–12 min) ; facultatif si instable",
       "png": "assets/renfo/png/pont-ballon.png"
     }
+  ],
+  "pieces_jointes": [
+    {
+      "role": "entrainement_prevu",
+      "chemin": "personnel/pieces-jointes/seances/renfo-2026-11-24/prevu/renfo-2026-11-24.fit",
+      "format": "fit"
+    }
   ]
 }

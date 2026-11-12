@@ -28,5 +28,12 @@
       "exercice": "Bras et jambe opposés sur le dos · 3 × 8 par côté ; 4 s par mouvement, repos 45 s entre séries (~5–6 min)",
       "png": "assets/renfo/png/dead-bug.png"
     }
+  ],
+  "pieces_jointes": [
+    {
+      "role": "entrainement_prevu",
+      "chemin": "personnel/pieces-jointes/seances/renfo-2026-12-10/prevu/renfo-2026-12-10.fit",
+      "format": "fit"
+    }
   ]
 }
