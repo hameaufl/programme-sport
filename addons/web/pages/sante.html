@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-entetes-navigation-v25">
+  <meta name="mon-rythme-version" content="2026-11-12-navigation-epuree-v26">
   <meta name="description" content="Mon suivi de reprise sportive, en quelques repères visuels.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -32,7 +32,6 @@
     section{margin-top:32px}
     .section-heading{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:15px}
     h2{font-size:23px;line-height:1.25;letter-spacing:-.7px;margin:0}
-    .section-note{color:var(--muted);font-size:13px;margin:5px 0 0}
     .small-label{font-size:11px;color:var(--muted);letter-spacing:.8px;text-transform:uppercase;font-weight:750}
     .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
     .stat{background:var(--white);border:1px solid var(--line);border-radius:18px;min-height:146px;padding:23px;display:flex;flex-direction:column;justify-content:space-between}
@@ -74,7 +73,7 @@
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
     @media print{body{background:#fff}.shell{width:100%;padding:0}.hero{background:#f3f7f1;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--muted)}.back{display:none}}
   </style>
-  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-entetes-navigation-v25">
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-navigation-epuree-v26">
 </head>
 <body>
   <div class="shell">
@@ -91,7 +90,7 @@
       </div>
       <section aria-labelledby="atGlance">
         <div class="section-heading">
-          <div><h2 id="atGlance">En un regard</h2><p class="section-note">Des faits enregistrés, jamais des résultats supposés.</p></div>
+          <div><h2 id="atGlance">En un regard</h2></div>
         </div>
         <div class="stats" aria-live="polite">
           <div class="stat"><output class="stat-number" id="doneCount">—</output><span class="stat-title">Séances réalisées</span></div>
@@ -101,7 +100,7 @@
       </section>
       <section aria-labelledby="weekTitle">
         <div class="section-heading">
-          <div><h2 id="weekTitle">Au fil des semaines</h2><p class="section-note">Ce qui est confirmé parmi les séances programmées.</p></div>
+          <div><h2 id="weekTitle">Au fil des semaines</h2></div>
         </div>
         <div class="graph-box">
           <div class="week-graph" id="weekGraph" aria-live="polite"><div class="empty">Chargement des semaines…</div></div>
@@ -113,11 +112,11 @@
       </section>
       <div class="lower-grid">
         <section class="subpanel" aria-labelledby="recentTitle">
-          <div class="section-heading"><div><h2 id="recentTitle">Dernières réalisations</h2><p class="section-note">Uniquement les activités confirmées.</p></div></div>
+          <div class="section-heading"><div><h2 id="recentTitle">Dernières réalisations</h2></div></div>
           <div class="list-box"><div class="rows" id="recentDone" aria-live="polite"><div class="empty">Chargement des séances…</div></div></div>
         </section>
         <section class="subpanel" aria-labelledby="eventsTitle">
-          <div class="section-heading"><div><h2 id="eventsTitle">Repères datés</h2><p class="section-note">Les événements de suivi, sans dossiers textuels.</p></div></div>
+          <div class="section-heading"><div><h2 id="eventsTitle">Repères datés</h2></div></div>
           <div class="list-box"><div class="rows" id="healthEvents" aria-live="polite"><div class="empty">Chargement des repères…</div></div></div>
         </section>
       </div>

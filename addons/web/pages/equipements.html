@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-entetes-navigation-v25">
+  <meta name="mon-rythme-version" content="2026-11-12-navigation-epuree-v26">
   <meta name="description" content="Mes équipements sportifs actuellement disponibles à la maison.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -32,13 +32,11 @@
     section{margin-top:33px}
     .overview{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;background:white;border:1px solid var(--line);border-radius:19px;padding:24px 28px}
     .overview-label{font-size:12px;font-weight:750;color:var(--mid);text-transform:uppercase;letter-spacing:1.1px}
-    .overview-desc{font-size:14px;color:var(--muted);margin:6px 0 0}
     .count-box{display:flex;align-items:baseline;gap:10px}
     .count{font-size:clamp(40px,6vw,56px);font-weight:800;line-height:1;color:var(--green);font-variant-numeric:tabular-nums}
     .count-unit{color:var(--muted);font-size:13px;max-width:75px;line-height:1.25}
     .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:0 0 17px}
     h2{font-size:24px;letter-spacing:-.7px;line-height:1.2;margin:0}
-    .hint{font-size:13px;color:var(--muted);margin:6px 0 0}
     .date{color:#617769;font-size:12px;letter-spacing:.1px}
     .equipment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
     .equipment{position:relative;min-height:215px;display:flex;flex-direction:column;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:19px;padding:26px 25px;overflow:hidden}
@@ -57,7 +55,7 @@
     @media(max-width:650px){.shell{width:calc(100% - 26px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px;font-size:12px}.hero{border-radius:19px;padding:31px 25px;min-height:190px}.hero-mark{display:none}.equipment-grid{grid-template-columns:1fr}.equipment{min-height:190px;padding:23px}.overview{padding:20px;gap:15px}.count-unit{max-width:60px}section{margin-top:27px}h2{font-size:22px}}
     @media print{body{background:#fff}.shell{width:100%}.hero{background:#f5f8f4;color:var(--ink);border:1px solid var(--line)}.eyebrow,.subtitle{color:var(--mid)}.back{display:none}}
   </style>
-  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-entetes-navigation-v25">
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-navigation-epuree-v26">
 </head>
 <body>
   <div class="shell">
@@ -73,12 +71,12 @@
         </div>
       </div>
       <section class="overview" aria-label="Nombre d'équipements disponibles">
-        <div><div class="overview-label">Mon inventaire actuel</div><p class="overview-desc">Uniquement les équipements confirmés comme disponibles.</p></div>
+        <div><div class="overview-label">Mon inventaire actuel</div></div>
         <div class="count-box"><output id="equipmentCount" class="count">—</output><span class="count-unit">équipements disponibles</span></div>
       </section>
       <section aria-labelledby="equipmentTitle">
         <div class="section-head">
-          <div><h2 id="equipmentTitle">À ma disposition</h2><p class="hint">Inventaire utilisé pour adapter mes séances de renforcement.</p></div>
+          <div><h2 id="equipmentTitle">À ma disposition</h2></div>
           <span class="date" id="inventoryDate"></span>
         </div>
         <div id="equipmentList" class="equipment-grid" aria-live="polite">
