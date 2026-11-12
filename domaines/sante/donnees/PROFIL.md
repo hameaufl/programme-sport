@@ -29,7 +29,7 @@
 - **Kinésithérapie des genoux :** séances du **4 et du 9 novembre 2026** confirmées réalisées ; prochain rendez-vous prévu le **18 novembre** (non confirmé réalisé).
 - **Imagerie du pied pour la douleur au quatrième métatarsien :** selon l'utilisateur, **le médecin a évoqué une éventuelle échographie**. Une radiographie ou un autre examen restent des possibilités à discuter ; **aucun examen décidé, programmé ou réalisé à ce stade**.
 - **Reconsultation médicale envisagée dans quelques semaines** si la douleur au quatrième métatarsien persiste malgré le port des semelles orthopédiques ; rendez-vous non encore fixé.
-- **Magasin de running :** visite projetée pour le **13 novembre 2026** afin de demander conseil sur la largeur et le chaussant ; visite non confirmée réalisée.
+- **Magasin de running :** visite initialement envisagée le 13 novembre, finalement **effectuée le jeudi 12 novembre 2026 au soir** : plusieurs essayages, environ 20–30 min de tests en courant sur tapis avec les nouvelles semelles, puis échange des chaussures.
 
 ## Tolérance à l'effort et récupération
 
@@ -40,12 +40,17 @@
 
 ## Autres informations utiles
 
-- **Chaussures de running :** achetées le **2 novembre 2026**, sélectionnées pour un **amorti important** ; marque et modèle non communiqués.
+- **Chaussures de running précédentes :** **Mizuno Neo Vista 2, pointure 44 (EU)**, achetées le **2 novembre 2026**, sélectionnées pour un amorti important ; utilisées chez le podologue lors de la confection des nouvelles semelles et pour la sortie du 11 novembre, suivie des douleurs décrites dans le rapport.
+- **Chaussures de running actuelles (depuis le 12 novembre au soir) :** **Saucony Hurricane 26, pointure 45 (EU)**, obtenues en échange des Mizuno après plusieurs essayages et environ **20 à 30 min de course d'essai sur tapis**, avec les semelles orthopédiques reçues le 9 novembre.
+- **Pointure habituelle :** petit **43 (EU)** ; le passage aux tailles 44 puis 45 concerne les deux paires de running essayées/achetées, sans conclure que la nouvelle pointure est définitivement adaptée.
 - **Chaussage compliqué :** besoin de modèles réellement adaptés à un pied large de 113 mm et aux semelles orthopédiques, pour les chaussures de ville comme de course.
-- **Hypothèse de chaussant trop étroit :** à discuter avec le vendeur ; cela ne démontre pas l'origine des douleurs.
+- **Hypothèse de chaussant trop étroit :** évoquée par l'utilisateur pour les anciennes chaussures ; l'essai comparatif et l'échange du 12 novembre ne prouvent pas que leur largeur causait les douleurs ni que les nouvelles chaussures les résoudront.
+- **Tolérance des Saucony après les essais :** ressenti durant les 20–30 min sur tapis et évolution des douleurs ensuite **non encore précisés** ; ne pas assimiler l'essai à une reprise du programme de course.
 - **Objectif :** reprise de course progressive et confortable, sans forcer sur les douleurs.
 
 ## Sources et dates de mise à jour
+
+- **12 novembre 2026 au soir :** nouvelles précisions directes sur les deux paires, l'échange en magasin et les essais sur tapis avec semelles ; événement daté du 12 novembre.
 
 - **12 novembre 2026 :** bilan mécanique oral fourni par l'utilisateur ; informations complémentaires sur l'échographie évoquée par le médecin, l'éventuelle radiographie et une reconsultation si la douleur persiste avec les semelles.
 - **11 novembre 2026 :** compte rendu de sortie dans `personnel/sante/rapports/2026/11/course-2026-11-11.md`.
