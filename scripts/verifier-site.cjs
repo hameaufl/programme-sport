@@ -54,9 +54,13 @@ assert.ok(version&&[sante,coachPage,equipPage].every(page=>page.includes('name="
 const pagesVisuelles=[["index",html],["sante",sante],["coach",coachPage],["equipements",equipPage]];
 const styleCommun=read("addons/web/public/style-commun.css");
 assert.ok(styleCommun.includes("min-height:232px")&&styleCommun.includes("min-height:210px")&&
- styleCommun.includes("header.site-header")&&styleCommun.includes(".site-navigation {")&&
- styleCommun.includes("justify-content:flex-end")&&!styleCommun.includes("grid-template-columns:repeat(4,minmax(0,1fr))"),
- "En-têtes ou navigation légère alignée à droite non conformes");
+ styleCommun.includes("header.site-header")&&styleCommun.includes(".site-brand-wrap #todayLabel")&&
+ styleCommun.includes(".shell {width:min(1160px")&&
+ styleCommun.includes("grid-template-columns:repeat(4,minmax(0,1fr))")&&
+ styleCommun.includes("grid-template-columns:repeat(2,minmax(0,1fr))")&&
+ styleCommun.includes("@media(max-width:1000px)")&&styleCommun.includes("@media(max-width:600px)")&&
+ !styleCommun.includes("justify-content:flex-end"),
+ "L'en-tête commun doit occuper la largeur et le menu doit se répartir en quatre puis deux colonnes");
 const destinations=[
  ["index","Mon programme","./"],
  ["coach","Le cap du Coach","./coach.html"],
@@ -75,8 +79,11 @@ for(const [page,source] of pagesVisuelles){
  const menu=menus[0];
  const headerStart=source.indexOf('<header class="site-header">'),headerEnd=source.indexOf('</header>',headerStart);
  const navPos=source.indexOf('<nav class="site-navigation"');
- assert.ok(headerStart>=0&&navPos>headerStart&&navPos<headerEnd&&headerEnd<source.indexOf('<main>'),
-  "La navigation doit se trouver dans l'en-tête, à droite du logo : "+page);
+ const brandPos=source.indexOf('<div class="site-brand-wrap">',headerStart);
+ const brandEnd=source.indexOf('</div>',brandPos);
+ assert.ok(headerStart>=0&&brandPos>headerStart&&brandEnd>brandPos&&brandEnd<navPos&&
+  navPos<headerEnd&&headerEnd<source.indexOf('<main>'),
+  "Même disposition de marque et menu dans l'en-tête sur les quatre pages : "+page);
  assert.equal((menu.match(/class="site-nav-link/g)||[]).length,4,"Quatre destinations attendues : "+page);
  assert.equal((menu.match(/aria-current="page"/g)||[]).length,1,"Un seul onglet actif : "+page);
  let previous=-1;
@@ -96,9 +103,15 @@ assert.ok(read("scripts/construire-site.cjs").includes('"style-commun.css"'),
 // Éviter les raccourcis et sous-titres qui dupliquent désormais les titres et la navigation.
 assert.ok(!html.includes('class="insights-grid"')&&!html.includes('class="health-preview"')&&
  !html.includes('class="health-cta"'),"Les trois anciens raccourcis du programme doivent être supprimés");
+const programmeHeader=html.slice(html.indexOf('<header class="site-header">'),html.indexOf('</header>'));
+const brandWrapStart=programmeHeader.indexOf('<div class="site-brand-wrap">');
+const datePosition=programmeHeader.indexOf('<time id="todayLabel"></time>');
+const brandWrapEnd=programmeHeader.indexOf('</div>',brandWrapStart);
 assert.ok(html.indexOf('<nav class="site-navigation"')<html.indexOf('<main>')&&
- html.includes('<time id="todayLabel"></time>')&&html.includes('class="site-brand-wrap"'),
- "La navigation doit précéder le programme et sa date reste affichée sous le logo");
+ brandWrapStart>=0&&datePosition>brandWrapEnd&&
+ datePosition<programmeHeader.indexOf('</div>',brandWrapEnd+6)&&
+ programmeHeader.indexOf('<nav class="site-navigation"')>datePosition,
+ "Sur le programme, la date doit être à droite du logo et avant le menu");
 for(const [nom,page] of pagesVisuelles){
  assert.ok(!page.includes('class="section-note"')&&!page.includes('class="hint"')&&!page.includes('class="help"'),
   "Sous-titre redondant sous un titre de section : "+nom);

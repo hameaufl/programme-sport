@@ -1,5 +1,5 @@
 Mon Rythme — témoin de publication
-Version attendue : 2026-11-12-navigation-haute-v27
+Version attendue : 2026-11-12-navigation-large-v28
 Programme : coche verte et Fait uniquement si séance confirmée ; sensations statiques si renseignées
 Interface : aucun stockage local ni coche interactive
 Dépôt : https://github.com/hameaufl/programme-sport
@@ -16,3 +16,5 @@ En-têtes et navigation : quatre bandeaux harmonisés (hauteur, titre, pictogram
 Navigation épurée : trois raccourcis redondants retirés de Mon programme ; sous-titres de niveau 2 sans apport retirés des pages Santé et Équipement, étiquette répétitive du Coach retirée ; contenu métier et menu commun conservés.
 
 Navigation haute : ordre Mon programme / Le cap du Coach / Mon suivi santé / Mon équipement ; petits boutons à droite, retour séparé supprimé, repli responsive non centré.
+
+Navigation uniformisée : en-tête de largeur commune 1160 px, menu à quatre boutons répartis sur la largeur disponible ; date placée à droite de « mon rythme. » sur la page Programme ; menu sur une ligne dédiée sous 1000 px et deux colonnes sur petit mobile.
