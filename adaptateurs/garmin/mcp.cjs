@@ -44,18 +44,20 @@ function preparer(ids,source=depots){
 // jamais devinés. L'appel MCP schedule_workouts est effectué seulement par le Coach autorisé.
 function preparerCalendrier(preparation,idsDistants,existants=[]){
  if(preparation?.statut!=="PREPARATION_LOCALE_SEULEMENT"||!idsDistants||typeof idsDistants!=="object"||!Array.isArray(existants))throw Error("Contexte de planification invalide");
- const aProgrammer=[];
+ const aProgrammer=[],alertes=[];
  for(const m of preparation.modeles){
   const remote=idsDistants[m.empreinte];
   if(!Number.isSafeInteger(remote)||remote<=0)throw Error("Modèle distant non vérifié : "+m.empreinte);
   for(const date of m.dates){
    const surDate=existants.filter(x=>x.calendar_date===date||x.date===date);
    if(surDate.some(x=>(x.workout_id??x.workoutId)===remote))continue;
-   if(surDate.length)throw Error("Date déjà occupée dans le calendrier : "+date+" (arbitrage requis)");
+   // Plusieurs activités distinctes peuvent légitimement figurer le même jour.
+   // Une autre entrée existante impose une vérification humaine avant écriture.
+   if(surDate.length)alertes.push({date,sport:m.sport,message:"Autre entraînement déjà présent ce jour : vérifier le calendrier"});
    aProgrammer.push({workout_id:remote,calendar_date:date});
   }
  }
- return {outil:"schedule_workouts",schedules:aProgrammer,statut:"A_CONFIRMATION_EXPLICITE"};
+ return {outil:"schedule_workouts",schedules:aProgrammer,alertes,statut:"A_CONFIRMATION_EXPLICITE"};
 }
 // Conversion prudente pour les fractions marche/course courantes : aucun objectif FC inventé.
 // Les Renfos demandent un contrôle des exercices homologués Garmin et de la récupération.
