@@ -17,3 +17,5 @@ Le Web ne lit jamais ces fichiers bruts : `adaptateurs/projections/coaching.cjs`
 ## Vue de mon matériel à domicile
 
 `donnees/equipements.json` **reste l'unique source canonique**, éditée par le Coach seulement après confirmation explicite du propriétaire. La page `addons/web/pages/equipements.html` ne stocke rien : l'adaptateur `adaptateurs/projections/coaching.cjs` génère une **liste blanche des équipements disponibles**, noms et diamètre approximatif éventuel seulement, sous `data/coaching/equipements.json` lorsque le contrat standard l'autorise. Aucune copie complète ni lecture des chemins internes depuis le navigateur. Les équipements absents, non confirmés, notes et provenance restent métier, invisibles sur cette page. Le stockage privé futur peut remplacer le port sans modifier la page. Le dépôt et le site standard sont publics.
+
+La page Web se nomme **« Mes équipements »**. Ce titre de présentation ne fait pas partie de l'inventaire métier et ne change ni le rôle du Coach, ni le contenu ou le format de `donnees/equipements.json`.

@@ -1,5 +1,11 @@
 # Journal Maturation — historique technique
 
+## 12 novembre 2026 — Intitulé « Mes équipements »
+
+- Harmonisation du titre affiché et du menu commun aux quatre pages, du titre de l'onglet, des contrôles de non-régression et des références documentaires Maturation / Coach.
+- Aucune modification des équipements réels, de la source canonique du Coach, des contrats de publication, des projections ou des routes Web.
+
+
 ## 10–11 novembre 2026 — Mise en place
 
 - Site statique Mon Rythme, responsive, calendrier lundi–dimanche, date actuelle dynamique.
@@ -313,7 +319,7 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 
 ## 12 novembre 2026 — Unification des en-têtes et de la navigation
 
-- Demande du propriétaire : encarts titres de même hauteur et même forme que « Mon suivi santé », pictogrammes cohérents sur les quatre pages, retrait des sous-titres dans « Mon équipement ».
+- Demande du propriétaire : encarts titres de même hauteur et même forme que « Mon suivi santé », pictogrammes cohérents sur les quatre pages, retrait des sous-titres dans « Mes équipements ».
 - Réalisation Maturation : feuille commune pour les en-têtes, les pictogrammes et les liens ; quatre destinations identiques en bas de chaque page ; retour « Mon programme » conservé en haut à droite des trois pages secondaires. L'ancien menu partiel Équipement et les deux encarts de renvoi du Coach sont remplacés par la navigation uniforme.
 - Version de publication synchronisée ; tests statiques du contrat visuel, du responsive et de la présence de la feuille dans l'artefact. Aucune source métier, projection ni opération Garmin modifiée.
 

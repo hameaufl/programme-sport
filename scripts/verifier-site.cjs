@@ -83,8 +83,14 @@ const destinations=[
  ["index","Mon programme","./"],
  ["coach","Le cap du Coach","./coach.html"],
  ["sante","Mon suivi santé","./sante.html"],
- ["equipements","Mon équipement","./equipements.html"]
+ ["equipements","Mes équipements","./equipements.html"]
 ];
+assert.ok(equipPage.includes("<title>Mes équipements · Mon Rythme</title>")&&
+ equipPage.includes("<h1>Mes équipements.</h1>"),
+ "Le titre navigateur et le bandeau de la page équipements doivent avoir le même intitulé");
+const ancienLibelleEquipement=["Mon","équipement"].join(" ");
+assert.ok(pagesVisuelles.every(([,source])=>!source.includes(ancienLibelleEquipement)),
+ "Aucun ancien libellé ne doit rester dans les quatre pages publiées");
 for(const [page,source] of pagesVisuelles){
  assert.ok(source.includes('href="./style-commun.css?v='+version+'">'),"Feuille partagée absente : "+page);
  assert.ok(source.includes('defer src="./en-tete.js?v='+version+'"></script>'),"Script de date commun absent : "+page);

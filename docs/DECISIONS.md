@@ -1,5 +1,11 @@
 # Décisions techniques — Maturation
 
+## 12 novembre 2026 — Renommage de la quatrième page « Mes équipements »
+
+- Le propriétaire choisit **« Mes équipements »** comme intitulé unique de la quatrième page. Appliquer le nom dans le composant d'en-tête mutualisé (sur les quatre pages), dans le titre de navigateur, dans le bandeau et dans les références de reprise Maturation / Coach.
+- Ne pas renommer les routes ou les fichiers `equipements.html`, les identifiants d'onglet, les ports métier, ni `equipements.json` : l'inventaire et ses projections conservent leur schéma et leur confidentialité. Renforcer les tests pour éviter une régression du libellé.
+
+
 ## 12 novembre 2026 — Source HTML unique d'en-tête et bandeaux réduits
 
 - **Demande explicite du propriétaire :** conserver « mon rythme. » cliquable partout, mais sans soulignement ni bleu/violet ou variation de couleur selon la page/état. Le défaut de style était lié aux quatre copies d'en-tête HTML (et à l'absence de `a{color:inherit}` sur l'accueil). Appliquer dans la feuille commune les états `:link`, `:visited`, `:hover`, `:active`, avec focus clavier visible.
@@ -25,7 +31,7 @@
 
 ## 12 novembre 2026 — Navigation générale compacte à droite du logo (nouvelle priorité)
 
-- Le propriétaire remplace la navigation de pied de page par un **menu en haut, à droite du logo** sur les quatre vues. Ordre imposé : **Mon programme, Le cap du Coach, Mon suivi santé, Mon équipement** (inversion de Coach et Santé).
+- Le propriétaire remplace la navigation de pied de page par un **menu en haut, à droite du logo** sur les quatre vues. Ordre imposé : **Mon programme, Le cap du Coach, Mon suivi santé, Mes équipements** (inversion de Coach et Santé).
 - Petits boutons arrondis et légers, côte à côte, **ancrage à droite** et repli responsive également aligné à droite plutôt qu'un groupe centré ; page active discrètement distinguée.
 - Suppression des boutons indépendants « ← Mon programme » des pages secondaires, désormais doublons du lien de menu ; conservation du lien de marque vers la racine et de l'affichage de la date de la page programme. Plus de menu commun sous le contenu.
 - Source de styles unique `addons/web/public/style-commun.css`, contrôles renforcés dans `scripts/verifier-site.cjs`, version de publication harmonisée. Seule la présentation est modifiée ; les domaines métier et les projections restent intacts. **Cette décision prime sur les entrées précédentes parlant de navigation basse.**
@@ -38,7 +44,7 @@
 
 ## 12 novembre 2026 — Bandeaux et navigation générale harmonisés
 
-- À la demande du propriétaire, les quatre pages partagent le grand encart de titre de référence Santé : hauteur desktop/mobile identique, typographie, fond/ornement et pictogramme SVG cohérents. « Mon équipement » perd les textes de sous-titre ; les autres bandeaux sont épurés pour préserver l'uniformité.
+- À la demande du propriétaire, les quatre pages partagent le grand encart de titre de référence Santé : hauteur desktop/mobile identique, typographie, fond/ornement et pictogramme SVG cohérents. « Mes équipements » perd les textes de sous-titre ; les autres bandeaux sont épurés pour préserver l'uniformité.
 - Même navigation à quatre destinations en bas de **chaque** page (programme, santé, cap du Coach, équipement), avec la page courante identifiée. Les trois pages secondaires gardent « ← Mon programme » en haut à droite ; aucun retour redondant en haut de la page programme.
 - Feuille partagée `addons/web/public/style-commun.css`, copiée lors du build, tests ajoutés dans `scripts/verifier-site.cjs`. Aucune modification des sources métier, projections, plans, observations ou règles Garmin.
 

@@ -13,7 +13,7 @@
 
 **Processus Coach :** lecture du dernier `main` et du contexte → analyse et mise à jour des données métier → contrôle des projections et du rendu concerné → correction locale seulement si nécessaire → vérifications/tests/build → commit/push et contrôle de publication lorsque déclenchée. « Mets-toi à jour » isolé reste une lecture seule ; les écritures Garmin exigent toujours les dates explicitement autorisées. **Cette règle supplante les interdictions historiques absolues de modifier l'IHM figurant plus bas dans ce document.**
 
-## Responsabilités de la vue « Mon équipement »
+## Responsabilités de la vue « Mes équipements »
 
 - Coach : seule source canonique d'inventaire `domaines/coaching/donnees/equipements.json`, mise à jour lors d'une déclaration explicite d'achat/disponibilité/retrait par le propriétaire. Le Coach consulte cet inventaire pour composer les séances ; seule une correction locale du composant qui affiche la donnée est permise, selon la règle prioritaire ci-dessus.
 - Maturation : garantit `verifierEquipements()`, la projection filtrée `projeterEquipements()`, les deux politiques de publication, la page `addons/web/pages/equipements.html` et les tests. Le Web ne contient ni copie du matériel ni logique sportive ; il affiche les équipements disponibles seulement. La politique restreinte ne publie aucun inventaire.
