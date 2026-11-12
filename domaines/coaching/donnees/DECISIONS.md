@@ -156,3 +156,9 @@
 - **Choix de présentation :** supprimer de « Mon suivi santé » la phrase sous le titre (« L'essentiel de ma reprise, sans les notes de fond. ») ainsi que la phrase en bas expliquant les sources et l'absence d'avis médical ; ne pas les remettre.
 - **Confidentialité :** le site standard et les sources du dépôt sont publics ; la projection ne publie ni les sources médicales ni les notes du Coach. La politique restreinte supprime entièrement cette projection.
 
+## 12 novembre 2026 au soir — Chaussures de course échangées, prudence maintenue
+
+- **Nouveaux faits confirmés :** Mizuno Neo Vista 2 en 44, utilisées chez le podologue et durant la sortie du 11 novembre ; échangées le 12 au soir contre des Saucony Hurricane 26 en 45 après plusieurs essayages et environ 20–30 min de course sur tapis avec les nouvelles semelles. Pointure habituelle 43. Voir les sources Santé pour le détail factuel.
+- **Analyse du Coach :** le changement de chaussure est une nouvelle variable de suivi du confort, **pas** une preuve que l'ancienne paire causait la douleur ni que les symptômes sont résolus. Aucun ressenti pendant ou après l'essai sur tapis n'a encore été transmis.
+- **Décision de précaution conservée :** la course prévue du 13 novembre reste soumise à la disparition des douleurs significatives à l'appui et à la hanche, et à la récupération ; si elles persistent, ne pas courir et faire évaluer les symptômes si nécessaire. Pas de modification automatique des séances datées, ni de programmation Garmin. Examiner le ressenti en Saucony et avec les semelles avant adaptation.
+- **Source :** déclaration directe du propriétaire, 12 novembre 2026 au soir, et rapport de la sortie du 11 novembre.
