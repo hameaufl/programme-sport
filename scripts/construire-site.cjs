@@ -37,7 +37,8 @@ function build(){
  json("data/index.json",indexPublic);
  for(const week of index.semaines)json("data/semaines/"+week+".json",{schemaVersion:1,semaine:week,sessions:exposed(week,model,policy)});
  if(policy.sante.profilPublic)copy("domaines/sante/donnees/PROFIL.md","data/sante/profil.md");
- const events=policy.sante.evenementsPublics?model.events:[],pageSize=30;
+ // Minimisation de la vue Santé : les contenus de profil/événement restent dans les domaines métier.
+ const events=policy.sante.evenementsPublics?model.events.map(e=>({date:e.date,title:e.title})):[],pageSize=30;
  const pages=[];
  for(let i=0;i<events.length;i+=pageSize){
   const name="page-"+String(pages.length+1).padStart(4,"0")+".json";

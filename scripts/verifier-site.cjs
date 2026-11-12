@@ -32,6 +32,22 @@ assert.ok(html.includes("data/semaines/")&&html.includes('id="previous"')&&html.
 assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"')&&html.includes('"Structures sollicitées"')&&html.includes('"Sensations"'),"Trois sections des séances manquantes");
 assert.ok(html.includes("s.exercicesDuRapport")&&html.includes("s.structuresDuRapport"),"Rapports liés aux séances manquants");
 assert.ok(sante.includes("data/sante/journal/index.json")&&sante.includes("data/index.json"),"Suivi santé paginé ou compteurs manquants");
+assert.ok(sante.includes('id="weekGraph"')&&sante.includes('id="recentDone"')&&sante.includes('id="healthEvents"'),"Nouvelle vue visuelle de santé incomplète");
+assert.ok(sante.includes('id="doneCount"')&&sante.includes('id="feedbackCount"')&&sante.includes('id="plannedCount"'),"Indicateurs santé manquants");
+assert.ok(!/profileSections|fillParagraphs|data\/sante\/profil\.md|Mes repères de santé/.test(sante),"Ancien affichage brut du profil Santé réintroduit");
+assert.ok(!/display\s*:\s*none[^}]*healthProfile|hidden[^>]*healthProfile/.test(sante),"Le profil ne doit pas seulement être masqué visuellement");
+const publicationSante=JSON.parse(read("contrats/publication-v1.json")).sante;
+assert.equal(publicationSante.profilPublic,false,"Le profil médical brut ne doit plus être publié vers le site");
+assert.equal(publicationSante.evenementsPublics,true,"Les dates d'événements doivent rester dans les repères visuels");
+assert.ok(read("scripts/construire-site.cjs").includes("model.events.map(e=>({date:e.date,title:e.title}))"),"Les notes détaillées des événements ne doivent plus être copiées vers le site");
+const originalProfil=read("domaines/sante/donnees/PROFIL.md");
+assert.ok(originalProfil.includes("Antécédents utiles à la pratique sportive")&&originalProfil.includes("Rééducation et suivi professionnel")&&originalProfil.includes("Tolérance à l'effort et récupération"),"Le contexte clinique complet doit rester dans Santé");
+assert.ok(data.events.length>0&&data.events.every(e=>Array.isArray(e.lines)&&e.lines.some(x=>x.trim())),"Les notes d'événements doivent rester intégralement dans Santé");
+assert.ok(read("domaines/coaching/donnees/CONTEXTE-COACH.md").includes("Zones à surveiller")&&
+  read("domaines/coaching/donnees/DECISIONS.md").includes("Décisions du domaine personnel")&&
+  read("domaines/coaching/donnees/JOURNAL.md").includes("Journal du domaine sportif"),"La mémoire de réflexion du Coach doit rester disponible");
+assert.ok(read("maturation/architecture/AUDIT-SUIVI-SANTE.md").includes("PROFIL.md"),"Audit des sources conservées absent");
+
 assert.ok(!html.includes("localStorage")&&!sante.includes("localStorage"),"Stockage navigateur non autorisé");
 assert.ok(html.includes('<div class="section-top"><h2 id="headingAll">Séances de la semaine</h2></div>'),"La liste des séances doit conserver son titre");
 assert.ok(!html.includes("Course et kiné programmées pour la semaine sélectionnée."),"Ne pas afficher de résumé statique au-dessus de la liste hebdomadaire");

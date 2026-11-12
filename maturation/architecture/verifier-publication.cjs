@@ -11,6 +11,9 @@ function files(dir){
 }
 const listing=files(site);
 assert.ok(listing.some(p=>p.endsWith("index.html")),"Accueil absent");
+assert.ok(listing.some(p=>p.endsWith("sante.html")),"Page de suivi absente");
+assert.ok(!listing.some(p=>/data[\\/]sante[\\/]profil\.md$/.test(p)),"Profil Santé narratif toujours publié sur le site");
+
 for(const file of listing){
  const local=path.relative(site,file).replace(/\\/g,"/");
  assert.ok(!/\.fit$/i.test(local),"Ancien programme binaire publié : "+local);
@@ -25,6 +28,17 @@ for(const file of listing){
    assert.ok(!Object.hasOwn(s,"pieces_jointes"),"Lien externe dans la projection : "+s.id);
    assert.ok(!/fichiers\/garmin|\.fit\b/i.test(JSON.stringify(s)),"Référence binaire dans les séances : "+s.id);
   }
+ }
+}
+
+const journalIndex=JSON.parse(fs.readFileSync(path.join(site,"data/sante/journal/index.json"),"utf8"));
+for(const page of journalIndex.pages){
+ const file=path.join(site,"data/sante/journal",page);
+ const data=JSON.parse(fs.readFileSync(file,"utf8"));
+ for(const event of data.events){
+  assert.deepEqual(Object.keys(event).sort(),["date","title"],"Événement Santé contenant plus que sa date et son titre : "+page);
+  assert.match(event.date,/^\d{4}-\d{2}-\d{2}$/,"Date événement invalide");
+  assert.ok(typeof event.title==="string"&&event.title.trim(),"Événement sans intitulé");
  }
 }
 console.log("Publication sans fichiers d'entraînement validée : "+listing.length+" ressources.");
