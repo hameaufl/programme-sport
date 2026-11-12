@@ -1,5 +1,11 @@
 # Attribution des deux casquettes
 
+## Renfo : étirements comme retour au calme unique (règle prioritaire du 12 novembre 2026)
+
+- Coach : mise en route 4 min, trois exercices, puis étirements doux 3 min ; pas de « Retour au calme » distinct lorsqu'il y a les étirements. Adapter les Renfos prévus et les FIT associés (17 pas, 720 secondes explicites, durée indicative 29–35 min), sans toucher aux séances réalisées.
+- Maturation : adapter le générateur FIT et les tests de non-régression, sans modifier l'interface ni les contenus sportifs de sa propre initiative.
+
+
 ## Étirements intégrés aux programmes prévus (12 novembre 2026)
 
 - **Coach** : ajouter un bloc final de 3 min d'étirements doux ciblés aux séances Course/Renfo **non réalisées**, directement dans leur source `etapes`, adapter `duree` et générer/régénérer leur FIT Workout. Le site affiche ce bloc depuis le JSON. Respecter `fait`, IDs, dates, sensations, exercices rapportés et entraînements historiques ; ne pas retoucher les séances réalisées.
@@ -16,7 +22,7 @@
 
 ## Séances Renfo : séparation Coach / Maturation (12 novembre 2026)
 
-- **Coach :** ordonner `etapes` en cinq puces brèves (mise en route, trois exercices, retour au calme) ; placer répétitions, durées et repos dans chaque puce. Associer les PNG des trois exercices, même répétés, en réutilisant la banque. Ne pas introduire de paragraphes supplémentaires sous la liste.
+- **Coach :** ordonner etapes en cinq puces brèves (mise en route, trois exercices, étirements doux) ; ne pas insérer de retour au calme distinct lorsque les étirements sont prévus. Garder répétitions, durées, repos et les PNG des trois exercices ; aucun paragraphe redondant.
 - **Maturation :** afficher `etapes` et ses petits boutons d'aide PNG, **masquer `objectif` et `details` pour les Renfos prévus uniquement**, sans toucher à leurs champs ni au rendu de Course/Kiné. Vérifier les chronos, trois liens PNG et le calendrier.
 - **Exception de lancement :** 3 renfos les 12, 14 et 15 novembre, puis trois par semaine ; dimanche 15 facultatif, pas de nouvelle norme de séances consécutives.
 

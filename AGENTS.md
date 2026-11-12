@@ -1,11 +1,18 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Règle prioritaire Renfo — les étirements remplacent le retour au calme (12 novembre 2026)
+
+- Pour tout Renfo prévu comportant des étirements doux à la fin, ne pas ajouter un bloc de mouvements doux « Retour au calme ». Les étirements assurent eux-mêmes cette récupération. Conserver les 4 min de « Mise en route » au début, les trois exercices, leurs séries/pauses et leurs aides PNG ; terminer directement par 3 min d'étirements adaptés.
+- Écrire cinq puces dans etapes : mise en route, trois exercices, étirements. La durée indicative des 14 Renfos concernés passe de 33–39 min à 29–35 min ; les FIT Workout passent de 18 à 17 pas, avec 720 s minutées (mise en route + repos + étirements). Ne pas attribuer de durée exacte aux séries ouvertes.
+- Règle permanente pour les futurs programmes. Ne pas réécrire les séances terminées, les séances Course/Kiné, les sensations ou les fichiers Garmin d'activité réalisée. Si un programme ancien n'a pas d'étirements, ne pas supprimer sa récupération sans réexaminer le plan.
+
+
 ## Étirements post-séance — systématiques pour les nouveaux programmes, sans retoucher les séances réalisées (12 novembre 2026)
 
 - **Coach** : tout programme de **course à pied ou Renfo encore prévu** comporte un **bloc de 3 min d'étirements doux**, adapté aux chaînes musculaires sollicitées. Le bloc figure **dans la liste chronologique `etapes` du fichier JSON de séance**, donc aussi dans le descriptif du site, **et dans son entraînement Garmin FIT Workout prévu**, régénéré/validé dans le même changement. Le champ `duree` doit inclure les 3 min. Ne pas se contenter d'un texte ajouté uniquement au site ni uniquement au FIT.
 - **Interdiction de rétroactivité** : ne jamais modifier une séance `fait: true` ni son rapport ou son FIT historique à la faveur de cette demande. La sortie du 11 novembre est préservée à l'identique. Pour les séances prévues, ne pas modifier `fait`, `sensations`, les IDs/dates, les informations de suivi ou les données Garmin réalisées.
 - **Course** : après la marche finale et les éventuelles indications d'allure/option, écrire « Étirements doux · 3 min : mollets, fessiers et arrière des cuisses ; 20 s par côté, sans douleur ni hyperextension ». Mode marche/course, allures et options restent inchangés ; le FIT inclut cette étape de 180 s en dernier.
-- **Renfo** : conserver la mise en route, les trois exercices avec leurs aides PNG et le retour au calme existants, puis **ajouter en dernière puce** « Étirements doux · 3 min : ... » ciblant fessiers/hanches/arrière des cuisses pour les ponts au sol ou hanches/épaules/fessiers pour les mouvements à quatre pattes/ballon. L'aide PNG demeure obligatoire pour chacun des **trois exercices précis**, pas pour le bloc général de récupération, comme pour « Mise en route » / « Retour au calme ».
+- **Renfo** : préserver la mise en route, les trois exercices avec leurs aides PNG et terminer directement par « Étirements doux · 3 min : ... » adaptés aux chaînes sollicitées. Les étirements font office de retour au calme ; ne pas ajouter de bloc distinct de mouvements doux. Aucun PNG demandé pour cette étape générale.
 - **Prudence en présence d'hyperlaxité et de douleurs** : positions stables, amplitudes confortables, sans rebond, extension forcée, douleur croissante ni contrainte plantaire. Tout bloc est **facultatif** si les symptômes empêchent son exécution, malgré sa présence dans le programme. Ne jamais prétendre qu'il a été réalisé. Si le format FIT ne permet pas de restituer les consignes sans approximation, étendre le générateur et les tests avant publication.
 
 
@@ -18,7 +25,7 @@
 ## Garmin FIT Workout systématique pour les Renfos (12 novembre 2026)
 
 - **Dès qu'un Renfo est créé ou que ses séries, étapes ou repos sont modifiés**, produire un véritable fichier Garmin **FIT Workout de musculation** pour **chaque séance concernée**, comme pour la course : `node scripts/generer-garmin.cjs renfo-AAAA-MM-JJ`, puis rattacher via `pieces_jointes` (`role: entrainement_prevu`, `format: fit`) à `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit`. Ne jamais attendre que l'utilisateur redemande la création. Conserver les PNG et les autres champs.
-- **Respect du plan, pas d'invention** : l'échauffement et le retour au calme sont minutés (4 min chacun), les pauses entre séries respectent les valeurs de chaque `etapes` (45 ou 60 s), les répétitions et les maintiens dans des fourchettes sont des **étapes ouvertes à valider manuellement sur la montre**. Ne pas fabriquer une durée exacte pour les séries ni une séance effectuée. La montre suit 17 étapes pour les Renfos actuels (9 séries, 6 repos, échauffement et retour au calme).
+- **Respect du plan, pas d'invention** : minuter la mise en route de 4 min, les repos de 45/60 s et les étirements doux de 3 min ; pas de retour au calme distinct. Les répétitions et maintiens restent des étapes FIT ouvertes à terminer manuellement, sans durée inventée : 17 pas (9 séries, 6 repos, échauffement, étirements).
 - **Évolution de séance** : le générateur valide les mouvements connus et les chronos réellement présents. Si un exercice nouveau ou un schéma de série différent n'est pas pris en charge, **étendre et tester le générateur avant de publier** ; aucune approximation, ni FIT Activity. Vérifier les CRC, le sport musculation, les étapes, la présence de chacun des liens et les contrôles GitHub Actions. Les tests physiques d'import dans Garmin Connect/Venu 4 restent à réaliser.
 - **Interface** : réutiliser exclusivement le lien de téléchargement FIT déjà commun aux sorties ; ne pas ajouter de notice technique dans le détail des séances. La gestion du HTML appartient à Maturation.
 
@@ -33,8 +40,8 @@
 
 ## Renfo — consigne permanente de rédaction et de rendu compact (12 novembre 2026)
 
-- **Coach :** chaque séance de renforcement doit contenir **une seule liste chronologique** `etapes` : « Mise en route », chaque exercice dans l'ordre, « Retour au calme ». Toutes les puces incluent **les temps, séries/répétitions, maintiens et pauses pertinents** directement sur la même ligne, avec un vocabulaire simple. Ne pas reléguer ces informations dans un long paragraphe `details`.
-- **Images :** une aide PNG est obligatoire pour **chaque exercice réel** de la liste, y compris s'il est connu ou répété. « Mise en route » et « Retour au calme » sont des étapes générales, non des exercices illustrés. Les liens doivent être tirés de `assets/renfo/banque.json` ; les PNG validés ne sont pas redessinés.
+- **Coach :** chaque séance de Renfo prévue contient une liste chronologique de cinq puces : « Mise en route », trois exercices, « Étirements doux » en dernier. Si les étirements sont présents, aucune puce « Retour au calme ». Les temps, séries/répétitions, maintiens et pauses figurent dans les puces, pas dans un long paragraphe.
+- **Images :** une aide PNG pour chacun des trois exercices réels de la liste, y compris ceux connus ou répétés. La « Mise en route » et les « Étirements doux » sont des étapes générales sans PNG. Conserver les chemins de assets/renfo/banque.json et les images approuvées.
 - **Maturation :** présenter les séances Renfo prévues avec **la liste seule**, sans afficher de paragraphe Objectif ni Détails sous le déroulé ; conserver les champs `objectif` et `details` dans la source pour compatibilité et le suivi. Garder le petit `?` et la fenêtre PNG, sans toucher aux autres activités.
 - **Plan :** trois Renfos dès **jeudi 12 novembre**, puis samedi 14 et dimanche 15 sur la première semaine incomplète ; ensuite mardi/jeudi/samedi. Deux jours consécutifs de renfo dans cette première semaine sont **exceptionnels**, non une règle : le dimanche est spécialement facultatif, à omettre si fatigue ou douleur, sans rattrapage.
 
