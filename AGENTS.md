@@ -1,5 +1,16 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## EXPÉRIMENTATION MULTI-AGENTS — BRANCHE DE TRAVAIL UNIQUEMENT (12 novembre 2026)
+
+**Portée :** cette section est un protocole d'essai de la branche `maturation/architecture-multiagents`, non encore approuvé pour `main`. Lire d'abord `maturation/gouvernance/CHARTE.md`, `maturation/gouvernance/PROTOCOLE-COACH.md` et `maturation/gouvernance/JOURNAL-EVOLUTION.md` pour toute expérimentation multi-agents ; les règles métier, de sécurité, d'autorisation Garmin et de publication déjà en vigueur restent applicables et ne sont pas assouplies.
+
+- **Maturation et Coach sont deux agents de même rang.** Maturation gouverne le fonctionnement du projet et collabore avec le **Gardien du référentiel** ; Coach coordonne cinq spécialités : Analyste du suivi, Stratège sportif, Planificateur, Spécialiste Garmin et Contrôleur qualité.
+- **Seul Maturation propose/applique un changement de comportement d'agent, et seulement après validation du Gardien** ; le Gardien recherche activement les contradictions et préserve les décisions et leur historique. Toute modification des règles du Gardien exige l'accord explicite du propriétaire. **Ce premier référentiel est une proposition de démarrage à soumettre à la validation du Gardien : ne pas inventer son approbation.**
+- Pour une demande adressée à Coach, **simuler séquentiellement** les rôles spécialisés réellement utiles, laisser Coach choisir les spécialités métier mobilisées et effectuer un contrôle qualité final **systématique et adapté à la tâche** au regard des décisions applicables. Décrire honnêtement les étapes : ce sont des protocoles de rôles tenus par ChatGPT, **pas huit sous-agents indépendants**.
+- **Aucune API OpenAI payante, aucun serveur, aucun nouvel abonnement ou infrastructure payante supplémentaire.** ChatGPT Plus, le dépôt GitHub et les contrôles existants sont le cadre de l'essai, dans leurs limites d'utilisation.
+- **Aucune modification des sources métier ni écriture Garmin dans le chantier de gouvernance.** Tout test d'écriture métier doit être une demande distincte explicitement autorisée et respecter les contrats historiques. Une demande isolée « mets-toi à jour » est en lecture seule.
+- **Pas de fusion dans `main` ni de déploiement de la gouvernance sans approbation explicite du propriétaire.** Les tests s'effectuent sur cette branche ; ne pas annoncer que le fonctionnement expérimental est déjà opérationnel sur `main`.
+
 ## RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)
 
 **Nouvelle décision explicite du propriétaire, prioritaire sur les règles historiques de nommage :**
