@@ -201,3 +201,9 @@ Historique des consignes et programmes, conservé pour reprise avec un Coach dis
 - Maturation fournit `orientation.json`, sa validation et sa projection filtrée, et une page autonome « Le cap du Coach ». Le contenu initial du résumé est une synthèse des décisions déjà documentées (reprise confortable, adaptation après chaque retour, récupération et tolérance), **pas une nouvelle prescription ni une observation médicale**. Les données de Santé et les activités ne sont pas modifiées.
 - La page « Mon suivi santé » perd la phrase d'introduction et la note de bas de page mentionnées explicitement par l'utilisateur ; les indicateurs, la chronologie et les sources sont conservés.
 
+
+## 12 novembre 2026 — Inventaire maison limité aux équipements possédés
+
+- **Précision utilisateur :** le matériel disponible chez le kinésithérapeute n'est pas celui de la maison. Les exercices de Renfo domestique ne doivent utiliser que le matériel personnel, plus le poids du corps.
+- **Correction Coach :** dans `domaines/coaching/donnees/equipements.json`, conserver seulement `tapis_sol` (disponible) et `ballon_gymnastique` (disponible, ~80 cm) ; supprimer les entrées d'élastiques absents, d'haltères absents et d'accessoires non confirmés. Les faits de possession ne changent pas : seule la convention de l'inventaire devient **équipements possédés uniquement**.
+- **Continuité :** préciser la distinction maison / kiné dans le contexte du Coach, sans modifier de séance, prescription, activité confirmée, source Santé, page Web ou calendrier Garmin. Ajouts futurs sur déclaration explicite du propriétaire.
