@@ -196,7 +196,8 @@
 - **Consignes** : `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `personnel/GARMIN.md` ; les précautions de transfert restent documentées mais non affichées.
 - **Contrôle** : test de non-régression de l'interface, préservation du lien FIT et des 7 étapes d'exemple dans `scripts/verifier-site.cjs`. Versions `index.html`, `sante.html` et `publication.txt` synchronisées sous `2026-11-12-garmin-lien-simple-v15`.
 - **Données du Coach et FIT binaire existants** : aucun changement.
-- **Déploiement** : à vérifier après publication.
+- **Déploiement confirmé** : [run 43131100817](https://github.com/hameaufl/programme-sport/actions/runs/43131100817), `completed / success` : validations, construction et publication GitHub Pages réussies. Commit interface et consignes : `e84bab2306a82e443c67515e8cd3e7a660b3e7a3`.
+- **Vérification d'intégrité indépendante** : les 25 fichiers source des séances, rapports, événements, configuration et pièces jointes conservent exactement les mêmes SHA Git qu'avant cette modification. Lien FIT conservé, sous-texte absent.
 
 ## Journal futur
 
