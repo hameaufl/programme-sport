@@ -1,62 +1,56 @@
 "use strict";
-const fs=require("node:fs");
-const path=require("node:path");
+const fs=require("node:fs"),path=require("node:path");
 const {ROOT,collect,exposed,summary}=require("./donnees.cjs");
 function build(){
- const model=collect();
+ // La désactivation de l'add-on Web ne dépend d'aucune donnée personnelle ni de Garmin.
+ if(process.env.MON_RYTHME_WEB==="0"){console.log("Add-on Web désactivé : domaines et Garmin autonomes");return;}
+ const model=collect(),policy=JSON.parse(fs.readFileSync(path.join(ROOT,"contrats/publication-v1.json"),"utf8"));
+ if(policy.default!=="deny"||policy.schemaVersion!==1)throw Error("Politique de publication non valide");
  const dest=path.join(ROOT,"_site");
- fs.rmSync(dest,{recursive:true,force:true});
- fs.mkdirSync(dest,{recursive:true});
- function copy(source,target=source){
-   const dst=path.join(dest,target);
-   fs.mkdirSync(path.dirname(dst),{recursive:true});
-   fs.copyFileSync(path.join(ROOT,source),dst);
+ fs.rmSync(dest,{recursive:true,force:true});fs.mkdirSync(dest,{recursive:true});
+ function copy(src,to){
+  const dst=path.join(dest,to);
+  fs.mkdirSync(path.dirname(dst),{recursive:true});
+  fs.copyFileSync(path.join(ROOT,src),dst);
  }
  function json(name,value){
-   const file=path.join(dest,name);
-   fs.mkdirSync(path.dirname(file),{recursive:true});
-   fs.writeFileSync(file,JSON.stringify(value,null,2)+"\n","utf8");
+  const file=path.join(dest,name);
+  fs.mkdirSync(path.dirname(file),{recursive:true});
+  fs.writeFileSync(file,JSON.stringify(value,null,2)+"\n","utf8");
  }
- for(const name of ["index.html","sante.html","favicon.svg","icon-192.png","icon-512.png","manifest.webmanifest","publication.txt",".nojekyll"])copy(name);
- copy("personnel/sante/PROFIL.md");
- // Original des fichiers de santé consultable via GitHub, non nécessaire au fonctionnement du navigateur.
- // Compatibilité des anciens HTML potentiellement gardés en cache Android :
- // ces deux fichiers sont UNIQUEMENT produits dans _site/, jamais dans le dépôt.
- const legacyWeeks={};
- for(const week of [...model.weeks.keys()].sort())legacyWeeks[week]=model.weeks.get(week);
- const legacyJS="/* Compatibilité temporaire avec les anciennes pages mises en cache ; données générées. */\n"+
-  "window.MON_RYTHME_OBJECTIFS = "+JSON.stringify(model.config.objectifs)+";\n"+
-  "window.MON_RYTHME_DEBUT_CYCLE = "+JSON.stringify(model.config.debutCycle)+";\n"+
-  "window.MON_RYTHME_PROGRAMMES = "+JSON.stringify(legacyWeeks)+";\n";
- const legacyProgram=path.join(dest,"personnel/programme.js");
- fs.mkdirSync(path.dirname(legacyProgram),{recursive:true});
- fs.writeFileSync(legacyProgram,legacyJS,"utf8");
- const oldJournal=fs.readFileSync(path.join(ROOT,"personnel/sante/SUIVI.md"),"utf8");
- const reportContents=model.reportFiles.map(p=>fs.readFileSync(p,"utf8")).join("");
- const eventContents=model.eventFiles.map(p=>fs.readFileSync(p,"utf8")).join("");
- const journalOldStyle=oldJournal.replace("## Équipement de reprise — événements datés",reportContents+"## Équipement de reprise — événements datés")
-   .replace("## Modèle d'entrée",eventContents+"## Modèle d'entrée");
- const compatibleJournal=path.join(dest,"personnel/sante/SUIVI.md");
- fs.mkdirSync(path.dirname(compatibleJournal),{recursive:true});
- fs.writeFileSync(compatibleJournal,journalOldStyle,"utf8");
+ for(const name of ["index.html","sante.html"])copy("addons/web/pages/"+name,name);
+ for(const name of ["favicon.svg","icon-192.png","icon-512.png","manifest.webmanifest"])copy("addons/web/public/"+name,name);
+ for(const name of ["publication.txt",".nojekyll"])copy(name,name);
  const index=summary(model);
  index.buildVersion=process.env.GITHUB_SHA?process.env.GITHUB_SHA.slice(0,12):"local";
  json("data/index.json",index);
- for(const monday of index.semaines)json("data/semaines/"+monday+".json",{schemaVersion:1,semaine:monday,sessions:exposed(monday,model)});
- const pageSize=30,pageCount=Math.ceil(model.events.length/pageSize);
+ for(const week of index.semaines)json("data/semaines/"+week+".json",{schemaVersion:1,semaine:week,sessions:exposed(week,model)});
+ if(policy.sante.profilPublic)copy("domaines/sante/donnees/PROFIL.md","data/sante/profil.md");
+ const events=policy.sante.evenementsPublics?model.events:[],pageSize=30;
  const pages=[];
- for(let page=0;page<pageCount;page++){
-   const name="page-"+String(page+1).padStart(4,"0")+".json";
-   pages.push(name);
-   json("data/sante/journal/"+name,{schemaVersion:1,events:model.events.slice(page*pageSize,(page+1)*pageSize)});
+ for(let i=0;i<events.length;i+=pageSize){
+  const name="page-"+String(pages.length+1).padStart(4,"0")+".json";
+  pages.push(name);
+  json("data/sante/journal/"+name,{schemaVersion:1,events:events.slice(i,i+pageSize)});
  }
- json("data/sante/journal/index.json",{schemaVersion:1,total:model.events.length,pages});
- // Publier uniquement la banque PNG validée : les anciens GIF ne sont plus servis.
- const images=path.join(ROOT,"assets/renfo/png");
+ json("data/sante/journal/index.json",{schemaVersion:1,total:events.length,pages});
+ // Ressources uniquement d'interface : pas de PNG/GIF dans les domaines métier.
+ const images=path.join(ROOT,"addons/web/public/assets/renfo/png");
  if(fs.existsSync(images))fs.cpSync(images,path.join(dest,"assets/renfo/png"),{recursive:true});
- const attachments=path.join(ROOT,"personnel/pieces-jointes/seances");
- if(fs.existsSync(attachments))fs.cpSync(attachments,path.join(dest,"personnel/pieces-jointes/seances"),{recursive:true});
- console.log("Préparation réussie :",model.sessions.length,"séances,",index.semaines.length,"semaines,",model.reports.size,"rapports,",model.events.length,"événements");
+ // Fichiers Garmin issus d'un adaptateur autonome.
+ const fitDir=path.join(ROOT,"adaptateurs/garmin/fichiers");
+ if(fs.existsSync(fitDir))fs.cpSync(fitDir,path.join(dest,"fichiers/garmin"),{recursive:true});
+ // Compatibilité des HTML mis en cache : option volontaire, désactivée par défaut
+ // car elle republierait l'ensemble des séances sans contrôle de minimisation.
+ if(process.env.MON_RYTHME_LEGACY==="1"){
+  const weeks={};for(const week of index.semaines)weeks[week]=exposed(week,model);
+  const source="/* Compatibilité historique temporaire : exposition publique explicite. */\n"+
+   "window.MON_RYTHME_OBJECTIFS = "+JSON.stringify(index.objectifs)+";\n"+
+   "window.MON_RYTHME_DEBUT_CYCLE = "+JSON.stringify(index.debutCycle)+";\n"+
+   "window.MON_RYTHME_PROGRAMMES = "+JSON.stringify(weeks)+";\n";
+  const legacy=path.join(dest,"personnel/programme.js");fs.mkdirSync(path.dirname(legacy),{recursive:true});fs.writeFileSync(legacy,source);
+ }
+ console.log("Site produit : "+model.sessions.length+" séances, "+index.semaines.length+" semaines, "+model.reports.size+" rapports, "+events.length+" événements");
 }
 if(require.main===module)build();
 module.exports={build};

@@ -244,11 +244,11 @@
   // Une pièce jointe prévue ne représente jamais une activité enregistrée.
   function fitDisplay(s) {
     var files=Array.isArray(s.pieces_jointes)?s.pieces_jointes:[];
-    var entry=files.find(function(f){return f&&f.role==="entrainement_prevu"&&f.format==="fit"&&typeof f.chemin==="string"&&f.chemin.startsWith("personnel/pieces-jointes/seances/"+s.id+"/prevu/")&&f.chemin.endsWith(".fit");});
+    var entry=files.find(function(f){return f&&f.role==="entrainement_prevu"&&f.format==="fit"&&typeof f.url==="string"&&f.url==="fichiers/garmin/"+s.id+".fit";});
     if(!entry)return null;
     var box=elem("div","session-garmin"),link=elem("a","garmin-download","Télécharger l'entraînement Garmin (.FIT)");
-    link.href="./"+entry.chemin;
-    link.download=entry.chemin.split("/").pop();
+    link.href="./"+entry.url;
+    link.download=entry.url.split("/").pop();
     box.appendChild(link);
     return box;
   }
