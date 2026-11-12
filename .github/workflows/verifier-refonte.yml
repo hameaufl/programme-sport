@@ -23,6 +23,7 @@ jobs:
           node scripts/verifier-changements.cjs
           node maturation/architecture/verifier-migration.cjs
           node maturation/architecture/verifier-portabilite.cjs
+          node maturation/architecture/verifier-frontieres.cjs
       - name: Préparer la sortie du site sans publication
         run: node scripts/construire-site.cjs
       - name: Préparer la publication restreinte et vérifier les fuites
