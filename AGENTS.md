@@ -1,5 +1,11 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Séances de la semaine — pas de texte de résumé statique
+
+- Sous le titre **« Séances de la semaine »**, afficher **directement la liste** des séances. Ne pas ajouter de phrase d’introduction qui énumère des activités (comme « Course et kiné… ») : cette information est déjà portée par la liste et peut changer.
+- La suppression concerne seulement le rendu de `index.html`, pas les données ni le détail des séances.
+
+
 ## Garmin FIT Workout systématique pour les Renfos (12 novembre 2026)
 
 - **Dès qu'un Renfo est créé ou que ses séries, étapes ou repos sont modifiés**, produire un véritable fichier Garmin **FIT Workout de musculation** pour **chaque séance concernée**, comme pour la course : `node scripts/generer-garmin.cjs renfo-AAAA-MM-JJ`, puis rattacher via `pieces_jointes` (`role: entrainement_prevu`, `format: fit`) à `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit`. Ne jamais attendre que l'utilisateur redemande la création. Conserver les PNG et les autres champs.

@@ -245,3 +245,11 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - `scripts/generer-garmin.cjs` accepte désormais `renfo-AAAA-MM-JJ`, encode le sport `strength_training` (5), les étapes chronométrées et les séries ouvertes avec notes. Le parseur refuse les gestes inconnus ou consignes de temps non vérifiables ; la génération course reste inchangée.
 - Tests `scripts/verifier-site.cjs` : contrôle du FIT de chacune des 14 séances restantes, des 17 pas, du sport musculation, de 9 étapes manuelles et des 780 s d'échauffement/pauses/retour au calme, plus cas de rejet d'un exercice inconnu.
 - Les 14 binaires sont stockés dans `personnel/pieces-jointes/seances/<id>/prevu/<id>.fit` ; fichiers PNG et affichage de la page inchangés. Import physique Garmin Connect/Venu 4 non prouvé.
+
+## 12 novembre 2026 — Suppression du résumé fixe sous « Séances de la semaine »
+
+- Demande : ne plus afficher la phrase « Course et kiné programmées pour la semaine sélectionnée. » ; elle peut devenir obsolète, tandis que la liste ci-dessous donne l’information à jour.
+- Maturation : retirer seulement ce paragraphe dans `index.html`, conserver le titre, la liste alimentée par les séances et la navigation hebdomadaire. Aucune modification des fichiers `personnel/`.
+- Ajouter un contrôle de non-régression dans `scripts/verifier-site.cjs` et documenter la règle dans `AGENTS.md`.
+- Synchroniser les versions des deux pages et de `publication.txt` : `2026-11-12-liste-seances-sans-resume-v19`.
+- Publication : vérification après GitHub Actions.
