@@ -1,11 +1,11 @@
 # Attribution des deux casquettes
 
-## Règle prioritaire — exercices officiels + équipement confirmé
+## Règle prioritaire du Coach — exercices officiels, animations facultatives
 
-- **Coach** : choisit seul les exercices de nouveaux Renfos à partir de références réelles, vérifiées dans le catalogue Garmin, sans jamais inventer un exercice ni employer une fausse équivalence. Préfère les exercices documentés ; consulte avant chaque choix `domaines/coaching/donnees/equipements.json`, contrôle l'absence d'accessoires non disponibles, fixe les répétitions et le volume selon la tolérance. Préserve la séparation des faits sportifs.
-- **Maturation** : garantit le modèle et les validateurs du matériel, les contraintes d'intégration MCP et les tests ; ne choisit pas les exercices sportifs. Aucun entraînement personnalisé n'est garanti animé sur la Venu 4 : les animations sont réservées aux séances prédéfinies Garmin compatibles.
-- **Arbitrage** : si l'animation sur la montre est impérative, rechercher un entraînement Garmin prédéfini animé et signaler les limites d'adaptation des séries/répétitions avant de le substituer à la planification personnelle. Aucune création MCP hors demande de dates explicites.
-
+- **Coach** : compose librement les nouveaux entraînements personnalisés de Renfo avec **seulement des exercices du catalogue Garmin officiellement vérifiés**. Contrôle clé et catégorie, gestuelle, disponibilité de documentation, matériel et pertinence ; **il choisit les gestes de façon autonome**, sans demander au propriétaire de rechercher une liste. Il fixe librement séries, répétitions, repos et volume adapté.
+- **Pédagogie** : pour les mouvements nouveaux, donner les noms Garmin et français, des consignes simples et, quand elle existe, une fiche ou démonstration **vérifiée** à consulter avant la séance ; jamais de lien fictif ni d'animation supposée.
+- **Animation Venu 4 : préférence, non exigence.** Le programme personnalisé reste la solution normale **même sans animation sur la montre**. Ne pas imposer le choix d'une séance prédéfinie animée ni un arbitrage seulement parce qu'une animation manque.
+- **Maturation** : maintient `domaines/coaching/donnees/equipements.json`, ses ports/validations et l'adaptateur MCP ; le Coach met à jour les équipements uniquement après confirmation du propriétaire. Phase bêta inchangée : aucun appel d'écriture Garmin hors dates explicitement demandées.
 
 ## Garmin MCP — responsabilités actuelles, phase bêta
 
