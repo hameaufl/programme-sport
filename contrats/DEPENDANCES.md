@@ -32,3 +32,7 @@ Les adaptateurs peuvent utiliser plusieurs domaines dans un **assemblage de lect
 Le site et le dépôt sont actuellement publics. `noindex` n'est pas une authentification.
 Le contenu d'une projection publique reste public, y compris ses copies, ses caches et les anciennes publications.
 Toute future extraction privée nécessite une politique de publication adaptée, un service authentifié pour des vues privées, et un plan d'assainissement des publications et historiques passés. L'architecture prépare cette évolution, sans prétendre l'avoir déjà accomplie.
+
+## Projection de stratégie Coaching (12 novembre 2026)
+
+Le domaine Coaching décide, porte `objectifs.json` et `orientation.json` et valide la forme de l'orientation dans son modèle pur. `adaptateurs/fichiers/depots.cjs` fournit des **ports de lecture** ; `adaptateurs/projections/coaching.cjs` **sélectionne les seuls champs autorisés** de l'objectif et des tendances/vigilances, sans sérialiser les notes, fichiers sources, historiques, rapports médicaux ou champs inconnus. Le builder choisit la politique de publication. `addons/web/pages/coach.html` lit exclusivement la projection générée ; il n'importe ni domaine, ni adapter, ni source originale. Les textes métier ne dépendent pas de l'interface. L'agent Coach rafraîchit le résumé à chaque arbitrage réel ; Maturation ne décide pas du programme. En mode restreint aucun résumé n'est publié.

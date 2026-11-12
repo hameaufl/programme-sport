@@ -291,3 +291,10 @@ Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites
 - **Portée :** ne modifier aucune séance déjà écrite ou réalisée du seul fait de cette nouvelle préférence. Aucun envoi ni création Garmin n'est autorisé par cette décision : la règle de bêta imposant des dates explicitement demandées demeure. Les anciens choix de dessins PNG concernent la présentation Web et ne confèrent pas un statut officiel Garmin aux anciens mouvements.
 - **Références fabricant :** https://support.garmin.com/en-US/?faq=IPD6X8JSLBAUQOXvz7zBO6 ; documentation Venu 4 https://www8.garmin.com/manuals/webhelp/GUID-2CF5620C-E585-4E0A-9CC3-9565533EEE4D/EN-US/GUID-B7EDF898-AC46-4504-A12A-A1FFA1756878.html.
 
+## 12 novembre 2026 — Demande de page stratégique et suppression de deux textes Santé
+
+- Le propriétaire approuve le découplage fort entre données métier et interfaces ; il souhaite voir la trajectoire que le Coach envisage sans lire les dossiers de santé et les notes de raisonnement complètes.
+- Les catégories demandées sont **objectif personnel actuel**, **tendances possibles** et **intentions / surveillances**. Le Coach reste responsable des choix d'entraînement et s'aligne sur `objectifs.json` ; il maintient le résumé de sa stratégie en même temps que ses décisions documentées, sans auto-création de séances.
+- Maturation fournit `orientation.json`, sa validation et sa projection filtrée, et une page autonome « Le cap du Coach ». Le contenu initial du résumé est une synthèse des décisions déjà documentées (reprise confortable, adaptation après chaque retour, récupération et tolérance), **pas une nouvelle prescription ni une observation médicale**. Les données de Santé et les activités ne sont pas modifiées.
+- La page « Mon suivi santé » perd la phrase d'introduction et la note de bas de page mentionnées explicitement par l'utilisateur ; les indicateurs, la chronologie et les sources sont conservés.
+
