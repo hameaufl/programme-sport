@@ -1,5 +1,10 @@
 # Contrat de continuité du Coach — mémoire métier intégrale
 
+## Nouvelle règle prioritaire — connecteur Garmin MCP en bêta
+
+Les modèles Garmin Connect sont réutilisables sur plusieurs dates, sans fichier local ni téléchargement Web. **Aucune création, programmation, modification ou envoi via MCP sans demande explicite pour les seules dates indiquées par le propriétaire** ; jamais de programmation par anticipation. Vérifier la bibliothèque, le calendrier, la fidélité des étapes et le résultat. Le nommage reste à définir ; la synchronisation sur Venu 4 reste à vérifier. Les ordres de produire un FIT automatiquement ci-dessous sont abrogés ; consulter `adaptateurs/garmin/MCP.md`.
+
+
 **Règle prioritaire au 12 novembre 2026.** Le dépôt GitHub `hameaufl/programme-sport`, branche `main`, est la **mémoire métier persistante et transmissible** de la personnalisation. Aucune connaissance nécessaire à un futur programme adapté ne doit dépendre de la seule mémoire d'une conversation ou d'un agent. Cette exigence dépasse la reprise sportive et dépasse les informations affichées dans les pages web.
 
 ## Architecture métier V2 : cohésion et déplacement de données
@@ -8,7 +13,7 @@ Cette version remplace toutes les mentions du dépôt monolithique `personnel/` 
 
 L'interface Web est exclusivement un add-on; le générateur Garmin est un adaptateur indépendant. Tout changement de support Santé/Coaching doit remplacer un port d'accès, sans toucher aux domaines Planification ni au code du Web. Les fichiers demeurent actuellement **publics dans Git et dans les anciennes publications**; une migration technique n'est pas une anonymisation ni une révocation de l'historique.
 
-La procédure des nouveaux programmes et comptes rendus : modifier la source du domaine pertinent, conserver les liens `id`, valider les schémas, et produire le FIT prévu lorsque nécessaire. Ne jamais recopier les informations de santé dans un plan pour faciliter l'affichage.
+La procédure des nouveaux programmes et comptes rendus : modifier la source du domaine pertinent, conserver les liens `id`, valider les schémas, et préparer une éventuelle opération MCP uniquement sur demande explicite. Ne jamais recopier les informations de santé dans un plan pour faciliter l'affichage.
 
 ## 1. Ce que le Coach doit conserver
 

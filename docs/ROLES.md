@@ -1,4 +1,11 @@
 # Attribution des deux casquettes
+
+## Garmin MCP — responsabilités actuelles, phase bêta
+
+- Coach : uniquement pour les dates demandées, comparer les blocs du plan V2 à la bibliothèque et au calendrier Garmin ; réutiliser les modèles, appeler le MCP pour créer/programmer exactement les dates choisies ; contrôler les résultats. Aucun lot anticipé et aucun passage automatique à « réalisé ». Nommage encore à définir.
+- Maturation : contrats et conversion, adaptateur `adaptateurs/garmin/mcp.cjs`, tests et sécurité ; aucune écriture automatique. Le Web ne connaît ni binaire ni référence Garmin.
+- Anciennes règles de génération FIT des paragraphes historiques ci-dessous : **annulées**.
+
 ## PRIORITÉ — responsabilités sous l'architecture V2
 
 - Coach = décisions sportives et **données** de `domaines/planification/donnees/`, `domaines/activites/donnees/`, `domaines/sante/donnees/` et `domaines/coaching/donnees/`. Chaque domaine a son propre contenu et ne partage qu'un identifiant stable.
