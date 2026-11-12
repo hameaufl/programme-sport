@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-navigation-large-v28">
+  <meta name="mon-rythme-version" content="2026-11-12-header-date-v29">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -91,21 +91,22 @@
     @media(max-width:650px){.week-item{flex-wrap:wrap;gap:8px 10px}.week-item .done-control{margin-left:auto}.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.hero{border-radius:19px;padding:27px 23px}.section-top{align-items:start;flex-direction:column}.week-nav{width:100%}#rangeLabel{flex:1;min-width:125px}.days{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.day{min-height:116px;padding:12px}.day[aria-pressed="true"]{padding:11px}.day .num{font-size:23px}.panel{padding:19px}.week-item .date{width:85px}}
     @media print{body{background:white}.shell{width:100%;padding:0 14px}.hero{background:white;color:var(--ink);border:1px solid var(--line)}.eyebrow{color:var(--ink)}.week-nav{display:none}.days{grid-template-columns:repeat(7,minmax(0,1fr))}.day{min-height:100px;padding:8px!important}.day[aria-pressed="true"]{border-width:1px}}
   </style>
-  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-navigation-large-v28">
+  <link rel="stylesheet" href="./style-commun.css?v=2026-11-12-header-date-v29">
+  <script defer src="./en-tete.js?v=2026-11-12-header-date-v29"></script>
 </head>
 <body>
 <div class="shell">
   <header class="site-header">
       <div class="site-brand-wrap">
-        <div class="brand"><span aria-hidden="true" class="brand-icon">↗</span><span>mon rythme.</span></div>
+        <a class="brand" href="./" aria-label="Accueil Mon Rythme"><span class="brand-icon" aria-hidden="true">↗</span><span>mon rythme.</span></a>
         <time id="todayLabel"></time>
       </div>
-    <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
-      <span class="site-nav-link is-current" aria-current="page">Mon programme</span>
-      <a class="site-nav-link" href="./coach.html">Le cap du Coach</a>
-      <a class="site-nav-link" href="./sante.html">Mon suivi santé</a>
-      <a class="site-nav-link" href="./equipements.html">Mon équipement</a>
-    </nav>
+      <nav class="site-navigation" aria-label="Navigation entre les pages de Mon Rythme">
+        <span class="site-nav-link is-current" aria-current="page">Mon programme</span>
+        <a class="site-nav-link" href="./coach.html">Le cap du Coach</a>
+        <a class="site-nav-link" href="./sante.html">Mon suivi santé</a>
+        <a class="site-nav-link" href="./equipements.html">Mon équipement</a>
+      </nav>
     </header>
   <main>
     <div class="hero">
@@ -386,9 +387,7 @@
     today=fresh;
     if(showingCurrent&&showingToday){weekStart=monday(today);dayIndex=(today.getDay()+6)%7;chargerSemaine();}
     else render();
-    document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   }
-  document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   document.getElementById("previous").addEventListener("click",function(){weekStart=plus(weekStart,-7);dayIndex=0;chargerSemaine();});
   document.getElementById("following").addEventListener("click",function(){weekStart=plus(weekStart,7);dayIndex=0;chargerSemaine();});
   document.getElementById("reset").addEventListener("click",function(){today=new Date();weekStart=monday(today);dayIndex=(today.getDay()+6)%7;chargerSemaine();});
