@@ -1,4 +1,21 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ — architecture modulaire V2 (approuvée le 12 novembre 2026)
+
+**Cette section prévaut sur toute référence historique à `personnel/` dans les documents précédents. Le dossier `personnel/` n'est plus une source de données.** Les rôles sont séparés par la *propriété des faits* et par des ports métier, et non par une page HTML.
+
+- **Coach / prescriptions prévues** : `domaines/planification/donnees/seances/AAAA/MM/<id>.json`. Les prescriptions sont des **blocs structurés** (`blocs`) ; ne jamais recréer des tableaux `etapes` textuels comme source de vérité. Cycle : `domaines/planification/donnees/cycle.json`.
+- **Coach / activités confirmées** : `domaines/activites/donnees/seances/AAAA/MM/<id>.json` ; le simple programme prévu ne prouve pas la réalisation. Toute activité absente de ce domaine reste **prévue**. Ne pas stocker `fait` dans le plan.
+- **Coach / santé et ressentis** : `domaines/sante/donnees/ressentis/seances/AAAA/MM/<id>.json`, `domaines/sante/donnees/PROFIL.md`, `rapports/` et `evenements/`. Ne jamais placer `sensations` dans un plan ni modifier une observation à la faveur d'une modification de programme.
+- **Coach / décisions et préférences** : `domaines/coaching/donnees/` (`objectifs.json`, `CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md`). L'adaptation consulte les autres domaines par **identifiant stable**, sans dupliquer les faits de santé.
+- **Maturation / technique** : `maturation/`, `contrats/`, modules purs `domaines/*/modele.cjs`, ports `adaptateurs/fichiers/depots.cjs`, projections, tests et workflows. Maturation ne produit pas les décisions sportives ni les faits personnels.
+- **Garmin** : `adaptateurs/garmin/fichiers/<id>.fit`, générateur `node scripts/generer-garmin.cjs <id>` à partir des **blocs structurés**, sans dépendre du texte d'interface.
+- **Site Web add-on** : `addons/web/pages/`, `addons/web/public/`. Le site n'est jamais source métier. Il lit uniquement les projections de `adaptateurs/projections/lecture.cjs`, filtrées par `contrats/publication-v1.json`.
+- **Publication** : le dépôt et le site restent publics. Le mode expérimental `MON_RYTHME_POLITIQUE=prive` réduit les sorties, **ne rend pas privées les anciennes publications ni l'historique Git**. Une confidentialité réelle requiert un nouveau stockage et un accès authentifié.
+- **Préservation** : garder la précision et les identifiants existants, modifier le seul domaine concerné, respecter les marques de changement. Après édition d'une prescription, régénérer le FIT lié s'il existe. Aucun changement Web sans demande, et jamais de données sensibles nouvelles exposées par défaut.
+
+Contrats détaillés : `contrats/DEPENDANCES.md`, `contrats/PORTS.md`, `maturation/architecture/PLAN.md`. Les passages documentant d'anciens chemins constituent **de l'historique**, pas des instructions pour écrire dans ces emplacements.
+
+
 
 ## Règle prioritaire Renfo — les étirements remplacent le retour au calme (12 novembre 2026)
 

@@ -1,4 +1,12 @@
 # Attribution des deux casquettes
+## PRIORITÉ — responsabilités sous l'architecture V2
+
+- Coach = décisions sportives et **données** de `domaines/planification/donnees/`, `domaines/activites/donnees/`, `domaines/sante/donnees/` et `domaines/coaching/donnees/`. Chaque domaine a son propre contenu et ne partage qu'un identifiant stable.
+- Maturation = **structures, code, ports et schémas**, `domaines/*/modele.cjs`, `adaptateurs/`, `addons/web/`, `contrats/`, `maturation/`, `scripts/`, CI et publication. Maturation n'invente ni symptômes ni programmes sportifs.
+- **Le Web n'est qu'un add-on** : désactivable par `MON_RYTHME_WEB=0`. Garmin fonctionne sans Web. Les portages d'un domaine privé remplacent uniquement son port `adaptateurs/fichiers/depots.cjs`.
+- Les mentions des anciens fichiers `personnel/`, `index.html` racine ou `sante.html` racine ci-dessous sont **historiques**. Pour les éditions, suivre la carte actuelle de `AGENTS.md` et le contrat de continuité mis à jour.
+
+
 
 ## Renfo : étirements comme retour au calme unique (règle prioritaire du 12 novembre 2026)
 

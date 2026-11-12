@@ -1,4 +1,13 @@
 # Reprise entre LLM — Mon Rythme
+## ÉTAT PRIORITAIRE — architecture V2
+
+La refonte en domaines supprime les sources historiques `personnel/` du HEAD actuel. Se référer aux **sources canoniques du nouvel arbre** : `domaines/planification/donnees/` (blocs numériques), `domaines/activites/donnees/` (réalisations), `domaines/sante/donnees/` (ressentis/rapports/profil), `domaines/coaching/donnees/` (objectifs, décisions et mémoire du Coach). Les domaines sont indépendants de l'add-on `addons/web/` et de l'adaptateur `adaptateurs/garmin/`.
+
+Les conventions de portabilité sont dans `contrats/DEPENDANCES.md` et `contrats/PORTS.md`. Les anciens chemins présents dans les sections historiques ci-dessous ne doivent plus être utilisés en écriture. Pour toute création de plan, utiliser les `blocs` et générer le FIT automatiquement si compatible. Pour toute réalisation, écrire l'activité dans son domaine et les observations dans Santé, sans contaminer le plan.
+
+La publication standard reste publique, et `noindex` n'est pas une protection. La politique `contrats/publication-prive-v1.json` permet de vérifier une projection sans santé ni FIT ; elle ne supprime pas les traces des anciennes publications publiques.
+
+
 
 ## Prérequis prioritaire de toute reprise Coach — contexte métier complet
 

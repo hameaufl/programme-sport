@@ -1,4 +1,9 @@
 # Suivi santé — public et versionné
+## SOURCE CANONIQUE V2
+
+Ce document appartient au domaine `domaines/sante/`. Les sources sont sous `domaines/sante/donnees/` (`PROFIL.md`, `SUIVI.md`, `rapports/`, `evenements/`, `ressentis/seances/`). Les observations `sensations` ont été retirées des séances prévues : elles vivent dans Santé et sont liées à la séance par `seanceId`. Les passages historiques ci-dessous évoquant `personnel/` ne sont plus des instructions d'édition. Les informations demeurent dans le dépôt public tant qu'un nouveau support confidentiel n'a pas été validé.
+
+
 
 **Architecture actuelle prioritaire** : les rapports par séance se trouvent dans `rapports/AAAA/MM/<id>.md` et les événements datés dans `evenements/AAAA/MM/<date>-<sujet>.md`. `SUIVI.md` ne contient plus les entrées effectives : il conserve les modèles et règles. Le Coach crée ou met à jour **le fichier ciblé**, sans modifier les autres. Le site reçoit un journal paginé de 30 événements lors du build et les déroulés de séance sont reliés via leur identifiant. Les anciennes indications ci-dessous faisant de `SUIVI.md` un journal unique sont **historiques**.
 

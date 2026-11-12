@@ -1,4 +1,9 @@
 # Contexte technique — Maturation
+## Actualisation prioritaire V2
+
+La structure canonique a été découpée en Planification, Activités réalisées, Santé et Coaching, sous `domaines/`. Le Web est une extension `addons/web/`, Garmin est sous `adaptateurs/garmin/`. Les chemins `personnel/` figurant dans le texte historique ci-dessous sont périmés ; lire `contrats/DEPENDANCES.md`, `contrats/PORTS.md` et `AGENTS.md`. La publication du site est une projection autorisée, pas le stockage métier.
+
+
 
 Mon Rythme : site statique responsive et francophone, GitHub Pages via GitHub Actions, branche `main`.
 
