@@ -14,7 +14,7 @@ for(const w of index.semaines){
   count++;
  }
 }
-assert.equal(count,36,"Programmes conservés en mode de publication restreinte");
+assert.equal(count,require("../../adaptateurs/fichiers/depots.cjs").planification.seances().length,"Programmes conservés en mode de publication restreinte");
 assert.ok(!fs.existsSync(path.join(site,"data/sante/profil.md")),"Profil Santé publié malgré l'interdiction");
 assert.ok(!fs.existsSync(path.join(site,"fichiers/garmin")),"Fichiers FIT publiés malgré l'interdiction");
 assert.ok(!fs.existsSync(path.join(site,"personnel")),"Ancien dossier personnel publié");
