@@ -4,7 +4,7 @@ const vm=require("node:vm");
 const assert=require("node:assert/strict");
 const {ROOT,collect,exposed,summary,monday}=require("./donnees.cjs");
 const read=p=>fs.readFileSync(require("node:path").join(ROOT,p),"utf8");
-const html=read("addons/web/pages/index.html"),sante=read("addons/web/pages/sante.html"),coachPage=read("addons/web/pages/coach.html");
+const html=read("addons/web/pages/index.html"),sante=read("addons/web/pages/sante.html"),coachPage=read("addons/web/pages/coach.html"),equipPage=read("addons/web/pages/equipements.html");
 const data=collect(),index=summary(data);
 assert.equal(data.sessions.length,new Set(data.sessions.map(s=>s.id)).size,"Identifiants uniques");
 assert.ok(data.sessions.length>0,"Programme vide");
@@ -20,14 +20,14 @@ for(const [mondayDate,ss] of data.weeks){
 assert.equal(index.compteurs.programmees,data.sessions.length);
 assert.equal(index.compteurs.realisees,data.sessions.filter(s=>s.fait).length);
 assert.equal(index.compteurs.avecSensations,data.sessions.filter(s=>s.sensations.trim()).length);
-for(const page of [html,sante,coachPage]){
+for(const page of [html,sante,coachPage,equipPage]){
   assert.ok(page.includes('<meta name="robots" content="noindex, nofollow">'),"Noindex absent");
   assert.ok(page.includes('<meta name="googlebot" content="noindex, nofollow">'),"Noindex Google absent");
   for(const script of page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))if(script[1].trim())new vm.Script(script[1]);
 }
 const version=html.match(/<meta name="mon-rythme-version" content="([^"]+)"/)?.[1];
-assert.ok(version&&sante.includes('name="mon-rythme-version" content="'+version+'"')&&coachPage.includes('name="mon-rythme-version" content="'+version+'"')&&read("publication.txt").includes(version),"Versions des trois vues incohérentes");
-assert.ok(![html,sante,coachPage].some(p=>p.includes("personnel/programme.js")),"Les pages doivent utiliser les vues générées");
+assert.ok(version&&[sante,coachPage,equipPage].every(page=>page.includes('name="mon-rythme-version" content="'+version+'"'))&&read("publication.txt").includes(version),"Versions des quatre vues incohérentes");
+assert.ok(![html,sante,coachPage,equipPage].some(p=>p.includes("personnel/programme.js")),"Les pages doivent utiliser les vues générées");
 assert.ok(html.includes("data/semaines/")&&html.includes('id="previous"')&&html.includes('id="following"')&&html.includes('id="reset"'),"Calendrier hebdomadaire brisé");
 assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"')&&html.includes('"Structures sollicitées"')&&html.includes('"Sensations"'),"Trois sections des séances manquantes");
 assert.ok(html.includes("s.exercicesDuRapport")&&html.includes("s.structuresDuRapport"),"Rapports liés aux séances manquants");
@@ -85,7 +85,7 @@ assert.ok(read("domaines/coaching/donnees/CONTEXTE-COACH.md").includes("Zones à
   read("domaines/coaching/donnees/JOURNAL.md").includes("Journal du domaine sportif"),"La mémoire de réflexion du Coach doit rester disponible");
 assert.ok(read("maturation/architecture/AUDIT-SUIVI-SANTE.md").includes("PROFIL.md"),"Audit des sources conservées absent");
 
-assert.ok(!html.includes("localStorage")&&!sante.includes("localStorage"),"Stockage navigateur non autorisé");
+assert.ok(![html,sante,coachPage,equipPage].some(page=>page.includes("localStorage")),"Stockage navigateur non autorisé");
 assert.ok(html.includes('<div class="section-top"><h2 id="headingAll">Séances de la semaine</h2></div>'),"La liste des séances doit conserver son titre");
 assert.ok(!html.includes("Course et kiné programmées pour la semaine sélectionnée."),"Ne pas afficher de résumé statique au-dessus de la liste hebdomadaire");
 assert.ok(!fs.existsSync(require("node:path").join(ROOT,"personnel/programme.js")),"Ancien fichier monolithique maintenu");
@@ -115,6 +115,31 @@ const coachModele=require("../domaines/coaching/modele.cjs");
 const depot=require("../adaptateurs/fichiers/depots.cjs");
 assert.deepEqual(depot.coaching.equipements(),materiel,"Le port d'équipement doit fournir l'inventaire canonique");
 assert.equal(coachModele.verifierEquipements(materiel),materiel);
+
+const projectEquipments=require("../adaptateurs/projections/coaching.cjs").projeterEquipements;
+const policyEquip=JSON.parse(read("contrats/publication-v1.json"));
+const publicEquip=projectEquipments(materiel,policyEquip);
+const expectedAvailable=materiel.equipements.filter(e=>e.statut==="disponible");
+assert.equal(publicEquip.schemaVersion,1);
+assert.equal(publicEquip.miseAJour,materiel.maj);
+assert.equal(publicEquip.equipements.length,expectedAvailable.length,"Afficher uniquement le matériel confirmé disponible");
+assert.deepEqual(Object.keys(publicEquip).sort(),["schemaVersion","miseAJour","equipements"].sort(),"N'exposer aucun champ interne de l'inventaire");
+assert.ok(publicEquip.equipements.every(e=>Object.keys(e).every(k=>["nom","diametreCmApprox"].includes(k))),"Uniquement les propriétés d'affichage sont autorisées");
+assert.deepEqual(publicEquip.equipements.map(e=>e.nom),expectedAvailable.map(e=>e.nom));
+assert.ok(!JSON.stringify(publicEquip).includes("provenance")&&!JSON.stringify(publicEquip).includes("notes")&&!JSON.stringify(publicEquip).includes("elastiques_resistance"),"Ne pas divulguer les champs métier d'inventaire");
+assert.equal(publicEquip.equipements.find(e=>e.nom==="Gros ballon de gymnastique")?.diametreCmApprox,80);
+const sentinelle={...materiel,secret:"NE_JAMAIS_PUBLIER",equipements:materiel.equipements.map(e=>({...e,notes:"NE_JAMAIS_PUBLIER",autreDonnee:"NE_JAMAIS_PUBLIER"}))};
+assert.ok(!JSON.stringify(projectEquipments(sentinelle,policyEquip)).includes("NE_JAMAIS_PUBLIER"),"Un champ ajouté au domaine ne doit pas apparaître dans le Web");
+assert.equal(projectEquipments(sentinelle,JSON.parse(read("contrats/publication-prive-v1.json"))),null,"Interdire les équipements dans la politique restreinte");
+assert.equal(projectEquipments(sentinelle,{default:"deny",schemaVersion:1}),null,"Pas d'autorisation explicite : pas de projection");
+const noEquip={...materiel,equipements:materiel.equipements.map(e=>({...e,statut:"absent"}))};
+assert.deepEqual(projectEquipments(noEquip,policyEquip).equipements,[],"Équipement non disponible à exclure");
+assert.ok(equipPage.includes("./data/coaching/equipements.json")&&equipPage.includes('id="equipmentList"')&&equipPage.includes('id="equipmentCount"'),"La page doit dépendre uniquement de la projection de matériel");
+assert.ok(html.includes('href="./equipements.html"')&&coachPage.includes('href="./equipements.html"'),"Liens vers l'inventaire manquants");
+assert.ok(!/domaines\/(?:coaching|sante|activites|planification)\/donnees\//.test(equipPage),"Le Web ne doit pas lire les chemins métier");
+assert.ok(!equipPage.includes("Tapis de sol")&&!equipPage.includes("Gros ballon de gymnastique"),"Ne pas coder les équipements en dur dans la page");
+assert.ok(read("AGENTS.md").includes("equipements.html")&&read("docs/CONTRAT-CONTINUITE-COACH.md").includes("equipements.html"),"Les agents doivent connaître cette vue et l'inventaire canonique");
+
 const equipe=new Map(materiel.equipements.map(e=>[e.id,e]));
 assert.equal(equipe.get("tapis_sol")?.statut,"disponible");
 assert.equal(equipe.get("ballon_gymnastique")?.statut,"disponible");
@@ -135,6 +160,7 @@ const mcp=require("../adaptateurs/garmin/mcp.cjs");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(html),"Aucune référence à des programmes de montre dans le site");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(sante),"Aucune référence à des programmes de montre dans la vue Santé");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(coachPage),"Aucune référence à des programmes de montre dans la vue Coaching");
+assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(equipPage),"Aucune référence à des programmes de montre dans la vue des équipements");
 assert.ok(!read("scripts/construire-site.cjs").includes("fichiers/garmin"),"Pas de copie de binaires lors de la publication");
 assert.ok(!fs.existsSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers")),"Anciennes pièces binaires toujours présentes");
 assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("pieces_jointes"),"Le contrat Web ne doit pas exposer d'entraînements externes");
