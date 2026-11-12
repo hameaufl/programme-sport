@@ -186,12 +186,15 @@
     // La liste publique n’affiche que le nom des étapes de renforcement.
     return texte.split(" · ")[0];
   }
+  // Le nom exact du modèle Garmin apparaît dans le même titre que « Programme prévu ».
+  function titreProgramme(s) {
+    if(isCompleted(s))return "Séance";
+    var nom=typeof s.nomEntrainementMontre==="string"?s.nomEntrainementMontre.trim():"";
+    return "Programme prévu"+(nom?" · "+nom:"");
+  }
   function derouleDisplay(s) {
     var box=elem("section","session-programme");
-    box.appendChild(elem("h4","",isCompleted(s)?"Séance":"Programme prévu"));
-    if(!isCompleted(s) && typeof s.nomEntrainementMontre==="string" && s.nomEntrainementMontre.trim()){
-      box.appendChild(elem("p","program-notes","Entraînement à charger sur la montre : "+s.nomEntrainementMontre.trim()));
-    }
+    box.appendChild(elem("h4","",titreProgramme(s)));
     var activities=isCompleted(s)
       ? (Array.isArray(s.exercicesRealises) && s.exercicesRealises.length
           ? s.exercicesRealises

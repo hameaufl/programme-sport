@@ -179,7 +179,7 @@ assert.ok(!coachPage.includes('class="goal-label"'),"La carte objectif ne doit p
 
 assert.ok(![html,sante,coachPage,equipPage].some(p=>p.includes("personnel/programme.js")),"Les pages doivent utiliser les vues générées");
 assert.ok(html.includes("data/semaines/")&&html.includes('id="previous"')&&html.includes('id="following"')&&html.includes('id="reset"'),"Calendrier hebdomadaire brisé");
-assert.ok(html.includes('isCompleted(s)?"Séance":"Programme prévu"')&&html.includes('"Structures sollicitées"')&&html.includes('"Sensations"'),"Trois sections des séances manquantes");
+assert.ok(html.includes('box.appendChild(elem("h4","",titreProgramme(s)))')&&html.includes('"Structures sollicitées"')&&html.includes('"Sensations"'),"Trois sections des séances manquantes");
 assert.ok(html.includes("s.exercicesDuRapport")&&html.includes("s.structuresDuRapport"),"Rapports liés aux séances manquants");
 assert.ok(sante.includes("data/sante/journal/index.json")&&sante.includes("data/index.json"),"Suivi santé paginé ou compteurs manquants");
 
@@ -355,8 +355,21 @@ const verifierNomMontre=require("../domaines/planification/modele.cjs").verifier
 assert.throws(()=>verifierNomMontre({...sourceRenfo,nomEntrainementMontre:"   "},data.mouvements),/nom d.entraînement montre invalide/,"Le nom vide est interdit");
 assert.throws(()=>verifierNomMontre({...sourceRenfo,nomEntrainementMontre:"https://exemple.fr"},data.mouvements),/nom d.entraînement montre invalide/,"Une URL ne remplace jamais le nom du modèle");
 assert.equal(data.sessions.find(s=>s.id===sourceRenfo.id).nomEntrainementMontre,nomRenfoValide,"La présentation doit reprendre exactement le nom Garmin");
-assert.ok(html.includes('Entraînement à charger sur la montre : ')&&html.includes('s.nomEntrainementMontre.trim()'),
-  "Le nom du programme Garmin doit être clairement affiché au-dessus des étapes du programme prévu");
+const debutTitreProgramme=html.indexOf("  function titreProgramme(s) {");
+const debutDerouleProgramme=html.indexOf("  function derouleDisplay(s) {",debutTitreProgramme);
+assert.ok(debutTitreProgramme>=0&&debutDerouleProgramme>debutTitreProgramme,"Fonction du titre commun Programme prévu et Garmin absente");
+const titreProgramme=vm.runInNewContext(
+  html.slice(debutTitreProgramme,debutDerouleProgramme)+"\ntitreProgramme",
+  {isCompleted:s=>s.fait===true}
+);
+assert.equal(titreProgramme({fait:false,nomEntrainementMontre:nomRenfoValide}),
+  "Programme prévu · Mon Rythme - Renfo A","Le nom Garmin doit figurer dans le même titre que Programme prévu");
+assert.equal(titreProgramme({fait:false}),"Programme prévu","Programme sans modèle Garmin : pas de nom à inventer");
+assert.equal(titreProgramme({fait:true,nomEntrainementMontre:nomRenfoValide}),
+  "Séance","Une réalisation n'est pas un programme prévu");
+assert.ok(html.includes('box.appendChild(elem("h4","",titreProgramme(s)))')&&
+  !html.includes('Entraînement à charger sur la montre : '),
+  "Une seule ligne de titre, sans paragraphe Garmin redondant");
 assert.ok(JSON.parse(read("contrats/publication-v1.json")).programme.includes("nomEntrainementMontre"),
   "Le nom du modèle doit être explicitement autorisé dans le contrat public");
 const vuePriveeRenfo=exposed("2026-11-09",data,JSON.parse(read("contrats/publication-prive-v1.json"))).find(s=>s.id===sourceRenfo.id);
