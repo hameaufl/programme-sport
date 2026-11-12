@@ -1,0 +1,20 @@
+/* Programme Sport — cycle de 5 semaines, démarrage MERCREDI 11 novembre 2026.
+ *
+ * 3 séances de course par semaine, sans sortie de marche seule.
+ * Kinésithérapie : 4, 9 et 18 novembre 2026. Les séances de kiné sont
+ * affichées comme rendez-vous distincts des sorties de course.
+ * L'interface regroupe les séances par SEMAINES CIVILES (lundi-dimanche),
+ * sans déplacer les dates de course ou de kiné. Le cycle de course reste
+ * du 11 novembre au 14 décembre. Les statuts fait et les sensations sont publics et versionnés dans ce fichier, sans stockage local.
+ *
+ * Modes EXACTS disponibles sur le bracelet :
+ *  2M+3C : 3 × (2 min M + 3 min C) + 2 min M = 17 min, 9 min de course.
+ *  2M+5C : 3 × (2 min M + 5 min C) + 2 min M = 23 min, 15 min de course.
+ *  C : 3 min M + 21 min C + 3 min M = 27 min, 21 min de course.
+ *
+ * Le mode C n'est pas obligatoire et n'est mentionné que comme OPTION
+ * à la toute dernière séance ; les programmes 30 et 40 min sont exclus
+ * de ce cycle. Ce programme accéléré n'est pas une prescription médicale :
+ * répéter le 2M+3C / 2M+5C si besoin et garder au moins 1 jour sans course
+ * entre les séances. Ne pas forcer si une douleur ou une gêne survient.
+ */

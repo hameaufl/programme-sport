@@ -131,3 +131,12 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Aucune parenthèse de justification** (« probable », « non prouvée cliniquement », « hypothèse », etc.). Cette simplification stylistique ne transforme pas une déduction biomécanique en diagnostic médical : conserver l'exactitude et omettre toute structure insuffisamment étayée.
 - Correction de présentation dans `index.html` : supprimer uniquement les parenthèses de précaution méthodologique connues à l'affichage, **sans altérer les données du Coach**. Ajouter des tests prépublication garantissant la conservation des véritables précisions anatomiques entre parenthèses.
 - Prochaine action du Coach sur le programme : **raccourcir les deux anciennes valeurs à la source** dans `personnel/programme.js`, sans modifier les termes anatomiques fondés. Les règles de séparation des rôles restent applicables.
+
+## 12 novembre 2026 — Migration des sources vers des fichiers unitaires
+
+- **Demande** : préparer plusieurs milliers de séances et comptes rendus, préserver la fluidité et empêcher les réécritures involontaires par des Coach LLM, **sans altérer aucune donnée existante ni changer la navigation hebdomadaire**.
+- **Décision** : `personnel/seances/AAAA/MM/<id>.json` comme source unique d'une séance ; `personnel/config.json` pour objectifs et début de cycle ; notes de cycle historiques conservées séparément. `personnel/programme.js` retiré.
+- **Comptes rendus** : un fichier par séance dans `personnel/sante/rapports/`, événements indépendants dans `personnel/sante/evenements/`. Les blocs de `SUIVI.md` ont été déplacés **octet pour octet**, sans réinterprétation.
+- **Publication** : script Node de validation/génération produisant `data/index.json`, semaines détaillées et journal paginé dans `_site/`, sans les stocker dans Git. L'IHM charge uniquement une semaine, avec cache limité à huit semaines ; la page santé charge un résumé et une page de journal à la fois.
+- **Intégrité** : preuve de migration avec commit/blob originaux dans `scripts/migration-preuve.json` ; comparaison 18/18 objets JSON, objectifs et cycle, journal reconstitué identique ; validateur statique + test synthétique 5 000 séances ; script de portée empêchant suppressions et exigeant l'accord `[lot-valide]` au-delà de quatre séances par commit.
+- **Périmètres** : les futures modifications de séance, sensations, structures et rapport restent strictement Coach. Aucun bouton d'accès direct mois ou année.

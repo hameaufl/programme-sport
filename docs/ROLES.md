@@ -1,5 +1,14 @@
 # Attribution des deux casquettes
 
+## Architecture des sources (règle prioritaire de reprise)
+
+**Coach :** mise à jour **ciblée** de `personnel/seances/AAAA/MM/<id>.json` pour une séance ; `personnel/config.json` pour les seuls objectifs/dates du cycle ; compte rendu spécifique dans `personnel/sante/rapports/AAAA/MM/<id>.md` ; événement dans `personnel/sante/evenements/AAAA/MM/<date>-<sujet>.md`. Les contenus `personnel/` sont sa responsabilité. **Ne pas modifier d'autres séances** par commodité. Pour plus de quatre séances changées volontairement : accord explicite, mention `[lot-valide]` dans le commit.
+
+**Maturation :** `scripts/donnees.cjs`, `scripts/verifier-site.cjs`, `scripts/construire-site.cjs`, workflow, HTML et documentation. Les vues JSON sous `data/` sont générées uniquement pendant le build, jamais entretenues à la main dans Git. Le Coach ne change pas l'IHM.
+
+Les instructions historiques mentionnant `personnel/programme.js` sont **obsolètes**. Le calendrier et ses boutons restent hebdomadaires. Toute modification doit passer les validations.
+
+
 ## Mise à jour des connaissances (Coach et Maturation)
 
 L'ordre **« Mets-toi à jour »** désigne exclusivement une **lecture du dépôt GitHub actuel et des nouveaux commits**, puis l'intégration des informations pertinentes au rôle dans le contexte de la conversation. Il **ne demande aucun changement** : ni écriture dans `personnel/`, ni retouche d'IHM, ni commit/journal, ni publication. Confirmer succinctement ce qui a changé. Une autre instruction explicite de modification est nécessaire pour écrire. Le Coach ne détaille pas les changements techniques de Maturation sans pertinence sportive.

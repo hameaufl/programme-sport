@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "f5586151407b5324662324fbc63eb81591168f95",
+  "originalProgrammeBlob": "309a49b619a8d10c30088d0e8012ae7ff328a06d",
+  "originalSuiviBlob": "bd0e6e6d9a31c3c093de1f01f1fdb8b79314d779",
+  "sessions": 18,
+  "rapports": 1,
+  "evenements": 2,
+  "verification": "Comparaison JSON profonde des 18 objets, conservation exacte des objectifs et date de cycle, reconstitution octet pour octet du journal et de ses blocs."
+}

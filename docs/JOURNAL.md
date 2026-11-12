@@ -157,6 +157,15 @@
 - **Qualité** : tests sur les deux puces concernées et sur une parenthèse anatomique utile ; versions des deux pages HTML et du témoin synchronisées (`2026-11-12-structures-sans-reserves-v12`).
 - **Publication validée** : [run 43121853734](https://github.com/hameaufl/programme-sport/actions/runs/43121853734), `completed / success` ; tests, artefact et déploiement GitHub Pages réussis. Commit IHM et consignes : `36c78d4a8cac277521dd6b22493cef75086c6c6e`.
 
+## 12 novembre 2026 — Migration de capacité, sans transformation des données du Coach
+
+- Audit validé : fichier monolithique, journal linéaire et téléchargements globaux inadaptés à plusieurs milliers d'entrées.
+- **Migration lossless** : 18 objets séance copiés **champ pour champ** dans leurs fichiers ; objectifs et début du cycle conservés ; notes d'introduction isolées ; comptes rendus et événements découpés en blocs de texte **identiques** à ceux du journal précédent.
+- Les sources restent individuelles et GitHub garde l'historique ; les semaines JSON et le journal paginé ne sont que des **résultats de build**, absents du dépôt.
+- Calendrier hebdomadaire inchangé. Lecture réseau à la demande par semaine, jusqu'à huit semaines en mémoire. Page santé : compteurs déjà calculés et événements paginés par 30.
+- Tests de date, identifiants, intégrité et correspondance rapports/séances ; test artificiel à 5 000 entrées. Le Coach modifie les fichiers ciblés.
+- **Déploiement** : à confirmer après réussite de GitHub Actions.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

@@ -1,5 +1,14 @@
 # Mon Rythme — application statique
 
+## Sources séparées et vues de consultation rapides
+
+La source du calendrier est désormais **un fichier JSON par séance** sous `personnel/seances/AAAA/MM/<id>.json` ; objectifs et cycle dans `personnel/config.json`. Les rapports et événements santé sont individualisés. GitHub Actions valide toutes les données, puis produit dans l'artefact Pages un **index léger et un JSON pour chaque semaine** : le navigateur ne récupère que la semaine consultée. La page santé consulte les compteurs pré-calculés et des pages d'événements de 30 entrées.
+
+**Aucun clone des séances dans le dépôt** : `data/` n'existe que dans `_site/`, créé par `node scripts/construire-site.cjs`. `personnel/programme.js` a été retiré après transfert des 18 objets **sans modification**, et la correspondance originale est conservée sous forme de métadonnées dans `scripts/migration-preuve.json`.
+
+Le Coach ne change que le fichier de séance ciblé ; la CI contrôle les suppressions et les gros lots. Navigation actuelle exclusivement **hebdomadaire**.
+
+
 Site : https://hameaufl.github.io/programme-sport/ — dépôt GitHub public, branche `main`.
 
 ## Indexation par les moteurs de recherche

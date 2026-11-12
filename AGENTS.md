@@ -1,5 +1,17 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Architecture actuelle prioritaire : un fichier par séance — consigne Coach
+
+**Cette section remplace toutes les anciennes instructions mentionnant `personnel/programme.js`.** Le fichier monolithique a été retiré après une migration des 18 séances **sans altération de leurs champs**.
+
+- **Source unique** : chaque séance appartient exclusivement à `personnel/seances/AAAA/MM/<id>.json` (`id` inchangé), avec les champs existants `date`, `titre`, `fait`, `sensations`, et éventuellement `etapes`, `exercicesRealises`, `structuresSollicitees` et les autres champs historiques. `personnel/config.json` porte `objectifs`, `debutCycle` et `schemaVersion`. **Ne pas créer de copie de la séance dans un autre fichier source.**
+- **Coach** : avant toute écriture, consulter `main` et le fichier exact de la séance (`id`). Modifier **ce fichier uniquement** pour un retour isolé, en conservant les autres propriétés **à l'identique**. Ne jamais régénérer toutes les séances, ni modifier/supprimer/renommer un fichier sans besoin explicite. Pour un changement simultané de plus de quatre séances, exiger une demande explicite de lot et marquer le commit `[lot-valide]`.
+- **Compte rendu complet** : `personnel/sante/rapports/AAAA/MM/<id>.md` (un fichier par séance), identifié par `- **Identifiant :** \`<id>\``. Les événements de santé non liés à une séance sont dans `personnel/sante/evenements/AAAA/MM/AAAA-MM-JJ-identifiant.md`, une entrée datée par fichier. `personnel/sante/SUIVI.md` reste seulement le modèle et les règles générales.
+- **Données dérivées** : les fichiers `data/index.json`, `data/semaines/AAAA-MM-JJ.json` et `data/sante/journal/page-XXXX.json` sont **générés à chaque publication** par `scripts/construire-site.cjs` dans l'artefact GitHub Pages. **Ne jamais les modifier ni les committer** : ce ne sont pas des sources concurrentes.
+- **Validation préalable** : `node scripts/verifier-site.cjs` puis `node scripts/construire-site.cjs` ; la CI vérifie aussi la portée des changements et bloque suppressions/renommages non autorisés. Si la vérification échoue, **ne pas publier**. Lire les erreurs et corriger uniquement ce qui est nécessaire.
+- **Interface** : navigation par semaine **inchangée**, chargement de la seule semaine affichée. Le Coach ne modifie aucun HTML/CSS/JS/workflow ; Maturation ne modifie pas les ressentis, groupes musculaires ou décisions sportives. Les comptes rendus restent publics.
+
+
 ## Suivi santé — interface compacte et événements datés
 
 - Sur `index.html`, la carte de fin de page **« Mon suivi santé »** est limitée à **deux colonnes** : le titre seul et un bouton direct, sans sous-paragraphe. Sur les écrans extrêmement étroits, le bouton peut passer dessous.

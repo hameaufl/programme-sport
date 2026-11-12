@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-structures-sans-reserves-v12">
+  <meta name="mon-rythme-version" content="2026-11-12-sources-individuelles-v13">
   <meta name="description" content="Suivi personnel de la reprise d'activité sportive.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -41,6 +41,7 @@
     .topic li+li,.entry li+li{margin-top:5px}
     .topic .placeholder{color:#8a9a8c;font-size:13px;font-style:italic}
     .entries{display:grid;gap:12px}
+    #journalMore{background:white;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font:inherit;font-size:14px;color:var(--green);cursor:pointer}
     .empty{border:1px dashed #bfd4c3;background:#f2f8f1;color:#607762;padding:22px;border-radius:16px;font-size:14px}
     .small-print{font-size:13px;color:var(--muted);margin:20px 0 0}
     @media(max-width:650px){.shell{width:calc(100% - 28px)}header{min-height:73px}.brand{font-size:18px}.back{padding:9px 11px}.hero{border-radius:19px;padding:28px 23px}.metrics{gap:8px}.metric{padding:16px 12px}.metric-label{font-size:12px}.topics{grid-template-columns:1fr}.topic,.entry{padding:19px}.small-print{margin-top:16px}}
@@ -81,8 +82,8 @@
     </main>
   </div>
   <script>
-  (function () {
-    "use strict";
+(function () {
+  "use strict";
     function node(tag,cls,value){
       var el=document.createElement(tag);
       if(cls)el.className=cls;
@@ -134,70 +135,73 @@
         root.appendChild(card);
       });
     }
-    function journalEntries(text){
-      var results=[],entry=null;
-      text.split(/\r?\n/).forEach(function(line){
-        var heading=line.match(/^### (\d{4}-\d{2}-\d{2})(.*)$/);
-        if(heading){
-          entry={date:heading[1],title:clean(heading[2].replace(/^\s*—\s*/,"").trim()),lines:[]};
-          results.push(entry);
-        }else if(/^##?\s/.test(line) || /^###\s/.test(line)){entry=null;}
-        else if(entry)entry.lines.push(line);
-      });
-      return results;
-    }
-    function loadJournal(text){
-      var root=document.getElementById("healthFollow");
-      root.replaceChildren();
-      var entries=journalEntries(text).sort(function(a,b){return b.date.localeCompare(a.date);});
-      if(!entries.length){replaceWithEmpty("healthFollow","Aucun compte rendu de santé daté n'est encore renseigné.");return;}
-      entries.forEach(function(e){
-        var card=node("article","entry");
-        var date=formatDate(e.date);
-        card.appendChild(node("h3","",date+(e.title?" · "+e.title:"")));
-        fillParagraphs(card,e.lines);
-        root.appendChild(card);
-      });
-    }
+
     function formatDate(iso){
       var date=new Date(iso+"T12:00:00");
       return isNaN(date.getTime())?iso:date.toLocaleDateString("fr-FR",{day:"numeric",month:"short",year:"numeric"});
     }
-    function drawProgramme(){
-      var programme=window.MON_RYTHME_PROGRAMMES;
-      if(!programme || typeof programme!=="object")return;
-      var sessions=Object.keys(programme).reduce(function(out,week){
-        if(Array.isArray(programme[week]))out.push.apply(out,programme[week]);
-        return out;
-      },[]).filter(function(s){return s&&typeof s.date==="string";});
-      var done=sessions.filter(function(s){return s.fait===true;});
-      var notes=sessions.filter(function(s){return typeof s.sensations==="string"&&s.sensations.trim();});
-      document.getElementById("countPlanned").textContent=String(sessions.length);
-      document.getElementById("countDone").textContent=String(done.length);
-      document.getElementById("countNotes").textContent=String(notes.length);
-    }
-    function loadProgramme(){
-      var script=document.createElement("script");
-      script.src="./personnel/programme.js?actualisation="+Date.now();
-      script.onload=function(){script.remove();drawProgramme();};
-      script.onerror=function(){script.remove();drawProgramme();};
-      document.head.appendChild(script);
+    function fetchJSON(url){return fetch(url,{cache:"no-cache"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();});}
+    function loadCounters(){
+      fetchJSON("./data/index.json?actualisation="+Date.now()).then(function(data){
+        var stats=data.compteurs||{};
+        document.getElementById("countPlanned").textContent=String(stats.programmees??"—");
+        document.getElementById("countDone").textContent=String(stats.realisees??"—");
+        document.getElementById("countNotes").textContent=String(stats.avecSensations??"—");
+      }).catch(function(){/* Garder les tirets si les compteurs ne sont pas disponibles. */});
     }
     function loadMarkdown(path,id,callback){
       fetch(path+"?actualisation="+Date.now(),{cache:"no-store"})
         .then(function(response){if(!response.ok)throw Error(String(response.status));return response.text();})
-        .then(callback)
-        .catch(function(){replaceWithEmpty(id,"Ces informations ne sont pas disponibles actuellement.");});
+        .then(callback).catch(function(){replaceWithEmpty(id,"Ces informations ne sont pas disponibles actuellement.");});
+    }
+    var pages=[],nextPage=0,journalRequest=0;
+    function addEvents(events){
+      var root=document.getElementById("healthFollow");
+      events.forEach(function(e){
+        var card=node("article","entry");
+        card.appendChild(node("h3","",formatDate(e.date)+(e.title?" · "+e.title:"")));
+        fillParagraphs(card,e.lines||[]);
+        root.appendChild(card);
+      });
+    }
+    function showNextPage(token){
+      if(nextPage>=pages.length)return;
+      var page=pages[nextPage++],root=document.getElementById("healthFollow");
+      var oldButton=document.getElementById("journalMore");
+      if(oldButton)oldButton.remove();
+      fetchJSON("./data/sante/journal/"+page).then(function(data){
+        if(token!==journalRequest)return;
+        addEvents(data.events||[]);
+        if(nextPage<pages.length){
+          var button=node("button","","Afficher les événements précédents");
+          button.id="journalMore";
+          button.type="button";
+          button.addEventListener("click",function(){showNextPage(token);});
+          root.appendChild(button);
+        }
+      }).catch(function(){if(token===journalRequest)root.appendChild(node("p","empty","Une page du journal est indisponible."));});
+    }
+    function loadJournal(){
+      var token=++journalRequest,root=document.getElementById("healthFollow");
+      root.replaceChildren(node("div","empty","Chargement du journal…"));
+      nextPage=0;
+      fetchJSON("./data/sante/journal/index.json?actualisation="+Date.now()).then(function(index){
+        if(token!==journalRequest)return;
+        pages=index.pages||[];
+        root.replaceChildren();
+        if(!pages.length){replaceWithEmpty("healthFollow","Aucun compte rendu de santé daté n'est encore renseigné.");return;}
+        showNextPage(token);
+      }).catch(function(){if(token===journalRequest)replaceWithEmpty("healthFollow","Le journal n'est pas disponible.");});
     }
     function refresh(){
-      loadProgramme();
+      loadCounters();
       loadMarkdown("./personnel/sante/PROFIL.md","healthProfile",loadProfile);
-      loadMarkdown("./personnel/sante/SUIVI.md","healthFollow",loadJournal);
+      loadJournal();
     }
     refresh();
     document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")refresh();});
     window.addEventListener("pageshow",function(event){if(event.persisted)refresh();});
-  }());
-  </script>
+}());
+</script>
 </body>
 </html>

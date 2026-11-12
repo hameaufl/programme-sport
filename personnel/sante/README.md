@@ -1,5 +1,8 @@
 # Suivi santé — public et versionné
 
+**Architecture actuelle prioritaire** : les rapports par séance se trouvent dans `rapports/AAAA/MM/<id>.md` et les événements datés dans `evenements/AAAA/MM/<date>-<sujet>.md`. `SUIVI.md` ne contient plus les entrées effectives : il conserve les modèles et règles. Le Coach crée ou met à jour **le fichier ciblé**, sans modifier les autres. Le site reçoit un journal paginé de 30 événements lors du build et les déroulés de séance sont reliés via leur identifiant. Les anciennes indications ci-dessous faisant de `SUIVI.md` un journal unique sont **historiques**.
+
+
 **Le propriétaire a explicitement choisi la publication publique et le versionnement GitHub de ses informations de santé fournies dans le cadre de Mon Rythme.**
 
 - Dépôt : `hameaufl/programme-sport`, **public**.

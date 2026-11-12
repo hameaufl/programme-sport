@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#234735">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <meta name="mon-rythme-version" content="2026-11-12-structures-sans-reserves-v12">
+  <meta name="mon-rythme-version" content="2026-11-12-sources-individuelles-v13">
   <meta name="description" content="Programme de sorties sportives : planning hebdomadaire et détail des séances.">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="./manifest.webmanifest">
@@ -134,31 +134,15 @@
 <script>
 (function () {
   "use strict";
-  // Renouvellement de l'URL à chaque ouverture : données du programme hors cache.
-  function chargerProgramme(actualiser, callback) {
-    var source=document.createElement("script");
-    source.src="./personnel/programme.js"+(actualiser?"?actualisation="+Date.now():"");
-    source.onload=function(){source.remove();callback(true);};
-    source.onerror=function(){source.remove();callback(false);};
-    document.head.appendChild(source);
-  }
-  function initialiser() {
   var today=new Date();
-  var weekStart=monday(today);
-  var dayIndex=(today.getDay()+6)%7;
-  var realisesJournal=Object.create(null);
-  var structuresJournal=Object.create(null);
-  // Semaines civiles du lundi au dimanche, indépendantes des dates de début du cycle.
+  var weekStart=monday(today),dayIndex=(today.getDay()+6)%7;
+  var objectifs=[],dataIndex={semaines:[]},currentSessions=[],cache=new Map(),requestToken=0;
   function monday(date) {var d=new Date(date.getFullYear(),date.getMonth(),date.getDate(),12);d.setDate(d.getDate()-(d.getDay()+6)%7);return d;}
   function plus(date,n) {var d=new Date(date);d.setDate(d.getDate()+n);return d;}
   function key(date) {return date.getFullYear()+"-"+String(date.getMonth()+1).padStart(2,"0")+"-"+String(date.getDate()).padStart(2,"0");}
   function format(date,parts) {return new Intl.DateTimeFormat("fr-FR",parts).format(date);}
   function elem(tag,cls,content) {var node=document.createElement(tag);if(cls)node.className=cls;if(content!==undefined)node.textContent=content;return node;}
-  function getWeek() {
-    var source=window.MON_RYTHME_PROGRAMMES||{};
-    var found=source[key(weekStart)];
-    return Array.isArray(found)?found.filter(function(s){return s&&typeof s.date==="string";}).slice().sort(function(a,b){return a.date.localeCompare(b.date)||String(a.heure||"").localeCompare(String(b.heure||""));}):[];
-  }
+  function getWeek() {return currentSessions;}
   function getDay(i) {var target=key(plus(weekStart,i));return getWeek().filter(function(s){return s.date===target;});}
   function metadata(s) {return [s.heure,s.duree,s.distance].filter(Boolean).join(" · ");}
   function empty(title,note) {var box=elem("div","empty");box.appendChild(elem("strong","",title));box.appendChild(elem("p","",note));return box;}
@@ -189,7 +173,7 @@
     var activities=isCompleted(s)
       ? (Array.isArray(s.exercicesRealises) && s.exercicesRealises.length
           ? s.exercicesRealises
-          : (realisesJournal[s.id]||[]))
+          : (s.exercicesDuRapport||[]))
       : (Array.isArray(s.etapes)?s.etapes:[]);
     activities=activities.filter(function(item){return typeof item==="string"&&item.trim();});
     if(activities.length) {
@@ -219,7 +203,7 @@
     box.appendChild(elem("h4","","Structures sollicitées"));
     var items=Array.isArray(s.structuresSollicitees)&&s.structuresSollicitees.length
       ? s.structuresSollicitees
-      : (structuresJournal[s.id]||[]);
+      : (s.structuresDuRapport||[]);
     items=items.filter(function(item){return typeof item==="string"&&libelleAnatomique(item);});
     if(items.length) {
       var list=elem("ul");
@@ -230,45 +214,10 @@
     }
     return box;
   }
-  // Le journal sous personnel/ est la source des réalisations déjà consignées.
-  // Lire uniquement les rubriques explicites « Identifiant » et « Réalisé »,
-  // sans interprétation ni reproduction permanente dans le code de l'IHM.
-  function analyserJournalRealise(markdown) {
-    var byId=Object.create(null),structuresById=Object.create(null),entry=null;
-    function items(text){return text.split(/\s*;\s*/).map(function(v){return v.trim();}).filter(Boolean);}
-    function save(){
-      if(!entry||!entry.id)return;
-      if(entry.realise){var exercises=items(entry.realise);if(exercises.length)byId[entry.id]=exercises;}
-      if(entry.structures){var structures=items(entry.structures);if(structures.length)structuresById[entry.id]=structures;}
-    }
-    markdown.split(/\r?\n/).forEach(function(raw){
-      if(/^##\s/.test(raw)){save();entry={id:"",realise:"",structures:""};return;}
-      if(!entry)return;
-      var id=raw.match(/^-\s+\*\*Identifiant\s*:\*\*\s*`([^`]+)`/i);
-      if(id){entry.id=id[1];return;}
-      var realise=raw.match(/^-\s+\*\*Réalisé\s*:\*\*\s*(.+)$/i);
-      if(realise){entry.realise=realise[1];return;}
-      var structures=raw.match(/^-\s+\*\*Structures sollicitées\s*:\*\*\s*(.+)$/i);
-      if(structures)entry.structures=structures[1];
-    });
-    save();
-    return {exercices:byId,structures:structuresById};
-  }
-  function actualiserJournal(){
-    if(typeof fetch!=="function")return;
-    fetch("./personnel/sante/SUIVI.md?actualisation="+Date.now(),{cache:"no-store"})
-      .then(function(response){if(!response.ok)throw Error("Journal indisponible");return response.text();})
-      .then(function(markdown){
-        var entries=analyserJournalRealise(markdown);
-        realisesJournal=entries.exercices;
-        structuresJournal=entries.structures;
-        render();
-      })
-      .catch(function(){/* Programme toujours consultable ; ne jamais simuler des exercices. */});
-  }
+
   function render() {
     var goals=document.getElementById("goalsList");goals.replaceChildren();
-    (window.MON_RYTHME_OBJECTIFS||[]).forEach(function(g){if(typeof g==="string"&&g.trim())goals.appendChild(elem("li","",g));});
+    (objectifs).forEach(function(g){if(typeof g==="string"&&g.trim())goals.appendChild(elem("li","",g));});
     var end=plus(weekStart,6);
     document.getElementById("rangeLabel").textContent=format(weekStart,{day:"numeric",month:"short"})+" – "+format(end,{day:"numeric",month:"short",year:"numeric"});
     var days=document.getElementById("days");days.replaceChildren();
@@ -332,45 +281,56 @@
       all.appendChild(list);
     }
   }
-  function refreshToday() {
-    var newToday=new Date();
-    if (key(newToday)===key(today))return;
-    var displayingCurrentWeek=key(weekStart)===key(monday(today));
-    var displayingToday=key(plus(weekStart,dayIndex))===key(today);
-    today=newToday;
-    if(displayingCurrentWeek&&displayingToday){
-      weekStart=monday(today);
-      dayIndex=(today.getDay()+6)%7;
+
+  function fetchJSON(url){
+    return fetch(url,{cache:"no-cache"}).then(function(r){if(!r.ok)throw Error("HTTP "+r.status);return r.json();});
+  }
+  function afficherErreur(){
+    document.getElementById("dayContent").replaceChildren(empty("Données indisponibles","La semaine n'a pas pu être chargée. Réessayez en revenant sur la page."));
+    document.getElementById("allContent").replaceChildren(empty("Données indisponibles","Une actualisation sera effectuée à la prochaine ouverture."));
+  }
+  function chargerSemaine(){
+    var week=key(weekStart),token=++requestToken;
+    if(dataIndex.semaines.indexOf(week)===-1){currentSessions=[];render();return;}
+    var pending=cache.get(week);
+    if(!pending){
+      pending=fetchJSON("./data/semaines/"+week+".json?v="+encodeURIComponent(dataIndex.buildVersion||"1"))
+        .then(function(payload){
+          if(!payload||payload.semaine!==week||!Array.isArray(payload.sessions))throw Error("Semaine incohérente");
+          return payload.sessions;
+        });
+      cache.set(week,pending);
+      if(cache.size>8)cache.delete(cache.keys().next().value);
     }
+    pending.then(function(sessions){if(token!==requestToken)return;currentSessions=sessions;render();})
+      .catch(function(){cache.delete(week);if(token===requestToken)afficherErreur();});
+  }
+  function chargerIndex(){
+    var stamp=Date.now();
+    fetchJSON("./data/index.json?actualisation="+stamp).then(function(index){
+      if(!Array.isArray(index.semaines)||!Array.isArray(index.objectifs))throw Error("Index incomplet");
+      dataIndex=index;objectifs=index.objectifs;cache.clear();chargerSemaine();
+    }).catch(afficherErreur);
+  }
+  function refreshToday(){
+    var fresh=new Date();
+    if(key(fresh)===key(today))return;
+    var showingCurrent=key(weekStart)===key(monday(today));
+    var showingToday=key(plus(weekStart,dayIndex))===key(today);
+    today=fresh;
+    if(showingCurrent&&showingToday){weekStart=monday(today);dayIndex=(today.getDay()+6)%7;chargerSemaine();}
+    else render();
     document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
-    render();
   }
   document.getElementById("todayLabel").textContent=format(today,{weekday:"long",day:"numeric",month:"long",year:"numeric"});
-  document.getElementById("previous").addEventListener("click",function(){weekStart=plus(weekStart,-7);dayIndex=0;render();});
-  document.getElementById("following").addEventListener("click",function(){weekStart=plus(weekStart,7);dayIndex=0;render();});
-  document.getElementById("reset").addEventListener("click",function(){var now=new Date();weekStart=monday(now);dayIndex=(now.getDay()+6)%7;render();});
+  document.getElementById("previous").addEventListener("click",function(){weekStart=plus(weekStart,-7);dayIndex=0;chargerSemaine();});
+  document.getElementById("following").addEventListener("click",function(){weekStart=plus(weekStart,7);dayIndex=0;chargerSemaine();});
+  document.getElementById("reset").addEventListener("click",function(){today=new Date();weekStart=monday(today);dayIndex=(today.getDay()+6)%7;chargerSemaine();});
   document.getElementById("days").addEventListener("click",function(event){var button=event.target.closest("button[data-day]");if(button){dayIndex=Number(button.dataset.day);render();}});
-  render();
-  actualiserJournal();
-  // Une page laissée ouverte pendant la nuit affiche la nouvelle date sans rechargement.
   setInterval(refreshToday,60000);
-  function actualiserProgramme() {
-    refreshToday();
-    chargerProgramme(true,function(ok){if(ok)render();});
-    actualiserJournal();
-  }
-  document.addEventListener("visibilitychange",function(){
-    if(document.visibilityState==="visible")actualiserProgramme();
-  });
-  window.addEventListener("pageshow",function(event){
-    if(event.persisted)actualiserProgramme();
-  });
-  } // initialiser
-  chargerProgramme(true,function(ok){
-    if(ok){initialiser();return;}
-    // En cas d'échec réseau, essayer la ressource déjà connue du navigateur.
-    chargerProgramme(false,function(){initialiser();});
-  });
+  document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible"){refreshToday();chargerIndex();}});
+  window.addEventListener("pageshow",function(event){if(event.persisted){refreshToday();chargerIndex();}});
+  chargerIndex();
 }());
 </script>
 </body>

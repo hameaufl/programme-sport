@@ -1,5 +1,12 @@
 # Reprise entre LLM — Mon Rythme
 
+## Architecture actuelle : sources individuelles validées
+
+**Prioritaire sur les sections historiques plus bas.** L'ancien `personnel/programme.js` n'existe plus : **18 séances transférées sans modification de leurs champs** dans `personnel/seances/AAAA/MM/<id>.json`. Le fichier `personnel/config.json` conserve objectifs/début du cycle. Comptes rendus individualisés sous `personnel/sante/rapports/`, événements datés sous `personnel/sante/evenements/` ; le texte source du journal a été redistribué **sans perte ni reformulation**. `SUIVI.md` contient les règles/modèle.
+
+Coach : lire l'ID, modifier uniquement le JSON de cette séance, ne pas écraser un autre historique. Pour un lot de plus de quatre séances : accord utilisateur et message `[lot-valide]`. Les vues HTML consomment des **JSON de semaines générés** en CI, pas les fichiers individuels. `node scripts/verifier-site.cjs` vérifie les contrats et le regroupement de 5 000 séances fictives ; `scripts/verifier-changements.cjs` empêche suppressions intempestives ; `node scripts/construire-site.cjs` crée l'artefact Pages. **Aucune nouvelle navigation mois/année.**
+
+
 Lire d'abord [AGENTS.md](../AGENTS.md), puis [ROLES.md](ROLES.md).
 
 - **Maturation :** [CONTEXTE.md](CONTEXTE.md), [DECISIONS.md](DECISIONS.md), [JOURNAL.md](JOURNAL.md), `index.html`, `scripts/`, workflow.
