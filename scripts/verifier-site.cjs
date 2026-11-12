@@ -76,7 +76,8 @@ for(const id of ["elastiques_resistance","halteres","autres_accessoires","materi
 assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:[...materiel.equipements,materiel.equipements[0]]}),/doublonné/,"Doublons à rejeter");
 assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:materiel.equipements.map((e,i)=>i?e:{...e,statut:"achete"})}),/mal formé/,"Statut non vérifié à rejeter");
 assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("equipements"),"Inventaire distinct des données publiques Web");
-assert.ok(read("AGENTS.md").includes("exercices officiels Garmin")&&read("adaptateurs/garmin/MCP.md").includes("animations"),"Règle Coach officielle et limites d'animation à conserver");
+assert.ok(read("AGENTS.md").includes("catalogue officiel Garmin")&&read("adaptateurs/garmin/MCP.md").includes("Animation facultative, pas bloquante"),"Exercices officiels et animations facultatives : règle Coach à conserver");
+assert.ok(read("domaines/coaching/donnees/CONTEXTE-COACH.md").includes("L'animation sur la Venu 4 est facultative"),"Le Coach doit pouvoir proposer des séances personnalisées sans animation");
 const mcp=require("../adaptateurs/garmin/mcp.cjs");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(html),"Aucune référence à des programmes de montre dans le site");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(sante),"Aucune référence à des programmes de montre dans la vue Santé");

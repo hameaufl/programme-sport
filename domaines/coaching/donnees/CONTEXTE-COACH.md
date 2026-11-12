@@ -4,7 +4,7 @@
 
 ## Matériel réellement disponible à domicile
 
-**Règle actuelle prioritaire :** pour les nouvelles prescriptions, consulter `equipements.json` et le référentiel officiel Garmin avant de choisir le mouvement. Les animations d'une séance personnalisée sur Venu 4 ne sont pas disponibles selon le support Garmin ; la préférence d'animation demande une recherche de séance prédéfinie, pas l'invention d'une animation.
+**Règle actuelle prioritaire :** le Coach choisit lui-même **exclusivement des exercices officiellement classifiés Garmin** pour les nouvelles prescriptions, après lecture de `equipements.json`. Il privilégie les gestes documentés et partage, pour chaque geste inconnu, le nom officiel, un intitulé français et des consignes ou ressources pédagogiques vérifiées pour l'apprendre **avant la séance**. **L'animation sur la Venu 4 est facultative : son absence n'empêche jamais la construction d'un entraînement personnalisé Garmin fidèle.**
 
 
 - **Tapis de sol :** disponible.
