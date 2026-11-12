@@ -74,7 +74,7 @@ assert.equal(coachModele.verifierMaterielRequis(materiel,["tapis_sol","ballon_gy
 for(const id of ["elastiques_resistance","halteres","autres_accessoires","materiel_non_declare"])
  assert.throws(()=>coachModele.verifierMaterielRequis(materiel,[id]),/indisponible ou non confirmé/,"Matériel non déclaré ou absent à bloquer : "+id);
 assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:[...materiel.equipements,materiel.equipements[0]]}),/doublonné/,"Doublons à rejeter");
-assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:materiel.equipements.map((e,i)=>i?e:{...e,statut:"achete"}}),/mal formé/,"Statut non vérifié à rejeter");
+assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:materiel.equipements.map((e,i)=>i?e:{...e,statut:"achete"})}),/mal formé/,"Statut non vérifié à rejeter");
 assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("equipements"),"Inventaire distinct des données publiques Web");
 assert.ok(read("AGENTS.md").includes("exercices officiels Garmin")&&read("adaptateurs/garmin/MCP.md").includes("animations"),"Règle Coach officielle et limites d'animation à conserver");
 const mcp=require("../adaptateurs/garmin/mcp.cjs");
