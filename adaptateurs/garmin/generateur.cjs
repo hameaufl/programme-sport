@@ -1,6 +1,7 @@
 "use strict";
 const fs=require("node:fs"),path=require("node:path");
 const ROOT=path.resolve(__dirname,"../..");
+const depots=require("../fichiers/depots.cjs");
 const TABLE=[0,0xCC01,0xD801,0x1400,0xF001,0x3C00,0x2800,0xE401,0xA001,0x6C00,0x7800,0xB401,0x5000,0x9C01,0x8801,0x4400];
 function crcFit(bytes){let crc=0;for(const b of bytes){let tmp=TABLE[crc&15];crc=((crc>>4)&0x0fff)^tmp^TABLE[b&15];tmp=TABLE[crc&15];crc=((crc>>4)&0x0fff)^tmp^TABLE[(b>>4)&15];}return crc;}
 const TYPES={enum:0,uint16:0x84,uint32:0x86,uint32z:0x8c,string:7},SIZE={enum:1,uint16:2,uint32:4,uint32z:4};
@@ -125,10 +126,8 @@ function generate(session,root=ROOT){
 }
 function main(args=process.argv.slice(2)){
  const id=args[0];if(!id||!/^(?:course|renfo)-\d{4}-\d{2}-\d{2}$/.test(id))throw Error("Usage: node scripts/generer-garmin.cjs <course|renfo>-AAAA-MM-JJ");
- const date=id.slice(-10),rel="domaines/planification/donnees/seances";
- const pathPlan=path.join(ROOT,rel,date.slice(0,4),date.slice(5,7),id+".json");
- const session=JSON.parse(fs.readFileSync(pathPlan,"utf8"));if(session.id!==id)throw Error("Identifiant de plan incohérent");
- const done=fs.existsSync(path.join(ROOT,"domaines/activites/donnees/seances",date.slice(0,4),date.slice(5,7),id+".json"));
+ const session=depots.planification.parId(id);if(session.id!==id)throw Error("Identifiant de plan incohérent");
+ const done=depots.activites.estRealisee(id);
  console.log(JSON.stringify(generate({...session,fait:done})));
 }
 if(require.main===module)main();
