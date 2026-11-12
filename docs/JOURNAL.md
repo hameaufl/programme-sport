@@ -199,6 +199,14 @@
 - **Déploiement confirmé** : [run 43131100817](https://github.com/hameaufl/programme-sport/actions/runs/43131100817), `completed / success` : validations, construction et publication GitHub Pages réussies. Commit interface et consignes : `e84bab2306a82e443c67515e8cd3e7a660b3e7a3`.
 - **Vérification d'intégrité indépendante** : les 25 fichiers source des séances, rapports, événements, configuration et pièces jointes conservent exactement les mêmes SHA Git qu'avant cette modification. Lien FIT conservé, sous-texte absent.
 
+## 12 novembre 2026 — Contrat de mémoire métier permanente pour les Coachs
+
+- **Demande initiale** : toutes les informations métier fournies au Coach doivent être poussées sur GitHub afin de pouvoir changer de LLM sans perte de contexte. **Précision du propriétaire** : cela couvre **tous les paramètres de personnalisation**, pas seulement le sport, la santé ou les séances, et doit préserver le **même niveau de nuance**.
+- **Actions Maturation** : publication d'un [contrat de continuité](CONTRAT-CONTINUITE-COACH.md), règle prioritaire en tête de `AGENTS.md`, renforcement des rôles et de la procédure de reprise, actualisation du contexte technique devenu obsolète et ajout d'un lien documentaire dans le README.
+- **Procédure Coach** : nouvelle connaissance transversale → source personnelle adaptée dans `personnel/` (création de `CONTEXTE-COACH.md` par le Coach si nécessaire) ; provenance, date, nuance, décision/raison, vérification GitHub et lecture par le successeur.
+- **Périmètre** : aucun contenu personnel reformulé ou ajouté, aucun fichier `personnel/` changé ; règles, pas de transfert rétroactif fictif depuis des conversations inaccessibles.
+- **Contrôle** : vérifier que le commit et les instructions sont lisibles sur `main`. Modification documentaire uniquement ; aucune republication Pages requise.
+
 ## Journal futur
 
 Préciser : demande, fichiers/commit, contrôles, déploiement effectif, limites. Ne pas recopier les comptes rendus sportifs : ils appartiennent au Coach.

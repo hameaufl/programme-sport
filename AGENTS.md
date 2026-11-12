@@ -1,5 +1,18 @@
 # AGENTS.md — règles obligatoires des agents LLM
 
+## Continuité métier du Coach — dépôt GitHub comme mémoire intégrale (priorité absolue)
+
+**Exigence du propriétaire : la qualité de personnalisation doit rester identique si l'agent LLM Coach change.** Le Coach ne doit **jamais conserver uniquement dans la conversation** une connaissance métier utile à la programmation. **Toute information, nuance et décision exploitable pour personnaliser le programme, quel que soit le domaine** (santé, contraintes de vie, horaires, matériel, habitudes, préférences, motivations, historique, retours, objectifs, critères et raisons des adaptations, inconnues), doit être **écrite et vérifiée sur GitHub dans le même échange**, même sans modification immédiate du calendrier.
+
+- **Contrat exhaustif** : lire [docs/CONTRAT-CONTINUITE-COACH.md](docs/CONTRAT-CONTINUITE-COACH.md). Il définit la portée, les sources de vérité, la précision à conserver, la reprise et la vérification.
+- **Connaissances transversales** sans emplacement adapté : le Coach crée et entretient **`personnel/CONTEXTE-COACH.md`**, sans recopier les séances, bilans ou décisions déjà stockés ailleurs. Ce fichier devient le point d'entrée des préférences, contraintes et nuances durables ; le Coach complète `personnel/DECISIONS.md`, `personnel/JOURNAL.md`, `personnel/sante/PROFIL.md`, les rapports ou les séances selon leur rôle.
+- **Préserver la finesse** : provenance, date, faits versus hypothèses, conditions et limites, évolution et surtout **motifs de chaque ajustement**. Ne pas remplacer un détail utile par une formule générale ou un résumé de quelques mots. Ne pas inventer, écraser ni dupliquer les données.
+- **Procédure** : relire GitHub et le contexte avant conseil, extraire tous les nouveaux apports pertinents, mettre à jour leurs sources sous `personnel/`, vérifier le diff, committer/pousser et contrôler la lecture distante. **Une réponse conversationnelle n'est pas un enregistrement.** Si GitHub est inaccessible, le dire explicitement ; ne jamais prétendre avoir sauvegardé.
+- **Reprise d'un autre Coach** : relire le contrat, `personnel/CONTEXTE-COACH.md` s'il existe, le journal et les décisions du Coach, le profil, les objectifs et les fichiers de séances/rapports pertinents **avant** d'adapter le programme. Ne pas faire répéter ce qui figure déjà dans le dépôt.
+- **Priorité et exception** : la simple injonction **« Mets-toi à jour » reste strictement une lecture seule**, conformément à la règle existante. La conservation concerne les **nouveaux apports métier**, et ne justifie pas un commit lors d'une simple mise à jour de connaissances.
+- **Dépôt public** : aucune confidentialité implicite, même avec `noindex`. Signaler la visibilité lorsque le contenu est sensible ; ne jamais publier secrets/jetons ni données inutiles de tiers.
+
+
 ## Compatibilité des anciennes pages Android (technique, lecture seule)
 
 L'artefact Pages peut contenir un `personnel/programme.js` et un `personnel/sante/SUIVI.md` **reconstitués au moment du build**, uniquement pour qu'un ancien `index.html` conservé en cache continue de fonctionner. **Ces fichiers n'existent pas comme sources dans Git** : un Coach ne doit **jamais** chercher à les modifier ou à les recréer. Le projet utilise uniquement les fichiers sources unitaires sous `personnel/seances/`, `personnel/sante/rapports/` et `personnel/sante/evenements/`.

@@ -2,26 +2,36 @@
 
 Mon Rythme : site statique responsive et francophone, GitHub Pages via GitHub Actions, branche `main`.
 
-## Arborescence
+## Arborescence actuelle
 
-- `index.html` : interface, calendrier, navigation et indicateurs statiques.
-- `personnel/programme.js` : **unique source versionnée des données utilisateur**, chargée directement avec paramètre anti-cache.
-- `personnel/sante/`, `personnel/pieces-jointes/`, `personnel/DECISIONS.md`, `personnel/JOURNAL.md`, `personnel/GARMIN.md` : santé, données sportives et mémoire Coach.
-- `docs/` : architecture, mise en production, rôles et documentation de Maturation ; aucun jeu de données sportif copié.
-- `scripts/verifier-site.cjs` et `.github/workflows/publier-pages.yml` : tests et pipeline.
+- `index.html` : page de programme, jours et navigation **hebdomadaire** ; lit un index JSON léger puis uniquement la semaine consultée.
+- `sante.html` : suivi santé (profil, indicateurs et événements datés paginés).
+- `personnel/seances/AAAA/MM/<id>.json` : une séance individuelle par source canonique, avec identifiant stable, programme prévu, statut, sensations et structures renseignées.
+- `personnel/config.json` : objectifs du cycle, début de cycle et version du schéma.
+- `personnel/sante/PROFIL.md`, `personnel/sante/rapports/`, `personnel/sante/evenements/` : profil santé, rapports liés aux séances, événements datés.
+- `personnel/DECISIONS.md`, `personnel/JOURNAL.md`, `personnel/GARMIN.md` et `personnel/pieces-jointes/` : décisions et historique du Coach, Garmin et pièces jointes.
+- `personnel/CONTEXTE-COACH.md` : **futur point d'entrée à créer/entretenir par le Coach**, pour les faits transversaux de personnalisation qui n'appartiennent pas à une autre source. Pas de duplication des séances ou de leurs rapports.
+- `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md`, `docs/CONTRAT-CONTINUITE-COACH.md` : instructions prioritaires pour la reprise et la continuité métier.
+- `scripts/donnees.cjs`, `scripts/verifier-site.cjs`, `scripts/verifier-changements.cjs`, `scripts/construire-site.cjs` : collecte, validation et génération.
+- `.github/workflows/publier-pages.yml` : contrôle et publication.
 
 ## Fonctionnement
 
-- Ouverture sur la semaine courante lundi-dimanche, date dynamique, bouton « Semaine en cours » visible au repos.
-- `fait:false` : aucun statut ; `fait:true` : ✓ vert « Fait ». Notes seulement lorsqu'elles existent.
-- Objectifs issus de la même source personnelle, rendus dans le conteneur existant de la page.
-- Aucune saisie locale et aucun `localStorage`. Séances à `id` stables, descriptifs courts en puces.
-- Aucun ajout visuel sans demande/approbation. Le Coach ne touche jamais l'IHM.
+- Affichage par semaine, du lundi au dimanche ; boutons « semaine précédente », « semaine suivante », « semaine en cours » inchangés.
+- Statut « Fait » seulement si `fait:true`. Détail : « Séance », « Structures sollicitées », « Sensations » ; FIT Workout téléchargeable si pièce jointe existante.
+- Les vues `data/index.json`, `data/semaines/<lundi>.json` et `data/sante/journal/` sont **générées dans `_site/`**, jamais modifiées comme sources Git.
+- Le générateur peut maintenir des exports agrégés de compatibilité pour d'anciens HTML mis en cache ; ce ne sont pas des sources du Coach.
+- Pas de saisie navigateur ni de `localStorage`. Pas d'ajout visuel sans demande/approbation.
 
-## Automatisation
+## Mémoire métier et responsabilités
 
-Le workflow doit être déclenché automatiquement par tout commit sur `main` touchant le site ou **`personnel/**`**, y compris une mise à jour par Coach. Le job `build` contrôle le programme, crée un artefact de site comprenant la ressource au chemin `personnel/programme.js`; `deploy` attend sa disponibilité via API avant publication.
+- **Le Coach** est seul responsable des informations personnelles et métier sous `personnel/`. Toute donnée pertinente à la personnalisation, même sans modification du programme immédiate, doit être persistée sur GitHub avec sa source, ses nuances, son évolution et sa justification.
+- **Maturation** maintient architecture, IHM, scripts, tests et documents techniques, **sans rédiger ni réinterpréter les faits du Coach**.
+- [Contrat de continuité du Coach](CONTRAT-CONTINUITE-COACH.md) : précise comment préserver la finesse de personnalisation lors d'un changement de LLM et comment relire les sources sans duplication.
+- **« Mets-toi à jour » seul** : lecture seule du GitHub, aucun commit.
 
-L'artefact de déploiement n'est **pas une duplication versionnée**. Le cache navigateur du HTML et des retards GitHub Pages restent possibles ; contrôler les Actions et, si accessible, `publication.txt`.
+## Publication et sécurité
 
-**Choix de visibilité :** dépôt public accepté pour les données fournies, mais jamais de secret Garmin ou de bilan inventé.
+Tout commit de programme sous `personnel/` déclenche normalement GitHub Actions. Le build contrôle les données et génère les semaines et événements avant publication. **Vérifier `success`**, pas seulement le push.
+
+Les pages utilisent `noindex, nofollow`, mais **le dépôt et les données sont publics**. Ne pas publier de secrets/jetons ni de données inutiles de tiers. Une confidentialité stricte demanderait une architecture différente.

@@ -1,5 +1,12 @@
 # Mon Rythme — application statique
 
+## Continuité de la personnalisation entre différents LLM Coach
+
+La mémoire métier de la personnalisation est **dans GitHub, pas seulement dans la conversation**. Toute information pertinente reçue par le Coach — objectifs, contraintes, préférences, habitudes, santé, matériel, historique, motifs et évolutions du programme — doit être persistée dans sa source sous `personnel/`, avec les nuances nécessaires à une reprise fidèle. Pour les connaissances transversales sans fichier source dédié, le Coach crée et entretient `personnel/CONTEXTE-COACH.md`. **Le dépôt est public** : `noindex` ne protège pas la confidentialité.
+
+[Consulter le contrat complet de continuité du Coach](docs/CONTRAT-CONTINUITE-COACH.md). Une demande isolée « Mets-toi à jour » reste une consultation en lecture seule.
+
+
 ## Entraînements Garmin (exemple du 11 novembre 2026)
 
 Un premier fichier **FIT Workout** est disponible dans le détail de la séance de course du **11 novembre** : 3 × (2 min marche + 3 min course) puis 2 min marche, soit 17 min. Il se télécharge directement depuis Mon Rythme et est stocké dans `personnel/pieces-jointes/seances/course-2026-11-11/prevu/`. La compatibilité syntaxique est testée ; **l'installation du fichier FIT Workout externe dans Garmin Connect ou sur la Venu 4 n'est pas confirmée**. Les séances que l'utilisateur crée dans Garmin Connect peuvent, elles, être envoyées à la montre.

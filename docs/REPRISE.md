@@ -1,5 +1,16 @@
 # Reprise entre LLM — Mon Rythme
 
+## Prérequis prioritaire de toute reprise Coach — contexte métier complet
+
+**Objectif utilisateur** : pouvoir remplacer l'agent LLM Coach **sans perdre la finesse de la personnalisation**. Le Coach ne doit dépendre d'aucun souvenir de conversation : tout apport métier pertinent à une adaptation du programme (bien au-delà de la reprise sportive) doit être conservé dans les sources canoniques GitHub **dans le même échange**, avec nuance, origine, date, évolution et raisons des choix. Lire intégralement [CONTRAT-CONTINUITE-COACH.md](CONTRAT-CONTINUITE-COACH.md).
+
+**Ordre de reprise Coach** : `AGENTS.md` → `docs/ROLES.md` → présent document → contrat de continuité → `personnel/README.md` → `personnel/CONTEXTE-COACH.md` (si créé par le Coach) → `personnel/DECISIONS.md` et `personnel/JOURNAL.md` → `personnel/sante/PROFIL.md` → `personnel/config.json` → séances, rapports, événements et pièces jointes utiles → derniers commits. Le Coach doit chercher les faits détaillés au-delà des résumés avant tout arbitrage personnalisé.
+
+**Règle de fin d'échange Coach** : identifier tous les nouveaux éléments de personnalisation, même s'ils n'affectent pas la séance en cours ; les consigner dans `personnel/`, vérifier le diff, le commit et la lecture distante, puis répondre. S'il ne peut pas écrire sur GitHub, signaler clairement ce qui **reste non sauvegardé**. Ne rien inventer à partir d'une conversation antérieure inaccessible.
+
+**Exception** : « Mets-toi à jour » seul = lecture GitHub **sans aucune écriture**. Les faits personnels sont écrits par le Coach, pas par Maturation. **Dépôt public** : pas de secret et avertissement lors d'un ajout particulièrement sensible.
+
+
 ## Prévention des altérations involontaires
 
 `scripts/verifier-changements.cjs` interdit désormais, par défaut, la disparition d'un champ ou le changement de date d'une séance existante. Une modification explicitement demandée doit être expliquée et signalée par `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit. Ces marqueurs ne remplacent pas l'accord utilisateur. Les autres champs et séances doivent rester inchangés.

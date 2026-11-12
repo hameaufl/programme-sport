@@ -157,3 +157,14 @@ Les décisions individuelles et la planification sportive se trouvent dans [pers
 - **Coach** : dès qu'un programme course/marche est présenté, créé ou modifié et que ses étapes sont reconnues, générer le FIT Workout **spontanément** dans le même flux, l'attacher à la séance JSON individuelle et vérifier les tests et la publication. Aucun deuxième ordre explicite requis.
 - En cas de format d'étapes non pris en charge, **refuser un FIT approximatif** et demander un changement technique à Maturation.
 - **Aucune altération des données d'entraînement existantes**, des sensations et des structures ; navigation hebdomadaire inchangée. Régressions prévenues par tests du lien et de l'absence de sous-texte.
+
+## 12 novembre 2026 — Continuité métier intégrale et indépendante du LLM Coach
+
+- **Clarification explicite du propriétaire** : toutes les connaissances que possède le Coach **pour personnaliser son programme**, bien au-delà des séances ou de la reprise sportive, doivent être persistées sur GitHub. Un changement de modèle ou de conversation ne doit pas faire perdre la finesse des informations, de l'analyse, des contraintes et des choix.
+- **Règle prioritaire** : lors de tout nouvel apport métier, même sans modification immédiate d'une séance, le Coach conserve dans `personnel/` les faits, préférences, contraintes, contexte de vie pertinent, équipement, motivation, objectifs, mesures, santé, réponses aux entraînements, hypothèses, décisions et justifications. **Aucune connaissance utile uniquement conservée dans une conversation.**
+- **Sources** : conserver une source canonique par objet ; le Coach peut créer `personnel/CONTEXTE-COACH.md` pour les connaissances transversales qui n'ont pas d'autre emplacement ; les séances, comptes rendus, profil, décisions et journal conservent leurs rôles existants. Aucune donnée personnelle n'est copiée dans `docs/`.
+- **Finesse et traçabilité** : dater, sourcer, signaler le niveau de confirmation, le contexte, la portée, les raisons de décisions et les points en suspens ; ne jamais substituer une synthèse appauvrie aux documents détaillés.
+- **Processus** : lire le dépôt avant d'agir ; écrire dans le même échange, contrôler le diff, committer/pousser et vérifier à distance. Ne pas déclarer un contexte sauvegardé sans succès. Un nouvel agent relit les sources pertinentes avant toute proposition personnalisée.
+- **Exceptions** : « Mets-toi à jour » seul demeure une opération **strictement en lecture seule**. Les connaissances de conversations antérieures inaccessibles ne peuvent pas être reconstituées automatiquement. **Dépôt public** : pas de garantie de confidentialité.
+- **Mise en œuvre Maturation** : contrat technique [CONTRAT-CONTINUITE-COACH.md](CONTRAT-CONTINUITE-COACH.md), règles de priorité et de reprise dans `AGENTS.md`, `docs/ROLES.md` et `docs/REPRISE.md`. Pas d'impact sur `personnel/` ni sur les pages HTML.
+

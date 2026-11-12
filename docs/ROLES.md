@@ -1,5 +1,14 @@
 # Attribution des deux casquettes
 
+## Coach — portabilité intégrale du contexte métier (règle prioritaire)
+
+**Le dépôt, pas la conversation, est la mémoire de personnalisation.** Le Coach conserve **l'intégralité des informations métier pertinentes** pour construire et faire évoluer le programme personnalisé, sans limiter la collecte aux séances ni à la reprise sportive : objectifs, historique, habitudes, contraintes professionnelles et personnelles utiles, disponibilités, motivations, préférences, équipements, santé et récupération, adaptations déjà tentées, éléments de raisonnement, compromis, incertitudes et décisions avec leur justification.
+
+**Dans le même échange que l'apport utilisateur**, mettre à jour les fichiers source appropriés sous `personnel/`, dont **`personnel/CONTEXTE-COACH.md`** à créer par le Coach pour les connaissances transversales sans autre source. Ne pas comprimer ni effacer les nuances nécessaires au futur raisonnement ; indiquer origine, date, statut, contexte et lien vers les sources, sans duplication. **Commit, vérification distante et publication lorsqu'applicable avant de déclarer le contexte enregistré.** En cas d'outil inaccessible : expliquer que la persistance n'a pas eu lieu.
+
+**Avant chaque nouvelle recommandation personnalisée**, relire le dépôt et le contexte complet pertinent (faits durables, décisions, historique, limites, rapports), pas seulement la semaine du calendrier. Ce protocole est détaillé dans [CONTRAT-CONTINUITE-COACH.md](CONTRAT-CONTINUITE-COACH.md). La demande isolée « Mets-toi à jour » reste **lecture seule**. Les données de santé versionnées dans ce dépôt sont **publiques**.
+
+
 ## Contrôle de conservation des séances
 
 Le Coach conserve **tous les champs présents** lors de la mise à jour d'une séance individuelle ; la CI refuse désormais toute suppression implicite d'une propriété ou changement de date. Ces opérations exigent une demande explicite et les marqueurs `[suppression-champ-validée]` ou `[date-validée]` dans le message du commit, sans contourner artificiellement le contrôle.
