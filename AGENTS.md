@@ -1,4 +1,8 @@
 # AGENTS.md — règles obligatoires des agents LLM
+## PRIORITÉ ACTUELLE — Premier Renfo déplacé au jeudi 12 novembre 2026
+
+Le propriétaire demande que **la seule séance Renfo active** soit `renfo-2026-11-12` plutôt que le brouillon du 14 novembre mentionné dans les passages historiques ci-dessous. L'ancien brouillon du 14 est archivé sous `domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json`, sans perte. La séance du **12 novembre est prévue, pas réalisée**, après 24 min de course d'essai sur tapis et avec douleur plantaire droite encore rapportée. Échauffement musical doux progressif de **5 min** (vidéo Zumba Gold Bachata proposée, non validée définitivement), étirements guidés **3 min**, durée indicative **31–34 min**. Aucun programme Garmin ne doit être créé ni programmé avant validation explicite du contenu, et si l'appui est douloureux il faut reporter.
+
 ## PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)
 
 Sur demande explicite du propriétaire, les **14 anciens Renfos ont été retirés de la planification active** et archivés intégralement dans `domaines/planification/archives/2026-11-12/`. Il ne reste qu'un brouillon `renfo-2026-11-14` pour le samedi 14 novembre : **ne pas recréer les autres dates automatiquement**, malgré l'ancienne préférence pour trois Renfos par semaine. L'utilisateur doit valider la séance et sa date avant toute création / programmation / suppression via Garmin MCP. Les autres activités, courses et kinés et toutes les données de santé sont inchangées. Le brouillon doit utiliser les exercices Garmin vérifiés et son contenu doit être intégralement convertible, échauffement et étirements compris.

@@ -1,0 +1,66 @@
+{
+  "id": "renfo-2026-11-12",
+  "date": "2026-11-12",
+  "titre": "Renfo",
+  "type": "renfo",
+  "objectif": "Première séance de renforcement au sol, facultative aujourd'hui ; confort avant performance. Contenu encore à valider avant création Garmin MCP.",
+  "details": "Brouillon au jeudi 12 novembre, après 24 min de course sur tapis ce soir ; pas réalisé par simple planification. Si douleur à l'appui, report conseillé. Pas de programme Garmin créé.",
+  "dureeEstimeeMinutes": {
+    "min": 31,
+    "max": 34
+  },
+  "blocs": [
+    {
+      "nature": "mise_en_route",
+      "dureeSecondes": 300,
+      "consignes": "de chorégraphie douce en rythme progressif, sans saut : petits pas de côté et bras, amplitude accrue seulement si appuis indolores ; sinon bras en position assise"
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "pont-sol",
+      "series": 3,
+      "repetitions": 10,
+      "parCote": false,
+      "consignes": "tenir 8–10 s en haut, détente 5 s entre montées",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 60,
+      "estimationMinutes": {
+        "min": 10,
+        "max": 11
+      }
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "ouverture-genou",
+      "series": 3,
+      "repetitions": 10,
+      "parCote": true,
+      "consignes": "3 s pour ouvrir et 3 s pour fermer ; bassin immobile",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 45,
+      "estimationMinutes": {
+        "min": 8,
+        "max": 9
+      }
+    },
+    {
+      "nature": "exercice",
+      "mouvementId": "dead-bug",
+      "series": 3,
+      "repetitions": 8,
+      "parCote": true,
+      "consignes": "4 s par mouvement ; dos neutre sans cambrure",
+      "separateurRepos": ", repos ",
+      "reposEntreSeriesSecondes": 45,
+      "estimationMinutes": {
+        "min": 5,
+        "max": 6
+      }
+    },
+    {
+      "nature": "etirements",
+      "dureeSecondes": 180,
+      "consignes": "6 × 30 s : figure-4 fessier droit puis gauche sur le dos ; bascules douces des genoux pliés droite puis gauche ; épaules bras croisé devant la poitrine droite puis gauche. Respiration calme, pas d'amplitude forcée"
+    }
+  ]
+}

@@ -111,3 +111,11 @@
 ## 12 novembre 2026 — Programme Renfo reconstruit sur validation
 
 La fréquence antérieure de trois Renfos hebdomadaires est **suspendue provisoirement** par la dernière demande du propriétaire. Seul un nouveau brouillon pour le 14 novembre reste dans la planification, jusqu'à validation de la séance et de sa date ; anciens plans conservés dans l'archive `domaines/planification/archives/2026-11-12/`. La création via Garmin MCP ne doit intervenir qu'après validation explicite ; aucun calendrier Garmin modifié. Douleur plantaire encore présente : renforcement facultatif et report si symptômes significatifs à l'appui.
+
+## 12 novembre 2026 au soir — Renfo aujourd'hui, chorégraphie progressive et étirements
+
+- **Demande directe :** déplacer la seule proposition de Renfo du samedi 14 au **jeudi 12 novembre 2026**. Elle reste **prévue, non réalisée**, et son contenu reste à valider avant la création d'un programme Garmin via MCP.
+- **Préservation sans perte :** l'ancien brouillon exact du 14 novembre est archivé en `domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json`. Le calendrier ne conserve que `renfo-2026-11-12`. Les archives initiales des 14 anciens Renfos, les autres sports, les activités réalisées et les rapports de Santé restent inchangés.
+- **Échauffement musical candidat, à tester :** « Zumba Gold Bachata », Marc Bosmans, 4 min 35, sans saut, https://www.youtube.com/watch?v=6E2c4t57oxo ; source décrivant la routine : https://notbroken.io/videos/zumba-gold-bachata-marc-bosmans/index.html. Petit rituel de 5 min en augmentant progressivement les mouvements des bras puis l'amplitude des pas latéraux si les appuis sont indolores ; sinon bras assis, ou report si douleur persistante. La vidéo n'est pas encore validée comme rituel définitif.
+- **Étirements doux 3 min :** 6 × 30 s, figure-4 fessiers droite/gauche, bascules douces des genoux pliés droite/gauche, bras croisé devant poitrine épaule droite/gauche, sans aller en fin d'amplitude (hypermobilité). Durée de séance désormais 31–34 min indicatives, exercices Renfo, séries et repos inchangés.
+- **Prudence :** déjà 24 min de course sur tapis le même soir et douleur plantaire droite encore signalée. La présence dans le calendrier n'implique pas qu'il faille réaliser le Renfo si l'appui est douloureux. Aucun appel d'écriture Garmin.
