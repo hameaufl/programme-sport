@@ -54,5 +54,7 @@ jobs:
         run: node maturation/gouvernance/verifier-revue-coach.cjs
       - name: Vérifier les 26 points et sources de la revue ciblée Coach
         run: node maturation/gouvernance/verifier-clauses-coach.cjs
+      - name: Contrôler les 161 rubriques historiques sans certifier les clauses
+        run: node maturation/gouvernance/verifier-161-rubriques.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs
