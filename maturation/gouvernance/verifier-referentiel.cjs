@@ -29,7 +29,7 @@ function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
     "Couverture présentée comme validée sans mise à niveau contrôlée du processus");
   const ids = data.attributions.map((x) => x.id);
   requireTrue(duplicates(ids).length === 0, "IDs d'exigences dupliqués");
-  const matrix = matrixText.split(/\r?\n/).map((l) => /^\| ((?:MAT|SUI|STR|PLA|GAR|COO|REF|QUA)-\d{2}) \|/.exec(l))
+        matrixText.split(/\r?\n/).some(x=>x.startsWith("| "+row.id+" |") && x.includes(chosen) && x.includes("**Nouvelle proposition**")),
     .filter(Boolean).map((m) => m[1]);
   requireTrue(matrix.length === 85 && new Set(matrix).size === 85, "Matrice : 85 IDs uniques requis");
   requireTrue(ids.slice().sort().join(",") === matrix.slice().sort().join(","), "Matrice et attributions divergent");
@@ -51,7 +51,7 @@ function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
       requireTrue(origin==="obligation_historique"||origin==="proposition_nouvelle_gouvernance",
         "Type de provenance non renseigné : "+row.id);
       const chosen=origin==="obligation_historique"?row.source_historique:row.source_proposition;
-      const link = /^\\[([^\\]]+) L(\\d+)\\]\\(https:\\/\\/github\\.com\\/hameaufl\\/programme-sport\\/blob\\/([a-f0-9]{40})\\/([^#)]+)#L(\\d+)\\)$/.exec(chosen || "");
+      const link = /^\[([^\]]+) L(\d+)\]\(https:\/\/github\.com\/hameaufl\/programme-sport\/blob\/([a-f0-9]{40})\/([^#)]+)#L(\d+)\)$/.exec(chosen || "");
       const sha=origin==="obligation_historique"?BASE:INITIAL_PROPOSITION;
       requireTrue(link && link[2]===link[5] && link[1]===link[4] && link[3]===sha,
         "Source de provenance non épinglée au SHA attendu : "+row.id);
@@ -64,7 +64,7 @@ function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
       requireTrue(!source.includes("..")&&!path.isAbsolute(source)&&line>0,
         "Chemin source invalide : "+row.id);
       const textSource=origin==="obligation_historique"?sourceAtBase(source):historicInitial(source);
-      requireTrue(textSource.split(/\\r?\\n/).length>=line,
+      requireTrue(textSource.split(/\r?\n/).length>=line,
         "Ligne de provenance absente : "+row.id);
       if(origin==="proposition_nouvelle_gouvernance")requireTrue(
         matrixText.split(/\\r?\\n/).some(x=>x.startsWith("| "+row.id+" |") && x.includes(chosen) && x.includes("**Nouvelle proposition**")),
