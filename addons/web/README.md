@@ -13,12 +13,12 @@ L'en-tête et le menu de ces pages sont créés par `composants/en-tete.cjs` ; l
 
 ## Production et confidentialité
 
-Les sorties publiques dépendent de `contrats/publication-v1.json`, et la projection restreinte de `contrats/publication-prive-v1.json`. Les listes blanches interdisent les champs non autorisés. Le mode restreint réduit les données **mais ne fournit pas d'authentification**.
+Les sorties publiques dépendent de `contrats/publication.json`, et la projection restreinte de `contrats/publication-restreinte.json`. Les listes blanches interdisent les champs non autorisés. Le mode restreint réduit les données **mais ne fournit pas d'authentification**.
 
 ```sh
 node scripts/construire-site.cjs
 node scripts/verifier-miroir-web.cjs
-node maturation/architecture/verifier-publication.cjs
+node scripts/controle/verifier-publication.cjs
 ```
 
 `MON_RYTHME_WEB=0` désactive la génération du site. `MON_RYTHME_POLITIQUE=prive` construit la projection restreinte. Le déploiement GitHub Pages et le contrôle de la version réellement servie relèvent du workflow de publication.

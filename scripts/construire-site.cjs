@@ -8,7 +8,7 @@ function build(){
  // L'add-on Web n'est pas nécessaire aux domaines métier ou aux services externes.
  if(process.env.MON_RYTHME_WEB==="0"){console.log("Add-on Web désactivé : domaines autonomes");return;}
  const mode=process.env.MON_RYTHME_POLITIQUE==="prive"?"prive":"courante";
- const fichier=mode==="prive"?"publication-prive-v1.json":"publication-v1.json";
+ const fichier=mode==="prive"?"publication-restreinte.json":"publication.json";
  const policy=JSON.parse(fs.readFileSync(path.join(ROOT,"contrats",fichier),"utf8"));
  // Stockage Santé et Coaching simulé hors du dépôt : leur absence ne bloque pas le Web.
  const depotsActifs=mode==="prive"?{...depots,

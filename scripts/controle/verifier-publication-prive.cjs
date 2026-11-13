@@ -1,7 +1,7 @@
 "use strict";
 const fs=require("node:fs"),path=require("node:path"),assert=require("node:assert/strict");
 const root=path.resolve(__dirname,"../.."),site=path.join(root,"_site"),read=p=>JSON.parse(fs.readFileSync(path.join(site,p),"utf8"));
-const policy=require("../../contrats/publication-prive-v1.json");
+const policy=require("../../contrats/publication-restreinte.json");
 assert.equal(policy.default,"deny");
 const index=read("data/index.json");
 assert.ok(Array.isArray(index.semaines));
