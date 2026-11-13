@@ -52,3 +52,9 @@ Audit sémantique des huit documents historiques et qualification des huit confl
 - [REVUE-SEMANTIQUE-REPRISE.md](REVUE-SEMANTIQUE-REPRISE.md) et [REVUE-REPRISE-30-RUBRIQUES.json](REVUE-REPRISE-30-RUBRIQUES.json) : 30 rubriques, 16 courantes à vérifier, 10 mixtes et 4 V1 dépassées. Revue documentaire par rubrique, pas certification de toutes les clauses.
 - [CORRECTION-PROVENANCE-APPLIQUEE.md](CORRECTION-PROVENANCE-APPLIQUEE.md) : 73 sources historiques et 12 nouvelles propositions désormais séparées ; autres ancrages faux/imprécis à examiner.
 - **Prochaine priorité :** consolider les textes V2 utiles, prouver les références et les dépendances, puis soumettre des chemins précis pour décision du propriétaire ; ne pas supprimer la mémoire personnelle, les archives, l'historique public ou les protocoles contraignants à l'aveugle.
+
+## Préparation du mini-lot documentaire n°1 et revue de 26 ancrages
+- [MINILOT-ASSAINISSEMENT-01.md](MINILOT-ASSAINISSEMENT-01.md) : deux textes de remplacement V2 prêts **mais non appliqués** sur `main` ou les branches de test ; aucune suppression permise.
+- [ETUDE-DEPENDANCES-NETTOYAGE.json](ETUDE-DEPENDANCES-NETTOYAGE.json) : recherche de cinq anciennes références dans **39 fichiers** de documentation/code/CI du `main` historique ; 6 liens vers `docs/REPRISE.md`, 1 vers `docs/CONTEXTE.md`, 1 vers `scripts/migration-preuve.json` ; aucune vérification des liens externes.
+- [REVUE-26-ANCRAGES.md](REVUE-26-ANCRAGES.md) : **17 candidats directs, 7 partiels, 1 insuffisant**, et **REF-06 peut être une treizième nouvelle proposition** ; à arbitrer plutôt que convertir automatiquement 73/12 en 72/13. Aucune de ces 26 corrections n'a été appliquée à la matrice.
+- **Suite :** revoir les sources et la certification clause par clause, demander les arbitrages de provenance et l'autorisation du propriétaire avant tout nettoyage documentaire effectif. B2 et `main` toujours inchangés.

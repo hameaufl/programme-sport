@@ -69,3 +69,6 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Point d'entrée documentaire de l'état courant V2](ETAT-COURANT-REFERENCE.md), sans activation B2.
 - [Plan de nettoyage progressif sans destruction](PLAN-ASSAINISSEMENT-V2.md), [inventaire de 143 fichiers](INVENTAIRE-ASSAINISSEMENT.json) et [revue des 30 rubriques de reprise](REVUE-SEMANTIQUE-REPRISE.md).
 - [Correction de provenance appliquée](CORRECTION-PROVENANCE-APPLIQUEE.md) : 73 obligations historiques, 12 règles expérimentales nouvelles distinctes ; visa Gardien encore absent.
+
+- [Préparation du mini-lot documentaire V2 n°1](MINILOT-ASSAINISSEMENT-01.md) : deux propositions de textes de remplacement non appliquées ; [étude de 39 fichiers et cinq cibles](ETUDE-DEPENDANCES-NETTOYAGE.json).
+- [Revue de 26 ancrages restant à fiabiliser](REVUE-26-ANCRAGES.md) : 17 directs, 7 partiels, 1 insuffisant, 1 provenance REF-06 à arbitrer ; aucune fausse validation.

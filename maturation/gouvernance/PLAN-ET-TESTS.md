@@ -179,3 +179,11 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Vérifier les dépendances des fichiers V1 candidats, préparer les remplacements current-only et demander accord sur les chemins concernés avant suppression/déplacement.
 - [ ] Séparer la migration des preuves et des données métier des nettoyages documentaires ; aucun nettoyage des informations santé ou archives personnelles sans accord adapté.
 - [ ] Gardien et propriétaire : arbitrages INC encore ouverts, visa de gouvernance et fusion `main` toujours non acquis.
+
+## 13 novembre 2026 — Mini-lot de nettoyage n°1 documenté
+- [x] Étudier **39 fichiers** documentaires, code et CI pour les liens exacts vers cinq cibles V1/V2, sans prétendre couvrir les liens externes.
+- [x] Préparer deux remplacements textuels V2 : `docs/CONTEXTE.md` (1 lien entrant) et `adaptateurs/README.md` (0 lien entrant dans ce corpus).
+- [x] Proposer **26 ancrages** pour le second audit : 17 directs à vérifier, 7 partiels, 1 insuffisant et REF-06 à arbitrer ; **aucune correction additionnelle validée**.
+- [x] Ajouter un contrôle qui refuse une suppression, une certification sémantique ou une provenance nouvelle automatiquement inventée.
+- [ ] Obtenir l'accord du propriétaire sur un **lot de chemins précis** avant application des deux propositions sur un environnement isolé et toute éventuelle fusion.
+- [ ] Compléter les 119 rubriques sans ancrage direct et l'audit clause par clause des protocoles mixtes ; garder INC-001 à INC-008 ouvertes.
