@@ -1,7 +1,7 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { allowed, changedUnexpected, preservedLegacy, prototypeUnchanged } = require("../verifier-integrite-metier.cjs");
+const { allowed, changedUnexpected, verifyThreeWay, preservedLegacy, prototypeUnchanged } = require("../verifier-integrite-metier.cjs");
 const { duplicates, verifyRegister, verifyCoverage } = require("../verifier-referentiel.cjs");
 
 test("Modifications de gouvernance permises, domaines et architecture interdits", () => {
@@ -102,4 +102,28 @@ test("La source d'une proposition de gouvernance ne peut être falsifiée en obl
  assert.throws(()=>verifyCoverage(fake,matrix,read,old));
  const bad=structuredClone(data);bad.attributions.find(x=>x.id==="COO-01").source_proposition=bad.attributions.find(x=>x.id==="COO-01").source_proposition.replace("7a8016955cf74f312e40fc7b82bccca84020c9eb","d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4");
  assert.throws(()=>verifyCoverage(bad,matrix,read,old));
+});
+
+test("Une évolution documentaire approuvée du main ne vaut pas dérive sur la branche historique",()=>{
+ const base=new Map([["docs/CONTEXTE.md","a".repeat(40)],["adaptateurs/README.md","b".repeat(40)],["domaines/planification/donnees/cycle.json","c".repeat(40)]]);
+ const main=new Map([["docs/CONTEXTE.md","d".repeat(40)],["adaptateurs/README.md","e".repeat(40)],["domaines/planification/donnees/cycle.json","c".repeat(40)]]);
+ const head=new Map(base);
+ const result=verifyThreeWay(base,main,head);
+ assert.deepEqual(result.unauthorized,[]);
+ assert.deepEqual(result.mainOnly,["docs/CONTEXTE.md","adaptateurs/README.md"]);
+});
+test("Même si main a changé un document, le chantier ne peut créer une troisième version",()=>{
+ const base=new Map([["docs/CONTEXTE.md","a".repeat(40)],["domaines/sante/donnees/observations.json","b".repeat(40)]]);
+ const main=new Map([["docs/CONTEXTE.md","c".repeat(40)],["domaines/sante/donnees/observations.json","b".repeat(40)]]);
+ const altered=new Map([["docs/CONTEXTE.md","e".repeat(40)],["domaines/sante/donnees/observations.json","f".repeat(40)]]);
+ assert.deepEqual(verifyThreeWay(base,main,altered).unauthorized,["docs/CONTEXTE.md","domaines/sante/donnees/observations.json"]);
+ const inherited=new Map([["docs/CONTEXTE.md","c".repeat(40)],["domaines/sante/donnees/observations.json","b".repeat(40)]]);
+ assert.deepEqual(verifyThreeWay(base,main,inherited).unauthorized,[]);
+});
+test("Suppression, ajout ou altération de fichier métier interdits même sans écart main",()=>{
+ const base=new Map([["domaines/coaching/donnees/a.json","a".repeat(40)]]);
+ const main=new Map(base);
+ assert.deepEqual(verifyThreeWay(base,main,new Map()).unauthorized,["domaines/coaching/donnees/a.json"]);
+ const added=new Map([...base,["domaines/coaching/donnees/b.json","b".repeat(40)]]);
+ assert.deepEqual(verifyThreeWay(base,main,added).unauthorized,["domaines/coaching/donnees/b.json"]);
 });
