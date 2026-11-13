@@ -76,3 +76,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Revue des 29 rubriques de ROLES](REVUE-SEMANTIQUE-ROLES.md) : 16 courantes à vérifier, 7 mixtes V1/V2, 6 anciennes ; avec REPRISE, 59/161 rubriques passées en revue, sans certification clause par clause.
 
 - [Troisième revue sémantique : 15 rubriques du mode opératoire Coach](REVUE-SEMANTIQUE-COACH.md), [ancrages précis](REVUE-COACH-15-RUBRIQUES.json) et tests négatifs : 8 courantes à vérifier, 5 mixtes, 2 états historiques datés. Avec REPRISE et ROLES, **74/161** rubriques qualifiées préliminairement. Premier mini-lot documentaire fusionné dans `main` via PR #10 ; PR #9 toujours en brouillon.
+
+- [Revue ciblée des 26 points COM-03 à COM-09](REVUE-CLAUSES-COACH-COM03-COM09.md) et [table de preuves exactes](REVUE-CLAUSES-COACH-COM03-COM09.json) : noms Garmin historiques, en-tête Web unique, suppression conditionnelle de modèles intermédiaires et chronologie datée. **3 arbitrages restent ouverts, pas de lecture Garmin distante, aucune écriture métier**. Les 26 points approfondissent 7 rubriques déjà classées : **74/161** reste le décompte préliminaire.
