@@ -69,7 +69,7 @@ test("Le préambule expérimental ne peut pas acquérir une permission suppléme
  assert.equal(prototypeUnchanged(first.replace("Lecture seule","Ecriture automatique"),first),false);
  assert.equal(prototypeUnchanged(first+"Permission sans accord\n",first),false);
 });
-test("Les 85 liens de décision sont épinglés à la source originale immuable",()=>{
+test("Les 73 liens historiques et 12 propositions ont deux provenances distinctes et épinglées",()=>{
  const fs=require("node:fs"),path=require("node:path"),cp=require("node:child_process");
  const root=path.resolve(__dirname,"../../..");
  const base="d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
@@ -78,10 +78,28 @@ test("Les 85 liens de décision sont épinglés à la source originale immuable"
  const read=p=>fs.readFileSync(path.join(root,p),"utf8");
  const historic=p=>cp.execFileSync("git",["show",base+":"+p],{cwd:root,encoding:"utf8"});
  assert.equal(verifyCoverage(data,matrix,read,historic),85);
+ assert.equal(data.attributions.filter(x=>x.type_provenance==="obligation_historique").length,73);
+ assert.equal(data.attributions.filter(x=>x.type_provenance==="proposition_nouvelle_gouvernance").length,12);
  const wrongSha=structuredClone(data);
  wrongSha.attributions[0].source_historique=wrongSha.attributions[0].source_historique.replace(base,"e".repeat(40));
  assert.throws(()=>verifyCoverage(wrongSha,matrix,read,historic));
  const badLine=structuredClone(data);
  badLine.attributions[2].source_historique=badLine.attributions[2].source_historique.replace(/#L\d+\)/,"#L999999)");
  assert.throws(()=>verifyCoverage(badLine,matrix,read,historic));
+});
+
+test("La source d'une proposition de gouvernance ne peut être falsifiée en obligation historique",()=>{
+ const fs=require("node:fs"),path=require("node:path"),cp=require("node:child_process");
+ const root=path.resolve(__dirname,"../../..");
+ const data=JSON.parse(fs.readFileSync(path.join(__dirname,"..","COUVERTURE-PROTOCOLES.json"),"utf8"));
+ const matrix=fs.readFileSync(path.join(__dirname,"..","MATRICE-COUVERTURE.md"),"utf8");
+ const read=p=>fs.readFileSync(path.join(root,p),"utf8");
+ const old=p=>cp.execFileSync("git",["show","d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4:"+p],{cwd:root,encoding:"utf8"});
+ const fake=structuredClone(data);const item=fake.attributions.find(x=>x.id==="REF-01");
+ item.type_provenance="obligation_historique";
+ item.source_historique="[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)";
+ delete item.source_proposition;
+ assert.throws(()=>verifyCoverage(fake,matrix,read,old));
+ const bad=structuredClone(data);bad.attributions.find(x=>x.id==="COO-01").source_proposition=bad.attributions.find(x=>x.id==="COO-01").source_proposition.replace("7a8016955cf74f312e40fc7b82bccca84020c9eb","d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4");
+ assert.throws(()=>verifyCoverage(bad,matrix,read,old));
 });

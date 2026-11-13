@@ -40,9 +40,18 @@ function verify(inventory,anomalies,coverage,readMain) {
  for(const v of anomalies.attributions){
   if(seen.has(v.id)||!coverMap.has(v.id)||!Object.hasOwn(STATUSES,v.statut))throw Error("ID/statut manquant ou doublé");
   seen.add(v.id);counts[v.statut]++;
-  const m=/\/blob\/([a-f0-9]{40})\/([^#)]+)#L(\d+)\)/.exec(coverMap.get(v.id).source_historique);
-  if(!m||m[1]!==MAIN||m[2]!==v.source_origine||Number(m[3])!==v.ligne_origine||
-    sources.get(m[2])?.[v.ligne_origine-1]===undefined)throw Error("Ligne source manquante : "+v.id);
+  const row=coverMap.get(v.id);
+  if(v.statut==="provenance_nouvelle_confondue_avec_source_historique") {
+    if(row.type_provenance!=="proposition_nouvelle_gouvernance"||row.source_historique!==null||
+       !row.source_proposition?.includes("/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/")||
+       v.source_origine!=="AGENTS.md"||v.ligne_origine!==3)
+      throw Error("Provenance nouvelle non corrigée ou ancienne erreur non tracée : "+v.id);
+  }else{
+    const m=/\/blob\/([a-f0-9]{40})\/([^#)]+)#L(\d+)\)/.exec(row.source_historique);
+    if(row.type_provenance!=="obligation_historique"||!m||m[1]!==MAIN||m[2]!==v.source_origine||
+       Number(m[3])!==v.ligne_origine||sources.get(m[2])?.[v.ligne_origine-1]===undefined)
+      throw Error("Ligne historique absente : "+v.id);
+  }
  }
  for(const [k,n] of Object.entries(STATUSES))if(counts[k]!==n||anomalies.compteurs[k]!==n||
     inventory.comptes_anomalies[k]!==n)throw Error("Comptage anomalies incorrect : "+k);

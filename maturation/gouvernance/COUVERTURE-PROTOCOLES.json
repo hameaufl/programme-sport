@@ -5,7 +5,7 @@
   "referenceAudit": "3a03784854495fb5fd07d42ecca96b42d2c2b62d",
   "statut": "proposition_de_couverture_non_validee_par_le_gardien",
   "totalExigences": 85,
-  "note": "Attribution exhaustive des 85 familles déjà recensées, pas preuve de conformité sémantique ni de couverture clause-par-clause de toutes les archives.",
+  "note": "Attribution exhaustive des 85 familles déjà recensées, pas preuve de conformité sémantique ni de couverture clause-par-clause de toutes les archives. Révision de traçabilité : 73 obligations historiques avec preuve main, 12 exigences expérimentales nouvelles séparées (source_proposition au SHA 7a801695) ; validation Gardien toujours non acquise.",
   "attributions": [
     {
       "id": "MAT-01",
@@ -15,7 +15,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests de frontières existants + vérification des ports",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-02",
@@ -25,7 +26,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests modèles/CI, matrice des droits d'écriture",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-03",
@@ -35,7 +37,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Vérification portabilité sans Web",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-04",
@@ -45,7 +48,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests publication standard et politique restrictive",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-05",
@@ -55,7 +59,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Contrôle de non-fuite + alerte d'exposition",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-06",
@@ -65,7 +70,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "CI applicable, build, miroir Web et état réel du déploiement",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-07",
@@ -75,7 +81,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Vérifier buildVersion sur site et SHA",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-08",
@@ -85,7 +92,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests composants communs, absence de duplication",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-09",
@@ -95,7 +103,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests visuels/responsive et style commun",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-10",
@@ -105,7 +114,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests de non-régression UI",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-11",
@@ -115,7 +125,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests robots/meta et communication de sécurité",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-12",
@@ -125,7 +136,8 @@
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Vérification ciblée du diff dans addons/web/pages",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-13",
@@ -135,7 +147,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Contrat de publication + contrôle des champs",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-14",
@@ -145,7 +158,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Projection d'équipement filtrée, mode restreint",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-15",
@@ -155,7 +169,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Absence d'effets de bord du build",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-16",
@@ -165,7 +180,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Diff UI borné à la demande",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-17",
@@ -175,7 +191,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Scénario de cache et de navigation Android",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-18",
@@ -185,7 +202,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Diff global SHA initial / branche / main actuel",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-19",
@@ -195,7 +213,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Échec du build sur mauvais en-tête",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-20",
@@ -205,7 +224,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Recherche de duplication et vérification des sources",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "MAT-21",
@@ -215,7 +235,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/MATURATION.md",
       "controle_attendu": "Tests de libellés et des quatre pages",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-01",
@@ -225,7 +246,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Liste des sources consultées, datées",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-02",
@@ -235,7 +257,8 @@
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Aucune écriture dans le diff",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-03",
@@ -245,7 +268,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Présence des éléments apportés dans les domaines",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-04",
@@ -255,7 +279,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Extraction de chaque apport pertinent et liaison source",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-05",
@@ -265,7 +290,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Relecture sans résumé destructeur",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-06",
@@ -275,7 +301,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Contrôle d'origine et de statut",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-07",
@@ -285,7 +312,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Validation du chemin canonique par nature",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-08",
@@ -295,7 +323,8 @@
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Aucun fait:true inféré du programme",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-09",
@@ -305,7 +334,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Modèle Activités et miroir Web bloquants",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-10",
@@ -315,7 +345,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Relecture des gestes confirmés et libellés",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-11",
@@ -325,7 +356,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Comparaison rapport source / activités réalisées",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-12",
@@ -335,7 +367,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Contrôle de non-perte du rapport et du résumé",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-13",
@@ -345,7 +378,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Validation syntaxique événement et source",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-14",
@@ -355,7 +389,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Contrôle diff et identifiants",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-15",
@@ -365,7 +400,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Relecture du contexte durable, sans perte de nuances",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "SUI-16",
@@ -375,7 +411,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/ANALYSTE.md",
       "controle_attendu": "Contrôle de non-fuite et vigilance sur les ajouts sensibles",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "STR-01",
@@ -385,7 +422,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
       "controle_attendu": "Vérification objectif/stratégie",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "STR-02",
@@ -395,7 +433,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
       "controle_attendu": "Contrôle de fraîcheur et sources de l'orientation",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "STR-03",
@@ -405,7 +444,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
       "controle_attendu": "Justification de l'arbitrage à partir des faits",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "STR-04",
@@ -415,7 +455,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
       "controle_attendu": "Trace du choix et des éléments motivants",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "STR-05",
@@ -425,7 +466,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
       "controle_attendu": "Lien à la décision antérieure, statut et date",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "STR-06",
@@ -435,7 +477,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/STRATEGE.md",
       "controle_attendu": "Contrôle des formulations prudentes et conditions de reprise",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-01",
@@ -445,7 +488,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Validation du modèle Planification",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-02",
@@ -455,7 +499,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Protection des dates et programmes réalisés",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-03",
@@ -465,7 +510,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Lecture de l'état canonique avant toute décision",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-04",
@@ -475,7 +521,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Blocs structurés, cinq étapes, durées métier",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-05",
@@ -485,7 +532,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Comparaison source de prescription / projection",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-06",
@@ -495,7 +543,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Validation clé, catégorie, geste, matériel",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-07",
@@ -505,7 +554,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Contrôle banque/associations et rendu",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-08",
@@ -515,7 +565,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Contrôle des dates planifiées actuelles et des archives",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-09",
@@ -525,7 +576,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Confort, récupération et maintien de l'historique",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "PLA-10",
@@ -535,7 +587,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/PLANIFICATEUR.md",
       "controle_attendu": "Frontière plan / activité confirmée",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-01",
@@ -545,7 +598,8 @@
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Trace des autorisations et dates",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-02",
@@ -555,7 +609,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Preuve get_workouts et get_scheduled_workouts",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-03",
@@ -565,7 +620,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Comparaison signature et IDs distants",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-04",
@@ -575,7 +631,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "get_workout_by_id(raw=true), comparaison exhaustive",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-05",
@@ -585,7 +642,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Validation DTO et catalogues officiels",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-06",
@@ -595,7 +653,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Concordance avec objectifs.json et orientation.json",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-07",
@@ -605,7 +664,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Titre Programme prévu · nom / modèles vus",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-08",
@@ -615,7 +675,8 @@
       "statut_ancien_audit": "conflit a arbitrer",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Clarifier F:47 contre F:82 sans effacer l'historique",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-09",
@@ -625,7 +686,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Autorisation spécifique par type d'effet",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-10",
@@ -635,7 +697,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Relecture distante et distinction statuts",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-11",
@@ -645,7 +708,8 @@
       "statut_ancien_audit": "conflit a arbitrer",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Statut remplacé explicite pour A:216, A:271, anciens docs",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-12",
@@ -655,7 +719,8 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Rapport d'erreur et preuve avant reprise",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "GAR-13",
@@ -665,27 +730,32 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/GARMIN.md",
       "controle_attendu": "Vérification de confidentialité",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "COO-01",
       "exigence": "Coach choisit les rôles métier utiles et applique leurs protocoles successivement.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Coach",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
       "controle_attendu": "Routage tracé par demande",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/PROTOCOLE-COACH.md L8](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/PROTOCOLE-COACH.md#L8)"
     },
     {
       "id": "COO-02",
       "exigence": "Aucune création d'agents indépendants fictifs ; API payante et serveur exclus.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Coach",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
       "controle_attendu": "Transparence du compte rendu et zéro coût supplémentaire",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/PROTOCOLE-COACH.md L3](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/PROTOCOLE-COACH.md#L3)"
     },
     {
       "id": "COO-03",
@@ -695,7 +765,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
       "controle_attendu": "Prouver commit/push et expliquer les blocages",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "COO-04",
@@ -705,7 +776,8 @@
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
       "controle_attendu": "Contrôle de diff et escalade Maturation",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "COO-05",
@@ -715,67 +787,80 @@
       "statut_ancien_audit": "non transcrite",
       "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
       "controle_attendu": "Relecture de la réponse finale",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "COO-06",
       "exigence": "La branche expérimentale ne doit pas activer de comportement sur main sans accord.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Coach + Maturation",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/COACH.md",
       "controle_attendu": "Diff branche/main et approbation écrite",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L47](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L47)"
     },
     {
       "id": "REF-01",
       "exigence": "Distinguer décisions actives, remplacées, historiques, ouvertes et leurs liens.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Gardien",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Registre versions/sources",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L29](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L29)"
     },
     {
       "id": "REF-02",
       "exigence": "Détecter proactivement contradictions, doublons, règles obsolètes et trous.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Gardien",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Registre des incohérences",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L19](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L19)"
     },
     {
       "id": "REF-03",
       "exigence": "Valider préalablement toute proposition de modification des comportements.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Gardien",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Visa daté relié à un diff",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L29](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L29)"
     },
     {
       "id": "REF-04",
       "exigence": "N'applique pas les changements ; ne tranche pas seul les décisions sportives.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Gardien",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Séparation validation/application",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L19](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L19)"
     },
     {
       "id": "REF-05",
       "exigence": "Ses propres règles changent seulement après approbation expresse du propriétaire.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Gardien + propriétaire",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Preuve d'autorisation du propriétaire",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L32](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L32)"
     },
     {
       "id": "REF-06",
@@ -785,7 +870,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Lien aux sources, absence de doublons/infos sensibles",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "REF-07",
@@ -795,37 +881,44 @@
       "statut_ancien_audit": "conflit a arbitrer",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Graphe de supersession, plus récent Reprise - Renfo A",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "QUA-01",
       "exigence": "Contrôle final obligatoire et proportionné à toute demande Coach.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Contrôleur qualité",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
       "controle_attendu": "Verdict validé/refusé/bloqué",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/PROTOCOLE-COACH.md L10](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/PROTOCOLE-COACH.md#L10)"
     },
     {
       "id": "QUA-02",
       "exigence": "Comparer résultats au référentiel réellement validé, citer sources/versions.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Contrôleur qualité",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
       "controle_attendu": "Version des règles, preuves/écarts",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L25](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L25)"
     },
     {
       "id": "QUA-03",
       "exigence": "Ne pas auto-certifier avec le même LLM une validation indépendante fictive.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Contrôleur qualité",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
       "controle_attendu": "Distinguer revue logique et tests automatisés",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L25](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L25)"
     },
     {
       "id": "QUA-04",
@@ -835,7 +928,8 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
       "controle_attendu": "Étapes CI/Pages réellement exécutées et publiées",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "QUA-05",
@@ -845,17 +939,20 @@
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
       "controle_attendu": "Diff depuis base, empreintes, jamais perte silencieuse",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "obligation_historique"
     },
     {
       "id": "QUA-06",
       "exigence": "Si règle manquante/contradictoire, bloquer et solliciter Gardien/arbitrage.",
-      "source_historique": "[AGENTS.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Contrôleur qualité",
       "statut_ancien_audit": "explicite",
       "fichier_protocole": "maturation/gouvernance/agents/CONTROLEUR-QUALITE.md",
       "controle_attendu": "Verdict bloqué et référence au conflit",
-      "statut_nouvelle_attribution": "proposee_non_validee"
+      "statut_nouvelle_attribution": "proposee_non_validee",
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L31](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L31)"
     }
   ]
 }

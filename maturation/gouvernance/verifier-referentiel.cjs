@@ -5,6 +5,9 @@ const path = require("node:path");
 const ROOT = path.resolve(__dirname, "../..");
 const cp = require("node:child_process");
 const BASE = "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
+const INITIAL_PROPOSITION="7a8016955cf74f312e40fc7b82bccca84020c9eb";
+const NEW_IDS=new Set(["COO-01","COO-02","COO-06","REF-01","REF-02","REF-03","REF-04","REF-05","QUA-01","QUA-02","QUA-03","QUA-06"]);
+function historicInitial(rel) { return cp.execFileSync("git",["show",INITIAL_PROPOSITION+":"+rel],{cwd:ROOT,encoding:"utf8",maxBuffer:16*1024*1024}); }
 const HERE = __dirname;
 function historic(rel) {
  return cp.execFileSync("git", ["show", BASE + ":" + rel], { cwd: ROOT, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 });
@@ -44,12 +47,29 @@ function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
       requireTrue(typeof row.exigence === "string" && row.exigence.length > 20 &&
         typeof row.controle_attendu === "string" && row.controle_attendu.length > 10,
         "Livrable/contrôle absent : " + row.id);
-      const link = /^\[([^\]]+) L(\d+)\]\(https:\/\/github\.com\/hameaufl\/programme-sport\/blob\/([a-f0-9]{40})\/([^#)]+)#L(\d+)\)$/.exec(row.source_historique || "");
-      requireTrue(link && link[2] === link[5] && link[1] === link[4] && link[3] === BASE,
-        "Lien historique non épinglé au SHA initial : " + row.id);
-      const source = link[4], line = Number(link[2]);
-      requireTrue(!source.includes("..") && !path.isAbsolute(source) && line > 0, "Chemin source invalide : " + row.id);
-      requireTrue(sourceAtBase(source).split(/\r?\n/).length >= line, "Source historique absente ou ligne hors limites : " + row.id);
+      const origin=row.type_provenance;
+      requireTrue(origin==="obligation_historique"||origin==="proposition_nouvelle_gouvernance",
+        "Type de provenance non renseigné : "+row.id);
+      const chosen=origin==="obligation_historique"?row.source_historique:row.source_proposition;
+      const link = /^\\[([^\\]]+) L(\\d+)\\]\\(https:\\/\\/github\\.com\\/hameaufl\\/programme-sport\\/blob\\/([a-f0-9]{40})\\/([^#)]+)#L(\\d+)\\)$/.exec(chosen || "");
+      const sha=origin==="obligation_historique"?BASE:INITIAL_PROPOSITION;
+      requireTrue(link && link[2]===link[5] && link[1]===link[4] && link[3]===sha,
+        "Source de provenance non épinglée au SHA attendu : "+row.id);
+      if(origin==="proposition_nouvelle_gouvernance") {
+        requireTrue(NEW_IDS.has(row.id)&&row.source_historique===null,
+          "Une proposition nouvelle ne doit pas s'inventer de source historique : "+row.id);
+      } else requireTrue(!NEW_IDS.has(row.id)&&row.source_proposition===undefined,
+        "Une source historique n'est pas une proposition nouvelle : "+row.id);
+      const source=link[4],line=Number(link[2]);
+      requireTrue(!source.includes("..")&&!path.isAbsolute(source)&&line>0,
+        "Chemin source invalide : "+row.id);
+      const textSource=origin==="obligation_historique"?sourceAtBase(source):historicInitial(source);
+      requireTrue(textSource.split(/\\r?\\n/).length>=line,
+        "Ligne de provenance absente : "+row.id);
+      if(origin==="proposition_nouvelle_gouvernance")requireTrue(
+        matrixText.split(/\\r?\\n/).some(x=>x.startsWith("| "+row.id+" |") && x.includes(chosen) && x.includes("**Nouvelle proposition**")),
+        "La matrice doit signaler la proposition nouvelle : "+row.id);
+
     }
   }
   return ids.length;
