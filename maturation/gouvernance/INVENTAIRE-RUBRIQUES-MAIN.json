@@ -1,0 +1,1962 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_sha_main": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "branche_audit": "maturation/architecture-multiagents",
+  "methode": "Inventaire automatique des rubriques de niveau H2-H4 à l'instantané main, croisement structurel des liens du précédent audit ; classification préliminaire de provenance et pertinence, PAS certification sémantique exhaustive.",
+  "nombre_rubriques_main": 161,
+  "nombre_rubriques_premier_inventaire": 162,
+  "cause_ecart": "La version expérimentale d'AGENTS.md du premier inventaire ajoute en tête un titre H2 ; main compte 53 rubriques AGENTS contre 54 dans la branche expérimentale.",
+  "attribution_familles_total": 85,
+  "sections_avec_attribution_directe": 42,
+  "sections_sans_attribution_directe": 119,
+  "avertissement": "Une rubrique non citée peut être couverte dans un protocole par renvoi ; une rubrique citée peut être mal reliée. Ne jamais assimiler cette mesure à une couverture semantique.",
+  "comptes_anomalies": {
+    "provenance_nouvelle_confondue_avec_source_historique": 12,
+    "ancre_historiquement_non_pertinente": 13,
+    "section_plausible_ligne_non_probante": 13,
+    "ancre_plausible_non_certifiee": 47
+  },
+  "sources": {
+    "AGENTS.md": {
+      "rubriques_main": 53,
+      "rubriques_inventaire_initial": 54,
+      "rubriques_avec_une_attribution": 16
+    },
+    "docs/ROLES.md": {
+      "rubriques_main": 29,
+      "rubriques_inventaire_initial": 29,
+      "rubriques_avec_une_attribution": 6
+    },
+    "docs/COACH-MODE-OPERATOIRE.md": {
+      "rubriques_main": 15,
+      "rubriques_inventaire_initial": 15,
+      "rubriques_avec_une_attribution": 5
+    },
+    "docs/CONTRAT-CONTINUITE-COACH.md": {
+      "rubriques_main": 14,
+      "rubriques_inventaire_initial": 14,
+      "rubriques_avec_une_attribution": 5
+    },
+    "docs/REPRISE.md": {
+      "rubriques_main": 30,
+      "rubriques_inventaire_initial": 30,
+      "rubriques_avec_une_attribution": 0
+    },
+    "docs/PROCEDURE-MIROIR-WEB.md": {
+      "rubriques_main": 5,
+      "rubriques_inventaire_initial": 5,
+      "rubriques_avec_une_attribution": 2
+    },
+    "adaptateurs/garmin/MCP.md": {
+      "rubriques_main": 11,
+      "rubriques_inventaire_initial": 11,
+      "rubriques_avec_une_attribution": 7
+    },
+    "contrats/DEPENDANCES.md": {
+      "rubriques_main": 4,
+      "rubriques_inventaire_initial": 4,
+      "rubriques_avec_une_attribution": 1
+    }
+  },
+  "sections": [
+    {
+      "section": "AGENTS.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)",
+      "ligne_debut": 3,
+      "ligne_fin": 12,
+      "ids_ancrages_actuels": [
+        "COO-01",
+        "COO-02",
+        "COO-06",
+        "REF-01",
+        "REF-02",
+        "REF-03",
+        "REF-04",
+        "REF-05",
+        "QUA-01",
+        "QUA-02",
+        "QUA-03",
+        "QUA-06"
+      ],
+      "nombre_ancrages": 12,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L13",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)",
+      "ligne_debut": 13,
+      "ligne_fin": 18,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L19",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)",
+      "ligne_debut": 19,
+      "ligne_fin": 26,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L27",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)",
+      "ligne_debut": 27,
+      "ligne_fin": 34,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L35",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)",
+      "ligne_debut": 35,
+      "ligne_fin": 41,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L42",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ACTUELLE — Renfo A du 13 novembre créé dans Garmin Connect (12 novembre 2026 au soir)",
+      "ligne_debut": 42,
+      "ligne_fin": 45,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L46",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ LA PLUS RÉCENTE — Renfo au vendredi 13 novembre, échauffement libre (12 novembre 2026 au soir)",
+      "ligne_debut": 46,
+      "ligne_fin": 50,
+      "ids_ancrages_actuels": [
+        "PLA-04",
+        "PLA-05"
+      ],
+      "nombre_ancrages": 2,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L51",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — nom de la quatrième page « Mes équipements » (12 novembre 2026)",
+      "ligne_debut": 51,
+      "ligne_fin": 56,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L57",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — composant d'en-tête unique et bandeaux réduits d'un tiers (12 novembre 2026)",
+      "ligne_debut": 57,
+      "ligne_fin": 63,
+      "ids_ancrages_actuels": [
+        "MAT-21"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L64",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ACTUELLE — Premier Renfo déplacé au jeudi 12 novembre 2026",
+      "ligne_debut": 64,
+      "ligne_fin": 67,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L68",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)",
+      "ligne_debut": 68,
+      "ligne_fin": 72,
+      "ids_ancrages_actuels": [
+        "MAT-08"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L73",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "DÉMARRAGE OBLIGATOIRE — rôle Coach et livraison complète (12 novembre 2026)",
+      "ligne_debut": 73,
+      "ligne_fin": 79,
+      "ids_ancrages_actuels": [
+        "PLA-08"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L80",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — navigation générale en haut, à droite du logo (12 novembre 2026)",
+      "ligne_debut": 80,
+      "ligne_fin": 85,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L86",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — ne pas dupliquer la navigation ni les titres de section (12 novembre 2026)",
+      "ligne_debut": 86,
+      "ligne_fin": 91,
+      "ids_ancrages_actuels": [
+        "MAT-09"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L92",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — miroir Web vérifié après chaque mise à jour métier (12 novembre 2026)",
+      "ligne_debut": 92,
+      "ligne_fin": 102,
+      "ids_ancrages_actuels": [
+        "MAT-10"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L103",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — bandeaux de titres et navigation communs aux quatre pages (12 novembre 2026)",
+      "ligne_debut": 103,
+      "ligne_fin": 108,
+      "ids_ancrages_actuels": [
+        "MAT-06"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L109",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — autonomie du Coach sur les éléments Web qui affichent des données métier (12 novembre 2026)",
+      "ligne_debut": 109,
+      "ligne_fin": 120,
+      "ids_ancrages_actuels": [
+        "MAT-12"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L121",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — inventaire des équipements et page « Mes équipements » (12 novembre 2026)",
+      "ligne_debut": 121,
+      "ligne_fin": 128,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L129",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — séparation métier et page « Le cap du Coach » (12 novembre 2026)",
+      "ligne_debut": 129,
+      "ligne_fin": 141,
+      "ids_ancrages_actuels": [
+        "MAT-13",
+        "MAT-14",
+        "STR-01",
+        "STR-02"
+      ],
+      "nombre_ancrages": 4,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L142",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — programme Renfo personnalisé, catalogue Garmin officiel, pédagogie (12 novembre 2026)",
+      "ligne_debut": 142,
+      "ligne_fin": 153,
+      "ids_ancrages_actuels": [
+        "PLA-06"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L154",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — Garmin Connect par MCP, phase bêta (12 novembre 2026)",
+      "ligne_debut": 154,
+      "ligne_fin": 164,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L165",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — architecture modulaire V2 (approuvée le 12 novembre 2026)",
+      "ligne_debut": 165,
+      "ligne_fin": 182,
+      "ids_ancrages_actuels": [
+        "MAT-01",
+        "MAT-05",
+        "SUI-08",
+        "PLA-01",
+        "GAR-11"
+      ],
+      "nombre_ancrages": 5,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L183",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Règle prioritaire Renfo — les étirements remplacent le retour au calme (12 novembre 2026)",
+      "ligne_debut": 183,
+      "ligne_fin": 189,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L190",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Étirements post-séance — systématiques pour les nouveaux programmes, sans retoucher les séances réalisées (12 novembre 2026)",
+      "ligne_debut": 190,
+      "ligne_fin": 198,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L199",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Séances de la semaine — pas de texte de résumé statique",
+      "ligne_debut": 199,
+      "ligne_fin": 204,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L205",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Garmin FIT Workout systématique pour les Renfos (12 novembre 2026)",
+      "ligne_debut": 205,
+      "ligne_fin": 212,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L213",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Récupération ciblée avant kiné (décision datée du 12 novembre)",
+      "ligne_debut": 213,
+      "ligne_fin": 220,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L221",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Renfo — consigne permanente de rédaction et de rendu compact (12 novembre 2026)",
+      "ligne_debut": 221,
+      "ligne_fin": 228,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L229",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Renforcement : banque d'images PNG obligatoire pour le Coach",
+      "ligne_debut": 229,
+      "ligne_fin": 236,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L237",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Présentation du calendrier — libellés de plusieurs activités",
+      "ligne_debut": 237,
+      "ligne_fin": 242,
+      "ids_ancrages_actuels": [
+        "PLA-07"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L243",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Continuité métier du Coach — dépôt GitHub comme mémoire intégrale (priorité absolue)",
+      "ligne_debut": 243,
+      "ligne_fin": 255,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L256",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Compatibilité des anciennes pages Android (technique, lecture seule)",
+      "ligne_debut": 256,
+      "ligne_fin": 259,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L260",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Garmin — comportement systématique du Coach et présentation épurée",
+      "ligne_debut": 260,
+      "ligne_fin": 268,
+      "ids_ancrages_actuels": [
+        "MAT-17"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L269",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Garmin Venu 4 — génération des entraînements programmés (règle Coach)",
+      "ligne_debut": 269,
+      "ligne_fin": 278,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L279",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Architecture actuelle prioritaire : un fichier par séance — consigne Coach",
+      "ligne_debut": 279,
+      "ligne_fin": 290,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L291",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Suivi santé — interface compacte et événements datés",
+      "ligne_debut": 291,
+      "ligne_fin": 297,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L298",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Nouvelle page de suivi santé — structure et responsabilités",
+      "ligne_debut": 298,
+      "ligne_fin": 306,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L307",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "« Se mettre à jour » — lecture seule du dépôt (règle prioritaire)",
+      "ligne_debut": 307,
+      "ligne_fin": 317,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L318",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Contrôle préalable obligatoire de la version des deux pages",
+      "ligne_debut": 318,
+      "ligne_fin": 323,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L324",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Indexation volontairement désactivée — règle permanente",
+      "ligne_debut": 324,
+      "ligne_fin": 331,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L332",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Structures sollicitées — libellés anatomiques directs (règle la plus récente)",
+      "ligne_debut": 332,
+      "ligne_fin": 340,
+      "ids_ancrages_actuels": [
+        "MAT-11"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L341",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Sensations nominales et structures sollicitées — priorité pour le Coach",
+      "ligne_debut": 341,
+      "ligne_fin": 355,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L356",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Séance — intitulés ultra-concis (Coach)",
+      "ligne_debut": 356,
+      "ligne_fin": 364,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L365",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Déroulé de séance — présentation et source réelle",
+      "ligne_debut": 365,
+      "ligne_fin": 373,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L374",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Vocabulaire professionnel du Coach à partir des mots de l'utilisateur",
+      "ligne_debut": 374,
+      "ligne_fin": 381,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L382",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Réponses du Coach — concision et périmètre stricts",
+      "ligne_debut": 382,
+      "ligne_fin": 389,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L390",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Carte de navigation Mon Rythme — rendu approuvé pour le Coach",
+      "ligne_debut": 390,
+      "ligne_fin": 400,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L401",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Réponse Coach — lien vers Mon Rythme et détail de séance",
+      "ligne_debut": 401,
+      "ligne_fin": 408,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L409",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Deux casquettes exclusives",
+      "ligne_debut": 409,
+      "ligne_fin": 416,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L417",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Séparation physique obligatoire — aucune duplication",
+      "ligne_debut": 417,
+      "ligne_fin": 425,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L426",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Mise à jour GitHub et continuité — systématique",
+      "ligne_debut": 426,
+      "ligne_fin": 434,
+      "ids_ancrages_actuels": [
+        "MAT-20"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L435",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Contrat technique à préserver",
+      "ligne_debut": 435,
+      "ligne_fin": 443,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "AGENTS.md#L444",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Reprise",
+      "ligne_debut": 444,
+      "ligne_fin": 449,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Entrée opérationnelle Coach — 12 novembre 2026",
+      "ligne_debut": 3,
+      "ligne_fin": 7,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L8",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — interface métier du Coach, interface générale de Maturation (12 novembre 2026)",
+      "ligne_debut": 8,
+      "ligne_fin": 15,
+      "ids_ancrages_actuels": [
+        "COO-04"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L16",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Responsabilités de la vue « Mes équipements »",
+      "ligne_debut": 16,
+      "ligne_fin": 21,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L22",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Découplage prioritaire — stratégie du Coach et projection Web",
+      "ligne_debut": 22,
+      "ligne_fin": 29,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L30",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Règle prioritaire du Coach — exercices officiels, animations facultatives",
+      "ligne_debut": 30,
+      "ligne_fin": 36,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L37",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Garmin MCP — responsabilités actuelles, phase bêta",
+      "ligne_debut": 37,
+      "ligne_fin": 42,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L43",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — responsabilités sous l'architecture V2",
+      "ligne_debut": 43,
+      "ligne_fin": 51,
+      "ids_ancrages_actuels": [
+        "MAT-02"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L52",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Renfo : étirements comme retour au calme unique (règle prioritaire du 12 novembre 2026)",
+      "ligne_debut": 52,
+      "ligne_fin": 57,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L58",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Étirements intégrés aux programmes prévus (12 novembre 2026)",
+      "ligne_debut": 58,
+      "ligne_fin": 64,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L65",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Garmin : Renfo comme Course à pied (consigne du 12 novembre 2026)",
+      "ligne_debut": 65,
+      "ligne_fin": 71,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L72",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Séances Renfo : séparation Coach / Maturation (12 novembre 2026)",
+      "ligne_debut": 72,
+      "ligne_fin": 78,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L79",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Aides aux exercices Renfo (consigne du propriétaire au 12 novembre 2026)",
+      "ligne_debut": 79,
+      "ligne_fin": 82,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L83",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Coach — portabilité intégrale du contexte métier (règle prioritaire)",
+      "ligne_debut": 83,
+      "ligne_fin": 91,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L92",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Contrôle de conservation des séances",
+      "ligne_debut": 92,
+      "ligne_fin": 95,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L96",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Garmin — réflexe du Coach et IHM minimaliste",
+      "ligne_debut": 96,
+      "ligne_fin": 99,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L100",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Coach — entraînements Garmin prévus",
+      "ligne_debut": 100,
+      "ligne_fin": 103,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L104",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Architecture des sources (règle prioritaire de reprise)",
+      "ligne_debut": 104,
+      "ligne_fin": 112,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L113",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Mise à jour des connaissances (Coach et Maturation)",
+      "ligne_debut": 113,
+      "ligne_fin": 116,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L117",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Maturation — structure et interface",
+      "ligne_debut": 117,
+      "ligne_fin": 123,
+      "ids_ancrages_actuels": [
+        "MAT-16"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L124",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Coach — contenu personnel",
+      "ligne_debut": 124,
+      "ligne_fin": 130,
+      "ids_ancrages_actuels": [
+        "STR-04"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L131",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Coach — analyse anatomique sans avertissements dans les puces (priorité)",
+      "ligne_debut": 131,
+      "ligne_fin": 134,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L135",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Coach — nouvelles règles de rédaction",
+      "ligne_debut": 135,
+      "ligne_fin": 141,
+      "ids_ancrages_actuels": [
+        "SUI-12"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L142",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Présentation concise des exercices par le Coach",
+      "ligne_debut": 142,
+      "ligne_fin": 145,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L146",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Nouveau format du détail quotidien",
+      "ligne_debut": 146,
+      "ligne_fin": 149,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L150",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Coach — reformulation technique pédagogique",
+      "ligne_debut": 150,
+      "ligne_fin": 153,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L154",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Réponses du Coach",
+      "ligne_debut": 154,
+      "ligne_fin": 157,
+      "ids_ancrages_actuels": [
+        "COO-05"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L158",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Carte de navigation dans les réponses Coach — dernier choix",
+      "ligne_debut": 158,
+      "ligne_fin": 165,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L166",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Lien et précisions de séance dans les réponses",
+      "ligne_debut": 166,
+      "ligne_fin": 172,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/ROLES.md#L173",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Publication et validation",
+      "ligne_debut": 173,
+      "ligne_fin": 178,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)",
+      "ligne_debut": 3,
+      "ligne_fin": 12,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L13",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)",
+      "ligne_debut": 13,
+      "ligne_fin": 18,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L19",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)",
+      "ligne_debut": 19,
+      "ligne_fin": 26,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L27",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)",
+      "ligne_debut": 27,
+      "ligne_fin": 34,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L35",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)",
+      "ligne_debut": 35,
+      "ligne_fin": 41,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L42",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "DERNIER ÉTAT — Renfo A créé, rendu allégé, reconnaissance Garmin vérifiée",
+      "ligne_debut": 42,
+      "ligne_fin": 45,
+      "ids_ancrages_actuels": [
+        "PLA-03"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L46",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ LA PLUS RÉCENTE — Renfo au vendredi 13 novembre, échauffement libre (12 novembre 2026 au soir)",
+      "ligne_debut": 46,
+      "ligne_fin": 49,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L50",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ACTUELLE — Premier Renfo déplacé au jeudi 12 novembre 2026",
+      "ligne_debut": 50,
+      "ligne_fin": 53,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L54",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)",
+      "ligne_debut": 54,
+      "ligne_fin": 60,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L61",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "1. Vérification avant de conseiller ou d'écrire",
+      "ligne_debut": 61,
+      "ligne_fin": 67,
+      "ids_ancrages_actuels": [
+        "SUI-01",
+        "SUI-02",
+        "SUI-06",
+        "STR-03"
+      ],
+      "nombre_ancrages": 4,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L68",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "2. Route de chaque information, sans doublon",
+      "ligne_debut": 68,
+      "ligne_fin": 80,
+      "ids_ancrages_actuels": [
+        "SUI-07",
+        "SUI-14",
+        "PLA-02"
+      ],
+      "nombre_ancrages": 3,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L81",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "3. Checklist impérative pour **chaque activité confirmée** — avant le commit",
+      "ligne_debut": 81,
+      "ligne_fin": 90,
+      "ids_ancrages_actuels": [
+        "SUI-09",
+        "SUI-10",
+        "SUI-11"
+      ],
+      "nombre_ancrages": 3,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L91",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "4. Mode d'intervention Web et tests",
+      "ligne_debut": 91,
+      "ligne_fin": 100,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L101",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "5. Garde-fous prioritaires",
+      "ligne_debut": 101,
+      "ligne_fin": 108,
+      "ids_ancrages_actuels": [
+        "STR-06",
+        "PLA-09",
+        "QUA-05"
+      ],
+      "nombre_ancrages": 3,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/COACH-MODE-OPERATOIRE.md#L109",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "6. Reprise / historique",
+      "ligne_debut": 109,
+      "ligne_fin": 114,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Entrée opérationnelle Coach — 12 novembre 2026",
+      "ligne_debut": 3,
+      "ligne_fin": 7,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L8",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — entretien automatique et borné du rendu Web métier (12 novembre 2026)",
+      "ligne_debut": 8,
+      "ligne_fin": 15,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L16",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Nouvelle règle — inventaire canonique et nouvelle page indépendante",
+      "ligne_debut": 16,
+      "ligne_fin": 20,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L21",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — mémoire du Coach, orientation structurée et projection séparée",
+      "ligne_debut": 21,
+      "ligne_fin": 28,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L29",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Règle prioritaire du 12 novembre 2026 — choix autonome d'exercices Garmin",
+      "ligne_debut": 29,
+      "ligne_fin": 34,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L35",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Nouvelle règle prioritaire — connecteur Garmin MCP en bêta",
+      "ligne_debut": 35,
+      "ligne_fin": 41,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L42",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Architecture métier V2 : cohésion et déplacement de données",
+      "ligne_debut": 42,
+      "ligne_fin": 49,
+      "ids_ancrages_actuels": [
+        "PLA-10"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L50",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "1. Ce que le Coach doit conserver",
+      "ligne_debut": 50,
+      "ligne_fin": 63,
+      "ids_ancrages_actuels": [
+        "SUI-04",
+        "SUI-15"
+      ],
+      "nombre_ancrages": 2,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L64",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "2. Où écrire, sans doublons ni réécriture globale",
+      "ligne_debut": 64,
+      "ligne_fin": 83,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L84",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "3. Niveau de finesse exigé",
+      "ligne_debut": 84,
+      "ligne_fin": 97,
+      "ids_ancrages_actuels": [
+        "SUI-05",
+        "STR-05"
+      ],
+      "nombre_ancrages": 2,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L98",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 3,
+      "titre": "AAAA-MM-JJ — Sujet",
+      "ligne_debut": 98,
+      "ligne_fin": 106,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L107",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "4. Protocole obligatoire à chaque échange métier",
+      "ligne_debut": 107,
+      "ligne_fin": 117,
+      "ids_ancrages_actuels": [
+        "SUI-03",
+        "COO-03"
+      ],
+      "nombre_ancrages": 2,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L118",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "5. Reprise par un autre agent LLM",
+      "ligne_debut": 118,
+      "ligne_fin": 129,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/CONTRAT-CONTINUITE-COACH.md#L130",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "6. Confidentialité et périmètre",
+      "ligne_debut": 130,
+      "ligne_fin": 137,
+      "ids_ancrages_actuels": [
+        "SUI-16"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — en-tête réellement réutilisé, logo toujours lié et bandeaux compacts",
+      "ligne_debut": 3,
+      "ligne_fin": 9,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L10",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Entrée opérationnelle Coach — 12 novembre 2026",
+      "ligne_debut": 10,
+      "ligne_fin": 14,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L15",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — en-tête partagé, date à droite et navigation pleine largeur",
+      "ligne_debut": 15,
+      "ligne_fin": 20,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L21",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — sobriété des titres de section et navigation sans doublon",
+      "ligne_debut": 21,
+      "ligne_fin": 24,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L25",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — présentation unifiée des pages",
+      "ligne_debut": 25,
+      "ligne_fin": 28,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L29",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — réflexe automatique de synchronisation métier/Web, périmètre limité du Coach",
+      "ligne_debut": 29,
+      "ligne_fin": 36,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L37",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — page de matériel et séparation forte",
+      "ligne_debut": 37,
+      "ligne_fin": 41,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L42",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ de reprise — garder la stratégie métier du Coach et l'exposer proprement",
+      "ligne_debut": 42,
+      "ligne_fin": 49,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L50",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ de reprise — personnalisation avec exercices Garmin officiels",
+      "ligne_debut": 50,
+      "ligne_fin": 55,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L56",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ — connecteur Garmin MCP en bêta",
+      "ligne_debut": 56,
+      "ligne_fin": 59,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L60",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "ÉTAT PRIORITAIRE — architecture V2",
+      "ligne_debut": 60,
+      "ligne_fin": 69,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L70",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Prérequis prioritaire de toute reprise Coach — contexte métier complet",
+      "ligne_debut": 70,
+      "ligne_fin": 80,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L81",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Prévention des altérations involontaires",
+      "ligne_debut": 81,
+      "ligne_fin": 84,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L85",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Garmin — consigne prioritaire de reprise",
+      "ligne_debut": 85,
+      "ligne_fin": 88,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L89",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "FIT Workout Garmin — nouveau contrat",
+      "ligne_debut": 89,
+      "ligne_fin": 92,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L93",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Architecture actuelle : sources individuelles validées",
+      "ligne_debut": 93,
+      "ligne_fin": 110,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L111",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Dernière correction Coach — intitulés anatomiques sans précaution entre parenthèses",
+      "ligne_debut": 111,
+      "ligne_fin": 114,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L115",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Nouvelle priorité : sensations très courtes et muscles/chaînes sollicités",
+      "ligne_debut": 115,
+      "ligne_fin": 121,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L122",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Règle Coach sur la longueur du déroulé",
+      "ligne_debut": 122,
+      "ligne_fin": 125,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L126",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Déroulé et sensations — dernière décision",
+      "ligne_debut": 126,
+      "ligne_fin": 132,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L133",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Règles d'affichage du programme et reformulation par le Coach",
+      "ligne_debut": 133,
+      "ligne_fin": 139,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L140",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Affichage compact du suivi santé",
+      "ligne_debut": 140,
+      "ligne_fin": 145,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L146",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Deuxième page : suivi santé",
+      "ligne_debut": 146,
+      "ligne_fin": 149,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L150",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Consigne « Mets-toi à jour »",
+      "ligne_debut": 150,
+      "ligne_fin": 153,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L154",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Non-indexation du site",
+      "ligne_debut": 154,
+      "ligne_fin": 159,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L160",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Carte approuvée pour les réponses du Coach",
+      "ligne_debut": 160,
+      "ligne_fin": 163,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L164",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Lien à remettre à l'utilisateur",
+      "ligne_debut": 164,
+      "ligne_fin": 167,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L168",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Style du Coach",
+      "ligne_debut": 168,
+      "ligne_fin": 171,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L172",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Vérifications prépublication",
+      "ligne_debut": 172,
+      "ligne_fin": 175,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/REPRISE.md#L176",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Instruction de transfert",
+      "ligne_debut": 176,
+      "ligne_fin": 181,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/PROCEDURE-MIROIR-WEB.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Principe durable",
+      "ligne_debut": 3,
+      "ligne_fin": 8,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/PROCEDURE-MIROIR-WEB.md#L9",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Procédure à chaque nouveau fait métier",
+      "ligne_debut": 9,
+      "ligne_fin": 23,
+      "ids_ancrages_actuels": [
+        "MAT-07",
+        "QUA-04"
+      ],
+      "nombre_ancrages": 2,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/PROCEDURE-MIROIR-WEB.md#L24",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Contrôle systématique des structures sollicitées",
+      "ligne_debut": 24,
+      "ligne_fin": 29,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/PROCEDURE-MIROIR-WEB.md#L30",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Erreur évitée le 12 novembre 2026",
+      "ligne_debut": 30,
+      "ligne_fin": 33,
+      "ids_ancrages_actuels": [
+        "MAT-19",
+        "SUI-13"
+      ],
+      "nombre_ancrages": 2,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "docs/PROCEDURE-MIROIR-WEB.md#L34",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Partage des rôles",
+      "ligne_debut": 34,
+      "ligne_fin": 39,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)",
+      "ligne_debut": 3,
+      "ligne_fin": 12,
+      "ids_ancrages_actuels": [
+        "GAR-06",
+        "REF-07"
+      ],
+      "nombre_ancrages": 2,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L13",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)",
+      "ligne_debut": 13,
+      "ligne_fin": 18,
+      "ids_ancrages_actuels": [
+        "GAR-07"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L19",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)",
+      "ligne_debut": 19,
+      "ligne_fin": 26,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L27",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)",
+      "ligne_debut": 27,
+      "ligne_fin": 35,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L36",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Nouvelle condition pour créer des programmes de Renfo — Garmin officiel uniquement",
+      "ligne_debut": 36,
+      "ligne_fin": 46,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L47",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Retour d'expérience de création vérifié le 12 novembre 2026",
+      "ligne_debut": 47,
+      "ligne_fin": 52,
+      "ids_ancrages_actuels": [
+        "GAR-04"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L53",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Décision approuvée",
+      "ligne_debut": 53,
+      "ligne_fin": 58,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L59",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Séquence strictement manuelle, à suivre pour les dates demandées",
+      "ligne_debut": 59,
+      "ligne_fin": 69,
+      "ids_ancrages_actuels": [
+        "GAR-01",
+        "GAR-02",
+        "GAR-03",
+        "GAR-09",
+        "GAR-10"
+      ],
+      "nombre_ancrages": 5,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L70",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Validation du contenu et limites",
+      "ligne_debut": 70,
+      "ligne_fin": 77,
+      "ids_ancrages_actuels": [
+        "GAR-05",
+        "GAR-12",
+        "GAR-13"
+      ],
+      "nombre_ancrages": 3,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L78",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Responsabilités",
+      "ligne_debut": 78,
+      "ligne_fin": 81,
+      "ids_ancrages_actuels": [
+        "MAT-15"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "adaptateurs/garmin/MCP.md#L82",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)",
+      "ligne_debut": 82,
+      "ligne_fin": 89,
+      "ids_ancrages_actuels": [
+        "GAR-08"
+      ],
+      "nombre_ancrages": 1,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "contrats/DEPENDANCES.md#L3",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Règles opposables",
+      "ligne_debut": 3,
+      "ligne_fin": 13,
+      "ids_ancrages_actuels": [
+        "MAT-03",
+        "MAT-04",
+        "MAT-18",
+        "REF-06"
+      ],
+      "nombre_ancrages": 4,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "contrats/DEPENDANCES.md#L14",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Flux autorisés",
+      "ligne_debut": 14,
+      "ligne_fin": 29,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "contrats/DEPENDANCES.md#L30",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Règles de sécurité",
+      "ligne_debut": 30,
+      "ligne_fin": 35,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    },
+    {
+      "section": "contrats/DEPENDANCES.md#L36",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "niveau": 2,
+      "titre": "Projection de stratégie Coaching (12 novembre 2026)",
+      "ligne_debut": 36,
+      "ligne_fin": 39,
+      "ids_ancrages_actuels": [],
+      "nombre_ancrages": 0,
+      "evaluation_semantique": "non_certifiee_sans_lecture_clause_par_clause"
+    }
+  ]
+}

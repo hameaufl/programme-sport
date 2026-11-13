@@ -1,0 +1,779 @@
+{
+  "schemaVersion": 1,
+  "statut": "audit_provenance_preliminaire_non_valide",
+  "source_sha_main": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "origine": "Analyse des 85 références de COUVERTURE-PROTOCOLES.json, sans modification de cette matrice",
+  "compteurs": {
+    "provenance_nouvelle_confondue_avec_source_historique": 12,
+    "ancre_historiquement_non_pertinente": 13,
+    "section_plausible_ligne_non_probante": 13,
+    "ancre_plausible_non_certifiee": 47
+  },
+  "attributions": [
+    {
+      "id": "MAT-01",
+      "exigence": "Séparation stricte Planification / Activités / Santé / Coaching, sans import inverse ni duplication.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 176,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "MAT-02",
+      "exigence": "Maintenir modèles, schémas, validations et modules de domaines purs.",
+      "source_origine": "docs/ROLES.md",
+      "ligne_origine": 43,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "MAT-03",
+      "exigence": "Maintenir les ports de stockage remplaçables et la portabilité sans couplage Web/Garmin.",
+      "source_origine": "contrats/DEPENDANCES.md",
+      "ligne_origine": 3,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "MAT-04",
+      "exigence": "Projections Web à liste blanche : refus par défaut, aucune source métier brute.",
+      "source_origine": "contrats/DEPENDANCES.md",
+      "ligne_origine": 3,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "MAT-05",
+      "exigence": "Confidentialité : dépôt et Pages publics, mode dit privé non authentifié.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 176,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "MAT-06",
+      "exigence": "Tests, scripts, pipelines GitHub Actions et publication restent techniques Maturation.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 103,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L173"
+    },
+    {
+      "id": "MAT-07",
+      "exigence": "Vérifier build et déploiement, puis la version réellement servie ; commit seul insuffisant.",
+      "source_origine": "docs/PROCEDURE-MIROIR-WEB.md",
+      "ligne_origine": 9,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "MAT-08",
+      "exigence": "Mise en page, navigation, en-tête partagé des quatre pages et lien marque.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 68,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "docs/REPRISE.md#L15"
+    },
+    {
+      "id": "MAT-09",
+      "exigence": "Rendu responsive, alignement date/logo, boutons accessibles, bandeaux harmonisés.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 91,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "docs/REPRISE.md#L15"
+    },
+    {
+      "id": "MAT-10",
+      "exigence": "Ne pas réintroduire navigation de pied ni liens et sous-titres redondants.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 97,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L86"
+    },
+    {
+      "id": "MAT-11",
+      "exigence": "Préserver noindex sans le présenter comme confidentialité.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 335,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L324"
+    },
+    {
+      "id": "MAT-12",
+      "exigence": "Coach peut corriger seulement un fragment de rendu métier local, jamais la structure Web générale.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 120,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "MAT-13",
+      "exigence": "Projeter l'orientation Coach sans exposer les rapports et notes internes.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 140,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "MAT-14",
+      "exigence": "Projeter uniquement les équipements disponibles autorisés, pas les notes ou états absents.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 132,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L121"
+    },
+    {
+      "id": "MAT-15",
+      "exigence": "Maintain adaptateur Garmin en lecture seule ; jamais d'écriture à la construction du site.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 78,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "MAT-16",
+      "exigence": "Respecter l'absence d'ajout visuel sans demande/approbation explicite.",
+      "source_origine": "docs/ROLES.md",
+      "ligne_origine": 117,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "MAT-17",
+      "exigence": "Préserver mécanisme anti-cache Android et compatibilités retenues.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 267,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L256"
+    },
+    {
+      "id": "MAT-18",
+      "exigence": "Migration sans perte et historique intact ; identifiants conservés.",
+      "source_origine": "contrats/DEPENDANCES.md",
+      "ligne_origine": 3,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "MAT-19",
+      "exigence": "Contrôler schéma exact des en-têtes événements Santé et leur publication.",
+      "source_origine": "docs/PROCEDURE-MIROIR-WEB.md",
+      "ligne_origine": 30,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "MAT-20",
+      "exigence": "Ne pas dupliquer les faits métier dans docs techniques ni dans HTML.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 428,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L417"
+    },
+    {
+      "id": "MAT-21",
+      "exigence": "Respecter la destination unique « Mes équipements » dans l'en-tête, le titre et les tests.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 62,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L51"
+    },
+    {
+      "id": "SUI-01",
+      "exigence": "Relire le dernier contexte pertinent avant de conseiller ; conserver les incertitudes.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 61,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-02",
+      "exigence": "« Mets-toi à jour » isolé = lecture seule, sans commit/Garmin.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 61,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "SUI-03",
+      "exigence": "Tout retour métier utile exige écriture dans le même échange, même sans adaptation du calendrier.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 107,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-04",
+      "exigence": "Conserver intentions, contraintes, préférences, motivations, vécu, équipement, récupération et questions ouvertes.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 50,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-05",
+      "exigence": "Préserver la précision, provenance, date, unité, nuance, statut et motivation de chaque décision.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 84,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-06",
+      "exigence": "Séparer faits réalisés, sensations rapportées, hypothèses, analyse, décisions et intentions.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 61,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-07",
+      "exigence": "Écrire dans les quatre domaines selon le type de fait ; ne pas doubler les sources.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 68,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-08",
+      "exigence": "Une activité est réalisée seulement si confirmée ; une séance prévue n'est pas un fait.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 176,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "SUI-09",
+      "exigence": "Renseigner spontanément structuresSollicitees non vide dans toute activité confirmée.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 81,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-10",
+      "exigence": "Structures anatomiques précises regroupées par région/fonction, pas de diagnostic inventé.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 81,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-11",
+      "exigence": "Conserver exercicesRealises exacts, volumes et unités connus ; rien déduit du plan.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 81,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-12",
+      "exigence": "Ressentis courts, fidèles et séparés ; rapport narratif si nuances nécessaires.",
+      "source_origine": "docs/ROLES.md",
+      "ligne_origine": 135,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-13",
+      "exigence": "Événements et rapports Santé : titres stricts et provenance, pas de détails inventés.",
+      "source_origine": "docs/PROCEDURE-MIROIR-WEB.md",
+      "ligne_origine": 30,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-14",
+      "exigence": "Lier par identifiants stables, dates/archives conservées, aucune réécriture rétroactive.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 68,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-15",
+      "exigence": "Conserver informations transversales utiles même non visibles sur le site.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 50,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "SUI-16",
+      "exigence": "Dépôt public : secrets et informations personnelles non autorisées exclus des publications.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 130,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "STR-01",
+      "exigence": "Objectifs personnels canoniques objectifs.json, sans copie concurrente dans l'orientation.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 140,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "STR-02",
+      "exigence": "Actualiser orientation.json dans le même changement quand phase, intentions ou vigilances évoluent.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 140,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "STR-03",
+      "exigence": "Privilégier confort et reprise, pas de progression automatique ; s'adapter aux retours.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 61,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "STR-04",
+      "exigence": "Après un retour, décider maintien, allégement, report ou attente, pas progression systématique.",
+      "source_origine": "docs/ROLES.md",
+      "ligne_origine": 124,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "docs/CONTRAT-CONTINUITE-COACH.md#L84"
+    },
+    {
+      "id": "STR-05",
+      "exigence": "Conserver contexte et raison des changements, décisions remplacées et incertitudes.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 84,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "STR-06",
+      "exigence": "Ne pas prendre des signes ponctuels pour une guérison ; pas de diagnostic.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 101,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "PLA-01",
+      "exigence": "Séance prescrite dans les blocs V2 et cycle.json, sans fait/sensations.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 176,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "PLA-02",
+      "exigence": "Historique, dates, IDs, cours/Kiné et séances effectuées préservés.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 68,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "PLA-03",
+      "exigence": "Renfo actuellement actif : seul 13 novembre non réalisé, anciens brouillons archivés.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 42,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "PLA-04",
+      "exigence": "Échauffement et étirements, trois exercices, volumes complets en source.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 46,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "PLA-05",
+      "exigence": "Projet Renfo visible épuré sans supprimer durées/séries/repetitions métiers.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 46,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "PLA-06",
+      "exigence": "Choix d'exercices officiels et adaptés au matériel vérifié, sans identité Garmin inventée.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 153,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "PLA-07",
+      "exigence": "Conserver les aides PNG approuvées et les liens pour chaque exercice Renfo.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 240,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L229"
+    },
+    {
+      "id": "PLA-08",
+      "exigence": "Ne pas recréer automatiquement plusieurs Renfos après remise à zéro du plan.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 79,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "AGENTS.md#L68"
+    },
+    {
+      "id": "PLA-09",
+      "exigence": "Étirements doux non forcés, récupération adaptée, sans inférer leur réalisation.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 101,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "PLA-10",
+      "exigence": "Ne pas modifier la planification pour simuler des faits réellement effectués.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 42,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-01",
+      "exigence": "Aucune écriture MCP sans demande précise pour les dates explicitement autorisées.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 59,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-02",
+      "exigence": "Lire bibliothèque, modèles et calendrier avant toute création ou programmation.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 59,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-03",
+      "exigence": "Réutiliser modèles identiques, empreinte complète ; ne pas multiplier les copies par date.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 59,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-04",
+      "exigence": "Relire après création et vérifier sport, 17 étapes, répétitions, repos, descriptions, chaque exerciseName.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 47,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-05",
+      "exigence": "Ne pas inventer zones cardio, catégories, identifiants, allures, répétitions ou étapes.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 70,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-06",
+      "exigence": "Prendre le nom dans objectif/phase en cours, sans marque du site ni suffixe de dépannage.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 3,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-07",
+      "exigence": "Le nom exact vérifié est persisté nomEntrainementMontre et affiché dans le titre prévu.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 13,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-08",
+      "exigence": "Nettoyage des copies créées et non conformes : aperçu, vérification, suppression bornée.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 82,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-09",
+      "exigence": "Planifier, déplacer, supprimer et envoyer vers la montre sont des opérations distinctes.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 59,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-10",
+      "exigence": "Succès MCP ou calendrier ne prouvent ni réalisation ni synchronisation montre.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 59,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-11",
+      "exigence": "Fichiers FIT/générateur local abrogés en V2 malgré les instructions plus anciennes.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 165,
+      "statut": "section_plausible_ligne_non_probante",
+      "raison": "La rubrique contient probablement la famille d'obligations, mais le texte de la ligne citée ne justifie pas directement l'énoncé ; trouver la clause précise.",
+      "piste_source": "à établir après lecture de la section"
+    },
+    {
+      "id": "GAR-12",
+      "exigence": "Erreur/échec partiel : arrêter, relire, ne pas réessayer à l'aveugle.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 70,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "GAR-13",
+      "exigence": "Aucun identifiant de compte, cookie, jeton ou secret Garmin dans le dépôt public.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 70,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "COO-01",
+      "exigence": "Coach choisit les rôles métier utiles et applique leurs protocoles successivement.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "COO-02",
+      "exigence": "Aucune création d'agents indépendants fictifs ; API payante et serveur exclus.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "COO-03",
+      "exigence": "Obligation de livraison dans la même conversation, jamais annoncer un commit absent.",
+      "source_origine": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "ligne_origine": 107,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "COO-04",
+      "exigence": "Ne pas mélanger rôles, ni étendre les permissions Web par délégation.",
+      "source_origine": "docs/ROLES.md",
+      "ligne_origine": 8,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "COO-05",
+      "exigence": "Réponse Coach concise, avec lien Mon Rythme quand pertinent et détail sur demande.",
+      "source_origine": "docs/ROLES.md",
+      "ligne_origine": 154,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "COO-06",
+      "exigence": "La branche expérimentale ne doit pas activer de comportement sur main sans accord.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "REF-01",
+      "exigence": "Distinguer décisions actives, remplacées, historiques, ouvertes et leurs liens.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "REF-02",
+      "exigence": "Détecter proactivement contradictions, doublons, règles obsolètes et trous.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "REF-03",
+      "exigence": "Valider préalablement toute proposition de modification des comportements.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "REF-04",
+      "exigence": "N'applique pas les changements ; ne tranche pas seul les décisions sportives.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "REF-05",
+      "exigence": "Ses propres règles changent seulement après approbation expresse du propriétaire.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "REF-06",
+      "exigence": "Le registre actif est seulement index : ne pas copier les sources métier.",
+      "source_origine": "contrats/DEPENDANCES.md",
+      "ligne_origine": 3,
+      "statut": "ancre_historiquement_non_pertinente",
+      "raison": "La ligne visée dans main traite d'un autre sujet ; vérifier puis rattacher une source sémantiquement pertinente sans masquer l'ancien lien.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "REF-07",
+      "exigence": "Conflit nommage Garmin actuel/historique exige statut de priorité explicite.",
+      "source_origine": "adaptateurs/garmin/MCP.md",
+      "ligne_origine": 3,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "QUA-01",
+      "exigence": "Contrôle final obligatoire et proportionné à toute demande Coach.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "QUA-02",
+      "exigence": "Comparer résultats au référentiel réellement validé, citer sources/versions.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "QUA-03",
+      "exigence": "Ne pas auto-certifier avec le même LLM une validation indépendante fictive.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    },
+    {
+      "id": "QUA-04",
+      "exigence": "Après livraison métier, vérifier sources, projections, tests, CI et version Web servie.",
+      "source_origine": "docs/PROCEDURE-MIROIR-WEB.md",
+      "ligne_origine": 9,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "QUA-05",
+      "exigence": "Inspecter non-perte des sources, archives, données santé et détails de prescriptions.",
+      "source_origine": "docs/COACH-MODE-OPERATOIRE.md",
+      "ligne_origine": 101,
+      "statut": "ancre_plausible_non_certifiee",
+      "raison": "Lien structurellement valide et non signalé par le premier examen ; une relecture humaine des clauses reste requise.",
+      "piste_source": null
+    },
+    {
+      "id": "QUA-06",
+      "exigence": "Si règle manquante/contradictoire, bloquer et solliciter Gardien/arbitrage.",
+      "source_origine": "AGENTS.md",
+      "ligne_origine": 3,
+      "statut": "provenance_nouvelle_confondue_avec_source_historique",
+      "raison": "Règle de gouvernance expérimentale absente de la section historique Garmin mentionnée ; son origine est une proposition du chantier, non une obligation du main initial.",
+      "piste_source": "maturation/gouvernance/CHARTE.md"
+    }
+  ]
+}
