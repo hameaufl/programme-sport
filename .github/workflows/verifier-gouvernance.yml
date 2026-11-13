@@ -58,5 +58,7 @@ jobs:
         run: node maturation/gouvernance/verifier-161-rubriques.cjs
       - name: Contrôler les risques V1 des 26 candidats de provenance
         run: node maturation/gouvernance/verifier-examen-26-ancrages.cjs
+      - name: Vérifier les preuves techniques INC 001 002 007 008 sans clôture
+        run: node maturation/gouvernance/verifier-preuves-inc-techniques.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs
