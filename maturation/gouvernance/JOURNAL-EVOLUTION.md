@@ -137,3 +137,9 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Deux seuls protocoles de restitution Coach concernés : `agents/COACH.md` et `PROTOCOLE-COACH.md`. Les contrôles en interne restent obligatoires ; trois niveaux de réponse : court, conditionnel, justificatif ; vigilance dates et créneaux non vérifiés.
 - Avis logique du Gardien documenté mais **non indépendant, visa d'activation BLOQUÉ**. Aucune règle du Gardien, aucune donnée métier, aucun adaptateur ni `AGENTS.md` n'est modifié.
 - Objectif : branche `tests/coach-b2-concis` séparée de B et tests ciblés ; mesurer la longueur sans masquer les incertitudes, non produire un faux test comportemental indépendant.
+
+## 13 novembre 2026 — Tests de concision didactiques B2
+- Huit scénarios ciblés fixés dans `CAS-CIBLES-B2.json` : 6 issus du jeu A/B existant et 2 nouveaux sur les autorisations Garmin et l'absence de visa Gardien.
+- Huit **exemples didactiques**, non issus de conversations B2, enregistrés sous `REPONSES-EXEMPLES-B2.json`. Leur longueur et des notions de sécurité sont contrôlées par `verifier-concision-b2.cjs`, avec tests négatifs de suppression de vérification, perte d'incertitude et violation de budget.
+- Ancien B : longueurs de référence d'environ 217 à 414 mots par réponse sur ces six scénarios, tirées des PDF privés du premier A/B. Aucun texte privé n'est publié.
+- **Gain de concision réellement constaté dans une conversation B2 : NON ÉVALUÉ.** La vérification de fixtures et la CI ne remplacent pas l'expérimentation indépendante. Autorisation d'activation toujours bloquée.

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "maturation/architecture-multiagents"
+      - "tests/coach-b2-concis"
   pull_request:
     branches:
       - main
@@ -14,7 +15,7 @@ permissions:
 jobs:
   gouvernance:
     # Les autres PR du dépôt ne doivent pas dépendre des dossiers expérimentaux.
-    if: github.ref == 'refs/heads/maturation/architecture-multiagents' || github.head_ref == 'maturation/architecture-multiagents'
+    if: github.ref == 'refs/heads/maturation/architecture-multiagents' || github.ref == 'refs/heads/tests/coach-b2-concis' || github.head_ref == 'maturation/architecture-multiagents' || github.head_ref == 'tests/coach-b2-concis'
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer tout l'historique et les références main
@@ -25,6 +26,8 @@ jobs:
         run: node maturation/gouvernance/verifier-referentiel.cjs
       - name: Vérifier les préconditions des opérations sensibles fictives
         run: node maturation/gouvernance/verifier-autorisations.cjs
+      - name: Vérifier les huit exemples de réponse B2 (test statique, non comportemental)
+        run: node maturation/gouvernance/verifier-concision-b2.cjs
       - name: Tester les cas de refus des vérificateurs
         run: node --test maturation/gouvernance/tests/*.test.cjs
       - name: Contrôler les traces des simulations, sans attribuer de gain fictif

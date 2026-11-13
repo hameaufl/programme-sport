@@ -119,3 +119,5 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Mesurer les réponses B2 réellement produites dans de nouvelles conversations, face aux réponses B existantes.
 - [ ] Tests automatiques de non-régression du référentiel, des permissions et des exemples de concision.
 - [ ] Aucun déploiement `main` sans validation formelle et approbation explicite.
+
+- [x] Huit exemples de réponses ciblées, tests de longueur et tests de non-perte des garde-fous. Comparaison réelle B/B2 encore à exécuter.

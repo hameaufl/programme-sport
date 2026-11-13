@@ -48,3 +48,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Première comparaison A/B observée (10 scénarios)](RAPPORT-AB-2026-11-13.md) : rapport anonymisé, scores provisoires, limites méthodologiques, sans publication des PDF privés.
 
 - [Proposition expérimentale B2 concise](PROPOSITION-B2-CONCISION.md) : réponse proportionnée sans affaiblir les contrôles ; visa d'activation non acquis.
+
+- [Campagne ciblée B/B2](CAMPAGNE-CIBLEE-B2.md) : huit cas (six réutilisés, deux nouveaux), réponses d'exemple et tests automatisés ; performance de B2 non encore mesurée.
