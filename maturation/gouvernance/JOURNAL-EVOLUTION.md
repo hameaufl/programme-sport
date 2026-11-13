@@ -148,3 +148,9 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Le premier snapshot B2 incluait les rapports A/B et les réponses modèles de la branche de travail : **risque de contamination du test**. La branche de test finale doit être reconstruite à partir de B, en ne conservant que les deux protocoles modifiés.
 - Nouveau garde-fou sur l'amorçage B2 : pas d'exercices fictifs spontanés ni d'audit narratif si l'utilisateur demande seulement d'adopter la casquette ; tests négatifs ajoutés.
 - Le rapport de conception et les fixtures restent réservés à `maturation/architecture-multiagents` ; la branche B2 n'hérite ni des corrigés ni des notes de l'évaluation A/B.
+
+## 13 novembre 2026 — Branche B2 isolée et contrôles finalisés
+- **B2 final :** `0aca52ac999f3a579610edfa2106aa400518a3fc`, branche `tests/coach-b2-concis`, reconstruite depuis le commit B `c92d5a7` avec **seulement deux protocoles Coach modifiés**. Diff vérifié via GitHub, SHA des deux fichiers identiques aux fichiers approuvés pour essai par la CI de la branche de travail.
+- **A, B et main inchangés** ; aucune opération Garmin. La PR n°9 reste en brouillon.
+- La CI du commit de travail `0023d046` réussit les contrôles de gouvernance, refonte, non-perte et exemples didactiques ; **aucune mesure réelle de B2 conversationnel**.
+- [RAPPORT-B2-2026-11-13.md](RAPPORT-B2-2026-11-13.md) trace les preuves et [GUIDE-ESSAI-B2-PRET.md](GUIDE-ESSAI-B2-PRET.md) donne les instructions à copier dans une conversation neuve. Visa Gardien d'activation toujours non acquis.

@@ -121,3 +121,7 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Aucun déploiement `main` sans validation formelle et approbation explicite.
 
 - [x] Huit exemples de réponses ciblées, tests de longueur et tests de non-perte des garde-fous. Comparaison réelle B/B2 encore à exécuter.
+
+- [x] Branche `tests/coach-b2-concis` isolée à partir de B, deux protocoles modifiés uniquement ; aucun corrigé hérité de la branche de travail.
+- [x] CI de la branche de travail verte sur les huit exemples ciblés et les contrôles historiques.
+- [ ] Tests conversationnels B2 nouveaux, comparés à B dans des contextes indépendants ; aucun gain comportemental affirmé.

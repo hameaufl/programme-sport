@@ -50,3 +50,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Proposition expérimentale B2 concise](PROPOSITION-B2-CONCISION.md) : réponse proportionnée sans affaiblir les contrôles ; visa d'activation non acquis.
 
 - [Campagne ciblée B/B2](CAMPAGNE-CIBLEE-B2.md) : huit cas (six réutilisés, deux nouveaux), réponses d'exemple et tests automatisés ; performance de B2 non encore mesurée.
+
+- [Résultat de livraison B2 et preuves](RAPPORT-B2-2026-11-13.md) ; [instructions prêtes pour trois tests discriminants](GUIDE-ESSAI-B2-PRET.md). La branche B2 ne contient pas les corrigés du banc d'essai.
