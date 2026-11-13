@@ -18,7 +18,7 @@ Ce dépôt contient le programme sportif personnalisé, les suivis confirmés et
 | Ressentis, rapports, profil et événements datés | `domaines/sante/donnees/` |
 | Objectifs, orientation, équipements et mémoire du Coach | `domaines/coaching/donnees/` |
 
-Les domaines sont reliés par des identifiants stables ; ne pas dupliquer un même fait dans deux sources. Les fichiers sous `domaines/*/donnees/`, ainsi que les prescriptions sportives datées conservées sous `domaines/planification/archives/`, sont des **données à protéger**, pas des éléments de ménage technique.
+Les domaines sont reliés par des identifiants stables ; ne pas dupliquer un même fait dans deux sources. La stratégie en cours se lit dans `domaines/coaching/donnees/orientation.json`, et les objectifs dans `domaines/coaching/donnees/objectifs.json`. Les fichiers sous `domaines/*/donnees/`, ainsi que les prescriptions sportives datées conservées sous `domaines/planification/archives/`, sont des **données à protéger**, pas des éléments de ménage technique.
 
 **Pour une activité `fait:true`**, le Coach doit décrire les exercices réellement confirmés, remplir `structuresSollicitees` avec des libellés anatomiques concrets non vides et ranger les sensations déclarées dans Santé. Ne pas déclarer « Fait » sur la seule foi du planning. Le rapport détaillé reste dans Santé et l'activité confirmée dans Activités.
 
