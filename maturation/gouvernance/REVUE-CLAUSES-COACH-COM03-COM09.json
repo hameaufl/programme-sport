@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_historique_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "reference_v2_sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+  "portee": "26 points ciblés au sein des rubriques COM-03 à COM-09. Analyse des références exactes, non certification de la couverture exhaustive et non validation distante Garmin.",
+  "total_points": 26,
+  "classes": {
+    "alignement_v2": 13,
+    "arbitrage_requis": 3,
+    "instruction_supplantee": 6,
+    "verification_distante_absente": 2,
+    "historique_contradictoire": 2
+  },
+  "certification_clause_par_clause_complete": false,
+  "garmin_ecriture_autorisee": false,
+  "arbitrages_clos": 0,
+  "clauses": [
+    {
+      "id": "CL-01",
+      "rubrique": "COM-03",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 21,
+        "fragment_attendu": "sans suffixe technique"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 6,
+        "fragment_attendu": "Ne jamais mettre"
+      },
+      "classe": "alignement_v2",
+      "analyse": "Le nom final ne comporte pas de suffixe technique ; ne pas confondre règle et nom historique.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-02",
+      "rubrique": "COM-03",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 22,
+        "fragment_attendu": "recréer à l'identique"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 65,
+        "fragment_attendu": "Seulement en cas de demande"
+      },
+      "classe": "arbitrage_requis",
+      "analyse": "La re-création est une écriture distante conditionnelle, jamais une étape automatique autorisée par ce document.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-03",
+      "rubrique": "COM-03",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 22,
+        "fragment_attendu": "supprimer uniquement l'ancienne copie"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 67,
+        "fragment_attendu": "requiert un accord spécifique"
+      },
+      "classe": "arbitrage_requis",
+      "analyse": "La permission de suppression conditionnelle entre en tension avec l'exigence générale d'accord spécifique ; ne pas étendre l'accord historique.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-04",
+      "rubrique": "COM-03",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 23,
+        "fragment_attendu": "Mon Rythme - Renfo A"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 6,
+        "fragment_attendu": "Reprise - Renfo A"
+      },
+      "classe": "instruction_supplantee",
+      "analyse": "Le nom cité dans le récit historique n'est plus la valeur canonique de la séance à ce SHA de main.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-05",
+      "rubrique": "COM-03",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 24,
+        "fragment_attendu": "livrer atomiquement"
+      },
+      "preuve": {
+        "chemin": "docs/PROCEDURE-MIROIR-WEB.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 21,
+        "fragment_attendu": "Pousser et contrôler"
+      },
+      "classe": "alignement_v2",
+      "analyse": "L'obligation de contrôler la livraison complète subsiste, sans transformer un commit en preuve de publication.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-06",
+      "rubrique": "COM-04",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 29,
+        "fragment_attendu": "nomEntrainementMontre"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 6,
+        "fragment_attendu": "nomEntrainementMontre"
+      },
+      "classe": "alignement_v2",
+      "analyse": "La source Planification contient un champ canonique de nom, sans vérification de la bibliothèque distante.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-07",
+      "rubrique": "COM-04",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 29,
+        "fragment_attendu": "même en-tête"
+      },
+      "preuve": {
+        "chemin": "addons/web/pages/index.html",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 193,
+        "fragment_attendu": "Programme prévu"
+      },
+      "classe": "alignement_v2",
+      "analyse": "Le code de rendu V2 utilise un en-tête unique de séance prévue et le nom si présent.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-08",
+      "rubrique": "COM-04",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 31,
+        "fragment_attendu": "Aucun ID Garmin"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 57,
+        "fragment_attendu": "identifiant distant"
+      },
+      "classe": "alignement_v2",
+      "analyse": "La publication doit exclure les identifiants et données détaillées Garmin, sous réserve des contrats de filtrage.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-09",
+      "rubrique": "COM-04",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 31,
+        "fragment_attendu": "encart séparé"
+      },
+      "preuve": {
+        "chemin": "addons/web/pages/index.html",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 189,
+        "fragment_attendu": "même titre"
+      },
+      "classe": "instruction_supplantee",
+      "analyse": "L'ancien encart distinct ne correspond plus au rendu en-tête unique ni à la priorité de la rubrique COM-02.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-10",
+      "rubrique": "COM-04",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 31,
+        "fragment_attendu": "n'est pas automatiquement programmé"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 55,
+        "fragment_attendu": "aucune écriture Garmin"
+      },
+      "classe": "alignement_v2",
+      "analyse": "Une création de modèle en bibliothèque ne programme ni n'envoie automatiquement une séance à une montre.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-11",
+      "rubrique": "COM-04",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 33,
+        "fragment_attendu": "Mon Rythme - Renfo A (corrigé)"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 6,
+        "fragment_attendu": "Reprise - Renfo A"
+      },
+      "classe": "instruction_supplantee",
+      "analyse": "Cet état intermédiaire daté ne peut pas remplacer la valeur courante dans Planification.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-12",
+      "rubrique": "COM-05",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 37,
+        "fragment_attendu": "Ne montrer"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/projections/lecture.cjs",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 99,
+        "fragment_attendu": "view.etapes"
+      },
+      "classe": "alignement_v2",
+      "analyse": "La projection contient une étape d'épuration des libellés d'étapes, à maintenir sans toucher aux blocs métier.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-13",
+      "rubrique": "COM-05",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 38,
+        "fragment_attendu": "conserver les cinq blocs complets"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 13,
+        "fragment_attendu": "blocs"
+      },
+      "classe": "alignement_v2",
+      "analyse": "Les prescriptions structurées restent dans les blocs, non dans les libellés allégés du Web.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-14",
+      "rubrique": "COM-05",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 39,
+        "fragment_attendu": "get_workout_by_id(raw=true)"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 51,
+        "fragment_attendu": "Contrôle bloquant"
+      },
+      "classe": "alignement_v2",
+      "analyse": "La validation après création est requise, mais ne constitue pas une autorisation de créer.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-15",
+      "rubrique": "COM-05",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 39,
+        "fragment_attendu": "supprimer automatiquement"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 67,
+        "fragment_attendu": "accord spécifique"
+      },
+      "classe": "arbitrage_requis",
+      "analyse": "La portée de l'autorisation de nettoyage automatique doit être tranchée avant tout usage : appliquer l'interdiction conservatoire d'écriture sans nouvel accord.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-16",
+      "rubrique": "COM-05",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 40,
+        "fragment_attendu": "La bibliothèque relue ne contient plus"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 7,
+        "fragment_attendu": "Modèle Garmin"
+      },
+      "classe": "verification_distante_absente",
+      "analyse": "La documentation rapporte un état Garmin daté ; le plan courant ne donne pas une preuve distante actuelle de la bibliothèque.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-17",
+      "rubrique": "COM-06",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 44,
+        "fragment_attendu": "17 étapes"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 51,
+        "fragment_attendu": "get_workout_by_id(raw=true)"
+      },
+      "classe": "verification_distante_absente",
+      "analyse": "Le nombre d'étapes décrit une relecture passée ; aucun nouvel appel Garmin ne certifie son état actuel.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-18",
+      "rubrique": "COM-06",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 44,
+        "fragment_attendu": "Une première version intermédiaire non conforme existe encore"
+      },
+      "preuve": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 40,
+        "fragment_attendu": "La bibliothèque relue ne contient plus"
+      },
+      "classe": "historique_contradictoire",
+      "analyse": "Deux états historiques de bibliothèque se contredisent : ne choisir ni existence ni suppression sur cette seule base.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-19",
+      "rubrique": "COM-06",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 44,
+        "fragment_attendu": "ne jamais la supprimer sans autorisation spécifique"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 67,
+        "fragment_attendu": "requiert un accord spécifique"
+      },
+      "classe": "alignement_v2",
+      "analyse": "Le garde-fou protecteur reste compatible avec la règle de demande explicite, à appliquer sans action distante.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-20",
+      "rubrique": "COM-07",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 48,
+        "fragment_attendu": "aucun modèle Garmin n'a été créé"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 7,
+        "fragment_attendu": "Modèle Garmin Connect créé"
+      },
+      "classe": "instruction_supplantee",
+      "analyse": "Cette déclaration précède le compte rendu de création ; le dépôt courant décrit un modèle créé, sans validation distante nouvelle.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-21",
+      "rubrique": "COM-07",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 48,
+        "fragment_attendu": "renfo-2026-11-13"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 3,
+        "fragment_attendu": "2026-11-13"
+      },
+      "classe": "alignement_v2",
+      "analyse": "La date de la prescription active est le 13 novembre au SHA contrôlé, sans inférer une réalisation.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-22",
+      "rubrique": "COM-08",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 52,
+        "fragment_attendu": "renfo-2026-11-12"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/README.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 17,
+        "fragment_attendu": "renfo-2026-11-13"
+      },
+      "classe": "instruction_supplantee",
+      "analyse": "Le brouillon du 12 a été reporté ; son texte reste une preuve datée, non une commande de réactivation.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-23",
+      "rubrique": "COM-09",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 56,
+        "fragment_attendu": "renfo-2026-11-14"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 3,
+        "fragment_attendu": "2026-11-13"
+      },
+      "classe": "instruction_supplantee",
+      "analyse": "La proposition du 14 ne décrit pas la prescription active présente dans Planification.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-24",
+      "rubrique": "COM-09",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 56,
+        "fragment_attendu": "ne pas recréer"
+      },
+      "preuve": {
+        "chemin": "domaines/planification/README.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 9,
+        "fragment_attendu": "Ne pas relancer automatiquement"
+      },
+      "classe": "alignement_v2",
+      "analyse": "La protection contre la recréation spontanée d'anciennes dates reste une obligation.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-25",
+      "rubrique": "COM-09",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 59,
+        "fragment_attendu": "l'ancien `personnel/`"
+      },
+      "preuve": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 43,
+        "fragment_attendu": "personnel/"
+      },
+      "classe": "alignement_v2",
+      "analyse": "Les chemins V1 doivent demeurer historiques et ne peuvent redevenir des destinations d'écriture.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    },
+    {
+      "id": "CL-26",
+      "rubrique": "COM-03",
+      "source": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 21,
+        "fragment_attendu": "nom définitif lisible"
+      },
+      "preuve": {
+        "chemin": "adaptateurs/garmin/MCP.md",
+        "sha": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+        "ligne": 64,
+        "fragment_attendu": "convention de nommage définitive non fixée"
+      },
+      "classe": "historique_contradictoire",
+      "analyse": "La note de convention non fixée dans MCP est en retard sur les priorités de nommage : correction documentaire à proposer séparément.",
+      "certification_exhaustive": false,
+      "autorisation_garmin_nouvelle": false,
+      "correction_operationnelle_appliquee": false
+    }
+  ]
+}
