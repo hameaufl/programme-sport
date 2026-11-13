@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_sha_main": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "type": "analyse_croisee_preliminaire_non_normative",
+  "source_propositions": "PROPOSITIONS-26-ANCRAGES.json",
+  "source_classifications": "REVUE-87-RUBRIQUES-RESTANTES.json;REVUE-REPRISE-30-RUBRIQUES.json;REVUE-ROLES-29-RUBRIQUES.json;REVUE-COACH-15-RUBRIQUES.json",
+  "compteurs": {
+    "total": 26,
+    "sources_mixte": 4,
+    "sources_v1_abrogee": 1,
+    "sans_source_historique": 1,
+    "alertes_documentaires": 7,
+    "validations_de_provenance": 0
+  },
+  "corrections": [
+    {
+      "id": "MAT-01",
+      "qualite_source_proposee": "partielle",
+      "candidat_source": {
+        "chemin": "contrats/DEPENDANCES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 5
+      },
+      "rubrique_historique": {
+        "id": "DEP-01",
+        "titre": "Règles opposables",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "completer_les_clauses",
+      "risque_reactivation_v1": false,
+      "reserve": "Ancrage partiel : les autres clauses de l'exigence demandent des preuves supplémentaires.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-04",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "contrats/DEPENDANCES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 10
+      },
+      "rubrique_historique": {
+        "id": "DEP-01",
+        "titre": "Règles opposables",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-06",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 173
+      },
+      "rubrique_historique": {
+        "id": "AGN-22",
+        "titre": "PRIORITÉ — architecture modulaire V2 (approuvée le 12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-08",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "docs/REPRISE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 17
+      },
+      "rubrique_historique": {
+        "id": "REP-03",
+        "titre": "PRIORITÉ — en-tête partagé, date à droite et navigation pleine largeur",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-09",
+      "qualite_source_proposee": "partielle",
+      "candidat_source": {
+        "chemin": "docs/REPRISE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 17
+      },
+      "rubrique_historique": {
+        "id": "REP-03",
+        "titre": "PRIORITÉ — en-tête partagé, date à droite et navigation pleine largeur",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "completer_les_clauses",
+      "risque_reactivation_v1": false,
+      "reserve": "Ancrage partiel : les autres clauses de l'exigence demandent des preuves supplémentaires.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-10",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 88
+      },
+      "rubrique_historique": {
+        "id": "AGN-14",
+        "titre": "PRIORITÉ — ne pas dupliquer la navigation ni les titres de section (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-11",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 329
+      },
+      "rubrique_historique": {
+        "id": "AGN-40",
+        "titre": "Indexation volontairement désactivée — règle permanente",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-12",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "docs/ROLES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 12
+      },
+      "rubrique_historique": {
+        "id": "ROL-02",
+        "titre": "PRIORITÉ ABSOLUE — interface métier du Coach, interface générale de Maturation (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-13",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "contrats/DEPENDANCES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 38
+      },
+      "rubrique_historique": {
+        "id": "DEP-04",
+        "titre": "Projection de stratégie Coaching (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-14",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 125
+      },
+      "rubrique_historique": {
+        "id": "AGN-18",
+        "titre": "PRIORITÉ — inventaire des équipements et page « Mes équipements » (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-17",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 258
+      },
+      "rubrique_historique": {
+        "id": "AGN-32",
+        "titre": "Compatibilité des anciennes pages Android (technique, lecture seule)",
+        "statut": "mixte_v1_v2_a_scinder"
+      },
+      "controle_transversal": "a_reprendre_ou_scinder",
+      "risque_reactivation_v1": true,
+      "reserve": "Le candidat décrit une compatibilité de cache dans AGN-32, classée mixte V1/V2 ; ne pas valider la recréation des chemins personnels anciens.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-18",
+      "qualite_source_proposee": "partielle",
+      "candidat_source": {
+        "chemin": "contrats/DEPENDANCES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 12
+      },
+      "rubrique_historique": {
+        "id": "DEP-01",
+        "titre": "Règles opposables",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "completer_les_clauses",
+      "risque_reactivation_v1": false,
+      "reserve": "Ancrage partiel : les autres clauses de l'exigence demandent des preuves supplémentaires.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-20",
+      "qualite_source_proposee": "partielle",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 422
+      },
+      "rubrique_historique": {
+        "id": "AGN-50",
+        "titre": "Séparation physique obligatoire — aucune duplication",
+        "statut": "ancienne_procedure_v1_explicitement_depassee"
+      },
+      "controle_transversal": "a_reprendre_ou_scinder",
+      "risque_reactivation_v1": true,
+      "reserve": "Le lien tombe dans AGN-50, ancienne procédure V1 explicitement remplacée ; il ne peut prouver à lui seul une obligation active de non-duplication.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "MAT-21",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 53
+      },
+      "rubrique_historique": {
+        "id": "AGN-08",
+        "titre": "PRIORITÉ — nom de la quatrième page « Mes équipements » (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "SUI-02",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 312
+      },
+      "rubrique_historique": {
+        "id": "AGN-38",
+        "titre": "« Se mettre à jour » — lecture seule du dépôt (règle prioritaire)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "SUI-08",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 170
+      },
+      "rubrique_historique": {
+        "id": "AGN-22",
+        "titre": "PRIORITÉ — architecture modulaire V2 (approuvée le 12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "STR-01",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 134
+      },
+      "rubrique_historique": {
+        "id": "AGN-19",
+        "titre": "PRIORITÉ — séparation métier et page « Le cap du Coach » (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "STR-02",
+      "qualite_source_proposee": "partielle",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 133
+      },
+      "rubrique_historique": {
+        "id": "AGN-19",
+        "titre": "PRIORITÉ — séparation métier et page « Le cap du Coach » (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "completer_les_clauses",
+      "risque_reactivation_v1": false,
+      "reserve": "Ancrage partiel : les autres clauses de l'exigence demandent des preuves supplémentaires.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "STR-04",
+      "qualite_source_proposee": "insuffisante",
+      "candidat_source": {
+        "chemin": "docs/CONTRAT-CONTINUITE-COACH.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 90
+      },
+      "rubrique_historique": {
+        "id": "CON-10",
+        "titre": "3. Niveau de finesse exigé",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "a_reprendre_ou_scinder",
+      "risque_reactivation_v1": false,
+      "reserve": "Le candidat est déclaré insuffisant : nécessité d'une ou plusieurs nouvelles sources pour chaque alternative maintenir, alléger, reporter, attendre.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "PLA-01",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 169
+      },
+      "rubrique_historique": {
+        "id": "AGN-22",
+        "titre": "PRIORITÉ — architecture modulaire V2 (approuvée le 12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "PLA-05",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 38
+      },
+      "rubrique_historique": {
+        "id": "AGN-05",
+        "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)",
+        "statut": "mixte_v1_v2_a_scinder"
+      },
+      "controle_transversal": "a_reprendre_ou_scinder",
+      "risque_reactivation_v1": true,
+      "reserve": "La ligne de préservation des blocs figure dans AGN-05, qui contient aussi une permission historique de suppression ; scinder les clauses.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "PLA-06",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 147
+      },
+      "rubrique_historique": {
+        "id": "AGN-20",
+        "titre": "PRIORITÉ — programme Renfo personnalisé, catalogue Garmin officiel, pédagogie (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "PLA-07",
+      "qualite_source_proposee": "partielle",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 231
+      },
+      "rubrique_historique": {
+        "id": "AGN-29",
+        "titre": "Renforcement : banque d'images PNG obligatoire pour le Coach",
+        "statut": "mixte_v1_v2_a_scinder"
+      },
+      "controle_transversal": "a_reprendre_ou_scinder",
+      "risque_reactivation_v1": true,
+      "reserve": "L'ancrage ancien sur les PNG se trouve dans AGN-29 (ancienne banque et champ etapes) ; tester le remplacement V2 par mouvementId et projection.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "PLA-08",
+      "qualite_source_proposee": "partielle",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 70
+      },
+      "rubrique_historique": {
+        "id": "AGN-11",
+        "titre": "PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)",
+        "statut": "mixte_v1_v2_a_scinder"
+      },
+      "controle_transversal": "a_reprendre_ou_scinder",
+      "risque_reactivation_v1": true,
+      "reserve": "Ancien report de Renfo dans AGN-11 : l'interdiction de recréer automatiquement subsiste mais l'état des dates est historique.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "GAR-11",
+      "qualite_source_proposee": "directe",
+      "candidat_source": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "ligne": 156
+      },
+      "rubrique_historique": {
+        "id": "AGN-21",
+        "titre": "PRIORITÉ ABSOLUE — Garmin Connect par MCP, phase bêta (12 novembre 2026)",
+        "statut": "courant_a_verifier"
+      },
+      "controle_transversal": "relecture_clause_necessaire",
+      "risque_reactivation_v1": false,
+      "reserve": "Lien de provenance plausible sans certification automatique de la norme.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    },
+    {
+      "id": "REF-06",
+      "qualite_source_proposee": "provenance_a_arbitrer",
+      "candidat_source": null,
+      "rubrique_historique": null,
+      "controle_transversal": "a_reprendre_ou_scinder",
+      "risque_reactivation_v1": false,
+      "reserve": "Absence de candidat historique : proposition potentiellement nouvelle de gouvernance, à arbitrer séparément avant toute modification 73/12.",
+      "correction_matrice_appliquee": false,
+      "certification_clause": false
+    }
+  ],
+  "modification_matrice_appliquee": false,
+  "validation_gardien": false,
+  "nouvelle_provenance_validee": false
+}
