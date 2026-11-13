@@ -10,4 +10,4 @@ Lorsqu'une activité est confirmée, le Coach renseigne **dans la même interven
 
 Si les exercices sont réellement insuffisamment décrits, enregistrer honnêtement une entrée « À préciser par le Coach — mouvements non décrits » plutôt que d'inventer une sollicitation ; la compléter une fois les gestes connus. Ne pas en déduire qu'une séance planifiée a eu lieu. `exercicesRealises` conserve le déroulé factuel ; les sensations restent dans Santé, les décisions dans Coaching.
 
-La validation `domaines/activites/modele.cjs` et le test `scripts/verifier-site.cjs` **refusent désormais une réalisation sans structures** ; le détail de « Mon programme » reçoit ces champs via la projection autorisée, sans copie dans HTML. Protocole d'exécution : `docs/COACH-MODE-OPERATOIRE.md`.
+La validation `domaines/activites/modele.cjs` et le test `scripts/verifier-site.cjs` **refusent désormais une réalisation sans structures** ; le détail de « Mon programme » reçoit ces champs via la projection autorisée, sans copie dans HTML. Protocole d'exécution : `docs/PROCESSUS.md`.

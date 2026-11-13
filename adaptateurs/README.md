@@ -7,4 +7,4 @@ Les adaptateurs sont des composants remplaçables : accès aux sources, projecti
 - `projections/` : jointures par identifiants et listes blanches des données autorisées par les contrats de publication.
 - `web/` : composants techniques utilisés lors du build du site.
 
-Le domaine Planification conserve les prescriptions, Activités les réalisations confirmées, Santé les ressentis et rapports et Coaching les objectifs, décisions et équipements. Ne pas copier des informations brutes dans l'add-on Web. Pour la sécurité et les frontières : `contrats/DEPENDANCES.md`, `contrats/PORTS.md`, `docs/PROCEDURE-MIROIR-WEB.md` et `adaptateurs/garmin/MCP.md`.
+Le domaine Planification conserve les prescriptions, Activités les réalisations confirmées, Santé les ressentis et rapports et Coaching les objectifs, décisions et équipements. Ne pas copier des informations brutes dans l'add-on Web. Pour la sécurité et les frontières : `contrats/DEPENDANCES.md`, `contrats/PORTS.md`, `docs/ARCHITECTURE.md` et `adaptateurs/garmin/MCP.md`.
