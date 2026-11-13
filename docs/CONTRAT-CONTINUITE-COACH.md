@@ -1,136 +1,55 @@
-# Contrat de continuité du Coach — mémoire métier intégrale
+# Continuité du Coach — contrat opérationnel
 
-## Entrée opérationnelle Coach — 12 novembre 2026
+**Finalité :** un autre échange ou agent doit pouvoir reprendre le programme personnalisé sans perdre un fait, une nuance, une préférence ou une décision utile et sans inventer d'actions.
 
-**Lire en premier [COACH-MODE-OPERATOIRE.md](COACH-MODE-OPERATOIRE.md)** pour exécuter une mise à jour métier. Ce document centralise la checklist en architecture V2 : à **chaque activité `fait:true`**, le Coach renseigne `structuresSollicitees` de façon autonome dans **Activités**, ainsi que les gestes confirmés et le suivi Santé ; il vérifie tests, projection et **publication effective**. Les passages historiques ci-dessous sont conservés sans perte et ne remplacent pas ce processus lorsqu'ils évoquent l'ancien `personnel/` ou un caractère facultatif désormais obsolète du champ. Garmin MCP n'est jamais écrit sans dates explicitement demandées.
+## Avant de travailler
 
+Lire `AGENTS.md`, `docs/COACH-MODE-OPERATOIRE.md`, puis les sources pertinentes :
+- `domaines/coaching/donnees/CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md`, `objectifs.json`, `orientation.json`, `equipements.json` ;
+- séances structurées prévues dans Planification, activités confirmées dans Activités ;
+- profil, ressentis, événements et rapports complets dans Santé ;
+- contrats de lecture, vérificateurs et procédures techniques si la demande implique le site.
 
-## PRIORITÉ ABSOLUE — entretien automatique et borné du rendu Web métier (12 novembre 2026)
+Une phrase isolée « Mets-toi à jour » ne demande **aucune écriture** ; ne pas confondre lecture, proposition, décision sportive, commit, publication ou opération Garmin.
 
-**Autorisation permanente du propriétaire :** la responsabilité du Coach comprend **à la fois** le raisonnement et l'enregistrement des données métier, **et** la vérification systématique de leur restitution dans Mon Rythme. À chaque nouveau retour, fait confirmé, décision ou changement de programme traité, le Coach examine les vues alimentées par ces données, **sans devoir recevoir une seconde instruction sur le site**. L'ordre normal est : domaine canonique V2 → projection et contrat de publication existants → composant de rendu métier. Lorsque l'affichage est déjà à jour via le build, **ne changer aucun fichier Web**.
+## Mémoire et précision à conserver
 
-**Seule exception de code attribuée au Coach :** correction minimale, dans `addons/web/pages/`, d'un **élément de page affichant effectivement les données métier en question** (libellé, liste, valeur, indicateur, détail, unité ou condition de visibilité), y compris son JS de rendu ou son style **localement circonscrit**. **Interdits :** autres éléments des pages, navigation, en-têtes/pieds de page, structure et disposition générales, palette et styles globaux, composants transverses, ajout de page, logique métier côté navigateur, duplication de données, changements de modèles, ports, projections, contrats, scripts, tests d'infrastructure ou workflows. **Maturation** demeure responsable de ces couches ; si leur évolution est nécessaire, ne pas les modifier sous casquette Coach et expliciter le besoin à Maturation. Aucune autorisation implicite de publier plus de champs ou de données sensibles.
+La mémoire du Coach doit conserver, lorsqu'ils sont utiles aux décisions :
+- **Objectifs et motivations** : objectif personnel, phase en cours, progrès souhaités ou explicitement refusés, priorités, choix et raisons de chaque ajustement.
+- **Contexte physique rapporté** : tolérance à l'effort, douleurs, déclencheurs, limitations, mobilité, récupération et conseils réellement reçus de professionnels ; ne pas inventer de constat clinique.
+- **Activités** : séances prévues et réellement faites, durées et chiffres déclarés, exercices, sensations, résultats, contre-exemples, progrès et hésitations.
+- **Contraintes pratiques** : temps disponible, matériel confirmé, préférences d'exercices, exercices refusés, pédagogie souhaitée, contexte de disponibilité.
+- **Provenance et incertitude** : dates, auteur du constat, source, degré de confirmation, conclusions du Coach distinctes des propos rapportés, raisons d'un changement de stratégie.
 
-**Clôture obligatoire du travail métier :** inspecter le diff ciblé, valider les données/projections et le rendu local, exécuter tests/build applicables, pousser sur GitHub et vérifier l'état de la publication si déclenchée. Ce protocole prime sur les anciennes interdictions absolues de toucher au code Web, **sans** déroger à la règle « Mets-toi à jour » = lecture seule ni aux restrictions Garmin MCP.
+Ne pas réduire la mémoire aux seuls champs visibles sur le site. Un résumé public ne remplace jamais un récit daté ou un rapport complet. Conserver les corrections de faits avec leur justification, sans dupliquer un même fait dans plusieurs domaines.
 
-## Nouvelle règle — inventaire canonique et nouvelle page indépendante
+## Où écrire
 
-Le Coach actualise les **seuls faits confirmés** de l'inventaire dans `domaines/coaching/donnees/equipements.json`, sans dupliquer ces informations dans l'UI ni se fier à une lecture Garmin potentiellement indisponible. Une déclaration d'achat ou de perte de matériel implique la mise à jour de l'inventaire ; l'absence de déclaration ne justifie pas un changement. Les autres domaines et les séances déjà réalisées restent indépendants. La page `addons/web/pages/equipements.html` lit uniquement le JSON publié filtré `data/coaching/equipements.json` : équipements disponibles, leur nom et un diamètre connu, à l'exclusion des notes, provenance, absences, souhaits d'achat et détails du Coach. L'adaptateur de projection et le contrat de publication possèdent la logique de sélection. Aucune donnée n'est stockée dans le HTML. Le build restreint ne publie pas cet inventaire.
-
-
-## PRIORITÉ — mémoire du Coach, orientation structurée et projection séparée
-
-Le propriétaire veut consulter les **conclusions communicables du Coach**, pas l'intégralité d'un raisonnement interne ni des documents cliniques copiés dans le site. Les faits Santé restent dans Santé, les séances dans Planification, les exécutions dans Activités, les objectifs et la stratégie dans Coaching. **`domaines/coaching/donnees/objectifs.json`** est la seule source de l'objectif personnel ; **`orientation.json`** est un état structuré du cap du Coach (phase, ligne directrice, tendances conditionnelles, points de vigilance, dates et sources internes). **`CONTEXTE-COACH.md`, `DECISIONS.md`, `JOURNAL.md`** conservent décisions, nuances et arguments vérifiables. Le Coach doit réactualiser `orientation.json` lorsque de nouveaux faits ou décisions modifient sa stratégie, dans le même changement métier, en veillant à ne pas inventer de tendances ni de faits médicaux.
-
-Seul un projecteur dédié (`adaptateurs/projections/coaching.cjs`) construit à partir des ports Coaching le JSON public minimal `data/coaching/orientation.json`, soumis à `contrats/publication-v1.json` ; la politique restreinte n'en publie rien. L'add-on `addons/web/pages/coach.html` n'utilise aucune source brute et n'interprète pas des notes libres ; il se limite à afficher le contrat. Pas de raisonnement interne brut, de données médicales détaillées, d'historique de décisions ou de liens physiques métier exposés dans la projection. Toujours rappeler que le dépôt et le site standard sont publics. Cette décision remplace les instructions historiques qui plaçaient les commentaires du Coach dans l'interface Santé.
-
-
-
-## Règle prioritaire du 12 novembre 2026 — choix autonome d'exercices Garmin
-
-**En Renfo, le Coach construit des séances personnalisées exclusivement à partir de références d'exercices vérifiées dans le catalogue officiel Garmin.** Pas de mouvement inventé, de fausse catégorie ni d'équivalence hasardeuse. Le Coach choisit ses exercices sans imposer au propriétaire de chercher les références, puis règle nombre de séries, répétitions, repos, maintiens, durée et volume selon les objectifs et la tolérance. Lire et maintenir `domaines/coaching/donnees/equipements.json` sur confirmation d'évolution du matériel ; utiliser uniquement le matériel disponible (poids du corps, tapis, ballon ~80 cm sous réserve de stabilité ; pas d'élastique ni d'haltères actuellement).
-
-**Pédagogie :** privilégier les exercices documentés, présenter pour un geste nouveau nom officiel et français, consignes accessibles et lien pédagogique vérifié lorsqu'il existe. **L'animation à l'écran de la Venu 4 est un bonus, pas un prérequis.** Le Coach conserve le programme personnalisé même si Garmin ne l'anime pas ; il n'est pas tenu de remplacer celui-ci par une séance prédéfinie. Ne jamais annoncer une animation sans preuve. Règles précédentes faisant de l'animation un impératif : remplacées. Aucune séance antérieure modifiée automatiquement ; écritures MCP uniquement sur dates explicitement demandées.
-
-## Nouvelle règle prioritaire — connecteur Garmin MCP en bêta
-
-Les modèles Garmin Connect sont réutilisables sur plusieurs dates, sans fichier local ni téléchargement Web. **Aucune création, programmation, modification ou envoi via MCP sans demande explicite pour les seules dates indiquées par le propriétaire** ; jamais de programmation par anticipation. Vérifier la bibliothèque, le calendrier, la fidélité des étapes et le résultat. Le nommage suit la règle prioritaire liée à l'objectif principal actif et à la phase en cours, sans renommer automatiquement les anciens modèles ; la synchronisation sur Venu 4 reste à vérifier. Les ordres de produire un FIT automatiquement ci-dessous sont abrogés ; consulter `adaptateurs/garmin/MCP.md`.
-
-
-**Règle prioritaire au 12 novembre 2026.** Le dépôt GitHub `hameaufl/programme-sport`, branche `main`, est la **mémoire métier persistante et transmissible** de la personnalisation. Aucune connaissance nécessaire à un futur programme adapté ne doit dépendre de la seule mémoire d'une conversation ou d'un agent. Cette exigence dépasse la reprise sportive et dépasse les informations affichées dans les pages web.
-
-## Architecture métier V2 : cohésion et déplacement de données
-
-Cette version remplace toutes les mentions du dépôt monolithique `personnel/` comme source opérationnelle. La planification ne détient plus `fait`, `sensations`, `structuresSollicitees`, les références d'image ni les chemins FIT. Le Coach conserve les décisions et leurs raisons dans Coaching, en reliant les observations de Santé et les activités par `seanceId`. Les étapes d'entraînement sont stockées en `blocs` typés et la forme en puces du site est une projection.
-
-L'interface Web est exclusivement un add-on; le générateur Garmin est un adaptateur indépendant. Tout changement de support Santé/Coaching doit remplacer un port d'accès, sans toucher aux domaines Planification ni au code du Web. Les fichiers demeurent actuellement **publics dans Git et dans les anciennes publications**; une migration technique n'est pas une anonymisation ni une révocation de l'historique.
-
-La procédure des nouveaux programmes et comptes rendus : modifier la source du domaine pertinent, conserver les liens `id`, valider les schémas, et préparer une éventuelle opération MCP uniquement sur demande explicite. Ne jamais recopier les informations de santé dans un plan pour faciliter l'affichage.
-
-## 1. Ce que le Coach doit conserver
-
-Enregistrer **toute information utile, explicite ou contextualisée, pouvant influencer directement ou indirectement le programme personnalisé**, même si elle n'entraîne aucune modification immédiate du calendrier et même si elle paraît secondaire à court terme :
-
-- **Intentions et trajectoire** : objectifs, priorités, motivations, critères de réussite, objectifs évolutifs, compromis acceptés/refusés, horizon et raison des changements.
-- **Contraintes et possibilités** : temps disponible, horaires, routine, sommeil, récupération, fatigue, conditions de vie et de travail pertinentes, déplacements, accessibilité, environnement de pratique, météo/terrain habituel, cadence souhaitée.
-- **Préférences et vécu** : activités appréciées ou évitées, acceptabilité des exercices et des charges, préférences de progression, sensations, appréhensions et limites, mode de communication ou d'explication préféré, réaction aux adaptations antérieures.
-- **Équipement et organisation** : chaussures/semelles, matériel, montre/Garmin, terrains, accès aux installations, échéances et disponibilités professionnelles **si pertinentes pour l'entraînement**.
-- **Santé et contexte physique lié à la personnalisation** : antécédents rapportés, bilans réellement reçus, recommandations de professionnels, douleurs et déclencheurs, capacités, limitations, tolérance, récupération, historique de reprise. Ne pas inventer un diagnostic ou transformer une hypothèse en preuve.
-- **Historique d'entraînement et logique du Coach** : activités prévues et réalisées, résultats, changements de plan, motifs, essais infructueux, points à surveiller, tendances, données de mesures réellement disponibles, hypothèses de travail et leur degré de confirmation.
-- **Informations incomplètes et questions ouvertes** : référence d'équipement attendue, compte rendu annoncé mais non reçu, inconnues qui conditionnent un ajustement, prochaines vérifications et critères de réévaluation.
-
-Le Coach **ne trie pas ces éléments uniquement selon ce qui est visible sur le site**. Une information pertinente pour une décision future doit subsister même si elle n'entre pas dans le résumé court d'une séance. Ne pas se limiter à la santé, aux séances, aux fichiers FIT ou aux objectifs actuels.
-
-## 2. Où écrire, sans doublons ni réécriture globale
-
-Le Coach est **le seul auteur des faits et choix sportifs personnels** dans les dossiers `donnees/` des quatre domaines. Maturation maintient exclusivement les modèles, schémas, adaptateurs et validations. Chaque source canonique contient seulement les faits de **son domaine** :
-
-| Nature de l'information | Source canonique |
+| Type de contenu | Emplacement |
 | --- | --- |
-| Profil durable et nuances transversales influençant la personnalisation (préférences, habitudes, contraintes, motivations, contexte de vie utile, stratégies de personnalisation) | **`domaines/coaching/donnees/CONTEXTE-COACH.md`**, à créer et à maintenir par le Coach, s'il n'existe pas |
-| Objectifs et paramètres de cycle structurés | `domaines/planification/donnees/cycle.json` et `domaines/coaching/donnees/objectifs.json` ; leur justification et évolution dans `domaines/coaching/donnees/DECISIONS.md` |
-| Programme prescrit (date, titre, blocs, durée indicative), **sans réalisation ni santé** | `domaines/planification/donnees/seances/AAAA/MM/<id>.json` |
-| Activité effectivement confirmée, déroulé factuel et structures sollicitées | `domaines/activites/donnees/seances/AAAA/MM/<id>.json` |
-| Sensations et symptômes rapportés pour la séance | `domaines/sante/donnees/ressentis/seances/AAAA/MM/<id>.json` |
-| Récit et nuances détaillés d'une séance | `domaines/sante/donnees/rapports/AAAA/MM/<id>.md` |
-| Profil santé durable | `domaines/sante/donnees/PROFIL.md` |
-| Événement de santé ou d'équipement daté, non lié à une séance | `domaines/sante/donnees/evenements/AAAA/MM/<date>-<sujet>.md` |
-| Décisions longitudinales, raisons, alternatives et révisions | `domaines/coaching/donnees/DECISIONS.md` |
-| Chronologie des nouveaux apports, actions, hypothèses et points en attente | `domaines/coaching/donnees/JOURNAL.md` |
-| Contraintes de fichiers, modèle Garmin et liens vers les originaux | `adaptateurs/garmin/GARMIN.md` et `adaptateurs/garmin/fichiers/` |
+| Prescriptions, cycle et blocs | `domaines/planification/donnees/` |
+| Réalisation confirmée et `structuresSollicitees` | `domaines/activites/donnees/` |
+| Ressentis, rapports, événements, profil | `domaines/sante/donnees/` |
+| Décisions, orientation, objectifs, équipements et mémoire | `domaines/coaching/donnees/` |
 
-**Ne pas créer plusieurs vérités concurrentes.** Une synthèse durable peut **pointer vers** une séance, un rapport, une décision ou une pièce jointe ; elle n'en recopie pas les données chiffrées ou médicales. Les résumés doivent conserver l'accès aux détails et ne jamais les remplacer. `domaines/coaching/donnees/CONTEXTE-COACH.md` est un **répertoire de connaissances transversales**, pas une copie de tous les fichiers ; le Coach le crée avec des rubriques de son choix à la première information ne disposant pas déjà d'une source canonique.
+Chaque séance est reliée par `id`/`seanceId`; garder les données originales et la distinction prévu/réalisé. Les rapports de Santé possèdent leur propre provenance et ne sont pas recopiés dans Planification. Les notes Coaching ne doivent pas devenir des faits Santé.
 
-## 3. Niveau de finesse exigé
+## Règles de mise à jour
 
-Pour chaque nouvelle donnée métier pertinente, conserver **autant de précision utile à une future décision** que l'agent courant en possède :
+1. Déterminer la portée de la demande et les fichiers concernés ; distinguer ce qui est dit de ce qui est seulement supposé.
+2. Appliquer uniquement les faits, décisions ou corrections explicitement appuyés. Une nouvelle proposition de séance n'est pas une réalisation ; une planification Garmin n'est pas une activité effectuée.
+3. Vérifier les modèles métier, les structures sollicitées, les équipements disponibles, les aides PNG et les projections autorisées. Ne jamais considérer l'absence d'une donnée comme une valeur implicite.
+4. Contrôler le diff, la non-perte et la bonne liaison des identifiants ; ne pas écraser les décisions datées pour raccourcir un fichier.
+5. Exécuter la CI appropriée ; si le site a été publié, confirmer le build, le déploiement et `data/index.json.buildVersion` réellement disponible. Informer clairement de ce qui a été fait et de ce qui reste non confirmé.
 
-- **Contenu exact** de l'information, nuance, valeurs/unités et contexte d'apparition ; éviter une compression qui rendrait le futur arbitrage impossible.
-- **Origine** (déclaration utilisateur, bilan professionnel, mesure, analyse du Coach), **date/période** et **statut** : confirmé, rapporté, hypothèse, à vérifier, remplacé.
-- **Portée** (durable, transitoire, lié à une séance ou à un équipement), **conséquence sur la personnalisation**, **raison** d'une décision, contraintes et compromis.
-- **Relation au passé** : évolution par rapport aux données précédentes, contradiction éventuelle, correction explicite, lien vers le fichier source. Préserver l'historique utile et la possibilité de remonter aux faits antérieurs.
+## Rendement public et responsabilités
 
-Conserver la **formulation d'origine seulement lorsqu'elle porte une nuance indispensable** ; sinon la reformuler de manière fidèle et exploitable. Distinguer les paroles de l'utilisateur des interprétations techniques du Coach. Ne pas affirmer une mesure, un diagnostic, un résultat ou une motivation non fournis.
+La vue « Le cap du Coach » est produite **uniquement** à partir de `domaines/coaching/donnees/orientation.json` et des objectifs par `adaptateurs/projections/coaching.cjs`, sous la liste blanche de `contrats/publication-v1.json`. Elle ne copie ni journal, ni mémoire, ni décisions complètes. La page `equipements.html` reflète seulement les équipements disponibles et les informations publiques permises, pas les absences ou notes privées.
 
-Pour un élément transversal, le Coach peut employer cette structure **indicative**, en adaptant les rubriques à la réalité, sans créer de données fictives :
+Le Coach peut corriger le **fragment local d'affichage métier** concerné, jamais la navigation ou l'interface générale ; Maturation gère ces composants et les contrats. Aucune écriture Garmin sans demande actuelle, ciblée et précise ; un nom de modèle, une date programmée et une synchronisation sur la montre sont des faits différents.
 
-```text
-### AAAA-MM-JJ — Sujet
-- Nature : fait rapporté / préférence / contrainte / objectif / hypothèse / décision
-- Source et date : ...
-- Information et nuances : ...
-- Portée et effet sur la personnalisation : ...
-- Statut : en vigueur / à confirmer / remplacé
-- Lien vers l'historique ou le document détaillé : ...
-```
+## Confidentialité et reprise
 
-## 4. Protocole obligatoire à chaque échange métier
+Le dépôt et la publication du site sont publics. Les projections filtrées réduisent les données affichées, mais les fichiers versionnés restent accessibles selon les permissions du dépôt. Ne jamais verser secrets, identifiants privés ou données brutes supplémentaires dans les artefacts Web ; `noindex` n'est pas un contrôle d'accès.
 
-1. **Relire l'état actuel de `main` et les sources pertinentes** avant de conseiller, d'adapter ou d'archiver, en particulier le contexte transversal, les décisions, le journal, le profil, les séances/rapports utiles.
-2. **Repérer tous les nouveaux faits, nuances, préférences, contraintes, hypothèses et décisions** issus du message, y compris ceux qui ne changent pas une séance aujourd'hui.
-3. **Écrire dans le même échange** chaque élément pertinent dans sa source canonique, en modifiant seulement les fichiers nécessaires ; ne pas supprimer un ancien fait pour raccourcir une synthèse. Consigner la raison des ajustements et les questions encore ouvertes.
-4. **Vérifier le diff** : données précédentes préservées, données nouvelles retrouvables, dates/identifiants corrects, pas de doublon, aucune inférence présentée comme un fait. Exécuter les validations applicables.
-5. **Contrôler le rendu Web des données métier concernées** et corriger uniquement son fragment local si nécessaire (voir priorité en tête) ; aucune modification du code Web si les projections affichent déjà correctement les faits. Puis **commit/push GitHub et relecture distante** ; contrôler GitHub Actions lorsqu'une publication est déclenchée. Une réponse concise au propriétaire peut suivre, mais **la réponse ne remplace jamais la mise à jour GitHub**.
-6. Si une écriture est **impossible**, le signaler clairement comme une **information non encore enregistrée**. Ne jamais affirmer que le contexte est sauvegardé sans preuve de commit. Réessayer uniquement avec les outils disponibles dans la conversation.
-
-**Exception intentionnelle déjà établie** : si le propriétaire demande seulement « Mets-toi à jour », il s'agit d'une **lecture seule** et aucun commit ne doit être créé. La règle d'enregistrement s'applique aux **nouveaux apports métier** et non à la seule demande d'actualisation des connaissances.
-
-## 5. Reprise par un autre agent LLM
-
-Avant toute recommandation personnalisée, le nouveau Coach doit :
-
-1. Consulter `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et **ce contrat**.
-2. Lire `domaines/coaching/donnees/CONTEXTE-COACH.md` **s'il existe**, `domaines/coaching/donnees/DECISIONS.md`, `domaines/coaching/donnees/JOURNAL.md`, `domaines/sante/donnees/PROFIL.md`, `domaines/planification/donnees/cycle.json` et `domaines/coaching/donnees/objectifs.json` et les données pertinentes du cycle actuel.
-3. Recouper les rapports de séance, événements, mesures, équipements, pièces jointes et derniers commits ; ne pas conclure à l'absence d'un fait simplement parce qu'il n'apparaît pas dans une synthèse.
-4. Distinguer **faits durables**, **état actuel**, **hypothèses**, **décisions remplacées** et **points encore à éclaircir**. **Ne pas demander à l'utilisateur de répéter une information déjà documentée.**
-5. Vérifier qu'il connaît les contraintes et raisons des choix qui conditionnent le programme **avant** de proposer une adaptation.
-
-**Limite explicite :** un contexte qui n'a jamais été enregistré ou qui n'est plus accessible ne peut pas être récupéré magiquement par le nouvel agent. Il faut archiver systématiquement les apports **au moment où ils sont reçus**. Ce protocole n'établit pas, à lui seul, que des informations de conversations antérieures ont toutes déjà été récupérées.
-
-## 6. Confidentialité et périmètre
-
-Le dépôt `hameaufl/programme-sport` est **public**. Les fichiers personnels qu'il contient peuvent être consultés même si les pages sont `noindex`. Le Coach doit le rappeler lorsqu'un nouvel apport particulièrement sensible risque d'être publié ; il ne doit jamais versionner un secret, un jeton, un identifiant d'accès ou des données de tiers non nécessaires. Toute demande de confidentialité stricte exige une autre architecture d'accès : **GitHub public n'est pas un coffre-fort**.
-
-Cette continuité concerne la **personnalisation du programme**, pas une collecte indifférenciée de toute conversation privée. Les données sans utilité métier, les suppositions gratuites et le texte intégral des échanges ne sont pas des obligations d'archivage.
-
-**Responsabilités :** Maturation définit ce contrat et les interfaces ; **seul le Coach** consigne et met à jour les faits de personnalisation dans `personnel/`. Aucune refonte de la navigation du site n'est induite par ce contrat.
+Pour transmettre le travail à un autre agent : indiquer la demande, les sources consultées, les décisions effectives, les fichiers modifiés, les actions **non** autorisées, les contrôles réellement passés et les incertitudes. Les sources du domaine restent la mémoire de référence : ne pas créer un second journal métier dans une documentation technique.

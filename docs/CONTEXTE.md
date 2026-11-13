@@ -1,43 +1,31 @@
-# Contexte technique — Maturation (architecture V2)
+# Contexte technique actuel — Mon Rythme
 
-## Sources de vérité
+## Architecture et sources de vérité
 
-Mon Rythme est un site statique francophone publié par GitHub Actions / GitHub Pages depuis `main`. **Le site n'est pas une source métier.** Les données canoniques sont séparées en quatre domaines :
-- `domaines/planification/donnees/` : séances prévues, blocs structurés, mouvements et cycle ;
-- `domaines/activites/donnees/` : séances effectivement réalisées et confirmées ;
-- `domaines/sante/donnees/` : observations, rapports et événements de santé ;
-- `domaines/coaching/donnees/` : objectifs, décisions, préférences, équipements et mémoire de personnalisation.
+Mon Rythme se compose de quatre domaines indépendants : `domaines/planification/` (prescriptions), `domaines/activites/` (réalisations confirmées), `domaines/sante/` (suivi déclaré et rapports) et `domaines/coaching/` (orientation, objectifs, équipement et mémoire). Les faits sont écrits dans `donnees/` et reliés par des identifiants stables.
 
-Les identifiants durables relient les domaines sans mélanger prescription, réalisation et santé. Les ports de `adaptateurs/fichiers/` lisent ces sources ; les projections de `adaptateurs/projections/` ne font qu'en restituer les champs autorisés. Références techniques : `contrats/DEPENDANCES.md`, `contrats/PORTS.md` et les politiques `contrats/publication-v1.json` / `contrats/publication-prive-v1.json`.
+Les ports `adaptateurs/fichiers/` fournissent l'accès aux données ; `adaptateurs/projections/` compose des vues filtrées. Le Web est un **consommateur optionnel**, pas un référentiel métier. Les frontières et permissions sont spécifiées par `contrats/DEPENDANCES.md`, `contrats/PORTS.md` et les listes blanches de publication.
 
-## Web : projection remplaçable
+## Site et publication
 
-L'add-on `addons/web/` contient les pages `index.html` (programme), `sante.html` (suivi synthétique), `coach.html` (orientation) et `equipements.html` (matériel disponible), avec leurs médias. Le calendrier conserve la navigation hebdomadaire et ne charge que les données utiles à la période consultée. Le suivi Santé public ne publie pas le profil médical brut ni le texte intégral des événements.
+Le site statique de `addons/web/` contient quatre pages : `index.html`, `coach.html`, `sante.html` et `equipements.html`. Les vues `_site/data/` sont **générées au build**, et la santé publique n'expose que les champs expressément autorisés. Les rapports et informations internes de Santé/Coaching ne sont jamais copiés comme fichiers Web.
 
-Les vues `data/index.json`, `data/semaines/<lundi>.json`, `data/sante/journal/` et les projections Coaching sont **générées dans `_site/`**, jamais modifiées comme sources canoniques. Les rendus doivent rester fidèles aux données filtrées. Une séance n'est « Fait » que si sa réalisation est confirmée (`fait: true`) ; le détail de l'activité restitue « Séance », « Structures sollicitées » et « Sensations », selon les champs disponibles et les validateurs en vigueur.
+Le titre « Programme prévu » peut inclure `nomEntrainementMontre` lorsque celui-ci correspond à un modèle confirmé ; une activité effectuée est intitulée « Séance ». Le Renfo public présente des étapes allégées, tandis que les blocs numériques restent intégralement dans Planification. Les aides PNG proviennent de la banque `mouvementId`.
 
-Pas de saisie métier par le navigateur, de `localStorage` servant de vérité métier, ni de nouvel élément visuel sans demande ou approbation. Les anciens exports de compatibilité Web, s'ils existent, ne sont pas des sources Coach et ne justifient pas de réactiver un mode ancien. Le Web peut être désactivé sans supprimer le cœur : `MON_RYTHME_WEB=0`.
+Le navigateur n'est pas une source de données : pas de `localStorage` métier, de formulaire de suivi ni d'écriture dans les domaines à partir de l'interface. Aucun changement de navigation ou d'aspect global n'est réalisé sans autorisation. Les scripts construisent le site ; le workflow GitHub Pages publie depuis `main` pour les chemins surveillés. Pour constater une livraison, vérifier build, déploiement et valeur `data/index.json.buildVersion` réellement servie.
 
-## Garmin : MCP bêta, aucune fabrication FIT locale
+## Garmin Connect
 
-`adaptateurs/garmin/` fournit l'intégration Garmin MCP et les contrôles associés. Le Coach peut préparer et comparer des modèles en lecture seule. **Aucune création, programmation à une date, modification, suppression ni transmission à une montre n'est permise sans demande explicite couvrant l'opération et les dates ou cibles exactes.** Un modèle en bibliothèque n'est ni une séance effectuée ni une séance programmée. Un retour d'upload positif ne dispense jamais de relire le modèle.
+L'adaptateur Garmin MCP prépare les modèles à partir des blocs de Planification en **lecture seule par défaut**. Bibliothèque, calendrier, appareil et activité accomplie ne sont pas synonymes. Toute création, modification, suppression, programmation, déplacement ou transmission à une montre exige une demande explicite couvrant **l'action et sa cible exacte**. Après une écriture autorisée, relire le modèle et confirmer le résultat observable.
 
-La source de prescription reste Planification ; le générateur historique de fichiers FIT locaux et les téléchargements FIT du Web ne sont pas le processus V2. Les identifiants privés ou binaires Garmin ne doivent pas entrer dans la publication. Consulter `adaptateurs/garmin/MCP.md` et `docs/COACH-MODE-OPERATOIRE.md` pour les contraintes détaillées.
+Les noms de modèle confirmés proviennent de la source Planification. Les identifiants et détails privés Garmin ne sont jamais publiés sur le site. Le Web n'émet pas de fichier d'entraînement. Pour la séquence détaillée et les validations, voir `adaptateurs/garmin/MCP.md`.
 
-## Responsabilités et continuité
+## Rôles et continuité
 
-- **Coach** : faits et décisions sportifs, mémoire nuancée et traçable dans les domaines, contrôle du rendu métier. Il peut seulement corriger un fragment HTML **local d'affichage métier** lorsque les projections existantes ne suffisent pas, sans toucher à l'interface générale, aux contrats, aux scripts ni à la navigation.
-- **Maturation** : architecture, schémas, adaptateurs, projections, interface Web générale, tests, workflows et déploiement technique ; sans réinterpréter ni réécrire les faits du Coach.
-- **Propriétaire** : autorise les actions sensibles et les changements de périmètre.
+Le **Coach** conserve les faits et décisions métier, avec provenance et nuances, et vérifie leur projection. Son droit d'intervention Web est limité au **fragment de rendu métier local**. **Maturation** maintient architecture, adaptateurs, schémas, interface générale, scripts, CI et déploiement, sans inventer ou réécrire le contenu sportif.
 
-Conserver la source, les nuances, l'évolution et la justification des faits utiles à la personnalisation, sans dupliquer séances et rapports entre domaines. Pour une reprise, lire `AGENTS.md`, `docs/COACH-MODE-OPERATOIRE.md`, `docs/ROLES.md` et `docs/CONTRAT-CONTINUITE-COACH.md` selon leurs priorités en vigueur. **« Mets-toi à jour » seul signifie lecture seule : aucun commit, aucune écriture Garmin.**
+« Mets-toi à jour » seul est une demande de **lecture seule**. Ne pas confondre une décision sportive, un commit Git, une publication et une écriture Garmin. Protéger toutes les données et comptes rendus du Coach, même lorsqu'ils ne sont pas affichés publiquement.
 
-## Vérification, publication et confidentialité
+## Confidentialité
 
-Avant une livraison métier ou Web, effectuer les contrôles de modèles, frontières, site, publication et non-fuite prévus par `docs/PROCEDURE-MIROIR-WEB.md`. Un push ou une CI verte ne prouve pas à lui seul que le site est publié : vérifier le build, le déploiement et la valeur `data/index.json.buildVersion` réellement servie. Les workflows existants de publication sur `main` sont la référence ; une branche documentaire isolée ne constitue pas une mise en production.
-
-**Dépôt et site publics.** `noindex` et une projection restreinte ne rendent pas privées des données déjà inscrites dans Git, dans des caches ou dans de précédentes publications. Ne publier ni secrets, identifiants de compte, données personnelles non autorisées ni notes brutes de Santé/Coaching. Une migration vers un stockage privé et un traitement de l'historique public constituent des projets distincts, soumis à décision explicite.
-
-## Documentation historique
-
-Les anciens chemins `personnel/`, les anciennes sources santé et le générateur local `scripts/generer-garmin.cjs` décrivent la V1 : **ils ne sont pas des destinations d'écriture ou des automatisations actives**. Les décisions et contraintes toujours applicables doivent être conservées dans leurs sources V2 avant tout retrait d'archives. Ne pas effacer des faits ou une preuve historique simplement parce qu'une procédure V1 est dépassée.
+Le dépôt et la publication GitHub Pages sont publics. Les fichiers source, les commits accessibles et les copies d'une page publiée peuvent contenir des données sensibles ; `noindex` ne constitue aucune protection d'accès. Ne jamais publier de secret ni introduire un nouveau champ sensible dans les projections sans décision sur sa diffusion. Tout changement d'hébergement ou de contrôle d'accès exige une démarche distincte.
