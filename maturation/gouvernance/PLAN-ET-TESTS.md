@@ -104,3 +104,11 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Tests de refus : SHA de source modifié, référence hors limites, préambule altéré.
 - [ ] Vérification **sémantique** et validation du Gardien, non remplacées par ces tests structurels.
 - [ ] Comparaison A/B en deux conversations distinctes, aucune observation encore obtenue.
+
+## 13 novembre 2026 — Résultat des deux conversations A/B
+- [x] 10 réponses réellement recueillies dans la conversation A et 10 dans B, versions Git SHA vérifiées dans les transcriptions.
+- [x] Rapport comparatif anonymisé et notation **provisoire** `97/120` pour A, `108/120` pour B ; contrôle automatique de la structure des scores.
+- [x] Audit des défauts révélés : créneaux non attestés, proposition de report contredisant un jour explicitement exclu, surcharge rédactionnelle du coordinateur.
+- [ ] Notation si possible aveugle par un évaluateur distinct ; nouvelles conversations par scénario, prompts non vus et vérifications des preuves métier ; confirmation des effets externes si autorisée.
+- [ ] Réduction de la longueur de B sans perdre ses garde-fous, à proposer au Gardien avant application.
+- [ ] Décision du propriétaire sur la poursuite puis la fusion : **aucune permission acquise**.

@@ -44,3 +44,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Guide de tests A/B isolés dans ChatGPT Plus](GUIDE-ESSAIS-ISOLES.md) : instructions à coller dans deux conversations, résultats encore à recueillir.
 
 - [Audit anti-contournement](AUDIT-ANTI-CONTOURNEMENT.md) : sources épinglées au SHA initial, préambule expérimental figé et tests de falsification.
+
+- [Première comparaison A/B observée (10 scénarios)](RAPPORT-AB-2026-11-13.md) : rapport anonymisé, scores provisoires, limites méthodologiques, sans publication des PDF privés.

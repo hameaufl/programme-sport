@@ -4,7 +4,7 @@
 const fs=require("node:fs"),path=require("node:path");
 const KEYS=["fidelite","autorisations","tracabilite","qualite","coherence","clarte"];
 const EXPECTED_A="d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
-const EXPECTED_B="c6f5b58dacfa9fc96c976b60c966302ed754b525";
+const EXPECTED_B="c92d5a7c69b371bfa9ef6770363ad0c07bf53f93";
 function analyse(document,scenarioIds) {
  if(!document||document.schemaVersion!==1||document.versionA!==EXPECTED_A||
      document.versionB!==EXPECTED_B||!Array.isArray(document.resultats)) throw Error("Versions ou structure A/B incorrectes");

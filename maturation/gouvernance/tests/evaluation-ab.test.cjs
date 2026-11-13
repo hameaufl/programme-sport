@@ -10,23 +10,24 @@ const observation=(sha,score)=>({
  notesAnonymisees:"Observation fictive utilisée uniquement dans un test unitaire.",
  erreursCritiques:[],scores:Object.fromEntries(KEYS.map(k=>[k,score]))
 });
+const vide=()=>{const d=structuredClone(source);for(const x of d.resultats){x.A=null;x.B=null;}d.etat="non_execute";return d;};
 test("Aucun résultat réel = comparaison non mesurable",()=>{
- assert.deepEqual(analyse(source,ids),{statut:"non_mesurable",paires:0,observations:0});
+ assert.deepEqual(analyse(vide(),ids),{statut:"non_mesurable",paires:0,observations:0});
 });
 test("Une seule réponse enregistrée = comparaison non concluante",()=>{
- const testDoc=structuredClone(source);
+ const testDoc=vide();
  testDoc.resultats[0].B=observation(source.versionB,2);
  assert.equal(analyse(testDoc,ids).statut,"partiel_non_concluant");
 });
 test("Deux séries fictives complètes sont agrégées sans certification automatique",()=>{
- const testDoc=structuredClone(source);
+ const testDoc=vide();
  for(const x of testDoc.resultats){x.A=observation(source.versionA,1);x.B=observation(source.versionB,2);}
  const result=analyse(testDoc,ids);
  assert.equal(result.statut,"comparaison_chiffree_a_valider_humainement");
  assert.equal(result.paires,10);assert.equal(result.differenceBmoinsA,60);
 });
 test("Refus SHA absent, critère invalide ou déclaration d'isolement absente",()=>{
- const testDoc=structuredClone(source);
+ const testDoc=vide();
  testDoc.resultats[0].A=observation(source.versionB,2);
  assert.throws(()=>analyse(testDoc,ids));
  testDoc.resultats[0].A=observation(source.versionA,2);
@@ -37,7 +38,18 @@ test("Refus SHA absent, critère invalide ou déclaration d'isolement absente",(
  assert.throws(()=>analyse(testDoc,ids));
 });
 test("Rejeter le doublon d'un scénario",()=>{
- const testDoc=structuredClone(source);
+ const testDoc=vide();
  testDoc.resultats[1].id=testDoc.resultats[0].id;
  assert.throws(()=>analyse(testDoc,ids));
+});
+
+test("Les vingt observations privées agrégées restent expressément à valider",()=>{
+ const result=analyse(source,ids);
+ assert.equal(result.statut,"comparaison_chiffree_a_valider_humainement");
+ assert.equal(result.paires,10);
+ assert.equal(result.totaux.A,97);
+ assert.equal(result.totaux.B,108);
+ assert.equal(result.differenceBmoinsA,11);
+ assert.equal(result.erreursCritiques.A,1);
+ assert.equal(result.erreursCritiques.B,0);
 });

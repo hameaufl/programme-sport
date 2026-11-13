@@ -123,3 +123,11 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - **Verrou exact du préambule** : `AGENTS.md` sur la branche doit rester octet par octet identique à celui du premier commit expérimental `7a8016955cf74f312e40fc7b82bccca84020c9eb`. Une permission glissée dans le préambule fait échouer la CI. Toute modification future volontaire de ce verrou demanderait une revue et les validations de gouvernance correspondantes.
 - Tests négatifs pour source au faux SHA, référence de ligne impossible et préambule altéré. Aucune donnée métier ni opération Garmin modifiée.
 - **Limite :** une référence existante ne démontre pas à elle seule que la règle est sémantiquement bien couverte ; la revue du Gardien et les essais A/B demeurent requis.
+
+## 13 novembre 2026 — Première analyse A/B des deux conversations réellement exécutées
+- Deux PDF de tests réels fournis **dans la conversation privée** : 10 réponses A (`d88a202`) et 10 réponses B (`c92d5a7`). **PDF et liens privés non publiés**. Observations anonymisées et rapport `RAPPORT-AB-2026-11-13.md` ajoutés à cette branche de travail uniquement.
+- Grille manuelle provisoire : **A 97/120 ; B 108/120**, soit **+11/120** pour B, sans preuve statistique de supériorité et sans juge indépendant. Une alerte majeure de cohérence dans la proposition A au scénario SC-04 ; aucune action externe interdite visible dans les traces.
+- Différence de charge notable : 7 pages PDF pour A et 16 pour B, environ 2,08× de texte extrait pour B (y compris les consignes). A reste déjà conforme aux refus Garmin/écriture ; B apporte surtout gestion de l'incertitude, vérifications et traçabilité.
+- Méthode limitée : une conversation par branche, dix scénarios **enchaînés**, évaluation non aveugle, scénario Gardien structurellement asymétrique. Ne pas assimiler les scores à un gain réel généralisable ni à un visa Gardien.
+- Correctif technique du dépouillement : le SHA B attendu était resté sur un commit de travail `c6f5b58` et non le **SHA de test réel `c92d5a7`** ; il est mis à jour, avec tests reprenant les vingt observations et cas de données manquantes. Le guide A/B précédemment corrompu (« undefined ») est rétabli.
+- **main inchangée, branches de test figées, aucune opération Garmin, aucune fusion, aucune activation de la gouvernance.**
