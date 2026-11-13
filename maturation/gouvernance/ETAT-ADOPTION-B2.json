@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "versionB": "c92d5a7c69b371bfa9ef6770363ad0c07bf53f93",
+  "versionB2": "0aca52ac999f3a579610edfa2106aa400518a3fc",
+  "sourceHistorique": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "qualiteDuDossier": "candidate_favorable_pour_essais_sans_ecriture",
+  "activation": "bloquee",
+  "demonstrations": {
+    "sixPromptsBversB2": {
+      "nombre": 6,
+      "motsB": 1642,
+      "motsB2": 471,
+      "pourcentageReduction": 71.3,
+      "conclusion": "amelioration_de_concision_observee"
+    },
+    "contreTestsB2": {
+      "nombre": 2,
+      "obligationsCR": {
+        "satisfaites": 9,
+        "total": 9
+      },
+      "obligationsWeb": {
+        "satisfaites": 5,
+        "total": 8
+      },
+      "erreursBloquantesObservees": 0,
+      "conclusion": "resultats_non_independants_lecture_seule"
+    },
+    "integriteHistorique": "controle_git_et_ci_present_pas_certification_semantique"
+  },
+  "verrous": {
+    "auditSemantiqueExhaustif": "non_acquis",
+    "incidentsReferentiel": {
+      "restants": 8,
+      "statut": "ouverts"
+    },
+    "visaGardienFormel": "non_acquis",
+    "indepenceAvisGardien": "non_independant",
+    "approbationExpliciteFusion": "non_donnee",
+    "certificatPublicationReelle": "non_applicable_tests_lecture_seule"
+  },
+  "confidentialite": {
+    "pdfsPublics": false,
+    "conversationsIntegralesPubliques": false
+  },
+  "suites": [
+    "relecture_clause_par_clause",
+    "qualifier_inc_001_a_008",
+    "visa_gardien_avec_limites",
+    "decision_explicite_du_proprietaire"
+  ]
+}

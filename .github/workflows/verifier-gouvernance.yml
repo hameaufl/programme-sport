@@ -38,5 +38,7 @@ jobs:
         run: node maturation/gouvernance/verifier-resultats-b2.cjs
       - name: Contrôler la préparation des deux contre-tests B2 sans résultats inventés
         run: node maturation/gouvernance/verifier-contretests-b2.cjs
+      - name: Vérifier que B2 reste un candidat non activé et sans fausse approbation
+        run: node maturation/gouvernance/verifier-porte-adoption-b2.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs

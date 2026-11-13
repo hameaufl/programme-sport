@@ -174,3 +174,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Le scénario Web conserve explicitement build/deploy, URL publique et `data/index.json.buildVersion` ; son refus de dire « publié » est correct. Il n'explicite pas tout l'historique, le détail des tests modèle ou le partage Coach/Maturation, sans que cela autorise une livraison réelle incomplète.
 - `CONTRETESTS-B2-OBSERVATIONS.json` renseigné **après réception des réponses**, le script vérifie sa structure et les tests couvrent son état observé ainsi qu'un état vide simulé en mémoire. **Notation toujours non indépendante et pas de visa Gardien.**
 - Branches A, B, B2, `main` inchangées. Aucune opération Garmin, aucun push métier ni publication.
+
+## 13 novembre 2026 — Revue logique finale et porte d'adoption B2
+- Nouvel [avis logique du Gardien](GARDIEN-AVIS-LOGIQUE-B2-2026-11-13.md) lié aux SHA B/B2 : **FAVORABLE pour poursuivre les essais de B2**, mais **BLOQUÉ pour activation/fusion**. Avis émis dans le même ChatGPT que la conception, **non indépendant**, sans visa formel inventé.
+- Trois réserves Web des contre-tests (historique, tests/build/deploy, séparation Coach/Maturation) rapprochées des règles historiques et rassemblées dans `CHECKLIST-LIVRAISON-WEB-B2.md`. **Aucun protocole Coach/Gardien ni décision métier n'est modifié.**
+- [Dossier à soumettre au propriétaire](DECISION-ADOPTION-B2-A-SOUMETTRE.md) : bénéfices mesurés, limites, blocages, retour arrière B et options, sans sollicitation implicite de fusion.
+- [État machine](ETAT-ADOPTION-B2.json), vérificateur et tests négatifs : les 8 INC ouvertes, l'audit sémantique et le visa manquants empêchent de présenter une activation comme obtenue. **Ce contrôle CI ne remplace pas une protection de branche GitHub ou un accord humain.**
+- Les branches A, B, B2 et `main` sont préservées, aucune opération Garmin ou déploiement Web n'a été exécutée.

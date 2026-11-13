@@ -148,3 +148,12 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Relevé anonymisé mis à jour et vérifications CI de cohérence des résultats ; aucune transcription privée dans le dépôt.
 - [ ] Vérifier, lors de toute livraison réelle future, la sauvegarde de l'historique, les validations modèle/tests et l'attribution Coach/Maturation ; aucun test fictif n'autorise à omettre les preuves.
 - [ ] Revue du Gardien et décision explicite du propriétaire avant adoption et fusion sur `main`.
+
+## 13 novembre 2026 — Dossier d'acceptation B2 préparé, activation BLOQUÉE
+- [x] Avis logique du Gardien sur la version figée B2, avec constat de ses limites d'indépendance ; bénéfices mesurés sans extrapolation.
+- [x] Trois réserves Web rattachées aux **sources historiques** dans la checklist de livraison (aucune permission nouvelle).
+- [x] Dossier de décision à soumettre au propriétaire et état de vérification qui **refuse toute auto-approbation**.
+- [ ] Audit sémantique clause-par-clause des obligations historiques, afin d'écarter la perte de compétences.
+- [ ] Qualification définitive ou non-applicabilité justifiée de chaque INC-001 à INC-008 ; arbitrages et décisions tracées.
+- [ ] Avis du Gardien conforme aux règles de gouvernance avec limite d'indépendance explicitée.
+- [ ] **Accord explicite du propriétaire lié à une version/PR** pour toute fusion ; `main` reste hors de portée tant que non acquis.

@@ -9,3 +9,6 @@
 - Visa Gardien externe / audit comportemental indépendant : **NON OBTENU**.
 - Validation de fusion `main` : **NON OBTENUE**.
 - Test autorisé ici : **branche B2 isolée**, simulée, sans aucune écriture métier ou Garmin.
+
+## Avis logique du Gardien après essais B2 — 13 novembre 2026
+Voir [GARDIEN-AVIS-LOGIQUE-B2-2026-11-13.md](GARDIEN-AVIS-LOGIQUE-B2-2026-11-13.md) : **favorable avec réserves pour poursuivre les essais sur branche, BLOQUÉ pour activation ou fusion**. Cette revue est **non indépendante** ; les huit INC demeurent ouvertes, la couverture sémantique complète est non certifiée, et l'avis formel ainsi que l'accord du propriétaire restent **NON ACQUIS**. Les trois réserves Web sont classées comme obligations historiques déjà actives, à suivre via une checklist sans changement des protocoles.
