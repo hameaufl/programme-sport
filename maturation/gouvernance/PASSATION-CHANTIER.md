@@ -58,3 +58,8 @@ Audit sémantique des huit documents historiques et qualification des huit confl
 - [ETUDE-DEPENDANCES-NETTOYAGE.json](ETUDE-DEPENDANCES-NETTOYAGE.json) : recherche de cinq anciennes références dans **39 fichiers** de documentation/code/CI du `main` historique ; 6 liens vers `docs/REPRISE.md`, 1 vers `docs/CONTEXTE.md`, 1 vers `scripts/migration-preuve.json` ; aucune vérification des liens externes.
 - [REVUE-26-ANCRAGES.md](REVUE-26-ANCRAGES.md) : **17 candidats directs, 7 partiels, 1 insuffisant**, et **REF-06 peut être une treizième nouvelle proposition** ; à arbitrer plutôt que convertir automatiquement 73/12 en 72/13. Aucune de ces 26 corrections n'a été appliquée à la matrice.
 - **Suite :** revoir les sources et la certification clause par clause, demander les arbitrages de provenance et l'autorisation du propriétaire avant tout nettoyage documentaire effectif. B2 et `main` toujours inchangés.
+
+## Revue complémentaire des responsabilités historiques
+- [REVUE-SEMANTIQUE-ROLES.md](REVUE-SEMANTIQUE-ROLES.md) : 29 rubriques de `docs/ROLES.md` qualifiées (16 plausiblement courantes, 7 mixtes, 6 V1 dépassées) avec [index des sources exactes](REVUE-ROLES-29-RUBRIQUES.json).
+- **59/161 rubriques historiques** ont désormais une qualification préliminaire (30 REPRISE + 29 ROLES) ; **102 rubriques** n'ont pas encore de classification rubrique par rubrique. Il reste à auditer les clauses dans les 161 rubriques, sans effacer ni les règles valables ni les faits.
+- Nettoyage de `main` **toujours non appliqué**, proposition du premier mini-lot toujours à soumettre au propriétaire.

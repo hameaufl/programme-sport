@@ -48,5 +48,7 @@ jobs:
         run: node maturation/gouvernance/verifier-assainissement.cjs
       - name: Contrôler le mini-lot documentaire et les 26 propositions sans suppression
         run: node maturation/gouvernance/verifier-preparation-nettoyage.cjs
+      - name: Contrôler les 29 rubriques de séparation Coach Maturation en V2
+        run: node maturation/gouvernance/verifier-revue-roles.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs

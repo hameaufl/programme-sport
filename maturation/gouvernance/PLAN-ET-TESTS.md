@@ -187,3 +187,8 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Ajouter un contrôle qui refuse une suppression, une certification sémantique ou une provenance nouvelle automatiquement inventée.
 - [ ] Obtenir l'accord du propriétaire sur un **lot de chemins précis** avant application des deux propositions sur un environnement isolé et toute éventuelle fusion.
 - [ ] Compléter les 119 rubriques sans ancrage direct et l'audit clause par clause des protocoles mixtes ; garder INC-001 à INC-008 ouvertes.
+
+## 13 novembre 2026 — Revue préliminaire complémentaire ROLES
+- [x] Qualifier les 29 rubriques de `docs/ROLES.md` : 16 courantes à vérifier, 7 mixtes, 6 V1 remplacées.
+- [x] Protéger par CI la liste des anciennes prescriptions FIT, des chemins `personnel/` et des droits Coach HTML bornés.
+- [ ] Auditer phrase par phrase les obligations utiles des **59 rubriques qualifiées** et des **102 autres rubriques de la source historique** ; ni ces classes ni les tests ne prouvent la couverture sémantique complète.

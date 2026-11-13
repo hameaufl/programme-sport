@@ -212,3 +212,8 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - **Mini-lot n°1 préparé et non appliqué** : textes de remplacement V2 pour `docs/CONTEXTE.md` et `adaptateurs/README.md`. [Proposition et conditions](MINILOT-ASSAINISSEMENT-01.md) ; aucun document de `main` modifié.
 - Relecture de **26 ancrages** restants : **17 sources candidates directes**, **7 partielles**, **1 insuffisante**, **REF-06 à arbitrer** car probablement nouvelle proposition de gouvernance plutôt qu'obligation historique. Les suggestions ne modifient pas la matrice. [Revue](REVUE-26-ANCRAGES.md).
 - Vérificateur de cohérence ajouté à la CI, sans validation sémantique automatique ni autorisation de purge. B2 et main inchangés.
+
+## 13 novembre 2026 — Revue des règles de séparation des rôles (29 rubriques)
+- Source : `docs/ROLES.md` au SHA de `main` `d88a202` ; **29 titres** revus dans leur contexte, **16** apparemment courants, **7** mixtes V1/V2, **6** anciennes prescriptions V1 explicitement dépassées. [Revue et limites](REVUE-SEMANTIQUE-ROLES.md) ; [ancrages](REVUE-ROLES-29-RUBRIQUES.json).
+- Les anciens FIT spontanés, `personnel/` et le déclencheur `personnel/**` ne peuvent revenir comme processus courant. L'autorisation Coach HTML est uniquement locale et ne s'élargit pas par consolidation.
+- Avec les 30 rubriques de `docs/REPRISE.md`, **59/161 rubriques historiques ont une qualification préliminaire**, sans preuve de conformité de chacune de leurs clauses. Tests négatifs ajoutés ; aucune source métier ni règle de production modifiée.
