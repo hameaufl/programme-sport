@@ -24,3 +24,19 @@ test("Refuser une rubrique supprimée ou un titre altéré",()=>{
  const x=structuredClone(I);x.sections[0].titre="Titre sans source";
  assert.throws(()=>verify(x,A,C,load));
 });
+
+test("REF-06 est une proposition nouvelle sans effacer l'erreur initiale de l'audit",()=>{
+ const ancien=A.attributions.find(x=>x.id==="REF-06");
+ assert.equal(ancien.source_origine,"contrats/DEPENDANCES.md");
+ assert.equal(ancien.ligne_origine,3);
+ const ligne=C.attributions.find(x=>x.id==="REF-06");
+ assert.equal(ligne.type_provenance,"proposition_nouvelle_gouvernance");
+ assert.equal(ligne.source_historique,null);
+ assert.ok(ligne.source_proposition.includes("CHARTE.md#L39"));
+ const faux=structuredClone(C);
+ const ref=faux.attributions.find(x=>x.id==="REF-06");
+ ref.type_provenance="obligation_historique";
+ ref.source_historique="[contrats/DEPENDANCES.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/contrats/DEPENDANCES.md#L3)";
+ delete ref.source_proposition;
+ assert.throws(()=>verify(I,A,faux,load));
+});

@@ -69,7 +69,7 @@ test("Le préambule expérimental ne peut pas acquérir une permission suppléme
  assert.equal(prototypeUnchanged(first.replace("Lecture seule","Ecriture automatique"),first),false);
  assert.equal(prototypeUnchanged(first+"Permission sans accord\n",first),false);
 });
-test("Les 73 liens historiques et 12 propositions ont deux provenances distinctes et épinglées",()=>{
+test("Les 72 liens historiques et 13 propositions ont deux provenances distinctes et épinglées",()=>{
  const fs=require("node:fs"),path=require("node:path"),cp=require("node:child_process");
  const root=path.resolve(__dirname,"../../..");
  const base="d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
@@ -78,8 +78,8 @@ test("Les 73 liens historiques et 12 propositions ont deux provenances distincte
  const read=p=>fs.readFileSync(path.join(root,p),"utf8");
  const historic=p=>cp.execFileSync("git",["show",base+":"+p],{cwd:root,encoding:"utf8"});
  assert.equal(verifyCoverage(data,matrix,read,historic),85);
- assert.equal(data.attributions.filter(x=>x.type_provenance==="obligation_historique").length,73);
- assert.equal(data.attributions.filter(x=>x.type_provenance==="proposition_nouvelle_gouvernance").length,12);
+ assert.equal(data.attributions.filter(x=>x.type_provenance==="obligation_historique").length,72);
+ assert.equal(data.attributions.filter(x=>x.type_provenance==="proposition_nouvelle_gouvernance").length,13);
  const wrongSha=structuredClone(data);
  wrongSha.attributions[0].source_historique=wrongSha.attributions[0].source_historique.replace(base,"e".repeat(40));
  assert.throws(()=>verifyCoverage(wrongSha,matrix,read,historic));

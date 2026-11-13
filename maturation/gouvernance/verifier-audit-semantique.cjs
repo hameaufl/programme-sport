@@ -46,6 +46,15 @@ function verify(inventory,anomalies,coverage,readMain) {
        !row.source_proposition?.includes("/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/")||
        v.source_origine!=="AGENTS.md"||v.ligne_origine!==3)
       throw Error("Provenance nouvelle non corrigée ou ancienne erreur non tracée : "+v.id);
+  }else if(v.id==="REF-06") {
+    // L'audit fige l'erreur initiale ; la couverture candidate renvoie à la charte.
+    // Ne pas réécrire les comptes de cet instantané historique.
+    const attendu="[maturation/gouvernance/CHARTE.md L39](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L39)";
+    if(v.statut!=="ancre_historiquement_non_pertinente"||
+       v.source_origine!=="contrats/DEPENDANCES.md"||v.ligne_origine!==3||
+       row.type_provenance!=="proposition_nouvelle_gouvernance"||
+       row.source_historique!==null||row.source_proposition!==attendu)
+      throw Error("REF-06 : l'ancienne erreur et la nouvelle provenance doivent rester traçables");
   }else{
     const m=/\/blob\/([a-f0-9]{40})\/([^#)]+)#L(\d+)\)/.exec(row.source_historique);
     if(row.type_provenance!=="obligation_historique"||!m||m[1]!==MAIN||m[2]!==v.source_origine||

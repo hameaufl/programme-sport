@@ -6,7 +6,7 @@ const ROOT = path.resolve(__dirname, "../..");
 const cp = require("node:child_process");
 const BASE = "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4";
 const INITIAL_PROPOSITION="7a8016955cf74f312e40fc7b82bccca84020c9eb";
-const NEW_IDS=new Set(["COO-01","COO-02","COO-06","REF-01","REF-02","REF-03","REF-04","REF-05","QUA-01","QUA-02","QUA-03","QUA-06"]);
+const NEW_IDS=new Set(["COO-01","COO-02","COO-06","REF-01","REF-02","REF-03","REF-04","REF-05","REF-06","QUA-01","QUA-02","QUA-03","QUA-06"]);
 function historicInitial(rel) { return cp.execFileSync("git",["show",INITIAL_PROPOSITION+":"+rel],{cwd:ROOT,encoding:"utf8",maxBuffer:16*1024*1024}); }
 const HERE = __dirname;
 function historic(rel) {
@@ -27,6 +27,9 @@ function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
   requireTrue(data.totalExigences === 85 && data.attributions?.length === 85, "Couverture : exactement 85 exigences attendues");
   requireTrue(data.statut === "proposition_de_couverture_non_validee_par_le_gardien",
     "Couverture présentée comme validée sans mise à niveau contrôlée du processus");
+  requireTrue(data.attributions.filter(x=>x.type_provenance==="obligation_historique").length===72 &&
+    data.attributions.filter(x=>x.type_provenance==="proposition_nouvelle_gouvernance").length===13,
+    "Provenance corrigée REF-06 : 72 historiques / 13 nouvelles propositions attendues");
   const ids = data.attributions.map((x) => x.id);
   requireTrue(duplicates(ids).length === 0, "IDs d'exigences dupliqués");
   const matrix = matrixText.split(/\r?\n/).map((l) => /^\| ((?:MAT|SUI|STR|PLA|GAR|COO|REF|QUA)-\d{2}) \|/.exec(l))

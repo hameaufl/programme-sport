@@ -5,7 +5,7 @@
   "referenceAudit": "3a03784854495fb5fd07d42ecca96b42d2c2b62d",
   "statut": "proposition_de_couverture_non_validee_par_le_gardien",
   "totalExigences": 85,
-  "note": "Attribution exhaustive des 85 familles déjà recensées, pas preuve de conformité sémantique ni de couverture clause-par-clause de toutes les archives. Révision de traçabilité : 73 obligations historiques avec preuve main, 12 exigences expérimentales nouvelles séparées (source_proposition au SHA 7a801695) ; validation Gardien toujours non acquise.",
+  "note": "Attribution exhaustive des 85 familles déjà recensées, pas preuve de conformité sémantique ni de couverture clause-par-clause de toutes les archives. Révision de traçabilité : 72 obligations historiques avec preuve main, 13 exigences expérimentales nouvelles séparées (source_proposition au SHA 7a801695) ; validation Gardien toujours non acquise.",
   "attributions": [
     {
       "id": "MAT-01",
@@ -865,13 +865,14 @@
     {
       "id": "REF-06",
       "exigence": "Le registre actif est seulement index : ne pas copier les sources métier.",
-      "source_historique": "[contrats/DEPENDANCES.md L3](https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/contrats/DEPENDANCES.md#L3)",
+      "source_historique": null,
       "proprietaires_suggeres": "Gardien",
       "statut_ancien_audit": "partielle",
       "fichier_protocole": "maturation/gouvernance/agents/GARDIEN.md",
       "controle_attendu": "Lien aux sources, absence de doublons/infos sensibles",
       "statut_nouvelle_attribution": "proposee_non_validee",
-      "type_provenance": "obligation_historique"
+      "type_provenance": "proposition_nouvelle_gouvernance",
+      "source_proposition": "[maturation/gouvernance/CHARTE.md L39](https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L39)"
     },
     {
       "id": "REF-07",
