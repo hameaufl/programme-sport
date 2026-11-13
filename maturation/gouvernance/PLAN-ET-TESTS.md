@@ -198,3 +198,10 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Revoir les 15 rubriques du document Coach, classifier 8 courantes à confirmer, 5 mixtes et 2 états datés dépassés, avec lignes historiques et contrôles négatifs. **74/161 rubriques** qualifiées, **87 restantes**.
 - [ ] Auditer clause par clause les contradictions COM-03 à COM-09 (nom Garmin, emplacement du titre, nettoyage de modèles, états Renfo), sans nouvel ordre ni écriture Garmin.
 - [ ] Étendre la classification aux 87 rubriques restantes puis vérifier les clauses applicables des 161 rubriques. Les huit INC demeurent ouvertes, sans autorisation de fusion de la PR #9.
+
+## 13 novembre 2026 — Revue ciblée des collisions COM-03 à COM-09
+- [x] Rassembler **26 points** de source et de contre-source sur les sept rubriques sensibles, avec ligne exacte, SHA fixe, motif et portée ; verifier et tester les ancrages. Résultats : **13 alignés**, **6 supplantés**, **2 historiques contradictoires**, **3 arbitrages**, **2 états Garmin non contrôlés à distance**. Ne pas ajouter ces 26 points au décompte des rubriques (toujours **74/161**, **87** premières qualifications restantes).
+- [x] Identifier les mentions historiques de noms Garmin et d'encart Web que la source V2 et le rendu ne reprennent plus, sans modifier la bibliothèque Garmin.
+- [ ] Arbitrer formellement, avec le propriétaire et le Gardien, le droit exact de suppression d'un intermédiaire et le réemploi éventuel d'une opération de renommage passée ; **aucune permission nouvelle**.
+- [ ] Préparer ultérieurement un mini-lot de consolidation des textes opérationnels Coach/MCP avec preuve de non-perte et accord explicite, sans détruire l'historique.
+- [ ] Revue préliminaire des 87 rubriques restantes et certification des clauses applicables ; huit incohérences du référentiel encore ouvertes.
