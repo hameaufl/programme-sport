@@ -65,10 +65,9 @@ for(const page of [html,sante,coachPage,equipPage]){
   for(const script of page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))if(script[1].trim())new vm.Script(script[1]);
 }
 // Consignes courantes : aucune rubrique d'exploitation ne dépend d'un protocole versionné.
-const docsOperationnels=["README.md","AGENTS.md","adaptateurs/README.md",
- "adaptateurs/garmin/MCP.md","adaptateurs/garmin/README.md","docs/COACH-MODE-OPERATOIRE.md",
- "docs/CONTEXTE.md","docs/CONTRAT-CONTINUITE-COACH.md","docs/PROCEDURE-MIROIR-WEB.md",
- "docs/ROLES.md","domaines/planification/README.md","domaines/sante/README.md",
+const docsOperationnels=["README.md","AGENTS.md","docs/ARCHITECTURE.md","docs/PROCESSUS.md",
+ "adaptateurs/README.md","adaptateurs/garmin/MCP.md","adaptateurs/garmin/README.md",
+ "domaines/planification/README.md","domaines/sante/README.md",
  "addons/web/README.md","addons/web/README-assets.md"];
 for(const doc of docsOperationnels){
  const contenu=read(doc);
@@ -237,7 +236,7 @@ assert.ok(!/domaines\/(?:coaching|sante|activites|planification)\/donnees\//.tes
 assert.ok(!sante.includes("L'essentiel de ma reprise, sans les notes de fond.")&&
  !sante.includes("Les observations détaillées restent dans le domaine Santé")&&
  !sante.includes("Cette vue ne constitue pas un avis médical."),"Les textes supprimés de Mon suivi santé ne doivent pas réapparaître");
-assert.ok(read("AGENTS.md").includes("orientation.json")&&read("docs/CONTRAT-CONTINUITE-COACH.md").includes("orientation.json"),
+assert.ok(read("AGENTS.md").includes("orientation.json")&&read("docs/ARCHITECTURE.md").includes("domaines/coaching/donnees/"),
  "Consignes de continuité du Coach non actualisées");
 
 assert.ok(sante.includes('id="weekGraph"')&&sante.includes('id="recentDone"')&&sante.includes('id="healthEvents"'),"Nouvelle vue visuelle de santé incomplète");
@@ -308,7 +307,7 @@ assert.ok(equipPage.includes("./data/coaching/equipements.json")&&equipPage.incl
 assert.ok(html.includes('href="./equipements.html"')&&coachPage.includes('href="./equipements.html"'),"Liens vers l'inventaire manquants");
 assert.ok(!/domaines\/(?:coaching|sante|activites|planification)\/donnees\//.test(equipPage),"Le Web ne doit pas lire les chemins métier");
 assert.ok(!equipPage.includes("Tapis de sol")&&!equipPage.includes("Gros ballon de gymnastique"),"Ne pas coder les équipements en dur dans la page");
-assert.ok(read("AGENTS.md").includes("equipements.html")&&read("docs/CONTRAT-CONTINUITE-COACH.md").includes("equipements.html"),"Les agents doivent connaître cette vue et l'inventaire canonique");
+assert.ok(read("AGENTS.md").includes("equipements.html")&&read("docs/ARCHITECTURE.md").includes("adaptateurs/projections/"),"Les agents doivent connaître cette vue et l'inventaire canonique");
 
 const equipe=new Map(materiel.equipements.map(e=>[e.id,e]));
 assert.equal(equipe.get("tapis_sol")?.statut,"disponible");

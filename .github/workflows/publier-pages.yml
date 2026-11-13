@@ -36,13 +36,13 @@ jobs:
         run: |
           node scripts/verifier-site.cjs
           node scripts/verifier-changements.cjs
-          node maturation/architecture/verifier-portabilite.cjs
-          node maturation/architecture/verifier-frontieres.cjs
+          node scripts/controle/verifier-portabilite.cjs
+          node scripts/controle/verifier-frontieres.cjs
 
       - name: Vérifier la politique de publication restreinte
         run: |
           MON_RYTHME_POLITIQUE=prive node scripts/construire-site.cjs
-          node maturation/architecture/verifier-publication-prive.cjs
+          node scripts/controle/verifier-publication-prive.cjs
       - name: Générer les vues hebdomadaires et le suivi public existant
         run: node scripts/construire-site.cjs
 
@@ -50,7 +50,7 @@ jobs:
         run: node scripts/verifier-miroir-web.cjs
 
       - name: Contrôler l'absence de fichiers externes dans le site public
-        run: node maturation/architecture/verifier-publication.cjs
+        run: node scripts/controle/verifier-publication.cjs
 
       - name: Envoyer l'artefact Pages
         uses: actions/upload-pages-artifact@v4
