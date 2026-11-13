@@ -51,3 +51,6 @@ Mesure indicative par extraction du texte des PDF et séparation des réponses (
 | CIB-06 | 414 |
 
 **Critère d'adoption :** pas de nouvelle erreur majeure, même qualité métier et mêmes protections ; réduction visible du volume pour les demandes simples. Validation Gardien et accord propriétaire restent requis avant fusion.
+
+## Bilan des huit réponses réellement observées — 13 novembre 2026
+Le [rapport B/B2 observé](RAPPORT-OBSERVE-B2-2026-11-13.md) compare **six prompts communs** : B `1642` mots, B2 `471` mots (**−71,3 %**). Les **deux cas nouveaux** ont des réponses B2, mais **aucun comparateur B** ; ils ne sont pas notés comme victoire comparative. Deux nuances à revérifier : détails inconnus dans les comptes rendus, preuves CI et version réellement servie lors des publications. Les exports PDF restent privés.

@@ -34,5 +34,7 @@ jobs:
         run: node maturation/gouvernance/verifier-simulations.cjs
       - name: Vérifier le statut et les données d'évaluation A/B (aucun gain inventé)
         run: node maturation/gouvernance/verifier-evaluation-ab.cjs
+      - name: Contrôler l'arithmétique des résultats observés B/B2 et les réserves
+        run: node maturation/gouvernance/verifier-resultats-b2.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs

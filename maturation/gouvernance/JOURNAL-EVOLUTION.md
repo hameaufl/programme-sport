@@ -154,3 +154,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - **A, B et main inchangés** ; aucune opération Garmin. La PR n°9 reste en brouillon.
 - La CI du commit de travail `0023d046` réussit les contrôles de gouvernance, refonte, non-perte et exemples didactiques ; **aucune mesure réelle de B2 conversationnel**.
 - [RAPPORT-B2-2026-11-13.md](RAPPORT-B2-2026-11-13.md) trace les preuves et [GUIDE-ESSAI-B2-PRET.md](GUIDE-ESSAI-B2-PRET.md) donne les instructions à copier dans une conversation neuve. Visa Gardien d'activation toujours non acquis.
+
+## 13 novembre 2026 — Huit réponses B2 réellement observées
+- Réception en conversation privée d'un PDF B2 de **4 pages**, avec les 8 prompts ciblés et le SHA `0aca52ac999f3a579610edfa2106aa400518a3fc`. Aucun fichier PDF, lien privé ni transcription intégrale versé au dépôt public.
+- Mesure sur **6 demandes identiques** à l'ancien B : `1642` mots B contre `471` B2, soit **−71,3 %** ; extraction des messages hors amorçage. **Deux nouveaux scénarios** réussissent textuellement leurs refus, mais sans comparateur B.
+- Qualité manuelle non indépendante : aucun contournement évident des permissions dans les réponses ; réserves de précision sur données inconnues et preuves CI/version Web dans les réponses condensées. L'absence de traces d'outil Garmin ne prouve pas l'état distant.
+- Rapport anonymisé `RAPPORT-OBSERVE-B2-2026-11-13.md`, données agrégées `RESULTATS-B2-OBSERVES.json` et contrôle arithmétique `verifier-resultats-b2.cjs` ajoutés. Les scripts ne certifient pas les réponses du modèle.
+- **B, B2 et main restent figés ; aucune opération Garmin ni fusion**. Le visa Gardien reste à obtenir avant activation.

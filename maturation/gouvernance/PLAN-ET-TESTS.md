@@ -125,3 +125,11 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Branche `tests/coach-b2-concis` isolée à partir de B, deux protocoles modifiés uniquement ; aucun corrigé hérité de la branche de travail.
 - [x] CI de la branche de travail verte sur les huit exemples ciblés et les contrôles historiques.
 - [ ] Tests conversationnels B2 nouveaux, comparés à B dans des contextes indépendants ; aucun gain comportemental affirmé.
+
+## 13 novembre 2026 — Premier résultat B2 conversationnel
+- [x] Huit réponses B2 réellement observées, six comparables à B et deux nouvelles sans comparateur.
+- [x] Constat descriptif : **−71,3 %** de mots sur les six comparables, refus textuels maintenus et aucune nouvelle erreur majeure repérée.
+- [x] Vérificateur arithmétique des résultats anonymisés et tests de refus de faux comparateurs ou fausses autorisations.
+- [ ] Refaire **deux contre-tests** en conversation neuve : exhaustivité d'un compte rendu et preuves d'une publication réelle, sans écriture.
+- [ ] Soumettre les deux nouvelles demandes à B (si la comparaison exhaustive est souhaitée) et faire vérifier la notation par un évaluateur distinct.
+- [ ] Visa Gardien et consentement du propriétaire avant toute fusion.
