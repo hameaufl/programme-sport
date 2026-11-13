@@ -1,5 +1,11 @@
 # Passation multi-agents : état durable et reprise dans une autre conversation
 
+## Actualisation du 13 novembre 2026 — après le mini-lot n°1 et la revue Coach
+- `main` actuel : `e28b8cac98d20b78fd4835392b53afeeed18c234` après la [PR #10 fusionnée](https://github.com/hameaufl/programme-sport/pull/10), exclusivement documentaire. GitHub Pages a publié et vérifié sa version. **Le SHA `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4` mentionné dans l'état initial ci-dessous reste la base historique de l'audit et de A, pas la tête actuelle de `main`.**
+- Troisième source revue : `docs/COACH-MODE-OPERATOIRE.md` au SHA historique, **15 rubriques** (8 plausiblement courantes, 5 mixtes, 2 états datés dépassés). [Revue et arbitrages](REVUE-SEMANTIQUE-COACH.md) · [ancrages](REVUE-COACH-15-RUBRIQUES.json). **74/161 rubriques** qualifiées préliminairement ; **87** sans qualification. Aucune conformité phrase par phrase démontrée.
+- PR #9 maintenue en brouillon ; A/B/B2 non activées ; huit INC ouvertes ; aucun visa Gardien indépendant, aucune écriture Garmin ni suppression d'archive. Prochaine priorité : revue clause par clause COM-03 à COM-09, puis 87 rubriques encore non classées.
+
+
 **État initial au 13 novembre 2026.** L'état courant doit être relu sur GitHub à chaque nouvelle conversation. **Aucun visa d'activation n'a été accordé.**
 
 ## Branches et contrôle de version
