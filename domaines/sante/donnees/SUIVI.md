@@ -1,32 +1,28 @@
-# Suivi santé chronologique — modèle public et versionné
+# Suivi santé — conventions et trame des comptes rendus
 
-**Premier compte rendu réel consigné : séance de kiné du 4 novembre 2026 (retour reçu le 11 novembre).** Le propriétaire accepte la publication publique des informations de santé qu'il transmet au projet.
+Les comptes rendus effectivement reçus sont enregistrés dans `domaines/sante/donnees/rapports/AAAA/MM/<id>.md`, les ressentis par `seanceId` dans `domaines/sante/donnees/ressentis/seances/` et les événements datés dans `domaines/sante/donnees/evenements/`. Ce document donne la **trame de rédaction** ; il n'est pas un journal unique des activités.
 
-**Seul le Coach** renseigne les retours et la suite sportive ; **Maturation ne rédige jamais les comptes rendus** ni les programmes.
+**Le Coach** maintient les faits de Santé et les décisions sportives, en distinguant déclarations, hypothèses et avis professionnels. **Maturation** maintient les schémas et l'interface sans écrire de compte rendu personnel.
 
-## Équipement de reprise — événements datés
+## Trame pour une séance réellement confirmée
 
-## Modèle d'entrée (à compléter pour un retour effectivement reçu)
+### AAAA-MM-JJ — Activité liée à `seanceId`
 
-### AAAA-MM-JJ — activité / séance identifiée par `id`
-
-- **Prévu :** …
-- **Réalisé :** …
-- **Durée / distance :** …
-- **Sensations :** …
-- **Gêne / douleur éventuelle :** …
-- **Évolution après la séance / au lendemain :** …
-- **Récupération :** …
-- **Décision Coach :** maintien / réduction / augmentation / report / repos / attente
-- **Séances concernées :** …
-- **Pièce jointe Garmin si reçue :** `personnel/pieces-jointes/seances/<id>/realise/<fichier>`
-- **Source :** retour daté de l'utilisateur / document fourni.
+- **Prévu :** éléments de Planification, à comparer sans les recopier intégralement.
+- **Réalisé :** gestes et exercices explicitement confirmés, enregistrés dans Activités.
+- **Durée / distance :** chiffres réellement rapportés et unités.
+- **Structures sollicitées :** libellés anatomiques non vides dans Activités, sans diagnostic inventé.
+- **Sensations :** ressentis du propriétaire tels qu'il les décrit, rangés dans Santé.
+- **Gêne / douleur :** localisation, intensité et chronologie seulement si déclarées.
+- **Récupération :** faits observés ou inconnues explicites.
+- **Décision Coach :** maintenir, alléger, adapter, reporter, attendre ou demander des précisions, avec justification.
+- **Source :** retour daté du propriétaire ou document réellement reçu.
 
 ## Règles
 
-- Distinguer faits transmis, décisions d'entraînement et hypothèses.
-- Mettre à jour les champs `fait` et `sensations` **dans `personnel/programme.js`**, source de l'affichage du site.
-- Fichiers réels Garmin dans `pieces-jointes/`, jamais de lien fictif.
-- Aucun stockage local sur la page Mon Rythme, aucun champ à remplir.
-- Compte rendu utilisateur = demande d'action pour le Coach **dans l'échange**, sans requête supplémentaire « publie sur GitHub ».
-- **Aucune modification d'interface par le Coach**.
+- Aucune activité n'est marquée `fait:true` sur la seule base d'un planning.
+- Mettre à jour la réalisation dans `domaines/activites/donnees/seances/` et les sensations dans `domaines/sante/donnees/ressentis/seances/`. Ne pas recopier le rapport complet dans Planification.
+- Préserver la provenance et les nuances, sans déduire une blessure ou une causalité clinique.
+- Un document d'activité Garmin, s'il est réellement reçu, ne doit être cité qu'avec un fichier et une provenance vérifiés ; ne pas inventer de pièce jointe.
+- Les pages Web restent en lecture seule. Le Coach peut corriger un fragment local de restitution métier ; la navigation et la structure générale appartiennent à Maturation.
+- Après une modification métier demandée, contrôler les fichiers, les projections et la publication si elle a été déclenchée.

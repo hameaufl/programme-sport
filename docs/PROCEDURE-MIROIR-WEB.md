@@ -1,38 +1,43 @@
-# Miroir Web de Mon Rythme — procédure de livraison Coach / Maturation
+# Mon Rythme — procédure de mise à jour et de publication
 
-## Principe durable
+## Une source métier, des projections filtrées
 
-Les domaines métier de `domaines/*/donnees/` sont la **seule source de vérité**. Mon Rythme affiche les données pertinentes à travers des projections à liste blanche, sous `adaptateurs/projections/` et `contrats/publication-v1.json`. Le site ne reçoit jamais une copie libre des notes de Coaching ni des rapports de Santé. Le dépôt et le site standard sont publics ; une information intégrale dans Git n'est pas nécessairement autorisée dans la page.
+Les seuls faits canoniques se trouvent dans les quatre domaines `domaines/*/donnees/`. `adaptateurs/projections/` produit les sorties autorisées par `contrats/publication-v1.json`, sans recopier les journaux Coaching ni les rapports Santé dans le site. Le dépôt et la publication standard restent publics.
 
-**Un commit GitHub ne prouve pas une publication réussie.** La réussite de GitHub Actions et le contrôle de version de la page publiée sont deux étapes distinctes.
+**Un commit GitHub ou un build local réussi ne suffit pas à prouver que la publication est visible.**
 
-## Procédure à chaque nouveau fait métier
+## Procédure de livraison
 
-1. **Lire `main`, puis écrire les faits confirmés** dans Planification, Activités, Santé ou Coaching uniquement selon leur nature. Réviser `orientation.json` si l'orientation ou une vigilance change. Respecter les hypothèses et inconnues ; ne jamais créer une séance réalisée ou un diagnostic par déduction.
-2. **Préparer un changement cohérent** et si possible **un seul commit** regroupant les fichiers métier, afin de n'avoir qu'une exécution de publication à vérifier. Ne pas pousser en parallèle une succession de commits pour les mêmes retours : le workflow annule volontairement les exécutions précédentes.
-3. **Vérifier la compatibilité des sources** avant commit, puis lancer :
-   - `node scripts/verifier-site.cjs`
-   - `node scripts/verifier-changements.cjs`
-   - `node scripts/construire-site.cjs`
-   - `node scripts/verifier-miroir-web.cjs`
-   - `node maturation/architecture/verifier-publication.cjs`
-   - `MON_RYTHME_POLITIQUE=prive node scripts/construire-site.cjs` suivi de `node maturation/architecture/verifier-publication-prive.cjs` pour l'absence de fuite.
-4. **Contrôler la correspondance vue/source :** calendrier depuis Planification et Activités ; compteurs et repères datés depuis Santé ; « Le cap du Coach » depuis `orientation.json` filtré ; équipement depuis `equipements.json` filtré. Si le rendu actuel consomme déjà correctement les projections, **ne pas modifier de HTML**.
-5. **Pousser et contrôler GitHub Actions** « Publier Mon Rythme » pour le SHA publié. Vérifier **build = success**, **deploy = success** et le contrôle final de version. Le workflow compare la propriété `buildVersion` servie sur `data/index.json` au préfixe du SHA de la publication. Les pages sont disponibles à <https://hameaufl.github.io/programme-sport/>.
-6. **Informer clairement :** « données enregistrées et site publié » seulement si la publication est confirmée ; sinon « données enregistrées, publication en échec / en cours / non confirmée », avec cause et suite à donner. Ne jamais confondre statut du dépôt et affichage public.
+1. Lire le `main` courant et les données pertinentes. Appliquer uniquement les faits, demandes et décisions confirmés : Planification pour le prévu, Activités pour le réalisé, Santé pour les ressentis/rapports et Coaching pour les objectifs/stratégie. Ne pas créer un diagnostic ni une activité par déduction.
+2. Examiner les changements et leurs identifiants, regrouper si possible les fichiers d'une même demande dans une livraison cohérente, et ne pas effacer de source métier.
+3. Exécuter les contrôles adaptés :
+   ```sh
+   node scripts/verifier-site.cjs
+   node scripts/verifier-changements.cjs
+   node maturation/architecture/verifier-portabilite.cjs
+   node maturation/architecture/verifier-frontieres.cjs
+   node scripts/construire-site.cjs
+   node scripts/verifier-miroir-web.cjs
+   node maturation/architecture/verifier-publication.cjs
 
-## Contrôle systématique des structures sollicitées
+   MON_RYTHME_POLITIQUE=prive node scripts/construire-site.cjs
+   node maturation/architecture/verifier-publication-prive.cjs
+   ```
+   Reconstruire la sortie standard avant une vérification de publication standard si nécessaire.
+4. Contrôler la **fidélité des projections** : calendrier depuis Planification/Activités ; comptes de Santé depuis les faits confirmés ; orientation Coaching filtrée ; équipements disponibles uniquement. Lorsque le rendu est correct, ne pas modifier les pages.
+5. Après un push ou une fusion qui déclenche `.github/workflows/publier-pages.yml`, vérifier les étapes **build**, **deploy** et **contrôle final de `buildVersion`** sur `data/index.json` au SHA concerné. Le site est à <https://hameaufl.github.io/programme-sport/>.
+6. Informer le propriétaire de ce qui est enregistré, de ce qui est réellement publié et de tout contrôle non terminé. Ne jamais présenter une projection locale comme une page déjà servie.
 
-À **chaque activité sportive réellement confirmée**, le Coach doit remplir dans `domaines/activites/donnees/seances/AAAA/MM/<id>.json` le tableau non vide `structuresSollicitees`, même pour un test sur tapis, une séance de kiné ou une activité hors cycle. Le champ vient de l'analyse des mouvements déclarés, pas d'une donnée clinique mesurée. Pour les gestes inconnus, une mention explicite « À préciser par le Coach » vaut mieux qu'une liste anatomique inventée. Le détail « Mon programme » doit afficher **Séance → Structures sollicitées → Sensations** avec les champs projetés.
+## Activités confirmées et Santé
 
-Les validations `domaines/activites/modele.cjs` et `scripts/verifier-site.cjs` rendent cette omission bloquante **avant** déploiement et comparent la projection aux activités canoniques. Toute écriture métier inclut aussi le contrôle de publication et de version servie. Checklist complète : `docs/COACH-MODE-OPERATOIRE.md`.
+Pour chaque activité réellement confirmée, `domaines/activites/donnees/seances/AAAA/MM/<id>.json` doit contenir un tableau `structuresSollicitees` **non vide**, composé de libellés anatomiques raisonnables fondés sur les mouvements connus. En cas d'insuffisance d'informations, compléter l'analyse du Coach plutôt que d'inventer un diagnostic.
 
-## Erreur évitée le 12 novembre 2026
+La page « Mon programme » présente « Séance », « Structures sollicitées » et « Sensations » suivant les champs confirmés et autorisés. Les validations du domaine et du site contrôlent l'intégrité de la projection.
 
-La ligne de titre d'un événement Santé doit commencer **exactement** par `### AAAA-MM-JJ — Titre`. Un titre tel que `### 2026-11-12 au soir — …` est invalide : le parseur attend le tiret immédiatement après la date et le build s'arrête avant la génération du site. Les nuances horaires se notent **dans le contenu de l'événement** et ne modifient pas le format canonique.
+Les événements Santé utilisent **exactement** le titre `### AAAA-MM-JJ — Intitulé`. Les heures ou qualificatifs complémentaires figurent dans le corps du fichier, sans modifier la séquence de date reconnue par le parseur.
 
-## Partage des rôles
+## Rôles et confidentialité
 
-Le **Coach** maintient les données, la stratégie et, si indispensable, les **seuls fragments locaux d'affichage métier** autorisés par `AGENTS.md` et `docs/ROLES.md`. **Maturation** maintient les modèles, adaptateurs, projections, politiques de publication, scripts, workflows et architecture visuelle générale. La demande explicite du propriétaire peut solliciter les deux rôles, en conservant leurs responsabilités distinctes.
+Le Coach est responsable des faits et de leur restitution métier, dans la limite d'un **fragment local d'affichage**. Maturation maintient l'interface générale, les contrats, modèles, projections et workflows. Une demande isolée « Mets-toi à jour » signifie **lecture seule**, sans commit ni écriture Garmin.
 
-La commande isolée « Mets-toi à jour » reste en lecture seule. Une demande d'actualisation du site explicite autorise la livraison de ce qui a été demandé. L'absence d'ordre Garmin précis interdit toujours toute écriture Garmin.
+`noindex` ne restreint pas l'accès à GitHub ou GitHub Pages. Ne publier que les champs explicitement autorisés ; aucune donnée privée, aucun secret et aucun identifiant de compte ne doivent être ajoutés aux projections.

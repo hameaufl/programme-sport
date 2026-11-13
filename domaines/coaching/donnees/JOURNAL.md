@@ -1,5 +1,8 @@
 # Journal du domaine sportif
 
+**Règle d'interprétation :** ce journal conserve des faits et décisions datés ; les consignes opérationnelles applicables sont dans `AGENTS.md` et `docs/COACH-MODE-OPERATOIRE.md`. Aucun récit ne confère de permission nouvelle de création, suppression ou planification Garmin.
+
+
 Historique des consignes et programmes, conservé pour reprise avec un Coach distinct. Les sorties réellement effectuées ne sont jamais inventées.
 
 ### 3. Adaptation du plan sportif
