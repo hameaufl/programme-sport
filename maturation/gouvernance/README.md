@@ -60,3 +60,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Résultat des deux contre-tests B2 en sessions neuves](RAPPORT-CONTRETESTS-B2-2026-11-13.md) : 9/9 et 5/8 critères à lecture stricte, aucune erreur bloquante et trois détails Web à compléter avant livraison réelle ; [observations anonymisées](CONTRETESTS-B2-OBSERVATIONS.json).
 
 - [Avis logique final du Gardien sur B2](GARDIEN-AVIS-LOGIQUE-B2-2026-11-13.md) ; [checklist Web](CHECKLIST-LIVRAISON-WEB-B2.md) et [dossier de décision à soumettre](DECISION-ADOPTION-B2-A-SOUMETTRE.md). **B2 candidat, activation bloquée.**
+
+- [Passation du chantier et prompt de reprise](PASSATION-CHANTIER.md) : état vérifié, preuves et restrictions pour une autre conversation.

@@ -181,3 +181,6 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - [Dossier à soumettre au propriétaire](DECISION-ADOPTION-B2-A-SOUMETTRE.md) : bénéfices mesurés, limites, blocages, retour arrière B et options, sans sollicitation implicite de fusion.
 - [État machine](ETAT-ADOPTION-B2.json), vérificateur et tests négatifs : les 8 INC ouvertes, l'audit sémantique et le visa manquants empêchent de présenter une activation comme obtenue. **Ce contrôle CI ne remplace pas une protection de branche GitHub ou un accord humain.**
 - Les branches A, B, B2 et `main` sont préservées, aucune opération Garmin ou déploiement Web n'a été exécutée.
+
+## 13 novembre 2026 — Passation vérifiée avant audit sémantique
+- Dépôt, PR brouillon, SHA main/A/B/B2 et CI antérieures contrôlés. Création de `PASSATION-CHANTIER.md` avec le prompt de reprise autonome. Aucun changement métier, Web ou Garmin.
