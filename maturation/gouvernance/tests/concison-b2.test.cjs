@@ -38,3 +38,10 @@ test("Doublon de scénario détecté",()=>{
 test("Nombre de mots compté de façon reproductible",()=>{
  assert.equal(countWords("Un deux  trois\nquatre"),4);
 });
+
+test("Un nouveau cas fictif spontané ne doit plus être requis à l'initialisation",()=>{
+ const c=coach.replace("ne pas inventer des scénarios fictifs","inventer librement des scénarios fictifs");
+ assert.throws(()=>verify(cases,output,c,protocol));
+ const p=protocol.replace("aucun exercice fictif improvisé","plein d'exercices fictifs improvisés");
+ assert.throws(()=>verify(cases,output,coach,p));
+});

@@ -22,3 +22,6 @@ Le rapport [RAPPORT-AB-2026-11-13.md](RAPPORT-AB-2026-11-13.md) attribue à B **
 - Vérifier statiquement les passages pertinents des protocoles et les exemples de réponse courte, avec cas négatifs qui doivent échouer si une limite de sûreté disparaît.
 - Reproduire des cas ciblés sur **B figé versus B2**, dans des conversations séparées, en gardant à l'aveugle les attentes internes ; calculer la longueur des réponses **hors initialisation** et noter les pertes de sens.
 - **Annulation simple** : B de référence reste figé sous `tests/coach-b-coordinateur` au SHA `c92d5a7`. La branche B2 peut être abandonnée sans rien changer à B, A ni `main`.
+
+## Précaution d'équité ajoutée
+La branche B2 utilisée en test doit être créée à partir du **commit B de référence**, par application des deux seuls protocoles modifiés. La branche de travail, qui héberge les réponses d'exemple, rapports et grilles, ne doit pas être la source directe de la branche B2 isolée. L'initialisation B2 ne doit pas créer spontanément de cas fictifs ou de longs rapports.

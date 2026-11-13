@@ -30,11 +30,11 @@ function verify(cases,outputs,coachProtocol,mainProtocol) {
  }
  const requiredCoach=[
   "Sortie proportionnée B2","contrôle qualité obligatoire","Ne pas choisir d'horaire ou de date incompatible",
-  "Les budgets sont **indicatifs**"
+  "Les budgets sont **indicatifs**","ne pas inventer des scénarios fictifs"
  ];
  const requiredProtocol=[
   "Restitution proportionnée B2","Ne pas confondre visibilité des contrôles et exécution des contrôles",
-  "ne jamais proposer un jour explicitement exclu"
+  "ne jamais proposer un jour explicitement exclu","aucun exercice fictif improvisé"
  ];
  for(const text of requiredCoach)if(!normal(coachProtocol).includes(normal(text)))throw Error("Garde-fou Coach manquant : "+text);
  for(const text of requiredProtocol)if(!normal(mainProtocol).includes(normal(text)))throw Error("Garde-fou protocole manquant : "+text);

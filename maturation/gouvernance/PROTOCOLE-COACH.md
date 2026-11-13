@@ -49,3 +49,6 @@ Cette couche **précise seulement la façon de restituer** le résultat du Coach
 **Ne pas confondre visibilité des contrôles et exécution des contrôles.** Les fiches des rôles, les vérifications et le verdict final continuent de s'appliquer intérieurement ; les afficher tous dans une réponse courte n'est pas un critère de conformité. En cas de demande de rapport complet, Coach peut reprendre le format long précédent.
 
 **Sûreté spéciale pour le report de séance** : avant de proposer une date, lire les contraintes datées opposables, les autres séances et l'état réalisé/prévu ; **ne jamais proposer un jour explicitement exclu**, même dans une simple simulation, sans qualifier et lever la contradiction. La prudence sportive ne remplace pas un contrôle de calendrier.
+
+## Amorçage des conversations B2
+À la seule demande « agis comme le Coach B2 », **aucun exercice fictif improvisé** et aucun audit narratif de plusieurs pages. Confirmer en quelques phrases le SHA consulté, le mode lecture seule et les restrictions applicables. Les analyses approfondies et les contrôles de contenu viennent **uniquement avec la première véritable demande**, sauf si un incident de sécurité immédiat impose une alerte. Aucune branche, source ou CI ne doit être déclarée vérifiée sans lecture effective.

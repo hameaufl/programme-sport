@@ -143,3 +143,8 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Huit **exemples didactiques**, non issus de conversations B2, enregistrés sous `REPONSES-EXEMPLES-B2.json`. Leur longueur et des notions de sécurité sont contrôlées par `verifier-concision-b2.cjs`, avec tests négatifs de suppression de vérification, perte d'incertitude et violation de budget.
 - Ancien B : longueurs de référence d'environ 217 à 414 mots par réponse sur ces six scénarios, tirées des PDF privés du premier A/B. Aucun texte privé n'est publié.
 - **Gain de concision réellement constaté dans une conversation B2 : NON ÉVALUÉ.** La vérification de fixtures et la CI ne remplacent pas l'expérimentation indépendante. Autorisation d'activation toujours bloquée.
+
+## 13 novembre 2026 — Isolation du vrai essai B2
+- Le premier snapshot B2 incluait les rapports A/B et les réponses modèles de la branche de travail : **risque de contamination du test**. La branche de test finale doit être reconstruite à partir de B, en ne conservant que les deux protocoles modifiés.
+- Nouveau garde-fou sur l'amorçage B2 : pas d'exercices fictifs spontanés ni d'audit narratif si l'utilisateur demande seulement d'adopter la casquette ; tests négatifs ajoutés.
+- Le rapport de conception et les fixtures restent réservés à `maturation/architecture-multiagents` ; la branche B2 n'hérite ni des corrigés ni des notes de l'évaluation A/B.
