@@ -74,3 +74,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Revue de 26 ancrages restant à fiabiliser](REVUE-26-ANCRAGES.md) : 17 directs, 7 partiels, 1 insuffisant, 1 provenance REF-06 à arbitrer ; aucune fausse validation.
 
 - [Revue des 29 rubriques de ROLES](REVUE-SEMANTIQUE-ROLES.md) : 16 courantes à vérifier, 7 mixtes V1/V2, 6 anciennes ; avec REPRISE, 59/161 rubriques passées en revue, sans certification clause par clause.
+
+- [Troisième revue sémantique : 15 rubriques du mode opératoire Coach](REVUE-SEMANTIQUE-COACH.md), [ancrages précis](REVUE-COACH-15-RUBRIQUES.json) et tests négatifs : 8 courantes à vérifier, 5 mixtes, 2 états historiques datés. Avec REPRISE et ROLES, **74/161** rubriques qualifiées préliminairement. Premier mini-lot documentaire fusionné dans `main` via PR #10 ; PR #9 toujours en brouillon.
