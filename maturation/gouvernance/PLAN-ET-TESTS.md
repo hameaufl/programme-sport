@@ -157,3 +157,13 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Qualification définitive ou non-applicabilité justifiée de chaque INC-001 à INC-008 ; arbitrages et décisions tracées.
 - [ ] Avis du Gardien conforme aux règles de gouvernance avec limite d'indépendance explicitée.
 - [ ] **Accord explicite du propriétaire lié à une version/PR** pour toute fusion ; `main` reste hors de portée tant que non acquis.
+
+## 13 novembre 2026 — Audit sémantique et incohérences en cours
+- [x] Figer l'**inventaire historique exact de 161 rubriques** dans les 8 sources de `main`, distinguer l'en-tête expérimental donnant 162 dans le premier inventaire.
+- [x] Auditer la **pertinence apparente de 85 ancrages** et consigner les 12 sources de gouvernance nouvellement proposées, 13 références hors sujet et 13 imprécises.
+- [x] Instruire **INC-001 à INC-008 une par une**, avec sources aux lignes historiques, priorité proposée, limites et action de clôture, **sans visa inventé**.
+- [x] Ajouter des tests déterministes de présence/versions et de refus d'une clôture ou permission fictive.
+- [ ] Revoir **clause par clause**, notamment les 119 rubriques sans attribution directe, avant toute affirmation de couverture exhaustive.
+- [ ] Corriger les ancrages trompeurs dans la matrice, en distinguant expressément source métier historique et **nouvelle proposition de gouvernance** ; ne pas créer un faux antécédent dans `main`.
+- [ ] Soumettre les huit dossiers à une **validation Gardien effective/attestée** et solliciter l'arbitrage du propriétaire pour les questions de permission ; **aucune fermeture automatique**.
+- [ ] Après preuve, préparer une décision d'adoption B2 à confirmer ; **fusion `main` toujours non approuvée**.

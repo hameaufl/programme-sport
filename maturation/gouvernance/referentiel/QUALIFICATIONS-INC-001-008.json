@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_sha_main": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "audit_sous_casquette_gardien": "logique_non_independant",
+  "statut_global": "huit_dossiers_ouverts_aucun_visa_formel",
+  "autorisations_apportees": [],
+  "fusions_autorisees": false,
+  "garmin_ecriture_autorisee": false,
+  "dossiers": [
+    {
+      "id": "INC-001",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "ancienne_generation_FIT_abrogee_par_V2",
+      "priorite_documentaire_proposee": "La règle explicite Garmin MCP/V2 prévaut sur les automatismes historiques de FIT locaux ; les instructions FIT restent archives documentaires seulement.",
+      "risque_si_erreur": "Réinstaller un générateur FIT ou faire un envoi non autorisé.",
+      "arbitrage_et_autorite": "Maturation clarifie la supersession documentaire ; Gardien vérifie la cohérence ; propriétaire requis pour tout changement effectif de règle.",
+      "conditions_de_cloture": "Tracer la supersession dans l'index, vérifier l'absence de build FIT actif et un test de refus d'écriture Garmin non demandée ; visa requis.",
+      "preuves": [
+        {
+          "path": "AGENTS.md",
+          "ligne": 156,
+          "fragment": "Les sections historiques qui imposent de générer un FIT à chaque séance sont **abrogées**.",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L156"
+        },
+        {
+          "path": "AGENTS.md",
+          "ligne": 207,
+          "fragment": "FIT Workout de musculation",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L207"
+        }
+      ]
+    },
+    {
+      "id": "INC-002",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "sources_personnel_remplacees_par_quatre_domaines_V2",
+      "priorite_documentaire_proposee": "Les écritures métier sont dans les quatre domaines canoniques et non dans l'ancien dossier personnel/ ; le passé est conservé comme documentation.",
+      "risque_si_erreur": "Écriture dans un répertoire disparu, duplication de faits ou perte de provenance.",
+      "arbitrage_et_autorite": "Coach conserve les faits et les identifiants ; Maturation vérifie ports/tests ; Gardien valide les références de remplacement.",
+      "conditions_de_cloture": "Prouver le lien source ancienne → canonique V2, vérifier scripts de non-perte et absence d'écriture dans personnel/ ; visa requis.",
+      "preuves": [
+        {
+          "path": "AGENTS.md",
+          "ligne": 167,
+          "fragment": "Le dossier `personnel/` n'est plus une source de données.",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L167"
+        },
+        {
+          "path": "AGENTS.md",
+          "ligne": 169,
+          "fragment": "domaines/planification/donnees",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L169"
+        }
+      ]
+    },
+    {
+      "id": "INC-003",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "exception_HTML_metier_bornee_active",
+      "priorite_documentaire_proposee": "Coach peut toucher uniquement un fragment de rendu de faits métier déjà autorisé et nécessaire ; la structure, les modèles et le Web général restent à Maturation, malgré l'interdiction totale historique.",
+      "risque_si_erreur": "Coach dépasse son mandat et modifie une page générale, une projection ou un contrat de publication.",
+      "arbitrage_et_autorite": "Gardien examine le conflit, Maturation reste responsable du technique transverse ; propriétaire valide toute extension nouvelle.",
+      "conditions_de_cloture": "Conserver l'exception ciblée dans la matrice des droits et tester un changement HTML local autorisé et un changement global refusé ; visa requis.",
+      "preuves": [
+        {
+          "path": "docs/ROLES.md",
+          "ligne": 10,
+          "fragment": "**Autorisation permanente du propriétaire, sans demande répétée :**",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/ROLES.md#L10"
+        },
+        {
+          "path": "docs/ROLES.md",
+          "ligne": 117,
+          "fragment": "## Maturation — structure et interface",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/ROLES.md#L117"
+        }
+      ]
+    },
+    {
+      "id": "INC-004",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "nom_Garmin_relie_objectif_actif_regle_recente",
+      "priorite_documentaire_proposee": "Le nom définitif dépend de l'objectif/phase actuels, sans marque du site ni suffixe technique ; conserver les anciens noms comme historique et ne jamais renommer rétroactivement sans demande explicite.",
+      "risque_si_erreur": "Faire persister une ancienne marque, annoncer une métadonnée Web non vérifiée ou changer des modèles Garmin sans accord.",
+      "arbitrage_et_autorite": "Coach propose un nom à partir des sources canoniques, Gardien documente supersession, propriétaire arbitre les nouveautés nécessitant accord.",
+      "conditions_de_cloture": "Qualifier la règle ancienne comme remplacée, vérifier un modèle réel seulement dans une opération Garmin expressément autorisée ; visa requis.",
+      "preuves": [
+        {
+          "path": "AGENTS.md",
+          "ligne": 6,
+          "fragment": "Ne jamais mettre « Mon Rythme »",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L6"
+        },
+        {
+          "path": "AGENTS.md",
+          "ligne": 44,
+          "fragment": "« Mon Rythme - Renfo A (corrigé) »",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L44"
+        }
+      ]
+    },
+    {
+      "id": "INC-005",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "exception_nettoyage_intermediaire_conditionnelle_mais_risque_eléve",
+      "priorite_documentaire_proposee": "Le texte récent décrit une exception très étroite à l'interdiction de suppression, pour une copie non conforme créée dans la même opération, identifiée et non utilisée, après version conforme relue. Ce chantier ne confère AUCUNE permission Garmin réelle.",
+      "risque_si_erreur": "Supprimer un modèle historique, planifié, utilisé ou mal identifié ; confondre nettoyage du modèle et suppression du calendrier.",
+      "arbitrage_et_autorite": "Gardien doit explicitement arbitrer la portée entre les deux textes ; tout appel réel destructif reste soumis à autorisation propriétaire précise d'action/date/cible.",
+      "conditions_de_cloture": "Revue documentaire détaillée, cas positifs/négatifs sans action distante, traçage du statut de chaque preuve et autorisation avant toute suppression. Ne pas clore sur la seule interprétation logique.",
+      "preuves": [
+        {
+          "path": "AGENTS.md",
+          "ligne": 39,
+          "fragment": "autorisé par le propriétaire à supprimer automatiquement",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L39"
+        },
+        {
+          "path": "adaptateurs/garmin/MCP.md",
+          "ligne": 51,
+          "fragment": "ne pas supprimer le modèle inexact sans demande explicite",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/adaptateurs/garmin/MCP.md#L51"
+        }
+      ]
+    },
+    {
+      "id": "INC-006",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "chronologie_de_seances_et_etats_mouvants",
+      "priorite_documentaire_proposee": "Les états datés successifs du Renfo sont des instantanés du contexte ; seule la source Planification actuelle et les décisions réellement actives permettent de conclure sur une séance future.",
+      "risque_si_erreur": "Reporter une séance sur une date obsolète, effacer des archives ou inventer l'état du calendrier.",
+      "arbitrage_et_autorite": "Coach vérifie les données canoniques actuelles et décisions ; Gardien qualifie le statut des instantanés ; propriétaire arbitre les adaptations réelles.",
+      "conditions_de_cloture": "Prouver le lien archive/plan courant, distinguer prévu/réalisé, vérifier la date et la récupération au moment de chaque demande réelle ; pas de clôture globale intemporelle.",
+      "preuves": [
+        {
+          "path": "docs/COACH-MODE-OPERATOIRE.md",
+          "ligne": 48,
+          "fragment": "Le seul Renfo actif est",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/COACH-MODE-OPERATOIRE.md#L48"
+        },
+        {
+          "path": "docs/COACH-MODE-OPERATOIRE.md",
+          "ligne": 52,
+          "fragment": "la seule séance Renfo active",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/COACH-MODE-OPERATOIRE.md#L52"
+        }
+      ]
+    },
+    {
+      "id": "INC-007",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "migration_images_PNG_vers_blocs_et_projection_V2",
+      "priorite_documentaire_proposee": "L'obligation pédagogique d'aide PNG demeure ; les plans V2 portent des blocs avec mouvementId, et la projection relie les images à partir de la banque, pas d'un champ ancien à recopier.",
+      "risque_si_erreur": "Omettre une illustration, injecter un média dans le plan, exposer des détails interdits sur le Web ou réintroduire etapes.",
+      "arbitrage_et_autorite": "Maturation vérifie banque/ports/rendu et modèle V2 ; Coach sélectionne les gestes et leur pédagogie ; Gardien confirme la portée de la migration.",
+      "conditions_de_cloture": "Test bloc→mouvementId→banque PNG→projection, contrôle du contrat public, cas d'exercice absent refusé, visa de cohérence ; ne pas modifier les sources historiques.",
+      "preuves": [
+        {
+          "path": "AGENTS.md",
+          "ligne": 229,
+          "fragment": "banque d'images PNG obligatoire",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L229"
+        },
+        {
+          "path": "adaptateurs/projections/lecture.cjs",
+          "ligne": 46,
+          "fragment": "const png=images.get(b.mouvementId)",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/adaptateurs/projections/lecture.cjs#L46"
+        }
+      ]
+    },
+    {
+      "id": "INC-008",
+      "statut": "ouvert_qualification_provisoire_non_independante",
+      "qualification_proposee": "distinction_mode_essai_read_only_versus_ecriture_metier_reelle",
+      "priorite_documentaire_proposee": "Une simulation de gouvernance sur une branche n'autorise aucune écriture. Les retours authentiques suivent la procédure opérationnelle et les permissions actuelles dans leur contexte, sans être confondus avec les tests fictifs.",
+      "risque_si_erreur": "Publier des faits inventés ou utiliser une règle de production pour pousser depuis une session de test.",
+      "arbitrage_et_autorite": "Coach qualifie la demande et son mode ; Gardien vérifie l'interprétation ; propriétaire fixe le périmètre d'une éventuelle opération réelle.",
+      "conditions_de_cloture": "Tester le mode lecture seule même sous demande de livraison, vérifier absence de commit/écriture Garmin et définir la règle de branche du prochain déploiement avec autorisation explicite.",
+      "preuves": [
+        {
+          "path": "docs/ROLES.md",
+          "ligne": 14,
+          "fragment": "commit/push",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/ROLES.md#L14"
+        },
+        {
+          "path": "AGENTS.md",
+          "ligne": 307,
+          "fragment": "« Se mettre à jour » — lecture seule",
+          "permalien": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L307"
+        }
+      ]
+    }
+  ]
+}

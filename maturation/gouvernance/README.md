@@ -62,3 +62,6 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Avis logique final du Gardien sur B2](GARDIEN-AVIS-LOGIQUE-B2-2026-11-13.md) ; [checklist Web](CHECKLIST-LIVRAISON-WEB-B2.md) et [dossier de décision à soumettre](DECISION-ADOPTION-B2-A-SOUMETTRE.md). **B2 candidat, activation bloquée.**
 
 - [Passation du chantier et prompt de reprise](PASSATION-CHANTIER.md) : état vérifié, preuves et restrictions pour une autre conversation.
+
+- [Audit sémantique préliminaire](AUDIT-SEMANTIQUE-PRELIMINAIRE.md) : **161 rubriques main / 162 dont 1 expérimentale** ; [inventaire historique](INVENTAIRE-RUBRIQUES-MAIN.json) ; [85 ancrages qualifiés](AUDIT-ANCRAGES-SEMANTIQUES.json), sans certification exhaustive.
+- [Instruction des huit incohérences](referentiel/INSTRUCTION-INC-001-008.md) : 16 fragments de preuve à SHAs fixes, priorités proposées et **8 dossiers encore ouverts** ; [relevé structuré](referentiel/QUALIFICATIONS-INC-001-008.json).

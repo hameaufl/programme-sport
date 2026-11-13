@@ -35,3 +35,8 @@ La [revue documentaire du Gardien](REVUE-LOGIQUE-GARDIEN-2026-11-13.md) analyse 
 - **INC-008** : les scénarios de la branche doivent rester sans écriture ; les opérations métier réelles suivent leurs autorisations et leurs sources canoniques.
 
 **État des huit entrées : ouvert ; priorité interprétable mais sans visa de clôture ni preuve comportementale complète.** Toute activation globale demeure bloquée en attendant les preuves, les contrôles et l'approbation explicite du propriétaire avant fusion.
+
+## 13 novembre 2026 — Qualification complémentaire fondée sur les sources, sans clôture
+Les **huit dossiers ont désormais une fiche individuelle** sous [INSTRUCTION-INC-001-008.md](INSTRUCTION-INC-001-008.md), avec **deux fragments de texte par dossier** à des lignes des fichiers `main` au SHA `d88a202`. Les qualifications, risques, autorités, règles prioritaires proposées et preuves de clôture figurent dans [QUALIFICATIONS-INC-001-008.json](QUALIFICATIONS-INC-001-008.json).
+
+**Cette instruction est un examen logique non indépendant** ; elle ne modifie aucun des statuts `à qualifier` ou `à vérifier` du tableau ci-dessus. Le conflit INC-005 sur les suppressions Garmin conserve son besoin d'arbitrage strict. INC-006 n'autorise aucune déduction d'un état actuel depuis un instantané passé. **Les huit dossiers restent ouverts et la fusion/activation demeure bloquée.**

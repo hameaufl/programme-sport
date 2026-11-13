@@ -40,5 +40,9 @@ jobs:
         run: node maturation/gouvernance/verifier-contretests-b2.cjs
       - name: Vérifier que B2 reste un candidat non activé et sans fausse approbation
         run: node maturation/gouvernance/verifier-porte-adoption-b2.cjs
+      - name: Contrôler les 161 rubriques historiques et les anomalies des 85 références
+        run: node maturation/gouvernance/verifier-audit-semantique.cjs
+      - name: Vérifier les huit qualifications INC et leurs preuves historiques
+        run: node maturation/gouvernance/verifier-qualifications-inc.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs

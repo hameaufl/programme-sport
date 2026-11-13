@@ -184,3 +184,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 
 ## 13 novembre 2026 — Passation vérifiée avant audit sémantique
 - Dépôt, PR brouillon, SHA main/A/B/B2 et CI antérieures contrôlés. Création de `PASSATION-CHANTIER.md` avec le prompt de reprise autonome. Aucun changement métier, Web ou Garmin.
+
+## 13 novembre 2026 — Audit sémantique préliminaire et instruction des huit incohérences
+- Comparaison de `main` à `d88a202` avec l'inventaire de la branche : **161 rubriques historiques** H2–H4 dans les huit fichiers de `main`, **162** dans l'inventaire antérieur qui inclut le préambule expérimental supplémentaire de `AGENTS.md`. Nouveau catalogue `INVENTAIRE-RUBRIQUES-MAIN.json`.
+- Détection documentée sur les **85 attributions** : **12** familles de gouvernance nouvelle sourcées à tort comme règle Garmin `AGENTS.md#L3`, **13** ancrages hors sujet, **13** citations imprécises, **47** seulement plausibles et non certifiées. **42/161** rubriques ont un lien d'attribution direct ; 119 sans lien direct, sans que cela mesure la couverture sémantique.
+- [Anomalies documentées](AUDIT-ANCRAGES-SEMANTIQUES.json) sans réécrire la matrice originale : correction de provenance et examen de chaque clause restant nécessaires avant tout visa.
+- [Huit dossiers INC](referentiel/INSTRUCTION-INC-001-008.md) instruits avec **16 fragments vérifiables à des lignes du SHA initial**, priorité documentaire proposée, risque, autorité compétente et conditions de clôture ; **aucune entrée n'est clôturée et aucun droit supplémentaire n'est accordé**.
+- Deux vérificateurs CI contrôlent l'inventaire et la présence des preuves historiques, **pas leur interprétation sémantique autonome**. Pas de modification des domaines, des règles B2, de `main`, ni d'action Garmin.
