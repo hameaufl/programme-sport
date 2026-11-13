@@ -1,6 +1,6 @@
 "use strict";
 // Adaptateur sans effet de bord : prépare des décisions MCP, jamais d'écriture distante.
-// La source métier est Planification V2 (blocs), les IDs Garmin restent hors des domaines.
+// La source métier est Planification (blocs) ; les IDs Garmin restent hors des domaines.
 const crypto=require("node:crypto");
 const depots=require("../fichiers/depots.cjs");
 const modele=require("../../domaines/planification/modele.cjs");
