@@ -1,0 +1,1302 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_main_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "statut": "cartographie_non_destructive_sans_approbation_de_suppression",
+  "nombre_fichiers": 143,
+  "mode": "lecture_seule_sur_main_aucune_modification_metier",
+  "notes": [
+    "Noms de fichiers et empreintes git uniquement : aucun contenu de sante ni de conversation recopie.",
+    "Les catégories sont des propositions d'orientation, pas des jugements individuels de suppression.",
+    "Une suppression dans HEAD ne supprime pas les anciennes versions publiques dans Git ni les caches ; toute purge d'historique demande une operation specifique et l'accord du proprietaire."
+  ],
+  "fichiers": [
+    {
+      "path": ".github/workflows/publier-pages.yml",
+      "blob_sha": "5ac7357bb6b959a716e47a75c9fa01766b0b8bd1",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": ".github/workflows/verifier-refonte.yml",
+      "blob_sha": "b9c98be457e5b772614b27979c88f1287fa68b5a",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": ".nojekyll",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "AGENTS.md",
+      "blob_sha": "4e4f249f91860086d670434fcc58e35fff6e1307",
+      "categorie": "regle_active_et_historique_entremeles",
+      "action_proposee": "consolider_clauses_valables_puis_revue_gardien_et_proprietaire",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "README.md",
+      "blob_sha": "e4cb156f740e913eaf78135a30e4e4360b8a10ea",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/README.md",
+      "blob_sha": "56e22bed8893568516b3895b5d09aa593653d74e",
+      "categorie": "documentation_technique_a_preciser",
+      "action_proposee": "corriger_ancienne_terminologie_FIT_apres_revue",
+      "risque": "faible",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/fichiers/depots.cjs",
+      "blob_sha": "7b46fc0b3ac6502a147c6fbc0970b6f34a8585e4",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/fichiers/stockage.cjs",
+      "blob_sha": "f5b23cf5d47586dc248c05e138832e6f1de14068",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/garmin/MCP.md",
+      "blob_sha": "537b7fc124785d656332c7d01147adb2dfcd3b92",
+      "categorie": "regle_active_et_historique_entremeles",
+      "action_proposee": "consolider_clauses_valables_puis_revue_gardien_et_proprietaire",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/garmin/README.md",
+      "blob_sha": "0d3ab84cbbccbc0b96ec862ac01f5fc8d86733fd",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/garmin/mcp.cjs",
+      "blob_sha": "61e8c51923359bcb972f357d5b053ec1969753cc",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/projections/coaching.cjs",
+      "blob_sha": "3294c0c9317e96dcb81ccf5d6176a2cd928dca00",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/projections/lecture.cjs",
+      "blob_sha": "52e2973c6d5b019edcab2d62d47657c2c27e07ac",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "adaptateurs/web/medias.cjs",
+      "blob_sha": "2843c3b09c41ab1f92661ea3723c6e5e078cb114",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/README-assets.md",
+      "blob_sha": "bcf520ddac59f054f9fd2a762407766c4eeae18e",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/README.md",
+      "blob_sha": "e03d7d1504946a995ebd4d244e1c47ce77821ed7",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/archives/renfo/bird-dog.gif",
+      "blob_sha": "39fbd54b71f3cd41080c80ab9d2cb9e7ee0a0985",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/archives/renfo/dead-bug.gif",
+      "blob_sha": "dfffef09c073bc0c50869e970ceb9c14cd3f608d",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/archives/renfo/ouverture-genou.gif",
+      "blob_sha": "3685f9a5ff2a194761ca373e27c9a74c0cee2258",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/archives/renfo/pont-ballon.gif",
+      "blob_sha": "89653209ade47141b22f8c75e83d48dadf5bbbd8",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/archives/renfo/pont-sol.gif",
+      "blob_sha": "5db916406ba11b19d9364694d02da2858608a13c",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/composants/en-tete.cjs",
+      "blob_sha": "b5f28f7a56c1b6ffc79231bcdbca48fae9cb500c",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/pages/coach.html",
+      "blob_sha": "2fc435c5663d71c2f53d8cb7e4f5c4b2a3e432f5",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/pages/equipements.html",
+      "blob_sha": "a60814ba906845c22c3c9990a3876b94fdba2ce0",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/pages/index.html",
+      "blob_sha": "2689f4d2142fde5bd8bba37ff65d674c083c6d32",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/pages/sante.html",
+      "blob_sha": "762c7ceae3b2959ede13fab84c4a8bf0d0b82626",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/assets/renfo/banque.json",
+      "blob_sha": "551fd2b808df5ed344b86b083ee7d8d60f12330d",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/assets/renfo/png/bird-dog.png",
+      "blob_sha": "a421065c514d105e606d4b9559bc9e319909109e",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/assets/renfo/png/dead-bug.png",
+      "blob_sha": "a135760a0ec96155453ce6fd02ea0cd3594e8531",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/assets/renfo/png/ouverture-genou.png",
+      "blob_sha": "275cc67f4fc7191b2b5969f1cd1ca02143d832d8",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/assets/renfo/png/pont-ballon.png",
+      "blob_sha": "caff4fc48a3a7048114623635f0898591719ab2c",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/assets/renfo/png/pont-sol.png",
+      "blob_sha": "3a45872413e7dc0a256f30b10d2e3842ce9d3478",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/en-tete.js",
+      "blob_sha": "2fd6e559a95882424aea8ba48d17a556d9ec252c",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/favicon.svg",
+      "blob_sha": "ecfc656de4194a962f0a2a7c0ef5b8f50d654223",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/icon-192.png",
+      "blob_sha": "9c068a6a3f71c5e0be951ef199b3d235ebeda7be",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/icon-512.png",
+      "blob_sha": "8cf83e194655a761069a154dbfa35ea54f1efddf",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/manifest.webmanifest",
+      "blob_sha": "5ed84e451d40bbabe943b3846ff61e4d95f79d2e",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "addons/web/public/style-commun.css",
+      "blob_sha": "7d983e3aba2cdf7da4f5a4df16ade67240a35a32",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "contrats/DEPENDANCES.md",
+      "blob_sha": "57c5d832fb70d749a2ef822653049033652123f8",
+      "categorie": "contrat_courant",
+      "action_proposee": "conserver",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "contrats/PORTS.md",
+      "blob_sha": "a2bb449b7ba1037b567a4262a6ff107c32ff3554",
+      "categorie": "contrat_courant",
+      "action_proposee": "conserver",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "contrats/publication-prive-v1.json",
+      "blob_sha": "6d611214831062f4febdd4f43468c618ec9e98c2",
+      "categorie": "contrat_courant",
+      "action_proposee": "conserver",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "contrats/publication-v1.json",
+      "blob_sha": "7c601dc77fef4ce2a494053e884790dfcd57c35f",
+      "categorie": "contrat_courant",
+      "action_proposee": "conserver",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/COACH-MODE-OPERATOIRE.md",
+      "blob_sha": "5d3d23f5cc9f43480331bd2164d9f3cc4f7fa9a1",
+      "categorie": "regle_active_et_historique_entremeles",
+      "action_proposee": "consolider_clauses_valables_puis_revue_gardien_et_proprietaire",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/CONTEXTE.md",
+      "blob_sha": "c97e914142dda646d1c2b5dc122fbc9d1c004aef",
+      "categorie": "manuel_v1_v2_melange",
+      "action_proposee": "consolider_en_guide_v2_puis_proposer_archivage_de_l_ancien",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/CONTRAT-CONTINUITE-COACH.md",
+      "blob_sha": "2c856df3d8a3ffb3c05fdcc7507c903967953c2e",
+      "categorie": "regle_active_et_historique_entremeles",
+      "action_proposee": "consolider_clauses_valables_puis_revue_gardien_et_proprietaire",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "blob_sha": "67f65c77f2b29666ecf4e6b13d9cac74d6d9fc52",
+      "categorie": "preuve_migration_et_decision",
+      "action_proposee": "garder_traçabilite_archiver_separement_si_valide",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/JOURNAL.md",
+      "blob_sha": "7d3f3baaf0009925f6583c3db2dd9b1956952e8e",
+      "categorie": "preuve_migration_et_decision",
+      "action_proposee": "garder_traçabilite_archiver_separement_si_valide",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/PROCEDURE-MIROIR-WEB.md",
+      "blob_sha": "f13b74dee6cbce23b817d5ce55f2b87e0034616c",
+      "categorie": "procedure_technique_courante",
+      "action_proposee": "conserver",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/REPRISE.md",
+      "blob_sha": "128de02fedabc7dbd4ce6e5e97db4d02d929ffba",
+      "categorie": "manuel_v1_v2_melange",
+      "action_proposee": "consolider_en_guide_v2_puis_proposer_archivage_de_l_ancien",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "docs/ROLES.md",
+      "blob_sha": "104214e1e7e6930605cc7daa1b921f36f7042686",
+      "categorie": "regle_active_et_historique_entremeles",
+      "action_proposee": "consolider_clauses_valables_puis_revue_gardien_et_proprietaire",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/README.md",
+      "blob_sha": "e40bb0dfa60eedb473c962aa9a6e59064adc9ab4",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/activites/README.md",
+      "blob_sha": "a8edd1ef9933a7e4a30c6a5ef18ffbb1fc23cefc",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/activites/donnees/seances/2026/11/course-2026-11-11.json",
+      "blob_sha": "bf23a0348679169645c722857f2bf9ee9519db37",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/activites/donnees/seances/2026/11/course-tapis-2026-11-12.json",
+      "blob_sha": "7efc8822a71d87237ee1ba464c825798a4f26efb",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/activites/donnees/seances/2026/11/kine-2026-11-04.json",
+      "blob_sha": "8857b5e19dd27c36ccb2c08e41b483f7702f8e6c",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/activites/donnees/seances/2026/11/kine-2026-11-09.json",
+      "blob_sha": "00ac6e0356446f8013422b0b3608353bc83938d3",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/activites/modele.cjs",
+      "blob_sha": "bb19ccf9664f0b92024ad2e08bc6c845777ffcc6",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/README.md",
+      "blob_sha": "6740ddb3b401631d0ffe5cc80bdf086cc9bdef75",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/donnees/CONTEXTE-COACH.md",
+      "blob_sha": "3670f878132f5db12b7b5a838a4f590d3d098e09",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/donnees/DECISIONS.md",
+      "blob_sha": "42529afabada6c12de76f2259e02315a4b662d3f",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/donnees/JOURNAL.md",
+      "blob_sha": "e98fbe44bd2f9dbe7d7035552f5b5848a700db09",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/donnees/NOTES-CYCLE.txt",
+      "blob_sha": "28c1c50c9d2b6d5414006d1ff94df12b97600267",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/donnees/equipements.json",
+      "blob_sha": "f54fc10294fb6089938743a18ba86b5f3bccfc48",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/donnees/objectifs.json",
+      "blob_sha": "cbaf95c06aedcb7e35b0f30e4bf40dce1ed612ed",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/donnees/orientation.json",
+      "blob_sha": "ac80a980613255e28ef054a32045dc9eac78e276",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/coaching/modele.cjs",
+      "blob_sha": "2d51e4b955ba6da2f7e1b404e1479237f5d5971f",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/README.md",
+      "blob_sha": "17a5639c350a12855c4398b2a661a506b568caf9",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/README.md",
+      "blob_sha": "8be67fa974c714b1e874038aaf7681863c1d9eda",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json",
+      "blob_sha": "a6f821ad8e77541253a506feaa3b841a3eaf9f57",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json",
+      "blob_sha": "744246a83bc7f0d96a72fc31761386cc5d63aeaf",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-12.json",
+      "blob_sha": "de578d3b2ca3a80e588fd8f1f8ea0f329e15b4f7",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-14.json",
+      "blob_sha": "ce1dcd6c0b991d8f3dd959178f6bedb72a9f4e3e",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-16.json",
+      "blob_sha": "12bec62d4a758147c09ae5a1583197a45ff4a1c3",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-19.json",
+      "blob_sha": "c55afa1d9060430eec473e34802bdfe9d9222b48",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-21.json",
+      "blob_sha": "bee7db11f3ccfc68005057fa8052e3cf7594ca4d",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-24.json",
+      "blob_sha": "5cf031c719dbfbd8c82af1e25b7fb911a4b12c7d",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-26.json",
+      "blob_sha": "800da6910a673913986a964363a2a6899b3bdce0",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-11-28.json",
+      "blob_sha": "5bfac615d1b24de2d4926e85c4a990b6abbfe3d6",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-12-01.json",
+      "blob_sha": "fcb6291f45f5921c7c08c678e7baaeee577a942d",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-12-03.json",
+      "blob_sha": "18132485d31ce12077a484821a5c152ba41caf0c",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-12-05.json",
+      "blob_sha": "6554ec2b307e941c3e8e971c60713aefd6501ed0",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-12-08.json",
+      "blob_sha": "5d18af1257603972c721d779bed35018a1a61ab5",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-12-10.json",
+      "blob_sha": "c00dfdd32a0757cfd67d08b383a22572394f2af3",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/archives/2026-11-12/renfo-2026-12-12.json",
+      "blob_sha": "ad9ba3b34ef0e71699fb40fb43b7d1dcf061936b",
+      "categorie": "archive_metier_a_preserver",
+      "action_proposee": "maintenir_en_place_jusqu_a_plan_d_archivage_avec_preuves",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/cycle.json",
+      "blob_sha": "858a45c7ebf008c7073e20b8ed06d0e53967fceb",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/mouvements.json",
+      "blob_sha": "741d52dba7b85e7295d9ab52236d234cc26677c2",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-11.json",
+      "blob_sha": "27835ab3142553be4a90736a6b12d5b123599503",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-13.json",
+      "blob_sha": "5d71c1b9212b9fb5bc92d1713f5f3c71a1146343",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-16.json",
+      "blob_sha": "38fe5908ed8d92cab2ffcd12df36b3579177be95",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-18.json",
+      "blob_sha": "b8fe514efd0f4b3288741781cde3cefeaf74742e",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-20.json",
+      "blob_sha": "d17be1bfd8c13d8f512e814c52a897d441164df9",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-21.json",
+      "blob_sha": "5c300ce863dfffeb64694617acf2e3a34e2c697a",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-23.json",
+      "blob_sha": "72dd36f3102876677d2233b1b082a9cb31c2ed08",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-25.json",
+      "blob_sha": "bb641522c7c9f1b1c96324494b9717c94154f58c",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-27.json",
+      "blob_sha": "34ffedb8ad158f2b26e9837aa41bfdd938b704a7",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-28.json",
+      "blob_sha": "1692352021388bce22150ee02285444723b7ccdb",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-2026-11-30.json",
+      "blob_sha": "a47e54b0e477300da5e8a9a01ef835ff069507ae",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/course-tapis-2026-11-12.json",
+      "blob_sha": "1d578e605e989200112c2fb1a80bc981a84a0838",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/kine-2026-11-04.json",
+      "blob_sha": "5839b4bf1025d2a07767f02270c7b17b8e2b701e",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/kine-2026-11-09.json",
+      "blob_sha": "611aa6395d98c2e7eeef450060a2bf094ff87c05",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/kine-2026-11-18.json",
+      "blob_sha": "b10aac4825c8e2904124555b491ca3d90781602c",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/11/renfo-2026-11-13.json",
+      "blob_sha": "d1518903c67a52c028781c8391140b4aa20d04bf",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-02.json",
+      "blob_sha": "43f663b7486edefe5855be23d89ca242939273ed",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-04.json",
+      "blob_sha": "0c1eb8482151cd64351de446ec37948b29fd2220",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-05.json",
+      "blob_sha": "159423b1bb20fcec013b05c0ed9f37ca73973f0c",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-07.json",
+      "blob_sha": "9fc425c4663e3fbc2eeefd1ffde014603b5e10c2",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-09.json",
+      "blob_sha": "a2ab75f418be651250346b5a1522bce771f34117",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-11.json",
+      "blob_sha": "0dd1f4a10e41f09a6f776b394f125c43d83721c1",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-12.json",
+      "blob_sha": "abc07abb362e46a1062f654c00d142e73e02bfc7",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/donnees/seances/2026/12/course-2026-12-14.json",
+      "blob_sha": "3d3b4a5e0a94aec79afd41d74d159b9db1456e03",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/planification/modele.cjs",
+      "blob_sha": "c19277e2b0e3db4776d544c30c02b8f746d887ab",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/README.md",
+      "blob_sha": "a82fa34ad137f7107ec3d13a54a5fbfa94ae4ec0",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/PROFIL.md",
+      "blob_sha": "0e0f0eb9ad15913f4d03525e1a157b04ecfce590",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/SUIVI.md",
+      "blob_sha": "6be8bb04d911735d0a62c9087fadd7d5e10383d0",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/evenements/2026/11/2026-11-02-chaussures-running.md",
+      "blob_sha": "8ae66fb2c418a7e85171054c70d780adde850914",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/evenements/2026/11/2026-11-09-semelles-orthopediques.md",
+      "blob_sha": "49b844c6956b96c2916c9f27a50794e1ac5cc86d",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/evenements/2026/11/2026-11-11-premiere-sortie-course.md",
+      "blob_sha": "b411a747e87b6ecf6a6c41597eae4ebbc5ea4ad4",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/evenements/2026/11/2026-11-12-echange-chaussures-running.md",
+      "blob_sha": "b24301a627b5cd7e4d10f78e22bcfddd4e8278a1",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/rapports/2026/11/course-2026-11-11.md",
+      "blob_sha": "3a592710939198deddebc3a7f2d47ea922d62df1",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/rapports/2026/11/course-tapis-2026-11-12.md",
+      "blob_sha": "65d1ce1852f589213c519eace0325fe507a38cd1",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/rapports/2026/11/kine-2026-11-04.md",
+      "blob_sha": "9424755946c9b9e58bb9ab116329d252689ad2c2",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/rapports/2026/11/kine-2026-11-09.md",
+      "blob_sha": "a73a9bee5a890e250624937177a95234f0d6d449",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/ressentis/seances/2026/11/course-2026-11-11.json",
+      "blob_sha": "dd602202c3ea6d6fba4cac932159e1a6792800c5",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/ressentis/seances/2026/11/course-tapis-2026-11-12.json",
+      "blob_sha": "b7099a34ecc36a8174225880fe0e95aeb3a15047",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/ressentis/seances/2026/11/kine-2026-11-04.json",
+      "blob_sha": "e4173217d122a15dd89b69965aee78f8b80d47fa",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/donnees/ressentis/seances/2026/11/kine-2026-11-09.json",
+      "blob_sha": "bf4d5bd3713095d4db6fc79f15ff9874522786f3",
+      "categorie": "source_metier_canonique",
+      "action_proposee": "aucune_suppression_par_maturation",
+      "risque": "critique",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "domaines/sante/modele.cjs",
+      "blob_sha": "c386ebda8dd7091d02bf746d7cfe3c9980c95abf",
+      "categorie": "schema_modele_ou_guide_courant",
+      "action_proposee": "conserver_et_verifier_si_remplacement",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/AUDIT-SUIVI-SANTE.md",
+      "blob_sha": "0175946f5ae4cbb747d4e50fa009d149d3e1d50f",
+      "categorie": "preuve_ou_test_architecture_V2",
+      "action_proposee": "conserver_tant_que_CI_depend",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/ETAT.md",
+      "blob_sha": "abf082fd94cb5b59fca85f676506edd220faccfb",
+      "categorie": "preuve_migration_et_decision",
+      "action_proposee": "garder_traçabilite_archiver_separement_si_valide",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/PLAN.md",
+      "blob_sha": "6d5a2c427aa9a87cf864bdf00e344e3637971b3b",
+      "categorie": "preuve_migration_et_decision",
+      "action_proposee": "garder_traçabilite_archiver_separement_si_valide",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/README-personnel-historique.md",
+      "blob_sha": "f151e4eef6323bc457b0fde7a36055e700eaaa8b",
+      "categorie": "manuel_architecture_v1",
+      "action_proposee": "remplacement_documentaire_candidat_apres_controle_des_dependances",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/inventaire-initial.json",
+      "blob_sha": "b3cd24792285897f12f0123637923f13eef8fd3a",
+      "categorie": "preuve_ou_test_architecture_V2",
+      "action_proposee": "conserver_tant_que_CI_depend",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/verifier-frontieres.cjs",
+      "blob_sha": "8930d6ed2c2fc7ce663cced86233c40002a04fa0",
+      "categorie": "preuve_ou_test_architecture_V2",
+      "action_proposee": "conserver_tant_que_CI_depend",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/verifier-portabilite.cjs",
+      "blob_sha": "8898832bb75a511118fedd3c5caed5dfa064588c",
+      "categorie": "preuve_ou_test_architecture_V2",
+      "action_proposee": "conserver_tant_que_CI_depend",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/verifier-publication-prive.cjs",
+      "blob_sha": "72efd506ce74164b91926870c1f4dd8b53cec770",
+      "categorie": "preuve_ou_test_architecture_V2",
+      "action_proposee": "conserver_tant_que_CI_depend",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "maturation/architecture/verifier-publication.cjs",
+      "blob_sha": "a4d0ee74bdafb1993becda68a88a569a8fb565fd",
+      "categorie": "preuve_ou_test_architecture_V2",
+      "action_proposee": "conserver_tant_que_CI_depend",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "publication.txt",
+      "blob_sha": "00341d4e6a7765e4f72b8672b11702be9c330da9",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "scripts/construire-site.cjs",
+      "blob_sha": "d181f3ae1e7669bb04dff8bb18e6354deca1f440",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "scripts/donnees.cjs",
+      "blob_sha": "a6f4982aa83cd2e7e9aaad758d397a90dce1f89e",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "scripts/migration-preuve.json",
+      "blob_sha": "9977437518af53fbbb1af819aaf1bbb37433ce09",
+      "categorie": "preuve_migration_et_decision",
+      "action_proposee": "garder_traçabilite_archiver_separement_si_valide",
+      "risque": "eleve",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "scripts/verifier-changements.cjs",
+      "blob_sha": "db6996d92801059c711b21900878d7807ca2ef34",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "scripts/verifier-miroir-web.cjs",
+      "blob_sha": "d2822d21d7ba66b19539d980660b76c352c25918",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    },
+    {
+      "path": "scripts/verifier-site.cjs",
+      "blob_sha": "e6e30e4b0f2333252594042de3604e67587bc92e",
+      "categorie": "code_interface_media_tests_ou_support",
+      "action_proposee": "conserver_tant_que_dependances_non_revues",
+      "risque": "moyen",
+      "suppression_autorisee": false,
+      "dependances_verifiees": false
+    }
+  ]
+}
