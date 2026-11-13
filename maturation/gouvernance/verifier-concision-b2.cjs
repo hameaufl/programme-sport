@@ -36,8 +36,8 @@ function verify(cases,outputs,coachProtocol,mainProtocol) {
   "Restitution proportionnée B2","Ne pas confondre visibilité des contrôles et exécution des contrôles",
   "ne jamais proposer un jour explicitement exclu"
  ];
- for(const text of requiredCoach)if(!coachProtocol.includes(text))throw Error("Garde-fou Coach manquant : "+text);
- for(const text of requiredProtocol)if(!mainProtocol.includes(text))throw Error("Garde-fou protocole manquant : "+text);
+ for(const text of requiredCoach)if(!normal(coachProtocol).includes(normal(text)))throw Error("Garde-fou Coach manquant : "+text);
+ for(const text of requiredProtocol)if(!normal(mainProtocol).includes(normal(text)))throw Error("Garde-fou protocole manquant : "+text);
  return notes;
 }
 module.exports={verify,countWords};
