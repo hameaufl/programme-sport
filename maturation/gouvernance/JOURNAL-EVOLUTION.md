@@ -195,3 +195,7 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 ## 13 novembre 2026 — Correction du vérificateur sémantique après CI rouge
 - La première CI sur `7505f9a` a correctement signalé deux erreurs **dans les nouveaux tests documentaires** : une référence ancienne sur une ligne existante mais vide était classée absente (MAT-09), et un extrait de 11 caractères ne satisfaisait pas le seuil de preuve (INC-008). Ces liens restent signalés comme imprécis et les règles métier n'ont pas été modifiées.
 - Le contrôle distingue désormais **ligne vide** de **ligne hors borne** ; le fragment INC-008 est remplacé par un extrait plus long du même texte et de la même ligne. Nouvel essai CI requis avant clôture de la tâche.
+
+## 13 novembre 2026 — Provenance réelle de 12 nouvelles règles identifiée
+- Les douze liens de gouvernance vers le `AGENTS.md#L3` historique (nomenclature Garmin) ont une **provenance corrigée proposée, non encore appliquée** dans `PROVENANCE-12-REGLES-PROPOSEES.json`, fondée sur des lignes exactes de `CHARTE.md` ou `PROTOCOLE-COACH.md` au premier commit de branche `7a801695`.
+- [Corrigendum](PROPOSITION-CORRECTION-PROVENANCE.md) décrit la migration future de schéma et les tests à ajuster ensemble, **sans activer ces règles ni maquiller leur caractère nouveau**.

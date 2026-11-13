@@ -41,3 +41,6 @@ Audit sémantique des huit documents historiques et qualification des huit confl
 - [INSTRUCTION-INC-001-008.md](referentiel/INSTRUCTION-INC-001-008.md) : dossiers INC-001 à INC-008 analysés individuellement, sources vérifiées, qualifications **provisoires** et critères de clôture. **Huit entrées toujours ouvertes, aucune autorisation Garmin nouvelle**.
 - [QUALIFICATIONS-INC-001-008.json](referentiel/QUALIFICATIONS-INC-001-008.json) et vérificateurs CI prouvent l'existence de sources au SHA historique, **pas** la vérité de l'arbitrage logique ni un visa du Gardien.
 - **Suite non terminée :** revue sémantique clause par clause des sources, justification puis correction des ancrages, revue Gardien attestée, arbitrages requis et approbation propriétaire pour toute fusion.
+
+## Remédiation de provenance prête, non appliquée
+- [Proposition de correction de provenance](PROPOSITION-CORRECTION-PROVENANCE.md) et [12 sources initiales vérifiées](PROVENANCE-12-REGLES-PROPOSEES.json) : distinguer `source_historique = null` de la `source_proposition` de gouvernance. **Ne pas considérer les 12 anciennes lignes `AGENTS.md L3` comme correctement justifiées.** Les 13 autres liens hors sujet et 13 imprécis nécessitent également vérification. La matrice d'origine est conservée pour audit ; la correction n'est pas approuvée.

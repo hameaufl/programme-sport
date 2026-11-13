@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "statut": "proposition_de_remediation_non_validee",
+  "constat": "Douze règles nouvelles étaient associées à AGENTS.md ligne 3 de main (nommage Garmin). Leur vraie origine est la première proposition de gouvernance sur la branche expérimentale.",
+  "sourceIncorrecte": {
+    "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+    "path": "AGENTS.md",
+    "ligne": 3
+  },
+  "origineProposition": {
+    "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+    "agent": "Maturation",
+    "portee": "proposition expérimentale non active"
+  },
+  "corrections": [
+    {
+      "id": "COO-01",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/PROTOCOLE-COACH.md",
+        "ligne": 8,
+        "fragment": "Coach sélectionne à sa discrétion les spécialités métier nécessaires",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/PROTOCOLE-COACH.md#L8"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "COO-02",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/PROTOCOLE-COACH.md",
+        "ligne": 3,
+        "fragment": "pas** de sous-agents LLM indépendants",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/PROTOCOLE-COACH.md#L3"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "COO-06",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 47,
+        "fragment": "Aucune fusion dans `main`",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L47"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "REF-01",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 29,
+        "fragment": "décisions actives et historiques",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L29"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "REF-02",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 19,
+        "fragment": "signaler les incohérences",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L19"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "REF-03",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 29,
+        "fragment": "rend un avis tracé",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L29"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "REF-04",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 19,
+        "fragment": "pas d'application directe des changements",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L19"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "REF-05",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 32,
+        "fragment": "approbation explicite du propriétaire",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L32"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "QUA-01",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/PROTOCOLE-COACH.md",
+        "ligne": 10,
+        "fragment": "Contrôleur qualité",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/PROTOCOLE-COACH.md#L10"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "QUA-02",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 25,
+        "fragment": "décisions validées par le Gardien",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L25"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "QUA-03",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 25,
+        "fragment": "auto-validation exclusive",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L25"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    },
+    {
+      "id": "QUA-06",
+      "type": "proposition_nouvelle_gouvernance",
+      "source_historique_pertinente": null,
+      "source_proposition": {
+        "sha": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+        "path": "maturation/gouvernance/CHARTE.md",
+        "ligne": 31,
+        "fragment": "suspendre la validation",
+        "permalien": "https://github.com/hameaufl/programme-sport/blob/7a8016955cf74f312e40fc7b82bccca84020c9eb/maturation/gouvernance/CHARTE.md#L31"
+      },
+      "statut": "a_appliquer_apres_validation_d_audit"
+    }
+  ]
+}
