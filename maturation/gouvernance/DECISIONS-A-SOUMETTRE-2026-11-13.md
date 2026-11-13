@@ -51,3 +51,6 @@ Les dossiers **INC-001 à INC-008 demeurent tous ouverts**. Les preuves mécaniq
 ## Frontière de décision
 
 Le présent dossier marque ce qui **nécessite désormais un choix du propriétaire**, sans suspendre les revues non normatives qui seraient encore possibles. Ne déduire d'une approbation de la PR #11 **ni** l'option B sur la suppression Garmin, **ni** la requalification de `REF-06`, **ni** une approbation de la PR #9, **ni** une purge d'historique.
+
+## Mise à jour du 13 novembre 2026 — approbation et fusion de la PR #12 uniquement
+Le propriétaire a approuvé explicitement la fusion de la [PR #12](https://github.com/hameaufl/programme-sport/pull/12), effectuée par squash dans `main` au SHA `83cbe0dafabb9aa5ee291802181985e4c6da2153`. **Le point PR #12 présenté comme « approbation à obtenir » dans les versions antérieures est désormais clos.** Un seul fichier technique `README.md` modifié ; CI de refonte sans publication réussie. Le workflow Pages n'a pas été déclenché par la modification de ce seul fichier : ne pas affirmer un site redéployé. **Les décisions `INC-005`, `REF-06`, l'activation B2, les retraits d'archives et toute fusion de la PR #9 restent ouvertes et nécessitent une approbation distincte.**

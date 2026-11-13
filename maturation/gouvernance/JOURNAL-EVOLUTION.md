@@ -250,3 +250,8 @@ Les premiers workflows `push` ont échoué au contrôle `verifier-integrite-meti
 - Le [dossier INC-005](ETUDE-INC-005-SUPPRESSION.md) confronte autorisation conditionnelle historique et accord spécifique exigé par MCP et le contexte V2 ; 11 cas simulés et tests négatifs, aucune suppression. La limite de preuve non authentifiée du simulateur est signalée.
 - [Six pièces de vague 3](INDEX-PREUVES-VAGUE3.md) épinglées au blob et taille exacts, aucun contenu personnel recopié ; 17 scripts/workflows et 10 documents inspectés pour références littérales. Correction d'une empreinte mal retranscrite effectuée avant succès CI.
 - [Quinze rubriques V1 remplacées](REVUE-SUPERSESSION-15-V1.md) reliées à des preuves V2 candidates, sans considérer ces liens comme une certification de chaque clause. CI expérimental [réussi](https://github.com/hameaufl/programme-sport/actions/runs/43468153755). Zéro changement sur `main`, Garmin, données ou archives ; huit INC ouvertes.
+
+## 13 novembre 2026 — PR #12 fusionnée avec accord du propriétaire
+- La [PR #12](https://github.com/hameaufl/programme-sport/pull/12) de correction du README racine est fusionnée par squash dans `main` au SHA `83cbe0dafabb9aa5ee291802181985e4c6da2153` ; un seul chemin modifié `README.md`, aucun code, aucune donnée, aucune suppression ni nouvelle permission.
+- La [CI « refonte modulaire (sans publier) »](https://github.com/hameaufl/programme-sport/actions/runs/43466175077) avait réussi. Pas de workflow Pages constaté pour ce SHA : `README.md` n'est pas dans les chemins déclencheurs. Publication **non revendiquée** pour cette fusion.
+- PR #9 en brouillon, 8 INC ouvertes, `REF-06` et `INC-005` non arbitrées. Aucun accord pour une autre PR, Garmin, B2 ou la purge des archives.
