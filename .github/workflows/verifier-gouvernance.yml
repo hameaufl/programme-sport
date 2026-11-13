@@ -56,5 +56,7 @@ jobs:
         run: node maturation/gouvernance/verifier-clauses-coach.cjs
       - name: Contrôler les 161 rubriques historiques sans certifier les clauses
         run: node maturation/gouvernance/verifier-161-rubriques.cjs
+      - name: Contrôler les risques V1 des 26 candidats de provenance
+        run: node maturation/gouvernance/verifier-examen-26-ancrages.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs
