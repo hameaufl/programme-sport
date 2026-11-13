@@ -72,7 +72,7 @@ const docsOperationnels=["README.md","AGENTS.md","adaptateurs/README.md",
  "addons/web/README.md","addons/web/README-assets.md"];
 for(const doc of docsOperationnels){
  const contenu=read(doc);
- assert.ok(!/\\bV[12]\\b/.test(contenu),"Le document d'exploitation porte une numérotation de génération : "+doc);
+ assert.ok(!/\bV[12]\b/.test(contenu),"Le document d'exploitation porte une numérotation de génération : "+doc);
 }
 assert.ok(!read("scripts/construire-site.cjs").includes("MON_RYTHME_LEGACY"),
  "Le site ne doit pas proposer de sortie monolithique optionnelle");
