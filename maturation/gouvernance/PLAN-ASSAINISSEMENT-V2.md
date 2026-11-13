@@ -34,3 +34,8 @@ Il est possible d'alléger la lecture **avant** la suppression : utiliser [ETAT-
 La [revue des 30 rubriques de reprise](REVUE-REPRISE-30-RUBRIQUES.json) distingue règles V2 apparentes, segments historiques remplacés et mélanges à scinder. Ce diagnostic n'est **pas** une certification sémantique exhaustive de toutes les phrases.
 
 **Décision actuelle :** aucune suppression autorisée ; `main`, les branches A/B/B2 et Garmin inchangés ; PR #9 en brouillon.
+
+## 13 novembre 2026 — Résultat de la vague préparatoire (sans suppression supplémentaire)
+La première qualification des **161 rubriques historiques** est désormais complète au niveau des titres/rubriques : voir [revue des 87 restantes](REVUE-SEMANTIQUE-87-RUBRIQUES.md). Les **24 rubriques mixtes**, **5 V1 remplacées** et **4 états datés** de ce lot requièrent conservation des preuves et examen clause par clause avant remplacement ; les classes ne sont pas des verdicts de conformité.
+
+Après le mini-lot n°1 fusionné (PR #10), un [mini-lot n°2 en brouillon](https://github.com/hameaufl/programme-sport/pull/11) propose seulement **deux fichiers et quatre substitutions** de renvois documentaires V2. **Aucune fusion ni suppression n'est autorisée par cette fiche.** Les arbitrages INC-005/REF-06 restent décrits dans [DECISIONS-A-SOUMETTRE-2026-11-13.md](DECISIONS-A-SOUMETTRE-2026-11-13.md). Les archives et données métier ne sont pas touchées.

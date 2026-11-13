@@ -205,3 +205,11 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Arbitrer formellement, avec le propriétaire et le Gardien, le droit exact de suppression d'un intermédiaire et le réemploi éventuel d'une opération de renommage passée ; **aucune permission nouvelle**.
 - [ ] Préparer ultérieurement un mini-lot de consolidation des textes opérationnels Coach/MCP avec preuve de non-perte et accord explicite, sans détruire l'historique.
 - [ ] Revue préliminaire des 87 rubriques restantes et certification des clauses applicables ; huit incohérences du référentiel encore ouvertes.
+
+## 13 novembre 2026 — Inventaire 161/161 et préparation du mini-lot n°2
+- [x] Qualifier les 87 rubriques restantes (AGENTS 53, contrat Coach 14, Web 5, MCP 11, DEPENDANCES 4) ; **161/161 rubriques** répertoriées et ancrées, sans certification clause par clause.
+- [x] Recouper les 26 candidats d'ancrage avec l'état de leurs rubriques (4 mixtes, 1 V1 remplacée, STR-04 insuffisant, REF-06 à arbitrer). **Matrice expérimentale inchangée.**
+- [x] Rassembler des preuves techniques vérifiables pour INC-001/002/007/008, sans clore les huit INC.
+- [x] Préparer et tester la [PR #11](https://github.com/hameaufl/programme-sport/pull/11), deux textes opérationnels à 4 substitutions sans changement de droit, **brouillon non fusionné**.
+- [ ] Obtenir un accord du propriétaire sur **chacun** des deux fichiers PR #11 avant toute fusion et contrôle Pages.
+- [ ] Arbitrer INC-005 (exception de suppression Garmin) et la provenance REF-06, puis préparer les protocoles V2 de production avec test de non-perte et visa adapté. Ne pas fusionner PR #9 ni activer B2 sans autorisation distincte.

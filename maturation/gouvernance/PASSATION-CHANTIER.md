@@ -1,5 +1,12 @@
 # Passation multi-agents : état durable et reprise dans une autre conversation
 
+## Synthèse du 13 novembre 2026 — revue 161/161, provenance et mini-lot n°2
+- Source de travail expérimentale : 161/161 rubriques H2–H4 classées à titre de **premier passage**, sans certification sémantique de chacune des clauses. [87 nouvelles classifications](REVUE-SEMANTIQUE-87-RUBRIQUES.md) et [index exact](REVUE-87-RUBRIQUES-RESTANTES.json).
+- [26 ancrages recroisés](REVUE-CRITIQUE-26-ANCRAGES.md) : 4 candidats issus de rubriques mixtes V1/V2, 1 issu d'une procédure V1 remplacée, 1 `REF-06` sans source historique et 1 `STR-04` insuffisant ; **aucune correction de matrice validée**.
+- [Preuves techniques complémentaires INC-001/002/007/008](PREUVES-TECHNIQUES-INC-001-002-007-008.md) et tests négatifs, **huit INC toujours ouvertes**. [Projet d'index actif V2](PROPOSITION-INDEX-ACTIF-V2.md), non normatif.
+- Mini-lot n°2 préparé via [PR #11](https://github.com/hameaufl/programme-sport/pull/11) sur branche isolée : **2 fichiers et 4 lignes corrigées, CI refonte réussie, PR en brouillon NON FUSIONNÉE**. Nommage Garmin V2 et renvois obsolètes uniquement, sans modifier les permissions. `main` demeure `e28b8cac98d20b78fd4835392b53afeeed18c234` et PR #9 en brouillon.
+- [Dossier des décisions nécessitant l'accord du propriétaire](DECISIONS-A-SOUMETTRE-2026-11-13.md) : fusion éventuelle de PR #11 séparément, arbitrage de la portée INC-005, classement possible de REF-06 ; **aucun accord présumé**, aucune écriture Garmin, aucune adoption B2 ou fusion PR #9.
+
 
 ## Nouvelle étape du 13 novembre 2026 — analyse des conflits COM-03 à COM-09
 - [Revue ciblée](REVUE-CLAUSES-COACH-COM03-COM09.md) et [26 ancrages contrôlés](REVUE-CLAUSES-COACH-COM03-COM09.json) entre la source historique `d88a202` et les preuves du `main` `e28b8ca` : **13 alignements V2 documentaires, 6 instructions supplantées, 2 contradictions historiques, 3 arbitrages et 2 états Garmin non vérifiés à distance**. Cela ne porte pas le nombre de rubriques classées au-delà de **74/161** : il s'agit d'une analyse **à l'intérieur** de sept rubriques déjà comptées.
