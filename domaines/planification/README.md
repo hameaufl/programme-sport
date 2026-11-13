@@ -1,31 +1,17 @@
-# Planification — domaine métier autonome
+# Planification — prescriptions sportives
 
-Les fichiers `donnees/seances/AAAA/MM/<id>.json` décrivent uniquement les séances **prévues**, via des `blocs` structurés. `donnees/cycle.json` contient le début du cycle; `donnees/mouvements.json` les identifiants de mouvement et leurs titres métier. Aucun état réalisé, symptôme, PNG, chemin FIT ou information du navigateur ne doit figurer ici.
+Les séances prévues se trouvent dans `donnees/seances/AAAA/MM/<id>.json` et sont structurées en `blocs`. `donnees/cycle.json` définit le cycle et `donnees/mouvements.json` les mouvements référencés. Les identifiants restent stables.
 
-Les formats visibles (puces et durée) sont produits par `modele.cjs`. L'adaptateur Garmin MCP prépare ses opérations à partir des `blocs`, sans dépendre du Web. Aucun fichier d'entraînement local n'est généré ni publié ; toute création/programmation distante exige les dates explicitement demandées par l'utilisateur pendant la bêta. Toute séance `renfo` avec étirements se termine par ceux-ci, sans retour au calme supplémentaire. Les modifications de prescriptions sont du ressort du Coach; le modèle technique du ressort de Maturation.
+La planification ne détient **ni réalisation confirmée, ni sensations, ni rapport médical, ni document Garmin**. Les comptes rendus et ressentis appartiennent respectivement aux domaines Activités et Santé. Les prescriptions conservent les détails chiffrés (durées, séries, répétitions, repos, tempo) ; `modele.cjs` et les projections produisent les libellés destinés aux lecteurs.
 
-## 12 novembre 2026 — Premier nouveau Renfo
+## Séances prévues
 
-14 anciennes prescriptions sorties du calendrier, chacune conservée **intégralement** en archive sous `archives/2026-11-12/`. Une seule séance nouvelle prévue provisoirement le 14 novembre, non réalisée, et à faire valider avant tout appel d'écriture Garmin. Ne pas relancer automatiquement le cycle antérieur.
+La référence pour une séance est son fichier actif sous `donnees/seances/`. Une seule séance Renfo est actuellement présente dans la planification : `renfo-2026-11-13`, à côté des séances Course et Kiné. Les fichiers de prescription datés sous `archives/` sont conservés **comme données**, mais ne sont pas chargés dans le calendrier actif et ne déclenchent aucune recréation.
 
-## 12 novembre 2026 au soir — Rectification prioritaire du premier Renfo
+Pour le Renfo concerné, la mise en route libre de 4 minutes précède trois exercices et les étirements doux de 3 minutes clôturent le travail ; aucun bloc « retour au calme » distinct n'est ajouté lorsque les étirements sont déjà prévus. Ne pas considérer une séance prévue comme effectuée.
 
-Sur demande du propriétaire, le seul brouillon actif est déplacé du 14 au **12 novembre** (`renfo-2026-11-12`), sans être marqué réalisé ni créer de modèle Garmin. L'ancien fichier du brouillon 14 est archivé intégralement dans `domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json`. Mise en route dansée douce 5 min et étirements détaillés 3 min ; durée indicative 31–34 min. Les anciennes prescriptions archivées ainsi que les séances Course/Kiné et activités confirmées sont inchangées.
+## Garmin et Web
 
-## 12 novembre 2026 au soir — Nouveau report du premier Renfo
+`adaptateurs/garmin/mcp.cjs` prépare une signature à partir des blocs sans écrire sur le compte. Toute création, programmation, correction ou suppression Garmin nécessite une demande **explicite, précise et ciblée**. Lorsqu'un modèle Garmin est réellement confirmé, `nomEntrainementMontre` enregistre **son nom exact**, jamais un identifiant ou un nom supposé.
 
-La seule séance active est désormais `renfo-2026-11-13` (**vendredi 13 novembre**) au lieu du brouillon `renfo-2026-11-12`, conservé intégralement dans `domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json`. Échauffement libre de **4 min**, étirements doux de **3 min** sans vidéo fixée ; exercices et séries inchangés. Séance non réalisée et sans modèle Garmin créé. Une course existe déjà ce même jour et reste inchangée sous réserve d'un réexamen du confort à l'appui ; les archives et activités passées sont conservées.
-
-## 12 novembre 2026 — Nom exact de l'entraînement à charger
-
-Pour **toute séance associée à un modèle Garmin créé et relu**, enregistrer obligatoirement son nom textuel exact dans `nomEntrainementMontre` de la source Planification correspondante. La projection publique sous contrat `publication-v1.json` affiche alors le nom exact **dans le même titre que « Programme prévu »** : « Programme prévu · <nom> », sans seconde ligne ou paragraphe. Aucune référence chiffrée, aucun lien ni détail du modèle Garmin n'est publié ; le contrat privé n'expose pas ce nom. Le modèle canonique vérifie la validité du champ ; si aucun entraînement n'existe encore, **ne pas inventer de nom**. Les prescriptions restent intégrales dans les blocs métier et la programmation distante reste une action séparée soumise à autorisation.
-
-## RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)
-
-**Dernière consigne explicite du propriétaire :** lorsqu'une séance prévue est associée à un entraînement Garmin créé et vérifié, le nom `nomEntrainementMontre` doit être affiché **sur la même ligne et dans le même en-tête** que `Programme prévu`, avec le format exact **« Programme prévu · <nom exact du modèle Garmin> »**. Cas courant : **« Programme prévu · Mon Rythme - Renfo A »**. Ne pas créer de second paragraphe, cartouche, note ou ligne « Entraînement à charger sur la montre » : l'en-tête unique suffit. S'il n'existe pas de modèle Garmin confirmé, afficher simplement « Programme prévu » sans deviner de nom. Une séance déjà réalisée conserve le titre « Séance », sans faire passer un entraînement planifié pour une activité effectuée.
-
-Cette règle s'applique **systématiquement à toutes les séances prévues disposant d'un modèle Garmin**, pas seulement au Renfo. Conserver le nom réel vérifié en bibliothèque, les cinq lignes Renfo épurées, toutes les séries/répétitions/tempos/repos dans la prescription et Garmin, et l'absence de données Garmin sensibles sur le Web. Le contrôle CI doit tester **le même en-tête**, l'absence de paragraphe redondant, le cas sans modèle et le cas réalisé, puis vérifier la publication Pages. **Règle d'affichage prioritaire**, qui remplace les consignes antérieures proposant une ligne dédiée au-dessus des étapes.
-
-## 12 novembre 2026 — Contexte objectif dans le nom Garmin
-
-Le champ public `nomEntrainementMontre` est le **nom exact du modèle vérifié dans Garmin**, et non le nom du site. Le Coach détermine son préfixe lisible à partir de l'objectif principal en cours (`domaines/coaching/donnees/objectifs.json`) et de la phase (`orientation.json`), sans supposer de performance ni réutiliser un contexte périmé. Exemple actuel : **« Reprise - Renfo A »**, affiché sur la même ligne que « Programme prévu ». Les blocs métier, la projection minimaliste, le statut prévu et les contraintes de programmation restent inchangés.
+Le Web affiche « Programme prévu · nom » si ce nom est présent et confirmé, sinon « Programme prévu ». Les étapes Renfo y sont allégées à leurs noms, sans supprimer le moindre détail des blocs métier. Les informations sensibles et les données techniques Garmin ne doivent pas être publiées.

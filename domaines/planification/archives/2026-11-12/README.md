@@ -1,5 +1,5 @@
-# Anciennes prescriptions Renfo retirées du calendrier actif — 12 novembre 2026
+# Prescriptions datées conservées
 
-À la demande du propriétaire, les **14 séances Renfo prévues avant refonte Garmin** ont été retirées du calendrier actif. **Cette archive conserve les 14 fichiers JSON originaux intacts, blob pour blob**, y compris l'ancien Renfo du 14 novembre, et pas seulement une synthèse ou une référence à un commit historique.
+Ce dossier contient des fichiers de **données sportives** retirés du calendrier actif à la demande du propriétaire, ainsi que les propositions datées correspondant aux changements de séance. Ils sont conservés pour la traçabilité des décisions et la continuité de l'accompagnement.
 
-Source : branche `main`, commit `a7e17836671f14da1fb50477a1158b19cde867ba`, chemins d'origine `domaines/planification/donnees/seances/2026/{11,12}/renfo-AAAA-MM-JJ.json`. Chaque fichier archivé garde son nom exact dans ce dossier. Ne pas restaurer automatiquement ces prescriptions : elles sont remplacées provisoirement par une **seule nouvelle proposition le 14 novembre**, à valider avant toute opération Garmin.
+La planification réellement utilisée par le programme se trouve uniquement sous `../../donnees/seances/`. **Aucun fichier de ce dossier ne doit être automatiquement reprogrammé, présenté comme une séance active, converti en activité réalisée ou envoyé dans Garmin.** Les modifications sportives suivent les décisions actuelles du propriétaire et le mode opératoire Coach.
