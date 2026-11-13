@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "main_sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+  "source": "tree Git exact et comptage de chemins textuels, pas lecture de données personnelles",
+  "code_inspecte": [
+    ".github/workflows/publier-pages.yml",
+    ".github/workflows/verifier-refonte.yml",
+    "adaptateurs/fichiers/depots.cjs",
+    "adaptateurs/fichiers/stockage.cjs",
+    "adaptateurs/garmin/mcp.cjs",
+    "adaptateurs/projections/coaching.cjs",
+    "adaptateurs/projections/lecture.cjs",
+    "adaptateurs/web/medias.cjs",
+    "maturation/architecture/verifier-frontieres.cjs",
+    "maturation/architecture/verifier-portabilite.cjs",
+    "maturation/architecture/verifier-publication-prive.cjs",
+    "maturation/architecture/verifier-publication.cjs",
+    "scripts/construire-site.cjs",
+    "scripts/donnees.cjs",
+    "scripts/verifier-changements.cjs",
+    "scripts/verifier-miroir-web.cjs",
+    "scripts/verifier-site.cjs"
+  ],
+  "docs_inspectes": [
+    "README.md",
+    "AGENTS.md",
+    "docs/CONTEXTE.md",
+    "docs/ROLES.md",
+    "docs/REPRISE.md",
+    "docs/COACH-MODE-OPERATOIRE.md",
+    "docs/PROCEDURE-MIROIR-WEB.md",
+    "docs/CONTRAT-CONTINUITE-COACH.md",
+    "maturation/architecture/ETAT.md",
+    "maturation/architecture/PLAN.md"
+  ],
+  "nb_fichiers_techniques": 17,
+  "nb_docs": 10,
+  "nombre_pieces": 6,
+  "pieces": [
+    {
+      "path": "docs/DECISIONS.md",
+      "blob_sha": "67f65c77f2b29666ecf4e6b13d9cac74d6d9fc52",
+      "octets": 42269,
+      "categorie": "journal_decisions_historique",
+      "statut": "conserver_en_place",
+      "suppression_autorisee": false,
+      "deplacement_autorise": false,
+      "preuves_copies_dans_registre": false,
+      "references_litterales_trouvees_dans_17_fichiers_de_code": [],
+      "references_litterales_trouvees_dans_10_documents_inspectes": [
+        "AGENTS.md"
+      ],
+      "examen_externe_et_contenu_complet": "non_realise"
+    },
+    {
+      "path": "docs/JOURNAL.md",
+      "blob_sha": "7d3f3baaf0009925f6583c3db2dd9b1956952e8",
+      "octets": 50404,
+      "categorie": "journal_evolution_historique",
+      "statut": "conserver_en_place",
+      "suppression_autorisee": false,
+      "deplacement_autorise": false,
+      "preuves_copies_dans_registre": false,
+      "references_litterales_trouvees_dans_17_fichiers_de_code": [],
+      "references_litterales_trouvees_dans_10_documents_inspectes": [
+        "AGENTS.md"
+      ],
+      "examen_externe_et_contenu_complet": "non_realise"
+    },
+    {
+      "path": "maturation/architecture/ETAT.md",
+      "blob_sha": "abf082fd94cb5b59fca85f676506edd220faccfb",
+      "octets": 6847,
+      "categorie": "preuve_architecture",
+      "statut": "conserver_en_place",
+      "suppression_autorisee": false,
+      "deplacement_autorise": false,
+      "preuves_copies_dans_registre": false,
+      "references_litterales_trouvees_dans_17_fichiers_de_code": [],
+      "references_litterales_trouvees_dans_10_documents_inspectes": [],
+      "examen_externe_et_contenu_complet": "non_realise"
+    },
+    {
+      "path": "maturation/architecture/PLAN.md",
+      "blob_sha": "6d5a2c427aa9a87cf864bdf00e344e3637971b3b",
+      "octets": 3104,
+      "categorie": "plan_architecture_historique",
+      "statut": "conserver_en_place",
+      "suppression_autorisee": false,
+      "deplacement_autorise": false,
+      "preuves_copies_dans_registre": false,
+      "references_litterales_trouvees_dans_17_fichiers_de_code": [],
+      "references_litterales_trouvees_dans_10_documents_inspectes": [
+        "README.md",
+        "AGENTS.md"
+      ],
+      "examen_externe_et_contenu_complet": "non_realise"
+    },
+    {
+      "path": "scripts/migration-preuve.json",
+      "blob_sha": "9977437518af53fbbb1af819aaf1bbb37433ce09",
+      "octets": 453,
+      "categorie": "preuve_migration_technique",
+      "statut": "conserver_en_place",
+      "suppression_autorisee": false,
+      "deplacement_autorise": false,
+      "preuves_copies_dans_registre": false,
+      "references_litterales_trouvees_dans_17_fichiers_de_code": [],
+      "references_litterales_trouvees_dans_10_documents_inspectes": [],
+      "examen_externe_et_contenu_complet": "non_realise"
+    },
+    {
+      "path": "maturation/architecture/README-personnel-historique.md",
+      "blob_sha": "f151e4eef6323bc457b0fde7a36055e700eaaa8b",
+      "octets": 1566,
+      "categorie": "document_technique_v1",
+      "statut": "conserver_en_place",
+      "suppression_autorisee": false,
+      "deplacement_autorise": false,
+      "preuves_copies_dans_registre": false,
+      "references_litterales_trouvees_dans_17_fichiers_de_code": [],
+      "references_litterales_trouvees_dans_10_documents_inspectes": [],
+      "examen_externe_et_contenu_complet": "non_realise"
+    }
+  ],
+  "aucun_fichier_supprime": true,
+  "aucun_fichier_deplace": true,
+  "aucune_donnee_metier_dupliquee": true,
+  "statut": "index_preparatoire_non_exhaustif",
+  "arbitrage_proprietaire_pour_chaque_retrait": true
+}
