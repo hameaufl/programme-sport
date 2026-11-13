@@ -112,3 +112,10 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Notation si possible aveugle par un évaluateur distinct ; nouvelles conversations par scénario, prompts non vus et vérifications des preuves métier ; confirmation des effets externes si autorisée.
 - [ ] Réduction de la longueur de B sans perdre ses garde-fous, à proposer au Gardien avant application.
 - [ ] Décision du propriétaire sur la poursuite puis la fusion : **aucune permission acquise**.
+
+## 13 novembre 2026 — Itération ciblée B2
+- [x] Proposer une restitution courte/conditionnelle/justificative, avec contrôle qualité intact et vérification des dates/horaires.
+- [x] Documenter une revue logique Gardien **sans visa d'activation** et un retour arrière par conservation de la branche B.
+- [ ] Mesurer les réponses B2 réellement produites dans de nouvelles conversations, face aux réponses B existantes.
+- [ ] Tests automatiques de non-régression du référentiel, des permissions et des exemples de concision.
+- [ ] Aucun déploiement `main` sans validation formelle et approbation explicite.

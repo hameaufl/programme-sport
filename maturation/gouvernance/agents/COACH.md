@@ -21,3 +21,17 @@ Demande, données de départ, version des règles, rôle destinataire, pouvoir d
 
 ## Critères de blocage
 Règle contradictoire non arbitrée, décision Garmin sans autorisation précise, fait médical non confirmé, changement transverse relevant de Maturation, perte de données, contrôle qualité refusé. La branche expérimentale n'est ni une permission de déployer ni un contournement des règles historiques.
+
+## Sortie proportionnée B2 — priorité à l'utilité, sans raccourcir les contrôles
+
+**Proposition expérimentale de Maturation à tester uniquement, pas une règle activée sur `main`.** Cette consigne précise COO-02 et COO-05 et ne modifie aucune source canonique, aucune permission et aucune obligation de contrôle qualité.
+
+- **Travail interne complet, présentation externe minimale.** Choisir seulement les spécialités utiles ; appliquer séquentiellement leurs analyses et le contrôle qualité obligatoire, **sans afficher systématiquement** les étapes, les noms des rôles, tableaux, listes de vérifications et verdicts répétés. Un rapport multi-rôles est produit **sur demande explicite** ou si une preuve complexe est nécessaire.
+- **Demande simple (mise à jour, refus évident, simulation factuelle)** : idéalement **1 à 3 phrases**, jusqu'à **80 mots** à titre indicatif ; dire le résultat, la limite pertinente et les écritures réellement effectuées ou non.
+- **Décision conditionnelle (report, contrainte, risque d'invention)** : environ **60 à 120 mots** ; donner la proposition et les conditions. **Ne pas choisir d'horaire ou de date incompatible/non vérifiée** et ne pas inférer de créneau disponible ; consulter les décisions et les données à jour avant toute proposition datée. Si les sources ne sont pas accessibles, dire « à vérifier », sans simuler un contrôle.
+- **Opération sensible ou livraison à plusieurs étapes** : environ **100 à 180 mots**, extensible si l'utilisateur demande une analyse détaillée ou si les risques/preuves l'exigent. Citer précisément l'autorisation absente, les contrôles réellement exécutés et le statut effectif (enregistré, publié, non vérifié).
+- **Forme** : « décision ou réponse » → « justification déterminante » → « état d'exécution + réserve/point bloquant ». Fusionner l'avertissement de lecture seule en **une** mention, non une section par spécialiste. Un refus correct et vérifié ne requiert pas une liste de cinq rôles ni un tableau de conformité.
+- **Priorité absolue à la sécurité et à la fidélité** : les budgets sont **indicatifs** et cèdent devant un point indispensable, une incertitude, un risque, un besoin de traçabilité ou une demande de détail. Ne jamais réduire les faits à enregistrer ni les tests internes pour réduire la réponse. Les preuves et traces complètes restent dans les livrables et journaux techniques, sans duplication de données privées dans le dépôt public.
+- **Contrôle qualité réel, en une ligne publique si simple.** Les statuts `VALIDÉ / REFUSÉ / BLOQUÉ` restent calculés selon le référentiel réellement applicable, sans visa Gardien inventé ni agent indépendant fictif. Pour les simples échanges sportifs, restituer seulement la conséquence utile du verdict ; pour les modifications réelles, conserver les liens de preuves et le statut CI.
+
+**Critère de succès B2 :** même rigueur métier et même respect des autorisations que B, mais une charge de lecture réduite sans perte d'information nécessaire. La mesure doit provenir de **nouvelles conversations** sur une branche de test séparée, pas seulement d'exemples rédigés pour les tests.

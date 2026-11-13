@@ -131,3 +131,9 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Méthode limitée : une conversation par branche, dix scénarios **enchaînés**, évaluation non aveugle, scénario Gardien structurellement asymétrique. Ne pas assimiler les scores à un gain réel généralisable ni à un visa Gardien.
 - Correctif technique du dépouillement : le SHA B attendu était resté sur un commit de travail `c6f5b58` et non le **SHA de test réel `c92d5a7`** ; il est mis à jour, avec tests reprenant les vingt observations et cas de données manquantes. Le guide A/B précédemment corrompu (« undefined ») est rétabli.
 - **main inchangée, branches de test figées, aucune opération Garmin, aucune fusion, aucune activation de la gouvernance.**
+
+## 13 novembre 2026 — Proposition expérimentale B2, concision proportionnée
+- Suite au premier A/B privé (B `108/120` mais `10/20` en clarté contre `20/20` pour A), formulation d'un correctif sous **rôle Maturation** dans `PROPOSITION-B2-CONCISION.md`.
+- Deux seuls protocoles de restitution Coach concernés : `agents/COACH.md` et `PROTOCOLE-COACH.md`. Les contrôles en interne restent obligatoires ; trois niveaux de réponse : court, conditionnel, justificatif ; vigilance dates et créneaux non vérifiés.
+- Avis logique du Gardien documenté mais **non indépendant, visa d'activation BLOQUÉ**. Aucune règle du Gardien, aucune donnée métier, aucun adaptateur ni `AGENTS.md` n'est modifié.
+- Objectif : branche `tests/coach-b2-concis` séparée de B et tests ciblés ; mesurer la longueur sans masquer les incertitudes, non produire un faux test comportemental indépendant.

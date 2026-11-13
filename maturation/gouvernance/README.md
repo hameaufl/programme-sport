@@ -46,3 +46,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Audit anti-contournement](AUDIT-ANTI-CONTOURNEMENT.md) : sources épinglées au SHA initial, préambule expérimental figé et tests de falsification.
 
 - [Première comparaison A/B observée (10 scénarios)](RAPPORT-AB-2026-11-13.md) : rapport anonymisé, scores provisoires, limites méthodologiques, sans publication des PDF privés.
+
+- [Proposition expérimentale B2 concise](PROPOSITION-B2-CONCISION.md) : réponse proportionnée sans affaiblir les contrôles ; visa d'activation non acquis.
