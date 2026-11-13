@@ -1,5 +1,13 @@
 # Passation multi-agents : état durable et reprise dans une autre conversation
 
+
+## Nouvelle étape du 13 novembre 2026 — analyse des conflits COM-03 à COM-09
+- [Revue ciblée](REVUE-CLAUSES-COACH-COM03-COM09.md) et [26 ancrages contrôlés](REVUE-CLAUSES-COACH-COM03-COM09.json) entre la source historique `d88a202` et les preuves du `main` `e28b8ca` : **13 alignements V2 documentaires, 6 instructions supplantées, 2 contradictions historiques, 3 arbitrages et 2 états Garmin non vérifiés à distance**. Cela ne porte pas le nombre de rubriques classées au-delà de **74/161** : il s'agit d'une analyse **à l'intérieur** de sept rubriques déjà comptées.
+- Conclusion documentaire : `nomEntrainementMontre` en Planification est `Reprise - Renfo A` au SHA vérifié et le Web utilise un **titre unique** ; les anciens noms et encarts sont historiques. Ne pas inférer l'état réel Garmin Connect de GitHub.
+- Les permissions de **recréation/suppression d'intermédiaires Garmin** restent à arbitrer ; aucune autorisation Garmin nouvelle, aucun modèle distant relu ou modifié, huit INC ouvertes. `docs/COACH-MODE-OPERATOIRE.md` et `adaptateurs/garmin/MCP.md` sont **inchangés en production**. Le futur mini-lot de clarification comportementale exige une décision du propriétaire et une revue Gardien.
+- Vérificateur `verifier-clauses-coach.cjs`, tests de refus et étape CI ; contrôle de gouvernance réussi sur [exécution 43453819758](https://github.com/hameaufl/programme-sport/actions/runs/43453819758).
+
+
 ## Actualisation du 13 novembre 2026 — après le mini-lot n°1 et la revue Coach
 - `main` actuel : `e28b8cac98d20b78fd4835392b53afeeed18c234` après la [PR #10 fusionnée](https://github.com/hameaufl/programme-sport/pull/10), exclusivement documentaire. GitHub Pages a publié et vérifié sa version. **Le SHA `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4` mentionné dans l'état initial ci-dessous reste la base historique de l'audit et de A, pas la tête actuelle de `main`.**
 - Troisième source revue : `docs/COACH-MODE-OPERATOIRE.md` au SHA historique, **15 rubriques** (8 plausiblement courantes, 5 mixtes, 2 états datés dépassés). [Revue et arbitrages](REVUE-SEMANTIQUE-COACH.md) · [ancrages](REVUE-COACH-15-RUBRIQUES.json). **74/161 rubriques** qualifiées préliminairement ; **87** sans qualification. Aucune conformité phrase par phrase démontrée.
