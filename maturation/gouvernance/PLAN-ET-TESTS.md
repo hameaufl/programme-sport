@@ -192,3 +192,9 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Qualifier les 29 rubriques de `docs/ROLES.md` : 16 courantes à vérifier, 7 mixtes, 6 V1 remplacées.
 - [x] Protéger par CI la liste des anciennes prescriptions FIT, des chemins `personnel/` et des droits Coach HTML bornés.
 - [ ] Auditer phrase par phrase les obligations utiles des **59 rubriques qualifiées** et des **102 autres rubriques de la source historique** ; ni ces classes ni les tests ne prouvent la couverture sémantique complète.
+
+## 13 novembre 2026 — Revue Coach et état du premier mini-lot
+- [x] Fusionner sur autorisation explicite le mini-lot documentaire PR #10 : `docs/CONTEXTE.md` et `adaptateurs/README.md` sur `main` `e28b8cac98d20b78fd4835392b53afeeed18c234`, site publié et version vérifiée. Cette validation ne vaut pas adoption B2.
+- [x] Revoir les 15 rubriques du document Coach, classifier 8 courantes à confirmer, 5 mixtes et 2 états datés dépassés, avec lignes historiques et contrôles négatifs. **74/161 rubriques** qualifiées, **87 restantes**.
+- [ ] Auditer clause par clause les contradictions COM-03 à COM-09 (nom Garmin, emplacement du titre, nettoyage de modèles, états Renfo), sans nouvel ordre ni écriture Garmin.
+- [ ] Étendre la classification aux 87 rubriques restantes puis vérifier les clauses applicables des 161 rubriques. Les huit INC demeurent ouvertes, sans autorisation de fusion de la PR #9.
