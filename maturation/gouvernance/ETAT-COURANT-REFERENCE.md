@@ -1,6 +1,6 @@
 # État opérationnel de référence — lecture sans héritage V1
 
-**Statut : lecture documentaire proposée le 13 novembre 2026, pas une nouvelle norme activée.** Source opposable : `main` au SHA `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4`. Les règles historiques non révoquées restent applicables : **ce résumé ne les remplace pas**.
+**Statut : lecture documentaire proposée le 13 novembre 2026, pas une nouvelle norme activée.** Référence opérationnelle : `main` au SHA `e28b8cac98d20b78fd4835392b53afeeed18c234` après la fusion documentaire PR #10. Base historique de l'audit : `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4` ; les deux remplacements documentaires n'ont modifié ni les données ni les contrats. Les règles historiques non révoquées restent applicables : **ce résumé ne les remplace pas**.
 
 ## Où est la vérité courante ?
 
