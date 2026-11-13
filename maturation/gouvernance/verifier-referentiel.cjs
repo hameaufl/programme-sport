@@ -29,7 +29,7 @@ function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
     "Couverture présentée comme validée sans mise à niveau contrôlée du processus");
   const ids = data.attributions.map((x) => x.id);
   requireTrue(duplicates(ids).length === 0, "IDs d'exigences dupliqués");
-        matrixText.split(/\r?\n/).some(x=>x.startsWith("| "+row.id+" |") && x.includes(chosen) && x.includes("**Nouvelle proposition**")),
+  const matrix = matrixText.split(/\r?\n/).map((l) => /^\| ((?:MAT|SUI|STR|PLA|GAR|COO|REF|QUA)-\d{2}) \|/.exec(l))
     .filter(Boolean).map((m) => m[1]);
   requireTrue(matrix.length === 85 && new Set(matrix).size === 85, "Matrice : 85 IDs uniques requis");
   requireTrue(ids.slice().sort().join(",") === matrix.slice().sort().join(","), "Matrice et attributions divergent");
@@ -67,7 +67,7 @@ function verifyCoverage(data, matrixText, readFn, sourceAtBase = readFn) {
       requireTrue(textSource.split(/\r?\n/).length>=line,
         "Ligne de provenance absente : "+row.id);
       if(origin==="proposition_nouvelle_gouvernance")requireTrue(
-        matrixText.split(/\\r?\\n/).some(x=>x.startsWith("| "+row.id+" |") && x.includes(chosen) && x.includes("**Nouvelle proposition**")),
+        matrixText.split(/\r?\n/).some(x=>x.startsWith("| "+row.id+" |") && x.includes(chosen) && x.includes("**Nouvelle proposition**")),
         "La matrice doit signaler la proposition nouvelle : "+row.id);
 
     }
