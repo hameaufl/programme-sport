@@ -34,7 +34,7 @@ Seul un projecteur dédié (`adaptateurs/projections/coaching.cjs`) construit à
 
 ## Nouvelle règle prioritaire — connecteur Garmin MCP en bêta
 
-Les modèles Garmin Connect sont réutilisables sur plusieurs dates, sans fichier local ni téléchargement Web. **Aucune création, programmation, modification ou envoi via MCP sans demande explicite pour les seules dates indiquées par le propriétaire** ; jamais de programmation par anticipation. Vérifier la bibliothèque, le calendrier, la fidélité des étapes et le résultat. Le nommage reste à définir ; la synchronisation sur Venu 4 reste à vérifier. Les ordres de produire un FIT automatiquement ci-dessous sont abrogés ; consulter `adaptateurs/garmin/MCP.md`.
+Les modèles Garmin Connect sont réutilisables sur plusieurs dates, sans fichier local ni téléchargement Web. **Aucune création, programmation, modification ou envoi via MCP sans demande explicite pour les seules dates indiquées par le propriétaire** ; jamais de programmation par anticipation. Vérifier la bibliothèque, le calendrier, la fidélité des étapes et le résultat. Le nommage suit la règle prioritaire liée à l'objectif principal actif et à la phase en cours, sans renommer automatiquement les anciens modèles ; la synchronisation sur Venu 4 reste à vérifier. Les ordres de produire un FIT automatiquement ci-dessous sont abrogés ; consulter `adaptateurs/garmin/MCP.md`.
 
 
 **Règle prioritaire au 12 novembre 2026.** Le dépôt GitHub `hameaufl/programme-sport`, branche `main`, est la **mémoire métier persistante et transmissible** de la personnalisation. Aucune connaissance nécessaire à un futur programme adapté ne doit dépendre de la seule mémoire d'une conversation ou d'un agent. Cette exigence dépasse la reprise sportive et dépasse les informations affichées dans les pages web.
@@ -120,7 +120,7 @@ Pour un élément transversal, le Coach peut employer cette structure **indicati
 Avant toute recommandation personnalisée, le nouveau Coach doit :
 
 1. Consulter `AGENTS.md`, `docs/ROLES.md`, `docs/REPRISE.md` et **ce contrat**.
-2. Lire `personnel/README.md`, puis `domaines/coaching/donnees/CONTEXTE-COACH.md` **s'il existe**, `domaines/coaching/donnees/DECISIONS.md`, `domaines/coaching/donnees/JOURNAL.md`, `domaines/sante/donnees/PROFIL.md`, `domaines/planification/donnees/cycle.json` et `domaines/coaching/donnees/objectifs.json` et les données pertinentes du cycle actuel.
+2. Lire `domaines/coaching/donnees/CONTEXTE-COACH.md` **s'il existe**, `domaines/coaching/donnees/DECISIONS.md`, `domaines/coaching/donnees/JOURNAL.md`, `domaines/sante/donnees/PROFIL.md`, `domaines/planification/donnees/cycle.json` et `domaines/coaching/donnees/objectifs.json` et les données pertinentes du cycle actuel.
 3. Recouper les rapports de séance, événements, mesures, équipements, pièces jointes et derniers commits ; ne pas conclure à l'absence d'un fait simplement parce qu'il n'apparaît pas dans une synthèse.
 4. Distinguer **faits durables**, **état actuel**, **hypothèses**, **décisions remplacées** et **points encore à éclaircir**. **Ne pas demander à l'utilisateur de répéter une information déjà documentée.**
 5. Vérifier qu'il connaît les contraintes et raisons des choix qui conditionnent le programme **avant** de proposer une adaptation.
