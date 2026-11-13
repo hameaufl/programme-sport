@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_historique_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "reference_courante": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+  "source_catalogues": [
+    "REVUE-87-RUBRIQUES-RESTANTES.json",
+    "REVUE-REPRISE-30-RUBRIQUES.json",
+    "REVUE-ROLES-29-RUBRIQUES.json"
+  ],
+  "total": 15,
+  "reclassement_des_anciens_titres": false,
+  "portee": "candidats pour future consolidation, pas équivalence intégrale de clauses",
+  "entrees": [
+    {
+      "id": "AGN-26",
+      "source_historique": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 205,
+        "fin": 212,
+        "titre": "Garmin FIT Workout systématique pour les Renfos (12 novembre 2026)"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 25,
+        "fragment": "générateur historique de fichiers FIT"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "Suppression des instructions d'émission FIT Renfo ; conserver les prescriptions chiffrées dans Planification.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "AGN-33",
+      "source_historique": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 260,
+        "fin": 268,
+        "titre": "Garmin — comportement systématique du Coach et présentation épurée"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 23,
+        "fragment": "Aucune création, programmation à une date"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "Ancien déclenchement automatique remplacé par la demande explicite à cible exacte.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "AGN-34",
+      "source_historique": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 269,
+        "fin": 278,
+        "titre": "Garmin Venu 4 — génération des entraînements programmés (règle Coach)"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 25,
+        "fragment": "générateur historique de fichiers FIT"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "L'ancien Workout local n'est plus le canal Garmin opérationnel.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "AGN-35",
+      "source_historique": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 279,
+        "fin": 290,
+        "titre": "Architecture actuelle prioritaire : un fichier par séance — consigne Coach"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 72,
+        "fragment": "domaines/planification/donnees/seances"
+      },
+      "famille": "personnel_abroge",
+      "element_preserve_ou_corrige": "Un fichier par prescription demeure utile, mais les faits réalisés ont migré hors Planification.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "AGN-50",
+      "source_historique": {
+        "chemin": "AGENTS.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 417,
+        "fin": 425,
+        "titre": "Séparation physique obligatoire — aucune duplication"
+      },
+      "destination_v2_partielle": {
+        "chemin": "contrats/DEPENDANCES.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 12,
+        "fragment": "pas de duplication manuelle des sources de vérité"
+      },
+      "famille": "personnel_abroge",
+      "element_preserve_ou_corrige": "Conserver le principe de non-duplication sans restaurer le monolithe personnel.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "REP-14",
+      "source_historique": {
+        "chemin": "docs/REPRISE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 85,
+        "fin": 88,
+        "titre": "Garmin — consigne prioritaire de reprise"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 23,
+        "fragment": "demande explicite couvrant l'opération"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "La création Garmin sur simple lecture d'un programme n'est plus permise.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "REP-15",
+      "source_historique": {
+        "chemin": "docs/REPRISE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 89,
+        "fin": 92,
+        "titre": "FIT Workout Garmin — nouveau contrat"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 25,
+        "fragment": "générateur historique de fichiers FIT"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "L'ancien contrat FIT Workout automatisé n'est plus l'architecture V2.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "REP-16",
+      "source_historique": {
+        "chemin": "docs/REPRISE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 93,
+        "fin": 110,
+        "titre": "Architecture actuelle : sources individuelles validées"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 5,
+        "fragment": "données canoniques sont séparées en quatre domaines"
+      },
+      "famille": "personnel_abroge",
+      "element_preserve_ou_corrige": "Préserver la granularité d'origine dans les quatre domaines, pas sous personnel/.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "REP-23",
+      "source_historique": {
+        "chemin": "docs/REPRISE.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 146,
+        "fin": 149,
+        "titre": "Deuxième page : suivi santé"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 15,
+        "fragment": "Le suivi Santé public ne publie pas le profil médical brut"
+      },
+      "famille": "web_historique",
+      "element_preserve_ou_corrige": "Préserver l'information Santé dans son domaine, filtrer le Web et ses pages.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "ROL-10",
+      "source_historique": {
+        "chemin": "docs/ROLES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 65,
+        "fin": 71,
+        "titre": "Garmin : Renfo comme Course à pied (consigne du 12 novembre 2026)"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 25,
+        "fragment": "générateur historique de fichiers FIT"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "Pas de génération FIT systématique pour les Renfos ; garder les détails métier.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "ROL-15",
+      "source_historique": {
+        "chemin": "docs/ROLES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 96,
+        "fin": 99,
+        "titre": "Garmin — réflexe du Coach et IHM minimaliste"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 23,
+        "fragment": "Aucune création, programmation à une date"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "La procédure Garmin V2 nécessite un ordre explicite, pas un automatisme Coach.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "ROL-16",
+      "source_historique": {
+        "chemin": "docs/ROLES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 100,
+        "fin": 103,
+        "titre": "Coach — entraînements Garmin prévus"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 25,
+        "fragment": "générateur historique de fichiers FIT"
+      },
+      "famille": "fit_abroge",
+      "element_preserve_ou_corrige": "Le FIT Workout attaché à une séance n'est plus le canal Garmin actif.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "ROL-17",
+      "source_historique": {
+        "chemin": "docs/ROLES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 104,
+        "fin": 112,
+        "titre": "Architecture des sources (règle prioritaire de reprise)"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/COACH-MODE-OPERATOIRE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 73,
+        "fragment": "domaines/activites/donnees/seances"
+      },
+      "famille": "personnel_abroge",
+      "element_preserve_ou_corrige": "Séparer les faits réalisés des prescriptions et anciens fichiers personnels.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "ROL-20",
+      "source_historique": {
+        "chemin": "docs/ROLES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 124,
+        "fin": 130,
+        "titre": "Coach — contenu personnel"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/CONTEXTE.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 9,
+        "fragment": "domaines/coaching/donnees/"
+      },
+      "famille": "personnel_abroge",
+      "element_preserve_ou_corrige": "Préserver les faits et décisions du Coach dans leur domaine, sans ancien dossier personnel.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    },
+    {
+      "id": "ROL-29",
+      "source_historique": {
+        "chemin": "docs/ROLES.md",
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "debut": 173,
+        "fin": 178,
+        "titre": "Publication et validation"
+      },
+      "destination_v2_partielle": {
+        "chemin": "docs/PROCEDURE-MIROIR-WEB.md",
+        "sha": "cf9241b9740be8e6c3f80058a45f76e197a4bb44",
+        "ligne": 21,
+        "fragment": "build = success"
+      },
+      "famille": "publication_historique",
+      "element_preserve_ou_corrige": "Maintenir les contrôles de déploiement et de version servie, plutôt qu'une ancienne chaîne de publication.",
+      "domaine_canonique_non_copie": true,
+      "examen_clause_complet": false,
+      "source_remplacee": false,
+      "ancien_fragment_supprime": false,
+      "autorisation_modification_main": false
+    }
+  ],
+  "certification_complete": false,
+  "autorisation_supprimer": false,
+  "modification_document_production": false
+}
