@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "mode": "simulation_sans_execution",
+  "statut": "non_normatif",
+  "forme_des_accords": "preuves déclaratives FICTIVES : le simulateur ne vérifie ni identité ni date réelle d'une autorisation",
+  "cas": [
+    {
+      "id": "sans-accord",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": false,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "accord-creation-mais-pas-suppression",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.creer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "absence-identifiant-cible",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "identifiant-different-de-l-accord",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "autre-modele"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "date-differente-de-l-accord",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-14",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "apercu-non-verifie",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": false,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "identite-non-verifiee",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": false,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "usage-potentiel",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": false,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "entree-planifiee",
+      "attendu": "refuse",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": true
+        }
+      }
+    },
+    {
+      "id": "autorisation-fictive-complete",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Demande simulée explicite pour supprimer un modèle de test",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    },
+    {
+      "id": "ancienne-demande-simplement-declaree",
+      "attendu": "admissible_sur_papier",
+      "donnees": {
+        "mode": "analyse_sans_execution",
+        "operation": "garmin.supprimer",
+        "role": "GARMIN",
+        "branche": "maturation/architecture-multiagents",
+        "autorisation": {
+          "typeAction": "garmin.supprimer",
+          "accordProprietaire": true,
+          "preuveDemande": "Accord historique du 12 novembre 2026 recopié hors contexte",
+          "datesExactes": [
+            "2026-11-13"
+          ],
+          "ciblesExactes": [
+            "modele-simulation-inexistant"
+          ]
+        },
+        "cible": {
+          "date": "2026-11-13",
+          "workoutId": "modele-simulation-inexistant",
+          "apercuValide": true,
+          "identiteVerifiee": true,
+          "absenceUsageConfirmee": true,
+          "planifie": false
+        }
+      }
+    }
+  ],
+  "suppression_garmin_effectuee": false,
+  "nouvelle_permission": false,
+  "inc005_clos": false
+}

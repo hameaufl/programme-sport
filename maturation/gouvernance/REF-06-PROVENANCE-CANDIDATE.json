@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "id": "REF-06",
+  "referenceHistorique": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "referenceOrigineProposition": "7a8016955cf74f312e40fc7b82bccca84020c9eb",
+  "exigence": "Le registre actif est seulement index : ne pas copier les sources métier.",
+  "lienActuellementDansMatrice": {
+    "chemin": "contrats/DEPENDANCES.md",
+    "ligne": 3,
+    "fragment": "## Règles opposables",
+    "preuve_directe": false
+  },
+  "principeGeneriqueHistorique": {
+    "chemin": "contrats/DEPENDANCES.md",
+    "ligne": 12,
+    "fragment": "pas de duplication manuelle des sources de vérité",
+    "preuve_directe_pour_registre_gardien": false
+  },
+  "premiereFormulationSpecifique": {
+    "chemin": "maturation/gouvernance/CHARTE.md",
+    "ligne": 39,
+    "fragment": "L'index du Gardien renvoie aux **sources canoniques**, ne les remplace pas.",
+    "nature": "proposition_experimentale"
+  },
+  "provenanceProposee": "proposition_nouvelle_gouvernance",
+  "decompte_actuel": {
+    "obligations_historiques": 73,
+    "propositions_nouvelles": 12
+  },
+  "decompte_candidat_sous_reserve_approbation": {
+    "obligations_historiques": 72,
+    "propositions_nouvelles": 13
+  },
+  "matrice_modifiee": false,
+  "adoption_gardien_autorisee": false,
+  "arbitrage_proprietaire_obtenu": false,
+  "statut": "recommandation_non_appliquee"
+}
