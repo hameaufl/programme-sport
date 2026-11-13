@@ -64,6 +64,19 @@ for(const page of [html,sante,coachPage,equipPage]){
   assert.ok(page.includes('<meta name="googlebot" content="noindex, nofollow">'),"Noindex Google absent");
   for(const script of page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))if(script[1].trim())new vm.Script(script[1]);
 }
+// Consignes courantes : aucune rubrique d'exploitation ne dépend d'un protocole versionné.
+const docsOperationnels=["README.md","AGENTS.md","adaptateurs/README.md",
+ "adaptateurs/garmin/MCP.md","adaptateurs/garmin/README.md","docs/COACH-MODE-OPERATOIRE.md",
+ "docs/CONTEXTE.md","docs/CONTRAT-CONTINUITE-COACH.md","docs/PROCEDURE-MIROIR-WEB.md",
+ "docs/ROLES.md","domaines/planification/README.md","domaines/sante/README.md",
+ "addons/web/README.md","addons/web/README-assets.md"];
+for(const doc of docsOperationnels){
+ const contenu=read(doc);
+ assert.ok(!/\\bV[12]\\b/.test(contenu),"Le document d'exploitation porte une numérotation de génération : "+doc);
+}
+assert.ok(!read("scripts/construire-site.cjs").includes("MON_RYTHME_LEGACY"),
+ "Le site ne doit pas proposer de sortie monolithique optionnelle");
+
 const version=html.match(/<meta name="mon-rythme-version" content="([^"]+)"/)?.[1];
 assert.ok(version&&[sante,coachPage,equipPage].every(page=>page.includes('name="mon-rythme-version" content="'+version+'"'))&&read("publication.txt").includes(version),"Versions des quatre vues incohérentes");
 
@@ -318,7 +331,7 @@ assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(sante),"Aucune référence à d
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(coachPage),"Aucune référence à des programmes de montre dans la vue Coaching");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(equipPage),"Aucune référence à des programmes de montre dans la vue des équipements");
 assert.ok(!read("scripts/construire-site.cjs").includes("fichiers/garmin"),"Pas de copie de binaires lors de la publication");
-assert.ok(!fs.existsSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers")),"Anciennes pièces binaires toujours présentes");
+assert.ok(!fs.existsSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers")),"Pièces binaires interdites dans l'adaptateur");
 assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("pieces_jointes"),"Le contrat Web ne doit pas exposer d'entraînements externes");
 for(const seance of data.sessions)assert.ok(!Object.hasOwn(seance,"pieces_jointes"),"Pièce jointe externe encore projetée : "+seance.id);
 const titlesStart=html.indexOf("  function titreActiviteJour(s) {");

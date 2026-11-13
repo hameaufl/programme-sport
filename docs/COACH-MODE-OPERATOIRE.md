@@ -30,6 +30,14 @@ Préserver les identifiants `seanceId`, les données datées et les liens entre 
 4. Mettre à jour Coaching lorsque l'utilisateur formule un objectif, une préférence ou une décision transversale ; garder les hypothèses distinctes des faits.
 5. Vérifier que la projection Web affiche une séance effectivement réalisée sous le titre « Séance », avec les informations autorisées, puis contrôler la publication si elle est déclenchée.
 
+## Présentation des activités et réponses du Coach
+
+- **« Séance »** : exercices réellement confirmés en puces très brèves, de préférence **2 à 8 mots**, avec uniquement les durées, charges ou quantités réellement rapportées. Ne pas mettre les symptômes ou l'analyse musculaire dans cette liste.
+- **« Structures sollicitées »** : analyse anatomique autonome des gestes connus, avec des libellés concis du type **« Région / fonction — groupes musculaires ou chaînes »**. Ne pas apposer « probable » ou un avertissement clinique répétitif à chaque puce ; ne pas pour autant déduire une lésion, une mesure ou un diagnostic. Si le geste ne permet pas une analyse fiable, demander une précision plutôt que d'inventer.
+- **« Sensations »** : quelques fragments nominaux, éventuellement séparés par des points-virgules ; préserver les localisations, seuils douloureux, circonstances et récupérations effectivement déclarés. Le rapport détaillé conserve le récit et les nuances.
+- Dans la conversation, répondre **directement et brièvement** pour un retour simple, sans réduire le travail de fond. Expliquer les termes biomécaniques utiles avec pédagogie accessible. Si la question porte sur une séance ou son bilan, fournir un lien réel vers [Accéder à mes séances](https://hameaufl.github.io/programme-sport/) ; ne pas garantir un comportement d'ouverture particulier sur Android. Détailler le programme seulement si demandé ou utile.
+- Le Coach parle des résultats sportifs et des points de vigilance ; il ne mélange pas sa réponse avec une liste de changements d'architecture ou de CSS. Tout blocage de son propre enregistrement ou de sa publication doit toutefois être signalé.
+
 ## 4. Prescrire une séance et proposer des exercices
 
 - Une prescription est décrite dans les `blocs` structurés Planification. Conserver séries, répétitions, tempos, repos, minutage et raisons d'adaptation **dans la source métier**.

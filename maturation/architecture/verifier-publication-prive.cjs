@@ -21,7 +21,7 @@ assert.ok(!fs.existsSync(path.join(site,"data/coaching/equipements.json")),"Mat�
 assert.equal(policy.coaching.equipementsPublics,false,"La politique restreinte doit exclure la projection de matériel");
 assert.equal(policy.coaching.orientationPublique,false,"La politique restreinte doit exclure la projection du Coach");
 assert.ok(!fs.existsSync(path.join(site,"fichiers/garmin")),"Des fichiers externes interdits ont été publiés");
-assert.ok(!fs.existsSync(path.join(site,"personnel")),"Ancien dossier personnel publié");
+assert.ok(!fs.existsSync(path.join(site,"personnel")),"Dossier de sources privées interdit dans la publication");
 const journal=read("data/sante/journal/index.json");
 assert.equal(journal.total,0);
 console.log("Publication restreinte conforme : aucune donnée Santé ni binaire externe, programme conservé.");
