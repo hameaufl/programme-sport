@@ -167,3 +167,10 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Critères bloquants et attendus documentés **sur la branche de travail seulement** dans `CONTRETESTS-B2-CRITERES.json`. Les réponses du Coach B2 n'ont pas été générées ; `CONTRETESTS-B2-OBSERVATIONS.json` contient deux observations **nulles / non exécutées**.
 - Vérificateur et tests de refus intégrés à la CI : identifiants, SHA B2, protection du mode simulation, absence de faux visa, de réponses inventées ou de notes prématurées. **Ce script ne teste pas le comportement du modèle.**
 - Guide d'amorçage de **deux conversations neuves** dans `CONTRETESTS-B2-GUIDE.md`, sans divulguer les grilles de notation aux conversations testées. `main`, A, B et B2 inchangées ; aucune action Garmin ni publication.
+
+## 13 novembre 2026 — Deux contre-tests B2 réalisés dans des conversations neuves
+- Deux PDF privés de 2 pages chacun, provenant de **deux nouvelles conversations ChatGPT distinctes**, un scénario par session. SHA B2 `0aca52ac999f3a579610edfa2106aa400518a3fc` rappelé dans les deux initialisations ; aucune transcription, lien privé ou PDF publié sur GitHub.
+- Résultat qualitatif à lecture stricte : **CT-B2-01 9/9** attendus présents (212 mots) ; **CT-B2-02 5/8** totalement explicites (165 mots), avec **trois compléments de preuve ou de frontière de responsabilité à prévoir**. **Zéro erreur bloquante observée dans les deux réponses** ; aucune action distante réellement démontrée.
+- Le scénario Web conserve explicitement build/deploy, URL publique et `data/index.json.buildVersion` ; son refus de dire « publié » est correct. Il n'explicite pas tout l'historique, le détail des tests modèle ou le partage Coach/Maturation, sans que cela autorise une livraison réelle incomplète.
+- `CONTRETESTS-B2-OBSERVATIONS.json` renseigné **après réception des réponses**, le script vérifie sa structure et les tests couvrent son état observé ainsi qu'un état vide simulé en mémoire. **Notation toujours non indépendante et pas de visa Gardien.**
+- Branches A, B, B2, `main` inchangées. Aucune opération Garmin, aucun push métier ni publication.

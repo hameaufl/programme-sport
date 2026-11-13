@@ -140,3 +140,11 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Relevé initial vide et vérification CI contre les résultats inventés.
 - [ ] **Réponses issues de deux conversations neuves** sur le SHA B2 exact, avec PDFs ou transcriptions privés ; contrôle qualitatif et comptage de mots après réception.
 - [ ] Visa du Gardien et accord de fusion du propriétaire, non acquis.
+
+## 13 novembre 2026 — Résultat des contre-tests B2 en contextes neufs
+- [x] Deux conversations isolées réellement exécutées, un scénario par conversation, au SHA B2 figé.
+- [x] Contre-test factuel : **9/9** attendus observables, aucune erreur bloquante, 212 mots.
+- [x] Contre-test publication : **5/8** critères pleinement explicités, trois mentions partielles/absentes, aucune erreur bloquante, 165 mots ; statut de publication refusé/non confirmé sans CI/deploy/version servie.
+- [x] Relevé anonymisé mis à jour et vérifications CI de cohérence des résultats ; aucune transcription privée dans le dépôt.
+- [ ] Vérifier, lors de toute livraison réelle future, la sauvegarde de l'historique, les validations modèle/tests et l'attribution Coach/Maturation ; aucun test fictif n'autorise à omettre les preuves.
+- [ ] Revue du Gardien et décision explicite du propriétaire avant adoption et fusion sur `main`.

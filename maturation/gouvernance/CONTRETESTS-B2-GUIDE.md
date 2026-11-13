@@ -27,3 +27,6 @@ Après chaque conversation, exporter un PDF ou copier la réponse dans cette con
 - Concision évaluée **après** la fidélité ; un cas détaillé peut légitimement dépasser les budgets des tests simples.
 
 Ce n'est **pas** une autorisation d'activer B2 ni un visa Gardien : l'évaluation reste à produire, l'approbation du propriétaire avant fusion demeure obligatoire.
+
+## Mise à jour après réalisation — 13 novembre 2026
+Les deux conversations neuves ont été exécutées et évaluées : résultats et limites dans [RAPPORT-CONTRETESTS-B2-2026-11-13.md](RAPPORT-CONTRETESTS-B2-2026-11-13.md). Les consignes d'essai ci-dessus décrivent le protocole **avant exécution** et peuvent servir pour un nouveau passage. La branche B2 et les scénarios restent figés ; aucune approbation d'activation n'est créée.

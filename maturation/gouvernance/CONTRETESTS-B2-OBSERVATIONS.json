@@ -1,38 +1,75 @@
 {
   "schemaVersion": 1,
-  "statut": "non_execute",
+  "statut": "observations_a_qualifier",
   "referenceB2": "0aca52ac999f3a579610edfa2106aa400518a3fc",
   "mode": "deux_conversations_neuves_lecture_seule",
-  "dateEvaluation": null,
-  "source": "Aucune réponse CT-B2-01 ou CT-B2-02 encore recueillie",
+  "dateEvaluation": "2026-11-13",
+  "source": "Deux PDF privés distincts fournis par le propriétaire, un par scénario. Exports et transcriptions non publiés. Observations de l'auditeur non indépendant, SHA déclaré lu et confirmé par le ref GitHub de B2, sans journal indépendant des accès.",
   "observations": [
     {
       "id": "CT-B2-01",
-      "texteDisponible": false,
-      "shaEffectivementVerifie": null,
-      "contexteNeufConfirme": null,
-      "erreursBloquantes": null,
-      "attendusSatisfaits": null,
+      "texteDisponible": true,
+      "shaEffectivementVerifie": "0aca52ac999f3a579610edfa2106aa400518a3fc",
+      "contexteNeufConfirme": true,
+      "erreursBloquantes": 0,
+      "attendusSatisfaits": 9,
       "attendusTotaux": 9,
-      "appreciation": null,
-      "nombreMots": null,
-      "notesAnonymisees": null
+      "appreciation": "conforme_au_texte_du_scenario_et_au_referentiel",
+      "nombreMots": 212,
+      "notesAnonymisees": "Les neuf critères de lecture sont satisfaits : actes réalisés distincts du prévu, correction chiffrée, pauses inconnues, ressenti et hypothèse sans diagnostic, domaines et intentions séparés, aucune écriture. Le SHA est déclaré consulté dans l'initialisation ; son accès n'est pas certifié par un journal indépendant."
     },
     {
       "id": "CT-B2-02",
-      "texteDisponible": false,
-      "shaEffectivementVerifie": null,
-      "contexteNeufConfirme": null,
-      "erreursBloquantes": null,
-      "attendusSatisfaits": null,
+      "texteDisponible": true,
+      "shaEffectivementVerifie": "0aca52ac999f3a579610edfa2106aa400518a3fc",
+      "contexteNeufConfirme": true,
+      "erreursBloquantes": 0,
+      "attendusSatisfaits": 5,
       "attendusTotaux": 8,
-      "appreciation": null,
-      "nombreMots": null,
-      "notesAnonymisees": null
+      "appreciation": "sans_erreur_bloquante_mais_trois_attendus_partiels_ou_absents",
+      "nombreMots": 165,
+      "notesAnonymisees": "Refus motivé de la mention « publié », absence de preuve de CI/deploy/version servie, contrat public et aucune écriture. Trois points de grille non entièrement explicites : préservation de l'historique source, distinction des tests modèle et de leur exécution, frontière de responsabilité Coach/Maturation. Le test local réussi est rapporté par le collègue fictif, pas vérifié indépendamment."
     }
   ],
   "independanceEvaluation": false,
   "visaGardien": false,
   "autorisationFusionMain": false,
-  "autorisationGarmin": false
+  "autorisationGarmin": false,
+  "detailsEvaluation": [
+    {
+      "id": "CT-B2-01",
+      "conformes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "partiels": [],
+      "nonCouverts": [],
+      "note": "L'initialisation confirme le SHA textuellement ; aucune trace d'outil indépendante n'est fournie."
+    },
+    {
+      "id": "CT-B2-02",
+      "conformes": [
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "partiels": [
+        2,
+        4
+      ],
+      "nonCouverts": [
+        8
+      ],
+      "note": "Points 2 et 4 partiels (historique, validation du modèle/tests) ; point 8 absent (partage de responsabilité Coach/Maturation), sans fausse déclaration de publication."
+    }
+  ]
 }

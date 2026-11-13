@@ -56,3 +56,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Premier bilan de huit réponses réelles B2](RAPPORT-OBSERVE-B2-2026-11-13.md) : six comparables à B (−71,3 % de mots), deux nouveaux sans comparateur, réserves de précision et de méthode ; [observations structurées](RESULTATS-B2-OBSERVES.json).
 
 - [Deux contre-tests B2 prêts](CONTRETESTS-B2-GUIDE.md) : fidélité d'un compte rendu complexe et preuve de déploiement Web, [prompts synthétiques](CONTRETESTS-B2-PROMPTS.json) et [résultats encore vides](CONTRETESTS-B2-OBSERVATIONS.json). Aucun résultat comportemental de ces deux contre-tests n'a encore été observé.
+
+- [Résultat des deux contre-tests B2 en sessions neuves](RAPPORT-CONTRETESTS-B2-2026-11-13.md) : 9/9 et 5/8 critères à lecture stricte, aucune erreur bloquante et trois détails Web à compléter avant livraison réelle ; [observations anonymisées](CONTRETESTS-B2-OBSERVATIONS.json).

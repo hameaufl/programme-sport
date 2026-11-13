@@ -55,6 +55,7 @@ if(require.main===module) {
  const a=JSON.parse(fs.readFileSync(path.join(root,"CONTRETESTS-B2-PROMPTS.json"),"utf8"));
  const b=JSON.parse(fs.readFileSync(path.join(root,"CONTRETESTS-B2-CRITERES.json"),"utf8"));
  const c=JSON.parse(fs.readFileSync(path.join(root,"CONTRETESTS-B2-OBSERVATIONS.json"),"utf8"));
- console.log("CONTRE-TESTS B2 : "+JSON.stringify(check(a,b,c))+" ; aucune réponse indépendante encore observée.");
+ const summary=check(a,b,c);
+ console.log("CONTRE-TESTS B2 : "+JSON.stringify(summary)+" ; statut de la revue : "+(summary.observations===0?"aucune réponse observée":"revue manuelle non indépendante, résultats de conversations privées")+".");
  }catch(e){console.error("CONTRE-TESTS B2 : REFUS — "+e.message);process.exitCode=1;}
 }
