@@ -191,3 +191,7 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - [Anomalies documentées](AUDIT-ANCRAGES-SEMANTIQUES.json) sans réécrire la matrice originale : correction de provenance et examen de chaque clause restant nécessaires avant tout visa.
 - [Huit dossiers INC](referentiel/INSTRUCTION-INC-001-008.md) instruits avec **16 fragments vérifiables à des lignes du SHA initial**, priorité documentaire proposée, risque, autorité compétente et conditions de clôture ; **aucune entrée n'est clôturée et aucun droit supplémentaire n'est accordé**.
 - Deux vérificateurs CI contrôlent l'inventaire et la présence des preuves historiques, **pas leur interprétation sémantique autonome**. Pas de modification des domaines, des règles B2, de `main`, ni d'action Garmin.
+
+## 13 novembre 2026 — Correction du vérificateur sémantique après CI rouge
+- La première CI sur `7505f9a` a correctement signalé deux erreurs **dans les nouveaux tests documentaires** : une référence ancienne sur une ligne existante mais vide était classée absente (MAT-09), et un extrait de 11 caractères ne satisfaisait pas le seuil de preuve (INC-008). Ces liens restent signalés comme imprécis et les règles métier n'ont pas été modifiées.
+- Le contrôle distingue désormais **ligne vide** de **ligne hors borne** ; le fragment INC-008 est remplacé par un extrait plus long du même texte et de la même ligne. Nouvel essai CI requis avant clôture de la tâche.

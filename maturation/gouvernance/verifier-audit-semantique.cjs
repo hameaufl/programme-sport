@@ -42,7 +42,7 @@ function verify(inventory,anomalies,coverage,readMain) {
   seen.add(v.id);counts[v.statut]++;
   const m=/\/blob\/([a-f0-9]{40})\/([^#)]+)#L(\d+)\)/.exec(coverMap.get(v.id).source_historique);
   if(!m||m[1]!==MAIN||m[2]!==v.source_origine||Number(m[3])!==v.ligne_origine||
-    !sources.get(m[2])?.[v.ligne_origine-1])throw Error("Ligne source manquante : "+v.id);
+    sources.get(m[2])?.[v.ligne_origine-1]===undefined)throw Error("Ligne source manquante : "+v.id);
  }
  for(const [k,n] of Object.entries(STATUSES))if(counts[k]!==n||anomalies.compteurs[k]!==n||
     inventory.comptes_anomalies[k]!==n)throw Error("Comptage anomalies incorrect : "+k);
