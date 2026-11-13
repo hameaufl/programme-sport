@@ -69,3 +69,6 @@ Audit sémantique des huit documents historiques et qualification des huit confl
 - [REVUE-SEMANTIQUE-ROLES.md](REVUE-SEMANTIQUE-ROLES.md) : 29 rubriques de `docs/ROLES.md` qualifiées (16 plausiblement courantes, 7 mixtes, 6 V1 dépassées) avec [index des sources exactes](REVUE-ROLES-29-RUBRIQUES.json).
 - **59/161 rubriques historiques** ont désormais une qualification préliminaire (30 REPRISE + 29 ROLES) ; **102 rubriques** n'ont pas encore de classification rubrique par rubrique. Il reste à auditer les clauses dans les 161 rubriques, sans effacer ni les règles valables ni les faits.
 - Nettoyage de `main` **toujours non appliqué**, proposition du premier mini-lot toujours à soumettre au propriétaire.
+
+### Correctif de contrôle d'intégrité — même jour
+Après PR #10, les deux documents V2 avaient légitimement évolué sur `main`, tandis que la branche expérimentale reposait toujours sur `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4`. Le vérificateur de non-perte a été adapté : il n'interprète plus une évolution **sur main seulement** comme une écriture de la branche, mais refuse toute troisième version des octets métier/infrastructure. Tests négatifs ajoutés. CI gouvernance et refonte réussies au commit `8d4fcea`. Les archives, données métier, Garmin, PR #9 et B2 ne changent pas de statut.
