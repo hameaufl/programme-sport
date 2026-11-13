@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_sha_main": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "portee": "Recherche textuelle des chemins EXACTS dans 39 documents, scripts, contrats et workflows de main (sans inclure les domaines métier ni les usages externes). Les références citées sont des occurrences textuelles, pas un graphe complet des imports.",
+  "statut": "revue_interne_partielle_non_destructive",
+  "fichiers_analyses": [
+    ".github/workflows/publier-pages.yml",
+    ".github/workflows/verifier-refonte.yml",
+    "AGENTS.md",
+    "README.md",
+    "adaptateurs/README.md",
+    "adaptateurs/fichiers/depots.cjs",
+    "adaptateurs/fichiers/stockage.cjs",
+    "adaptateurs/garmin/MCP.md",
+    "adaptateurs/garmin/README.md",
+    "adaptateurs/garmin/mcp.cjs",
+    "adaptateurs/projections/coaching.cjs",
+    "adaptateurs/projections/lecture.cjs",
+    "adaptateurs/web/medias.cjs",
+    "contrats/DEPENDANCES.md",
+    "contrats/PORTS.md",
+    "contrats/publication-prive-v1.json",
+    "contrats/publication-v1.json",
+    "docs/COACH-MODE-OPERATOIRE.md",
+    "docs/CONTEXTE.md",
+    "docs/CONTRAT-CONTINUITE-COACH.md",
+    "docs/DECISIONS.md",
+    "docs/JOURNAL.md",
+    "docs/PROCEDURE-MIROIR-WEB.md",
+    "docs/REPRISE.md",
+    "docs/ROLES.md",
+    "maturation/architecture/AUDIT-SUIVI-SANTE.md",
+    "maturation/architecture/ETAT.md",
+    "maturation/architecture/PLAN.md",
+    "maturation/architecture/README-personnel-historique.md",
+    "maturation/architecture/verifier-frontieres.cjs",
+    "maturation/architecture/verifier-portabilite.cjs",
+    "maturation/architecture/verifier-publication-prive.cjs",
+    "maturation/architecture/verifier-publication.cjs",
+    "scripts/construire-site.cjs",
+    "scripts/donnees.cjs",
+    "scripts/migration-preuve.json",
+    "scripts/verifier-changements.cjs",
+    "scripts/verifier-miroir-web.cjs",
+    "scripts/verifier-site.cjs"
+  ],
+  "quantite_fichiers_analyses": 39,
+  "cibles": [
+    {
+      "target": "docs/REPRISE.md",
+      "sites": [
+        "AGENTS.md",
+        "docs/COACH-MODE-OPERATOIRE.md",
+        "docs/CONTRAT-CONTINUITE-COACH.md",
+        "docs/CONTEXTE.md",
+        "docs/DECISIONS.md",
+        "docs/JOURNAL.md"
+      ],
+      "proposition": "ne_pas_supprimer;preparer_guide_V2_et_modifier_les_6_renvois_apres_validation",
+      "risk": "eleve",
+      "suppression_autorisee": false,
+      "dependances_externes_verifiees": false
+    },
+    {
+      "target": "docs/CONTEXTE.md",
+      "sites": [
+        "AGENTS.md"
+      ],
+      "proposition": "proposer_remplacement_en_place_par_contexte_V2_courant",
+      "risk": "eleve",
+      "suppression_autorisee": false,
+      "dependances_externes_verifiees": false
+    },
+    {
+      "target": "maturation/architecture/README-personnel-historique.md",
+      "sites": [],
+      "proposition": "envisager_archivage_technique_apres_controle_externe_et_preuve_migration",
+      "risk": "eleve",
+      "suppression_autorisee": false,
+      "dependances_externes_verifiees": false
+    },
+    {
+      "target": "scripts/migration-preuve.json",
+      "sites": [
+        "docs/DECISIONS.md"
+      ],
+      "proposition": "conserver_preuve_historique_jusqu_a_lot_archive_valide",
+      "risk": "eleve",
+      "suppression_autorisee": false,
+      "dependances_externes_verifiees": false
+    },
+    {
+      "target": "adaptateurs/README.md",
+      "sites": [],
+      "proposition": "proposer_corriger_simple_description_FIT_vers_MCP",
+      "risk": "faible",
+      "suppression_autorisee": false,
+      "dependances_externes_verifiees": false
+    }
+  ]
+}

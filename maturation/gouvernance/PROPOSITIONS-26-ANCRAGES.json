@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_sha_main": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "statut": "propositions_non_appliquees_de_second_passage",
+  "portee": "Réexamen de 26 attributions signalées par l'audit initial ; candidats exacts épinglés, sans remplacement effectif ni certification de toutes les clauses.",
+  "compteurs": {
+    "partielle": 7,
+    "directe": 17,
+    "insuffisante": 1,
+    "provenance_a_arbitrer": 1
+  },
+  "corrections": [
+    {
+      "id": "MAT-01",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "contrats/DEPENDANCES.md",
+        "line": 5,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/contrats/DEPENDANCES.md#L5"
+      },
+      "statut_proposition": "partielle",
+      "justification": "La séparation stricte relève aussi de plusieurs clauses des contrats ; cette seule ligne ne prouve pas toute l'exigence.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-04",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "contrats/DEPENDANCES.md",
+        "line": 10,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/contrats/DEPENDANCES.md#L10"
+      },
+      "statut_proposition": "directe",
+      "justification": "La publication par liste blanche est exactement visée par la règle deny-by-default.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-06",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 173,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L173"
+      },
+      "statut_proposition": "directe",
+      "justification": "Maturation détient les modules, tests et workflows techniques.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-08",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "docs/REPRISE.md",
+        "line": 17,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/REPRISE.md#L17"
+      },
+      "statut_proposition": "directe",
+      "justification": "Présentation commune du menu, logo et en-tête des quatre pages.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-09",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "docs/REPRISE.md",
+        "line": 17,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/REPRISE.md#L17"
+      },
+      "statut_proposition": "partielle",
+      "justification": "Les règles générales d'en-tête sont présentes ; l'accessibilité doit être vérifiée ailleurs.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-10",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 88,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L88"
+      },
+      "statut_proposition": "directe",
+      "justification": "Interdiction des cartes de navigation redondantes.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-11",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 329,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L329"
+      },
+      "statut_proposition": "directe",
+      "justification": "Précision explicite : noindex n'est pas une protection d'accès.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-12",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "docs/ROLES.md",
+        "line": 12,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/ROLES.md#L12"
+      },
+      "statut_proposition": "directe",
+      "justification": "Limite de l'exception locale Coach sur le rendu, code global à Maturation.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-13",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "contrats/DEPENDANCES.md",
+        "line": 38,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/contrats/DEPENDANCES.md#L38"
+      },
+      "statut_proposition": "directe",
+      "justification": "La projection Coaching filtre les champs et évite les notes internes.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-14",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 125,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L125"
+      },
+      "statut_proposition": "directe",
+      "justification": "Liste blanche d'équipements disponibles et absence d'états non confirmés.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-17",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 258,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L258"
+      },
+      "statut_proposition": "directe",
+      "justification": "Compatibilité d'anciens caches sans redevenir source d'écriture.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-18",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "contrats/DEPENDANCES.md",
+        "line": 12,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/contrats/DEPENDANCES.md#L12"
+      },
+      "statut_proposition": "partielle",
+      "justification": "Non-duplication et stabilité prouvées ; l'archive de migration nécessite une autre source.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-20",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 422,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L422"
+      },
+      "statut_proposition": "partielle",
+      "justification": "Principe de non-duplication explicite mais ligne située dans une section V1 remplacée : ne pas la promouvoir seule comme norme actuelle.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "MAT-21",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 53,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L53"
+      },
+      "statut_proposition": "directe",
+      "justification": "Nom unique « Mes équipements » et maintien des chemins techniques.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "SUI-02",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 312,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L312"
+      },
+      "statut_proposition": "directe",
+      "justification": "Lecture seule explicitement interdite de modification GitHub.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "SUI-08",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 170,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L170"
+      },
+      "statut_proposition": "directe",
+      "justification": "Séance prévue distincte du fait confirmé en Activités.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "STR-01",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 134,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L134"
+      },
+      "statut_proposition": "directe",
+      "justification": "Objectifs canoniques et absence de copie concurrente dans orientation.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "STR-02",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 133,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L133"
+      },
+      "statut_proposition": "partielle",
+      "justification": "Mémoire du Coach à actualiser, mais obligation d'actualisation dans la même modification à détailler.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "STR-04",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "docs/CONTRAT-CONTINUITE-COACH.md",
+        "line": 90,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/docs/CONTRAT-CONTINUITE-COACH.md#L90"
+      },
+      "statut_proposition": "insuffisante",
+      "justification": "Trace d'une décision, sans preuve directe de la liste maintien/allégement/report/attente.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "PLA-01",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 169,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L169"
+      },
+      "statut_proposition": "directe",
+      "justification": "Planification V2 en blocs, faits réalisés exclus des prescriptions.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "PLA-05",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 38,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L38"
+      },
+      "statut_proposition": "directe",
+      "justification": "Détails des étapes conservés dans Planification malgré rendu Web allégé.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "PLA-06",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 147,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L147"
+      },
+      "statut_proposition": "directe",
+      "justification": "Exercice officiel Garmin, identité du geste et matériel à vérifier.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "PLA-07",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 231,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L231"
+      },
+      "statut_proposition": "partielle",
+      "justification": "Obligation d'aide PNG explicite, mais l'ancien champ etapes est un vestige ; ancre technique V2 à rapprocher.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "PLA-08",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 70,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L70"
+      },
+      "statut_proposition": "partielle",
+      "justification": "Ancien épisode daté ; le principe de ne pas recréer des Renfos automatiquement doit être distingué de l'état de calendrier du jour.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "GAR-11",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": {
+        "path": "AGENTS.md",
+        "line": 156,
+        "sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+        "url": "https://github.com/hameaufl/programme-sport/blob/d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4/AGENTS.md#L156"
+      },
+      "statut_proposition": "directe",
+      "justification": "Supersession FIT locaux par Garmin MCP explicitement formulée.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    },
+    {
+      "id": "REF-06",
+      "origine_actuelle": "AUDIT-ANCRAGES-SEMANTIQUES.json",
+      "candidat_source": null,
+      "statut_proposition": "provenance_a_arbitrer",
+      "justification": "La règle de l'index du Gardien semble une proposition de gouvernance, non une clause contractuelle métier de main. Réexaminer le total 73/12 ; aucune requalification sans revue.",
+      "applique_dans_matrice": false,
+      "certification_semantique": false
+    }
+  ]
+}
