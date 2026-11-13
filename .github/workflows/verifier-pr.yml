@@ -1,10 +1,8 @@
-name: Vérifier la refonte modulaire (sans publier)
+name: Vérifier les changements (sans publier)
 
 on:
-  push:
-    branches:
-      - "refonte/**"
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,15 +19,15 @@ jobs:
         run: |
           node scripts/verifier-site.cjs
           node scripts/verifier-changements.cjs
-          node maturation/architecture/verifier-portabilite.cjs
-          node maturation/architecture/verifier-frontieres.cjs
+          node scripts/controle/verifier-portabilite.cjs
+          node scripts/controle/verifier-frontieres.cjs
       - name: Préparer la sortie du site sans publication
         run: node scripts/construire-site.cjs
       - name: Contrôler la publication standard
-        run: node maturation/architecture/verifier-publication.cjs
+        run: node scripts/controle/verifier-publication.cjs
       - name: Préparer la publication restreinte et vérifier les fuites
         run: |
           MON_RYTHME_POLITIQUE=prive node scripts/construire-site.cjs
-          node maturation/architecture/verifier-publication-prive.cjs
+          node scripts/controle/verifier-publication-prive.cjs
       - name: Vérifier le coeur sans le Web
         run: MON_RYTHME_WEB=0 node scripts/construire-site.cjs

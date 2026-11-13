@@ -1,5 +1,8 @@
 # Contexte durable du Coach — préférences et équipement
 
+**Règle d'utilisation du contexte :** les objectifs, données et décisions canoniques des quatre domaines, à la date consultée, font foi. Les récits datés ci-dessous conservent les faits et les raisons des choix sans donner d'autorisation automatique d'agir. Les actions sur Garmin exigent une demande explicite et ciblée.
+
+
 **Source :** informations données directement par l'utilisateur le 12 novembre 2026, dans le cadre de la préparation d'un programme de renforcement complémentaire. **Statut : actif, à réévaluer lors de nouveaux achats ou retours de séance.**
 
 ## Matériel réellement disponible à domicile

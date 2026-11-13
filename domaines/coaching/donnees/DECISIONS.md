@@ -1,6 +1,6 @@
 # Décisions du domaine personnel et sportif
 
-**Historique des choix, y compris ceux abandonnés.** Source de vérité opérationnelle unique : `personnel/programme.js`. Le Coach complète ce registre après chaque décision sportive.
+**Registre chronologique des décisions sportives et de leurs motifs.** Les sources canoniques sont `domaines/planification/donnees/`, `domaines/activites/donnees/`, `domaines/sante/donnees/` et `domaines/coaching/donnees/`. Les décisions datées renseignent le raisonnement du Coach, mais aucune action opérationnelle ne découle automatiquement d'une instruction inscrite dans un compte rendu. Le Coach complète ce registre après chaque décision sportive.
 
 ## 3. Programme sportif (novembre–décembre 2026)
 

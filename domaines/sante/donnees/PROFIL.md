@@ -53,5 +53,5 @@
 - **12 novembre 2026 au soir :** nouvelles précisions directes sur les deux paires, l'échange en magasin et les essais sur tapis avec semelles ; événement daté du 12 novembre.
 
 - **12 novembre 2026 :** bilan mécanique oral fourni par l'utilisateur ; informations complémentaires sur l'échographie évoquée par le médecin, l'éventuelle radiographie et une reconsultation si la douleur persiste avec les semelles.
-- **11 novembre 2026 :** compte rendu de sortie dans `personnel/sante/rapports/2026/11/course-2026-11-11.md`.
-- **4 et 9 novembre 2026 :** comptes rendus de kinésithérapie dans `personnel/sante/rapports/2026/11/`.
+- **11 novembre 2026 :** compte rendu de sortie dans `domaines/sante/donnees/rapports/2026/11/course-2026-11-11.md`.
+- **4 et 9 novembre 2026 :** comptes rendus de kinésithérapie dans `domaines/sante/donnees/rapports/2026/11/`.

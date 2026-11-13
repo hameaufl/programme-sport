@@ -79,7 +79,7 @@ function collect(depots=depotFichiers,{medias=mediasWeb}={}){
  events.sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id));
  return {config:{schemaVersion:1,debutCycle:cycle.debutCycle,objectifs:prefs.objectifs},sessions,weeks,reports,events,plans,execution,observations,mouvements,sourceFiles,reportFiles,eventFiles};
 }
-function exposed(week,model,policy=local.json("contrats/publication-v1.json")){
+function exposed(week,model,policy=local.json("contrats/publication.json")){
  if(policy.schemaVersion!==1||policy.default!=="deny"||!Array.isArray(policy.programme))throw Error("Politique de publication absente");
  return (model.weeks.get(week)||[]).map(s=>{
   const view={};for(const key of policy.programme)if(Object.hasOwn(s,key))view[key]=s[key];

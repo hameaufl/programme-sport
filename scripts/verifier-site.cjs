@@ -64,6 +64,18 @@ for(const page of [html,sante,coachPage,equipPage]){
   assert.ok(page.includes('<meta name="googlebot" content="noindex, nofollow">'),"Noindex Google absent");
   for(const script of page.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))if(script[1].trim())new vm.Script(script[1]);
 }
+// Consignes courantes : aucune rubrique d'exploitation ne dépend d'un protocole versionné.
+const docsOperationnels=["README.md","AGENTS.md","docs/ARCHITECTURE.md","docs/PROCESSUS.md",
+ "adaptateurs/README.md","adaptateurs/garmin/MCP.md","adaptateurs/garmin/README.md",
+ "domaines/planification/README.md","domaines/sante/README.md",
+ "addons/web/README.md","addons/web/README-assets.md"];
+for(const doc of docsOperationnels){
+ const contenu=read(doc);
+ assert.ok(!/\bV[12]\b/.test(contenu),"Le document d'exploitation porte une numérotation de génération : "+doc);
+}
+assert.ok(!read("scripts/construire-site.cjs").includes("MON_RYTHME_LEGACY"),
+ "Le site ne doit pas proposer de sortie monolithique optionnelle");
+
 const version=html.match(/<meta name="mon-rythme-version" content="([^"]+)"/)?.[1];
 assert.ok(version&&[sante,coachPage,equipPage].every(page=>page.includes('name="mon-rythme-version" content="'+version+'"'))&&read("publication.txt").includes(version),"Versions des quatre vues incohérentes");
 
@@ -103,7 +115,7 @@ assert.ok(equipPage.includes("<title>Mes équipements · Mon Rythme</title>")&&
  "Le titre navigateur et le bandeau de la page équipements doivent avoir le même intitulé");
 const ancienLibelleEquipement=["Mon","équipement"].join(" ");
 assert.ok(pagesVisuelles.every(([,source])=>!source.includes(ancienLibelleEquipement)),
- "Aucun ancien libellé ne doit rester dans les quatre pages publiées");
+ "Le libellé des équipements doit rester cohérent sur les quatre pages");
 for(const [page,source] of pagesVisuelles){
  assert.ok(source.includes('href="./style-commun.css?v='+version+'">'),"Feuille partagée absente : "+page);
  assert.ok(source.includes('defer src="./en-tete.js?v='+version+'"></script>'),"Script de date commun absent : "+page);
@@ -157,7 +169,7 @@ assert.match(fauxTime.textContent,/12 novembre 2026/,"La date commune doit être
 
 // Éviter les raccourcis et sous-titres qui dupliquent désormais les titres et la navigation.
 assert.ok(!html.includes('class="insights-grid"')&&!html.includes('class="health-preview"')&&
- !html.includes('class="health-cta"'),"Les trois anciens raccourcis du programme doivent être supprimés");
+ !html.includes('class="health-cta"'),"Le programme ne doit pas afficher de raccourcis superflus");
 const programmeHeader=html.slice(html.indexOf('<header class="site-header">'),html.indexOf('</header>'));
 const brandWrapStart=programmeHeader.indexOf('<div class="site-brand-wrap">');
 const datePosition=programmeHeader.indexOf('<time id="todayLabel"></time>');
@@ -190,7 +202,7 @@ const sourceCoach=portsCoach.orientation(),objectifsCoach=portsCoach.objectifs()
 assert.equal(domaineCoach.verifierOrientation(sourceCoach),sourceCoach,"Orientation du Coach absente ou invalide");
 assert.ok(sourceCoach.sourcesMetier.length>0&&sourceCoach.tendances.length>0&&sourceCoach.vigilances.length>0,"Synthèse métier et provenance nécessaires");
 assert.ok(sourceCoach.sourcesMetier.every(ref=>/^(coaching|sante|activites|planification):[a-z0-9:-]+$/.test(ref)),"Références métier logiques uniquement, pas de chemins physiques");
-const policyCoach=JSON.parse(read("contrats/publication-v1.json"));
+const policyCoach=JSON.parse(read("contrats/publication.json"));
 const publicCoach=projectionCoach({orientation:sourceCoach,objectifs:objectifsCoach},policyCoach);
 assert.deepEqual(Object.keys(publicCoach).sort(),["schemaVersion","miseAJour","objectifPersonnel","phase","ligneDirectrice","tendances","vigilances"].sort(),"Seuls les champs d'orientation autorisés sont publiés");
 assert.equal(publicCoach.objectifPersonnel,objectifsCoach.objectifs[0],"L'objectif personnel doit venir de la source canonique");
@@ -203,7 +215,7 @@ const avecInfos={...sourceCoach,informationsPrivees:"NE_PAS_PUBLIER",
 const publicFiltre=projectionCoach({orientation:avecInfos,objectifs:{...objectifsCoach,notesConfidentielles:"NE_PAS_PUBLIER"}},policyCoach);
 assert.ok(!JSON.stringify(publicFiltre).includes("NE_PAS_PUBLIER")&&!JSON.stringify(publicFiltre).includes("sourcesMetier"),
  "Le projecteur ne doit pas transférer les notes métier, les chemins et les champs ajoutés");
-assert.equal(projectionCoach({orientation:avecInfos,objectifs:objectifsCoach},JSON.parse(read("contrats/publication-prive-v1.json"))),null,
+assert.equal(projectionCoach({orientation:avecInfos,objectifs:objectifsCoach},JSON.parse(read("contrats/publication-restreinte.json"))),null,
  "La projection restreinte doit refuser le cap du Coach");
 assert.equal(projectionCoach({orientation:avecInfos,objectifs:objectifsCoach},{schemaVersion:1,default:"deny"}),null,
  "Politique sans autorisation de Coaching = refus par défaut");
@@ -224,14 +236,14 @@ assert.ok(!/domaines\/(?:coaching|sante|activites|planification)\/donnees\//.tes
 assert.ok(!sante.includes("L'essentiel de ma reprise, sans les notes de fond.")&&
  !sante.includes("Les observations détaillées restent dans le domaine Santé")&&
  !sante.includes("Cette vue ne constitue pas un avis médical."),"Les textes supprimés de Mon suivi santé ne doivent pas réapparaître");
-assert.ok(read("AGENTS.md").includes("orientation.json")&&read("docs/CONTRAT-CONTINUITE-COACH.md").includes("orientation.json"),
+assert.ok(read("AGENTS.md").includes("orientation.json")&&read("docs/ARCHITECTURE.md").includes("domaines/coaching/donnees/"),
  "Consignes de continuité du Coach non actualisées");
 
 assert.ok(sante.includes('id="weekGraph"')&&sante.includes('id="recentDone"')&&sante.includes('id="healthEvents"'),"Nouvelle vue visuelle de santé incomplète");
 assert.ok(sante.includes('id="doneCount"')&&sante.includes('id="feedbackCount"')&&sante.includes('id="plannedCount"'),"Indicateurs santé manquants");
-assert.ok(!/profileSections|fillParagraphs|data\/sante\/profil\.md|Mes repères de santé/.test(sante),"Ancien affichage brut du profil Santé réintroduit");
+assert.ok(!/profileSections|fillParagraphs|data\/sante\/profil\.md|Mes repères de santé/.test(sante),"Le profil Santé brut ne doit pas figurer dans le Web");
 assert.ok(!/display\s*:\s*none[^}]*healthProfile|hidden[^>]*healthProfile/.test(sante),"Le profil ne doit pas seulement être masqué visuellement");
-const publicationSante=JSON.parse(read("contrats/publication-v1.json")).sante;
+const publicationSante=JSON.parse(read("contrats/publication.json")).sante;
 assert.equal(publicationSante.profilPublic,false,"Le profil médical brut ne doit plus être publié vers le site");
 assert.equal(publicationSante.evenementsPublics,true,"Les dates d'événements doivent rester dans les repères visuels");
 assert.ok(read("scripts/construire-site.cjs").includes("model.events.map(e=>({date:e.date,title:e.title}))"),"Les notes détaillées des événements ne doivent plus être copiées vers le site");
@@ -241,14 +253,13 @@ assert.ok(data.events.length>0&&data.events.every(e=>Array.isArray(e.lines)&&e.l
 assert.ok(read("domaines/coaching/donnees/CONTEXTE-COACH.md").includes("Zones à surveiller")&&
   read("domaines/coaching/donnees/DECISIONS.md").includes("Décisions du domaine personnel")&&
   read("domaines/coaching/donnees/JOURNAL.md").includes("Journal du domaine sportif"),"La mémoire de réflexion du Coach doit rester disponible");
-assert.ok(read("maturation/architecture/AUDIT-SUIVI-SANTE.md").includes("PROFIL.md"),"Audit des sources conservées absent");
 
 assert.ok(![html,sante,coachPage,equipPage].some(page=>page.includes("localStorage")),"Stockage navigateur non autorisé");
 assert.ok(html.includes('<div class="section-top"><h2 id="headingAll">Séances de la semaine</h2></div>'),"La liste des séances doit conserver son titre");
 assert.ok(!html.includes("Course et kiné programmées pour la semaine sélectionnée."),"Ne pas afficher de résumé statique au-dessus de la liste hebdomadaire");
-assert.ok(!fs.existsSync(require("node:path").join(ROOT,"personnel/programme.js")),"Ancien fichier monolithique maintenu");
-assert.ok(!fs.existsSync(require("node:path").join(ROOT,"personnel/seances")),"Anciennes séances mélangées toujours présentes");
-const allowed=new Set(JSON.parse(read("contrats/publication-v1.json")).programme);
+assert.ok(!fs.existsSync(require("node:path").join(ROOT,"personnel/programme.js")),"Fichier monolithique interdit dans les sources");
+assert.ok(!fs.existsSync(require("node:path").join(ROOT,"personnel/seances")),"Les séances doivent être séparées par domaine");
+const allowed=new Set(JSON.parse(read("contrats/publication.json")).programme);
 for(const [week,sessions] of data.weeks)for(const s of exposed(week,data)){
   for(const key of Object.keys(s))assert.ok(allowed.has(key),"Donnée non autorisée dans la projection Web : "+key);
   assert.ok(!Object.hasOwn(s,"blocs"),"Prescription technique divulguée par le Web");
@@ -275,7 +286,7 @@ assert.deepEqual(depot.coaching.equipements(),materiel,"Le port d'équipement do
 assert.equal(coachModele.verifierEquipements(materiel),materiel);
 
 const projectEquipments=require("../adaptateurs/projections/coaching.cjs").projeterEquipements;
-const policyEquip=JSON.parse(read("contrats/publication-v1.json"));
+const policyEquip=JSON.parse(read("contrats/publication.json"));
 const publicEquip=projectEquipments(materiel,policyEquip);
 const expectedAvailable=materiel.equipements.filter(e=>e.statut==="disponible");
 assert.equal(publicEquip.schemaVersion,1);
@@ -288,7 +299,7 @@ assert.ok(!JSON.stringify(publicEquip).includes("provenance")&&!JSON.stringify(p
 assert.equal(publicEquip.equipements.find(e=>e.nom==="Gros ballon de gymnastique")?.diametreCmApprox,80);
 const sentinelle={...materiel,secret:"NE_JAMAIS_PUBLIER",equipements:materiel.equipements.map(e=>({...e,notes:"NE_JAMAIS_PUBLIER",autreDonnee:"NE_JAMAIS_PUBLIER"}))};
 assert.ok(!JSON.stringify(projectEquipments(sentinelle,policyEquip)).includes("NE_JAMAIS_PUBLIER"),"Un champ ajouté au domaine ne doit pas apparaître dans le Web");
-assert.equal(projectEquipments(sentinelle,JSON.parse(read("contrats/publication-prive-v1.json"))),null,"Interdire les équipements dans la politique restreinte");
+assert.equal(projectEquipments(sentinelle,JSON.parse(read("contrats/publication-restreinte.json"))),null,"Interdire les équipements dans la politique restreinte");
 assert.equal(projectEquipments(sentinelle,{default:"deny",schemaVersion:1}),null,"Pas d'autorisation explicite : pas de projection");
 const noEquip={...materiel,equipements:materiel.equipements.map(e=>({...e,statut:"absent"}))};
 assert.deepEqual(projectEquipments(noEquip,policyEquip).equipements,[],"Équipement non disponible à exclure");
@@ -296,7 +307,7 @@ assert.ok(equipPage.includes("./data/coaching/equipements.json")&&equipPage.incl
 assert.ok(html.includes('href="./equipements.html"')&&coachPage.includes('href="./equipements.html"'),"Liens vers l'inventaire manquants");
 assert.ok(!/domaines\/(?:coaching|sante|activites|planification)\/donnees\//.test(equipPage),"Le Web ne doit pas lire les chemins métier");
 assert.ok(!equipPage.includes("Tapis de sol")&&!equipPage.includes("Gros ballon de gymnastique"),"Ne pas coder les équipements en dur dans la page");
-assert.ok(read("AGENTS.md").includes("equipements.html")&&read("docs/CONTRAT-CONTINUITE-COACH.md").includes("equipements.html"),"Les agents doivent connaître cette vue et l'inventaire canonique");
+assert.ok(read("AGENTS.md").includes("equipements.html")&&read("docs/ARCHITECTURE.md").includes("adaptateurs/projections/"),"Les agents doivent connaître cette vue et l'inventaire canonique");
 
 const equipe=new Map(materiel.equipements.map(e=>[e.id,e]));
 assert.equal(equipe.get("tapis_sol")?.statut,"disponible");
@@ -310,7 +321,7 @@ for(const id of ["elastiques_resistance","halteres","autres_accessoires","materi
  assert.throws(()=>coachModele.verifierMaterielRequis(materiel,[id]),/indisponible ou non confirmé/,"Matériel non déclaré ou absent à bloquer : "+id);
 assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:[...materiel.equipements,materiel.equipements[0]]}),/doublonné/,"Doublons à rejeter");
 assert.throws(()=>coachModele.verifierEquipements({...materiel,equipements:materiel.equipements.map((e,i)=>i?e:{...e,statut:"achete"})}),/mal formé/,"Statut non vérifié à rejeter");
-assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("equipements"),"Inventaire distinct des données publiques Web");
+assert.ok(!JSON.parse(read("contrats/publication.json")).programme.includes("equipements"),"Inventaire distinct des données publiques Web");
 assert.ok(read("AGENTS.md").includes("catalogue officiel Garmin")&&read("adaptateurs/garmin/MCP.md").includes("Animation facultative, pas bloquante"),"Exercices officiels et animations facultatives : règle Coach à conserver");
 assert.ok(read("domaines/coaching/donnees/CONTEXTE-COACH.md").includes("L'animation sur la Venu 4 est facultative"),"Le Coach doit pouvoir proposer des séances personnalisées sans animation");
 const mcp=require("../adaptateurs/garmin/mcp.cjs");
@@ -319,8 +330,8 @@ assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(sante),"Aucune référence à d
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(coachPage),"Aucune référence à des programmes de montre dans la vue Coaching");
 assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(equipPage),"Aucune référence à des programmes de montre dans la vue des équipements");
 assert.ok(!read("scripts/construire-site.cjs").includes("fichiers/garmin"),"Pas de copie de binaires lors de la publication");
-assert.ok(!fs.existsSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers")),"Anciennes pièces binaires toujours présentes");
-assert.ok(!JSON.parse(read("contrats/publication-v1.json")).programme.includes("pieces_jointes"),"Le contrat Web ne doit pas exposer d'entraînements externes");
+assert.ok(!fs.existsSync(require("node:path").join(ROOT,"adaptateurs/garmin/fichiers")),"Pièces binaires interdites dans l'adaptateur");
+assert.ok(!JSON.parse(read("contrats/publication.json")).programme.includes("pieces_jointes"),"Le contrat Web ne doit pas exposer d'entraînements externes");
 for(const seance of data.sessions)assert.ok(!Object.hasOwn(seance,"pieces_jointes"),"Pièce jointe externe encore projetée : "+seance.id);
 const titlesStart=html.indexOf("  function titreActiviteJour(s) {");
 const titlesEnd=html.indexOf("  function render() {",titlesStart);
@@ -335,7 +346,7 @@ assert.equal(resumeJour([{id:"course-2026-11-13",titre:"Course à pied · 2M+3C"
 assert.equal(resumeJour([{id:"kine-2026-11-18"}]),"Kiné", "Kiné sans type explicite");
 assert.equal(resumeJour([{type:"renfo",titre:"Renfo"}]),"Renfo", "Renfo visible dans le calendrier");
 assert.ok(html.includes("var label=resumeJour(dailySessions);"), "Le calendrier doit utiliser les libellés composés");
-assert.ok(!html.includes("Course + kiné"), "L'ancien séparateur + doit disparaître");
+assert.ok(!html.includes("Course + kiné"), "Utiliser le séparateur cohérent entre les activités");
 const libelleStart=html.indexOf("  function libelleEtapeRenfo(texte) {");
 const libelleEnd=html.indexOf("  function derouleDisplay(s) {",libelleStart);
 assert.ok(libelleStart>=0&&libelleEnd>libelleStart,"Fonction de libellé Renfo absente");
@@ -375,9 +386,9 @@ assert.equal(titreProgramme({fait:true,nomEntrainementMontre:nomRenfoValide}),
 assert.ok(html.includes('box.appendChild(elem("h4","",titreProgramme(s)))')&&
   !html.includes('Entraînement à charger sur la montre : '),
   "Une seule ligne de titre, sans paragraphe Garmin redondant");
-assert.ok(JSON.parse(read("contrats/publication-v1.json")).programme.includes("nomEntrainementMontre"),
+assert.ok(JSON.parse(read("contrats/publication.json")).programme.includes("nomEntrainementMontre"),
   "Le nom du modèle doit être explicitement autorisé dans le contrat public");
-const vuePriveeRenfo=exposed("2026-11-09",data,JSON.parse(read("contrats/publication-prive-v1.json"))).find(s=>s.id===sourceRenfo.id);
+const vuePriveeRenfo=exposed("2026-11-09",data,JSON.parse(read("contrats/publication-restreinte.json"))).find(s=>s.id===sourceRenfo.id);
 assert.ok(vuePriveeRenfo&&!Object.hasOwn(vuePriveeRenfo,"nomEntrainementMontre"),
   "La politique privée n'expose pas le nom du modèle Garmin");
 const renfoPublic=exposed("2026-11-09",data).filter(s=>s.type==="renfo");
@@ -387,11 +398,11 @@ assert.deepEqual(renfoPublic[0].etapes,["Echauffement","Pont de bassin au sol","
 assert.ok(renfoPublic[0].aidesExercices.every(a=>!/[×;]/.test(a.exercice)),"Aides graphiques Renfo sans volume de répétitions ni tempo");
 assert.ok(renfoPublic[0].aidesExercices.every(a=>["Pont de bassin au sol","Ouverture du genou sur le côté","Bras et jambe opposés sur le dos"].includes(a.exercice)),"Aides graphiques Renfo référencées par nom seul");
 const renfo=data.sessions.filter(x=>x.type==="renfo");
-assert.equal(renfo.length,1,"Un seul nouveau Renfo est actif, les 14 anciens sont archivés");
+assert.equal(renfo.length,1,"La planification courante ne contient qu'une séance Renfo");
 assert.equal(renfo[0].id,"renfo-2026-11-13");
 assert.equal(renfo[0].date,"2026-11-13","Renfo reporté à demain, 13 novembre, sur demande du propriétaire");
-assert.ok(read("domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json").includes('"id": "renfo-2026-11-12"'),"Brouillon du 12 novembre préservé");
-assert.ok(read("domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json").includes('"id": "renfo-2026-11-14"'),"Ancien brouillon archivé");
+assert.ok(read("domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-12-avant-report.json").includes('"id": "renfo-2026-11-12"'),"La proposition datée doit rester disponible comme donnée");
+assert.ok(read("domaines/planification/archives/2026-11-12/brouillon-renfo-2026-11-14-avant-report.json").includes('"id": "renfo-2026-11-14"'),"La proposition datée reste disponible comme donnée");
 assert.equal(data.execution.has(renfo[0].id),false,"Le nouveau Renfo est une proposition non réalisée");
 for(const s of renfo){
   assert.ok(/^renfo-\d{4}-\d{2}-\d{2}$/.test(s.id),"Identifiant renfo incorrect");

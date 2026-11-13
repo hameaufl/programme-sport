@@ -18,8 +18,8 @@ assert.ok(!listing.some(p=>/data[\\/]sante[\\/]profil\.md$/.test(p)),"Profil San
 
 for(const file of listing){
  const local=path.relative(site,file).replace(/\\/g,"/");
- assert.ok(!/\.fit$/i.test(local),"Ancien programme binaire publié : "+local);
- assert.ok(!/^fichiers\/garmin(?:\/|$)/i.test(local),"Ancien répertoire d'entraînements publié : "+local);
+ assert.ok(!/\.fit$/i.test(local),"Fichier binaire non autorisé dans la publication : "+local);
+ assert.ok(!/^fichiers\/garmin(?:\/|$)/i.test(local),"Répertoire de modèles externes non autorisé dans la publication : "+local);
  if(local.endsWith(".html")){
   const html=fs.readFileSync(file,"utf8");
   assert.ok(!/garmin|\.fit\b|pieces_jointes/i.test(html),"Référence d'entraînement externe dans HTML : "+local);

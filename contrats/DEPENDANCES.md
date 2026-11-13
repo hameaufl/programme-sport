@@ -30,7 +30,7 @@ Les adaptateurs peuvent utiliser plusieurs domaines dans un **assemblage de lect
 ## Règles de sécurité
 
 Le site et le dépôt sont actuellement publics. `noindex` n'est pas une authentification.
-Le contenu d'une projection publique reste public, y compris ses copies, ses caches et les anciennes publications.
+Le contenu d'une projection publique reste public, y compris ses copies, ses caches et les publications déjà effectuées.
 Toute future extraction privée nécessite une politique de publication adaptée, un service authentifié pour des vues privées, et un plan d'assainissement des publications et historiques passés. L'architecture prépare cette évolution, sans prétendre l'avoir déjà accomplie.
 
 ## Projection de stratégie Coaching (12 novembre 2026)

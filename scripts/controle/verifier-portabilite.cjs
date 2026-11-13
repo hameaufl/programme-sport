@@ -2,7 +2,7 @@
 const assert=require("node:assert/strict");
 const depots=require("../../adaptateurs/fichiers/depots.cjs");
 const {collect,exposed}=require("../../adaptateurs/projections/lecture.cjs");
-const policy=require("../../contrats/publication-prive-v1.json");
+const policy=require("../../contrats/publication-restreinte.json");
 const complete=collect();
 const replaceHealth={
  ...depots,
@@ -32,7 +32,7 @@ for(const week of withoutPrivate.weeks.keys())for(const s of exposed(week,withou
 const orientation=require("../../domaines/coaching/donnees/orientation.json");
 const objectifs=require("../../domaines/coaching/donnees/objectifs.json");
 const projeterOrientation=require("../../adaptateurs/projections/coaching.cjs").projeterOrientation;
-const contratPublic=require("../../contrats/publication-v1.json");
+const contratPublic=require("../../contrats/publication.json");
 const vue=projeterOrientation({orientation,objectifs},contratPublic);
 assert.equal(vue.objectifPersonnel,objectifs.objectifs[0],"La projection repose sur le domaine Coaching, sans Santé ni Web");
 assert.equal(vue.phase,orientation.phase);

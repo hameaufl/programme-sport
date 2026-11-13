@@ -12,7 +12,7 @@ Le Coach maintient `equipements.json` uniquement à partir d'une acquisition, d'
 
 Le Coach doit conserver le détail et les motifs de ses analyses dans `CONTEXTE-COACH.md`, `DECISIONS.md` et `JOURNAL.md`, et les faits cliniques dans Santé ; `orientation.json` résume uniquement l'état actuel. Lorsqu'une stratégie change, il actualise ce résumé **dans le même changement que la décision**, en datant la révision, et maintient la traçabilité des sources métier. Les tendances sont des pistes **conditionnelles**, non des séances réalisées ni des décisions automatiques sur le calendrier. Si un champ n'est pas étayé, il reste absent ou non renseigné plutôt que d'être inventé.
 
-Le Web ne lit jamais ces fichiers bruts : `adaptateurs/projections/coaching.cjs` construit une vue de lecture **à champs explicitement autorisés** suivant `contrats/publication-v1.json`. La projection n'inclut ni sources internes, ni notes, ni historique de raisonnement, ni identifiants de santé. La politique restreinte ne publie aucune orientation. Le dépôt et le site standard restent publics : ne pas y déposer un détail personnel nouveau sans examen de sa publicité.
+Le Web ne lit jamais ces fichiers bruts : `adaptateurs/projections/coaching.cjs` construit une vue de lecture **à champs explicitement autorisés** suivant `contrats/publication.json`. La projection n'inclut ni sources internes, ni notes, ni historique de raisonnement, ni identifiants de santé. La politique restreinte ne publie aucune orientation. Le dépôt et le site standard restent publics : ne pas y déposer un détail personnel nouveau sans examen de sa publicité.
 
 ## Vue de mon matériel à domicile
 

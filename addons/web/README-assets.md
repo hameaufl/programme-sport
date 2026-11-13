@@ -1,7 +1,7 @@
-# Banque d’images pour les exercices de renfo
+# Aides illustrées des exercices
 
-Les cinq PNG approuvés par l'utilisateur le 12 novembre 2026 sont conservés dans `assets/renfo/png/`, sans changement de dessin. Le fichier `banque.json` référence leur identité et le geste associé.
+La banque `public/assets/renfo/banque.json` relie chaque `mouvementId` à son PNG pédagogique sous `public/assets/renfo/png/`. Les cinq images approuvées restent **inchangées**. Les exercices concernés doivent pointer vers l'image correspondant exactement au geste prescrit.
 
-**Règle pour tout Coach :** consulter `banque.json` à chaque création ou modification d'un Renfo. Chaque mouvement de `etapes`, même déjà connu ou répété, possède obligatoirement une entrée dans `aidesExercices` avec le libellé exact et le chemin `png`. Réutiliser le PNG existant pour le même mouvement ; s'il manque, générer un PNG statique montrant corps, positions et flèches, le déposer sous `png/<slug>.png` et l'ajouter à `banque.json` avant publication.
+Le Coach choisit et décrit les exercices selon les objectifs, la tolérance et le matériel réellement disponible. Maturation assure la présentation, les contrôles de la banque et la fenêtre d'aide. Le bouton `?` ouvre le PNG dans une fenêtre que l'utilisateur peut fermer ; aucune ressource externe n'est requise.
 
-Le bouton `?` et la fenêtre avec une croix relèvent de l'affichage (Maturation), pas du contenu sportif. Les anciennes animations GIF ne sont plus utilisées ni publiées par le build. Éviter les liens externes et toute dépendance réseau.
+La banque n'est pas un stockage de données sportives : seuls les blocs de Planification font foi pour l'exercice, ses séries, son rythme et sa durée.

@@ -1,7 +1,7 @@
 "use strict";
 const fs=require("node:fs"),path=require("node:path"),assert=require("node:assert/strict");
 const root=path.resolve(__dirname,"../.."),site=path.join(root,"_site"),read=p=>JSON.parse(fs.readFileSync(path.join(site,p),"utf8"));
-const policy=require("../../contrats/publication-prive-v1.json");
+const policy=require("../../contrats/publication-restreinte.json");
 assert.equal(policy.default,"deny");
 const index=read("data/index.json");
 assert.ok(Array.isArray(index.semaines));
@@ -20,8 +20,8 @@ assert.ok(!fs.existsSync(path.join(site,"data/coaching/orientation.json")),"Orie
 assert.ok(!fs.existsSync(path.join(site,"data/coaching/equipements.json")),"Matériel du Coach publié malgré la politique restreinte");
 assert.equal(policy.coaching.equipementsPublics,false,"La politique restreinte doit exclure la projection de matériel");
 assert.equal(policy.coaching.orientationPublique,false,"La politique restreinte doit exclure la projection du Coach");
-assert.ok(!fs.existsSync(path.join(site,"fichiers/garmin")),"Un ancien stockage de fichiers externes a été publié");
-assert.ok(!fs.existsSync(path.join(site,"personnel")),"Ancien dossier personnel publié");
+assert.ok(!fs.existsSync(path.join(site,"fichiers/garmin")),"Des fichiers externes interdits ont été publiés");
+assert.ok(!fs.existsSync(path.join(site,"personnel")),"Dossier de sources privées interdit dans la publication");
 const journal=read("data/sante/journal/index.json");
 assert.equal(journal.total,0);
 console.log("Publication restreinte conforme : aucune donnée Santé ni binaire externe, programme conservé.");

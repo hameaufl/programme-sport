@@ -1,9 +1,9 @@
-# Adaptateur Garmin Connect par MCP — indépendant de Mon Rythme
+# Adaptateur Garmin Connect par MCP
 
-- **Bêta en lecture seule par défaut** : `node adaptateurs/garmin/mcp.cjs renfo-AAAA-MM-JJ [autres IDs autorisés]` identifie les modèles identiques et affiche les dates sélectionnées, **sans aucun appel Garmin ni écriture locale**.
-- Source canonique : `domaines/planification/donnees/seances/` (blocs). Aucun fichier d'entraînement n'est créé, archivé, copié ou publié par le Web. Il n'y a plus de générateur FIT local.
-- Le Coach exécute, depuis sa conversation et **uniquement après demande explicite**, les outils MCP de lecture, de création et de programmation. Ni la CI ni l'add-on Web ne se connectent à un compte Garmin.
-- Réutiliser un modèle existant pour plusieurs dates ; le nommage reste un choix du propriétaire et le premier envoi/synchronisation sur la Venu 4 est à confirmer.
-- Référence opérationnelle : [MCP.md](MCP.md). Les fichiers supprimés ne sont accessibles que dans l'historique Git, pas sur le site.
+`node adaptateurs/garmin/mcp.cjs renfo-AAAA-MM-JJ [autres identifiants sélectionnés]` prépare et compare les prescriptions sous `domaines/planification/donnees/seances/`, **sans appel Garmin ni écriture locale**.
 
-**Choix des nouveaux exercices Renfo :** se reporter à `MCP.md` : seuls les mouvements officiels Garmin vérifiés et réalisables avec l'inventaire `domaines/coaching/donnees/equipements.json` sont admissibles. **Les animations sur la Venu 4 sont facultatives et non bloquantes** : privilégier la personnalisation des séries/répétitions avec des exercices classifiés, et donner au propriétaire des références pédagogiques vérifiées à consulter en dehors de la séance. Certaines séances prédéfinies Garmin sont animées, mais pas les séances personnalisées. Aucun référentiel officiel fictif ne doit être maintenu dans l'adaptateur.
+La lecture, la bibliothèque d'entraînements, la programmation des dates et la transmission à un appareil sont distinctes. Le Coach ne procède à une création, une modification, une suppression, une programmation ou un envoi **qu'après une demande explicite pour les actions et les cibles exactes**. La CI et le site public ne se connectent pas au compte Garmin.
+
+Choisir les exercices dans le **catalogue officiel Garmin** et vérifier les exigences de matériel dans `domaines/coaching/donnees/equipements.json`. **Animation facultative, pas bloquante** pour une séance personnalisée : fournir les explications pédagogiques séparément. Une réponse d'upload ne suffit pas ; relire et contrôler le modèle avant de confirmer le résultat.
+
+Protocole complet : [MCP.md](MCP.md).
