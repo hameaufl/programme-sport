@@ -1,6 +1,6 @@
 # Corrigendum de provenance — 12 règles de gouvernance créées dans le chantier
 
-**Date : 13 novembre 2026. Statut : PROPOSITION NON APPLIQUÉE À LA MATRICE, NON VALIDÉE PAR LE GARDIEN.**
+**Date : 13 novembre 2026. Statut ACTUALISÉ : les 12 liens ont été rectifiés dans la matrice de travail (73 historiques + 12 propositions nouvelles), SANS VALIDATION DU GARDIEN.** Le texte ci-dessous conserve le plan préparatoire de la correction avant son application.
 
 La matrice initiale regroupe 85 familles, mais **12 nouvelles règles de gouvernance** `COO/REF/QUA` y sont fictivement rattachées à `AGENTS.md#L3` du SHA historique `d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4`. Cette ligne traite **du nommage Garmin** et ne fonde ni l'autorité du Gardien ni le statut des agents. C'est une erreur sémantique de provenance, **sans perte de règle historique**.
 
@@ -29,3 +29,6 @@ Les exigences ont en réalité été **proposées** lors du premier commit expé
 4. Demander la revue du Gardien avec sa limite d'indépendance déclarée ; aucune activation ni fusion sans l'accord explicite du propriétaire.
 
 Les 12 permaliens proposés ont été **contrôlés ligne par ligne dans les fichiers du commit initial**. Ils ne prouvent pas la couverture exhaustive des 161 rubriques de `main`. Le brouillon B2 et les données métier restent inchangés.
+
+## État après application documentaire
+Le corrigendum est désormais **appliqué uniquement à la matrice expérimentale**, voir [CORRECTION-PROVENANCE-APPLIQUEE.md](CORRECTION-PROVENANCE-APPLIQUEE.md). Les **13 autres ancrages hors sujet**, les **13 imprécis** et l'audit clause par clause restent ouverts. La modification ne confère aucune autorité ni aucun droit nouveau aux rôles expérimentaux.

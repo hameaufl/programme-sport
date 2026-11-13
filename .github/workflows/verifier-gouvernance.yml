@@ -44,5 +44,7 @@ jobs:
         run: node maturation/gouvernance/verifier-audit-semantique.cjs
       - name: Vérifier les huit qualifications INC et leurs preuves historiques
         run: node maturation/gouvernance/verifier-qualifications-inc.cjs
+      - name: Contrôler l'inventaire de nettoyage sans autorisation de suppression
+        run: node maturation/gouvernance/verifier-assainissement.cjs
       - name: Vérifier la non-perte métier contre le SHA initial et le main actuel
         run: node maturation/gouvernance/verifier-integrite-metier.cjs

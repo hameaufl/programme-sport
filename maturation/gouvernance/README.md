@@ -55,7 +55,7 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 
 - [Premier bilan de huit réponses réelles B2](RAPPORT-OBSERVE-B2-2026-11-13.md) : six comparables à B (−71,3 % de mots), deux nouveaux sans comparateur, réserves de précision et de méthode ; [observations structurées](RESULTATS-B2-OBSERVES.json).
 
-- [Deux contre-tests B2 prêts](CONTRETESTS-B2-GUIDE.md) : fidélité d'un compte rendu complexe et preuve de déploiement Web, [prompts synthétiques](CONTRETESTS-B2-PROMPTS.json) et [résultats encore vides](CONTRETESTS-B2-OBSERVATIONS.json). Aucun résultat comportemental de ces deux contre-tests n'a encore été observé.
+- [Protocole historique des deux contre-tests B2](CONTRETESTS-B2-GUIDE.md) : prompts conservés pour reproductibilité ; les réponses ont ensuite été évaluées séparément, voir le rapport et les observations à jour ci-dessous.
 
 - [Résultat des deux contre-tests B2 en sessions neuves](RAPPORT-CONTRETESTS-B2-2026-11-13.md) : 9/9 et 5/8 critères à lecture stricte, aucune erreur bloquante et trois détails Web à compléter avant livraison réelle ; [observations anonymisées](CONTRETESTS-B2-OBSERVATIONS.json).
 
@@ -65,3 +65,7 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 
 - [Audit sémantique préliminaire](AUDIT-SEMANTIQUE-PRELIMINAIRE.md) : **161 rubriques main / 162 dont 1 expérimentale** ; [inventaire historique](INVENTAIRE-RUBRIQUES-MAIN.json) ; [85 ancrages qualifiés](AUDIT-ANCRAGES-SEMANTIQUES.json), sans certification exhaustive.
 - [Instruction des huit incohérences](referentiel/INSTRUCTION-INC-001-008.md) : 16 fragments de preuve à SHAs fixes, priorités proposées et **8 dossiers encore ouverts** ; [relevé structuré](referentiel/QUALIFICATIONS-INC-001-008.json).
+
+- [Point d'entrée documentaire de l'état courant V2](ETAT-COURANT-REFERENCE.md), sans activation B2.
+- [Plan de nettoyage progressif sans destruction](PLAN-ASSAINISSEMENT-V2.md), [inventaire de 143 fichiers](INVENTAIRE-ASSAINISSEMENT.json) et [revue des 30 rubriques de reprise](REVUE-SEMANTIQUE-REPRISE.md).
+- [Correction de provenance appliquée](CORRECTION-PROVENANCE-APPLIQUEE.md) : 73 obligations historiques, 12 règles expérimentales nouvelles distinctes ; visa Gardien encore absent.

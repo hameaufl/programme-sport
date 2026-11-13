@@ -167,3 +167,15 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Corriger les ancrages trompeurs dans la matrice, en distinguant expressément source métier historique et **nouvelle proposition de gouvernance** ; ne pas créer un faux antécédent dans `main`.
 - [ ] Soumettre les huit dossiers à une **validation Gardien effective/attestée** et solliciter l'arbitrage du propriétaire pour les questions de permission ; **aucune fermeture automatique**.
 - [ ] Après preuve, préparer une décision d'adoption B2 à confirmer ; **fusion `main` toujours non approuvée**.
+
+## 13 novembre 2026 — Transition progressive vers l'état courant, sans destruction
+- [x] Corriger les 12 faux liens « obligation historique » vers `AGENTS.md L3` : désormais 73 obligations historiques + 12 propositions expérimentales, sans visa ni activation.
+- [x] Inventorier les 143 fichiers de `main` avec SHA et traitement proposé ; protéger 51 sources métier et 17 éléments d'archives Renfo.
+- [x] Relire les 30 sections de `docs/REPRISE.md` : 16 courantes à confirmer, 10 mixtes à séparer, 4 V1 remplacées.
+- [x] Rédiger `ETAT-COURANT-REFERENCE.md` (point d'entrée V2 non normatif) et `PLAN-ASSAINISSEMENT-V2.md` (vagues, preuves et permissions).
+- [x] Installer la vérification CI d'inventaire, de non-destruction et de non-certification prématurée.
+- [ ] Étudier les 13 ancrages hors sujet et les 13 imprécis, puis confirmer chaque correctif par une lecture exacte avant la mise à jour de la matrice.
+- [ ] Auditer les clauses toujours pertinentes des 161 rubriques historiques, notamment `AGENTS.md`, `docs/ROLES.md` et les instructions Garmin.
+- [ ] Vérifier les dépendances des fichiers V1 candidats, préparer les remplacements current-only et demander accord sur les chemins concernés avant suppression/déplacement.
+- [ ] Séparer la migration des preuves et des données métier des nettoyages documentaires ; aucun nettoyage des informations santé ou archives personnelles sans accord adapté.
+- [ ] Gardien et propriétaire : arbitrages INC encore ouverts, visa de gouvernance et fusion `main` toujours non acquis.
