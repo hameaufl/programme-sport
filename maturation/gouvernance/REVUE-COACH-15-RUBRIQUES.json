@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-13",
+  "source_main_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+  "source": "docs/COACH-MODE-OPERATOIRE.md",
+  "main_apres_mini_lot_1": "e28b8cac98d20b78fd4835392b53afeeed18c234",
+  "portee": "Qualification préliminaire par rubrique H2, sans audit exhaustif des clauses, sans vérification distante Garmin ni permission nouvelle.",
+  "rubriques_couvertes_par_revue_preliminaire": 15,
+  "classes": {
+    "courant_a_verifier": 8,
+    "mixte_a_scinder": 5,
+    "etat_date_depasse_non_prescriptif": 2
+  },
+  "rubriques": [
+    {
+      "id": "COM-01",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 3,
+      "ligne_fin": 12,
+      "titre": "RÈGLE MÉTIER ABSOLUE — Nommage Garmin par objectif principal actif (12 novembre 2026)",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        6,
+        7,
+        9,
+        10
+      ],
+      "justification": "Règle actuelle de nommage selon objectif et phase, mais exemple et récit d'une intervention datée : ne pas les confondre avec une vérification Garmin distante actuelle.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-02",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 13,
+      "ligne_fin": 18,
+      "titre": "RÈGLE MÉTIER PRIORITAIRE — Nom Garmin dans le titre « Programme prévu » (12 novembre 2026)",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        15,
+        17
+      ],
+      "justification": "Nom exact confirmé dans le même en-tête Programme prévu et distinction entre séances prévues et réalisées : principe V2 encore plausible à vérifier.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-03",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 19,
+      "ligne_fin": 26,
+      "titre": "RÈGLE PRIORITAIRE — Nom Garmin définitif propre et cohérent avec Mon programme (12 novembre 2026)",
+      "qualification_preliminaire": "mixte_a_scinder",
+      "lignes_cles": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "justification": "Exigences de nom définitif et de relecture utiles, mais état historique annonçant un ancien nom Mon Rythme et règles de suppression conditionnelles à éclaircir.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-04",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 27,
+      "ligne_fin": 34,
+      "titre": "PRIORITÉ ABSOLUE — Nom du programme Garmin toujours visible dans « Mon programme » (12 novembre 2026)",
+      "qualification_preliminaire": "mixte_a_scinder",
+      "lignes_cles": [
+        29,
+        31,
+        33
+      ],
+      "justification": "Nom vérifié et confidentialité pertinents, mais encart séparé et ancienne valeur avec suffixe contredisent le titre unique défini dans les premières priorités.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-05",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 35,
+      "ligne_fin": 41,
+      "titre": "RÈGLE PRIORITAIRE — Renfo Web minimal, modèle Garmin détaillé, nettoyage intermédiaire autorisé (12 novembre 2026)",
+      "qualification_preliminaire": "mixte_a_scinder",
+      "lignes_cles": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "justification": "Rendu Renfo épuré et détails canoniques conservés ; permissions de nettoyage Garmin et états de bibliothèque datés, à clarifier avant réemploi.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-06",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 42,
+      "ligne_fin": 45,
+      "titre": "DERNIER ÉTAT — Renfo A créé, rendu allégé, reconnaissance Garmin vérifiée",
+      "qualification_preliminaire": "etat_date_depasse_non_prescriptif",
+      "lignes_cles": [
+        44
+      ],
+      "justification": "Photographie historique d'un modèle et d'un intermédiaire présenté encore existant, état qui ne constitue pas une photographie garantie du compte aujourd'hui.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-07",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 46,
+      "ligne_fin": 49,
+      "titre": "PRIORITÉ LA PLUS RÉCENTE — Renfo au vendredi 13 novembre, échauffement libre (12 novembre 2026 au soir)",
+      "qualification_preliminaire": "mixte_a_scinder",
+      "lignes_cles": [
+        48
+      ],
+      "justification": "Report et liberté d'échauffement datés ; affirmation selon laquelle aucun modèle n'existe devenue obsolète au regard de la correction consignée plus haut.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-08",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 50,
+      "ligne_fin": 53,
+      "titre": "PRIORITÉ ACTUELLE — Premier Renfo déplacé au jeudi 12 novembre 2026",
+      "qualification_preliminaire": "etat_date_depasse_non_prescriptif",
+      "lignes_cles": [
+        52
+      ],
+      "justification": "Ancienne séance Renfo prévue à une autre date, remplacée par le report ; conserver le fait de l'époque, sans ressusciter cette date ou ce programme.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-09",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 54,
+      "ligne_fin": 60,
+      "titre": "PRIORITÉ — Renfos remis à zéro, proposition unique à valider (12 novembre 2026)",
+      "qualification_preliminaire": "mixte_a_scinder",
+      "lignes_cles": [
+        56,
+        59
+      ],
+      "justification": "Réinitialisation de la planification avec brouillon ancien ; règle durable de non-création automatique à conserver et anciens états à archiver conceptuellement.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-10",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 61,
+      "ligne_fin": 67,
+      "titre": "1. Vérification avant de conseiller ou d'écrire",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        63,
+        65,
+        66
+      ],
+      "justification": "Lecture des sources actuelles, séparation fait et hypothèse, traçabilité et Mets-toi à jour en lecture seule : principes pertinents sous réserve d'audit complet.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-11",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 68,
+      "ligne_fin": 80,
+      "titre": "2. Route de chaque information, sans doublon",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        70,
+        79
+      ],
+      "justification": "Routage canonique Planification Activités Santé Coaching et non-duplication ; chemins et format des événements à vérifier contre le code V2.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-12",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 81,
+      "ligne_fin": 90,
+      "titre": "3. Checklist impérative pour **chaque activité confirmée** — avant le commit",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        83,
+        85,
+        88,
+        89
+      ],
+      "justification": "Checklist des activités confirmées, structuresSollicitees non vide, restitution Web et interdiction d'inventer les données : principes à préserver.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-13",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 91,
+      "ligne_fin": 100,
+      "titre": "4. Mode d'intervention Web et tests",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        93,
+        98,
+        99
+      ],
+      "justification": "Contrôle du build de la publication réellement servie et limite HTML métier locale pour Coach : principes opérationnels à conserver sans élargir le rôle.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-14",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 101,
+      "ligne_fin": 108,
+      "titre": "5. Garde-fous prioritaires",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "justification": "Non-perte métier, protection des données et interdiction d'écriture Garmin sans demande exacte : règles actuelles plausibles, non autorisations nouvelles.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    },
+    {
+      "id": "COM-15",
+      "source": "docs/COACH-MODE-OPERATOIRE.md",
+      "source_sha": "d88a202ae79e8afb61e9984f0b5bc95a1c5c46b4",
+      "ligne_debut": 109,
+      "ligne_fin": null,
+      "titre": "6. Reprise / historique",
+      "qualification_preliminaire": "courant_a_verifier",
+      "lignes_cles": [
+        111,
+        112,
+        113
+      ],
+      "justification": "Reprise des instructions et protection de la mémoire historique : principe actuel, chemins et ordre de priorité à vérifier avant consolidation.",
+      "verification_semantique_exhaustive": false,
+      "remplacement_applique": false,
+      "autorisation_nouvelle": false
+    }
+  ],
+  "certification_semantique_exhaustive": false,
+  "activation_autorisee": false
+}
