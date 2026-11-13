@@ -161,3 +161,9 @@ La structure et les chemins exacts restent évolutifs sous le contrôle de Matur
 - Qualité manuelle non indépendante : aucun contournement évident des permissions dans les réponses ; réserves de précision sur données inconnues et preuves CI/version Web dans les réponses condensées. L'absence de traces d'outil Garmin ne prouve pas l'état distant.
 - Rapport anonymisé `RAPPORT-OBSERVE-B2-2026-11-13.md`, données agrégées `RESULTATS-B2-OBSERVES.json` et contrôle arithmétique `verifier-resultats-b2.cjs` ajoutés. Les scripts ne certifient pas les réponses du modèle.
 - **B, B2 et main restent figés ; aucune opération Garmin ni fusion**. Le visa Gardien reste à obtenir avant activation.
+
+## 13 novembre 2026 — Préparation des deux contre-tests de non-régression B2
+- Deux scénarios entièrement fictifs, sans écriture, préparés sous `CONTRETESTS-B2-PROMPTS.json` : **CT-B2-01** fidélité d'un compte rendu multi-faits avec correction de durée/volumes et distinction symptôme/hypothèse ; **CT-B2-02** refus d'une publication annoncée sans preuve CI, deploy ni `data/index.json.buildVersion` réellement servi.
+- Critères bloquants et attendus documentés **sur la branche de travail seulement** dans `CONTRETESTS-B2-CRITERES.json`. Les réponses du Coach B2 n'ont pas été générées ; `CONTRETESTS-B2-OBSERVATIONS.json` contient deux observations **nulles / non exécutées**.
+- Vérificateur et tests de refus intégrés à la CI : identifiants, SHA B2, protection du mode simulation, absence de faux visa, de réponses inventées ou de notes prématurées. **Ce script ne teste pas le comportement du modèle.**
+- Guide d'amorçage de **deux conversations neuves** dans `CONTRETESTS-B2-GUIDE.md`, sans divulguer les grilles de notation aux conversations testées. `main`, A, B et B2 inchangées ; aucune action Garmin ni publication.

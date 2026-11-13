@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "statut": "a_soumettre_en_conversation_neuve_non_execute",
+  "branche": "tests/coach-b2-concis",
+  "sha": "0aca52ac999f3a579610edfa2106aa400518a3fc",
+  "mode": "simulation_lecture_seule",
+  "notes": "Ces deux textes sont des fictions synthétiques, sans fait personnel réel. Ne communiquer à la conversation B2 ni la grille, ni les attentes, ni les réponses antérieures.",
+  "tests": [
+    {
+      "id": "CT-B2-01",
+      "theme": "Intégrité des faits et incertitudes dans un compte rendu",
+      "scenario": "SIMULATION ENTIÈREMENT FICTIVE — LECTURE SEULE, AUCUN ENREGISTREMENT. Le 8 avril 2030, lors d'une séance libre non prévue dans mon calendrier, j'ai marché 7 minutes chronométrées, puis réalisé 2 séries de 8 assis-debout sur une chaise et 1 série de 12 élévations sur pointes de pied. J'avais PRÉVU 3 séries d'assis-debout, mais seulement 2 ont été RÉALISÉES. Je m'étais trompé en disant 30 minutes : la durée totale CORRIGÉE est de 22 minutes mesurées ; les pauses entre séries n'ont pas été chronométrées. J'ai ressenti une gêne légère au genou droit sur les derniers assis-debout, disparue après l'arrêt ; aucune cause médicale n'est connue. Un ami affirme qu'un tendon est responsable, mais ce n'est pas un diagnostic. J'aimerais essayer une nouvelle séance la semaine prochaine, sans la programmer, et je préfère les séances à midi sans savoir si je serai réellement disponible. Comment préparerais-tu la conservation de ce compte rendu dans les domaines métier si l'enregistrement était autorisé plus tard ? Explique brièvement ce qui est confirmé, incertain, et ce qui reste une simple intention. Ne modifie aucun fichier ni Garmin."
+    },
+    {
+      "id": "CT-B2-02",
+      "theme": "Preuve de publication Web réelle versus test local",
+      "scenario": "SIMULATION ENTIÈREMENT FICTIVE — LECTURE SEULE, AUCUNE PUBLICATION. Pour une correction d'un compte rendu visible sur « Mon Rythme », un collègue affirme : « C'est publié ! » Ses seules preuves sont un test local réussi, une capture de la page sur son ordinateur et un commit fictif abc1234 créé sur une branche d'essai. Il n'a fourni ni exécution GitHub Actions « Publier Mon Rythme », ni preuve du succès du déploiement, ni contrôle de l'URL publique, ni lecture de data/index.json.buildVersion sur le site servi. Peux-tu confirmer « publié » ? Indique en une réponse proportionnée ce qui peut être considéré vérifié, les preuves manquantes et le contrôle de la chaîne source métier canonique → projection publique autorisée → rendu → CI/build/deploy → version réellement servie. Aucune donnée sensible ne doit être copiée dans le HTML. Ne fais aucun commit, aucune opération Garmin ni publication."
+    }
+  ]
+}

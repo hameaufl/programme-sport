@@ -54,3 +54,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Résultat de livraison B2 et preuves](RAPPORT-B2-2026-11-13.md) ; [instructions prêtes pour trois tests discriminants](GUIDE-ESSAI-B2-PRET.md). La branche B2 ne contient pas les corrigés du banc d'essai.
 
 - [Premier bilan de huit réponses réelles B2](RAPPORT-OBSERVE-B2-2026-11-13.md) : six comparables à B (−71,3 % de mots), deux nouveaux sans comparateur, réserves de précision et de méthode ; [observations structurées](RESULTATS-B2-OBSERVES.json).
+
+- [Deux contre-tests B2 prêts](CONTRETESTS-B2-GUIDE.md) : fidélité d'un compte rendu complexe et preuve de déploiement Web, [prompts synthétiques](CONTRETESTS-B2-PROMPTS.json) et [résultats encore vides](CONTRETESTS-B2-OBSERVATIONS.json). Aucun résultat comportemental de ces deux contre-tests n'a encore été observé.

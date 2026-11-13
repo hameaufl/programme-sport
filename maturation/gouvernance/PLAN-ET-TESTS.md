@@ -133,3 +133,10 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [ ] Refaire **deux contre-tests** en conversation neuve : exhaustivité d'un compte rendu et preuves d'une publication réelle, sans écriture.
 - [ ] Soumettre les deux nouvelles demandes à B (si la comparaison exhaustive est souhaitée) et faire vérifier la notation par un évaluateur distinct.
 - [ ] Visa Gardien et consentement du propriétaire avant toute fusion.
+
+## 13 novembre 2026 — Deux contre-tests B2 à exécuter
+- [x] Deux prompts synthétiques, strictement en lecture seule, pour vérifier les champs inconnus, corrections chiffrées et preuve de publication effective.
+- [x] Grille des erreurs bloquantes et critères attendus préparée **hors branche B2** ; aucun corrigé montré au modèle testé.
+- [x] Relevé initial vide et vérification CI contre les résultats inventés.
+- [ ] **Réponses issues de deux conversations neuves** sur le SHA B2 exact, avec PDFs ou transcriptions privés ; contrôle qualitatif et comptage de mots après réception.
+- [ ] Visa du Gardien et accord de fusion du propriétaire, non acquis.

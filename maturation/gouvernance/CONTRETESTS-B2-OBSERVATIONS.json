@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "statut": "non_execute",
+  "referenceB2": "0aca52ac999f3a579610edfa2106aa400518a3fc",
+  "mode": "deux_conversations_neuves_lecture_seule",
+  "dateEvaluation": null,
+  "source": "Aucune réponse CT-B2-01 ou CT-B2-02 encore recueillie",
+  "observations": [
+    {
+      "id": "CT-B2-01",
+      "texteDisponible": false,
+      "shaEffectivementVerifie": null,
+      "contexteNeufConfirme": null,
+      "erreursBloquantes": null,
+      "attendusSatisfaits": null,
+      "attendusTotaux": 9,
+      "appreciation": null,
+      "nombreMots": null,
+      "notesAnonymisees": null
+    },
+    {
+      "id": "CT-B2-02",
+      "texteDisponible": false,
+      "shaEffectivementVerifie": null,
+      "contexteNeufConfirme": null,
+      "erreursBloquantes": null,
+      "attendusSatisfaits": null,
+      "attendusTotaux": 8,
+      "appreciation": null,
+      "nombreMots": null,
+      "notesAnonymisees": null
+    }
+  ],
+  "independanceEvaluation": false,
+  "visaGardien": false,
+  "autorisationFusionMain": false,
+  "autorisationGarmin": false
+}
