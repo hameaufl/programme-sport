@@ -19,3 +19,6 @@ Les deux propositions prêtes sont [PROPOSITION-CONTEXTE-TECHNIQUE-V2.md](PROPOS
 - Aucun retrait des documents `AGENTS.md`, `docs/REPRISE.md`, des décisions techniques, données sportives ni des archives Renfo dans ce mini-lot.
 
 **Aucun outil Garmin n'a été appelé en écriture, aucun fichier de production n'est modifié et la PR expérimentale reste brouillon.**
+
+## Résultat après autorisation du propriétaire (13 novembre 2026)
+La [PR n°10](https://github.com/hameaufl/programme-sport/pull/10) a été fusionnée par squash dans `main` au SHA `e28b8cac98d20b78fd4835392b53afeeed18c234`. Les deux remplacements documentaires sont appliqués, avec GitHub Pages et version réellement servie vérifiées. Le texte précédent décrit **l'étape de préparation, désormais achevée**, et ne signifie plus que ce mini-lot attend une première approbation. Aucune suppression de fichiers historiques ou de données métier n'a eu lieu ; les décisions de purge restent distinctes.
