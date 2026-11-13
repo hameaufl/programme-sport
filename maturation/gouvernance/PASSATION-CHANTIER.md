@@ -1,5 +1,13 @@
 # Passation multi-agents : état durable et reprise dans une autre conversation
 
+## Mise à jour du 13 novembre 2026 — PR n°11 fusionnée avec accord du propriétaire
+- **Dernier `main` vérifié :** `cf9241b9740be8e6c3f80058a45f76e197a4bb44` après la [PR #11 fusionnée](https://github.com/hameaufl/programme-sport/pull/11), par squash ; **deux fichiers documentaires uniquement** et quatre substitutions de renvois V2. La PR #10 était déjà fusionnée au commit `e28b8cac`.
+- **Publication Mon Rythme vérifiée :** workflow [43465068468](https://github.com/hameaufl/programme-sport/actions/runs/43465068468) terminé avec succès ; build, déploiement Pages et contrôle de version réellement servie réussis.
+- La **PR #9 reste ouverte en brouillon, non fusionnée** ; sa base historique `d88a202` demeure la référence de l'inventaire H2–H4, distincte du `main` actuel. A/B/B2 non activées.
+- **Aucune permission Garmin nouvelle**, aucune modification de données, historique, contrats ou architecture de production. Les 161 rubriques sont classées au premier passage, mais non certifiées clause par clause. Les **8 INC** restent ouvertes, `REF-06` et `INC-005` attendent un arbitrage distinct, aucun visa Gardien indépendant ni accord de fusion PR #9.
+- Les mentions plus bas « PR #11 en brouillon » décrivent **l'état précédent** et sont désormais historiques. Le prochain accord éventuel doit porter sur `REF-06`, `INC-005` ou un **lot précis différent**, sans approbation implicite.
+
+
 ## Synthèse du 13 novembre 2026 — revue 161/161, provenance et mini-lot n°2
 - Source de travail expérimentale : 161/161 rubriques H2–H4 classées à titre de **premier passage**, sans certification sémantique de chacune des clauses. [87 nouvelles classifications](REVUE-SEMANTIQUE-87-RUBRIQUES.md) et [index exact](REVUE-87-RUBRIQUES-RESTANTES.json).
 - [26 ancrages recroisés](REVUE-CRITIQUE-26-ANCRAGES.md) : 4 candidats issus de rubriques mixtes V1/V2, 1 issu d'une procédure V1 remplacée, 1 `REF-06` sans source historique et 1 `STR-04` insuffisant ; **aucune correction de matrice validée**.

@@ -1,5 +1,7 @@
 # Décisions restant à soumettre au propriétaire — dossier après premier passage des 161 rubriques
 
+**Mise à jour ultérieure (13 novembre 2026).** Le propriétaire a donné l'accord pour la **PR #11 uniquement**, désormais [fusionnée](https://github.com/hameaufl/programme-sport/pull/11) au SHA `cf9241b9740be8e6c3f80058a45f76e197a4bb44`. Publication Pages [réussie et version servie contrôlée](https://github.com/hameaufl/programme-sport/actions/runs/43465068468). **Le point A ci-dessous est clôturé**, conservé pour provenance ; seules les décisions **INC-005** (suppression Garmin) et **REF-06** (provenance) demeurent des arbitrages explicites. La PR #9, l'adoption de B2 et les suppressions historiques restent non autorisées.
+
 **13 novembre 2026.** Document de préparation **sans effet normatif**. Sur la PR #9 en brouillon uniquement. Il ne vaut ni visa indépendant du Gardien, ni permission Garmin, ni autorisation de fusion. Les décisions sportives et les faits personnels ne sont pas réécrits.
 
 ## A. Mini-lot documentaire n°2 : deux chemins exacts

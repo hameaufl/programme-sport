@@ -83,3 +83,5 @@ Les workflows existants de publication restent inchangés. La branche ne publie 
 - [Critique transversale des 26 ancrages](REVUE-CRITIQUE-26-ANCRAGES.md), [registre JSON](EXAMEN-CRITIQUE-26-ANCRAGES.json) et refus de requalification d'une procédure V1 en autorité active.
 - [Preuves techniques INC ciblées](PREUVES-TECHNIQUES-INC-001-002-007-008.md), sans clôture ; [proposition d'index actif V2 non normatif](PROPOSITION-INDEX-ACTIF-V2.md).
 - [Mini-lot n°2 — PR #11 brouillon](https://github.com/hameaufl/programme-sport/pull/11) : renvois V2 corrigés dans deux documents, non fusionné. [Décisions qui demandent le propriétaire](DECISIONS-A-SOUMETTRE-2026-11-13.md).
+
+- **13 novembre 2026 — PR #11 fusionnée sur autorisation explicite** : `main` `cf9241b9740be8e6c3f80058a45f76e197a4bb44`, deux corrections documentaires Coach/MCP (4 substitutions), [publication Pages réussie](https://github.com/hameaufl/programme-sport/actions/runs/43465068468). PR #9 toujours brouillon, 8 INC ouvertes et aucune adoption B2 ni opération Garmin.
