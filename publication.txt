@@ -1,4 +1,5 @@
 Mon Rythme — témoin de publication
+Identifiant de présentation : mon-rythme-production
 
 Ce fichier est inclus dans la sortie Web et sert à indiquer le périmètre de lecture de l'application.
 
