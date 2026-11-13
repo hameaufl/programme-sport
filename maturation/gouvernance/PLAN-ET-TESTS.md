@@ -213,3 +213,11 @@ Tests sur la branche : utiliser les instructions de `AGENTS.md` **à cette révi
 - [x] Préparer et tester la [PR #11](https://github.com/hameaufl/programme-sport/pull/11), deux textes opérationnels à 4 substitutions sans changement de droit, **brouillon non fusionné**.
 - [ ] Obtenir un accord du propriétaire sur **chacun** des deux fichiers PR #11 avant toute fusion et contrôle Pages.
 - [ ] Arbitrer INC-005 (exception de suppression Garmin) et la provenance REF-06, puis préparer les protocoles V2 de production avec test de non-perte et visa adapté. Ne pas fusionner PR #9 ni activer B2 sans autorisation distincte.
+
+## 13 novembre 2026 — Audits complémentaires sans approbation de fusion
+- [x] Constater les commandes FIT et tests de migration absents de l'arbre V2, préparer [PR #12](https://github.com/hameaufl/programme-sport/pull/12) (README racine seul), [CI](https://github.com/hameaufl/programme-sport/actions/runs/43466175077) réussie ; **brouillon NON fusionné**.
+- [x] Sourcer `REF-06` en comparant le titre `contrats/DEPENDANCES.md#L3`, la clause générale de non-duplication et `CHARTE.md#L39` du premier commit expérimental ; proposer sans appliquer le reclassement 72/13.
+- [x] Documenter `INC-005` par 11 scénarios simulés de refus et un cas exposant les limites d'authenticité des autorisations déclaratives ; aucune opération Garmin ni nouvelle permission.
+- [x] Indexer 6 documents/preuves de la vague 3 par blob Git et taille, vérifier 17 chemins de code et 10 documents ; première erreur d'empreinte corrigée et CI réussie.
+- [x] Cartographier [15 rubriques V1 explicitement remplacées](REVUE-SUPERSESSION-15-V1.md) vers preuves V2 partielles et ancrées, sans effacement ou certificat de non-perte global.
+- [ ] Obtenir l'approbation **explicite de fusion** de la PR #12 si souhaitée ; arbitrer séparément `REF-06` et `INC-005`. Aucun assentiment à une de ces décisions ne vaut autorisation de fusionner la PR #9.

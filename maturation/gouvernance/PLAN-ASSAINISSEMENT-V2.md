@@ -42,3 +42,9 @@ Après le mini-lot n°1 fusionné (PR #10), un [mini-lot n°2 en brouillon](http
 
 ## Fusion approuvée du mini-lot n°2 — 13 novembre 2026
 Après accord du propriétaire, la [PR #11](https://github.com/hameaufl/programme-sport/pull/11) a été fusionnée au commit `cf9241b9740be8e6c3f80058a45f76e197a4bb44`, avec [CI Pages](https://github.com/hameaufl/programme-sport/actions/runs/43465068468) réussie et version servie vérifiée. **Deux fichiers documentaires, quatre corrections ciblées ; aucune permission Garmin et aucune suppression historique nouvelle.** La mention antérieure « en brouillon » est conservée comme photographie de préparation. Les arbitrages INC-005, REF-06 et PR #9 restent indépendants et ouverts.
+
+## 13 novembre 2026 — Progression des vagues 1 à 3 (nouvelle mise à jour)
+- **Vague 1** : mini-lots #10 et #11 déjà fusionnés sur accord précis et publiés. [PR #12](https://github.com/hameaufl/programme-sport/pull/12) **en brouillon, NON FUSIONNÉE**, propose de corriger `README.md` racine ; CI refonte réussie. Une seule documentation technique en diff, aucun retrait de données.
+- **Vague 2** : les 161 rubriques historiques sont classées au premier passage ; [15 explicitement V1](REVUE-SUPERSESSION-15-V1.md) reliées à des destinations V2 **partielles et non appliquées**. Les autres rubriques mixtes doivent encore être examinées clause par clause, avec tests et arbitrage.
+- **Vague 3** : [index de six pièces](INDEX-PREUVES-VAGUE3.md) ancré au SHA actuel de `main`, sans copie de journal ; relevé non exhaustif de liens de 17 fichiers de code/workflow et de 10 documents. **Aucun déplacement ni suppression** effectué ou autorisé.
+- **Décisions distinctes** : autorisation de fusion de la PR #12, classification de `REF-06`, politique future de suppression Garmin `INC-005`. La [passation](PASSATION-CHANTIER.md) documente les limites ; aucune des trois décisions ne vaut accord pour la PR #9, B2 ou la purge historique.

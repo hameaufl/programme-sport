@@ -1,5 +1,14 @@
 # Décisions restant à soumettre au propriétaire — dossier après premier passage des 161 rubriques
 
+
+## Mise à jour du 13 novembre 2026 — après préparation de la PR #12 et preuves
+- **Nouvelle autorisation distincte à obtenir :** la [PR #12](https://github.com/hameaufl/programme-sport/pull/12) ne modifie que `README.md` sur branche isolée. Le README actuel liste encore un générateur FIT et un vérificateur de migration supprimés ; la proposition documente les commandes V2 réellement présentes. [CI refonte réussie](https://github.com/hameaufl/programme-sport/actions/runs/43466175077). **Pas de fusion sans accord explicite.**
+- **REF-06** : analyse spécifique [ici](ETUDE-REF-06-PROVENANCE.md), première formulation `CHARTE.md#L39` au SHA initial expérimental, et non `contrats/DEPENDANCES.md#L3`. Recommandation **provisoire** de passer à 72 historiques/13 nouvelles, exigeant arbitrage et correction atomique de la matrice/test ; **non appliquée**.
+- **INC-005** : [11 simulations conservatoires](ETUDE-INC-005-SUPPRESSION.md) démontrent les cas de refus et l'insuffisance de l'authenticité déclarative dans le simulateur ; aucune opération réelle autorisée. **Choix A recommandé** (accord explicite de suppression pour une cible déterminée) ou choix B (exception dans l'accord d'une opération complète, sous conditions). **Aucun choix fait pour le propriétaire.**
+- **Vague 3** : les [six pièces historiques](INDEX-PREUVES-VAGUE3.md) sont indexées par leurs blobs, sans copie de contenu ni déplacement ; les [15 rubriques V1](REVUE-SUPERSESSION-15-V1.md) ont des destinations V2 candidates, encore partielles.
+- La PR #9 reste brouillon, les huit INC ouvertes, B2 non activé, toutes les données et archives sur `main` intactes. Les autorisations de fusion #10/#11 ne s'étendent à **aucune** autre PR.
+
+
 **Mise à jour ultérieure (13 novembre 2026).** Le propriétaire a donné l'accord pour la **PR #11 uniquement**, désormais [fusionnée](https://github.com/hameaufl/programme-sport/pull/11) au SHA `cf9241b9740be8e6c3f80058a45f76e197a4bb44`. Publication Pages [réussie et version servie contrôlée](https://github.com/hameaufl/programme-sport/actions/runs/43465068468). **Le point A ci-dessous est clôturé**, conservé pour provenance ; seules les décisions **INC-005** (suppression Garmin) et **REF-06** (provenance) demeurent des arbitrages explicites. La PR #9, l'adoption de B2 et les suppressions historiques restent non autorisées.
 
 **13 novembre 2026.** Document de préparation **sans effet normatif**. Sur la PR #9 en brouillon uniquement. Il ne vaut ni visa indépendant du Gardien, ni permission Garmin, ni autorisation de fusion. Les décisions sportives et les faits personnels ne sont pas réécrits.
